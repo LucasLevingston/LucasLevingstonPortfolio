@@ -1,5 +1,4 @@
 {
-  "homepage": "https://lucaslevingston.github.io/LucasLevingston.github.io",
   "name": "portifolio-react",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "next": "^13.4.6",
