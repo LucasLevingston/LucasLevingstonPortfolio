@@ -29,7 +29,7 @@ export default function Home() {
           id="social-container"
           className="w-[200px] flex justify-center mx-auto list-none border-b-[1px] border-solid mb-[25px] pb-[25px]"
         >
-          <li className="flex-[1_1_0] max-w-[60px] mx-auto">
+          <li className="max-w-[60px] mx-auto">
             <a
               className="text-[30px] text-mainColor hover:text-mainColor"
               href="https://www.instagram.com/lucaolevingston/?hl=pt-br"
@@ -38,7 +38,7 @@ export default function Home() {
               <BsInstagram />
             </a>
           </li>
-          <li className="flex-[1_1_0] max-w-[60px] mx-auto">
+          <li className=" max-w-[60px] mx-auto">
             <a
               className="text-[30px] text-mainColor hover:text-mainColor"
               href="https://www.linkedin.com/in/lucas-levingston-44b851231/"
@@ -47,7 +47,7 @@ export default function Home() {
               <FaLinkedin />
             </a>
           </li>
-          <li className="flex-[1_1_0] max-w-[60px] mx-auto">
+          <li className=" max-w-[60px] mx-auto">
             <a
               className="text-[30px] text-mainColor hover:text-mainColor"
               href="https://www.facebook.com/LucasLevingston"
@@ -58,9 +58,9 @@ export default function Home() {
           </li>
         </ul>
         <div id="email-container" className="flex justify-center w-[100%]">
-          <AiOutlineMail className="flex-[1_1_0] text-[25px] mr-[5px] max-w-[20px] text-mainColor" />
+          <AiOutlineMail className=" text-[25px] mr-[15px] max-w-[20px] text-mainColor" />
           <a
-            className="flex-[1_1_0] text-none max-w-[225px] hover:text-mainTextColor"
+            className=" text-none max-w-[225px] hover:text-mainTextColor"
             href="mailto:lucaslevingston94@gmail.com"
           >
             lucaslevingston94@gmail.com
