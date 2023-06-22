@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
+import ProjectComponents from "../components/ProjectsComponents";
 import { FaShareAltSquare } from "react-icons/fa";
 
 export default function Projects(name, sobre, imagem1, imagem2, imagem3) {
@@ -10,13 +11,7 @@ export default function Projects(name, sobre, imagem1, imagem2, imagem3) {
       <div className="text-mainTextColor flex flex-col flex-[1_1_80%] p-[50px] bg-aboutBgColor">
         <Header />
         {/* Projects: */}
-        <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[50px] bg-aboutBgColor">
-          <h1>{name}</h1>
-          <p>{sobre}</p>
-          <img src={imagem1} alt="" />
-          <img src={imagem2} alt="" />
-          <img src={imagem3} alt="" />
-        </div>
+        {/* <ProjectComponents /> */}
         <a
           className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] w-[150px] text-center flex"
           href="https://github.com/LucasLevingston"
