@@ -7,9 +7,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/sobre" element={<Sobre />} />
-        <Route exact path="/projetos" element={<Projects />} />
-        <Route exact path="/" element={<Home />} />
+        <Route
+          exact
+          path="/LucasLevingston.github.io/sobre"
+          element={<Sobre />}
+        />
+        <Route
+          exact
+          path="/LucasLevingston.github.io/projetos"
+          element={<Projects />}
+        />
+        <Route exact path="/LucasLevingston.github.io" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
