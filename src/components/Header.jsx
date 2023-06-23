@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className="flex content-between flex-[1_1_20%] hover:text-mainTextColor">
+    <div className="hover:text-mainTextColor">
       <div
         className="text-left min-w-[50%] bg-aboutBgColor"
         id="about-container "
