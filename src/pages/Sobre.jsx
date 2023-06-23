@@ -5,11 +5,11 @@ import { FaShareAltSquare } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="w-[100%] flex font-normal ">
+    <div className="w-full flex flex-col sm:flex-row h-full">
       <Sidebar />
-      <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[50px] bg-aboutBgColor">
+       <div className="flex-1 p-[50px] bg-aboutBgColor">
         <Header />
-        <div className="flex-[1_1_80%] max-h-[100%]">
+        <div className="overflow-y-auto">
           <p className="max-w-[75%] mb-[10px]">
             Tenho 20 anos, sou estudante do sexto período de ciência da
             computação e sou desenvolvedor FullStack. Gosto de participar de
@@ -17,9 +17,9 @@ export default function Home() {
             <span className="text-mainColor">
               definição das regras de negócio e levantamento de requisitos{" "}
             </span>
-            até o <span className="text-mainColor"> deploy da aplicação.</span>
+            até o <span className="text-mainColor">deploy da aplicação.</span>
           </p>
-          <p className="max-w-[75%] mb-[10px]">
+          <p className="max-w-[75%] mb-4">
             Atualmente estou atuando como estagiário na empresa Splendore, na
             qual desempenho a função de{" "}
             <span className="text-mainColor">Desenvolvedor Web.</span>
@@ -35,51 +35,47 @@ export default function Home() {
               Ver repositórios
             </span>
           </a>
-          <h2
-            className="border-t-[1px] border-solid pt-[20px] border-borderColor mb-[20px] text-[32px]"
-            id="skills-section-title"
-          >
+          <h2 className="border-t-[1px] border-solid pt-5 border-borderColor mb-5 text-[32px]" id="skills-section-title">
             Minhas Skills
           </h2>
-          <p class="description">Conheca as tecnologias que domino:</p>
-          <div className="flex flex-wrap mt-[25px]" id="skills-container">
-            <div className="flex-[1_1_33%] max-w-[33%] mb-[35px]">
-              <p className="text-[24px] mb-[25px] font-bold pl-[10px] border-l-[5px] border-solid border-mainColor">
+          <p className="description">Conheça as tecnologias que domino:</p>
+          <div className="flex flex-wrap mt-5" id="skills-container">
+            <div className="w-full sm:w-[33%] mb-8">
+              <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Front-End
               </p>
-              <i className="devicon-html5-plain colored text-[35px] mr-[10px]"></i>
-              <i className="devicon-css3-plain colored text-[35px] mr-[10px]"></i>
-              <i className="devicon-javascript-plain colored text-[35px] mr-[10px]"></i>
-              <i className="devicon-tailwindcss-plain colored text-[35px] mr-[10px]"></i>
+              <i className="devicon-html5-plain colored text-4xl mr-2"></i>
+              <i className="devicon-css3-plain colored text-4xl mr-2"></i>
+              <i className="devicon-javascript-plain colored text-4xl mr-2"></i>
+              <i className="devicon-tailwindcss-plain colored text-4xl mr-2"></i>
             </div>
-            <div className="flex-[1_1_33%] max-w-[33%] mb-[35px]">
-              <p className="text-[24px] mb-[25px] font-bold pl-[10px] border-l-[5px] border-solid border-mainColor">
+            <div className="w-full sm:w-[33%] mb-8">
+              <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Back-End
               </p>
-              <i className="devicon-java-plain colored text-[35px] mr-[10px]"></i>
-              <i className="devicon-python-plain colored text-[35px] mr-[10px]"></i>
-              <i className="devicon-nodejs-plain colored text-[35px] mr-[10px]"></i>
+              <i className="devicon-java-plain colored text-4xl mr-2"></i>
+              <i className="devicon-python-plain colored text-4xl mr-2"></i>
+              <i className="devicon-nodejs-plain colored text-4xl mr-2"></i>
             </div>
-            <div className="flex-[1_1_33%] max-w-[33%] mb-[35px]">
-              <p className="text-[24px] mb-[25px] font-bold pl-[10px] border-l-[5px] border-solid border-mainColor">
+            <div className="w-full sm:w-[33%] mb-8">
+              <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Databases
               </p>
-              <i className="devicon-postgresql-plain colored text-[35px] mr-[10px]"></i>
-              <i className="devicon-mysql-plain colored text-[35px] mr-[10px]"></i>
-              <i className="devicon-mongodb-plain colored text-[35px] mr-[10px]"></i>
+              <i className="devicon-postgresql-plain colored text-4xl mr-2"></i>
+              <i className="devicon-mysql-plain colored text-4xl mr-2"></i>
+              <i className="devicon-mongodb-plain colored text-4xl mr-2"></i>
             </div>
-            <div className="flex-[1_1_33%] max-w-[33%] mb-[35px]">
-              <p className="text-[24px] mb-[25px] font-bold pl-[10px] border-l-[5px] border-solid border-mainColor">
+            <div className="w-full sm:w-[33%] mb-8">
+              <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Front-End Frameworks
               </p>
-              <i className="devicon-react-plain colored text-[35px] mr-[10px]"></i>
+              <i className="devicon-react-plain colored text-4xl mr-2"></i>
             </div>
-            <div className="flex-[1_1_33%] max-w-[33%] mb-[35px]">
-              <p className="text-[24px] mb-[25px] font-bold pl-[10px] border-l-[5px] border-solid border-mainColor">
+            <div className="w-full sm:w-[33%] mb-8">
+              <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Back-End Frameworks
               </p>
-              <i className="devicon-express-original colored text-[35px] mr-[10px]"></i>
-              {/* <i className="devicon-spring-plain colored text-[35px] mr-[10px]"></i> */}
+              <i className="devicon-express-original colored text-4xl mr-2"></i>
             </div>
           </div>
         </div>

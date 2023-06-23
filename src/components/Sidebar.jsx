@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 
 export default function Sidebar() {
   return (
-    <div className="no-underline hover:no-underline flex-[1_1_25%] text-center min-h-[100vh] w-1/5 items-center text-mainTextColor bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor ">
+    <div className="no-underline hover:no-underline flex flex-col text-center sm:min-h-screen h-full sm:w-1/4 w-full items-center text-mainTextColor bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor">
       <h1 className="text-[32px] mb-4 font-bold text-bioBorderColor">
         <strong>Lucas Levingston</strong>
       </h1>
@@ -17,9 +17,9 @@ export default function Sidebar() {
         src={fotoCurriculo}
         alt="Lucas Levingston"
       />
-      <p className="max-w-[100%] min-h- p-3 text-center mx-auto text-bioBorderColor">
+      <p className="max-w-[100%] p-3 text-center mx-auto text-bioBorderColor">
         Olá, meu nome é Lucas Levingston e sou{" "}
-        <span className="text-mainColor ">Desenvolvedor Full Stack.</span>
+        <span className="text-mainColor">Desenvolvedor Full Stack.</span>
         <p className="font-bold p-[25px] text-mainTextColor">
           <strong>Seja bem-vindo!</strong>
         </p>
@@ -33,6 +33,7 @@ export default function Sidebar() {
             className="text-[30px] text-mainColor hover:text-mainColor"
             href="https://www.instagram.com/lucaolevingston/?hl=pt-br"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <BsInstagram />
           </a>
@@ -42,6 +43,7 @@ export default function Sidebar() {
             className="text-[30px] text-mainColor hover:text-mainColor"
             href="https://www.linkedin.com/in/lucas-levingston-44b851231/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin />
           </a>
@@ -51,12 +53,13 @@ export default function Sidebar() {
             className="text-[30px] text-mainColor hover:text-mainColor"
             href="https://www.facebook.com/LucasLevingston"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaFacebookSquare />
           </a>
         </li>
       </ul>
-      <div id="email-container" className="flex justify-center w-[100%]">
+      <div id="email-container" className="flex justify-center w-full">
         <AiOutlineMail className="text-[25px] mr-[5px] max-w-[20px] text-mainColor" />
         <a
           className="text-none max-w-[225px] hover:text-mainTextColor"
