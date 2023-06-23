@@ -6,7 +6,7 @@ import { FaShareAltSquare } from "react-icons/fa";
 
 export default function Projects() {
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col sm:flex-row">
       <Sidebar />
       <div className="flex flex-col flex-auto p-12 bg-aboutBgColor">
         <Header />
