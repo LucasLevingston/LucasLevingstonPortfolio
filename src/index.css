@@ -4,11 +4,11 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather", sans-serif;
   box-sizing: border-box;
 }
 :root {
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather", sans-serif;
   line-height: 1.5em;
   color: #fff;
 

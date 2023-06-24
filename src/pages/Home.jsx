@@ -1,6 +1,6 @@
 import React from "react";
 import fotoCurriculo from "../assets/FotoCurriculo.jpg";
-import { BsInstagram } from "react-icons/bs";
+import { BsInstagram, BsJournalText } from "react-icons/bs";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import Navbar from "../components/Navbar";
@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 export default function Home() {
   return (
     <div className="flex flex-col ">
-      <div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor hover:no-underline">
+      <div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor pt-[80px] bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor hover:no-underline">
         <h2 className="text-[32px] mb-4 font-bold text-bioBorderColor text-center">
           <strong>Lucas Levingston</strong>
         </h2>
@@ -64,6 +64,20 @@ export default function Home() {
             href="mailto:lucaslevingston94@gmail.com"
           >
             lucaslevingston94@gmail.com
+          </a>
+        </div>
+        <div className="flex justify-center w-[100%]">
+          <a
+            className="hover:bg-transparent font-bold text-[13px]  bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px] w-[150px] justify-center flex"
+            href="https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing"
+            id="btn-projects"
+            target="_blank"
+          >
+            <span className="text-mainTextColor">
+              Ver curriculo
+              {"     "}
+            </span>
+            <BsJournalText className="text-[18px] ml-[3px] max-w-[20px] fontbo text-mainTextColor" />
           </a>
         </div>
         <Navbar />
