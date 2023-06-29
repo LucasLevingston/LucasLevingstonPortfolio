@@ -5,9 +5,9 @@ import { FaShareAltSquare } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col sm:flex-row h-full">
+    <div className="w-full flex flex-col sm:flex-row h-full text-mainTextColor">
       <Sidebar />
-       <div className="flex-1 p-[50px] bg-aboutBgColor">
+      <div className="flex-1 p-[50px] bg-aboutBgColor">
         <Header />
         <div className="overflow-y-auto">
           <p className="max-w-[75%] mb-[10px]">
@@ -35,7 +35,10 @@ export default function Home() {
               Ver repositórios
             </span>
           </a>
-          <h2 className="border-t-[1px] border-solid pt-5 border-borderColor mb-5 text-[32px]" id="skills-section-title">
+          <h2
+            className="border-t-[1px] border-solid pt-5 border-borderColor mb-5 text-[32px]"
+            id="skills-section-title"
+          >
             Minhas Skills
           </h2>
           <p className="description">Conheça as tecnologias que domino:</p>
@@ -44,16 +47,17 @@ export default function Home() {
               <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Front-End
               </p>
-              <i className="devicon-html5-plain colored text-4xl mr-2"></i>
+              <i className="devicon-html5-plain colored text-4xl mr-2 ml-3"></i>
               <i className="devicon-css3-plain colored text-4xl mr-2"></i>
               <i className="devicon-javascript-plain colored text-4xl mr-2"></i>
+              <i className="devicon-typescript-plain colored text-4xl mr-2"></i>
               <i className="devicon-tailwindcss-plain colored text-4xl mr-2"></i>
             </div>
             <div className="w-full sm:w-[33%] mb-8">
               <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Back-End
               </p>
-              <i className="devicon-java-plain colored text-4xl mr-2"></i>
+              <i className="devicon-java-plain colored text-4xl mr-2 ml-3"></i>
               <i className="devicon-python-plain colored text-4xl mr-2"></i>
               <i className="devicon-nodejs-plain colored text-4xl mr-2"></i>
             </div>
@@ -61,7 +65,7 @@ export default function Home() {
               <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Databases
               </p>
-              <i className="devicon-postgresql-plain colored text-4xl mr-2"></i>
+              <i className="devicon-postgresql-plain colored text-4xl mr-2 ml-3"></i>
               <i className="devicon-mysql-plain colored text-4xl mr-2"></i>
               <i className="devicon-mongodb-plain colored text-4xl mr-2"></i>
             </div>
@@ -69,13 +73,19 @@ export default function Home() {
               <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Front-End Frameworks
               </p>
-              <i className="devicon-react-plain colored text-4xl mr-2"></i>
+              <i className="devicon-react-plain colored text-4xl mr-2 ml-3"></i>
             </div>
             <div className="w-full sm:w-[33%] mb-8">
               <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                 Back-End Frameworks
               </p>
-              <i className="devicon-express-original colored text-4xl mr-2"></i>
+              <i className="devicon-express-original colored text-4xl mr-2 ml-3"></i>
+            </div>
+            <div className="w-full sm:w-[33%] mb-8">
+              <p className="text-2xl mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
+                Ferramentas
+              </p>
+              <i className="devicon-docker-plain-wordmark colored text-4xl mr-2 ml-3"></i>
             </div>
           </div>
         </div>
