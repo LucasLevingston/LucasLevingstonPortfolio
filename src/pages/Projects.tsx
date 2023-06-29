@@ -18,9 +18,10 @@ export default function Projects() {
           <FaShareAltSquare className="text-[18px] ml-[2px] max-w-[20px] text-mainTextColor" />
           <span className="text-mainTextColor"> Ver repositórios</span>
         </a>
-        <h2 className="border-t border-solid pt-5 border-borderColor mb-5 text-2xl" id="skills-section-title">
-         
-        </h2>
+        <h2
+          className="border-t border-solid pt-5 border-borderColor mb-5 text-2xl"
+          id="skills-section-title"
+        ></h2>
       </div>
     </div>
   );
