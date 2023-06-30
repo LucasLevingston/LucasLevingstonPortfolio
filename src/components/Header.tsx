@@ -14,7 +14,7 @@ export default function Header() {
           className="text-[20px] mb-[15px] font-bold text-mainColor"
           id="title"
         >
-          <span class="highlight">Desenvolvedor Full-Stack</span>
+          <span>Desenvolvedor Full-Stack</span>
         </p>
       </div>
     </div>
