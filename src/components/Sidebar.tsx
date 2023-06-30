@@ -1,18 +1,18 @@
 import React from "react";
 import fotoCurriculo from "../assets/FotoCurriculo.jpg";
-import { BsInstagram,BsJournalText } from "react-icons/bs";
+import { BsInstagram, BsJournalText } from "react-icons/bs";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import Navbar from "./Navbar";
 
 export default function Sidebar() {
   return (
-    <div className="no-underline hover:no-underline flex flex-col text-center sm:min-h-screen h-full sm:w-1/4 w-full items-center text-mainTextColor bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor">
+    <div className="no-underline hover:no-underline flex flex-col  sm:fixed text-center sm:min-h-screen h-full sm:w-1/4 w-full items-center text-mainTextColor bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor">
       <h1 className="text-[32px] mb-4 font-bold text-bioBorderColor">
         <strong>Lucas Levingston</strong>
       </h1>
       <img
-        className="w-[175px] h-[175px] rounded-[50%] mb-6 mx-auto"
+        className="w-[175px] h-[175px] sm:w-28 sm:h-28 rounded-[50%] mb-6 mx-auto"
         id="bio-image"
         src={fotoCurriculo}
         alt="Lucas Levingston"
@@ -70,17 +70,18 @@ export default function Sidebar() {
       </div>
       {/* download curriculo */}
       <div className="flex justify-center w-full">
-      <a
-            className="hover:bg-transparent font-bold text-[13px]  bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] w-[150px] text-center flex"
-            href="https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing"
-            id="btn-projects" target="_blank"
-          >
-            <span className="flex-[1_1_0] text-mainTextColor">
-              Ver curriculo
-              {"     "}
-            </span>
-            <BsJournalText className="text-[18px] ml-[3px] max-w-[20px] fontbo text-mainTextColor" />
-          </a>
+        <a
+          className="hover:bg-transparent font-bold text-[13px]  bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] w-[150px] text-center flex"
+          href="https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing"
+          id="btn-projects"
+          target="_blank"
+        >
+          <span className="flex-[1_1_0] text-mainTextColor">
+            Ver curriculo
+            {"     "}
+          </span>
+          <BsJournalText className="text-[18px] ml-[3px] max-w-[20px] fontbo text-mainTextColor" />
+        </a>
       </div>
       <Navbar />
     </div>

@@ -5,9 +5,9 @@ import { FaShareAltSquare } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col sm:flex-row h-full text-mainTextColor">
+    <div className="w-full flex flex-col  sm:flex-row h-full text-mainTextColor">
       <Sidebar />
-      <div className="flex-1 p-[50px] bg-aboutBgColor">
+      <div className="flex-1 p-[50px] sm:max-w-[75%]  ml-auto mr-0 bg-aboutBgColor">
         <Header />
         <div className="overflow-y-auto">
           <p className="max-w-[75%] mb-[10px]">
