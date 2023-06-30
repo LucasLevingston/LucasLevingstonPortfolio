@@ -3,15 +3,16 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import ProjectsComponents, { Project } from "../components/ProjectsComponents";
 import { FaShareAltSquare } from "react-icons/fa";
+import { CRM1, CRM2, CRM3 } from "../assets/";
 
 const projetos: Project[] = [
   {
     name: "CRM",
     sobre:
       "Este projeto está sendo desenvolvido no estágio. É um sistema de CRM, responsável pela integração dos dados obtidos pelos vendedores e armazenando os mesmos no banco de dados mongoDB com uma automação de envio de mensagens de texto para vendas, desde a entrada de dados de um cliente utilizando uma interface desenvolvida em React até a automação do envio de mensagens de WhatsApp. Javascript é a linguagem utilizada tanto no frontend quanto no backend, usando React e Node (com Express) respectivamente. Também foi utilizada a biblioteca Tailwind. Eu juntamente com minha equipe também entramos na área de Engenharia para desenvolvimento do projeto, utilizando diagrama de casos de uso, diagrama de classe, etc.",
-    image1: "",
-    image2: "",
-    image3: "",
+    image1: "CRM1",
+    image2: "CRM2",
+    image3: "CRM3",
   },
   {
     name: "Campo Minado",
