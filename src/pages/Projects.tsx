@@ -24,17 +24,20 @@ const projetos: Project[] = [
 
 export default function Projects() {
   return (
-    <div className="flex flex-col sm:flex-row w-[30]">
+    <div className="flex flex-col sm:flex-row w-full bg-aboutBgColor h-full">
       <Sidebar />
-      <div className="flex flex-col sm:max-w-[75%]  ml-auto mr-0 p-12 pb-0 bg-aboutBgColor">
+      <div className="flex flex-col sm:max-w-[75%] 2xl:text-4xl ml-auto mr-0 p-8 lg:p-12 pb-0 2xl:p-20 bg-aboutBgColor">
         <Header />
         <a
-          className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] w-[150px] text-center flex"
+          className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] 2xl:w-[400px] w-[150px] text-center flex"
           href="https://github.com/LucasLevingston"
           id="btn-projects"
         >
-          <FaShareAltSquare className="text-[18px] ml-[2px] max-w-[20px] text-mainTextColor" />
-          <span className="text-mainTextColor"> Ver repositórios</span>
+          <FaShareAltSquare className="text-[18px] 2xl:text-[40px] ml-[2px] max-w-[20px] 2xl:max-w-[40px] text-mainTextColor" />
+          <span className="flex-[1_1_0]  text-mainTextColor 2xl:text-[40px] 2xl:leading-[60px]">
+            {" "}
+            Ver GitHub
+          </span>
         </a>
         <h2
           className="border-t border-solid pt-5 border-borderColor mb-5 text-2xl"

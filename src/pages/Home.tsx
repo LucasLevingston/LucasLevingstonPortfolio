@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 export default function Home() {
   return (
     <div className="flex flex-col ">
-      <div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor pt-[80px] bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor hover:no-underline">
+      <div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor pt-8 bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor hover:no-underline">
         <h2 className="text-[32px] mb-4 font-bold text-bioBorderColor text-center">
           <strong>Lucas Levingston</strong>
         </h2>

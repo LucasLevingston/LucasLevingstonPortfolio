@@ -22,11 +22,13 @@ export default function ProjectsComponents(projeto: Project) {
     setCurrentIndex(newIndex);
   };
   return (
-    <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[50px] pt-0 bg-aboutBgColor ">
-      <h1 className="text-bold text-mainColor text-2xl">{projeto.name}</h1>
+    <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[10px] sm:p-0 pt-0 bg-aboutBgColor ">
+      <h1 className="text-bold text-mainColor pb-1 text-2xl 2xl:text-6xl">
+        {projeto.name}
+      </h1>
       <br />
       <p>{projeto.sobre}</p>
-      <div className="'max-w-900px h-[480px] w-full m-auto py-16 px-4 relative group">
+      <div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[360px] 2xl:max-w-[1500px] 2xl:h-[600px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-16 px-0 sm:p-8  relative group">
         <div
           style={{ backgroundImage: `url(${projeto.images[currentIndex]})` }}
           className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
