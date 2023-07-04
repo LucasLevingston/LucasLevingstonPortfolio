@@ -6,6 +6,9 @@ import { FaShareAltSquare } from "react-icons/fa";
 import CRM1 from "../assets/CRM1.png";
 import CRM2 from "../assets/CRM2.png";
 import CRM3 from "../assets/CRM3.png";
+import CM1 from "../assets/CampoMinado1.jpg";
+import CM2 from "../assets/CampoMinado2.jpg";
+import CM3 from "../assets/CampoMinado3.jpg";
 
 const projetos: Project[] = [
   {
@@ -18,7 +21,7 @@ const projetos: Project[] = [
     name: "Campo Minado",
     sobre:
       "Campo minado foi um projeto na linguagem Java de um jogo já existente, onde o objetivo do jogo é o usuário abrir todos os campos do jogo sem abrir nenhum campo que esteja minado, caso ele abra, irá perder o jogo. Para a abertura de campos, utilizei o padrão observer. Quando tem um campo que esteja minado, os campos vizinhos irão avisar que tem entre 1 e 4 campos minados dentre os seus vizinhos. Com isso, abrindo campo por campo, até completar o jogo. Na parte gráfica utilizei o Jbutton, onde cada campo representa um botão. Utilizei a biblioteca do JUnit para os testes da aplicação.",
-    images: [],
+    images: [CM1, CM2, CM3],
   },
 ];
 
