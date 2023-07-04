@@ -7,8 +7,8 @@ import Navbar from "./Navbar";
 
 export default function Sidebar() {
   return (
-    <div className="no-underline hover:no-underline flex flex-col  sm:fixed text-center sm:min-h-screen h-full sm:w-1/4 w-full items-center text-mainTextColor bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor">
-      <h1 className="text-[32px] 2xl:text-6xl pt-4  mb-4 font-bold text-bioBorderColor">
+    <div className="no-underline hover:no-underline flex flex-col  sm:fixed text-center sm:min-h-screen h-full sm:w-1/4 w-full items-center text-mainTextColor bg-bioBgColor p-[20px_12px] border-r-[5px] border-r-mainTextColor">
+      <h1 className="text-[32px] 2xl:text-6xl pt-0  mb-4 font-bold text-bioBorderColor">
         <strong>Lucas Levingston</strong>
       </h1>
       <img

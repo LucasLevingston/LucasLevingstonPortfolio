@@ -11,9 +11,8 @@ export default function Navbar() {
             className="hover:bg-transparent flex-start 2xl:text-[40px] 2xl:border-[30px] 2xl:pr-28  hover:text-mainTextColor bg-mainColor border-[2px] border-mainColor rounded-[3px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_12px] w-[80px] text-center flex content-between"
             to="/"
           >
+            {/* <AiFillHome className="text-xl mainTextColor" / */}
             <span className="text-[16px]font-bold">Home</span>
-
-            {/* <AiFillHome className="text-[16px] mainTextColor"/> */}
           </Link>
         </li>
         <li className="mx-0">
