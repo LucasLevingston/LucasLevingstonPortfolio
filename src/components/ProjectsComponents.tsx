@@ -24,26 +24,26 @@ export default function ProjectsComponents(projeto: Project) {
     setCurrentIndex(newIndex);
   };
   return (
-    <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[10px] sm:p-0 bg-aboutBgColor border-b-[1px] 2xl:text-7xl border-solid  border-borderColor">
-      <h1 className="text-bold text-mainColor pb-1 text-2xl 2xl:text-6xl pt-5">
+    <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[10px] sm:p-0 bg-aboutBgColor border-b-[1px]  border-solid  border-borderColor">
+      <h1 className="text-bold text-mainColor pb-1 text-2xl  pt-5">
         {projeto.name}
       </h1>
       <br />
       <p>{projeto.sobre}</p>
       <div>
         <a
-          className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] 2xl:w-[400px] w-[150px] text-center flex"
+          className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] w-[150px] text-center flex"
           href={projeto.link}
           target="_blank"
           rel="noopener noreferrer"
         >
           <GoRepoForked className="text-2xl" />
-          <span className="flex-[1_1_0]  text-mainTextColor 2xl:text-[40px] 2xl:leading-[60px]">
+          <span className="flex-[1_1_0]  text-mainTextColor">
             Ver repositorio
           </span>
         </a>
       </div>
-      <div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[360px] 2xl:max-w-[1500px] 2xl:h-[600px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-10 px-0 sm:p-8  relative group">
+      <div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[360px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-10 px-0 sm:p-8  relative group">
         <div
           style={{ backgroundImage: `url(${projeto.images[currentIndex]})` }}
           className="w-full h-full rounded-2xl bg-center bg-cover duration-500"

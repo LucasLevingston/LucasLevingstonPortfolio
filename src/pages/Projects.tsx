@@ -26,6 +26,7 @@ const projetos: Project[] = [
     sobre:
       "Campo minado foi um projeto na linguagem Java de um jogo já existente, onde o objetivo do jogo é o usuário abrir todos os campos do jogo sem abrir nenhum campo que esteja minado, caso ele abra, irá perder o jogo. Para a abertura de campos, utilizei o padrão observer. Quando tem um campo que esteja minado, os campos vizinhos irão avisar que tem entre 1 e 4 campos minados dentre os seus vizinhos. Com isso, abrindo campo por campo, até completar o jogo. Na parte gráfica utilizei o Jbutton, onde cada campo representa um botão. Utilizei a biblioteca do JUnit para os testes da aplicação.",
     images: [CM1, CM2, CM3],
+
     link: "https://github.com/LucasLevingston/Campo_Minado",
   },
   {
@@ -41,17 +42,17 @@ export default function Projects() {
   return (
     <div className="flex flex-col sm:flex-row w-full bg-aboutBgColor h-full">
       <Sidebar />
-      <div className="flex flex-col sm:max-w-[75%] 2xl:text-4xl ml-auto mr-0 p-8 lg:p-12 pb-0 2xl:p-20 bg-aboutBgColor">
+      <div className="flex flex-col sm:max-w-[75%]  ml-auto mr-0 p-8 lg:p-12 pb-0  bg-aboutBgColor">
         <Header />
         <a
-          className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] 2xl:w-[400px] w-[150px] text-center flex"
+          className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] w-[150px] text-center flex"
           href="https://github.com/LucasLevingston"
           id="btn-projects"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaShareAltSquare className="text-[18px] 2xl:text-[40px] ml-[2px] max-w-[20px] 2xl:max-w-[40px] text-mainTextColor" />
-          <span className="flex-[1_1_0]  text-mainTextColor 2xl:text-[40px] 2xl:leading-[60px]">
+          <FaShareAltSquare className="text-[18px]  ml-[2px] max-w-[20px]  text-mainTextColor" />
+          <span className="flex-[1_1_0]  text-mainTextColor  ">
             {" "}
             Ver GitHub
           </span>
