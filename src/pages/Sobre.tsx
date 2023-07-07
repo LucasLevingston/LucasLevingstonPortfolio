@@ -82,18 +82,20 @@ export default function Home() {
                 <p className="text-xl   mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                   Back-End Frameworks
                 </p>
-                <i className="devicon-express-original colored text-4xl mr-2 ml-3"></i>
+                <i className="devicon-express-original text-4xl mr-2 ml-3"></i>
               </div>
               <div className="w-full  sm:w-[33%] mb-8">
                 <p className="text-xl   mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                   Ferramentas
                 </p>
                 <i className="devicon-docker-plain-wordmark colored text-4xl mr-2 ml-3"></i>
+                <i className="devicon-git-plain-wordmark colored colored text-4xl mr-2 ml-3"></i>
+                <i className="devicon-github-original-wordmark text-4xl mr-2 ml-3"></i>
               </div>
             </div>
           </div>
-          <div>
-            <div className="text-2xl pb-2  pt-5 ">Minhas experiências:</div>
+          <div className="border-b-[1px]  border-solid pt-3 border-borderColor">
+            <div className="text-2xl pb-2  pt-5  ">Minhas experiências:</div>
             <div className=" xl:pb-3">
               <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
                 Splendore - Patos, PB (atual)
@@ -110,6 +112,31 @@ export default function Home() {
               <p className=" pl-10 pt-3">Inicio: 06/2022 - Fim: 10/2022</p>
               <p className=" pl-10 pt-3 lg:pb-6">
                 Cargo: Atendente de consultório médico
+              </p>
+            </div>
+          </div>
+          <div>
+            <div className="text-2xl pb-2  pt-5 ">Formação:</div>
+            <div className=" xl:pb-3">
+              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
+                Graduação em Ciências da Computação
+              </h3>
+              <p className=" pl-10 pt-3">
+                Universidade Estadual da Paraíba (UEPB)
+              </p>
+              <p className=" pl-10 pt-3">
+                Agosto/2020 - Agosto/2025 (previsto)
+              </p>
+            </div>
+            <div className="pt-5">
+              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
+                Graduação em Engenharia Civil
+              </h3>
+              <p className=" pl-10 pt-3">
+                Centro Universitário de Patos (UNIFIP)
+              </p>
+              <p className=" pl-10 pt-3 lg:pb-6">
+                Fevereiro/2020 - Julho/2020 (1 semestre)
               </p>
             </div>
           </div>

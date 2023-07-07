@@ -30,9 +30,9 @@ const projetos: Project[] = [
     link: "https://github.com/LucasLevingston/Campo_Minado",
   },
   {
-    name: "Meu portifólio",
+    name: "Meu Portfólio ",
     sobre:
-      "Como forma de aprendizado, desenvolvi meu portifólio utilizando o framework React. Utilizando a linguagem TypeScript e o Tailwind CSS para estilizacão. Foi meu primeiro contato com React e o pontapé para projetos futuros.",
+      "Como forma de aprendizado, desenvolvi meu portfólio  utilizando o framework React. Utilizando a linguagem TypeScript e o Tailwind CSS para estilização. Foi meu primeiro contato com React e o pontapé para projetos futuros.",
     images: [MP1, MP2, MP3],
     link: "https://github.com/LucasLevingston/LucasLevingstonPortifolio",
   },
