@@ -4,6 +4,7 @@ import { BsInstagram, BsJournalText } from "react-icons/bs";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import Navbar from "./Navbar";
+import TypewriterClass from "typewriter-effect";
 
 export default function Sidebar() {
   return (
@@ -19,7 +20,25 @@ export default function Sidebar() {
       />
       <p className=" max-w-[100%]  p-3 text-center  mx-auto text-bioBorderColor">
         Olá, meu nome é Lucas Levingston e sou{" "}
-        <span className="text-mainColor">Desenvolvedor Full Stack.</span>
+        <span className="text-mainColor">
+          {" "}
+          <span className="text-mainColor">
+            <TypewriterClass
+              onInit={(typewriter) => {
+                typewriter
+
+                  .typeString("Desenvolvedor Frond-End.")
+                  .pauseFor(5000)
+                  .deleteChars(10)
+                  .typeString("Back-End.")
+                  .pauseFor(5000)
+                  .deleteChars(9)
+                  .typeString("Full-Stack.")
+                  .start();
+              }}
+            />
+          </span>
+        </span>
         <p className="font-bold p-[25px] text-mainTextColor ">
           <strong>Seja bem-vindo!</strong>
         </p>

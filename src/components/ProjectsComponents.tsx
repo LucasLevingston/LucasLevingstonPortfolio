@@ -43,7 +43,7 @@ export default function ProjectsComponents(projeto: Project) {
           </span>
         </a>
       </div>
-      <div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[360px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-10 px-0 sm:p-8  relative group">
+      <div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[460px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-10 px-0 sm:p-8  relative group">
         <div
           style={{ backgroundImage: `url(${projeto.images[currentIndex]})` }}
           className="w-full h-full rounded-2xl bg-center bg-cover duration-500"

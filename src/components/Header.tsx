@@ -1,4 +1,5 @@
 import React from "react";
+import TypewriterClass from "typewriter-effect";
 
 export default function Header() {
   return (
@@ -14,7 +15,22 @@ export default function Header() {
           className="text-[20px] mb-[15px] font-bold text-mainColor"
           id="title"
         >
-          <span>Desenvolvedor Full-Stack</span>
+          <span className="text-mainColor">
+            <TypewriterClass
+              onInit={(typewriter) => {
+                typewriter
+
+                  .typeString("Desenvolvedor Frond-End.")
+                  .pauseFor(5000)
+                  .deleteChars(10)
+                  .typeString("Back-End.")
+                  .pauseFor(5000)
+                  .deleteChars(9)
+                  .typeString("Full-Stack.")
+                  .start();
+              }}
+            />
+          </span>
         </p>
       </div>
     </div>
