@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsChevronBarLeft, BsChevronBarRight } from "react-icons/bs";
 import { GoRepoForked } from "react-icons/go";
+import Typewriter from "typewriter-effect";
 export interface Project {
   name: string;
   sobre: string;
@@ -26,7 +27,13 @@ export default function ProjectsComponents(projeto: Project) {
   return (
     <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[10px] sm:p-0 bg-aboutBgColor border-b-[1px]  border-solid  border-borderColor">
       <h1 className="text-bold text-mainColor pb-1 text-2xl  pt-5">
-        {projeto.name}
+        <p className="text-none max-w-[225px]  hover:text-mainTextColor">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString(projeto.name).start();
+            }}
+          />
+        </p>
       </h1>
       <br />
       <p>{projeto.sobre}</p>
@@ -43,7 +50,7 @@ export default function ProjectsComponents(projeto: Project) {
           </span>
         </a>
       </div>
-      <div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[360px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-10 px-0 sm:p-8  relative group">
+      <div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[460px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-10 px-0 sm:p-8  relative group">
         <div
           style={{ backgroundImage: `url(${projeto.images[currentIndex]})` }}
           className="w-full h-full rounded-2xl bg-center bg-cover duration-500"

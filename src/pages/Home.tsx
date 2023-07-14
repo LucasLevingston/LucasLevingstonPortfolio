@@ -2,15 +2,23 @@ import React from "react";
 import fotoCurriculo from "../assets/FotoCurriculo.jpg";
 import { BsInstagram, BsJournalText } from "react-icons/bs";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiFillPhone, AiOutlineMail } from "react-icons/ai";
 import Navbar from "../components/Navbar";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
   return (
     <div className="flex flex-col ">
-      <div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor pt-8 bg-bioBgColor p-[30px_12px] border-r-[5px] border-r-mainTextColor hover:no-underline">
+      <div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor pt-8 bg-bioBgColor p-[30px_12px] hover:no-underline">
         <h2 className="text-[32px] mb-4 font-bold text-bioBorderColor text-center">
-          <strong>Lucas Levingston</strong>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("Lucas Levingston")
+
+                .start();
+            }}
+          />
         </h2>
         <img
           className="w-[175px] h-[175px] rounded-[50%] mb-6 mx-auto"
@@ -19,10 +27,46 @@ export default function Home() {
           alt="Lucas Levingston"
         />
         <p className="max-w-[100%] min-h- p-3 text-center mx-auto text-bioBorderColor">
-          Olá, meu nome é Lucas Levingston e sou{" "}
-          <span className="text-mainColor">Desenvolvedor Full Stack.</span>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("Olá, meu nome é Lucas Levingston e sou")
+                .start();
+            }}
+          />
+          <span className="text-mainColor">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .pauseFor(6000)
+                  .typeString("Desenvolvedor Frond-End.")
+                  .pauseFor(5000)
+                  .deleteChars(10)
+                  .typeString("Back-End.")
+                  .pauseFor(5000)
+                  .deleteChars(9)
+                  .typeString("Full-Stack.")
+                  .start();
+              }}
+            />
+          </span>
           <p className="font-bold p-[25px] text-mainTextColor">
-            <strong>Seja bem-vindo!</strong>
+            <strong>
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString("Seja bem-vindo!")
+                    .pauseFor(2500)
+                    .deleteAll()
+                    .typeString("Seja bem-vindo!")
+                    .pauseFor(2500)
+                    .deleteAll()
+                    .typeString("Seja bem-vindo!")
+                    .pauseFor(2500)
+                    .start();
+                }}
+              />
+            </strong>
           </p>
         </p>
         <ul
@@ -65,6 +109,16 @@ export default function Home() {
           >
             lucaslevingston94@gmail.com
           </a>
+        </div>
+        <div id="phone-container" className="flex justify-center pt-4 w-full ">
+          <AiFillPhone className="text-[25px]   mr-[5px] max-w-[20px] text-mainColor" />
+          <p className="text-none max-w-[225px]  hover:text-mainTextColor">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter.typeString("(83) 99961-6220").start();
+              }}
+            />
+          </p>
         </div>
         <div className="flex justify-center w-[100%]">
           <a
