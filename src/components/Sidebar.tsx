@@ -2,7 +2,7 @@ import React from "react";
 import fotoCurriculo from "../assets/FotoCurriculo.jpg";
 import { BsInstagram, BsJournalText } from "react-icons/bs";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail, AiFillPhone } from "react-icons/ai";
 import Navbar from "./Navbar";
 import TypewriterClass from "typewriter-effect";
 
@@ -86,6 +86,16 @@ export default function Sidebar() {
         >
           lucaslevingston94@gmail.com
         </a>
+      </div>
+      <div id="phone-container" className="flex justify-center pt-4 w-full ">
+        <AiFillPhone className="text-[25px]   mr-[5px] max-w-[20px] text-mainColor" />
+        <p className="text-none max-w-[225px]  hover:text-mainTextColor">
+          <TypewriterClass
+            onInit={(typewriter) => {
+              typewriter.typeString("(83) 99961-6220").start();
+            }}
+          />
+        </p>
       </div>
       {/* download curriculo */}
       <div className="flex justify-center w-full">
