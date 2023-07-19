@@ -55,10 +55,10 @@ export default function ProjectsComponents(projeto: Project) {
           style={{ backgroundImage: `url(${projeto.images[currentIndex]})` }}
           className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
         ></div>
-        <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-mainTextColor cursor-pointer">
+        <div className="hidden group-hover:block absolute top-[50%] pl-5 -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-mainTextColor cursor-pointer">
           <BsChevronBarLeft onClick={prevImage} size={30} />
         </div>
-        <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-mainTextColor cursor-pointer">
+        <div className="hidden group-hover:block absolute top-[50%] pr-5 -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-mainTextColor cursor-pointer">
           <BsChevronBarRight onClick={nextImage} size={30} />
         </div>
       </div>

@@ -37,7 +37,7 @@ if (window.location.pathname === "/sobre") {
 
 export default function Navbar() {
   return (
-    <nav className="">
+    <div className="">
       <ul className="flex justify-center list-none text-center gap-3">
         <li className="mx-0">
           <Link
@@ -68,6 +68,6 @@ export default function Navbar() {
           </Link>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Sidebar() {
   return (
     <div className="no-underline hover:no-underline flex flex-col  sm:fixed text-center sm:min-h-screen h-full sm:w-1/4 w-full items-center text-mainTextColor bg-bioBgColor border-r-[0px] p-[20px_12px] md:border-r-[5px]  ">
       <h1 className="text-[32px]  pt-0  mb-4 font-bold text-bioBorderColor">
-        <strong>Lucas Levingston</strong>
+        Lucas Levingston
       </h1>
       <img
         className="w-[175px] h-[175px] sm:w-28  sm:h-28 rounded-[50%] mb-6 mx-auto"
@@ -25,7 +25,6 @@ export default function Sidebar() {
           <TypewriterClass
             onInit={(typewriter) => {
               typewriter
-
                 .typeString("Desenvolvedor Frond-End.")
                 .pauseFor(5000)
                 .deleteChars(10)
@@ -37,10 +36,8 @@ export default function Sidebar() {
             }}
           />
         </span>
-        <p className="font-bold p-[25px] text-mainTextColor ">
-          <strong>Seja bem-vindo!</strong>
-        </p>
       </p>
+      <p className="font-bold p-[25px] text-mainTextColor ">Seja bem-vindo!</p>
       <ul
         id="social-container"
         className="w-[200px]  flex items-center mx-auto list-none border-b-[1px] border-solid mb-[25px] pb-[25px]"

@@ -11,14 +11,7 @@ export default function Home() {
     <div className="flex flex-col ">
       <div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor pt-8 bg-bioBgColor p-[30px_12px] hover:no-underline">
         <h2 className="text-[32px] mb-4 font-bold text-bioBorderColor text-center">
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("Lucas Levingston")
-
-                .start();
-            }}
-          />
+          Lucas Levingston
         </h2>
         <img
           className="w-[175px] h-[175px] rounded-[50%] mb-6 mx-auto"
@@ -50,24 +43,24 @@ export default function Home() {
               }}
             />
           </span>
-          <p className="font-bold p-[25px] text-mainTextColor">
-            <strong>
-              <Typewriter
-                onInit={(typewriter) => {
-                  typewriter
-                    .typeString("Seja bem-vindo!")
-                    .pauseFor(2500)
-                    .deleteAll()
-                    .typeString("Seja bem-vindo!")
-                    .pauseFor(2500)
-                    .deleteAll()
-                    .typeString("Seja bem-vindo!")
-                    .pauseFor(2500)
-                    .start();
-                }}
-              />
-            </strong>
-          </p>
+        </p>
+        <p className="font-bold p-[25px] text-mainTextColor">
+          <strong>
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Seja bem-vindo!")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .typeString("Seja bem-vindo!")
+                  .pauseFor(2500)
+                  .deleteAll()
+                  .typeString("Seja bem-vindo!")
+                  .pauseFor(2500)
+                  .start();
+              }}
+            />
+          </strong>
         </p>
         <ul
           id="social-container"
