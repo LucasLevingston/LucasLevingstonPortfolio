@@ -9,6 +9,8 @@ import CRM3 from "../assets/CRM3.png";
 import CM1 from "../assets/CampoMinado1.jpg";
 import CM2 from "../assets/CampoMinado2.jpg";
 import CM3 from "../assets/CampoMinado3.jpg";
+import CALC1 from "../assets/Calc1.jpg";
+import CALC2 from "../assets/Calc2.jpg";
 import MP1 from "../assets/MP1.png";
 import MP2 from "../assets/MP2.png";
 import MP3 from "../assets/MP3.png";
@@ -36,6 +38,13 @@ const projetos: Project[] = [
     images: [MP1, MP2, MP3],
     link: "https://github.com/LucasLevingston/LucasLevingstonPortifolio",
   },
+  {
+    name: "Calculadora",
+    sobre:
+      "Calculadora em Java utilizando o padrão Observer e orientação a objetos, com interface gráfica Swing e suporte para adição, subtração, multiplicação e divisão. Aplicação modular e interativa, atualizando a tela em tempo real. Exemplo de código organizado e habilidades em desenvolvimento Java.",
+    images: [CALC1, CALC2],
+    link: "https://github.com/LucasLevingston/Calculadora.git",
+  },
 ];
 
 export default function Projects() {
@@ -52,10 +61,7 @@ export default function Projects() {
           rel="noopener noreferrer"
         >
           <FaShareAltSquare className="text-[18px]  ml-[2px] max-w-[20px]  text-mainTextColor" />
-          <span className="flex-[1_1_0]  text-mainTextColor  ">
-            {" "}
-            Ver GitHub
-          </span>
+          <span className="flex-[1_1_0]  text-mainTextColor  ">Ver GitHub</span>
         </a>
         <h2
           className="border-t border-solid pt-5 text-mainTextColor border-mainTextColor mb-0 text-2xl"

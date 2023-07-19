@@ -27,7 +27,7 @@ export default function ProjectsComponents(projeto: Project) {
   return (
     <div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[10px] sm:p-0 bg-aboutBgColor border-b-[1px]  border-solid  border-borderColor">
       <h1 className="text-bold text-mainColor pb-1 text-2xl  pt-5">
-        <p className="text-none max-w-[225px]  hover:text-mainTextColor">
+        <p className="text-none max-w-[225px]">
           <Typewriter
             onInit={(typewriter) => {
               typewriter.typeString(projeto.name).start();

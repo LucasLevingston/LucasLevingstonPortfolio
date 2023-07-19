@@ -22,22 +22,20 @@ export default function Sidebar() {
         Olá, meu nome é Lucas Levingston e sou{" "}
         <span className="text-mainColor">
           {" "}
-          <span className="text-mainColor">
-            <TypewriterClass
-              onInit={(typewriter) => {
-                typewriter
+          <TypewriterClass
+            onInit={(typewriter) => {
+              typewriter
 
-                  .typeString("Desenvolvedor Frond-End.")
-                  .pauseFor(5000)
-                  .deleteChars(10)
-                  .typeString("Back-End.")
-                  .pauseFor(5000)
-                  .deleteChars(9)
-                  .typeString("Full-Stack.")
-                  .start();
-              }}
-            />
-          </span>
+                .typeString("Desenvolvedor Frond-End.")
+                .pauseFor(5000)
+                .deleteChars(10)
+                .typeString("Back-End.")
+                .pauseFor(5000)
+                .deleteChars(9)
+                .typeString("Full-Stack.")
+                .start();
+            }}
+          />
         </span>
         <p className="font-bold p-[25px] text-mainTextColor ">
           <strong>Seja bem-vindo!</strong>
