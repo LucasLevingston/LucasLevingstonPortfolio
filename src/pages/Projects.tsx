@@ -11,6 +11,7 @@ import CM2 from "../assets/CampoMinado2.jpg";
 import CM3 from "../assets/CampoMinado3.jpg";
 import CALC1 from "../assets/Calc1.jpg";
 import CALC2 from "../assets/Calc2.jpg";
+import CALC3 from "../assets/Calc3.jpg";
 import MP1 from "../assets/MP1.png";
 import MP2 from "../assets/MP2.png";
 import MP3 from "../assets/MP3.png";
@@ -42,7 +43,7 @@ const projetos: Project[] = [
     name: "Calculadora",
     sobre:
       "Calculadora em Java utilizando o padrão Observer e orientação a objetos, com interface gráfica Swing e suporte para adição, subtração, multiplicação e divisão. Aplicação modular e interativa, atualizando a tela em tempo real. Exemplo de código organizado e habilidades em desenvolvimento Java.",
-    images: [CALC1, CALC2],
+    images: [CALC1, CALC2, CALC3],
     link: "https://github.com/LucasLevingston/Calculadora.git",
   },
 ];
