@@ -50,7 +50,7 @@ export default function Navbar() {
         </li>
         <li className="mx-0">
           <Link
-            className={`hover:bg-transparent flex-start text-center hover:text-mainTextColor ${colorHome} border-[2px] border-mainColor rounded-[3px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_12px] w-[75px] text-center flex content-between`}
+            className={`hover:bg-transparent flex-start text-center hover:text-mainTextColor font-bold ${colorHome} border-[2px] border-mainColor rounded-[3px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_12px] w-[72px] text-center flex content-between`}
             to="/"
             onClick={corHome}
           >
@@ -60,7 +60,7 @@ export default function Navbar() {
         </li>
         <li className="mx-0">
           <Link
-            className={`hover:bg-transparent mx-auto font-bold text-[16px] hover:text- ${colorProjects} hover:text-mainTextColor border-[2px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_5px] w-[80px] text-center flex`}
+            className={`hover:bg-transparent mx-auto font-bold text-[16px] hover:text- ${colorProjects} hover:text-mainTextColor border-[2px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_7px] w-[80px] text-center flex`}
             to="/projetos"
             onClick={corProjects}
           >

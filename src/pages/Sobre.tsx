@@ -38,13 +38,15 @@ export default function Home() {
             </span>
           </a>
           <h2
-            className="border-t-[1px]  border-solid pt-10 border-mainTextColor mb-5 text-[32px]"
+            className="border-t-[1px] font-bold border-solid pt-10 border-mainTextColor mb-5 text-[32px]"
             id="skills-section-title"
           >
             Minhas Skills
           </h2>
-          <div className="border-b-[1px]  border-solid pt-3 border-borderColor">
-            <p className="text-2xl ">Conheça as tecnologias que domino:</p>
+          <div className="border-b-[1px]  border-solid pt-3  border-borderColor">
+            <p className="text-2xl font-bold ">
+              Conheça as tecnologias que domino:
+            </p>
             <div className="flex flex-wrap mt-5" id="skills-container">
               <div className="w-full  sm:w-[33%] mb-8">
                 <p className="text-xl  mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
@@ -95,9 +97,11 @@ export default function Home() {
             </div>
           </div>
           <div className="border-b-[1px]  border-solid pt-3 border-borderColor">
-            <div className="text-2xl pb-2  pt-5  ">Minhas experiências:</div>
+            <div className="text-2xl pb-2  pt-5 font-bold ">
+              Minhas experiências:
+            </div>
             <div className=" xl:pb-3">
-              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
+              <h3 className="text-xl  sm:border-l-[5px] font-bold border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
                 Splendore - Patos, PB (atual)
               </h3>
               <p className=" pl-10 pt-3">Inicio: 06/2023</p>
@@ -106,7 +110,7 @@ export default function Home() {
               </p>
             </div>
             <div className="pt-5">
-              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
+              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] font-bold border-mainColor pl-3 xl:border-l-[5px]">
                 EndoDerm - Patos, PB
               </h3>
               <p className=" pl-10 pt-3">Inicio: 06/2022 - Fim: 10/2022</p>
@@ -116,9 +120,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="text-2xl pb-2  pt-5 ">Formação:</div>
+            <div className="text-2xl pb-2  pt-5 font-bold ">Formação:</div>
             <div className=" xl:pb-3">
-              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
+              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] font-bold border-mainColor pl-3 xl:border-l-[5px]">
                 Graduação em Ciências da Computação
               </h3>
               <p className=" pl-10 pt-3">
@@ -129,7 +133,7 @@ export default function Home() {
               </p>
             </div>
             <div className="pt-5">
-              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] border-mainColor pl-3 xl:border-l-[5px]">
+              <h3 className="text-xl  sm:border-l-[5px] border-l-[5px] font-bold border-mainColor pl-3 xl:border-l-[5px]">
                 Graduação em Engenharia Civil
               </h3>
               <p className=" pl-10 pt-3">

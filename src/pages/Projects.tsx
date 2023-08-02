@@ -15,36 +15,45 @@ import CALC3 from "../assets/Calc3.jpg";
 import MP1 from "../assets/MP1.png";
 import MP2 from "../assets/MP2.png";
 import MP3 from "../assets/MP3.png";
+import F1 from "../assets/Flexibble1.jpg";
+import F2 from "../assets/Flexibble2.jpg";
+import F3 from "../assets/Flexibble3.jpg";
 
 const projetos: Project[] = [
+  // {
+  //   name: "CRM",
+  //   sobre:
+  //     "Este projeto está sendo desenvolvido no estágio. É um sistema de CRM, responsável pela integração dos dados obtidos pelos vendedores e armazenando os mesmos no banco de dados mongoDB com uma automação de envio de mensagens de texto para vendas, desde a entrada de dados de um cliente utilizando uma interface desenvolvida em React até a automação do envio de mensagens de WhatsApp. Javascript é a linguagem utilizada tanto no frontend quanto no backend, usando React e Node (com Express) respectivamente. Também foi utilizada a biblioteca Tailwind. Eu juntamente com minha equipe também entramos na área de Engenharia para desenvolvimento do projeto, utilizando diagrama de casos de uso, diagrama de classe, etc.",
+  //   images: [CRM1, CRM2, CRM3],
+  // },
   {
-    name: "CRM",
+    name: "Flexibble",
     sobre:
-      "Este projeto está sendo desenvolvido no estágio. É um sistema de CRM, responsável pela integração dos dados obtidos pelos vendedores e armazenando os mesmos no banco de dados mongoDB com uma automação de envio de mensagens de texto para vendas, desde a entrada de dados de um cliente utilizando uma interface desenvolvida em React até a automação do envio de mensagens de WhatsApp. Javascript é a linguagem utilizada tanto no frontend quanto no backend, usando React e Node (com Express) respectivamente. Também foi utilizada a biblioteca Tailwind. Eu juntamente com minha equipe também entramos na área de Engenharia para desenvolvimento do projeto, utilizando diagrama de casos de uso, diagrama de classe, etc.",
-    images: [CRM1, CRM2, CRM3],
-    link: "",
+      "O Flexibble é uma aplicação web que tem como objetivo ser uma plataforma colaborativa para entusiastas da programação mostrarem, colaborarem e descobrirem projetos de programação empolgantes. Construído utilizando tecnologias de ponta, incluindo Next.js 13, GraphQL, GrafBase, Tailwind CSS, React e TypeScript, o Flexibble proporciona uma experiência de usuário perfeita e interativa.",
+    images: [F3, F2, F1],
+    github: "https://github.com/LucasLevingston/grafbase_Flexibble",
+    link: "https://flexibble-nexjs13.vercel.app/",
   },
   {
     name: "Campo Minado",
     sobre:
       "Campo minado foi um projeto na linguagem Java de um jogo já existente, onde o objetivo do jogo é o usuário abrir todos os campos do jogo sem abrir nenhum campo que esteja minado, caso ele abra, irá perder o jogo. Para a abertura de campos, utilizei o padrão observer. Quando tem um campo que esteja minado, os campos vizinhos irão avisar que tem entre 1 e 4 campos minados dentre os seus vizinhos. Com isso, abrindo campo por campo, até completar o jogo. Na parte gráfica utilizei o Jbutton, onde cada campo representa um botão. Utilizei a biblioteca do JUnit para os testes da aplicação.",
     images: [CM1, CM2, CM3],
-
-    link: "https://github.com/LucasLevingston/Campo_Minado",
+    github: "https://github.com/LucasLevingston/Campo_Minado",
   },
   {
     name: "Meu Portfólio ",
     sobre:
       "Como forma de aprendizado, desenvolvi meu portfólio  utilizando o framework React. Utilizando a linguagem TypeScript e o Tailwind CSS para estilização. Foi meu primeiro contato com React e o pontapé para projetos futuros.",
     images: [MP1, MP2, MP3],
-    link: "https://github.com/LucasLevingston/LucasLevingstonPortifolio",
+    github: "https://github.com/LucasLevingston/LucasLevingstonPortifolio",
   },
   {
     name: "Calculadora",
     sobre:
       "Calculadora em Java utilizando o padrão Observer e orientação a objetos, com interface gráfica Swing e suporte para adição, subtração, multiplicação e divisão. Aplicação modular e interativa, atualizando a tela em tempo real. Exemplo de código organizado e habilidades em desenvolvimento Java.",
     images: [CALC1, CALC2, CALC3],
-    link: "https://github.com/LucasLevingston/Calculadora.git",
+    github: "https://github.com/LucasLevingston/Calculadora.git",
   },
 ];
 
@@ -78,6 +87,7 @@ export default function Projects() {
               sobre={projeto.sobre}
               images={projeto.images}
               link={projeto.link}
+              github={projeto.github}
             />
           ))}
         </div>

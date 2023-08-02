@@ -1,10 +1,10 @@
 import React from "react";
 import fotoCurriculo from "../assets/FotoCurriculo.jpg";
-import { BsInstagram, BsJournalText } from "react-icons/bs";
+import { BsGithub, BsInstagram, BsJournalText } from "react-icons/bs";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail, AiFillPhone } from "react-icons/ai";
 import Navbar from "./Navbar";
-import TypewriterClass from "typewriter-effect";
+import Typewriter from "typewriter-effect";
 
 export default function Sidebar() {
   return (
@@ -18,14 +18,17 @@ export default function Sidebar() {
         src={fotoCurriculo}
         alt="Lucas Levingston"
       />
-      <p className=" max-w-[100%]  p-3 text-center  mx-auto text-bioBorderColor">
+      <p className=" max-w-[100%]  font-bold p-3 text-center  mx-auto text-bioBorderColor">
         Olá, meu nome é Lucas Levingston e sou{" "}
         <span className="text-mainColor">
           {" "}
-          <TypewriterClass
+          <Typewriter
             onInit={(typewriter) => {
               typewriter
-                .typeString("Desenvolvedor Frond-End.")
+                .typeString("Desenvolvedor Full-Stack.")
+                .pauseFor(5000)
+                .deleteChars(11)
+                .typeString("Frond-End.")
                 .pauseFor(5000)
                 .deleteChars(10)
                 .typeString("Back-End.")
@@ -37,19 +40,33 @@ export default function Sidebar() {
           />
         </span>
       </p>
-      <p className="font-bold p-[25px] text-mainTextColor ">Seja bem-vindo!</p>
+      <p className="font-bold p-[25px] text-mainTextColor ">
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString("Seja bem-vindo!")
+              .pauseFor(2500)
+              .deleteAll()
+              .typeString("Seja bem-vindo!")
+              .pauseFor(2500)
+              .deleteAll()
+              .typeString("Seja bem-vindo!")
+              .pauseFor(2500)
+              .start();
+          }}
+        />
+      </p>
       <ul
         id="social-container"
         className="w-[200px]  flex items-center mx-auto list-none border-b-[1px] border-solid mb-[25px] pb-[25px]"
       >
-        <li className="max-w-[60px]  mx-auto">
+        <li className="max-w-[60px] mx-auto">
           <a
             className="text-[30px] text-mainColor hover:text-mainColor"
-            href="https://www.instagram.com/lucaolevingston/?hl=pt-br"
+            href="https://github.com/LucasLevingston"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            <BsInstagram />
+            <BsGithub />
           </a>
         </li>
         <li className="max-w-[60px] mx-auto">
@@ -60,6 +77,16 @@ export default function Sidebar() {
             rel="noopener noreferrer"
           >
             <FaLinkedin />
+          </a>
+        </li>
+        <li className="max-w-[60px]  mx-auto">
+          <a
+            className="text-[30px] text-mainColor hover:text-mainColor"
+            href="https://www.instagram.com/lucaolevingston/?hl=pt-br"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsInstagram />
           </a>
         </li>
         <li className="max-w-[60px]  mx-auto">
@@ -85,14 +112,10 @@ export default function Sidebar() {
       <div id="phone-container" className="flex justify-center pt-4 w-full ">
         <AiFillPhone className="text-[25px]   mr-[5px] max-w-[20px] text-mainColor" />
         <p className="text-none max-w-[225px]  hover:text-mainTextColor">
-          <TypewriterClass
-            onInit={(typewriter) => {
-              typewriter.typeString("(83) 99961-6220").start();
-            }}
-          />
+          (83) 99961-6220
         </p>
       </div>
-      {/* download curriculo */}
+
       <div className="flex justify-center w-full">
         <a
           className="hover:bg-transparent font-bold text-[13px] bg-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] w-[150px]  text-center flex"

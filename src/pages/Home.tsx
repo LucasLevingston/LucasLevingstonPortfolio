@@ -1,6 +1,6 @@
 import React from "react";
 import fotoCurriculo from "../assets/FotoCurriculo.jpg";
-import { BsInstagram, BsJournalText } from "react-icons/bs";
+import { BsGithub, BsInstagram, BsJournalText } from "react-icons/bs";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { AiFillPhone, AiOutlineMail } from "react-icons/ai";
 import Navbar from "../components/Navbar";
@@ -20,19 +20,15 @@ export default function Home() {
           alt="Lucas Levingston"
         />
         <p className="max-w-[100%] min-h- p-3 text-center mx-auto text-bioBorderColor">
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("Olá, meu nome é Lucas Levingston e sou")
-                .start();
-            }}
-          />
+          Olá, meu nome é Lucas Levingston e sou
           <span className="text-mainColor">
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
-                  .pauseFor(6000)
-                  .typeString("Desenvolvedor Frond-End.")
+                  .typeString("Desenvolvedor Full-Stack.")
+                  .pauseFor(5000)
+                  .deleteChars(11)
+                  .typeString("Front-End.")
                   .pauseFor(5000)
                   .deleteChars(10)
                   .typeString("Back-End.")
@@ -69,10 +65,10 @@ export default function Home() {
           <li className="max-w-[60px] mx-auto">
             <a
               className="text-[30px] text-mainColor hover:text-mainColor"
-              href="https://www.instagram.com/lucaolevingston/?hl=pt-br"
+              href="https://github.com/LucasLevingston"
               target="_blank"
             >
-              <BsInstagram />
+              <BsGithub />
             </a>
           </li>
           <li className=" max-w-[60px] mx-auto">
@@ -82,6 +78,15 @@ export default function Home() {
               target="_blank"
             >
               <FaLinkedin />
+            </a>
+          </li>
+          <li className="max-w-[60px] mx-auto">
+            <a
+              className="text-[30px] text-mainColor hover:text-mainColor"
+              href="https://www.instagram.com/lucaolevingston/?hl=pt-br"
+              target="_blank"
+            >
+              <BsInstagram />
             </a>
           </li>
           <li className=" max-w-[60px] mx-auto">
@@ -106,11 +111,7 @@ export default function Home() {
         <div id="phone-container" className="flex justify-center pt-4 w-full ">
           <AiFillPhone className="text-[25px]   mr-[5px] max-w-[20px] text-mainColor" />
           <p className="text-none max-w-[225px]  hover:text-mainTextColor">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter.typeString("(83) 99961-6220").start();
-              }}
-            />
+            (83) 99961-6220
           </p>
         </div>
         <div className="flex justify-center w-[100%]">

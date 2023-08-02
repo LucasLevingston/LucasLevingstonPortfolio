@@ -1,5 +1,5 @@
 import React from "react";
-import TypewriterClass from "typewriter-effect";
+import Typewriter from "typewriter-effect";
 
 export default function Header() {
   return (
@@ -8,18 +8,20 @@ export default function Header() {
         className="text-left min-w-[50%] bg-aboutBgColor"
         id="about-container "
       >
-        <h1 className="text-4xl mb-[15px] text-bioBorderColor">
+        <h1 className="text-4xl mb-[15px] font-bold text-bioBorderColor">
           Lucas Levingston
         </h1>
         <p
           className="text-[20px] mb-[15px] font-bold text-mainColor"
           id="title"
         >
-          <TypewriterClass
+          <Typewriter
             onInit={(typewriter) => {
               typewriter
-
-                .typeString("Desenvolvedor Frond-End")
+                .typeString("Desenvolvedor Full-Stack")
+                .pauseFor(5000)
+                .deleteChars(10)
+                .typeString("Front-End")
                 .pauseFor(5000)
                 .deleteChars(9)
                 .typeString("Back-End")
