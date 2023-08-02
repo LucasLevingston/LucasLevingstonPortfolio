@@ -73,12 +73,14 @@ export default function Home() {
 									Front-End Frameworks
 								</p>
 								<i className="devicon-react-plain colored text-4xl mr-2 ml-3"></i>
+								<i className="devicon-nextjs-original-wordmark text-4xl mr-2 ml-3"></i>
 							</div>
 							<div className="w-full  sm:w-[33%] mb-8">
 								<p className="text-xl   mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
 									Back-End Frameworks
 								</p>
 								<i className="devicon-express-original text-4xl mr-2 ml-3"></i>
+								<i className="devicon-graphql-plain-wordmark colored text-4xl mr-2 ml-3"></i>
 							</div>
 							<div className="w-full  sm:w-[33%] mb-8">
 								<p className="text-xl   mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
