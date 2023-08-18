@@ -11,7 +11,7 @@ export default function Home() {
 				<Header />
 				<div className="overflow-y-auto">
 					<p className="max-w-[100%] m m-[5px] ">
-						Tenho 20 anos, sou estudante do sexto período de ciência da computação e sou
+						Tenho 20 anos, sou estudante do sétimo período de ciência da computação e sou
 						desenvolvedor FullStack. Gosto de participar de projetos desde a{' '}
 						<span className="text-mainColor">
 							definição das regras de negócio e levantamento de requisitos{' '}
