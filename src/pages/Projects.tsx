@@ -3,9 +3,9 @@ import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectsComponents, { Project } from '../components/ProjectsComponents';
 import { FaShareAltSquare } from 'react-icons/fa';
-import CRM1 from '../assets/CRM1.png';
-import CRM2 from '../assets/CRM2.png';
-import CRM3 from '../assets/CRM3.png';
+import SP1 from '../assets/SPOTIFY1.png';
+import SP2 from '../assets/SPOTIFY2.png';
+import SP3 from '../assets/SPOTIFY3.png';
 import CM1 from '../assets/CampoMinado1.jpg';
 import CM2 from '../assets/CampoMinado2.jpg';
 import CM3 from '../assets/CampoMinado3.jpg';
@@ -20,12 +20,14 @@ import F2 from '../assets/Flexibble2.jpg';
 import F3 from '../assets/Flexibble3.jpg';
 
 const projetos: Project[] = [
-	// {
-	//   name: "CRM",
-	//   sobre:
-	//     "Este projeto está sendo desenvolvido no estágio. É um sistema de CRM, responsável pela integração dos dados obtidos pelos vendedores e armazenando os mesmos no banco de dados mongoDB com uma automação de envio de mensagens de texto para vendas, desde a entrada de dados de um cliente utilizando uma interface desenvolvida em React até a automação do envio de mensagens de WhatsApp. Javascript é a linguagem utilizada tanto no frontend quanto no backend, usando React e Node (com Express) respectivamente. Também foi utilizada a biblioteca Tailwind. Eu juntamente com minha equipe também entramos na área de Engenharia para desenvolvimento do projeto, utilizando diagrama de casos de uso, diagrama de classe, etc.",
-	//   images: [CRM1, CRM2, CRM3],
-	// },
+	{
+		name: 'Spotify Clone',
+		sobre:
+			'Spotify Clone foi um projeto desenvolvido com Next.js 13, React e Supabase para a base de dados PostgreSQL. Implementei autenticação, integração com o Stripe e utilizei Tailwind CSS para a estilização. Tudo foi construído com TypeScript, garantindo um sistema eficiente e escalável.',
+		images: [SP2, SP3, SP1],
+		github: 'https://github.com/LucasLevingston/spotify-clone',
+		link: 'https://spotify-nextjs13.vercel.app/',
+	},
 	{
 		name: 'Flexibble',
 		sobre:
