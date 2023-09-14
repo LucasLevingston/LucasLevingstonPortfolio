@@ -18,8 +18,19 @@ import MP3 from '../assets/MP3.png';
 import F1 from '../assets/Flexibble1.jpg';
 import F2 from '../assets/Flexibble2.jpg';
 import F3 from '../assets/Flexibble3.jpg';
+import T1 from '../assets/threads1.png';
+import T2 from '../assets/threads2.png';
+import T3 from '../assets/threads3.png';
 
 const projetos: Project[] = [
+	{
+		name: 'Threads Clone',
+		sobre:
+			'O Theads clone é um projeto desenvolvido com React, Next JS, TypeScript, MongoDB. Consiste em um clone do aplicativo Threads.',
+		images: [T1, T2, T3],
+		github: 'https://github.com/LucasLevingston/threads_app',
+		link: 'https://threads-app-nextjs13.vercel.app/',
+	},
 	{
 		name: 'Spotify Clone',
 		sobre:
