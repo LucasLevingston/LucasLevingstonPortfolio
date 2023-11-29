@@ -2,6 +2,8 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import { FaShareAltSquare } from "react-icons/fa";
+import { DiScrum } from "react-icons/di";
+import { SiPostman } from "react-icons/si";
 
 export default function Home() {
   return (
@@ -10,20 +12,19 @@ export default function Home() {
       <div className="flex-1 p-[50px]  sm:max-w-[75%] ml-auto mr-0 bg-aboutBgColor">
         <Header />
         <div className="overflow-y-auto">
-          <p className="max-w-[100%] m m-[5px] ">
+          <p className="max-w-[100%]  ">
             Sou um desenvolvedor apaixonado pelo que faço. Costumo dizer que
             “quem faz o que gosta vive de férias”. Por isso estou sempre
             querendo aprender algo novo que me ajude a ser um desenvolvedor cada
-            vez melhor.{" "}
-            <span className="text-mainColor">
-              Estou com 6 meses de experiência{" "}
-            </span>
-            e já atuei tanto no back end como no front end, utilizando{" "}
+            vez melhor. Estou com
+            <span className="text-mainColor"> 6 meses de experiência </span>e já
+            atuei tanto no back end como no front end, utilizando{" "}
             <span className="text-mainColor">
               {" "}
               React, Typescript, Tailwind, Mongo, Prisma, Express e Docker.
             </span>
           </p>
+          <br />
           <p className="max-w-[100%] mb-4 ">
             Atualmente estou atuando como estagiário na empresa Splendore, na
             qual desempenho a função de{" "}
@@ -60,7 +61,6 @@ export default function Home() {
                 <i className="devicon-typescript-plain colored text-4xl mr-2"></i>
                 <i className="devicon-java-plain colored text-4xl mr-2 "></i>
                 <i className="devicon-python-plain colored text-4xl mr-2"></i>
-                <i className="devicon-nodejs-plain colored text-4xl mr-2"></i>
               </div>
 
               <div className="w-full  sm:w-[33%] mb-8">
@@ -85,13 +85,24 @@ export default function Home() {
                 <i className="devicon-mysql-plain colored text-4xl mr-2"></i>
                 <i className="devicon-mongodb-plain colored text-4xl mr-2"></i>
               </div>
-              <div className="w-full  sm:w-[33%] mb-8">
-                <p className="text-xl   mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
+              <div className="w-full  sm:w-[33%] mb-8 ">
+                <p className="text-xl mb-4 font-bold pl-2 flex border-l-[5px] border-solid border-mainColor">
                   Ferramentas
                 </p>
-                <i className="devicon-docker-plain-wordmark colored text-4xl mr-2 ml-3"></i>
-                <i className="devicon-git-plain-wordmark colored colored text-4xl mr-2 ml-3"></i>
-                <i className="devicon-github-original-wordmark text-4xl mr-2 ml-3"></i>
+                <div className="flex">
+                  <i className="devicon-docker-plain-wordmark colored text-4xl mr-2 ml-3"></i>
+                  <i className="devicon-git-plain-wordmark colored text-4xl mr-2 ml-3"></i>
+                  <i className="devicon-github-original-wordmark text-4xl mr-2 ml-3"></i>
+                  <SiPostman className="text-4xl mr-2 ml-3 " />
+                </div>
+              </div>
+              <div className="w-full  sm:w-[33%] mb-8">
+                <p className="text-xl   mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
+                  Metodologias Ágeis{" "}
+                </p>
+                <div className="flex">
+                  <DiScrum className=" colored text-5xl mr-2 ml-3" />
+                </div>
               </div>
             </div>
           </div>
