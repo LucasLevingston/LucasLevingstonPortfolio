@@ -7,7 +7,7 @@ import { SiPostman } from "react-icons/si";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col sm:flex-row h-full text-mainTextColor">
+    <div className=" text-mainTextColor">
       <Sidebar />
       <div className="flex-1 p-[50px]  sm:max-w-[75%] ml-auto mr-0 bg-aboutBgColor">
         <Header />
