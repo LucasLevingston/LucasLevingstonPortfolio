@@ -9,7 +9,7 @@ import Typewriter from 'typewriter-effect';
 export default function Home() {
 	return (
 		<div className="flex flex-col ">
-			<div className="flex-[1_1_80%] text-center min-h-[100vh] items-center text-mainTextColor pt-8 bg-bioBgColor p-[30px_12px] hover:no-underline">
+			<div className="flex-[1_1_80%] no-scrollbar text-center min-h-[100vh] items-center text-mainTextColor pt-8 bg-bioBgColor p-[30px_12px] hover:no-underline">
 				<h2 className="text-[32px] mb-4 font-bold text-bioBorderColor text-center">
 					Lucas Levingston
 				</h2>

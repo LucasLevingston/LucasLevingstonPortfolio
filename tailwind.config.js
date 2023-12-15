@@ -13,5 +13,21 @@ export default {
       transparent: "transparent",
     },
   },
-  plugins: [],
+  plugins: [ 
+    require('tailwind-scrollbar')({ nocompatible: true }),
+    function ({ addUtilities }){
+      const newUtilities = {
+        ".no-scrollbar::-webkit-scrollbar":{
+          display: "none",
+        },
+        ".no-scrollbar":{
+          '-ms-overflow-style':"none",
+          'scrollbar-width':'none'
+        }
+
+      }
+      addUtilities(newUtilities)
+    }
+],
+
 };
