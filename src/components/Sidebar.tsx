@@ -8,7 +8,7 @@ import Typewriter from 'typewriter-effect';
 
 export default function Sidebar() {
 	return (
-		<div className="no-underline hover:no-underline flex flex-col  sm:fixed text-center sm:min-h-screen h-full sm:w-1/4 w-full items-center text-mainTextColor bg-bioBgColor border-r-[0px] p-[20px_12px] md:border-r-[5px]  ">
+<div className="no-underline hover:no-underline sm:overflow-y-auto scrollbar no-scrollbar flex flex-col sm:fixed text-center sm:min-h-screen h-full sm:w-full md:w-1/4 items-center text-mainTextColor bg-bioBgColor p-[20px_12px] md:border-r-[5px]">
 			<h1 className="text-[32px]  pt-0  mb-4 font-bold text-bioBorderColor">
 				Lucas Levingston
 			</h1>

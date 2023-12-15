@@ -7,7 +7,7 @@ import { SiPostman } from "react-icons/si";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col sm:flex-row h-full text-mainTextColor">
+    <div className=" text-mainTextColor">
       <Sidebar />
       <div className="flex-1 p-[50px]  sm:max-w-[75%] ml-auto mr-0 bg-aboutBgColor">
         <Header />
@@ -69,7 +69,7 @@ export default function Home() {
                 </p>
                 <i className="devicon-react-plain colored text-4xl mr-2 ml-3"></i>
                 <i className="devicon-tailwindcss-plain colored text-4xl "></i>
-                <i className="devicon-nextjs-original-wordmark text-4xl mr-2 ml-3"></i>
+                <i className="devicon-nextjs-original text-4xl mr-2 ml-3"></i>
               </div>
               <div className="w-full  sm:w-[33%] mb-8">
                 <p className="text-xl   mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">

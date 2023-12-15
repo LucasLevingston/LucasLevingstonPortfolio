@@ -38,10 +38,10 @@ if (window.location.pathname === "/sobre") {
 export default function Navbar() {
   return (
     <div className="">
-      <ul className="flex justify-center list-none text-center gap-3">
+      <ul className="flex justify-center list-none text-center md:flex-col lg:flex-row  gap-3">
         <li className="mx-0">
           <Link
-            className={`hover:bg-transparent font-bold  text-[16px] hover:text-mainTextColor ${colorSobre} border-[2px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_14px] w-[80px] text-center flex`}
+            className={`hover:bg-transparent font-bold  text-[16px] hover:text-mainTextColor ${colorSobre} border-[2px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0]  p-[12px_15px] w-[80px] md:my-1 text-center flex`}
             to="/sobre"
             onClick={corSobre}
           >
@@ -50,7 +50,7 @@ export default function Navbar() {
         </li>
         <li className="mx-0">
           <Link
-            className={`hover:bg-transparent flex-start text-center hover:text-mainTextColor font-bold ${colorHome} border-[2px] border-mainColor rounded-[3px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_12px] w-[72px] text-center flex content-between`}
+            className={`hover:bg-transparent flex-start text-center hover:text-mainTextColor font-bold ${colorHome} border-[2px] border-mainColor rounded-[3px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_12px] w-[72px] md:my-1 text-center flex content-between`}
             to="/"
             onClick={corHome}
           >
@@ -60,7 +60,7 @@ export default function Navbar() {
         </li>
         <li className="mx-0">
           <Link
-            className={`hover:bg-transparent mx-auto font-bold text-[16px] hover:text- ${colorProjects} hover:text-mainTextColor border-[2px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_7px] w-[80px] text-center flex`}
+            className={`hover:bg-transparent mx-auto font-bold text-[16px] hover:text- ${colorProjects} hover:text-mainTextColor border-[2px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_7px] md:my-1 w-[80px] text-center flex`}
             to="/projetos"
             onClick={corProjects}
           >
