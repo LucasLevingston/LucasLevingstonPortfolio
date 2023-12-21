@@ -89,7 +89,6 @@ export default function Projects() {
         <a
           className="hover:bg-transparent font-bold text-[13px] bg-mainColor text-mainTextColor hover:text-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] ] w-[150px] text-center flex"
           href="https://github.com/LucasLevingston"
-          id="btn-projects"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -98,7 +97,6 @@ export default function Projects() {
         </a>
         <h2
           className="border-t border-solid pt-5 text-mainTextColor border-mainTextColor mb-0 text-2xl"
-          id="skills-section-title"
         >
           Meus Projetos
         </h2>
