@@ -30,7 +30,7 @@ const projetos: Project[] = [
     images: [T1, T2, T3],
     github: "https://github.com/LucasLevingston/threads_app",
     link: "https://threads-app-nextjs13.vercel.app/",
-    tecnologias: ["react", "typescript", "nextjs", "tailwindcss", "mongodb", "git", "github",]
+    tecnologias: ["react", "typescript", "nextjs", "tailwindcss", "mongodb", "git", "github"]
   },
   {
     name: "Spotify Clone",
@@ -84,12 +84,11 @@ export default function Projects() {
   return (
     <div className="flex flex-col sm:flex-row w-full bg-aboutBgColor h-full">
       <Sidebar />
-      <div className="flex flex-col sm:max-w-[75%] sm:w-full  ml-auto mr-0 p-4 lg:p-12 pb-0  bg-aboutBgColor">
+      <div id="Projects" className="flex flex-col sm:max-w-[75%] sm:w-full  ml-auto mr-0 p-4 lg:p-12 pb-0  bg-aboutBgColor">
         <Header />
         <a
           className="hover:bg-transparent font-bold text-[13px] bg-mainColor text-mainTextColor hover:text-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] ] w-[150px] text-center flex"
           href="https://github.com/LucasLevingston"
-          id="btn-projects"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -98,7 +97,6 @@ export default function Projects() {
         </a>
         <h2
           className="border-t border-solid pt-5 text-mainTextColor border-mainTextColor mb-0 text-2xl"
-          id="skills-section-title"
         >
           Meus Projetos
         </h2>

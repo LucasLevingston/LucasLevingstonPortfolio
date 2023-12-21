@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className=" text-mainTextColor">
       <Sidebar />
-      <div className="flex-1 p-[50px]  sm:max-w-[75%] ml-auto mr-0 bg-aboutBgColor">
+      <div id="Sobre" className="flex-1 p-[50px]  sm:max-w-[75%] ml-auto mr-0 bg-aboutBgColor">
         <Header />
         <div className="overflow-y-auto">
           <p className="max-w-[100%]  ">
@@ -33,7 +33,6 @@ export default function Home() {
           <a
             className="hover:bg-transparent font-bold text-[13px] bg-mainColor hover:text-mainColor border-[3px] border-mainColor rounded-[5px] border-solid no-underline transition-[0.5s] m-[25px_0] p-[12px_10px] ] w-[150px] text-center flex"
             href="https://github.com/LucasLevingston"
-            id="btn-projects"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -42,7 +41,6 @@ export default function Home() {
           </a>
           <h2
             className="border-t-[1px] font-bold border-solid pt-10 border-mainTextColor mb-5 text-[32px]"
-            id="skills-section-title"
           >
             Minhas Skills
           </h2>
@@ -50,7 +48,7 @@ export default function Home() {
             <p className="text-2xl font-bold ">
               Conheça as tecnologias que domino:
             </p>
-            <div className="flex flex-wrap mt-5" id="skills-container">
+            <div className="flex flex-wrap mt-5">
               <div className="w-full  sm:w-[33%] mb-8">
                 <p className="text-xl  mb-4 font-bold pl-2 border-l-[5px] border-solid border-mainColor">
                   Linguagens de programação
