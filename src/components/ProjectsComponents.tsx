@@ -26,7 +26,7 @@ export default function ProjectsComponents(projeto: Project) {
 		setCurrentIndex(newIndex);
 	};
 	return (
-		<div className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[10px] sm:p-0 bg-aboutBgColor border-b-[1px]  border-solid  border-borderColor">
+		<div id="Projects component" className="text-mainTextColor flex flex-[1_1_80%] flex-col p-[10px] sm:p-0 bg-aboutBgColor border-b-[1px]  border-solid  border-borderColor">
 			<div>
 
 				<h1 className="text-mainColor pb-1 text-2xl pt-5 text-none max-w-[225px] font-bold">
@@ -41,23 +41,29 @@ export default function ProjectsComponents(projeto: Project) {
 			</div>
 
 			<div>
-				<p  className="text-xl max-w-[225px] font-bold">
-					Tecnologias Utilizadas:
-				</p>
-				<br />
-				<div className='flex'>
+  <p className="text-xl max-w-[225px] font-bold">
+    Tecnologias Utilizadas:
+  </p>
+  <br />
+  <div className="flex flex-wrap w-full">
+    {projeto.tecnologias.map((tecnologia: string, index: number) => (
+		tecnologia === "nextjs"?  <div
+        key={tecnologia}
+        className={"devicon-nextjs-original  text-[200%] mr-2 ml-3"}
+        style={{ marginBottom: (index + 1) % 6 === 0 ? "1rem" : 0 }}
+      >
+      </div> :
+      <div
+        key={tecnologia}
+        className={`devicon-${tecnologia === "github" ? "github-original" :
+														 `${tecnologia}-plain colored`} text-[200%] mr-2 ml-3`}
+        style={{ marginBottom: (index + 1) % 6 === 0 ? "1rem" : 0 }}
+      >
+      </div>
+    ))}
+  </div>
+</div>
 
-				{projeto.tecnologias.map((tecnologia: string) => (
-					tecnologia === "nextjs" ? (
-						<div key={tecnologia} className={`devicon-${tecnologia}-original  text-4xl mr-2 ml-3`}>
-				</div>
-					) : (
-						<div key={tecnologia} className={`devicon-${tecnologia === "github" ? "github-original" : `${tecnologia}-plain colored`}  text-4xl mr-2 ml-3`}>
-				</div>
-				)
-				))}
-				</div>
-			</div>
 
 			<div className="max-w-[700px] h-[300px] md:max-w-[800px] md:h-[460px] sm:max-w-[500px] sm:h-[160px] w-full m-auto py-10 px-0 sm:p-8  relative group">	
 				<div style={{ backgroundImage: `url(${projeto.images[currentIndex]})` }}
@@ -70,7 +76,7 @@ export default function ProjectsComponents(projeto: Project) {
 					<BsChevronBarRight onClick={nextImage} size={30} />
 				</div>
 			</div>
-			<div id="Botoes github e link" className="flex items-center justify-center ">
+			<div  className="flex items-center justify-center ">
 				<div className="pr-5">
 					{projeto.github && (
 						<a
