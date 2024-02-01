@@ -4,11 +4,13 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Merriweather", sans-serif;
-  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border
+  -box;
 }
 :root {
-  font-family: "Merriweather", sans-serif;
   line-height: 1.5em;
   color: #fff;
 
@@ -26,59 +28,6 @@ body {
   min-width: 320px;
   min-height: 100%;
 }
-a:hover {
-  background-color: transparent;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-@media (max-width: 450px) {
-  #container {
-    flex-direction: column;
-  }
 
-  #bio-container h2 {
-    display: none;
-    margin-bottom: 25px;
-  }
 
-  #bio-container p {
-    max-width: 60%;
-    margin: 10px auto;
-    margin-bottom: 20px;
-  }
-  #about-container {
-    text-align: center;
-    padding: 30px;
-  }
-  #about-container .description {
-    margin: 10px auto;
-    max-width: 100%;
-    line-height: 26px;
-  }
-
-  #btn-projects {
-    margin: 20px auto;
-  }
-
-  .skills-box {
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin-bottom: 40px;
-    text-align: left;
-  }
-
-  skills-box i {
-    font-size: 60px;
-  }
-}
