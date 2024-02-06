@@ -15,19 +15,20 @@ export interface Project {
 }
 
 export default function ProjectsComponents(projeto: Project) {
-	const [currentIndex, setCurrentIndex] = useState(2);
-	const prevImage = () => {
-		const isFirstImage = currentIndex === 0;
-		const newIndex = isFirstImage
+	const [indiceAtual, setIndiceAtual] = useState(2);
+
+	const imagemAnterior = () => {
+		const isFirstImage = indiceAtual === 0;
+		const novoIndice = isFirstImage
 			? projeto.images.length - 1
-			: currentIndex - 1;
-		setCurrentIndex(newIndex);
+			: indiceAtual - 1;
+		setIndiceAtual(novoIndice);
 	};
 
-	const nextImage = () => {
-		const isLastImage = currentIndex === projeto.images.length - 1;
-		const newIndex = isLastImage ? 0 : currentIndex + 1;
-		setCurrentIndex(newIndex);
+	const proximaImagem = () => {
+		const isLastImage = indiceAtual === projeto.images.length - 1;
+		const novoIndice = isLastImage ? 0 : indiceAtual + 1;
+		setIndiceAtual(novoIndice);
 	};
 	return (
 		<div
@@ -90,16 +91,19 @@ export default function ProjectsComponents(projeto: Project) {
 				</div>
 			</div>
 
-			<div className="group relative m-auto h-[300px] w-full max-w-[700px] px-0 py-10 sm:h-[160px] sm:max-w-[500px] sm:p-8  md:h-[460px] md:max-w-[800px]">
+			<div className="m-auto flex h-[300px] w-full max-w-[700px] items-center px-0 py-10 sm:h-[160px] sm:max-w-[500px] sm:p-8  md:h-[460px] md:max-w-[800px]">
+				<div className=" cursor-pointer rounded-full p-2 pl-5 text-2xl text-mainTextColor group-hover:block">
+					<BsChevronBarLeft onClick={imagemAnterior} size={30} />
+				</div>
 				<div
-					style={{ backgroundImage: `url(${projeto.images[currentIndex]})` }}
+					style={{
+						backgroundImage: `url(${projeto.images[indiceAtual]})`,
+						backgroundSize: 'cover',
+					}}
 					className="h-full w-full rounded-2xl bg-cover bg-center duration-500"
 				></div>
-				<div className="bg-black/20 absolute left-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full p-2 pl-5 text-2xl text-mainTextColor group-hover:block">
-					<BsChevronBarLeft onClick={prevImage} size={30} />
-				</div>
-				<div className="bg-black/20 absolute right-5 top-[50%] hidden -translate-x-0 translate-y-[-50%] cursor-pointer rounded-full p-2 pr-5 text-2xl text-mainTextColor group-hover:block">
-					<BsChevronBarRight onClick={nextImage} size={30} />
+				<div className=" cursor-pointer rounded-full p-2 pr-5 text-2xl text-mainTextColor group-hover:block">
+					<BsChevronBarRight onClick={imagemAnterior} size={30} />
 				</div>
 			</div>
 			<div className="flex items-center justify-center ">
