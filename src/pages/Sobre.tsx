@@ -9,40 +9,49 @@ import GitH from '../assets/GiteGitHub.jpg';
 import Sercomp from '../assets/Sercomp.jpg';
 
 export default function Home() {
-	interface Certificados {
-		nome: string[];
-		imagens: string[];
-		sobre: string[];
-		sobre2: string[];
+	interface Certificado {
+		nome: string;
+		imagem: string;
+		sobre: string;
+		sobre2: string;
+		tecnologias: string[];
 	}
+
+	interface Certificados {
+		certificados: Certificado[];
+	}
+
 	const certificados: Certificados = {
-		nome: ['Git e GitHub', 'Sercomp 2023'],
-		imagens: [GitH, Sercomp],
-		sobre: [
-			'Git e GitHub do básico ao avançado (c/ gist e GitHub Pages)',
-			"Minicurso VI: Introdução a API's Rest em Java com Spring Boot",
-		],
-		sobre2: [
-			'',
-			'Oficina VIII - Testes de software em back-end: estratégias e ferramentas para garantir a qualidade do seu sistema',
+		certificados: [
+			{
+				nome: 'Git e GitHub',
+				imagem: GitH,
+				sobre: 'Git e GitHub do básico ao avançado (c/ gist e GitHub Pages)',
+				sobre2: '',
+				tecnologias: ['git', 'github'],
+			},
+			{
+				nome: 'Sercomp 2023',
+				imagem: Sercomp,
+				sobre: "Minicurso VI: Introdução a API's Rest em Java com Spring Boot",
+				sobre2:
+					'Oficina VIII - Testes de software em back-end: estratégias e ferramentas para garantir a qualidade do seu sistema',
+				tecnologias: ['python', 'java', `javascript`, 'postman'],
+			},
 		],
 	};
 
 	const [indiceAtual, setIndiceAtual] = useState(0);
 
 	const imagemAnterior = () => {
-		const ePrimeiraImagem = indiceAtual === 0;
-		const novoIndice = ePrimeiraImagem
-			? certificados.imagens.length - 1
-			: indiceAtual - 1;
+		const novoIndice =
+			(indiceAtual - 1 + certificados.certificados.length) %
+			certificados.certificados.length;
 		setIndiceAtual(novoIndice);
 	};
 
 	const proximaImagem = () => {
-		const eUltimaImagem =
-			indiceAtual === certificados.imagens.length - 1 &&
-			certificados.nome.length - 1;
-		const novoIndice = eUltimaImagem ? 0 : indiceAtual + 1;
+		const novoIndice = (indiceAtual + 1) % certificados.certificados.length;
 		setIndiceAtual(novoIndice);
 	};
 
@@ -213,37 +222,97 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="">
-						<div className="pb-2 pt-5  text-2xl font-bold ">Certificados:</div>
-						<div className="flex flex-col items-center justify-center pt-5">
-							<div className="group relative m-auto  ">
-								<div className="flex justify-center">
-									<h2 className="-translate-x-0 translate-y-[-50%]  text-4xl font-bold text-mainColor">
-										{certificados.nome[indiceAtual]}
+						<div className="pb-2 pt-5 text-2xl font-bold ">Certificados:</div>
+						<div className=" pt-2">
+							<div className="m-auto px-7 ">
+								<div className="flex max-w-full">
+									<h2 className=" text-3xl font-bold text-mainColor">
+										{certificados.certificados[indiceAtual].nome}
 									</h2>
 								</div>
 								<div className="">
-									<p className="w-[600px] border-l-[5px] border-mainColor px-5 text-[90%]  text-mainTextColor">
-										{certificados.sobre[indiceAtual]}
+									<p className="  max-w-full  border-l-[5px] border-mainColor px-5 text-[110%]  text-mainTextColor">
+										{certificados.certificados[indiceAtual].sobre}
 									</p>
 								</div>
 								<div className="">
-									{certificados.sobre2[indiceAtual] === '' ? (
+									{certificados.certificados[indiceAtual].sobre2 === '' ? (
 										<></>
 									) : (
-										<p className="w-[600px] border-l-[5px] border-mainColor px-5 text-[90%]  text-mainTextColor">
-											{certificados.sobre2[indiceAtual]}
-										</p>
+										<div>
+											<p className="border-l-[5px] border-mainColor">
+												<br />
+											</p>
+											<p className="w-[600px] border-l-[5px] border-mainColor px-5 text-[110%]  text-mainTextColor">
+												{certificados.certificados[indiceAtual].sobre2}
+											</p>
+										</div>
+									)}
+								</div>
+								<p className="text-xsl max-w-[225px] border-l-[5px] border-mainColor px-5 pb-2 pt-5 font-bold">
+									Tecnologias Utilizadas:
+								</p>
+								<div className="flex w-full flex-wrap border-l-[5px] border-mainColor px-5 ">
+									{certificados.certificados[indiceAtual].tecnologias.map(
+										(tecnologia: string, index: number) =>
+											tecnologia === 'postman' ? (
+												<SiPostman
+													className="text-orange ml-3 mr-2 text-[200%]"
+													style={{
+														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+													}}
+												/>
+											) : tecnologia === 'scrum' ? (
+												<DiScrum
+													className="ml-3 mr-2 text-[250%]"
+													style={{
+														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+													}}
+												/>
+											) : tecnologia === 'express' ? (
+												<div
+													key={tecnologia}
+													className={
+														'devicon-express-original  ml-3 mr-2 text-[200%]'
+													}
+													style={{
+														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+													}}
+												></div>
+											) : tecnologia === 'nextjs' ? (
+												<div
+													key={tecnologia}
+													className={
+														'devicon-nextjs-original  ml-3 mr-2 text-[200%]'
+													}
+													style={{
+														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+													}}
+												></div>
+											) : (
+												<div
+													key={tecnologia}
+													className={`devicon-${
+														tecnologia === 'github'
+															? 'github-original'
+															: `${tecnologia}-plain colored`
+													} ml-3 mr-2 text-[200%]`}
+													style={{
+														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+													}}
+												></div>
+											)
 									)}
 								</div>
 							</div>
 							<br />
-							<div className="flex h-[200px] w-[300px] items-center justify-between md:h-[450px] md:w-[700px]">
+							<div className="flex h-[200px] w-[300px]  items-center justify-between md:h-[450px] md:w-[700px]">
 								<div className="transform cursor-pointer rounded-full  text-2xl text-mainTextColor group-hover:block">
 									<BsChevronBarLeft onClick={imagemAnterior} size={30} />
 								</div>
 								<div
 									style={{
-										backgroundImage: `url(${certificados.imagens[indiceAtual]})`,
+										backgroundImage: `url(${certificados.certificados[indiceAtual].imagem})`,
 										backgroundSize: 'cover',
 									}}
 									className="h-[90%] w-[90%] rounded-2xl bg-center duration-500"

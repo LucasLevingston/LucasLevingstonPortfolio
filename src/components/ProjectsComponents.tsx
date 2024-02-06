@@ -54,9 +54,10 @@ export default function ProjectsComponents(projeto: Project) {
 				<div className="flex w-full flex-wrap">
 					{projeto.tecnologias.map((tecnologia: string, index: number) =>
 						tecnologia === 'postman' ? (
-              <SiPostman className="ml-3 mr-2 text-[200%] text-orange" 
-              style={{ marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0 }}/>
-
+							<SiPostman
+								className="text-orange ml-3 mr-2 text-[200%]"
+								style={{ marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0 }}
+							/>
 						) : tecnologia === 'scrum' ? (
 							<DiScrum
 								className="ml-3 mr-2 text-[250%]"
