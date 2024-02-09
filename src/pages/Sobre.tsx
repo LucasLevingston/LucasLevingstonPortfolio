@@ -12,8 +12,8 @@ export default function Home() {
 	interface Certificado {
 		nome: string;
 		imagem: string;
-		sobre: string;
-		sobre2: string;
+		sobre: string[];
+
 		tecnologias: string[];
 	}
 
@@ -26,16 +26,17 @@ export default function Home() {
 			{
 				nome: 'Git e GitHub',
 				imagem: GitH,
-				sobre: 'Git e GitHub do básico ao avançado (c/ gist e GitHub Pages)',
-				sobre2: '',
+				sobre: ['Git e GitHub do básico ao avançado (c/ gist e GitHub Pages)'],
+
 				tecnologias: ['git', 'github'],
 			},
 			{
 				nome: 'Sercomp 2023',
 				imagem: Sercomp,
-				sobre: "Minicurso VI: Introdução a API's Rest em Java com Spring Boot",
-				sobre2:
+				sobre: [
+					"Minicurso VI: Introdução a API's Rest em Java com Spring Boot",
 					'Oficina VIII - Testes de software em back-end: estratégias e ferramentas para garantir a qualidade do seu sistema',
+				],
 				tecnologias: ['python', 'java', `javascript`, 'postman'],
 			},
 		],
@@ -90,16 +91,16 @@ export default function Home() {
 						<FaShareAltSquare className="text-[22px]  " />
 						<span className=" pl-3  text-mainTextColor"> Ver GitHub</span>
 					</a>
-					<h2 className="mb-5 border-t-[1px] border-solid border-mainTextColor pt-10 text-[32px] font-bold">
+					<h2 className="mb-5 border-t-[1px] border-solid border-mainTextColor pb-3 pt-10 text-[32px] font-bold">
 						Minhas Skills
 					</h2>
-					<div className="border-b-[1px] border-solid border-borderColor pl-3  pt-3">
+					<div className="border-b-[1px] border-solid border-borderColor pl-3">
 						<p className="text-2xl font-bold ">
 							Conheça as tecnologias que domino:
 						</p>
-						<div className="mt-5 flex flex-wrap">
+						<div className=" flex flex-wrap pt-5">
 							<div className="mb-8  w-full sm:w-[33%]">
-								<p className="mb-4  border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
+								<p className="mb-4 border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
 									Linguagens de programação
 								</p>
 								<i className="devicon-html5-plain colored ml-3 mr-2 text-4xl"></i>
@@ -153,11 +154,11 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="border-b-[1px] border-solid border-borderColor pt-3">
-						<div className="pb-2 pt-5  text-2xl font-bold ">
+					<div className="border-b-[1px] border-solid border-borderColor pl-3 pt-3">
+						<div className="pb-2 pt-5 text-2xl font-bold ">
 							Minhas experiências:
 						</div>
-						<div className=" xl:pb-3">
+						<div className="xl:pb-3">
 							<h3 className="border-l-[5px]  border-mainColor pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 								Splendore - Patos, PB
 							</h3>
@@ -192,9 +193,9 @@ export default function Home() {
 							</p>
 						</div>
 					</div>
-					<div className="border-b-[1px] border-solid border-borderColor pt-3">
+					<div className="border-b-[1px] border-solid border-borderColor pl-3 pt-3">
 						<div className="pb-2 pt-5  text-2xl font-bold ">Formação:</div>
-						<div className=" pb-3">
+						<div className="pb-3">
 							<h3 className="border-l-[5px]  border-mainColor pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 								Graduação em Ciências da Computação
 							</h3>
@@ -221,38 +222,32 @@ export default function Home() {
 							</p>
 						</div>
 					</div>
-					<div className="">
-						<div className="pb-2 pt-5 text-2xl font-bold ">Certificados:</div>
+					<div className="pl-3">
+						<div className="pb-2 pt-5 text-2xl font-bold ">Certificados</div>
 						<div className=" pt-2">
-							<div className="m-auto px-7 ">
+							<div className="m-auto">
 								<div className="flex max-w-full">
-									<h2 className=" text-3xl font-bold text-mainColor">
+									<h2 className="border-l-[5px] border-mainColor pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 										{certificados.certificados[indiceAtual].nome}
 									</h2>
 								</div>
 								<div className="">
-									<p className="  max-w-full  border-l-[5px] border-mainColor px-5 text-[110%]  text-mainTextColor">
-										{certificados.certificados[indiceAtual].sobre}
-									</p>
-								</div>
-								<div className="">
-									{certificados.certificados[indiceAtual].sobre2 === '' ? (
-										<></>
-									) : (
-										<div>
-											<p className="border-l-[5px] border-mainColor">
-												<br />
-											</p>
-											<p className="w-[600px] border-l-[5px] border-mainColor px-5 text-[110%]  text-mainTextColor">
-												{certificados.certificados[indiceAtual].sobre2}
-											</p>
-										</div>
+									{certificados.certificados[indiceAtual].sobre.map(
+										(sobre: string, index: number) => (
+											<div>
+												<p className=" pl-10 pt-3">{sobre}</p>
+												{/* {index !==
+													certificados.certificados[indiceAtual].sobre.length -
+														1 && <br />} */}
+											</div>
+										)
 									)}
 								</div>
-								<p className="text-xsl max-w-[225px] border-l-[5px] border-mainColor px-5 pb-2 pt-5 font-bold">
+
+								<p className=" pl-10 pt-3 text-[120%] font-bold">
 									Tecnologias Utilizadas:
 								</p>
-								<div className="flex w-full flex-wrap border-l-[5px] border-mainColor px-5 ">
+								<div className="flex w-full flex-wrap pl-7 pt-3">
 									{certificados.certificados[indiceAtual].tecnologias.map(
 										(tecnologia: string, index: number) =>
 											tecnologia === 'postman' ? (
@@ -305,7 +300,7 @@ export default function Home() {
 									)}
 								</div>
 							</div>
-							<br />
+
 							<div className="flex h-[200px] w-[300px]  items-center justify-between md:h-[450px] md:w-[700px]">
 								<div className="transform cursor-pointer rounded-full  text-2xl text-mainTextColor group-hover:block">
 									<BsChevronBarLeft onClick={imagemAnterior} size={30} />
