@@ -25,8 +25,9 @@ import T3 from '../assets/threads3.png';
 const projetos: Project[] = [
 	{
 		name: 'CRM Splen',
-		sobre: 'CRM feito no estágio afim de venda de cursos.',
-		images: [T1, T2, T3],
+		sobre:
+			'CRM feito no estágio afim de venda de cursos de determinada empresa.',
+
 		tecnologias: [
 			'react',
 			'typescript',
@@ -95,7 +96,7 @@ const projetos: Project[] = [
 			'Como forma de aprendizado, desenvolvi meu portfólio  utilizando o framework react. Utilizando a linguagem TypeScript e o Tailwind CSS para estilização. Foi meu primeiro contato com react e o pontapé para projetos futuros.',
 		images: [MP1, MP2, MP3],
 		github: 'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
-		tecnologias: ['react', 'typescript'],
+		tecnologias: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
 	},
 	{
 		name: 'Campo Minado',
@@ -131,9 +132,9 @@ export default function Projects() {
 					rel="noopener noreferrer"
 				>
 					<FaShareAltSquare className="text-[22px]" />
-					<span className=" pl-3  text-mainTextColor"> Ver GitHub</span>
+					<span className="pl-3 text-mainTextColor"> Ver GitHub</span>
 				</a>
-				<h2 className="mb-0 border-t border-solid border-mainTextColor pt-5 text-2xl text-mainTextColor">
+				<h2 className="border-t border-solid border-mainTextColor pt-5 text-2xl font-bold">
 					Meus Projetos
 				</h2>
 				<div>
