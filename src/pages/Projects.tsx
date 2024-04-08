@@ -3,27 +3,27 @@ import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectsComponents, { Project } from '../components/ProjectsComponents';
 import { FaShareAltSquare } from 'react-icons/fa';
-import SP1 from '../assets/projetos/Spotify/SPOTIFY1.png';
-import SP2 from '../assets/projetos/Spotify/SPOTIFY2.png';
-import SP3 from '../assets/projetos/Spotify/SPOTIFY3.png';
-import CM1 from '../assets/projetos/CampoMinado/CampoMinado1.jpg';
-import CM2 from '../assets/projetos/CampoMinado/CampoMinado2.jpg';
-import CM3 from '../assets/projetos/CampoMinado/CampoMinado3.jpg';
-import CALC1 from '../assets/projetos/Calculadora/Calc1.jpg';
-import CALC2 from '../assets/projetos/Calculadora/Calc2.jpg';
-import CALC3 from '../assets/projetos/Calculadora/Calc3.jpg';
-import MP1 from '../assets/projetos/MeuPortfolio/MP1.png';
-import MP2 from '../assets/projetos/MeuPortfolio/MP2.png';
-import MP3 from '../assets/projetos/MeuPortfolio/MP3.png';
-import F1 from '../assets/projetos/Flexibble/Flexibble1.jpg';
-import F2 from '../assets/projetos/Flexibble/Flexibble2.jpg';
-import F3 from '../assets/projetos/Flexibble/Flexibble3.jpg';
-import T1 from '../assets/projetos/threads/threads1.png';
-import T2 from '../assets/projetos/threads/threads2.png';
-import T3 from '../assets/projetos/threads/threads3.png';
-import PIW1 from '../assets/projetos/passinweb/PIW1.jpg';
-import PIW2 from '../assets/projetos/passinweb/PIW2.jpg';
-import PIW3 from '../assets/projetos/passinweb/PIW3.jpg';
+import SP1 from '../assets/projetos/SPOTIFY1.png';
+import SP2 from '../assets/projetos/SPOTIFY2.png';
+import SP3 from '../assets/projetos/SPOTIFY3.png';
+import CM1 from '../assets/projetos/CampoMinado1.jpg';
+import CM2 from '../assets/projetos/CampoMinado2.jpg';
+import CM3 from '../assets/projetos/CampoMinado3.jpg';
+import CALC1 from '../assets/projetos/Calc1.jpg';
+import CALC2 from '../assets/projetos/Calc2.jpg';
+import CALC3 from '../assets/projetos/Calc3.jpg';
+import MP1 from '../assets/projetos/MP1.png';
+import MP2 from '../assets/projetos/MP2.png';
+import MP3 from '../assets/projetos/MP3.png';
+import F1 from '../assets/projetos/Flexibble1.jpg';
+import F2 from '../assets/projetos/Flexibble2.jpg';
+import F3 from '../assets/projetos/Flexibble3.jpg';
+import T1 from '../assets/projetos/threads1.png';
+import T2 from '../assets/projetos/threads2.png';
+import T3 from '../assets/projetos/threads3.png';
+import PIW1 from '../assets/projetos/PIW1.jpg';
+import PIW2 from '../assets/projetos/PIW2.jpg';
+import PIW3 from '../assets/projetos/PIW3.jpg';
 
 const projetos: Project[] = [
 	{
@@ -46,9 +46,9 @@ const projetos: Project[] = [
 		],
 	},
 	{
-		name: 'Taugor - Gestão de Funcionários',
+		name: 'Gestão de Funcionários',
 		sobre:
-			'Se trata de um sistema de gestão de funcionários com formulário para o registro, alteracões de dados e geração de PDF para os mesmos.',
+			'Se trata de um sistema de gestão de funcionários com formulário para o registro, alteracões de dados, promoção de funcionários e geração de PDF para os mesmos.',
 		tecnologias: [
 			'vite',
 			'react',
