@@ -5,10 +5,10 @@ import { FaShareAltSquare } from 'react-icons/fa';
 import { DiScrum, DiVim } from 'react-icons/di';
 import { SiPostman } from 'react-icons/si';
 import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
-import GitH from '../assets/certificados/CertificadoGiteGitHub.jpg';
-import Sercomp from '../assets/certificados/CertificadoSercomp.jpg';
-import CertificadoReact from '../assets/certificados/CertificadoReact.jpg';
-import CertificadoNode from '../assets/certificados/CertificadoNode.jpg';
+import GitH from '../assets/CertificadoGiteGitHub.jpg';
+import CertificadoSercomp from '../assets/CertificadoSercomp.jpg';
+import CertificadoReact from '../assets/CertificadoReact.jpg';
+import CertificadoNode from '../assets/CertificadoNode.jpg';
 
 export default function Home() {
 	interface Certificado {
@@ -34,7 +34,7 @@ export default function Home() {
 			},
 			{
 				nome: 'Sercomp 2023',
-				imagem: Sercomp,
+				imagem: CertificadoSercomp,
 				sobre: [
 					"Minicurso VI: Introdução a API's Rest em Java com Spring Boot",
 					'Oficina VIII - Testes de software em back-end: estratégias e ferramentas para garantir a qualidade do seu sistema',
