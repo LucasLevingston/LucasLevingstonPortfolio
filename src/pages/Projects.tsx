@@ -24,6 +24,9 @@ import T3 from '../assets/threads3.png';
 import PIW1 from '../assets/PIW1.jpg';
 import PIW2 from '../assets/PIW2.jpg';
 import PIW3 from '../assets/PIW3.jpg';
+import GestaoFuncionarios1 from '../assets/GestaoFuncionarios1.jpg';
+import GestaoFuncionarios2 from '../assets/GestaoFuncionarios2.jpg';
+import GestaoFuncionarios3 from '../assets/GestaoFuncionarios3.jpg';
 
 const projetos: Project[] = [
 	{
@@ -49,6 +52,7 @@ const projetos: Project[] = [
 		name: 'Gestão de Funcionários',
 		sobre:
 			'Se trata de um sistema de gestão de funcionários com formulário para o registro, alteracões de dados, promoção de funcionários e geração de PDF para os mesmos.',
+		images: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
 		tecnologias: [
 			'vite',
 			'react',
@@ -59,6 +63,7 @@ const projetos: Project[] = [
 			'github',
 			'PDF',
 		],
+		github: 'https://github.com/LucasLevingston/taugor-project'
 	},
 	{
 		name: 'Pass In Web',
