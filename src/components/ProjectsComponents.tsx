@@ -3,8 +3,11 @@ import { AiOutlineLink } from 'react-icons/ai';
 import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
 import { DiScrum } from 'react-icons/di';
 import { GoRepoForked } from 'react-icons/go';
-import { SiPostman } from 'react-icons/si';
+import { SiPostman, SiVite } from 'react-icons/si';
 import Typewriter from 'typewriter-effect';
+import { PiFilePdfBold } from "react-icons/pi";
+
+
 export interface Project {
 	name: string;
 	sobre: string;
@@ -76,17 +79,35 @@ export default function ProjectsComponents(projeto: Project) {
 						) : tecnologia === 'nextjs' ? (
 							<div
 								key={tecnologia}
-								className={'devicon-nextjs-original  ml-3 mr-2 text-[200%]'}
+								className={'devicon-nextjs-original  '}
 								style={{ marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0 }}
 							></div>
+						) : tecnologia === 'vite' ? (
+							<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+								className='devicon-nextjs-original  ml-3 mr-2 w-8'
+
+								style={{ marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0 }}
+							/>
+
+						) : tecnologia === 'firebase' ? (
+							<div
+								key={tecnologia}
+								className={'devicon-firebase-plain-wordmark colored  ml-3 mr-2 text-[200%]'}
+								style={{ marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0 }}
+							></div>
+						) : tecnologia === 'PDF' ? (
+							<PiFilePdfBold
+								className={'ml-3 mr-2 text-[200%] '}
+								style={{ marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0 }}
+							/>
+
 						) : (
 							<div
 								key={tecnologia}
-								className={`devicon-${
-									tecnologia === 'github'
-										? 'github-original'
-										: `${tecnologia}-plain colored`
-								} ml-3 mr-2 text-[200%]`}
+								className={`devicon-${tecnologia === 'github'
+									? 'github-original'
+									: `${tecnologia}-plain colored`
+									} ml-3 mr-2 text-[200%]`}
 								style={{ marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0 }}
 							></div>
 						)
@@ -98,6 +119,7 @@ export default function ProjectsComponents(projeto: Project) {
 					<div className=" cursor-pointer rounded-full p-2 pl-5 text-2xl text-mainTextColor group-hover:block">
 						<BsChevronBarLeft onClick={imagemAnterior} size={30} />
 					</div>
+
 					<div
 						style={{
 							backgroundImage: `url(${projeto.images[indiceAtual]})`,

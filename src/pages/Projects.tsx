@@ -3,24 +3,27 @@ import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectsComponents, { Project } from '../components/ProjectsComponents';
 import { FaShareAltSquare } from 'react-icons/fa';
-import SP1 from '../assets/SPOTIFY1.png';
-import SP2 from '../assets/SPOTIFY2.png';
-import SP3 from '../assets/SPOTIFY3.png';
-import CM1 from '../assets/CampoMinado1.jpg';
-import CM2 from '../assets/CampoMinado2.jpg';
-import CM3 from '../assets/CampoMinado3.jpg';
-import CALC1 from '../assets/Calc1.jpg';
-import CALC2 from '../assets/Calc2.jpg';
-import CALC3 from '../assets/Calc3.jpg';
-import MP1 from '../assets/MP1.png';
-import MP2 from '../assets/MP2.png';
-import MP3 from '../assets/MP3.png';
-import F1 from '../assets/Flexibble1.jpg';
-import F2 from '../assets/Flexibble2.jpg';
-import F3 from '../assets/Flexibble3.jpg';
-import T1 from '../assets/threads1.png';
-import T2 from '../assets/threads2.png';
-import T3 from '../assets/threads3.png';
+import SP1 from '../assets/projetos/Spotify/SPOTIFY1.png';
+import SP2 from '../assets/projetos/Spotify/SPOTIFY2.png';
+import SP3 from '../assets/projetos/Spotify/SPOTIFY3.png';
+import CM1 from '../assets/projetos/CampoMinado/CampoMinado1.jpg';
+import CM2 from '../assets/projetos/CampoMinado/CampoMinado2.jpg';
+import CM3 from '../assets/projetos/CampoMinado/CampoMinado3.jpg';
+import CALC1 from '../assets/projetos/Calculadora/Calc1.jpg';
+import CALC2 from '../assets/projetos/Calculadora/Calc2.jpg';
+import CALC3 from '../assets/projetos/Calculadora/Calc3.jpg';
+import MP1 from '../assets/projetos/MeuPortfolio/MP1.png';
+import MP2 from '../assets/projetos/MeuPortfolio/MP2.png';
+import MP3 from '../assets/projetos/MeuPortfolio/MP3.png';
+import F1 from '../assets/projetos/Flexibble/Flexibble1.jpg';
+import F2 from '../assets/projetos/Flexibble/Flexibble2.jpg';
+import F3 from '../assets/projetos/Flexibble/Flexibble3.jpg';
+import T1 from '../assets/projetos/threads/threads1.png';
+import T2 from '../assets/projetos/threads/threads2.png';
+import T3 from '../assets/projetos/threads/threads3.png';
+import PIW1 from '../assets/projetos/passinweb/PIW1.jpg';
+import PIW2 from '../assets/projetos/passinweb/PIW2.jpg';
+import PIW3 from '../assets/projetos/passinweb/PIW3.jpg';
 
 const projetos: Project[] = [
 	{
@@ -29,6 +32,7 @@ const projetos: Project[] = [
 			'CRM feito no estágio afim de venda de cursos de determinada empresa.',
 
 		tecnologias: [
+			'vite',
 			'react',
 			'typescript',
 			'tailwindcss',
@@ -39,6 +43,35 @@ const projetos: Project[] = [
 			'github',
 			'postman',
 			'scrum',
+		],
+	},
+	{
+		name: 'Taugor - Gestão de Funcionários',
+		sobre:
+			'Se trata de um sistema de gestão de funcionários com formulário para o registro, alteracões de dados e geração de PDF para os mesmos.',
+		tecnologias: [
+			'vite',
+			'react',
+			'typescript',
+			'tailwindcss',
+			'firebase',
+			'git',
+			'github',
+			'PDF',
+		],
+	},
+	{
+		name: 'Pass In Web',
+		sobre: 'Este é um aplicativo de registro de participantes para eventos, com funcionalidades de busca e check-in.',
+		images: [PIW1, PIW2, PIW3],
+		github: 'https://github.com/LucasLevingston/taugor-project',
+		tecnologias: [
+			'vite',
+			'react',
+			'typescript',
+			'tailwindcss',
+			'git',
+			'github',
 		],
 	},
 	{

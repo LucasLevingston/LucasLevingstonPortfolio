@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import { FaShareAltSquare } from 'react-icons/fa';
-import { DiScrum } from 'react-icons/di';
+import { DiScrum, DiVim } from 'react-icons/di';
 import { SiPostman } from 'react-icons/si';
 import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
-import GitH from '../assets/GiteGitHub.jpg';
-import Sercomp from '../assets/Sercomp.jpg';
+import GitH from '../assets/certificados/CertificadoGiteGitHub.jpg';
+import Sercomp from '../assets/certificados/CertificadoSercomp.jpg';
+import CertificadoReact from '../assets/certificados/CertificadoReact.jpg';
+import CertificadoNode from '../assets/certificados/CertificadoNode.jpg';
 
 export default function Home() {
 	interface Certificado {
@@ -38,6 +40,22 @@ export default function Home() {
 					'Oficina VIII - Testes de software em back-end: estratégias e ferramentas para garantir a qualidade do seu sistema',
 				],
 				tecnologias: ['python', 'java', `javascript`, 'postman'],
+			},
+			{
+				nome: 'NLW Unite RocketSeat - React',
+				imagem: CertificadoReact,
+				sobre: [
+					"Curso do evento da Rocketseat em que foi desenvolvido o front-end do sistema Pass In Web.",
+				],
+				tecnologias: ['vite', 'react', 'typescript', `tailwindcss`],
+			},
+			{
+				nome: 'NLW Unite RocketSeat - Node',
+				imagem: CertificadoNode,
+				sobre: [
+					"Curso do evento da Rocketseat em que foi desenvolvido o back-end do sistema Pass In Web.",
+				],
+				tecnologias: ['nodejs', 'typescript', `tailwindcss`, 'fastify',],
 			},
 		],
 	};
@@ -257,48 +275,68 @@ export default function Home() {
 														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
 													}}
 												/>
-											) : tecnologia === 'scrum' ? (
-												<DiScrum
-													className="ml-3 mr-2 text-[250%]"
-													style={{
-														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-													}}
-												/>
-											) : tecnologia === 'express' ? (
-												<div
+											) : tecnologia === 'fastify' ?
+												(<i
 													key={tecnologia}
 													className={
-														'devicon-express-original  ml-3 mr-2 text-[200%]'
+														'devicon-fastify-plain ml-3 mr-2 text-[200%]'
 													}
 													style={{
 														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
 													}}
-												></div>
-											) : tecnologia === 'nextjs' ? (
-												<div
-													key={tecnologia}
-													className={
-														'devicon-nextjs-original  ml-3 mr-2 text-[200%]'
-													}
-													style={{
-														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-													}}
-												></div>
-											) : (
-												<div
-													key={tecnologia}
-													className={`devicon-${
-														tecnologia === 'github'
-															? 'github-original'
-															: `${tecnologia}-plain colored`
-													} ml-3 mr-2 text-[200%]`}
-													style={{
-														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-													}}
-												></div>
-											)
+												></i>) : tecnologia === 'scrum' ? (
+													<DiScrum
+														className="ml-3 mr-2 text-[250%]"
+														style={{
+															marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+														}}
+													/>
+												) : tecnologia === 'express' ? (
+													<div
+														key={tecnologia}
+														className={
+															'devicon-express-original  ml-3 mr-2 text-[200%]'
+														}
+														style={{
+															marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+														}}
+													></div>
+												) : tecnologia === 'nextjs' ? (
+													<div
+														key={tecnologia}
+														className={
+															'devicon-nextjs-original  ml-3 mr-2 text-[200%]'
+														}
+														style={{
+															marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+														}}
+													></div>
+												)
+													: tecnologia === "vite" ? (
+														<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+															className='devicon-nextjs-original  ml-3 mr-2 w-8'
+
+															style={{
+																marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+															}} />
+
+													)
+														:
+														(
+															<div
+																key={tecnologia}
+																className={`devicon-${tecnologia === 'github'
+																	? 'github-original'
+																	: `${tecnologia}-plain colored`
+																	} ml-3 mr-2 text-[200%]`}
+																style={{
+																	marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
+																}}
+															></div>
+														)
 									)}
 								</div>
+
 							</div>
 
 							<div className="flex h-[200px] w-[300px]  items-center justify-between md:h-[450px] md:w-[700px]">
