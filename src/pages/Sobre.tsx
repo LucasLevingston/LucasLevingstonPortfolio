@@ -2,64 +2,15 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import { FaShareAltSquare } from 'react-icons/fa';
-import { DiScrum, DiVim } from 'react-icons/di';
+import { DiScrum } from 'react-icons/di';
 import { SiPostman } from 'react-icons/si';
 import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
-import GitH from '../assets/CertificadoGiteGitHub.jpg';
-import CertificadoSercomp from '../assets/CertificadoSercomp.jpg';
-import CertificadoReact from '../assets/CertificadoReact.jpg';
-import CertificadoNode from '../assets/CertificadoNode.jpg';
+import TecnologiaIcon from '../components/TecnologiaIcon';
+import { certificados } from '../Data/CertificadosData';
+import { TecnologiasDominadas } from '../components/TecnologiasDominadas';
+import { tecnologiasDominadasData } from '../Data/TecnologiasDominadasData';
 
 export default function Home() {
-	interface Certificado {
-		nome: string;
-		imagem: string;
-		sobre: string[];
-
-		tecnologias: string[];
-	}
-
-	interface Certificados {
-		certificados: Certificado[];
-	}
-
-	const certificados: Certificados = {
-		certificados: [
-			{
-				nome: 'Git e GitHub',
-				imagem: GitH,
-				sobre: ['Git e GitHub do básico ao avançado (c/ gist e GitHub Pages)'],
-
-				tecnologias: ['git', 'github'],
-			},
-			{
-				nome: 'Sercomp 2023',
-				imagem: CertificadoSercomp,
-				sobre: [
-					"Minicurso VI: Introdução a API's Rest em Java com Spring Boot",
-					'Oficina VIII - Testes de software em back-end: estratégias e ferramentas para garantir a qualidade do seu sistema',
-				],
-				tecnologias: ['python', 'java', `javascript`, 'postman'],
-			},
-			{
-				nome: 'NLW Unite RocketSeat - React',
-				imagem: CertificadoReact,
-				sobre: [
-					"Curso do evento da Rocketseat em que foi desenvolvido o front-end do sistema Pass In Web.",
-				],
-				tecnologias: ['vite', 'react', 'typescript', `tailwindcss`],
-			},
-			{
-				nome: 'NLW Unite RocketSeat - Node',
-				imagem: CertificadoNode,
-				sobre: [
-					"Curso do evento da Rocketseat em que foi desenvolvido o back-end do sistema Pass In Web.",
-				],
-				tecnologias: ['nodejs', 'typescript', `tailwindcss`, 'fastify',],
-			},
-		],
-	};
-
 	const [indiceAtual, setIndiceAtual] = useState(0);
 
 	const imagemAnterior = () => {
@@ -83,97 +34,44 @@ export default function Home() {
 			>
 				<Header />
 				<div className="overflow-y-auto">
-					<p className="max-w-[100%]  ">
-						Sou um desenvolvedor apaixonado pelo que faço. Costumo dizer que
-						“quem faz o que gosta, vive de férias”. Tenho
-						<span className="text-mainColor"> 7 meses de experiência </span>e já
-						atuei tanto no back end como no front end, utilizando{' '}
-						<span className="text-mainColor">
-							{' '}
-							React, Typescript, Tailwind CSS, MongoDB, Prisma, Express,
-							Postman, Git, GitHub, Scrum e Docker.
-						</span>
-					</p>
-					<br />
-					<p className="mb-4 max-w-[100%] ">
-						Atualmente estou no{' '}
-						<span className="text-mainColor">8º semestre </span> do curso de
-						<span className="text-mainColor"> Ciências da Computação.</span>
-					</p>
-					<a
-						className="] m-[25px_0] flex w-[150px] rounded-[5px] border-[3px] border-solid border-mainColor bg-mainColor p-[12px_10px] text-center text-[13px] font-bold no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
-						href="https://github.com/LucasLevingston"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaShareAltSquare className="text-[22px]  " />
-						<span className=" pl-3  text-mainTextColor"> Ver GitHub</span>
-					</a>
-					<h2 className="mb-5 border-t-[1px] border-solid border-mainTextColor pb-3 pt-10 text-[32px] font-bold">
-						Minhas Skills
-					</h2>
-					<div className="border-b-[1px] border-solid border-borderColor pl-3">
+					<div className='border-b-[2px] '>
+
+						<p className="max-w-[100%]  ">
+							Sou um desenvolvedor apaixonado pelo que faço. Costumo dizer que
+							“quem faz o que gosta, vive de férias”. Tenho
+							<span className="text-mainColor"> 7 meses de experiência </span>e já
+							atuei tanto no back end como no front end, utilizando{' '}
+							<span className="text-mainColor">
+								{' '}
+								React, Typescript, Tailwind CSS, MongoDB, Prisma, Express,
+								Postman, Git, GitHub, Scrum e Docker.
+							</span>
+						</p>
+						<br />
+						<p className="mb-4 max-w-[100%] ">
+							Atualmente estou no{' '}
+							<span className="text-mainColor">8º semestre </span> do curso de
+							<span className="text-mainColor"> Ciências da Computação.</span>
+						</p>
+						<a
+							className="] m-[25px_0] flex w-[150px] rounded-[5px] border-[3px] border-solid border-mainColor bg-mainColor p-[12px_10px] text-center text-[13px] font-bold no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
+							href="https://github.com/LucasLevingston"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<FaShareAltSquare className="text-[22px]  " />
+							<span className=" pl-3  text-mainTextColor"> Ver GitHub</span>
+						</a>
+					</div>
+
+					<div className="border-y-[1px] border-solid border-borderColor py-4 ">
 						<p className="text-2xl font-bold ">
 							Conheça as tecnologias que domino:
 						</p>
-						<div className=" flex flex-wrap pt-5">
-							<div className="mb-8  w-full sm:w-[33%]">
-								<p className="mb-4 border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
-									Linguagens de programação
-								</p>
-								<i className="devicon-html5-plain colored ml-3 mr-2 text-4xl"></i>
-								<i className="devicon-css3-plain colored mr-2 text-4xl"></i>
-								<i className="devicon-javascript-plain colored mr-2 text-4xl"></i>
-								<i className="devicon-typescript-plain colored mr-2 text-4xl"></i>
-								<i className="devicon-java-plain colored mr-2 text-4xl "></i>
-								<i className="devicon-python-plain colored mr-2 text-4xl"></i>
-							</div>
-
-							<div className="mb-8  w-full sm:w-[33%]">
-								<p className="mb-4   border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
-									Front-End Frameworks
-								</p>
-								<i className="devicon-react-plain colored ml-3 mr-2 text-4xl"></i>
-								<i className="devicon-tailwindcss-plain colored text-4xl "></i>
-								<i className="devicon-nextjs-original ml-3 mr-2 text-4xl"></i>
-							</div>
-							<div className="mb-8  w-full sm:w-[33%]">
-								<p className="mb-4   border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
-									Back-End Frameworks
-								</p>
-								<i className="devicon-express-original ml-3 mr-2 text-4xl"></i>
-							</div>
-							<div className="mb-8  w-full sm:w-[33%]">
-								<p className="mb-4   border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
-									Databases
-								</p>
-								<i className="devicon-postgresql-plain colored ml-3 mr-2 text-4xl"></i>
-								<i className="devicon-mysql-plain colored mr-2 text-4xl"></i>
-								<i className="devicon-mongodb-plain colored mr-2 text-4xl"></i>
-							</div>
-							<div className="mb-8  w-full sm:w-[33%] ">
-								<p className="mb-4 flex border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
-									Ferramentas
-								</p>
-								<div className="flex">
-									<i className="devicon-docker-plain-wordmark colored ml-3 mr-2 text-4xl"></i>
-									<i className="devicon-git-plain-wordmark colored ml-3 mr-2 text-4xl"></i>
-									<i className="devicon-github-original-wordmark ml-3 mr-2 text-4xl"></i>
-									<SiPostman className="ml-3 mr-2 text-4xl " />
-								</div>
-							</div>
-							<div className="mb-8  w-full sm:w-[33%]">
-								<p className="mb-4   border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
-									Metodologias Ágeis{' '}
-								</p>
-								<div className="flex">
-									<DiScrum className=" colored ml-3 mr-2 text-5xl" />
-								</div>
-							</div>
-						</div>
+						<TecnologiasDominadas tecnologias={tecnologiasDominadasData} />
 					</div>
-					<div className="border-b-[1px] border-solid border-borderColor pl-3 pt-3">
-						<div className="pb-2 pt-5 text-2xl font-bold ">
+					<div className="border-b-[1px] border-solid border-borderColor pl-3 py-4">
+						<div className="pb-2 text-2xl font-bold ">
 							Minhas experiências:
 						</div>
 						<div className="xl:pb-3">
@@ -211,8 +109,8 @@ export default function Home() {
 							</p>
 						</div>
 					</div>
-					<div className="border-b-[1px] border-solid border-borderColor pl-3 pt-3">
-						<div className="pb-2 pt-5  text-2xl font-bold ">Formação:</div>
+					<div className="border-b-[1px] border-solid border-borderColor pl-3 py-4">
+						<div className="pb-2   text-2xl font-bold ">Formação:</div>
 						<div className="pb-3">
 							<h3 className="border-l-[5px]  border-mainColor pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 								Graduação em Ciências da Computação
@@ -235,13 +133,13 @@ export default function Home() {
 							<p className=" pl-10 pt-3">
 								Centro Universitário de Patos (UNIFIP)
 							</p>
-							<p className=" pl-10 pt-3 lg:pb-6">
+							<p className=" pl-10 pt-3">
 								Fevereiro/2020 - Julho/2020 (1 semestre)
 							</p>
 						</div>
 					</div>
-					<div className="pl-3">
-						<div className="pb-2 pt-5 text-2xl font-bold ">Certificados</div>
+					<div className="pl-3 py-4">
+						<div className="  text-2xl font-bold ">Certificados</div>
 						<div className=" pt-2">
 							<div className="m-auto">
 								<div className="flex max-w-full">
@@ -254,87 +152,15 @@ export default function Home() {
 										(sobre: string, index: number) => (
 											<div>
 												<p className=" pl-10 pt-3">{sobre}</p>
-												{/* {index !==
-													certificados.certificados[indiceAtual].sobre.length -
-														1 && <br />} */}
 											</div>
-										)
-									)}
+										))}
 								</div>
 
 								<p className=" pl-10 pt-3 text-[120%] font-bold">
 									Tecnologias Utilizadas:
 								</p>
 								<div className="flex w-full flex-wrap pl-7 pt-3">
-									{certificados.certificados[indiceAtual].tecnologias.map(
-										(tecnologia: string, index: number) =>
-											tecnologia === 'postman' ? (
-												<SiPostman
-													className="text-orange ml-3 mr-2 text-[200%]"
-													style={{
-														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-													}}
-												/>
-											) : tecnologia === 'fastify' ?
-												(<i
-													key={tecnologia}
-													className={
-														'devicon-fastify-plain ml-3 mr-2 text-[200%]'
-													}
-													style={{
-														marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-													}}
-												></i>) : tecnologia === 'scrum' ? (
-													<DiScrum
-														className="ml-3 mr-2 text-[250%]"
-														style={{
-															marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-														}}
-													/>
-												) : tecnologia === 'express' ? (
-													<div
-														key={tecnologia}
-														className={
-															'devicon-express-original  ml-3 mr-2 text-[200%]'
-														}
-														style={{
-															marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-														}}
-													></div>
-												) : tecnologia === 'nextjs' ? (
-													<div
-														key={tecnologia}
-														className={
-															'devicon-nextjs-original  ml-3 mr-2 text-[200%]'
-														}
-														style={{
-															marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-														}}
-													></div>
-												)
-													: tecnologia === "vite" ? (
-														<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-															className='devicon-nextjs-original  ml-3 mr-2 w-8'
-
-															style={{
-																marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-															}} />
-
-													)
-														:
-														(
-															<div
-																key={tecnologia}
-																className={`devicon-${tecnologia === 'github'
-																	? 'github-original'
-																	: `${tecnologia}-plain colored`
-																	} ml-3 mr-2 text-[200%]`}
-																style={{
-																	marginBottom: (index + 1) % 6 === 0 ? '1rem' : 0,
-																}}
-															></div>
-														)
-									)}
+									<TecnologiaIcon tecnologias={certificados.certificados[indiceAtual].tecnologias} />
 								</div>
 
 							</div>

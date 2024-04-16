@@ -10,6 +10,7 @@ export default {
 			bioBgColor: '#212121',
 			bioBorderColor: '#ffffff',
 			aboutBgColor: '#131212',
+			azulBebe: '#35DCFA',
 			transparent: 'transparent',
 		},
 	},
