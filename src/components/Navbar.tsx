@@ -1,73 +1,75 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-let colorHome: string = 'bg-mainColor';
+let colorInicio: string = 'bg-mainColor';
 let colorSobre: string = 'bg-mainColor';
 let colorProjects: string = 'bg-mainColor';
-function corHome() {
-	colorHome = 'bg-transparent';
+function corInicio() {
+	colorInicio = 'bg-transparent';
 	colorSobre = 'bg-mainColor';
 	colorProjects = 'bg-mainColor';
 }
 function corSobre() {
 	colorSobre = 'bg-transparent';
-	colorHome = 'bg-mainColor';
+	colorInicio = 'bg-mainColor';
 	colorProjects = 'bg-mainColor';
 }
 function corProjects() {
 	colorProjects = 'bg-transparent';
 	colorSobre = 'bg-mainColor';
-	colorHome = 'bg-mainColor';
+	colorInicio = 'bg-mainColor';
 }
 
 if (window.location.pathname === '/') {
-	colorHome = 'bg-transparent';
+	colorInicio = 'bg-transparent';
 	colorSobre = 'bg-mainColor';
 	colorProjects = 'bg-mainColor';
 }
 if (window.location.pathname === '/sobre') {
 	colorSobre = 'bg-transparent';
-	colorHome = 'bg-mainColor';
+	colorInicio = 'bg-mainColor';
 	colorProjects = 'bg-mainColor';
 } else if (window.location.pathname === '/projetos') {
 	colorProjects = 'bg-transparent';
-	colorHome = 'bg-mainColor';
+	colorInicio = 'bg-mainColor';
 	colorSobre = 'bg-mainColor';
 }
 
 export default function Navbar() {
 	return (
-		<div className="">
-			<ul className="flex list-none justify-center gap-3 text-center md:flex-col  lg:flex-row">
-				<li className="mx-0">
+		<div >
+			<div className="flex list-none lg:flex-row justify-center gap-3 no-underline text-center font-bold md:flex-col">
+				<button >
 					<Link
-						className={`text-[16px] font-bold  hover:bg-transparent hover:text-mainTextColor ${colorSobre} m-[25px_0] flex w-[80px] rounded-[5px] border-[2px] border-solid border-mainColor  p-[12px_15px] text-center no-underline transition-[0.5s] md:my-1`}
+						className={`flex justify-center text-[16px] hover:bg-transparent hover:text-mainColor ${colorSobre}
+						  w-[80px] rounded-[5px] border-[2px] border-mainColor  p-[12px_12px]  transition-[0.5s]`}
 						to="/sobre"
 						onClick={corSobre}
 					>
 						Sobre
 					</Link>
-				</li>
-				<li className="mx-0">
+				</button>
+				<button>
 					<Link
-						className={`flex-start text-center font-bold hover:bg-transparent hover:text-mainTextColor ${colorHome} m-[25px_0] flex w-[72px] content-between rounded-[3px] border-[2px] border-solid border-mainColor p-[12px_12px] text-center no-underline transition-[0.5s] md:my-1`}
+						className={` flex justify-center text-[16px]  hover:bg-transparent  hover:text-mainColor ${colorInicio}
+						 w-[80px]  rounded-[5px] border-[2px] border-mainColor p-[12px_12px]  transition-[0.5s]`}
 						to="/"
-						onClick={corHome}
+						onClick={corInicio}
 					>
-						{/* <AiFillHome className="text-xl mainTextColor" / */}
-						<span className="text-[16px]font-bold">Home</span>
+						Inicio
 					</Link>
-				</li>
-				<li className="mx-0">
+				</button>
+				<li >
 					<Link
-						className={`hover:text- mx-auto text-[16px] font-bold hover:bg-transparent ${colorProjects} m-[25px_0] flex w-[80px] rounded-[5px] border-[2px] border-solid border-mainColor p-[12px_7px] text-center no-underline transition-[0.5s] hover:text-mainTextColor md:my-1`}
+						className={` flex justify-center text-[16px] hover:bg-transparent hover:text-mainColor ${colorProjects}
+						 w-[80px] rounded-[5px] border-[2px] border-mainColor  p-[12px_12px]  transition-[0.5s]`}
 						to="/projetos"
 						onClick={corProjects}
 					>
 						Projetos
 					</Link>
 				</li>
-			</ul>
+			</div>
 		</div>
 	);
 }

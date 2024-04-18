@@ -5,6 +5,7 @@ import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
 import Navbar from './Navbar';
 import Typewriter from 'typewriter-effect';
+import { BotaoCurriculo } from './BotaoCurriculo';
 
 export default function Sidebar() {
 	return (
@@ -115,19 +116,7 @@ export default function Sidebar() {
 				</p>
 			</div>
 
-			<div className="flex w-full justify-center">
-				<a
-					className="m-[25px_0] flex  w-[170px] justify-center rounded-[5px]  border-[3px] border-solid border-mainColor bg-mainColor p-[12px] text-[13px] font-bold text-mainTextColor no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
-					href="https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing"
-					target="_blank"
-				>
-					<span className="pr-2 text-mainTextColor ">
-						Ver curriculo
-						{'     '}
-					</span>
-					<BsJournalText className="max-w-[25px]  text-[18px]  " />
-				</a>
-			</div>
+			<BotaoCurriculo />
 			<Navbar />
 		</div>
 	);
