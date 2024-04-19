@@ -41,8 +41,8 @@ export default function Navbar() {
 			<div className="flex list-none lg:flex-row justify-center gap-3 no-underline text-center font-bold md:flex-col">
 				<button >
 					<Link
-						className={`flex justify-center text-[16px] hover:bg-transparent hover:text-mainColor ${colorSobre}
-						  w-[80px] rounded-[5px] border-[2px] border-mainColor  p-[12px_12px]  transition-[0.5s]`}
+						className={`flex justify-center text-[16px] hover:bg-transparent hover:text-mainTextColor ${colorSobre}
+						  w-[80px] rounded-[5px] border-[2px] border-mainColor  p-3 transition-[0.5s]`}
 						to="/sobre"
 						onClick={corSobre}
 					>
@@ -51,18 +51,18 @@ export default function Navbar() {
 				</button>
 				<button>
 					<Link
-						className={` flex justify-center text-[16px]  hover:bg-transparent  hover:text-mainColor ${colorInicio}
-						 w-[80px]  rounded-[5px] border-[2px] border-mainColor p-[12px_12px]  transition-[0.5s]`}
+						className={` flex justify-center text-[16px]  hover:bg-transparent  hover:text-mainTextColor ${colorInicio}
+						 w-[80px]  rounded-[5px] border-[2px] border-mainColor p-3 transition-[0.5s]`}
 						to="/"
 						onClick={corInicio}
 					>
-						Inicio
+						Início
 					</Link>
 				</button>
 				<li >
 					<Link
-						className={` flex justify-center text-[16px] hover:bg-transparent hover:text-mainColor ${colorProjects}
-						 w-[80px] rounded-[5px] border-[2px] border-mainColor  p-[12px_12px]  transition-[0.5s]`}
+						className={` flex justify-center text-[16px] hover:bg-transparent hover:text-mainTextColor ${colorProjects}
+						 w-[80px] rounded-[5px] border-[2px] border-mainColor  p-3 transition-[0.5s]`}
 						to="/projetos"
 						onClick={corProjects}
 					>

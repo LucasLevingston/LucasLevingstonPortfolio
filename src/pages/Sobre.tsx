@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import { FaShareAltSquare } from 'react-icons/fa';
-import { DiScrum } from 'react-icons/di';
-import { SiPostman } from 'react-icons/si';
 import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
 import TecnologiaIcon from '../components/TecnologiaIcon';
 import { certificados } from '../Data/CertificadosData';
@@ -34,37 +31,7 @@ export default function Home() {
 			>
 				<Header />
 				<div className="overflow-y-auto">
-					<div className='border-b-[2px] '>
-
-						<p className="max-w-[100%]  ">
-							Sou um desenvolvedor apaixonado pelo que faço. Costumo dizer que
-							“quem faz o que gosta, vive de férias”. Tenho
-							<span className="text-mainColor"> 7 meses de experiência </span>e já
-							atuei tanto no back end como no front end, utilizando{' '}
-							<span className="text-mainColor">
-								{' '}
-								React, Typescript, Tailwind CSS, MongoDB, Prisma, Express,
-								Postman, Git, GitHub, Scrum e Docker.
-							</span>
-						</p>
-						<br />
-						<p className="mb-4 max-w-[100%] ">
-							Atualmente estou no{' '}
-							<span className="text-mainColor">8º semestre </span> do curso de
-							<span className="text-mainColor"> Ciências da Computação.</span>
-						</p>
-						<a
-							className="] m-[25px_0] flex w-[150px] rounded-[5px] border-[3px] border-solid border-mainColor bg-mainColor p-[12px_10px] text-center text-[13px] font-bold no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
-							href="https://github.com/LucasLevingston"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaShareAltSquare className="text-[22px]  " />
-							<span className=" pl-3  text-mainTextColor"> Ver GitHub</span>
-						</a>
-					</div>
-
-					<div className="border-y-[1px] border-solid border-borderColor py-4 ">
+					<div className="border-b-[1px] border-solid border-borderColor pl-3 py-4">
 						<p className="text-2xl font-bold ">
 							Conheça as tecnologias que domino:
 						</p>
@@ -86,13 +53,11 @@ export default function Home() {
 								</span>
 							</p>
 							<p className=" pl-10 pt-3">
-								Atuava com{' '}
-								<span className="text-mainColor">Desenvolvimento web.</span>{' '}
-								Desenvolvendo tanto o Back e o Front de aplicações utilizando{' '}
-								<span className="text-mainColor">
-									React, Typescript, Tailwind CSS, MongoDB, Prisma, Express,
-									Postman, Git, GitHub, Scrum e Docker.
-								</span>
+								Liderei o desenvolvimento de um sistema de CRM, usado no gerenciamento das vendas dos cursos da Unopar na região, atendendo centenas de alunos.
+								Trabalhei com desenvolvimento web, <span className='text-mainColor'>desenvolvendo tanto o Back e o Front de aplicações utilizando React, Typescript, Tailwind, Mongo, Prisma, Express e Docker. </span>
+								Encarregado da coleta de requisitos, design de projeto e escolha da Stack de tecnologias utilizada.
+								Atuei na implementação de diversas rotas e lógica de negócio de uma <span className='text-mainColor'>API REST </span> , além de desenvolver as<span className='text-mainColor'> interfaces e features presentes no front-end</span> .
+								Realizei a reformulação e modularização do back-end, padronizando a organização de pastas e arquivos do projeto, aprimorando a Developer Experience.
 							</p>
 						</div>
 						<div className="pb-5 pt-5">

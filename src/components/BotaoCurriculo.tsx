@@ -12,10 +12,10 @@ export function BotaoCurriculo() {
             target="_blank"
          >
             <span className="pr-2 text-mainTextColor ">
-               Ver curriculo
+               Ver currículo
                {'     '}
             </span>
-            <BsJournalText className="max-w-[25px]  text-[18px]  " />
+            <BsJournalText className="text-[18px]  " />
          </a>
       </div>
    )
