@@ -11,7 +11,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 		<div
 			id="Sidebar"
 
-			className={"flex h-full flex-col gap-8 items-center overflow-y-auto bg-bioBgColor p-[20px_12px] text-center text-mainTextColor no-underline scrollbar no-scrollbar hover:no-underline sm:fixed sm:min-h-screen " + (home ? "w-full" : "w-1/4") + " md:border-r-[5px]"}
+			className={"flex w-full h-full flex-col gap-8 items-center overflow-y-auto bg-bioBgColor p-[20px_12px] text-center text-mainTextColor no-underline scrollbar no-scrollbar hover:no-underline sm:fixed sm:min-h-screen " + (home ? "w-full" : "sm:w-1/4") + " md:border-r-[5px]"}
 		>
 			<h1 className="text-[32px] font-bold text-bioBorderColor">
 				Lucas Levingston

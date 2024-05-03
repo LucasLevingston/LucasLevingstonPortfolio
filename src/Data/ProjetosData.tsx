@@ -26,6 +26,9 @@ import PiwNode3 from '../assets/pass-in-web-node3.jpg';
 import GestaoFuncionarios1 from '../assets/GestaoFuncionarios1.jpg';
 import GestaoFuncionarios2 from '../assets/GestaoFuncionarios2.jpg';
 import GestaoFuncionarios3 from '../assets/GestaoFuncionarios3.jpg';
+import caputeeno1 from '../assets/caputeeno1.jpg';
+import caputeeno2 from '../assets/caputeeno2.jpg';
+import caputeeno3 from '../assets/caputeeno3.jpg';
 
 
 export const projetos: ProjetoType[] = [
@@ -63,6 +66,20 @@ export const projetos: ProjetoType[] = [
          'PDF',
       ],
       github: 'https://github.com/LucasLevingston/taugor-project'
+   },
+   {
+      nome: 'Caputeeno',
+      sobre: 'Este projeto consiste em uma aplicação front-end em ReactJS, onde me realizei um desafio visto no youtube, desenvolvendo o Front-End de um E-commerce. Mudei as tecnologias utilizadas no desafio e utilizei as que uso no meu dia a dia, assim com um sistema 100% desenvolvido por mim.',
+      imagens: [caputeeno1, caputeeno2, caputeeno3],
+      github: 'https://github.com/LucasLevingston/capputeeno',
+      tecnologias: [
+         'vite',
+         'react',
+         'typescript',
+         'tailwindcss',
+         'node',
+         'graphql',
+      ],
    },
    {
       nome: 'Pass In Web - ReactJs',

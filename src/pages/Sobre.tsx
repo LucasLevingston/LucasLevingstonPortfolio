@@ -114,9 +114,9 @@ export default function Home() {
 								</div>
 								<div className="">
 									{certificados.certificados[indiceAtual].sobre.map(
-										(sobre: string, index: number) => (
+										(sobre, index) => (
 											<div>
-												<p className=" pl-10 pt-3">{sobre}</p>
+												<p className=" pl-10 pt-3" key={index}>{sobre}</p>
 											</div>
 										))}
 								</div>

@@ -7,7 +7,12 @@ import { SiPostman, SiVite } from 'react-icons/si';
 import Typewriter from 'typewriter-effect';
 import { PiFilePdfBold } from "react-icons/pi";
 import TecnologiaIcon from './TecnologiaIcon';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, Virtual } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 export interface ProjetoType {
 	nome: string;
@@ -66,23 +71,19 @@ export default function ProjetoCard(projeto: ProjetoType) {
 				</div>
 			</div>
 			{projeto.imagens && (
-				<div className="m-auto flex h-[300px] w-full max-w-[700px] items-center px-0 py-10
-				 sm:h-[160px] sm:max-w-[500px] sm:p-8  md:h-[460px] md:max-w-[800px]">
-					<div className=" cursor-pointer rounded-full p-2 pl-5 text-2xl text-mainTextColor group-hover:block">
-						<BsChevronBarLeft onClick={imagemAnterior} size={30} />
-					</div>
-
-					<div
-						style={{
-							backgroundImage: `url(${projeto.imagens[indiceAtual]})`,
-							backgroundSize: 'cover',
-						}}
-						className="h-full w-full rounded-2xl bg-cover bg-center duration-500"
-					></div>
-					<div className=" cursor-pointer rounded-full p-2 pr-5 text-2xl text-mainTextColor group-hover:block">
-						<BsChevronBarRight onClick={proximaImagem} size={30} />
-					</div>
-				</div>
+				<Swiper
+					modules={[Virtual]}
+					pagination={{ clickable: true }}
+					slidesPerView={1}
+					spaceBetween={50}
+					className='m-auto flex  items-center px-0 py-10 sm:p-8 sm:w-[1280px] sm:h-[720px] h-[300px] w-[380px]'
+				>
+					{projeto.imagens.map((imagem, index) => (
+						<SwiperSlide key={index} virtualIndex={index}>
+							<img src={imagem} alt={`Imagem ${index}`} className='h-full w-full rounded-2xl bg-cover bg-center duration-500' />
+						</SwiperSlide>
+					))}
+				</Swiper>
 			)}
 
 			<div className="flex items-center justify-center ">
