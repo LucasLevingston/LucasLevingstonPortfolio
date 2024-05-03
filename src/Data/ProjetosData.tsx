@@ -77,7 +77,7 @@ export const projetos: ProjetoType[] = [
          'react',
          'typescript',
          'tailwindcss',
-         'node',
+         'nodejs',
          'graphql',
       ],
    },
