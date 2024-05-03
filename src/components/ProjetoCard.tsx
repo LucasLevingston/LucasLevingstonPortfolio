@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AiOutlineLink } from 'react-icons/ai';
-import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
-import { DiScrum } from 'react-icons/di';
 import { GoRepoForked } from 'react-icons/go';
-import { SiPostman, SiVite } from 'react-icons/si';
 import Typewriter from 'typewriter-effect';
-import { PiFilePdfBold } from "react-icons/pi";
 import TecnologiaIcon from './TecnologiaIcon';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Virtual } from 'swiper/modules';
+import { Swiper, SwiperSlide, } from 'swiper/react';
+import { Virtual } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -24,26 +20,6 @@ export interface ProjetoType {
 }
 
 export default function ProjetoCard(projeto: ProjetoType) {
-	const [indiceAtual, setIndiceAtual] = useState(0);
-
-	const imagemAnterior = () => {
-		if (projeto.imagens) {
-			const isFirstImage = indiceAtual === 0;
-			const novoIndice = isFirstImage
-				? projeto.imagens.length - 1
-				: indiceAtual - 1;
-			setIndiceAtual(novoIndice);
-		}
-	};
-
-	const proximaImagem = () => {
-		if (projeto.imagens) {
-			const isLastImage = indiceAtual === projeto.imagens.length - 1;
-			const novoIndice = isLastImage ? 0 : indiceAtual + 1;
-			setIndiceAtual(novoIndice);
-		}
-	};
-
 	return (
 		<div
 			id="Projects component"
@@ -73,9 +49,11 @@ export default function ProjetoCard(projeto: ProjetoType) {
 			{projeto.imagens && (
 				<Swiper
 					modules={[Virtual]}
-					pagination={{ clickable: true }}
+					pagination={{ clickable: true, }}
 					slidesPerView={1}
 					spaceBetween={50}
+					scrollbar={{ draggable: true }}
+
 					className='m-auto flex  items-center px-0 py-10 sm:p-8 sm:w-[1280px] sm:h-[720px] h-[300px] w-[380px]'
 				>
 					{projeto.imagens.map((imagem, index) => (
