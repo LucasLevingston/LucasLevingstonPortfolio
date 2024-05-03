@@ -1,27 +1,20 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import { BsChevronBarLeft, BsChevronBarRight } from 'react-icons/bs';
 import TecnologiaIcon from '../components/TecnologiaIcon';
 import { certificados } from '../Data/CertificadosData';
 import { TecnologiasDominadas } from '../components/TecnologiasDominadas';
 import { tecnologiasDominadasData } from '../Data/TecnologiasDominadasData';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import '../index.css';
 
 export default function Home() {
-	const [indiceAtual, setIndiceAtual] = useState(0);
-
-	const imagemAnterior = () => {
-		const novoIndice =
-			(indiceAtual - 1 + certificados.certificados.length) %
-			certificados.certificados.length;
-		setIndiceAtual(novoIndice);
-	};
-
-	const proximaImagem = () => {
-		const novoIndice = (indiceAtual + 1) % certificados.certificados.length;
-		setIndiceAtual(novoIndice);
-	};
-
+	const [indiceAtual, setIndiceAtual] = useState<number>(0);
 	return (
 		<div className=" text-mainTextColor">
 			<Sidebar />
@@ -104,52 +97,56 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="pl-3 py-4">
-						<div className="  text-2xl font-bold ">Certificados</div>
-						<div className=" pt-2">
+						<div className=" text-2xl font-bold ">Certificados</div>
+						<div className="pt-2">
 							<div className="m-auto">
 								<div className="flex max-w-full">
 									<h2 className="border-l-[5px] border-mainColor pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 										{certificados.certificados[indiceAtual].nome}
 									</h2>
 								</div>
-								<div className="">
-									{certificados.certificados[indiceAtual].sobre.map(
-										(sobre, index) => (
-											<div>
-												<p className=" pl-10 pt-3" key={index}>{sobre}</p>
+								<div className='pl-10'>
+
+									<div className="">
+										{certificados.certificados[indiceAtual].sobre.map((sobre, index) => (
+											<div key={index}>
+												<p className="pt-3">{sobre}</p>
 											</div>
 										))}
+									</div>
+									<p className="pt-3 text-[120%] font-bold">Tecnologias Utilizadas:</p>
+									<div className="flex w-full flex-wrap pt-3">
+										<TecnologiaIcon tecnologias={certificados.certificados[indiceAtual].tecnologias} />
+									</div>
 								</div>
-
-								<p className=" pl-10 pt-3 text-[120%] font-bold">
-									Tecnologias Utilizadas:
-								</p>
-								<div className="flex w-full flex-wrap pl-7 pt-3">
-									<TecnologiaIcon tecnologias={certificados.certificados[indiceAtual].tecnologias} />
-								</div>
-
 							</div>
-
-							<div className="flex h-[200px] w-[300px]  items-center justify-between md:h-[450px] md:w-[700px]">
-								<div className="transform cursor-pointer rounded-full  text-2xl text-mainTextColor group-hover:block">
-									<BsChevronBarLeft onClick={imagemAnterior} size={30} />
-								</div>
-								<div
-									style={{
-										backgroundImage: `url(${certificados.certificados[indiceAtual].imagem})`,
-										backgroundSize: 'cover',
+							{certificados.certificados[indiceAtual].imagem && (
+								<Swiper
+									modules={[Pagination]}
+									pagination={{
+										clickable: true,
 									}}
-									className="h-[90%] w-[90%] rounded-2xl bg-center duration-500"
-								></div>
-								<div className="transform cursor-pointer rounded-full  text-2xl text-mainTextColor group-hover:block">
-									<BsChevronBarRight onClick={proximaImagem} size={30} />
-								</div>
-							</div>
-							<div></div>
+									slidesPerView={1}
+									spaceBetween={50}
+									onSlideChange={(i) => setIndiceAtual(i.activeIndex)}
+									className='
+									 m-auto flex items-center px-0 py-10 sm:p-8 sm:w-[780px] sm:h-[520px] h-[300px] w-[380px] '
+								>
+									{certificados.certificados.map((certificado, i) => (
+										<SwiperSlide key={i}>
+											<img
+												src={certificado.imagem}
+												alt={`Imagem do certificado ${indiceAtual}`}
+												className="h-full w-full rounded-2xl bg-cover bg-center duration-500"
+											/>
+										</SwiperSlide>
+									))}
+								</Swiper>
+							)}
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 }

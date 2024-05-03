@@ -11,7 +11,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 		<div
 			id="Sidebar"
 
-			className={"flex w-full h-full flex-col gap-8 items-center overflow-y-auto bg-bioBgColor p-[20px_12px] text-center text-mainTextColor no-underline scrollbar no-scrollbar hover:no-underline sm:fixed sm:min-h-screen " + (home ? "w-full" : "sm:w-1/4") + " md:border-r-[5px]"}
+			className={"flex w-full h-full flex-col gap-8 items-center overflow-y-auto bg-bioBgColor p-[20px_12px] text-center text-mainTextColor no-underline scrollbar no-scrollbar hover:no-underline sm:fixed sm:min-h-screen " + (home ? "w-full h-screen" : "sm:w-1/4") + " md:border-r-[5px]"}
 		>
 			<h1 className="text-[32px] font-bold text-bioBorderColor">
 				Lucas Levingston
@@ -21,7 +21,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 				src={fotoCurriculo}
 				alt="Lucas Levingston"
 			/>
-			<p className=" mx-auto  max-w-[100%] text-center  font-bold text-bioBorderColor">
+			<div className=" mx-auto  max-w-[100%] text-center  font-bold text-bioBorderColor">
 				Olá, meu nome é Lucas Levingston e sou{' '}
 				<span className="text-mainColor">
 					{' '}
@@ -42,8 +42,8 @@ export default function Sidebar({ home }: { home?: boolean }) {
 						}}
 					/>
 				</span>
-			</p>
-			<p className="font-bold text-mainTextColor ">
+			</div>
+			<div className="font-bold text-mainTextColor ">
 				<Typewriter
 					onInit={(typewriter) => {
 						typewriter
@@ -58,7 +58,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 							.start();
 					}}
 				/>
-			</p>
+			</div>
 			<SocialBar />
 			<div>
 

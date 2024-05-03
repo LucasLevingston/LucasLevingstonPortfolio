@@ -4,7 +4,7 @@ import { GoRepoForked } from 'react-icons/go';
 import Typewriter from 'typewriter-effect';
 import TecnologiaIcon from './TecnologiaIcon';
 import { Swiper, SwiperSlide, } from 'swiper/react';
-import { Virtual } from 'swiper/modules';
+import { Pagination, Virtual } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -48,7 +48,7 @@ export default function ProjetoCard(projeto: ProjetoType) {
 			</div>
 			{projeto.imagens && (
 				<Swiper
-					modules={[Virtual]}
+					modules={[Pagination]}
 					pagination={{ clickable: true, }}
 					slidesPerView={1}
 					spaceBetween={50}

@@ -10,7 +10,7 @@ export default function Header() {
 				<h1 className="text-4xl font-bold text-bioBorderColor">
 					Lucas Levingston
 				</h1>
-				<p className="text-[20px] font-bold text-mainColor">
+				<div className="text-[20divx] font-bold text-mainColor">
 					<Typewriter
 						onInit={(typewriter) => {
 							typewriter
@@ -27,7 +27,7 @@ export default function Header() {
 								.start();
 						}}
 					/>
-				</p>
+				</div>
 			</div>
 			<div>
 				<p className="max-w-[100%]  ">

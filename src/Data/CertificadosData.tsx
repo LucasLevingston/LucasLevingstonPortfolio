@@ -3,13 +3,16 @@ import CertificadoSercomp from '../assets/CertificadoSercomp.jpg';
 import CertificadoReact from '../assets/CertificadoReact.jpg';
 import CertificadoNode from '../assets/CertificadoNode.jpg';
 
+export interface CertificadoType {
+   nome: string;
+   imagem: string;
+   sobre: string[];
+   tecnologias: string[];
+}
+
+
 export interface CertificadosType {
-   certificados: {
-      nome: string;
-      imagem: string;
-      sobre: string[];
-      tecnologias: string[];
-   }[];
+   certificados: CertificadoType[]
 }
 
 export const certificados: CertificadosType = {
