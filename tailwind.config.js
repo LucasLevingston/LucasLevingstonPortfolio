@@ -2,7 +2,11 @@
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				'mainFont': ['Caviar-Dreams-Regular'],
+			},
+		},
 		colors: {
 			mainColor: '#ff2200',
 			mainTextColor: '#fff',

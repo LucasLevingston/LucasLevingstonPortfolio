@@ -6,13 +6,15 @@ import React from 'react';
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/sobre" element={<Sobre />} caseSensitive={false} />
-				<Route path="/projetos" element={<Projects />} caseSensitive={false} />
-				<Route path="/" element={<Home />} caseSensitive={false} />
-			</Routes>
-		</BrowserRouter>
+		<div className='font-mainFont'>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/sobre" element={<Sobre />} caseSensitive={false} />
+					<Route path="/projetos" element={<Projects />} caseSensitive={false} />
+					<Route path="/" element={<Home />} caseSensitive={false} />
+				</Routes>
+			</BrowserRouter >
+		</div>
 	);
 }
 export default App;

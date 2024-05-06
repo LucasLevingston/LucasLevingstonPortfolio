@@ -15,7 +15,7 @@ export const TecnologiasDominadas: React.FC<TecnologiasDominadasProps> = ({ tecn
                   <p className="mb-4 border-l-[5px] border-solid border-mainColor pl-2 text-xl font-bold">
                      {grupo[0]}
                   </p>
-                  <div className='pl-3 flex gap-x-3'>
+                  <div className='pl-5 flex gap-x-3'>
                      {grupo.slice(1).map((tecnologia, i) => (
                         tecnologia === 'scrum' ? (
                            <DiScrum key={i}
