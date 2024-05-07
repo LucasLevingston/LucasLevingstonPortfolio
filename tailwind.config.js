@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'mainFont': ['Caviar-Dreams-Regular'],
+				'mainFont': ['Roboto-Regular', 'sans-serif'],
 			},
 		},
 		colors: {
