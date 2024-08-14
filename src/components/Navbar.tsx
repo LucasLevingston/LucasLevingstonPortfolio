@@ -1,71 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-let colorInicio: string = 'bg-mainColor';
-let colorSobre: string = 'bg-mainColor';
-let colorProjects: string = 'bg-mainColor';
-function corInicio() {
-	colorInicio = 'bg-transparent';
-	colorSobre = 'bg-mainColor';
-	colorProjects = 'bg-mainColor';
-}
-function corSobre() {
-	colorSobre = 'bg-transparent';
-	colorInicio = 'bg-mainColor';
-	colorProjects = 'bg-mainColor';
-}
-function corProjects() {
-	colorProjects = 'bg-transparent';
-	colorSobre = 'bg-mainColor';
-	colorInicio = 'bg-mainColor';
-}
-
-if (window.location.pathname === '/') {
-	colorInicio = 'bg-transparent';
-	colorSobre = 'bg-mainColor';
-	colorProjects = 'bg-mainColor';
-}
-if (window.location.pathname === '/sobre') {
-	colorSobre = 'bg-transparent';
-	colorInicio = 'bg-mainColor';
-	colorProjects = 'bg-mainColor';
-} else if (window.location.pathname === '/projetos') {
-	colorProjects = 'bg-transparent';
-	colorInicio = 'bg-mainColor';
-	colorSobre = 'bg-mainColor';
-}
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
+	const location = useLocation();
+
+	const [activeButton, setActiveButton] = useState<string>('/');
+
+	useEffect(() => {
+		setActiveButton(location.pathname);
+	}, [location]);
+
+	const getButtonClass = (path: string) =>
+		`flex justify-center text-[16px] hover:bg-transparent hover:text-mainTextColor ${
+			activeButton === path ? 'bg-transparent' : 'bg-mainColor'
+		} w-[80px] rounded-[5px] border-[2px] border-mainColor p-3 transition-[0.5s]`;
+
 	return (
-		<div >
-			<div className="flex list-none lg:flex-row justify-center gap-3 no-underline text-center font-bold md:flex-col">
-				<button >
-					<Link
-						className={`flex justify-center text-[16px] hover:bg-transparent hover:text-mainTextColor ${colorSobre}
-						  w-[80px] rounded-[5px] border-[2px] border-mainColor  p-3 transition-[0.5s]`}
-						to="/sobre"
-						onClick={corSobre}
-					>
+		<div>
+			<div className="flex list-none justify-center gap-3 text-center font-bold no-underline md:flex-col lg:flex-row">
+				<button>
+					<Link className={getButtonClass('/sobre')} to="/sobre">
 						Sobre
 					</Link>
 				</button>
 				<button>
-					<Link
-						className={` flex justify-center text-[16px]  hover:bg-transparent  hover:text-mainTextColor ${colorInicio}
-						 w-[80px]  rounded-[5px] border-[2px] border-mainColor p-3 transition-[0.5s]`}
-						to="/"
-						onClick={corInicio}
-					>
+					<Link className={getButtonClass('/')} to="/">
 						Início
 					</Link>
 				</button>
-				<li >
-					<Link
-						className={` flex justify-center text-[16px] hover:bg-transparent hover:text-mainTextColor ${colorProjects}
-						 w-[80px] rounded-[5px] border-[2px] border-mainColor  p-3 transition-[0.5s]`}
-						to="/projetos"
-						onClick={corProjects}
-					>
+				<li>
+					<Link className={getButtonClass('/projetos')} to="/projetos">
 						Projetos
 					</Link>
 				</li>

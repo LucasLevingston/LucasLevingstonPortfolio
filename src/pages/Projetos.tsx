@@ -1,11 +1,11 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import { FaShareAltSquare } from 'react-icons/fa';
-import { projetos } from '../Data/ProjetosData';
-import ProjetoCard from '../components/ProjetoCard';
+import ProjectCard from '../components/ProjectsCard';
+import { User } from '../Data/userData';
 
 export default function Projects() {
+	const user = User;
 	return (
 		<div className="flex h-full w-full flex-col bg-aboutBgColor sm:flex-row">
 			<Sidebar />
@@ -18,19 +18,19 @@ export default function Projects() {
 					Meus Projetos
 				</h2>
 				<div>
-					{projetos.map((projeto) => (
-						<ProjetoCard
-							key={projeto.nome}
-							nome={projeto.nome}
-							sobre={projeto.sobre}
-							imagens={projeto.imagens}
-							link={projeto.link}
-							github={projeto.github}
-							tecnologias={projeto.tecnologias}
+					{user.projects.map((project) => (
+						<ProjectCard
+							key={project.title}
+							title={project.title}
+							description={project.description}
+							images={project.images}
+							link={project.link}
+							github={project.github}
+							technologies={project.technologies}
 						/>
 					))}
 				</div>
 			</div>
-		</div >
+		</div>
 	);
 }

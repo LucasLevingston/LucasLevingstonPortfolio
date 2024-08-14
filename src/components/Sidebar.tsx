@@ -5,24 +5,34 @@ import Navbar from './Navbar';
 import Typewriter from 'typewriter-effect';
 import { BotaoCurriculo } from './BotaoCurriculo';
 import SocialBar from './SocialBar';
+import { User } from '../Data/userData';
 
 export default function Sidebar({ home }: { home?: boolean }) {
+	const user = User;
+	function formatPhoneNumber(phoneNumber: string): string {
+		const match = phoneNumber.match(/^(\d{2})(\d{5})(\d{4})$/);
+		if (match) {
+			return `(${match[1]}) ${match[2]}-${match[3]}`;
+		}
+		return phoneNumber;
+	}
 	return (
 		<div
 			id="Sidebar"
-
-			className={"flex w-full h-full flex-col gap-8 items-center overflow-y-auto bg-bioBgColor p-[20px_12px] text-center text-mainTextColor no-underline scrollbar no-scrollbar hover:no-underline sm:fixed sm:min-h-screen " + (home ? "w-full h-screen" : "sm:w-1/4") + " md:border-r-[5px]"}
+			className={
+				'flex h-full w-full flex-col items-center gap-8 overflow-y-auto bg-bioBgColor p-[20px_12px] text-center text-mainTextColor no-underline scrollbar no-scrollbar hover:no-underline sm:fixed sm:min-h-screen ' +
+				(home ? 'h-screen w-full' : 'sm:w-1/4') +
+				' md:border-r-[5px]'
+			}
 		>
-			<h1 className="text-[32px] font-bold text-bioBorderColor">
-				Lucas Levingston
-			</h1>
+			<h1 className="text-[32px] font-bold text-bioBorderColor">{user.name}</h1>
 			<img
 				className="mx-auto h-[175px]  w-[175px] rounded-[50%] sm:h-28 sm:w-28"
-				src={fotoCurriculo}
+				src={user.profilePicture}
 				alt="Lucas Levingston"
 			/>
 			<div className=" mx-auto  max-w-[100%] text-center  font-bold text-bioBorderColor">
-				Olá, meu nome é Lucas Levingston e sou{' '}
+				Olá, meu nome é {user.name} e sou{' '}
 				<span className="text-mainColor">
 					{' '}
 					<Typewriter
@@ -61,20 +71,19 @@ export default function Sidebar({ home }: { home?: boolean }) {
 			</div>
 			<SocialBar />
 			<div>
-
 				<div className="flex w-[100%] justify-center transition-[1s] hover:text-[17px]">
 					<a
 						className=" text-none  flex  hover:text-mainTextColor "
 						href="mailto:lucaslevingston94@gmail.com"
 					>
 						<AiOutlineMail className=" mr-[15px] max-w-[20px] text-[25px] text-mainColor" />
-						lucaslevingston94@gmail.com
+						{user.email}{' '}
 					</a>
 				</div>
 				<div className="flex w-full justify-center">
 					<AiFillPhone className="mr-[5px]   max-w-[20px] text-[25px] text-mainColor" />
 					<p className="text-none max-w-[225px]  hover:text-mainTextColor">
-						(83) 99961-6220
+						{formatPhoneNumber(user.phone)}
 					</p>
 				</div>
 			</div>

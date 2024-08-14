@@ -4,22 +4,14 @@ import { GoRepoForked } from 'react-icons/go';
 import Typewriter from 'typewriter-effect';
 import TecnologiaIcon from './TecnologiaIcon';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Virtual } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { ProjectType } from '../types/projectType';
 
-export interface ProjetoType {
-	nome: string;
-	sobre: string;
-	imagens?: string[];
-	github?: string;
-	link?: string;
-	tecnologias: string[];
-}
-
-export default function ProjetoCard(projeto: ProjetoType) {
+export default function ProjectCard(projeto: ProjectType) {
 	return (
 		<div
 			id="Projects component"
@@ -30,11 +22,11 @@ export default function ProjetoCard(projeto: ProjetoType) {
 				<h1 className="border-l-[5px]  border-mainColor  pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 					<Typewriter
 						onInit={(typewriter) => {
-							typewriter.typeString(projeto.nome).start();
+							typewriter.typeString(projeto.title).start();
 						}}
 					/>
 				</h1>
-				<p className=" pl-10 pt-3">{projeto.sobre}</p>
+				<p className=" pl-10 pt-3">{projeto.description}</p>
 				<br />
 			</div>
 
@@ -42,10 +34,10 @@ export default function ProjetoCard(projeto: ProjetoType) {
 				<p className="text-xl font-bold">Tecnologias Utilizadas:</p>
 				<br />
 				<div className="flex w-full flex-wrap">
-					<TecnologiaIcon tecnologias={projeto.tecnologias} />
+					<TecnologiaIcon tecnologias={projeto.technologies} />
 				</div>
 			</div>
-			{projeto.imagens && (
+			{projeto.images && (
 				<Swiper
 					modules={[Pagination]}
 					pagination={{ clickable: true }}
@@ -54,10 +46,10 @@ export default function ProjetoCard(projeto: ProjetoType) {
 					scrollbar={{ draggable: true }}
 					className="m-auto flex h-[300px] w-[380px] items-center px-0 py-10 sm:h-[576px] sm:w-[1024px] sm:p-8"
 				>
-					{projeto.imagens.map((imagem, index) => (
+					{projeto.images.map((image, index) => (
 						<SwiperSlide key={index} virtualIndex={index}>
 							<img
-								src={imagem}
+								src={image}
 								alt={`Imagem ${index}`}
 								className="h-full w-full rounded-2xl bg-cover bg-center duration-500"
 							/>

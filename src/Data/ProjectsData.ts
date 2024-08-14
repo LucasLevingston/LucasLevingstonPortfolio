@@ -1,4 +1,3 @@
-import { ProjetoType } from '../components/ProjetoCard';
 import SP1 from '../assets/SPOTIFY1.png';
 import SP2 from '../assets/SPOTIFY2.png';
 import SP3 from '../assets/SPOTIFY3.png';
@@ -37,13 +36,14 @@ import sercomp2 from '../assets/sercomp2.png';
 import sercomp3 from '../assets/sercomp3.png';
 import sercomp4 from '../assets/sercomp4.png';
 import sercomp5 from '../assets/sercomp5.png';
+import { ProjectType } from '../types/ProjectType';
 
-export const projetos: ProjetoType[] = [
+export const ProjectsData: ProjectType[] = [
 	{
-		nome: 'CRM Splen',
-		sobre:
+		title: 'CRM Splen',
+		description:
 			'CRM feito no estágio afim de venda de cursos da determinada empresa. Foram 7 meses de trabalho com início em junho de 2023 e fim em janeiro de 2024.',
-		tecnologias: [
+		technologies: [
 			'vite',
 			'react',
 			'typescript',
@@ -58,12 +58,12 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'Verbo Eventos',
-		sobre:
+		title: 'Verbo Eventos',
+		description:
 			'Se trata de um sistema de gestão de eventos. Feito em conjunto com outros desenvolvedores, utilizamos o padrão GitFlow. Desenvolvido o back e o front.',
-		imagens: [verbo1, verbo2, verbo3],
+		images: [verbo1, verbo2, verbo3],
 
-		tecnologias: [
+		technologies: [
 			'vite',
 			'react',
 			'fastify',
@@ -80,11 +80,11 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'VI Sercomp',
-		imagens: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
-		sobre:
+		title: 'VI Sercomp',
+		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
+		description:
 			'Um projeto voluntário da faculdade que estudo, onde se trata de um sistema para o anual evento que acontece. Foi utilizado GitFlow para desenvolvimento. Juntamente com uma grande equipe de alunos conseguimos concluir o projeto em 2 meses.',
-		tecnologias: [
+		technologies: [
 			'vite',
 			'react',
 			'javascript',
@@ -96,11 +96,11 @@ export const projetos: ProjetoType[] = [
 		link: 'https://sercomppb.com.br/',
 	},
 	{
-		nome: 'Gestão de Funcionários',
-		imagens: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
-		sobre:
+		title: 'Gestão de Funcionários',
+		images: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
+		description:
 			'Se trata de um sistema de gestão de funcionários com componentes do Shadcn como por exemplo o  formulário para o registro. Ele tem alterações de dados, promoção de funcionários e geração de PDF para os mesmos. Tudo armazenado no Firebase.',
-		tecnologias: [
+		technologies: [
 			'vite',
 			'react',
 			'typescript',
@@ -113,12 +113,12 @@ export const projetos: ProjetoType[] = [
 		github: 'https://github.com/LucasLevingston/taugor-project',
 	},
 	{
-		nome: 'Caputeeno',
-		sobre:
+		title: 'Caputeeno',
+		description:
 			'Este projeto consiste em uma aplicação front-end em ReactJS, onde me realizei um desafio visto no youtube, desenvolvendo o Front-End de um E-commerce. Mudei as tecnologias utilizadas no desafio e utilizei as que uso no meu dia a dia, assim com um sistema 100% desenvolvido por mim.',
-		imagens: [caputeeno1, caputeeno2, caputeeno3],
+		images: [caputeeno1, caputeeno2, caputeeno3],
 		github: 'https://github.com/LucasLevingston/capputeeno',
-		tecnologias: [
+		technologies: [
 			'vite',
 			'react',
 			'typescript',
@@ -128,12 +128,12 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'Pass In Web - ReactJs',
-		sobre:
+		title: 'Pass In Web - ReactJs',
+		description:
 			'Este projeto consiste em uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.',
-		imagens: [PIW1, PIW2, PIW3],
+		images: [PIW1, PIW2, PIW3],
 		github: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
-		tecnologias: [
+		technologies: [
 			'vite',
 			'react',
 			'typescript',
@@ -143,12 +143,12 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'Pass In Web - NodeJs',
-		sobre:
+		title: 'Pass In Web - NodeJs',
+		description:
 			'Este projeto no consiste em uma aplicação back-end em Node.js, aplicação dos conceitos de API REST, utilizando TypeScript, Fastify como framework, integração do Prisma ORM + SQLite e Zod para validação de dados.',
-		imagens: [PiwNode1, PiwNode2, PiwNode3],
+		images: [PiwNode1, PiwNode2, PiwNode3],
 		github: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
-		tecnologias: [
+		technologies: [
 			'typescript',
 			'nodejs',
 			'fastify',
@@ -159,12 +159,12 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'Threads Clone',
-		sobre: '	O Threads clone é um projeto do clone do site Threads. ',
-		imagens: [T1, T2, T3],
+		title: 'Threads Clone',
+		description: '	O Threads clone é um projeto do clone do site Threads. ',
+		images: [T1, T2, T3],
 		github: 'https://github.com/LucasLevingston/threads_app',
 		link: 'https://threads-app-nextjs13.vercel.app/',
-		tecnologias: [
+		technologies: [
 			'react',
 			'typescript',
 			'nextjs',
@@ -175,12 +175,12 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'Spotify Clone',
-		sobre: '	O Spotify clone é um projeto do clone do site Spotify.',
-		imagens: [SP2, SP3, SP1],
+		title: 'Spotify Clone',
+		description: '	O Spotify clone é um projeto do clone do site Spotify.',
+		images: [SP2, SP3, SP1],
 		github: 'https://github.com/LucasLevingston/spotify-clone',
 		link: 'https://spotify-nextjs13.vercel.app/',
-		tecnologias: [
+		technologies: [
 			'react',
 			'typescript',
 			'nextjs',
@@ -191,13 +191,13 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'Flexibble',
-		sobre:
+		title: 'Flexibble',
+		description:
 			'O Flexibble é uma aplicação web que tem como objetivo ser uma plataforma colaborativa para entusiastas da programação mostrarem, colaborarem e descobrirem projetos de programação.',
-		imagens: [F3, F2, F1],
+		images: [F3, F2, F1],
 		github: 'https://github.com/LucasLevingston/grafbase_Flexibble',
 		link: 'https://flexibble-nexjs13.vercel.app/',
-		tecnologias: [
+		technologies: [
 			'react',
 			'typescript',
 			'nextjs',
@@ -208,27 +208,27 @@ export const projetos: ProjetoType[] = [
 		],
 	},
 	{
-		nome: 'Meu Portfólio ',
-		sobre:
+		title: 'Meu Portfólio ',
+		description:
 			'Como forma de aprendizado, desenvolvi meu portfólio  utilizando o framework react. Utilizando a linguagem TypeScript e o Tailwind CSS para estilização. Foi meu primeiro contato com react e o pontapé para projetos futuros.',
-		imagens: [MP1, MP2, MP3],
+		images: [MP1, MP2, MP3],
 		github: 'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
-		tecnologias: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
+		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
 	},
 	{
-		nome: 'Campo Minado',
-		sobre:
+		title: 'Campo Minado',
+		description:
 			'Campo minado foi um projeto na linguagem Java de um jogo já existente, onde o objetivo do jogo é o usuário abrir todos os campos do jogo sem abrir nenhum campo que esteja minado, caso ele abra, irá perder o jogo. Para a abertura de campos, utilizei o padrão observer. Quando tem um campo que esteja minado, os campos vizinhos irão avisar que tem entre 1 e 4 campos minados dentre os seus vizinhos. Com isso, abrindo campo por campo, até completar o jogo. Na parte gráfica utilizei o Jbutton, onde cada campo representa um botão. Utilizei a biblioteca do JUnit para os testes da aplicação.',
-		imagens: [CM1, CM2, CM3],
+		images: [CM1, CM2, CM3],
 		github: 'https://github.com/LucasLevingston/Campo_Minado',
-		tecnologias: ['java'],
+		technologies: ['java'],
 	},
 	{
-		nome: 'Calculadora',
-		sobre:
+		title: 'Calculadora',
+		description:
 			'Calculadora em Java utilizando o padrão Observer e orientação a objetos, com interface gráfica Swing e suporte para adição, subtração, multiplicação e divisão. Aplicação modular e interativa, atualizando a tela em tempo real. Exemplo de código organizado e habilidades em desenvolvimento Java.',
-		imagens: [CALC1, CALC2, CALC3],
+		images: [CALC1, CALC2, CALC3],
 		github: 'https://github.com/LucasLevingston/Calculadora.git',
-		tecnologias: ['java'],
+		technologies: ['java'],
 	},
 ];
