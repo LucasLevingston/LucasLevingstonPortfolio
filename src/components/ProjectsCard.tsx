@@ -9,16 +9,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { ProjectType } from '../types/projectType';
+import { ProjectType } from '../types/ProjectType';
+import Section from './Section';
 
 export default function ProjectCard(projeto: ProjectType) {
 	return (
-		<div
-			id="Projects component"
-			className="sm:p- flex flex-[1_1_80%] flex-col border-b-[1px] border-solid border-borderColor
-			 bg-aboutBgColor   pb-5  text-mainTextColor"
-		>
-			<div className="pt-5">
+		<Section>
+			<div>
 				<h1 className="border-l-[5px]  border-mainColor  pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 					<Typewriter
 						onInit={(typewriter) => {
@@ -90,6 +87,6 @@ export default function ProjectCard(projeto: ProjectType) {
 					)}
 				</div>
 			</div>
-		</div>
+		</Section>
 	);
 }

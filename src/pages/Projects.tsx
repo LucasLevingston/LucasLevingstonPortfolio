@@ -3,16 +3,14 @@ import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectsCard';
 import { User } from '../Data/userData';
+import Container from '../components/Container';
 
 export default function Projects() {
 	const user = User;
 	return (
 		<div className="flex h-full w-full flex-col bg-aboutBgColor sm:flex-row">
 			<Sidebar />
-			<div
-				id="Projects"
-				className="ml-auto mr-0 flex flex-col  bg-aboutBgColor p-4 pb-0 sm:w-full sm:max-w-[75%]  lg:p-12"
-			>
+			<Container>
 				<Header />
 				<h2 className="border-t border-solid border-mainTextColor pt-5 text-2xl font-bold">
 					Meus Projetos
@@ -30,7 +28,7 @@ export default function Projects() {
 						/>
 					))}
 				</div>
-			</div>
+			</Container>
 		</div>
 	);
 }

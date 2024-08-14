@@ -4,6 +4,7 @@ import { ExperiencesData } from './ExperienceData';
 import { ProjectsData } from './ProjectsData';
 import FotoCurriculo from '../assets/FotoCurriculo.jpg';
 import { HardSkillsData } from './HardSkillsData';
+import { FormationData } from './FormationData';
 
 export const User: UserType = {
 	name: 'Lucas Levingston',
@@ -15,6 +16,7 @@ export const User: UserType = {
 	experiences: ExperiencesData,
 	projects: ProjectsData,
 	hardSkills: HardSkillsData,
+	formations: FormationData,
 	gitHub: 'https://github.com/LucasLevingston',
 	linkedin: 'https://www.linkedin.com/in/lucas-levingston-44b851231/',
 	instagram: 'https://www.instagram.com/lucaolevingston/?hl=pt-br',

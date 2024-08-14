@@ -1,6 +1,7 @@
-import { HardSkillsType } from '../Data/HardSkillsData';
 import { CertificatesType } from './CertificatesType';
 import { ExperienceType } from './ExperienceType';
+import { FormationType } from './FormationType';
+import { HardSkillsType } from './HardSkillsType';
 import { ProjectType } from './ProjectType';
 
 export interface UserType {
@@ -9,6 +10,7 @@ export interface UserType {
 	description: string;
 	profilePicture: string;
 	experiences: ExperienceType[];
+	formations: FormationType[];
 	projects: ProjectType[];
 	certificates: CertificatesType[];
 	hardSkills: HardSkillsType[];

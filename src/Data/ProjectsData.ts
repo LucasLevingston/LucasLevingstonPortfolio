@@ -36,6 +36,9 @@ import sercomp2 from '../assets/sercomp2.png';
 import sercomp3 from '../assets/sercomp3.png';
 import sercomp4 from '../assets/sercomp4.png';
 import sercomp5 from '../assets/sercomp5.png';
+import GymEvolution1 from '../assets/GymEvolution1.png';
+import GymEvolution2 from '../assets/GymEvolution2.png';
+import GymEvolution3 from '../assets/GymEvolution3.png';
 import { ProjectType } from '../types/ProjectType';
 
 export const ProjectsData: ProjectType[] = [
@@ -44,11 +47,12 @@ export const ProjectsData: ProjectType[] = [
 		description:
 			'CRM feito no estágio afim de venda de cursos da determinada empresa. Foram 7 meses de trabalho com início em junho de 2023 e fim em janeiro de 2024.',
 		technologies: [
-			'vite',
-			'react',
 			'typescript',
+			'react',
+			'nodejs',
 			'tailwindcss',
 			'mongodb',
+			'vite',
 			'express',
 			'docker',
 			'git',
@@ -58,18 +62,19 @@ export const ProjectsData: ProjectType[] = [
 		],
 	},
 	{
-		title: 'Verbo Eventos',
+		title: 'Verbo Hub',
 		description:
 			'Se trata de um sistema de gestão de eventos. Feito em conjunto com outros desenvolvedores, utilizamos o padrão GitFlow. Desenvolvido o back e o front.',
 		images: [verbo1, verbo2, verbo3],
 
 		technologies: [
-			'vite',
 			'react',
-			'fastify',
 			'typescript',
+			'nodejs',
+			'fastify',
 			'tailwindcss',
 			'docker',
+			'vite',
 			'swagger',
 			'postgresql',
 			'eslint',
@@ -80,16 +85,39 @@ export const ProjectsData: ProjectType[] = [
 		],
 	},
 	{
+		title: 'GymEvolution (Em andamento)',
+		description:
+			'GymEvolution Se trata de um sistema para evolução na musculação, realacionados a dieta e treino, com gráficos, planilhas de treinos, acompanhamento nutricional e pessoal.',
+		images: [GymEvolution1, GymEvolution2, GymEvolution3],
+		technologies: [
+			'react',
+			'typescript',
+			'nodejs',
+			'fastify',
+			'vite',
+			'tailwindcss',
+			'prisma',
+			'swagger',
+			'sqlite',
+			'eslint',
+			'postman',
+			'git',
+			'github',
+			'gitflow',
+		],
+		github: 'https://github.com/LucasLevingston/gymevolution',
+	},
+	{
 		title: 'VI Sercomp',
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
 		description:
 			'Um projeto voluntário da faculdade que estudo, onde se trata de um sistema para o anual evento que acontece. Foi utilizado GitFlow para desenvolvimento. Juntamente com uma grande equipe de alunos conseguimos concluir o projeto em 2 meses.',
 		technologies: [
-			'vite',
 			'react',
 			'javascript',
 			'css3',
 			'git',
+			'vite',
 			'github',
 			'gitflow',
 		],
@@ -101,11 +129,11 @@ export const ProjectsData: ProjectType[] = [
 		description:
 			'Se trata de um sistema de gestão de funcionários com componentes do Shadcn como por exemplo o  formulário para o registro. Ele tem alterações de dados, promoção de funcionários e geração de PDF para os mesmos. Tudo armazenado no Firebase.',
 		technologies: [
-			'vite',
 			'react',
 			'typescript',
 			'tailwindcss',
 			'firebase',
+			'vite',
 			'git',
 			'github',
 			'PDF',
@@ -138,6 +166,27 @@ export const ProjectsData: ProjectType[] = [
 			'react',
 			'typescript',
 			'tailwindcss',
+			'git',
+			'github',
+		],
+	},
+	{
+		title: 'Blog Soft',
+		description:
+			'Desenvolvimento de um blog para estudos. Consiste em um desafio de determinada vaga de emprego para testes de conhecimentos. Feito front e back-end.',
+		github: 'https://github.com/LucasLevingston/Blog',
+		technologies: [
+			'react',
+			'typescript',
+			'nodejs',
+			'fastify',
+			'vite',
+			'tailwindcss',
+			'prisma',
+			'swagger',
+			'sqlite',
+			'eslint',
+			'postman',
 			'git',
 			'github',
 		],

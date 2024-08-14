@@ -13,14 +13,14 @@ export const ExperiencesData: ExperienceType[] = [
       <span class="text-mainColor">
       desenvolvendo tanto o Back e o Front de aplicações utilizando React, Typescript, Tailwind, Mongo, Prisma, 
       Express e Docker. 
-      </span>
+      </span><br />
       Encarregado da coleta de requisitos, design de projeto e escolha da Stack de tecnologias utilizada. 
       Atuei na implementação de diversas rotas e lógica de negócio de uma 
       <span class="text-mainColor">API REST</span>, 
       além de desenvolver as 
       <span class="text-mainColor">
       interfaces e features presentes no front-end
-      </span>.
+      </span>. <br/>
       Realizei a reformulação e modularização do back-end, padronizando a organização de pastas e arquivos do projeto, 
       aprimorando a Developer Experience.
     `,
@@ -33,8 +33,8 @@ export const ExperiencesData: ExperienceType[] = [
 		role: 'Desenvolvedor Full-Stack',
 		description: `
       Participei do desenvolvimento do site do VI Sercomp da UEPB. 
-      Estou atuando com diversas pessoas do curso, em um ambiente real de trabalho. 
-      Estou trabalhando com 
+      Atuei com diversas pessoas do curso, em um ambiente real de trabalho. 
+      Desenvolvi com 
       <span class="text-mainColor">React, JavaScript, CSS, Node e Vite</span>, 
       e utilizando o <span class="text-mainColor">Git Flow</span> como fluxo de trabalho.
     `,

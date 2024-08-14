@@ -1,7 +1,4 @@
-export interface HardSkillsType {
-	category: string;
-	technologies: string[];
-}
+import { HardSkillsType } from '../types/HardSkillsType';
 
 export const HardSkillsData: HardSkillsType[] = [
 	{
