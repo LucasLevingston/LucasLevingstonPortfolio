@@ -11,7 +11,7 @@ export default function Container({
 }: ContainerProps): JSX.Element {
 	return (
 		<div
-			className={`ml-auto mr-0 h-full flex-1 bg-aboutBgColor p-[50px] sm:max-w-[75%] ${className}`}
+			className={`ml-auto mr-0 h-full flex-1 bg-aboutBgColor p-6 sm:max-w-[75%] sm:p-[50px] ${className}`}
 		>
 			<div className="overflow-y-auto">{children}</div>
 		</div>
