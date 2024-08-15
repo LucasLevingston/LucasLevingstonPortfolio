@@ -10,83 +10,79 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { ProjectType } from '../types/ProjectType';
-import Section from './Section';
+import SectionItem from './SectionItem';
 
-export default function ProjectCard(projeto: ProjectType) {
+export default function ProjectCard(project: ProjectType) {
 	return (
-		<Section>
-			<div>
-				<h1 className="border-l-[5px]  border-mainColor  pl-3 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
-					<Typewriter
-						onInit={(typewriter) => {
-							typewriter.typeString(projeto.title).start();
-						}}
-					/>
-				</h1>
-				<p className=" pl-10 pt-3">{projeto.description}</p>
-				<br />
-			</div>
+		<SectionItem
+			title={
+				<Typewriter
+					onInit={(typewriter) => {
+						typewriter.typeString(project.title).start();
+					}}
+				/>
+			}
+			className="border-b border-b-borderColor py-5"
+		>
+			<div className="space-y-4 ">
+				<p>{project.description}</p>
 
-			<div className="pl-10">
-				<p className="text-xl font-bold">Tecnologias Utilizadas:</p>
-				<br />
-				<div className="flex w-full flex-wrap">
-					<TecnologiaIcon tecnologias={projeto.technologies} />
+				<div className="space-y-1">
+					<p className="text-xl font-bold">Tecnologias Utilizadas:</p>
+					<div className="flex w-full flex-wrap">
+						<TecnologiaIcon tecnologias={project.technologies} />
+					</div>
 				</div>
-			</div>
-			{projeto.images && (
-				<Swiper
-					modules={[Pagination]}
-					pagination={{ clickable: true }}
-					slidesPerView={1}
-					spaceBetween={50}
-					scrollbar={{ draggable: true }}
-					className="m-auto flex h-[300px] w-[380px] items-center px-0 py-10 sm:h-[576px] sm:w-[1024px] sm:p-8"
-				>
-					{projeto.images.map((image, index) => (
-						<SwiperSlide key={index} virtualIndex={index}>
-							<img
-								src={image}
-								alt={`Imagem ${index}`}
-								className="h-full w-full rounded-2xl bg-cover bg-center duration-500"
-							/>
-						</SwiperSlide>
-					))}
-				</Swiper>
-			)}
 
-			<div className="flex items-center justify-center ">
-				<div className="pr-5">
-					{projeto.github && (
+				{project.images && (
+					<Swiper
+						modules={[Pagination]}
+						pagination={{ clickable: true }}
+						slidesPerView={1}
+						spaceBetween={50}
+						// scrollbar={{ draggable: false }}
+						className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]"
+					>
+						{project.images.map((image, index) => (
+							<SwiperSlide key={index} virtualIndex={index}>
+								<img
+									src={image}
+									alt={`Imagem ${index}`}
+									className="h-full w-full rounded-2xl"
+								/>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				)}
+
+				<div className="flex items-center justify-center space-x-4">
+					{project.github && (
 						<a
-							className="m-[25px_0] flex w-[150px] rounded-[5px] border-[3px] border-solid border-mainColor bg-mainColor 
-							p-[12px_10px] text-center text-[13px] font-bold no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
-							href={projeto.github}
+							className="flex w-[150px] items-center justify-center space-x-1 rounded-md border-[3px] border-solid border-mainColor 
+            bg-mainColor p-3 text-[13px] font-bold no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
+							href={project.github}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<GoRepoForked className="text-2xl hover:text-mainColor" />
-							<span className="flex-[1_1_0] text-mainTextColor">
-								Ver Repositório
-							</span>
+							<GoRepoForked className="text-2xl" />
+							<p className="text-mainTextColor">Ver GitHub</p>
 						</a>
 					)}
-				</div>
-				<div>
-					{projeto.link && (
+
+					{project.link && (
 						<a
-							className="m-[25px_0] flex w-[135px] rounded-[5px] border-[3px] border-solid border-mainColor bg-mainColor 
-							p-[12px_10px] text-center text-[13px] font-bold no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
-							href={projeto.link}
+							className="flex w-[150px] items-center justify-center space-x-1 rounded-md border-[3px] border-solid border-mainColor 
+            bg-mainColor p-3 text-[13px] font-bold no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
+							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<AiOutlineLink className="text-2xl " />
-							<span className="pl-2 text-mainTextColor">Visitar Site</span>
+							<AiOutlineLink className="text-2xl" />
+							<p className="text-mainTextColor">Visitar Site</p>
 						</a>
 					)}
 				</div>
 			</div>
-		</Section>
+		</SectionItem>
 	);
 }

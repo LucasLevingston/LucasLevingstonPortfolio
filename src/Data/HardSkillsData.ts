@@ -22,7 +22,7 @@ export const HardSkillsData: HardSkillsType[] = [
 		technologies: ['docker', 'git', 'github', 'postman', 'figma'],
 	},
 	{
-		category: 'metodologias ágeis',
+		category: 'Metodologias ágeis',
 		technologies: ['scrum'],
 	},
 ];

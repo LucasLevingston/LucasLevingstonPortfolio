@@ -4,30 +4,30 @@ import Header from '../components/Header';
 import ProjectCard from '../components/ProjectsCard';
 import { User } from '../Data/userData';
 import Container from '../components/Container';
+import Section from '../components/Section';
 
 export default function Projects() {
 	const user = User;
 	return (
-		<div className="flex h-full w-full flex-col bg-aboutBgColor sm:flex-row">
+		<div className=" text-mainTextColor">
 			<Sidebar />
 			<Container>
 				<Header />
-				<h2 className="border-t border-solid border-mainTextColor pt-5 text-2xl font-bold">
-					Meus Projetos
-				</h2>
-				<div>
-					{user.projects.map((project) => (
-						<ProjectCard
-							key={project.title}
-							title={project.title}
-							description={project.description}
-							images={project.images}
-							link={project.link}
-							github={project.github}
-							technologies={project.technologies}
-						/>
-					))}
-				</div>
+				<Section title="Meus Projetos" className="pb-0">
+					<div>
+						{user.projects.map((project) => (
+							<ProjectCard
+								key={project.title}
+								title={project.title}
+								description={project.description}
+								images={project.images}
+								link={project.link}
+								github={project.github}
+								technologies={project.technologies}
+							/>
+						))}
+					</div>
+				</Section>
 			</Container>
 		</div>
 	);
