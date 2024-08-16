@@ -40,7 +40,6 @@ export default function ProjectCard(project: ProjectType) {
 						pagination={{ clickable: true }}
 						slidesPerView={1}
 						spaceBetween={50}
-						// scrollbar={{ draggable: false }}
 						className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]"
 					>
 						{project.images.map((image, index) => (
