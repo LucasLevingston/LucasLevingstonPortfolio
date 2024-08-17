@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineLink } from 'react-icons/ai';
 import { GoRepoForked } from 'react-icons/go';
 import Typewriter from 'typewriter-effect';
-import TecnologiaIcon from './TecnologiaIcon';
+import TecnologiaIcon from './TechnologyIcon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { ProjectType } from '../types/ProjectType';
 import SectionItem from './SectionItem';
+import { t } from 'i18next';
 
 export default function ProjectCard(project: ProjectType) {
 	return (
@@ -28,9 +29,11 @@ export default function ProjectCard(project: ProjectType) {
 				<p>{project.description}</p>
 
 				<div className="space-y-1">
-					<p className="text-xl font-bold">Tecnologias Utilizadas:</p>
+					<p className="text-xl font-bold">
+						{t('projectCard.technologiesUsed')}
+					</p>
 					<div className="flex w-full flex-wrap">
-						<TecnologiaIcon tecnologias={project.technologies} />
+						<TecnologiaIcon technologies={project.technologies} />
 					</div>
 				</div>
 
@@ -64,7 +67,9 @@ export default function ProjectCard(project: ProjectType) {
 							rel="noopener noreferrer"
 						>
 							<GoRepoForked className="text-2xl" />
-							<p className="text-mainTextColor">Ver GitHub</p>
+							<p className="text-mainTextColor">
+								{t('projectCard.viewGitHub')}
+							</p>
 						</a>
 					)}
 
@@ -77,7 +82,7 @@ export default function ProjectCard(project: ProjectType) {
 							rel="noopener noreferrer"
 						>
 							<AiOutlineLink className="text-2xl" />
-							<p className="text-mainTextColor">Visitar Site</p>
+							<p className="text-mainTextColor">{t('projectCard.visitSite')}</p>
 						</a>
 					)}
 				</div>

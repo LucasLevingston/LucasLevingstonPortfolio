@@ -1,6 +1,6 @@
 import { FormationType } from '../types/FormationType';
 
-export const FormationData: FormationType[] = [
+export const FormationDataBr: FormationType[] = [
 	{
 		title: 'Graduação em Ciências da Computação',
 		institution: 'Universidade Estadual da Paraíba (UEPB)',
@@ -16,5 +16,24 @@ export const FormationData: FormationType[] = [
 		endsDate: 'Julho/2020',
 		duration: '1 semestre',
 		currentStatus: 'Trancado',
+	},
+];
+
+export const FormationDataEn: FormationType[] = [
+	{
+		title: 'Bachelor’s Degree in Computer Science',
+		institution: 'State University of Paraíba (UEPB)',
+		startsDate: 'July/2020',
+		endsDate: 'July/2025',
+		duration: '9 semesters',
+		currentStatus: 'Currently in the 9th/10th semester.',
+	},
+	{
+		title: 'Bachelor’s Degree in Civil Engineering',
+		institution: 'Universidade Estadual da Paraíba (UEPB)',
+		startsDate: 'February/2020',
+		endsDate: 'July/2020',
+		duration: '1 semester',
+		currentStatus: 'Deferred',
 	},
 ];

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
+	const { t } = useTranslation();
 	const location = useLocation();
 
 	const [activeButton, setActiveButton] = useState<string>('/');
@@ -19,18 +21,18 @@ export default function Navbar() {
 		<div>
 			<div className="flex list-none justify-center gap-3 text-center font-bold no-underline md:flex-col lg:flex-row">
 				<button>
-					<Link className={getButtonClass('/sobre')} to="/sobre">
-						Sobre
+					<Link className={getButtonClass('/about')} to="/about">
+						{t('navbar.about')}
 					</Link>
 				</button>
 				<button>
 					<Link className={getButtonClass('/')} to="/">
-						Início
+						{t('navbar.home')}
 					</Link>
 				</button>
 				<li>
-					<Link className={getButtonClass('/projetos')} to="/projetos">
-						Projetos
+					<Link className={getButtonClass('/projects')} to="/projects">
+						{t('navbar.projects')}
 					</Link>
 				</li>
 			</div>

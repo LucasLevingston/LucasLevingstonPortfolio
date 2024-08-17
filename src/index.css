@@ -29,5 +29,5 @@ body {
 }
 
 .swiper-pagination-bullet {
-	background-color: white !important;
+	background-color: red !important;
 }

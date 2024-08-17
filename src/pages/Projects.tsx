@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectsCard';
-import { User } from '../Data/userData';
+import { UserBr, UserEn } from '../Data/userData';
 import Container from '../components/Container';
 import Section from '../components/Section';
+import { t } from 'i18next';
 
 export default function Projects() {
-	const user = User;
+	const [language, setLanguage] = useState(
+		() => localStorage.getItem('language') || 'en'
+	);
+	const [user, setUser] = useState(() => (language === 'en' ? UserEn : UserBr));
+
+	useEffect(() => {
+		setUser(language === 'en' ? UserEn : UserBr);
+	}, [language]);
+
 	return (
 		<div className=" text-mainTextColor">
 			<Sidebar />
 			<Container>
-				<Header />
-				<Section title="Meus Projetos" className="pb-0">
+				<Header setLanguage={setLanguage} language={language} />
+				<Section title={t('projects.title')} className="pb-0">
 					<div>
 						{user.projects.map((project) => (
 							<ProjectCard

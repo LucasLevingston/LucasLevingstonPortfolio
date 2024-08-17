@@ -1,10 +1,10 @@
 import React from 'react';
 import { BsGithub, BsInstagram } from 'react-icons/bs';
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-import { User } from '../Data/userData';
+import { UserEn } from '../Data/userData';
 
 export default function SocialBar() {
-	const user = User;
+	const user = UserEn;
 	return (
 		<ul className="mx-auto flex w-[200px] list-none items-center justify-center border-b-[1px] border-solid pb-3">
 			<li className="mx-auto max-w-[60px]">

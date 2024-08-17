@@ -1,0 +1,35 @@
+{
+	"header.fullStack": "Desenvolvedor Full-Stack",
+	"header.frontEnd": "Desenvolvedor Front-End",
+	"header.backEnd": "Desenvolvedor Back-End",
+  
+	"about.technologiesTitle": "Conheça as tecnologias que domino",
+	"about.experiencesTitle": "Experiências",
+	"about.start": "Início",
+	"about.end": "Fim",
+	"about.position": "Cargo",
+	"about.educationTitle": "Formação",
+	"about.currentStatus": "Status Atual",
+	"about.certificatesTitle": "Certificados",
+	"about.usedTechnologies": "Tecnologias Utilizadas",
+  
+	"projects.title": "Meus Projetos",
+	"projectCard.technologiesUsed": "Tecnologias Utilizadas",
+	"projectCard.viewGitHub": "Ver GitHub",
+	"projectCard.visitSite": "Visitar Site",
+  
+	"sidebar.greeting": "Olá, meu nome é",
+  "sidebar.am": "e eu sou",
+	"sidebar.welcome": "Seja bem-vindo!",
+
+	"sidebar.role.fullStack": "Desenvolvedor Full-Stack",
+	"sidebar.role.frontEnd": "Desenvolvedor Front-End",
+	"sidebar.role.backEnd": "Desenvolvedor Back-End",
+
+  "navbar.about": "Sobre",
+	"navbar.home": "Início",
+	"navbar.projects": "Projetos",
+
+  "resume.viewResume": "Ver currículo"
+
+}

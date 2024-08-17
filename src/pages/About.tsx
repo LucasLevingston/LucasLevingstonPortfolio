@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import TecnologiaIcon from '../components/TecnologiaIcon';
+import TecnologiaIcon from '../components/TechnologyIcon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
@@ -9,37 +9,46 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../index.css';
-import { User } from '../Data/userData';
+import { UserEn, UserBr } from '../Data/userData';
 import { HardSkillsSection } from '../components/HardSkillsSection';
 import Section from '../components/Section';
 import Container from '../components/Container';
 import SectionItem from '../components/SectionItem';
+import { useTranslation } from 'react-i18next';
 
-export default function Home() {
+export default function About() {
+	const { t } = useTranslation();
 	const [indiceAtual, setIndiceAtual] = useState<number>(0);
+	const [language, setLanguage] = useState(
+		() => localStorage.getItem('language') || 'en'
+	);
+	const [user, setUser] = useState(() => (language === 'en' ? UserEn : UserBr));
 
-	const user = User;
+	useEffect(() => {
+		setUser(language === 'en' ? UserEn : UserBr);
+	}, [language]);
 
 	return (
-		<div className=" text-mainTextColor">
+		<div className="text-mainTextColor">
 			<Sidebar />
 			<Container>
-				<Header />
+				<Header setLanguage={setLanguage} language={language} />
 
-				<Section title="Conheça as tecnologias que domino">
+				<Section title={t('about.technologiesTitle')}>
 					<HardSkillsSection skills={user.hardSkills} />
 				</Section>
 
-				<Section title="Experiências">
+				<Section title={t('about.experiencesTitle')}>
 					{user.experiences.map((experience, index) => (
 						<SectionItem title={experience.enterprise} key={index}>
 							<div className="space-y-2">
 								<p>
-									Início: {experience.startsDate} - Fim: {experience.endsDate} (
-									{experience.location})
+									{t('about.start')}: {experience.startsDate} - {t('about.end')}
+									: {experience.endsDate} ({experience.location})
 								</p>
 								<p>
-									Cargo: <span className="underline">{experience.role}</span>
+									{t('about.position')}:{' '}
+									<span className="underline">{experience.role}</span>
 								</p>
 								<p
 									dangerouslySetInnerHTML={{
@@ -51,7 +60,7 @@ export default function Home() {
 					))}
 				</Section>
 
-				<Section title="Formação">
+				<Section title={t('about.educationTitle')}>
 					{user.formations.map((formation, index) => (
 						<SectionItem title={formation.title} key={index}>
 							<div className="space-y-2">
@@ -59,13 +68,15 @@ export default function Home() {
 								<p>
 									{formation.startsDate} - {formation.endsDate}
 								</p>
-								<p className="text-mainColor">{formation.currentStatus}</p>
+								<p className="text-mainColor">
+									{t('about.currentStatus')}: {formation.currentStatus}
+								</p>
 							</div>
 						</SectionItem>
 					))}
 				</Section>
 
-				<Section title="Certificados">
+				<Section title={t('about.certificatesTitle')}>
 					<SectionItem title={user.certificates[indiceAtual].title}>
 						<div className="space-y-2">
 							<div>
@@ -75,10 +86,12 @@ export default function Home() {
 									)
 								)}
 							</div>
-							<p className="text-lg font-bold">Tecnologias Utilizadas:</p>
+							<p className="text-lg font-bold">
+								{t('about.usedTechnologies')}:
+							</p>
 							<div className="flex w-full flex-wrap">
 								<TecnologiaIcon
-									tecnologias={user.certificates[indiceAtual].technlogies}
+									technologies={user.certificates[indiceAtual].technologies}
 								/>
 							</div>
 							{user.certificates[indiceAtual].image && (
