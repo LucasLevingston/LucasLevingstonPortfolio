@@ -1,39 +1,18 @@
-import i18next from 'i18next';
+import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import en from './Translation/English/translation.json';
+import br from './Translation/Portuguese/translation.json';
 
-//Import all translation files
-import translationEnglish from './Translation/English/translation.json';
-import translationPortuguese from './Translation/Portuguese/translation.json';
-
-//Import translation2 file
-
-//---Using translation
-// const resources = {
-//     en: {
-//         translation: translationEnglish,
-//     },
-//     es: {
-//         translation: translationSpanish,
-//     },
-//     fr: {
-//         translation: translationFrench,
-//     },
-// }
-
-//---Using different namespaces
-const resources = {
-	en: {
-		home: translationEnglish,
-		// main: translationEnglishSecondFile,
+i18n.use(initReactI18next).init({
+	resources: {
+		en: { translation: en },
+		br: { translation: br },
 	},
-	br: {
-		home: translationPortuguese,
-	},
-};
-
-i18next.use(initReactI18next).init({
-	resources,
 	lng: 'en',
+	fallbackLng: 'en',
+	interpolation: {
+		escapeValue: false,
+	},
 });
 
-export default i18next;
+export default i18n;

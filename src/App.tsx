@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Sobre from './pages/Sobre';
+import About from './pages/About';
 import Home from './pages/Home';
 import React from 'react';
 import Projects from './pages/Projects';
@@ -9,9 +9,9 @@ function App() {
 		<div className="font-mainFont">
 			<BrowserRouter>
 				<Routes>
-					<Route path="/sobre" element={<Sobre />} caseSensitive={false} />
+					<Route path="/about" element={<About />} caseSensitive={false} />
 					<Route
-						path="/projetos"
+						path="/projects"
 						element={<Projects />}
 						caseSensitive={false}
 					/>

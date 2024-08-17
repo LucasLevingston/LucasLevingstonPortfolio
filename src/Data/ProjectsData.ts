@@ -41,7 +41,7 @@ import GymEvolution2 from '../assets/GymEvolution2.png';
 import GymEvolution3 from '../assets/GymEvolution3.png';
 import { ProjectType } from '../types/ProjectType';
 
-export const ProjectsData: ProjectType[] = [
+export const ProjectsDataBr: ProjectType[] = [
 	{
 		title: 'CRM Splen',
 		description:
@@ -276,6 +276,248 @@ export const ProjectsData: ProjectType[] = [
 		title: 'Calculadora',
 		description:
 			'Calculadora em Java utilizando o padrão Observer e orientação a objetos, com interface gráfica Swing e suporte para adição, subtração, multiplicação e divisão. Aplicação modular e interativa, atualizando a tela em tempo real. Exemplo de código organizado e habilidades em desenvolvimento Java.',
+		images: [CALC1, CALC2, CALC3],
+		github: 'https://github.com/LucasLevingston/Calculadora.git',
+		technologies: ['java'],
+	},
+];
+
+export const ProjectsDataEn: ProjectType[] = [
+	{
+		title: 'CRM Splen',
+		description:
+			'A CRM system developed during an internship for selling courses at a company. It took 7 months of work, starting in June 2023 and ending in January 2024.',
+		technologies: [
+			'typescript',
+			'react',
+			'nodejs',
+			'tailwindcss',
+			'mongodb',
+			'vite',
+			'express',
+			'docker',
+			'git',
+			'github',
+			'postman',
+			'scrum',
+		],
+	},
+	{
+		title: 'Verbo Hub',
+		description:
+			'An event management system developed together with other developers using the GitFlow pattern. Both the back-end and front-end were developed.',
+		images: [verbo1, verbo2, verbo3],
+		technologies: [
+			'react',
+			'typescript',
+			'nodejs',
+			'fastify',
+			'tailwindcss',
+			'docker',
+			'vite',
+			'swagger',
+			'postgresql',
+			'eslint',
+			'postman',
+			'git',
+			'github',
+			'gitflow',
+		],
+	},
+	{
+		title: 'GymEvolution (In Progress)',
+		description:
+			'GymEvolution is a system for muscle development related to diet and training, featuring charts, workout spreadsheets, and nutritional and personal tracking.',
+		images: [GymEvolution1, GymEvolution2, GymEvolution3],
+		technologies: [
+			'react',
+			'typescript',
+			'nodejs',
+			'fastify',
+			'vite',
+			'tailwindcss',
+			'prisma',
+			'swagger',
+			'sqlite',
+			'eslint',
+			'postman',
+			'git',
+			'github',
+			'gitflow',
+		],
+		github: 'https://github.com/LucasLevingston/gymevolution',
+	},
+	{
+		title: 'VI Sercomp',
+		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
+		description:
+			'A volunteer project from my college, it’s a system for an annual event. We used GitFlow for development and completed the project in 2 months with a large team of students.',
+		technologies: [
+			'react',
+			'javascript',
+			'css3',
+			'git',
+			'vite',
+			'github',
+			'gitflow',
+		],
+		link: 'https://sercomppb.com.br/',
+	},
+	{
+		title: 'Employee Management System',
+		images: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
+		description:
+			'A system for managing employees with Shadcn components, including forms for registration, data modification, employee promotion, and PDF generation. All data is stored in Firebase.',
+		technologies: [
+			'react',
+			'typescript',
+			'tailwindcss',
+			'firebase',
+			'vite',
+			'git',
+			'github',
+			'PDF',
+		],
+		github: 'https://github.com/LucasLevingston/taugor-project',
+	},
+	{
+		title: 'Caputeeno',
+		description:
+			'A front-end application in ReactJS developed as a challenge from YouTube, creating the front-end of an e-commerce site. I changed the technologies from the challenge to those I use daily, resulting in a 100% self-developed system.',
+		images: [caputeeno1, caputeeno2, caputeeno3],
+		github: 'https://github.com/LucasLevingston/capputeeno',
+		technologies: [
+			'vite',
+			'react',
+			'typescript',
+			'tailwindcss',
+			'nodejs',
+			'graphql',
+		],
+	},
+	{
+		title: 'Pass In Web - ReactJs',
+		description:
+			'A front-end application in ReactJS, implementing concepts like Props, State, and Components, with TypeScript, Vite tooling, responsive design with TailwindCSS, API consumption with Node.js, and URL states.',
+		images: [PIW1, PIW2, PIW3],
+		github: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
+		technologies: [
+			'vite',
+			'react',
+			'typescript',
+			'tailwindcss',
+			'git',
+			'github',
+		],
+	},
+	{
+		title: 'Blog Soft',
+		description:
+			'Development of a blog for study purposes. This was a challenge for a job position, covering both front-end and back-end development.',
+		github: 'https://github.com/LucasLevingston/Blog',
+		technologies: [
+			'react',
+			'typescript',
+			'nodejs',
+			'fastify',
+			'vite',
+			'tailwindcss',
+			'prisma',
+			'swagger',
+			'sqlite',
+			'eslint',
+			'postman',
+			'git',
+			'github',
+		],
+	},
+	{
+		title: 'Pass In Web - NodeJs',
+		description:
+			'A back-end application in Node.js, implementing REST API concepts with TypeScript, Fastify framework, Prisma ORM + SQLite integration, and Zod for data validation.',
+		images: [PiwNode1, PiwNode2, PiwNode3],
+		github: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
+		technologies: [
+			'typescript',
+			'nodejs',
+			'fastify',
+			'prisma',
+			'sqlite',
+			'git',
+			'github',
+		],
+	},
+	{
+		title: 'Threads Clone',
+		description:
+			'The Threads clone is a project replicating the Threads website.',
+		images: [T1, T2, T3],
+		github: 'https://github.com/LucasLevingston/threads_app',
+		link: 'https://threads-app-nextjs13.vercel.app/',
+		technologies: [
+			'react',
+			'typescript',
+			'nextjs',
+			'tailwindcss',
+			'mongodb',
+			'git',
+			'github',
+		],
+	},
+	{
+		title: 'Spotify Clone',
+		description:
+			'The Spotify clone is a project replicating the Spotify website.',
+		images: [SP2, SP3, SP1],
+		github: 'https://github.com/LucasLevingston/spotify-clone',
+		link: 'https://spotify-nextjs13.vercel.app/',
+		technologies: [
+			'react',
+			'typescript',
+			'nextjs',
+			'tailwindcss',
+			'postgresql',
+			'git',
+			'github',
+		],
+	},
+	{
+		title: 'Flexibble',
+		description:
+			'Flexibble is a web application aimed at being a collaborative platform for programming enthusiasts to showcase, collaborate on, and discover programming projects.',
+		images: [F3, F2, F1],
+		github: 'https://github.com/LucasLevingston/grafbase_Flexibble',
+		link: 'https://flexibble-nexjs13.vercel.app/',
+		technologies: [
+			'react',
+			'typescript',
+			'nextjs',
+			'graphql',
+			'tailwindcss',
+			'git',
+			'github',
+		],
+	},
+	{
+		title: 'My Portfolio',
+		description:
+			'As a learning experience, I developed my portfolio using React. I used TypeScript and Tailwind CSS for styling. This was my first contact with React and a stepping stone for future projects.',
+		images: [MP1, MP2, MP3],
+		github: 'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
+		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
+	},
+	{
+		title: 'Minesweeper',
+		description:
+			'Minesweeper was a project in Java, based on an existing game where the objective is to open all the fields without revealing any that are mined. I used the Observer pattern for field opening, and JButton for the graphical interface. JUnit was used for testing.',
+		images: [CM1, CM2, CM3],
+		github: 'https://github.com/LucasLevingston/Campo_Minado',
+		technologies: ['java'],
+	},
+	{
+		title: 'Calculator',
+		description:
+			'Calculator in Java using the Observer pattern and object-oriented design, with a Swing graphical interface and support for addition, subtraction, multiplication, and division. Modular and interactive, updating the display in real-time. Example of organized code and Java development skills.',
 		images: [CALC1, CALC2, CALC3],
 		github: 'https://github.com/LucasLevingston/Calculadora.git',
 		technologies: ['java'],
