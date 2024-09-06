@@ -1,25 +1,47 @@
 import { HardSkillsType } from '../types/HardSkillsType';
 
-export const HardSkillsDataBr: HardSkillsType[] = [
+export const hardSkillsDataBr: HardSkillsType[] = [
 	{
 		category: 'Linguagens de Programação',
-		technologies: ['javascript', 'typescript', 'java', 'python'],
+		technologies: ['javascript', 'typescript'],
 	},
 	{
-		category: 'Front-End Frameworks',
-		technologies: ['react', 'tailwindcss', 'nextjs'],
+		category: 'Frameworks',
+		technologies: [
+			'react',
+			'tailwindcss',
+			'nextjs',
+			'vite',
+			'fastify',
+			'express',
+		],
+	},
+
+	{
+		category: 'Tecnologias:',
+		technologies: ['nodejs', 'swagger'],
+	},
+
+	{
+		category: 'APIs',
+		technologies: ['rest', 'graphql'],
 	},
 	{
-		category: 'Back-End Frameworks',
-		technologies: ['nodejs', 'prisma', 'fastify', 'express'],
+		category: 'SQL',
+		technologies: ['postgresql', 'mysql', 'sqlite'],
 	},
 	{
-		category: 'Banco de dados',
-		technologies: ['postgresql', 'mysql', 'mongodb', 'firebase', 'sqlite'],
+		category: 'NoSQL',
+		technologies: ['mongodb', 'firebase'],
+	},
+
+	{
+		category: 'Outros',
+		technologies: ['docker', 'git', 'github', 'postman', 'figma', 'axios'],
 	},
 	{
-		category: 'Ferramentas',
-		technologies: ['docker', 'git', 'github', 'postman', 'figma'],
+		category: 'ORM',
+		technologies: ['prisma'],
 	},
 	{
 		category: 'Metodologias ágeis',
@@ -27,26 +49,46 @@ export const HardSkillsDataBr: HardSkillsType[] = [
 	},
 ];
 
-export const HardSkillsDataEn: HardSkillsType[] = [
+export const hardSkillsDataEn: HardSkillsType[] = [
 	{
 		category: 'Programming Languages',
-		technologies: ['javascript', 'typescript', 'java', 'python'],
+		technologies: ['javascript', 'typescript'],
 	},
 	{
-		category: 'Front-End Frameworks',
-		technologies: ['react', 'tailwindcss', 'nextjs'],
+		category: 'Frameworks',
+		technologies: [
+			'react',
+			'tailwindcss',
+			'nextjs',
+			'vite',
+			'fastify',
+			'express',
+		],
+	},
+
+	{
+		category: 'Technologies',
+		technologies: ['nodejs', 'swagger'],
 	},
 	{
-		category: 'Back-End Frameworks',
-		technologies: ['nodejs', 'prisma', 'fastify', 'express'],
+		category: 'APIs',
+		technologies: ['rest', 'graphql'],
 	},
 	{
-		category: 'Databases',
-		technologies: ['postgresql', 'mysql', 'mongodb', 'firebase', 'sqlite'],
+		category: 'SQL',
+		technologies: ['postgresql', 'mysql', 'sqlite'],
 	},
 	{
-		category: 'Tools',
-		technologies: ['docker', 'git', 'github', 'postman', 'figma'],
+		category: 'NoSQL',
+		technologies: ['mongodb', 'firebase'],
+	},
+	{
+		category: 'Others',
+		technologies: ['docker', 'git', 'github', 'postman', 'figma', 'axios'],
+	},
+	{
+		category: 'ORM',
+		technologies: ['prisma'],
 	},
 	{
 		category: 'Agile Methodologies',

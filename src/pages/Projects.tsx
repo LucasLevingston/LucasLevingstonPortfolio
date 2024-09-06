@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectsCard';
-import { UserBr, UserEn } from '../Data/userData';
+import { userBr, userEn } from '../data/userData';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import { t } from 'i18next';
@@ -11,10 +11,10 @@ export default function Projects() {
 	const [language, setLanguage] = useState(
 		() => localStorage.getItem('language') || 'en'
 	);
-	const [user, setUser] = useState(() => (language === 'en' ? UserEn : UserBr));
+	const [user, setUser] = useState(() => (language === 'en' ? userEn : userBr));
 
 	useEffect(() => {
-		setUser(language === 'en' ? UserEn : UserBr);
+		setUser(language === 'en' ? userEn : userBr);
 	}, [language]);
 
 	return (

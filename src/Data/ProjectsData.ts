@@ -41,7 +41,7 @@ import GymEvolution2 from '../assets/GymEvolution2.png';
 import GymEvolution3 from '../assets/GymEvolution3.png';
 import { ProjectType } from '../types/ProjectType';
 
-export const ProjectsDataBr: ProjectType[] = [
+export const projectsDataBr: ProjectType[] = [
 	{
 		title: 'CRM Splen',
 		description:
@@ -282,7 +282,7 @@ export const ProjectsDataBr: ProjectType[] = [
 	},
 ];
 
-export const ProjectsDataEn: ProjectType[] = [
+export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'CRM Splen',
 		description:
