@@ -9,12 +9,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../index.css';
-import { userEn, userBr } from '../data/userData';
 import { HardSkillsSection } from '../components/HardSkillsSection';
 import Section from '../components/Section';
 import Container from '../components/Container';
 import SectionItem from '../components/SectionItem';
 import { useTranslation } from 'react-i18next';
+import { userBr, userEn } from '../data/userData';
 
 export default function About() {
 	const { t } = useTranslation();
