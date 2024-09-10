@@ -1,6 +1,6 @@
 import { FormationType } from '../types/FormationType';
 
-export const FormationDataBr: FormationType[] = [
+export const formationDataBr: FormationType[] = [
 	{
 		title: 'Graduação em Ciências da Computação',
 		institution: 'Universidade Estadual da Paraíba (UEPB)',
@@ -19,7 +19,7 @@ export const FormationDataBr: FormationType[] = [
 	},
 ];
 
-export const FormationDataEn: FormationType[] = [
+export const formationDataEn: FormationType[] = [
 	{
 		title: 'Bachelor’s Degree in Computer Science',
 		institution: 'State University of Paraíba (UEPB)',

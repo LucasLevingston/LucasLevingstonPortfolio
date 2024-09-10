@@ -1,6 +1,6 @@
 import { ExperienceType } from '../types/ExperienceType';
 
-export const ExperiencesDataBr: ExperienceType[] = [
+export const experiencesDataBr: ExperienceType[] = [
 	{
 		enterprise: 'Splendore',
 		location: 'Patos, PB',
@@ -51,7 +51,7 @@ export const ExperiencesDataBr: ExperienceType[] = [
 	},
 ];
 
-export const ExperiencesDataEn: ExperienceType[] = [
+export const experiencesDataEn: ExperienceType[] = [
 	{
 		enterprise: 'Splendore',
 		location: 'Patos, PB',

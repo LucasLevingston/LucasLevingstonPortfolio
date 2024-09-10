@@ -4,7 +4,7 @@ import CertificadoReact from '../assets/CertificadoReact.jpg';
 import CertificadoNode from '../assets/CertificadoNode.jpg';
 import { CertificatesType } from '../types/CertificatesType';
 
-export const CertificatesDataBr: CertificatesType[] = [
+export const certificatesDataBr: CertificatesType[] = [
 	{
 		title: 'Git e GitHub',
 		image: GitH,
@@ -40,7 +40,7 @@ export const CertificatesDataBr: CertificatesType[] = [
 	},
 ];
 
-export const CertificatesDataEn: CertificatesType[] = [
+export const certificatesDataEn: CertificatesType[] = [
 	{
 		title: 'Git and GitHub',
 		image: GitH,
