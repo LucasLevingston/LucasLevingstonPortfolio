@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectsCard';
-import { userBr, userEn } from '../data/userData';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import { t } from 'i18next';
+import { userBr, userEn } from '../data/userData';
 
 export default function Projects() {
 	const [language, setLanguage] = useState(

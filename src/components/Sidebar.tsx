@@ -3,10 +3,10 @@ import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
 import Navbar from './Navbar';
 import Typewriter from 'typewriter-effect';
 import SocialBar from './SocialBar';
-import { userBr, userEn } from '../data/userData';
 import { ResumeButton } from './ResumeButon';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
+import { userBr, userEn } from '../data/userData';
 
 export default function Sidebar({ home }: { home?: boolean }) {
 	const [language, setLanguage] = useState(
