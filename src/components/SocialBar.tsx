@@ -9,7 +9,7 @@ export default function SocialBar() {
 		<ul className="mx-auto flex w-[200px] list-none items-center justify-center border-b-[1px] border-solid pb-3">
 			<li className="mx-auto max-w-[60px]">
 				<a
-					className="text-[30px] text-mainColor transition-[1s] hover:text-[40px] hover:text-mainTextColor"
+					className="text-[30px] text-mainColor transition-[1s] hover:text-mainTextColor"
 					href={user.gitHub}
 					target="_blank"
 				>
@@ -18,7 +18,7 @@ export default function SocialBar() {
 			</li>
 			<li className="mx-auto max-w-[60px]">
 				<a
-					className="text-[30px] text-mainColor transition-[1s] hover:text-[40px] hover:text-mainTextColor"
+					className="text-[30px] text-mainColor transition-[1s] hover:text-mainTextColor"
 					href={user.linkedin}
 					target="_blank"
 					rel="noopener noreferrer"
@@ -26,9 +26,9 @@ export default function SocialBar() {
 					<FaLinkedin className="w-8" />
 				</a>
 			</li>
-			<li className="mx-auto  max-w-[60px]">
+			<li className="mx-auto max-w-[60px]">
 				<a
-					className="text-[30px] text-mainColor transition-[1s] hover:text-[40px] hover:text-mainTextColor"
+					className="text-[30px] text-mainColor transition-[1s] hover:text-mainTextColor"
 					href={user.whatsapp}
 					target="_blank"
 					rel="noopener noreferrer"
@@ -36,9 +36,9 @@ export default function SocialBar() {
 					<FaWhatsapp className="w-8" />
 				</a>
 			</li>
-			<li className="mx-auto  max-w-[60px]">
+			<li className="mx-auto max-w-[60px]">
 				<a
-					className="text-[30px] text-mainColor transition-[1s] hover:text-[40px] hover:text-mainTextColor"
+					className="text-[30px] text-mainColor transition-[1s] hover:text-mainTextColor"
 					href={user.instagram}
 					target="_blank"
 					rel="noopener noreferrer"

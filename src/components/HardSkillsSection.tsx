@@ -21,9 +21,13 @@ export const HardSkillsSection: React.FC<{ skills: HardSkillsType[] }> = ({
 								<DiScrum key={i} className="text-4xl text-azulBebe" />
 							) : technology === 'rest' ? (
 								<div className="flex items-center">
-									<FaLink className="text-xl text-azulBebe" />{' '}
-									<span className="ml-2 font-bold text-azulBebe">REST</span>
+									<span className=" font-bold text-azulBebe">REST</span>
 								</div>
+							) : technology === 'vite' ? (
+								<img
+									className="w-9"
+									src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+								/>
 							) : (
 								<i
 									key={i}
@@ -32,7 +36,8 @@ export const HardSkillsSection: React.FC<{ skills: HardSkillsType[] }> = ({
 											? `devicon-${technology}-plain text-4xl`
 											: technology === 'sqlite' ||
 												  technology === 'firebase' ||
-												  technology === 'docker'
+												  technology === 'docker' ||
+												  technology === 'axios'
 												? `devicon-${technology}-plain-wordmark colored text-4xl`
 												: technology === 'express' ||
 													  technology === 'github' ||
