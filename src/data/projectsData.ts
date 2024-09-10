@@ -45,7 +45,7 @@ export const projectsDataBr: ProjectType[] = [
 	{
 		title: 'CRM Splen',
 		description:
-			'CRM feito no estágio afim de venda de cursos da determinada empresa. Foram 7 meses de trabalho com início em junho de 2023 e fim em janeiro de 2024.',
+			'CRM feito no estágio na Splendore a fim de venda de graduações, pós-graduações, etc. Foi utilizada a metodologia Scrum para o caminhar do projeto.',
 		technologies: [
 			'typescript',
 			'react',
@@ -64,7 +64,7 @@ export const projectsDataBr: ProjectType[] = [
 	{
 		title: 'Verbo Hub',
 		description:
-			'Se trata de um sistema de gestão de eventos. Feito em conjunto com outros desenvolvedores, utilizamos o padrão GitFlow. Desenvolvido o back e o front.',
+			'Trata-se de um sistema de gestão de eventos para a igreja Verbo da Vida - Patos, PB. Com GitFlow, desenvolvemos o back e o front-end da aplicação juntamente com testes unitários. A interface está implantada no AWS CloudFront e a API está implantada no AWS S3 Elastic Beanstalk',
 		images: [verbo1, verbo2, verbo3],
 
 		technologies: [
@@ -111,7 +111,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'VI Sercomp',
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
 		description:
-			'Um projeto voluntário da faculdade que estudo, onde se trata de um sistema para o anual evento que acontece. Foi utilizado GitFlow para desenvolvimento. Juntamente com uma grande equipe de alunos conseguimos concluir o projeto em 2 meses.',
+			'Um projeto voluntário da faculdade, onde se trata de uma aplicação para o congresso do curso. Foi utilizado GitFlow para desenvolvimento. Juntamente com uma grande equipe de alunos conseguimos concluir o projeto em 2 meses.',
 		technologies: [
 			'react',
 			'javascript',
@@ -282,11 +282,11 @@ export const projectsDataBr: ProjectType[] = [
 	},
 ];
 
-export const projectsDataEn: ProjectType[] = [
+export const projectsDataEn = [
 	{
 		title: 'CRM Splen',
 		description:
-			'A CRM system developed during an internship for selling courses at a company. It took 7 months of work, starting in June 2023 and ending in January 2024.',
+			'CRM developed during my internship at Splendore for selling undergraduate and postgraduate courses. The Scrum methodology was used throughout the project.',
 		technologies: [
 			'typescript',
 			'react',
@@ -305,7 +305,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'Verbo Hub',
 		description:
-			'An event management system developed together with other developers using the GitFlow pattern. Both the back-end and front-end were developed.',
+			'This is an event management system for the Verbo da Vida church in Patos, PB. Using GitFlow, we developed the back-end and front-end of the application along with unit tests. The interface is deployed on AWS CloudFront, and the API is deployed on AWS S3 Elastic Beanstalk.',
 		images: [verbo1, verbo2, verbo3],
 		technologies: [
 			'react',
@@ -327,7 +327,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'GymEvolution (In Progress)',
 		description:
-			'GymEvolution is a system for muscle development related to diet and training, featuring charts, workout spreadsheets, and nutritional and personal tracking.',
+			'GymEvolution is a system for tracking fitness progress related to diet and workouts, featuring graphs, workout sheets, and nutritional and personal tracking.',
 		images: [GymEvolution1, GymEvolution2, GymEvolution3],
 		technologies: [
 			'react',
@@ -351,7 +351,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'VI Sercomp',
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
 		description:
-			'A volunteer project from my college, it’s a system for an annual event. We used GitFlow for development and completed the project in 2 months with a large team of students.',
+			'A voluntary project for the college, which is an application for the course congress. GitFlow was used for development. Together with a large team of students, we completed the project in 2 months.',
 		technologies: [
 			'react',
 			'javascript',
@@ -364,10 +364,10 @@ export const projectsDataEn: ProjectType[] = [
 		link: 'https://sercomppb.com.br/',
 	},
 	{
-		title: 'Employee Management System',
+		title: 'Employee Management',
 		images: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
 		description:
-			'A system for managing employees with Shadcn components, including forms for registration, data modification, employee promotion, and PDF generation. All data is stored in Firebase.',
+			'This is an employee management system with components from Shadcn, such as a registration form. It allows data modifications, employee promotions, and PDF generation for employees. All data is stored in Firebase.',
 		technologies: [
 			'react',
 			'typescript',
@@ -383,7 +383,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'Caputeeno',
 		description:
-			'A front-end application in ReactJS developed as a challenge from YouTube, creating the front-end of an e-commerce site. I changed the technologies from the challenge to those I use daily, resulting in a 100% self-developed system.',
+			'This project consists of a front-end application in ReactJS, where I completed a challenge seen on YouTube, developing the front-end of an e-commerce site. I changed the technologies used in the challenge to those I use in my daily work, resulting in a system 100% developed by me.',
 		images: [caputeeno1, caputeeno2, caputeeno3],
 		github: 'https://github.com/LucasLevingston/capputeeno',
 		technologies: [
@@ -398,7 +398,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'Pass In Web - ReactJs',
 		description:
-			'A front-end application in ReactJS, implementing concepts like Props, State, and Components, with TypeScript, Vite tooling, responsive design with TailwindCSS, API consumption with Node.js, and URL states.',
+			'This project consists of a front-end application in ReactJS, applying concepts of properties, states, and components, with typing in TypeScript, tooling with Vite, responsive interface with TailwindCSS, API consumption from Node.js, and URL states.',
 		images: [PIW1, PIW2, PIW3],
 		github: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
 		technologies: [
@@ -413,7 +413,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'Blog Soft',
 		description:
-			'Development of a blog for study purposes. This was a challenge for a job position, covering both front-end and back-end development.',
+			'Development of a blog for studies. This consists of a challenge for a specific job vacancy to test knowledge. Both front-end and back-end were developed.',
 		github: 'https://github.com/LucasLevingston/Blog',
 		technologies: [
 			'react',
@@ -434,7 +434,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'Pass In Web - NodeJs',
 		description:
-			'A back-end application in Node.js, implementing REST API concepts with TypeScript, Fastify framework, Prisma ORM + SQLite integration, and Zod for data validation.',
+			'This project consists of a back-end application in Node.js, applying concepts of REST API, using TypeScript, Fastify as the framework, integrating Prisma ORM + SQLite, and Zod for data validation.',
 		images: [PiwNode1, PiwNode2, PiwNode3],
 		github: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
 		technologies: [
@@ -501,7 +501,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'My Portfolio',
 		description:
-			'As a learning experience, I developed my portfolio using React. I used TypeScript and Tailwind CSS for styling. This was my first contact with React and a stepping stone for future projects.',
+			'As a learning exercise, I developed my portfolio using the React framework. I utilized TypeScript and Tailwind CSS for styling. This was my first contact with React and a stepping stone for future projects.',
 		images: [MP1, MP2, MP3],
 		github: 'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
 		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
@@ -509,7 +509,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'Minesweeper',
 		description:
-			'Minesweeper was a project in Java, based on an existing game where the objective is to open all the fields without revealing any that are mined. I used the Observer pattern for field opening, and JButton for the graphical interface. JUnit was used for testing.',
+			'Minesweeper was a project in Java replicating an existing game where the goal is for the user to uncover all the fields without triggering any mines. If a mine is triggered, the user loses the game. For uncovering fields, I used the observer pattern. When there is a mine, neighboring fields will indicate there are between 1 and 4 mines nearby. By uncovering field by field, the game can be completed. For the graphical interface, I used JButton, where each field represents a button. I used the JUnit library for application testing.',
 		images: [CM1, CM2, CM3],
 		github: 'https://github.com/LucasLevingston/Campo_Minado',
 		technologies: ['java'],
@@ -517,7 +517,7 @@ export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'Calculator',
 		description:
-			'Calculator in Java using the Observer pattern and object-oriented design, with a Swing graphical interface and support for addition, subtraction, multiplication, and division. Modular and interactive, updating the display in real-time. Example of organized code and Java development skills.',
+			'Calculator in Java using the Observer pattern and object-oriented programming, with a Swing graphical interface and support for addition, subtraction, multiplication, and division. A modular and interactive application that updates the screen in real-time. An example of organized code and skills in Java development.',
 		images: [CALC1, CALC2, CALC3],
 		github: 'https://github.com/LucasLevingston/Calculadora.git',
 		technologies: ['java'],
