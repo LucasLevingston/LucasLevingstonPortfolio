@@ -9,16 +9,13 @@ import i18n from '../i18n';
 import { userBr, userEn } from '../data/userData';
 
 export default function Sidebar({ home }: { home?: boolean }) {
-	const [language, setLanguage] = useState(
-		() => localStorage.getItem('language') || 'en'
-	);
+	const [language, setLanguage] = useState('en');
 	const [user, setUser] = useState(() => (language === 'en' ? userEn : userBr));
 	const { t } = useTranslation();
 
 	useEffect(() => {
 		i18n.changeLanguage(language);
 		setUser(language === 'en' ? userEn : userBr);
-		localStorage.setItem('language', language);
 	}, [language]);
 
 	const handleLanguage = () => {
