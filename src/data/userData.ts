@@ -10,7 +10,7 @@ export const userBr: UserType = {
 	name: 'Lucas Levingston',
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
-		'Sou um desenvolvedor apaixonado pelo que faço. Tenho <span class="text-mainColor">9 meses de experiência</span> e já atuei tanto no back end como no front end, utilizando <span class="text-mainColor">React, Typescript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum e Docker.</span><br /><br /> Atualmente estou no <span class="text-mainColor">9º semestre</span> do curso de <span class="text-mainColor">Ciências da Computação.</span>',
+		'Interesse em Desenvolvimento Full-Stack, Front-End ou Back-end.<br/> Tenho<span class="text-mainColor"> 1 ano e 3 meses de experiência </span> com desenvolvimento Full-Stack. Utilizo <span class="text-mainColor"> React, Typescript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum e Docker </span>.<br/>Atualmente estou no <span class="text-mainColor">9º semestre</span> do curso de Ciências da Computação.',
 	profilePicture: FotoCurriculo,
 	certificates: certificatesDataBr,
 	experiences: experiencesDataBr,
@@ -29,7 +29,7 @@ export const userEn: UserType = {
 	name: 'Lucas Levingston',
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
-		'I am a developer passionate about what I do. I have <span class="text-mainColor">9 months of experience</span> and have worked both on the back end and front end, using <span class="text-mainColor">React, TypeScript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum, and Docker.</span><br /><br /> I am currently in the <span class="text-mainColor">9th semester</span> of the <span class="text-mainColor">Computer Science</span> program.',
+		'Interest in Full-Stack, Front-End, or Back-End Development.<br /> I have <span class="text-mainColor">1 year and 3 months of experience</span> in Full-Stack development. I use <span class="text-mainColor">React, TypeScript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum, and Docker</span>.<br/> Currently, I am in the <span class="text-mainColor">9th semester </span> of my Computer Science course.',
 	profilePicture: FotoCurriculo,
 	certificates: certificatesDataEn,
 	experiences: experiencesDataEn,
