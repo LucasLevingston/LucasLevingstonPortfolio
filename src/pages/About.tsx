@@ -15,24 +15,23 @@ import Container from '../components/Container';
 import SectionItem from '../components/SectionItem';
 import { useTranslation } from 'react-i18next';
 import { userBr, userEn } from '../data/userData';
+import i18n from '@/i18n';
 
 export default function About() {
-	const { t } = useTranslation();
-	const [indiceAtual, setIndiceAtual] = useState<number>(0);
-	const [language, setLanguage] = useState(
-		() => localStorage.getItem('language') || 'en'
-	);
-	const [user, setUser] = useState(() => (language === 'en' ? userEn : userBr));
+	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
 
+	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
+	const { t } = useTranslation();
 	useEffect(() => {
-		setUser(language === 'en' ? userEn : userBr);
-	}, [language]);
+		setUser(i18n.language === 'en' ? userEn : userBr);
+		i18n.changeLanguage(i18n.language);
+	}, [i18n.language]);
 
 	return (
 		<div className="text-mainTextColor">
 			<Sidebar />
 			<Container>
-				<Header setLanguage={setLanguage} language={language} />
+				<Header />
 
 				<Section title={t('about.technologiesTitle')}>
 					<HardSkillsSection skills={user.hardSkills} />
@@ -77,10 +76,10 @@ export default function About() {
 				</Section>
 
 				<Section title={t('about.certificatesTitle')}>
-					<SectionItem title={user.certificates[indiceAtual].title}>
+					<SectionItem title={user.certificates[currentCertificate].title}>
 						<div className="space-y-2">
 							<div>
-								{user.certificates[indiceAtual].description.map(
+								{user.certificates[currentCertificate].description.map(
 									(description, index) => (
 										<p key={index}>{description}</p>
 									)
@@ -91,10 +90,12 @@ export default function About() {
 							</p>
 							<div className="flex w-full flex-wrap">
 								<TecnologiaIcon
-									technologies={user.certificates[indiceAtual].technologies}
+									technologies={
+										user.certificates[currentCertificate].technologies
+									}
 								/>
 							</div>
-							{user.certificates[indiceAtual].image && (
+							{user.certificates[currentCertificate].image && (
 								<Swiper
 									modules={[Pagination]}
 									pagination={{
@@ -102,14 +103,14 @@ export default function About() {
 									}}
 									slidesPerView={1}
 									spaceBetween={50}
-									onSlideChange={(i) => setIndiceAtual(i.activeIndex)}
+									onSlideChange={(i) => setCurrentCertificate(i.activeIndex)}
 									className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]"
 								>
 									{user.certificates.map((certificate, i) => (
 										<SwiperSlide key={i}>
 											<img
 												src={certificate.image}
-												alt={`Imagem do certificado ${indiceAtual}`}
+												alt={`Imagem do certificado ${currentCertificate}`}
 												className="h-full w-full rounded-2xl"
 											/>
 										</SwiperSlide>

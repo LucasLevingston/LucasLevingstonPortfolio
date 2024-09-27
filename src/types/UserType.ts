@@ -16,8 +16,11 @@ export interface UserType {
 	hardSkills: HardSkillsType[];
 	gitHub: string;
 	linkedin: string;
+	linkedinImageUrl: string;
 	instagram: string;
+	instagramImageUrl: string;
 	phone: string;
 	whatsapp: string;
+	whatsappImageUrl: string;
 	email: string;
 }

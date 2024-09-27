@@ -13,7 +13,7 @@ export default function Navbar() {
 	}, [location]);
 
 	const getButtonClass = (path: string) =>
-		`flex justify-center text-[16px] hover:bg-transparent hover:text-mainTextColor ${
+		`flex justify-center text-[16px] hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor ${
 			activeButton === path ? 'bg-transparent' : 'bg-mainColor'
 		} w-[80px] rounded-[5px] border-[2px] border-mainColor p-3 transition-[0.5s]`;
 
