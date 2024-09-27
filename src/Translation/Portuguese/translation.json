@@ -30,6 +30,18 @@
 	"navbar.home": "Início",
 	"navbar.projects": "Projetos",
 
-  "resume.viewResume": "Ver currículo"
+  "resume.viewResume": "Ver currículo",
+
+  "social.github.name": "Ver no GitHub",
+  "social.github.role": "Desenvolvedor Full-Stack",
+  
+  "social.linkedin.name": "Ver no LinkedIn",
+  "social.linkedin.role": "Desenvolvedor Full-Stack",
+  
+  "social.whatsapp.label": "WhatsApp",
+  "social.whatsapp.message": "Entre em contato comigo!",
+  
+  "social.instagram.name": "Ver no Instagram",
+  "social.instagram.role": "Siga-me no Instagram"
 
 }

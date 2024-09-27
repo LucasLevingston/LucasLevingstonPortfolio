@@ -6,22 +6,22 @@ import Container from '../components/Container';
 import Section from '../components/Section';
 import { t } from 'i18next';
 import { userBr, userEn } from '../data/userData';
+import i18n from '@/i18n';
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
-	const [language, setLanguage] = useState(
-		() => localStorage.getItem('language') || 'en'
-	);
-	const [user, setUser] = useState(() => (language === 'en' ? userEn : userBr));
-
+	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
+	const { t } = useTranslation();
 	useEffect(() => {
-		setUser(language === 'en' ? userEn : userBr);
-	}, [language]);
+		setUser(i18n.language === 'en' ? userEn : userBr);
+		i18n.changeLanguage(i18n.language);
+	}, [i18n.language]);
 
 	return (
 		<div className=" text-mainTextColor">
 			<Sidebar />
 			<Container>
-				<Header setLanguage={setLanguage} language={language} />
+				<Header />
 				<Section title={t('projects.title')} className="pb-0">
 					<div>
 						{user.projects.map((project) => (
