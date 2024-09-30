@@ -16,6 +16,7 @@ import SectionItem from '../components/SectionItem';
 import { useTranslation } from 'react-i18next';
 import { userBr, userEn } from '../data/userData';
 import i18n from '@/i18n';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function About() {
 	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
@@ -119,6 +120,23 @@ export default function About() {
 							)}
 						</div>
 					</SectionItem>
+				</Section>
+				<Section title={t('about.recommendations')}>
+					{user.recomendations.map((recomendation) => (
+						<SectionItem
+							title={recomendation.name}
+							recommendation={recomendation}
+							key={recomendation.name}
+						>
+							<div className="flex flex-col gap-3">
+								<p className="text-lg">{recomendation.company}</p>
+								<div>
+									<p className="text-slate-500">{recomendation.date}</p>
+									<p>"{recomendation.comments}"</p>
+								</div>
+							</div>
+						</SectionItem>
+					))}
 				</Section>
 			</Container>
 		</div>

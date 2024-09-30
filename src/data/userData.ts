@@ -7,6 +7,10 @@ import FotoWhatsapp from '../assets/FotoWhatsapp.jpg';
 import FotoInstagram from '../assets/FotoInstagram.jpg';
 import { hardSkillsDataBr, hardSkillsDataEn } from './hardSkillsData';
 import { formationDataBr, formationDataEn } from './formationData';
+import {
+	recommendationDataBr,
+	recommendationDataEn,
+} from './recommendationData';
 
 export const userBr: UserType = {
 	name: 'Lucas Levingston',
@@ -28,6 +32,7 @@ export const userBr: UserType = {
 	whatsapp: 'https://wa.me/message/BL2FCNM72L7GJ1',
 	whatsappImageUrl: FotoWhatsapp,
 	email: 'lucaslevingston94@gmail.com',
+	recomendations: recommendationDataBr,
 };
 
 export const userEn: UserType = {
@@ -50,4 +55,5 @@ export const userEn: UserType = {
 	whatsapp: 'https://wa.me/message/BL2FCNM72L7GJ1',
 	whatsappImageUrl: FotoWhatsapp,
 	email: 'lucaslevingston94@gmail.com',
+	recomendations: recommendationDataEn,
 };
