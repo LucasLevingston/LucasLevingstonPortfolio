@@ -64,9 +64,11 @@ export default function Sidebar({ home }: { home?: boolean }) {
 			</div>
 			<div className="items-center justify-center space-y-2 font-bold">
 				<p>{t('sidebar.welcome')}</p>
-				{home && <LanguageToggle />}
 			</div>
-			<ModeToggle />
+			<div className="flex flex-col gap-2">
+				<LanguageToggle />
+				<ModeToggle />
+			</div>
 			<SocialBar />
 			<div>
 				<div className="flex w-[100%] justify-center transition-[1s] ">

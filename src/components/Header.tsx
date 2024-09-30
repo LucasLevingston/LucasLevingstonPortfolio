@@ -20,7 +20,6 @@ export default function Header() {
 			<div>
 				<div className="flex justify-between">
 					<h1 className="text-4xl font-bold">{user.completName}</h1>
-					<LanguageToggle />
 				</div>
 				<div className="font-bold text-mainColor">
 					<Typewriter

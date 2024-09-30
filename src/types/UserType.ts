@@ -23,4 +23,5 @@ export interface UserType {
 	whatsapp: string;
 	whatsappImageUrl: string;
 	email: string;
+	recomendations: RecommendationType[];
 }

@@ -14,7 +14,7 @@ export default function SocialBar() {
 	const user = userEn;
 
 	return (
-		<ul className="mx-auto flex w-[200px] list-none items-center justify-center border-b-[1px] border-solid pb-3">
+		<section className="mx-auto flex w-[200px] list-none items-center justify-center border-b-[1px] border-solid pb-3">
 			<section className="mx-auto max-w-[60px]">
 				<HoverCard>
 					<HoverCardTrigger asChild>
@@ -42,7 +42,7 @@ export default function SocialBar() {
 									href={user.gitHub}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 font-semibold text-azulBebe hover:underline"
+									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
 								>
 									{t('social.github.name')}
 								</a>
@@ -52,7 +52,7 @@ export default function SocialBar() {
 				</HoverCard>
 			</section>
 
-			<li className="mx-auto max-w-[60px]">
+			<div className="mx-auto max-w-[60px]">
 				<HoverCard>
 					<HoverCardTrigger asChild>
 						<a
@@ -79,7 +79,7 @@ export default function SocialBar() {
 									href={user.linkedin}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 font-semibold text-azulBebe hover:underline"
+									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
 								>
 									{t('social.linkedin.name')}
 								</a>
@@ -87,9 +87,9 @@ export default function SocialBar() {
 						</div>
 					</HoverCardContent>
 				</HoverCard>
-			</li>
+			</div>
 
-			<li className="mx-auto max-w-[60px]">
+			<div className="mx-auto max-w-[60px]">
 				<HoverCard>
 					<HoverCardTrigger asChild>
 						<a
@@ -118,7 +118,7 @@ export default function SocialBar() {
 									href={user.whatsapp}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 font-semibold text-azulBebe hover:underline"
+									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
 								>
 									{t('social.whatsapp.label')}
 								</a>
@@ -126,9 +126,9 @@ export default function SocialBar() {
 						</div>
 					</HoverCardContent>
 				</HoverCard>
-			</li>
+			</div>
 
-			<li className="mx-auto max-w-[60px]">
+			<div className="mx-auto max-w-[60px]">
 				<HoverCard>
 					<HoverCardTrigger asChild>
 						<a
@@ -155,7 +155,7 @@ export default function SocialBar() {
 									href={user.instagram}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 font-semibold text-azulBebe hover:underline"
+									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
 								>
 									{t('social.instagram.name')}
 								</a>
@@ -163,7 +163,7 @@ export default function SocialBar() {
 						</div>
 					</HoverCardContent>
 				</HoverCard>
-			</li>
-		</ul>
+			</div>
+		</section>
 	);
 }

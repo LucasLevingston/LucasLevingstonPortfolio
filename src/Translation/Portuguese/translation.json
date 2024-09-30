@@ -12,6 +12,8 @@
 	"about.currentStatus": "Status Atual",
 	"about.certificatesTitle": "Certificados",
 	"about.usedTechnologies": "Tecnologias Utilizadas",
+  "about.recommendations":"Recomendações",
+
   
 	"projects.title": "Meus Projetos",
 	"projectCard.technologiesUsed": "Tecnologias Utilizadas",
