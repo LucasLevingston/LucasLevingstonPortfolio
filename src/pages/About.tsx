@@ -2,13 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import TecnologiaIcon from '../components/TechnologyIcon';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import 'swiper/swiper-bundle.css';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import '../index.css';
 import { HardSkillsSection } from '../components/HardSkillsSection';
 import Section from '../components/Section';
 import Container from '../components/Container';
@@ -16,17 +9,34 @@ import SectionItem from '../components/SectionItem';
 import { useTranslation } from 'react-i18next';
 import { userBr, userEn } from '../data/userData';
 import i18n from '@/i18n';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+	Carousel,
+	CarouselApi,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from '@/components/ui/carousel';
 
 export default function About() {
 	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
-
+	const [api, setApi] = React.useState<CarouselApi>();
 	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
 	const { t } = useTranslation();
 	useEffect(() => {
 		setUser(i18n.language === 'en' ? userEn : userBr);
 		i18n.changeLanguage(i18n.language);
-	}, [i18n.language]);
+
+		if (!api) {
+			return;
+		}
+
+		setCurrentCertificate(api.selectedScrollSnap());
+
+		api.on('select', () => {
+			setCurrentCertificate(api.selectedScrollSnap());
+		});
+	}, [i18n.language, api]);
 
 	return (
 		<div className="text-mainTextColor">
@@ -97,30 +107,30 @@ export default function About() {
 								/>
 							</div>
 							{user.certificates[currentCertificate].image && (
-								<Swiper
-									modules={[Pagination]}
-									pagination={{
-										clickable: true,
-									}}
-									slidesPerView={1}
-									spaceBetween={50}
-									onSlideChange={(i) => setCurrentCertificate(i.activeIndex)}
-									className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]"
-								>
-									{user.certificates.map((certificate, i) => (
-										<SwiperSlide key={i}>
-											<img
-												src={certificate.image}
-												alt={`Imagem do certificado ${currentCertificate}`}
-												className="h-full w-full rounded-2xl"
-											/>
-										</SwiperSlide>
-									))}
-								</Swiper>
+								<Carousel setApi={setApi}>
+									<CarouselContent className="h-[200px] w-full sm:h-[576px] sm:w-[1024px] ">
+										{user.certificates.map((certificate, index) => (
+											<CarouselItem key={index}>
+												<img
+													src={certificate.image}
+													alt={`Imagem do certificado ${index}`}
+													className="h-full w-full rounded-2xl "
+												/>
+											</CarouselItem>
+										))}
+									</CarouselContent>
+									<CarouselPrevious />
+									<CarouselNext />
+								</Carousel>
 							)}
+							<div className="py-2 text-center text-sm text-muted-foreground">
+								{t('about.certificadeCurrentSlide')} {currentCertificate + 1}{' '}
+								{t('about.of')} {api?.scrollSnapList().length}
+							</div>
 						</div>
 					</SectionItem>
 				</Section>
+
 				<Section title={t('about.recommendations')}>
 					{user.recomendations.map((recomendation) => (
 						<SectionItem

@@ -8,6 +8,7 @@ import { userBr, userEn } from '../data/userData';
 import { ModeToggle } from './ModeToggle';
 import LanguageToggle from './LanguageToggle';
 import { ResumeButton } from './ResumeButon';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 export default function Sidebar({ home }: { home?: boolean }) {
 	const [language, setLanguage] = useState('en');
@@ -36,11 +37,10 @@ export default function Sidebar({ home }: { home?: boolean }) {
 			}
 		>
 			<h1 className="text-[32px] font-bold">{user.name}</h1>
-			<img
-				className="mx-auto h-[175px] w-[175px] rounded-[50%] sm:h-28 sm:w-28"
-				src={user.profilePicture}
-				alt={user.name}
-			/>
+			<Avatar className="h-[175px] w-[175px] sm:h-28 sm:w-28">
+				<AvatarImage src={user.profilePicture} />
+				<AvatarFallback>LL</AvatarFallback>
+			</Avatar>
 			<div className="mx-auto max-w-[100%] text-center font-bold">
 				{t('sidebar.greeting')} {user.name} {t('sidebar.am')}
 				<span className="text-mainColor">
