@@ -41,7 +41,7 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 	},
 	{
 		category: 'ORM',
-		technologies: ['prisma'],
+		technologies: ['prisma', 'sequelize'],
 	},
 	{
 		category: 'Metodologias ágeis',
@@ -88,7 +88,7 @@ export const hardSkillsDataEn: HardSkillsType[] = [
 	},
 	{
 		category: 'ORM',
-		technologies: ['prisma'],
+		technologies: ['prisma', 'sequelize'],
 	},
 	{
 		category: 'Agile Methodologies',

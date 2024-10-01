@@ -18,7 +18,7 @@ export function ResumeButton() {
 				<span className="pr-2 text-bioBgColor dark:text-mainTextColor ">
 					{t('resume.viewResume')}
 				</span>
-				<BsJournalText className="text-[18px]  " />
+				<BsJournalText className="text-[18px]" />
 			</a>
 		</div>
 	);

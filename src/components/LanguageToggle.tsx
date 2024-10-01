@@ -16,13 +16,13 @@ const LanguageToggle: React.FC = () => {
 
 	return (
 		<div className="flex items-center justify-center">
-			<Label htmlFor="language-toggle" className="flex items-center">
+			<Label htmlFor="language-toggle" className="flex items-center gap-2">
 				<Switch
 					id="language-toggle"
 					checked={language === 'br'}
 					onCheckedChange={handleLanguageChange}
 				/>
-				<span className="ml-2">
+				<span>
 					{language === 'en' ? (
 						<span className="flex items-center gap-2">
 							<span className="fi fi-us fis rounded-full text-[30px]"></span>

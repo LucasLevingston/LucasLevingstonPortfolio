@@ -13,17 +13,26 @@
 	"about.certificatesTitle": "Certificates",
 	"about.usedTechnologies": "Technologies Used",
   "about.recommendations":"Recommendations",
+  "about.certificadeCurrentSlide": "Certificate",
+  "about.of": "of",
   
 	"projects.title": "My Projects",
-
+  "projects.filterByTechnology":"Filter By Technology",
+  "projects.technologies":"Technologies",
+  "projects.filteredResults":"results",
+  "projects.search":"Search by name...",
+  "projects.hasImage":"Has image",
+  
 	"projectCard.technologiesUsed": "Technologies Used",
 	"projectCard.viewGitHub": "View GitHub",
 	"projectCard.visitSite": "Visit Site",
+  "projectCard.projectCurrentSlide": "Image",
+  "projectCard.of": "of",
   
 	"sidebar.greeting": "Hello, my name is",
 	"sidebar.am": "and i am",
 	"sidebar.welcome": "Welcome!",
-
+  
 	"sidebar.role.fullStack": "Full-Stack Developer",
 	"sidebar.role.frontEnd": "Front-End Developer",
 	"sidebar.role.backEnd": "Back-End Developer",
