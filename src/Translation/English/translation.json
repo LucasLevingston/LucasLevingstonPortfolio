@@ -17,6 +17,11 @@
   "about.of": "of",
   
 	"projects.title": "My Projects",
+  "projects.filterByTechnology":"Filter By Technology",
+  "projects.technologies":"Technologies",
+  "projects.filteredResults":"results",
+  "projects.search":"Search by name...",
+  "projects.hasImage":"Has image",
   
 	"projectCard.technologiesUsed": "Technologies Used",
 	"projectCard.viewGitHub": "View GitHub",

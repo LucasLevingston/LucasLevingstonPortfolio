@@ -81,7 +81,6 @@ export const projectsDataBr: ProjectType[] = [
 			'postman',
 			'git',
 			'github',
-			'gitflow',
 		],
 	},
 	{
@@ -103,7 +102,6 @@ export const projectsDataBr: ProjectType[] = [
 			'postman',
 			'git',
 			'github',
-			'gitflow',
 		],
 		github: 'https://github.com/LucasLevingston/gymevolution',
 	},
@@ -112,15 +110,7 @@ export const projectsDataBr: ProjectType[] = [
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
 		description:
 			'Um projeto voluntário da faculdade, onde se trata de uma aplicação para o congresso do curso. Foi utilizado GitFlow para desenvolvimento. Juntamente com uma grande equipe de alunos conseguimos concluir o projeto em 2 meses.',
-		technologies: [
-			'react',
-			'javascript',
-			'css3',
-			'git',
-			'vite',
-			'github',
-			'gitflow',
-		],
+		technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
 		link: 'https://sercomppb.com.br/',
 	},
 	{
@@ -136,7 +126,6 @@ export const projectsDataBr: ProjectType[] = [
 			'vite',
 			'git',
 			'github',
-			'PDF',
 		],
 		github: 'https://github.com/LucasLevingston/taugor-project',
 	},
@@ -321,7 +310,6 @@ export const projectsDataEn = [
 			'postman',
 			'git',
 			'github',
-			'gitflow',
 		],
 	},
 	{
@@ -343,7 +331,6 @@ export const projectsDataEn = [
 			'postman',
 			'git',
 			'github',
-			'gitflow',
 		],
 		github: 'https://github.com/LucasLevingston/gymevolution',
 	},
@@ -352,15 +339,7 @@ export const projectsDataEn = [
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
 		description:
 			'A voluntary project for the college, which is an application for the course congress. GitFlow was used for development. Together with a large team of students, we completed the project in 2 months.',
-		technologies: [
-			'react',
-			'javascript',
-			'css3',
-			'git',
-			'vite',
-			'github',
-			'gitflow',
-		],
+		technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
 		link: 'https://sercomppb.com.br/',
 	},
 	{
@@ -376,7 +355,6 @@ export const projectsDataEn = [
 			'vite',
 			'git',
 			'github',
-			'PDF',
 		],
 		github: 'https://github.com/LucasLevingston/taugor-project',
 	},

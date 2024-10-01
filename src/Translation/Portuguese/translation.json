@@ -18,6 +18,13 @@
 
   
 	"projects.title": "Meus Projetos",
+  "projects.filterByTechnology":"Filtrar por tecnologia",
+  "projects.technologies":"Tecnologias",
+  "projects.filteredResults":"resultados",
+  "projects.search":"Pesquisar por nome...",
+  "projects.hasImage":"Possui imagem",
+
+
 	"projectCard.technologiesUsed": "Tecnologias Utilizadas",
 	"projectCard.viewGitHub": "Ver GitHub",
 	"projectCard.visitSite": "Visitar Site",

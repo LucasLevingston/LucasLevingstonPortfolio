@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
-import TecnologiaIcon from '../components/TechnologyIcon';
 import { HardSkillsSection } from '../components/HardSkillsSection';
 import Section from '../components/Section';
 import Container from '../components/Container';
@@ -17,6 +16,7 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from '@/components/ui/carousel';
+import TechnologiesSection from '@/components/ThecnologiesSection';
 
 export default function About() {
 	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
@@ -100,7 +100,7 @@ export default function About() {
 								{t('about.usedTechnologies')}:
 							</p>
 							<div className="flex w-full flex-wrap">
-								<TecnologiaIcon
+								<TechnologiesSection
 									technologies={
 										user.certificates[currentCertificate].technologies
 									}
@@ -108,7 +108,7 @@ export default function About() {
 							</div>
 							{user.certificates[currentCertificate].image && (
 								<Carousel setApi={setApi}>
-									<CarouselContent className="h-[200px] w-full sm:h-[576px] sm:w-[1024px] ">
+									<CarouselContent className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]">
 										{user.certificates.map((certificate, index) => (
 											<CarouselItem key={index}>
 												<img
@@ -119,8 +119,6 @@ export default function About() {
 											</CarouselItem>
 										))}
 									</CarouselContent>
-									<CarouselPrevious />
-									<CarouselNext />
 								</Carousel>
 							)}
 							<div className="py-2 text-center text-sm text-muted-foreground">
