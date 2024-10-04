@@ -16,16 +16,8 @@ import {
 } from '@/components/ui/carousel';
 import TechnologiesSection from '@/components/ThecnologiesSection';
 import { useLocation } from 'react-router-dom';
-import {
-	Pagination,
-	PaginationContent,
-	PaginationEllipsis,
-	PaginationItem,
-	PaginationLink,
-	PaginationNext,
-	PaginationPrevious,
-} from '@/components/ui/pagination';
-import { Button } from '@/components/ui/button';
+import CarouselPagination from '@/components/CarouselPagination';
+
 export default function About() {
 	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
 	const [api, setApi] = useState<CarouselApi>();
@@ -149,102 +141,12 @@ export default function About() {
 									</Carousel>
 								)}
 								<div className="py-2 text-center text-sm text-muted-foreground">
-									<Pagination>
-										<PaginationContent>
-											<Button
-												disabled={currentCertificate === 0}
-												onClick={() => {
-													setCurrentCertificate(currentCertificate - 1);
-													api?.scrollPrev();
-												}}
-											>
-												Previous
-											</Button>
-
-											{/* Calcular os índices dos botões a serem exibidos */}
-											{user.certificates.length > 0 && (
-												<>
-													{/* Exibir o primeiro botão */}
-													{currentCertificate > 0 && (
-														<PaginationItem>
-															<PaginationLink
-																onClick={() => {
-																	setCurrentCertificate(currentCertificate - 1);
-																	api?.scrollTo(currentCertificate - 1);
-																}}
-															>
-																{currentCertificate}
-															</PaginationLink>
-														</PaginationItem>
-													)}
-
-													{/* Exibir o botão atual */}
-													<PaginationItem>
-														<PaginationLink isActive>
-															{currentCertificate + 1}{' '}
-															{/* Adiciona 1 para exibir corretamente */}
-														</PaginationLink>
-													</PaginationItem>
-
-													{/* Exibir o próximo botão */}
-													{currentCertificate <
-														user.certificates.length - 1 && (
-														<PaginationItem>
-															<PaginationLink
-																onClick={() => {
-																	setCurrentCertificate(currentCertificate + 1);
-																	api?.scrollTo(currentCertificate + 1);
-																}}
-															>
-																{currentCertificate + 2}
-															</PaginationLink>
-														</PaginationItem>
-													)}
-													{currentCertificate <
-														user.certificates.length - 1 && (
-														<PaginationItem>
-															<PaginationLink
-																onClick={() => {
-																	setCurrentCertificate(currentCertificate + 2);
-																	api?.scrollTo(currentCertificate + 2);
-																}}
-															>
-																{currentCertificate + 3}
-															</PaginationLink>
-														</PaginationItem>
-													)}
-												</>
-											)}
-											{user.certificates.length != currentCertificate && (
-												<Button
-													disabled={
-														currentCertificate === user.certificates.length - 1
-													}
-												>
-													<PaginationEllipsis
-														onClick={() => {
-															setCurrentCertificate(user.certificates.length);
-															api?.scrollTo(user.certificates.length);
-														}}
-													/>
-												</Button>
-											)}
-											<Button
-												className="border-[2px] border-mainColor hover:bg-transparent"
-												disabled={
-													currentCertificate === user.certificates.length - 1
-												}
-												onClick={() => {
-													setCurrentCertificate(currentCertificate + 1);
-													api?.scrollNext();
-												}}
-											>
-												Next
-											</Button>
-										</PaginationContent>
-									</Pagination>
-									{t('about.certificadeCurrentSlide')} {currentCertificate + 1}{' '}
-									{t('about.of')} {api?.scrollSnapList().length}
+									<CarouselPagination
+										currentImage={currentCertificate}
+										setCurrentImage={setCurrentCertificate}
+										api={api}
+										images={user.certificates}
+									/>
 								</div>
 							</div>
 						</SectionItem>

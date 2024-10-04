@@ -58,6 +58,8 @@
   "social.whatsapp.message": "Entre em contato comigo!",
   
   "social.instagram.name": "Ver no Instagram",
-  "social.instagram.role": "Siga-me no Instagram"
+  "social.instagram.role": "Siga-me no Instagram",
 
+  "pagination.previous": "Anterior",
+  "pagination.next": "Próximo"
 }

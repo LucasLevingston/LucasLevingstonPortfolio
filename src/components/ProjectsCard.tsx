@@ -18,6 +18,7 @@ import {
 	CarouselItem,
 } from './ui/carousel';
 import TechnologiesSection from './ThecnologiesSection';
+import CarouselPagination from './CarouselPagination';
 
 interface ProjectCardProps {
 	project: ProjectType;
@@ -127,8 +128,12 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 										))}
 									</CarouselContent>
 									<div className="py-2 text-center text-sm text-muted-foreground">
-										{t('projectCard.projectCurrentSlide')} {currentImage + 1}{' '}
-										{t('projectCard.of')} {api?.scrollSnapList().length}
+										<CarouselPagination
+											currentImage={currentImage}
+											setCurrentImage={setCurrentImage}
+											api={api}
+											images={project.images}
+										/>
 									</div>
 								</Carousel>
 							)}
