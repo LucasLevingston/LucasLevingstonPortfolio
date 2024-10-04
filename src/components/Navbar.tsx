@@ -11,26 +11,20 @@ import {
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
-import i18n from '@/i18n';
 import { userBr, userEn } from '@/data/userData';
 import { ProjectType } from '@/types/ProjectType';
 import { projectsDataEn } from '@/data/projectsData';
 import Logo from '../assets/Logo.png';
 
 export function Navbar() {
-	const [language, setLanguage] = useState('en');
-	const [user, setUser] = useState(language === 'en' ? userEn : userBr);
-	const [projectsNav, setProjectsNav] = useState<ProjectType[]>(projectsDataEn);
+	const { t, i18n } = useTranslation();
+	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
 	const [activeButton, setActiveButton] = useState<string>('/');
 
-	const { t } = useTranslation();
-
 	useEffect(() => {
-		setLanguage(i18n.language);
-		setUser(language === 'en' ? userEn : userBr);
-		setProjectsNav(user.projects);
+		setUser(i18n.language === 'en' ? userEn : userBr);
 		setActiveButton(location.pathname);
-	}, [language]);
+	}, [i18n.language]);
 
 	const project: {
 		title: string;
@@ -39,28 +33,28 @@ export function Navbar() {
 		id: string;
 	}[] = [
 		{
-			title: projectsNav[0].title,
-			href: `/projects#${projectsNav[0].title}`,
-			description: projectsNav[0].description,
-			id: projectsNav[0].title,
+			title: user.projects[0].title,
+			href: `/projects#${user.projects[0].title}`,
+			description: user.projects[0].description,
+			id: user.projects[0].title,
 		},
 		{
-			title: projectsNav[1].title,
-			href: `/projects#${projectsNav[1].title}`,
-			description: projectsNav[1].description,
-			id: projectsNav[1].title,
+			title: user.projects[1].title,
+			href: `/projects#${user.projects[1].title}`,
+			description: user.projects[1].description,
+			id: user.projects[1].title,
 		},
 		{
-			title: projectsNav[2].title,
-			href: `/projects#${projectsNav[2].title}`,
-			description: projectsNav[2].description,
-			id: projectsNav[2].title,
+			title: user.projects[2].title,
+			href: `/projects#${user.projects[2].title}`,
+			description: user.projects[2].description,
+			id: user.projects[2].title,
 		},
 		{
-			title: projectsNav[3].title,
-			href: `/projects#${projectsNav[3].title}`,
-			description: projectsNav[3].description,
-			id: projectsNav[3].title,
+			title: user.projects[3].title,
+			href: `/projects#${user.projects[3].title}`,
+			description: user.projects[3].description,
+			id: user.projects[3].title,
 		},
 	];
 

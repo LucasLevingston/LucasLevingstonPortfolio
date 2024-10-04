@@ -7,7 +7,6 @@ import Container from '../components/Container';
 import SectionItem from '../components/SectionItem';
 import { useTranslation } from 'react-i18next';
 import { userBr, userEn } from '../data/userData';
-import i18n from '@/i18n';
 import {
 	Carousel,
 	CarouselApi,
@@ -21,8 +20,8 @@ import CarouselPagination from '@/components/CarouselPagination';
 export default function About() {
 	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
 	const [api, setApi] = useState<CarouselApi>();
+	const { t, i18n } = useTranslation();
 	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
-	const { t } = useTranslation();
 	const location = useLocation();
 
 	useEffect(() => {
@@ -42,7 +41,14 @@ export default function About() {
 			const element = document.getElementById(hash.substring(1));
 			element?.scrollIntoView({ behavior: 'smooth' });
 		}
-	}, [i18n.language, api, currentCertificate]);
+	}, [i18n.language, api]);
+
+	useEffect(() => {
+		const hash = location.hash;
+		if (!hash) {
+			window.scrollTo(0, 0);
+		}
+	}, []);
 
 	return (
 		<div className="text-mainTextColor">

@@ -36,7 +36,7 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 		const hash = window.location.hash;
 		if (hash) {
 			const sanitizeHash = (hash: string) => {
-				return decodeURIComponent(hash.replace(/^#/, '').replace(/%20/g, ' '));
+				return hash.replace(/^#/, '').replace(/%20/g, ' ');
 			};
 			const result = sanitizeHash(hash);
 			const element = document.getElementById(result);

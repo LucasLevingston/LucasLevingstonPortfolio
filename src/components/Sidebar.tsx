@@ -3,21 +3,20 @@ import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
 import { Navbar } from './Navbar';
 import Typewriter from 'typewriter-effect';
 import SocialBar from './SocialBar';
-import { useTranslation } from 'react-i18next';
 import { userBr, userEn } from '../data/userData';
 import { ModeToggle } from './ModeToggle';
 import LanguageToggle from './LanguageToggle';
 import { ResumeButton } from './ResumeButon';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { useTranslation } from 'react-i18next';
 
 export default function Sidebar({ home }: { home?: boolean }) {
-	const [language, setLanguage] = useState('en');
-	const [user, setUser] = useState(language === 'en' ? userEn : userBr);
 	const { t, i18n } = useTranslation();
+	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
+
 	useEffect(() => {
-		setLanguage(i18n.language);
-		setUser(language === 'en' ? userEn : userBr);
-	}, [language]);
+		setUser(i18n.language === 'en' ? userEn : userBr);
+	}, [i18n.language]);
 
 	const formatPhoneNumber = (phoneNumber: string): string => {
 		const match = phoneNumber.match(/^(\d{2})(\d{5})(\d{4})$/);
