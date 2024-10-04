@@ -3,18 +3,23 @@
 	"header.frontEnd": "Desenvolvedor Front-End",
 	"header.backEnd": "Desenvolvedor Back-End",
   
-	"about.technologiesTitle": "Hard Skills",
+  "about.technologiesTitle": "Habilidades Técnicas",
+	"about.technologiesDescription": "Uma lista de habilidades técnicas e proficiências.",
 	"about.experiencesTitle": "Experiências",
+	"about.experiencesDescription": "Experiências profissionais e cargos ocupados.",
 	"about.start": "Início",
 	"about.end": "Fim",
 	"about.position": "Cargo",
-	"about.educationTitle": "Formação",
-	"about.currentStatus": "Status Atual",
+	"about.educationTitle": "Educação",
+	"about.educationDescription": "Formação educacional e qualificações.",
+	"about.currentStatus": "Situação Atual",
 	"about.certificatesTitle": "Certificados",
+	"about.certificatesDescription": "Certificados e credenciais adquiridos.",
 	"about.usedTechnologies": "Tecnologias Utilizadas",
-  "about.recommendations":"Recomendações",
-  "about.certificadeCurrentSlide": "Certificado",
-  "about.of": "de",
+	"about.recommendationsTitle": "Recomendações",
+	"about.recommendationsDescription": "Depoimentos e endossos.",
+	"about.certificadeCurrentSlide": "Certificado",
+	"about.of": "de",
 
   
 	"projects.title": "Meus Projetos",
@@ -53,6 +58,8 @@
   "social.whatsapp.message": "Entre em contato comigo!",
   
   "social.instagram.name": "Ver no Instagram",
-  "social.instagram.role": "Siga-me no Instagram"
+  "social.instagram.role": "Siga-me no Instagram",
 
+  "pagination.previous": "Anterior",
+  "pagination.next": "Próximo"
 }

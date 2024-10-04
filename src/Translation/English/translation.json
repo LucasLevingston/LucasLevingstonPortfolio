@@ -3,18 +3,23 @@
 	"header.frontEnd": "Front-End Developer",
 	"header.backEnd": "Back-End Developer",
   
-	"about.technologiesTitle": "Hard Skills",
+  "about.technologiesTitle": "Hard Skills",
+	"about.technologiesDescription": "A list of technical skills and proficiencies.",
 	"about.experiencesTitle": "Experiences",
+	"about.experiencesDescription": "Professional experiences and job roles.",
 	"about.start": "Start",
 	"about.end": "End",
 	"about.position": "Position",
 	"about.educationTitle": "Education",
+	"about.educationDescription": "Educational background and qualifications.",
 	"about.currentStatus": "Current Status",
 	"about.certificatesTitle": "Certificates",
+	"about.certificatesDescription": "Certificates and credentials acquired.",
 	"about.usedTechnologies": "Technologies Used",
-  "about.recommendations":"Recommendations",
-  "about.certificadeCurrentSlide": "Certificate",
-  "about.of": "of",
+	"about.recommendationsTitle": "Recommendations",
+	"about.recommendationsDescription": "Testimonials and endorsements.",
+	"about.certificadeCurrentSlide": "Certificate",
+	"about.of": "of",
   
 	"projects.title": "My Projects",
   "projects.filterByTechnology":"Filter By Technology",
@@ -53,5 +58,8 @@
   "social.whatsapp.message": "Contact me!",
   
   "social.instagram.name": "View on Instagram",
-  "social.instagram.role": "Follow me on Instagram"
+  "social.instagram.role": "Follow me on Instagram",
+
+  "pagination.previous": "Previous",
+  "pagination.next": "Next"
 }

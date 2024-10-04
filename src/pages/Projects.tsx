@@ -43,6 +43,35 @@ const Projects: React.FC = () => {
 	}, [i18n.language]);
 
 	useEffect(() => {
+		const handleHashScroll = () => {
+			const hash = window.location.hash;
+
+			if (hash) {
+				const sanitizeHash = (hash: string) => {
+					return decodeURIComponent(
+						hash.replace(/^#/, '').replace(/%20/g, ' ')
+					);
+				};
+				const result = sanitizeHash(hash);
+				const element = document.getElementById(result);
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth' });
+				}
+			}
+			if (!hash) {
+				window.scrollTo(0, 0);
+			}
+		};
+
+		handleHashScroll();
+
+		window.addEventListener('hashchange', handleHashScroll);
+		return () => {
+			window.removeEventListener('hashchange', handleHashScroll);
+		};
+	}, []);
+
+	useEffect(() => {
 		const filtered = user.projects.filter((project) => {
 			const techMatch = filter.selectedTechnologies.length
 				? filter.selectedTechnologies.every((tech) =>
@@ -202,12 +231,8 @@ const Projects: React.FC = () => {
 						{filteredProjects.map((project) => (
 							<ProjectCard
 								key={project.title}
-								title={project.title}
-								description={project.description}
-								images={project.images}
-								link={project.link}
-								github={project.github}
-								technologies={project.technologies}
+								project={project}
+								id={project.title}
 							/>
 						))}
 					</div>

@@ -19,7 +19,7 @@ export default function SectionItem({
 }: SectionItemProps): JSX.Element {
 	return (
 		<div className={` ${className} flex flex-col gap-1`}>
-			<h3 className="flex items-center gap-3 border-l-[5px] border-mainColor pl-2 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
+			<div className="flex items-center gap-3 border-l-[5px] border-mainColor pl-2 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px]">
 				{recommendation && (
 					<Avatar>
 						<AvatarImage src={recommendation.linkedinImageUrl} />
@@ -70,7 +70,7 @@ export default function SectionItem({
 						</HoverCardContent>
 					</HoverCard>
 				)}
-			</h3>
+			</div>
 			<div className={`pl-7`}>{children}</div>
 		</div>
 	);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
-import Navbar from './Navbar';
+import { Navbar } from './Navbar';
 import Typewriter from 'typewriter-effect';
 import SocialBar from './SocialBar';
 import { useTranslation } from 'react-i18next';
@@ -41,6 +41,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 				<AvatarImage src={user.profilePicture} />
 				<AvatarFallback>LL</AvatarFallback>
 			</Avatar>
+
 			<div className="mx-auto max-w-[100%] text-center font-bold">
 				{t('sidebar.greeting')} {user.name} {t('sidebar.am')}
 				<span className="text-mainColor">
@@ -69,6 +70,8 @@ export default function Sidebar({ home }: { home?: boolean }) {
 				<LanguageToggle />
 				<ModeToggle />
 			</div>
+			<Navbar />
+
 			<SocialBar />
 			<div>
 				<div className="flex w-[100%] justify-center  ">
@@ -87,7 +90,6 @@ export default function Sidebar({ home }: { home?: boolean }) {
 				</div>
 			</div>
 			<ResumeButton />
-			<Navbar />
 		</div>
 	);
 }
