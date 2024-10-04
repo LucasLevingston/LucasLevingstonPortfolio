@@ -10,14 +10,16 @@ interface CarouselPaginationProps {
 	api: any;
 	images: any[];
 }
-const paginationButtonClassName =
-	'border-[2px] border-mainColor transition-all hover:bg-transparent text-black font-bold dark:text-white';
+
 const CarouselPagination: React.FC<CarouselPaginationProps> = ({
 	currentImage,
 	setCurrentImage,
 	api,
 	images,
 }) => {
+	const paginationButtonClassName =
+		'border-[2px] border-mainColor transition-all hover:bg-transparent text-black font-bold dark:text-white';
+
 	return (
 		<Pagination>
 			<PaginationContent>
@@ -42,38 +44,34 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
 					<MdNavigateBefore />
 				</Button>
 
-				{images.length > 0 && (
-					<>
-						<Button
-							className={paginationButtonClassName}
-							disabled={currentImage === 0}
-							onClick={() => {
-								setCurrentImage(currentImage - 1);
-								api?.scrollTo(currentImage - 1);
-							}}
-						>
-							{currentImage}
-						</Button>
+				<Button
+					className={paginationButtonClassName}
+					disabled={currentImage === 0}
+					onClick={() => {
+						setCurrentImage(currentImage - 1);
+						api?.scrollTo(currentImage - 1);
+					}}
+				>
+					{currentImage}
+				</Button>
 
-						<Button
-							className={`bg-transparent ${paginationButtonClassName}`}
-							disabled
-						>
-							{currentImage + 1}
-						</Button>
+				<Button
+					className={`bg-transparent ${paginationButtonClassName}`}
+					disabled
+				>
+					{currentImage + 1}
+				</Button>
 
-						<Button
-							className={paginationButtonClassName}
-							disabled={currentImage === images.length - 1}
-							onClick={() => {
-								setCurrentImage(currentImage + 1);
-								api?.scrollTo(currentImage + 1);
-							}}
-						>
-							{currentImage + 2}
-						</Button>
-					</>
-				)}
+				<Button
+					className={paginationButtonClassName}
+					disabled={currentImage === images.length - 1}
+					onClick={() => {
+						setCurrentImage(currentImage + 1);
+						api?.scrollTo(currentImage + 1);
+					}}
+				>
+					{currentImage + 2}
+				</Button>
 
 				<Button
 					className={paginationButtonClassName}

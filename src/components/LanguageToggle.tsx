@@ -4,14 +4,8 @@ import { Switch } from '@/components/ui/switch';
 import i18n from '@/i18n';
 
 const LanguageToggle: React.FC = () => {
-	const [language, setLanguage] = useState('en');
-
-	useEffect(() => {
-		i18n.changeLanguage(language);
-	}, [language]);
-
 	const handleLanguageChange = (checked: boolean) => {
-		setLanguage(checked ? 'br' : 'en');
+		i18n.changeLanguage(checked ? 'br' : 'en');
 	};
 
 	return (
@@ -19,11 +13,11 @@ const LanguageToggle: React.FC = () => {
 			<Label htmlFor="language-toggle" className="flex items-center gap-2">
 				<Switch
 					id="language-toggle"
-					checked={language === 'br'}
+					checked={i18n.language === 'br'}
 					onCheckedChange={handleLanguageChange}
 				/>
 				<span>
-					{language === 'en' ? (
+					{i18n.language === 'en' ? (
 						<span className="flex items-center gap-2">
 							<span className="fi fi-us fis rounded-full text-[30px]"></span>
 						</span>

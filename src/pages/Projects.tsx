@@ -5,7 +5,6 @@ import ProjectCard from '../components/ProjectsCard';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import { userBr, userEn } from '../data/userData';
-import i18n from '@/i18n';
 import { useTranslation } from 'react-i18next';
 import { ProjectType } from '@/types/ProjectType';
 import { Toggle } from '@/components/ui/toggle';
@@ -34,13 +33,20 @@ const Projects: React.FC = () => {
 		isBackEnd: false,
 	});
 
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 
 	useEffect(() => {
 		const currentUser = i18n.language === 'en' ? userEn : userBr;
 		setUser(currentUser);
 		setFilteredProjects(currentUser.projects);
 	}, [i18n.language]);
+
+	useEffect(() => {
+		const hash = location.hash;
+		if (!hash) {
+			window.scrollTo(0, 0);
+		}
+	}, []);
 
 	useEffect(() => {
 		const handleHashScroll = () => {
