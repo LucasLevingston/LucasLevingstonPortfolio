@@ -1,41 +1,199 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+	navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState } from 'react';
+import i18n from '@/i18n';
+import { userBr, userEn } from '@/data/userData';
+import { ProjectType } from '@/types/ProjectType';
+import { projectsDataEn } from '@/data/projectsData';
+import Logo from '../assets/Logo.png';
 
-export default function Navbar() {
-	const { t } = useTranslation();
-	const location = useLocation();
-
+export function Navbar() {
+	const [language, setLanguage] = useState('en');
+	const [user, setUser] = useState(language === 'en' ? userEn : userBr);
+	const [projectsNav, setProjectsNav] = useState<ProjectType[]>(projectsDataEn);
 	const [activeButton, setActiveButton] = useState<string>('/');
 
+	const { t } = useTranslation();
+
 	useEffect(() => {
+		setLanguage(i18n.language);
+		setUser(language === 'en' ? userEn : userBr);
+		setProjectsNav(user.projects);
 		setActiveButton(location.pathname);
-	}, [location]);
+	}, [language]);
+
+	const project: {
+		title: string;
+		href: string;
+		description: string;
+		id: string;
+	}[] = [
+		{
+			title: projectsNav[0].title,
+			href: `/projects#${projectsNav[0].title}`,
+			description: projectsNav[0].description,
+			id: projectsNav[0].title,
+		},
+		{
+			title: projectsNav[1].title,
+			href: `/projects#${projectsNav[1].title}`,
+			description: projectsNav[1].description,
+			id: projectsNav[1].title,
+		},
+		{
+			title: projectsNav[2].title,
+			href: `/projects#${projectsNav[2].title}`,
+			description: projectsNav[2].description,
+			id: projectsNav[2].title,
+		},
+		{
+			title: projectsNav[3].title,
+			href: `/projects#${projectsNav[3].title}`,
+			description: projectsNav[3].description,
+			id: projectsNav[3].title,
+		},
+	];
+
+	const aboutSections: {
+		title: string;
+		href: string;
+		description: string;
+		id: string;
+	}[] = [
+		{
+			title: t('about.experiencesTitle'),
+			href: `/about#${t('about.experiencesTitle')}`,
+			description: t('about.experiencesDescription'),
+			id: t('about.experiencesTitle'),
+		},
+		{
+			title: t('about.educationTitle'),
+			href: `/about#${t('about.educationTitle')}`,
+			description: t('about.educationDescription'),
+			id: t('about.educationTitle'),
+		},
+		{
+			title: t('about.certificatesTitle'),
+			href: `/about#${t('about.certificatesTitle')}`,
+			description: t('about.certificatesDescription'),
+			id: t('about.certificatesTitle'),
+		},
+		// {
+		// 	title: t('about.recommendationsTitle'),
+		// 	href: `/about#${t('about.recommendationsTitle')}`,
+		// 	description: t('about.recommendationsDescription'),
+		// 	id: t('about.recommendationsTitle'),
+		// },
+	];
 
 	const getButtonClass = (path: string) =>
-		`flex justify-center text-[16px] hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor ${
+		`flex justify-center text-[14px] hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor ${
 			activeButton === path ? 'bg-transparent' : 'bg-mainColor'
-		} w-[80px] rounded-[5px] border-[2px] border-mainColor p-3 transition-[0.5s]`;
+		} w-[90px] rounded-[5px] border-[2px] border-mainColor p-0 px-2 transition-[0.5s] font-bold`;
 
 	return (
-		<div>
-			<div className="flex list-none justify-center gap-3 text-center font-bold no-underline md:flex-col lg:flex-row">
-				<button>
-					<Link className={getButtonClass('/about')} to="/about">
-						{t('navbar.about')}
-					</Link>
-				</button>
-				<button>
-					<Link className={getButtonClass('/')} to="/">
+		<NavigationMenu>
+			<NavigationMenuList>
+				<NavigationMenuItem>
+					<NavigationMenuTrigger className={getButtonClass('/about')}>
+						<Link to={'/about'}>{t('navbar.about')}</Link>
+					</NavigationMenuTrigger>
+					<NavigationMenuContent className="dark:bg-bioBgColor">
+						<ul className="grid gap-2 p-4 md:w-[400px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
+							<li className="row-span-3">
+								<NavigationMenuLink asChild>
+									<a
+										className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+										href={`/about#${t('about.technologiesTitle')}`}
+									>
+										<img src={Logo} className="rounded-full" />
+										<div className="mb-2 mt-4 text-lg font-medium">
+											{t('about.technologiesTitle')}
+										</div>
+										<p className="text-sm leading-tight text-muted-foreground">
+											{t('about.technologiesDescription')}
+										</p>
+									</a>
+								</NavigationMenuLink>
+							</li>
+							{aboutSections.map((section) => (
+								<ListItem
+									className="bg-main border-[2px] border-mainColor bg-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
+									key={section.title}
+									title={section.title}
+									href={section.href}
+								>
+									{section.description}
+								</ListItem>
+							))}
+						</ul>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink
+						href="/"
+						className={
+							'font-bold' + navigationMenuTriggerStyle() + getButtonClass('/')
+						}
+					>
 						{t('navbar.home')}
-					</Link>
-				</button>
-				<li>
-					<Link className={getButtonClass('/projects')} to="/projects">
-						{t('navbar.projects')}
-					</Link>
-				</li>
-			</div>
-		</div>
+					</NavigationMenuLink>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuTrigger className={getButtonClass('/projects')}>
+						<Link to="/projects">{t('navbar.projects')}</Link>
+					</NavigationMenuTrigger>
+					<NavigationMenuContent className="dark:bg-bioBgColor">
+						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[300px]">
+							{project.map((project) => (
+								<ListItem
+									key={project.title}
+									title={project.title}
+									href={project.href}
+								>
+									{project.description}
+								</ListItem>
+							))}
+						</ul>
+					</NavigationMenuContent>
+				</NavigationMenuItem>
+			</NavigationMenuList>
+		</NavigationMenu>
 	);
 }
+
+const ListItem = React.forwardRef<
+	React.ElementRef<'a'>,
+	React.ComponentPropsWithoutRef<'a'>
+>(({ className, title, children, ...props }, ref) => {
+	return (
+		<li>
+			<NavigationMenuLink asChild>
+				<a
+					ref={ref}
+					className={cn(
+						'block select-none space-y-1 rounded-md border-[2px] border-mainColor bg-mainColor p-3 leading-none no-underline outline-none transition-colors  hover:bg-transparent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+						className
+					)}
+					{...props}
+				>
+					<div className="text-sm font-bold leading-none">{title}</div>
+					<p className="line-clamp-2 text-sm leading-snug text-black text-muted-foreground dark:text-white">
+						{children}
+					</p>
+				</a>
+			</NavigationMenuLink>
+		</li>
+	);
+});
+ListItem.displayName = 'ListItem';

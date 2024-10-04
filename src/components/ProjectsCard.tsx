@@ -19,10 +19,47 @@ import {
 } from './ui/carousel';
 import TechnologiesSection from './ThecnologiesSection';
 
-export default function ProjectCard(project: ProjectType) {
+interface ProjectCardProps {
+	project: ProjectType;
+	id: string;
+}
+
+export default function ProjectCard({ project, id }: ProjectCardProps) {
 	const [currentImage, setCurrentImage] = useState(0);
 	const [api, setApi] = useState<CarouselApi>();
-	const [open, setOpen] = useState(false);
+	const [openAccordion, setOpenAccordion] = useState<string | undefined>(
+		undefined
+	);
+
+	const checkHashAndOpenAccordion = () => {
+		const hash = window.location.hash;
+		if (hash) {
+			const sanitizeHash = (hash: string) => {
+				return decodeURIComponent(hash.replace(/^#/, '').replace(/%20/g, ' '));
+			};
+			const result = sanitizeHash(hash);
+			const element = document.getElementById(result);
+
+			if (result === project.title) {
+				element?.scrollIntoView({ behavior: 'smooth' });
+				setOpenAccordion(project.title);
+			}
+		}
+	};
+
+	useEffect(() => {
+		checkHashAndOpenAccordion();
+
+		const handleHashChange = () => {
+			checkHashAndOpenAccordion();
+		};
+
+		window.addEventListener('hashchange', handleHashChange);
+
+		return () => {
+			window.removeEventListener('hashchange', handleHashChange);
+		};
+	}, [project.title]);
 
 	useEffect(() => {
 		if (!api) return;
@@ -34,23 +71,26 @@ export default function ProjectCard(project: ProjectType) {
 	}, [api]);
 
 	return (
-		<Accordion type="single" collapsible>
+		<Accordion
+			type="single"
+			collapsible
+			onValueChange={setOpenAccordion}
+			value={openAccordion}
+			id={id}
+		>
 			<AccordionItem value={project.title}>
 				<SectionItem
 					title={
-						<AccordionTrigger
-							className="hover:cursor-pointer hover:no-underline"
-							onClick={() => setOpen(!open)}
-						>
+						<AccordionTrigger className="hover:cursor-pointer hover:no-underline">
 							<div className="flex flex-col justify-start gap-2 text-left">
-								<p className="text-xl font-bold">
+								<div className="text-xl font-bold">
 									<Typewriter
 										onInit={(typewriter) => {
 											typewriter.typeString(project.title).start();
 										}}
 									/>
-								</p>
-								{!open && (
+								</div>
+								{openAccordion !== project.title && (
 									<div className="flex w-full flex-wrap">
 										<TechnologiesSection technologies={project.technologies} />
 									</div>

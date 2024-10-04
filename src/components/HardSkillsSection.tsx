@@ -20,11 +20,12 @@ export const HardSkillsSection: React.FC<{ skills: HardSkillsType[] }> = ({
 							technology === 'scrum' ? (
 								<DiScrum key={i} className="text-4xl text-azulBebe" />
 							) : technology === 'rest' ? (
-								<div className="flex items-center">
+								<div className="flex items-center" key={i}>
 									<span className=" font-bold text-azulBebe">REST</span>
 								</div>
 							) : technology === 'vite' ? (
 								<img
+									key={i}
 									className="w-9"
 									src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
 								/>
