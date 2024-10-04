@@ -116,6 +116,7 @@ export function Navbar() {
 									className="bg-main border-[2px] border-mainColor bg-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
 									key={section.title}
 									title={section.title}
+									href="/about"
 								>
 									{section.description}
 								</ListItem>
@@ -140,7 +141,11 @@ export function Navbar() {
 					<NavigationMenuContent className="dark:bg-bioBgColor">
 						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[300px]">
 							{project.map((project) => (
-								<ListItem key={project.title} title={project.title}>
+								<ListItem
+									key={project.title}
+									href="/projects"
+									title={project.title}
+								>
 									{project.description}
 								</ListItem>
 							))}
@@ -155,10 +160,10 @@ export function Navbar() {
 const ListItem = React.forwardRef<
 	React.ElementRef<'a'>,
 	React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, children, href, ...props }, ref) => {
 	return (
 		<li>
-			<NavigationMenuLink asChild href={`/projects?${title}`}>
+			<Link to={`${href}?${title}`}>
 				<a
 					ref={ref}
 					className={cn(
@@ -172,7 +177,7 @@ const ListItem = React.forwardRef<
 						{children}
 					</p>
 				</a>
-			</NavigationMenuLink>
+			</Link>
 		</li>
 	);
 });
