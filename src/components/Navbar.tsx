@@ -34,25 +34,25 @@ export function Navbar() {
 	}[] = [
 		{
 			title: user.projects[0].title,
-			href: `/projects#${user.projects[0].title}`,
+			href: `/projects?${user.projects[0].title}`,
 			description: user.projects[0].description,
 			id: user.projects[0].title,
 		},
 		{
 			title: user.projects[1].title,
-			href: `/projects#${user.projects[1].title}`,
+			href: `/projects?${user.projects[1].title}`,
 			description: user.projects[1].description,
 			id: user.projects[1].title,
 		},
 		{
 			title: user.projects[2].title,
-			href: `/projects#${user.projects[2].title}`,
+			href: `/projects?${user.projects[2].title}`,
 			description: user.projects[2].description,
 			id: user.projects[2].title,
 		},
 		{
 			title: user.projects[3].title,
-			href: `/projects#${user.projects[3].title}`,
+			href: `/projects?${user.projects[3].title}`,
 			description: user.projects[3].description,
 			id: user.projects[3].title,
 		},
@@ -66,25 +66,25 @@ export function Navbar() {
 	}[] = [
 		{
 			title: t('about.experiencesTitle'),
-			href: `/about#${t('about.experiencesTitle')}`,
+			href: `/about?${t('about.experiencesTitle')}`,
 			description: t('about.experiencesDescription'),
 			id: t('about.experiencesTitle'),
 		},
 		{
 			title: t('about.educationTitle'),
-			href: `/about#${t('about.educationTitle')}`,
+			href: `/about?${t('about.educationTitle')}`,
 			description: t('about.educationDescription'),
 			id: t('about.educationTitle'),
 		},
 		{
 			title: t('about.certificatesTitle'),
-			href: `/about#${t('about.certificatesTitle')}`,
+			href: `/about?${t('about.certificatesTitle')}`,
 			description: t('about.certificatesDescription'),
 			id: t('about.certificatesTitle'),
 		},
 		// {
 		// 	title: t('about.recommendationsTitle'),
-		// 	href: `/about#${t('about.recommendationsTitle')}`,
+		// 	href: `/about?${t('about.recommendationsTitle')}`,
 		// 	description: t('about.recommendationsDescription'),
 		// 	id: t('about.recommendationsTitle'),
 		// },
@@ -108,7 +108,7 @@ export function Navbar() {
 								<NavigationMenuLink asChild>
 									<a
 										className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-										href={`/about#${t('about.technologiesTitle')}`}
+										href={`/about?${t('about.technologiesTitle')}`}
 									>
 										<img src={Logo} className="rounded-full" />
 										<div className="mb-2 mt-4 text-lg font-medium">
