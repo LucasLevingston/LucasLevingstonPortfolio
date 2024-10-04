@@ -42,38 +42,38 @@ const Projects: React.FC = () => {
 	}, [i18n.language]);
 
 	useEffect(() => {
-		const hash = location.hash;
-		if (!hash) {
+		const search = location.search;
+		if (!search) {
 			window.scrollTo(0, 0);
 		}
 	}, []);
 
 	useEffect(() => {
-		const handleHashScroll = () => {
-			const hash = window.location.hash;
+		const handlesearchScroll = () => {
+			const search = window.location.search;
 
-			if (hash) {
-				const sanitizeHash = (hash: string) => {
+			if (search) {
+				const sanitizesearch = (search: string) => {
 					return decodeURIComponent(
-						hash.replace(/^#/, '').replace(/%20/g, ' ')
+						search.replace(/^#/, '').replace(/%20/g, ' ')
 					);
 				};
-				const result = sanitizeHash(hash);
+				const result = sanitizesearch(search);
 				const element = document.getElementById(result);
 				if (element) {
 					element.scrollIntoView({ behavior: 'smooth' });
 				}
 			}
-			if (!hash) {
+			if (!search) {
 				window.scrollTo(0, 0);
 			}
 		};
 
-		handleHashScroll();
+		handlesearchScroll();
 
-		window.addEventListener('hashchange', handleHashScroll);
+		window.addEventListener('searchchange', handlesearchScroll);
 		return () => {
-			window.removeEventListener('hashchange', handleHashScroll);
+			window.removeEventListener('searchchange', handlesearchScroll);
 		};
 	}, []);
 

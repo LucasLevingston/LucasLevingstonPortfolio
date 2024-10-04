@@ -32,13 +32,14 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 		undefined
 	);
 
-	const checkHashAndOpenAccordion = () => {
-		const hash = window.location.hash;
-		if (hash) {
-			const sanitizeHash = (hash: string) => {
-				return hash.replace(/^#/, '').replace(/%20/g, ' ');
+	const checkSearchAndOpenAccordion = () => {
+		const search = location.search;
+		if (search) {
+			const sanitizeSearch = (search: string) => {
+				return search.replace(/\?/, '').replace(/%20/g, ' ');
 			};
-			const result = sanitizeHash(hash);
+			const result = sanitizeSearch(search);
+			console.log(result);
 			const element = document.getElementById(result);
 
 			if (result === project.title) {
@@ -49,16 +50,16 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 	};
 
 	useEffect(() => {
-		checkHashAndOpenAccordion();
+		checkSearchAndOpenAccordion();
 
-		const handleHashChange = () => {
-			checkHashAndOpenAccordion();
+		const handleSearchChange = () => {
+			checkSearchAndOpenAccordion();
 		};
 
-		window.addEventListener('hashchange', handleHashChange);
+		window.addEventListener('searchchange', handleSearchChange);
 
 		return () => {
-			window.removeEventListener('hashchange', handleHashChange);
+			window.removeEventListener('searchchange', handleSearchChange);
 		};
 	}, [project.title]);
 

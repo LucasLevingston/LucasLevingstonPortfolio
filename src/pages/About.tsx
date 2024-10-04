@@ -36,16 +36,16 @@ export default function About() {
 		api.on('select', () => {
 			setCurrentCertificate(api.selectedScrollSnap());
 		});
-		const hash = location.hash;
-		if (hash) {
-			const element = document.getElementById(hash.substring(1));
+		const search = location.search;
+		if (search) {
+			const element = document.getElementById(search.substring(1));
 			element?.scrollIntoView({ behavior: 'smooth' });
 		}
 	}, [i18n.language, api]);
 
 	useEffect(() => {
-		const hash = location.hash;
-		if (!hash) {
+		const search = location.search;
+		if (!search) {
 			window.scrollTo(0, 0);
 		}
 	}, []);
