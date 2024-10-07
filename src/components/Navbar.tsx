@@ -114,7 +114,7 @@ export function Navbar() {
 									className="bg-main border-[2px] border-mainColor bg-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
 									key={section.title}
 									title={section.title}
-									href="/about"
+									href="/about?"
 								>
 									{section.description}
 								</ListItem>
@@ -171,7 +171,7 @@ const ListItem = React.forwardRef<
 					{...props}
 				>
 					<div className="text-sm font-bold leading-none">{title}</div>
-					<p className="line-clamp-2 text-sm leading-snug text-black text-muted-foreground dark:text-white">
+					<p className="line-clamp-2 text-sm leading-snug text-black  dark:text-white">
 						{children}
 					</p>
 				</a>
