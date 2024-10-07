@@ -12,8 +12,6 @@ import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
 import { userBr, userEn } from '@/data/userData';
-import { ProjectType } from '@/types/ProjectType';
-import { projectsDataEn } from '@/data/projectsData';
 import Logo from '../assets/Logo.png';
 
 export function Navbar() {
@@ -143,7 +141,7 @@ export function Navbar() {
 							{project.map((project) => (
 								<ListItem
 									key={project.title}
-									href="/projects"
+									href="/projects?search="
 									title={project.title}
 								>
 									{project.description}
@@ -163,7 +161,7 @@ const ListItem = React.forwardRef<
 >(({ className, title, children, href, ...props }, ref) => {
 	return (
 		<li>
-			<Link to={`${href}?${title}`}>
+			<Link to={`${href}${title}`}>
 				<a
 					ref={ref}
 					className={cn(

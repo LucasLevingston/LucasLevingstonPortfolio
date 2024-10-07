@@ -42,39 +42,9 @@ const Projects: React.FC = () => {
 	}, [i18n.language]);
 
 	useEffect(() => {
-		const search = location.search;
-		if (!search) {
-			window.scrollTo(0, 0);
-		}
-	}, []);
-
-	useEffect(() => {
-		const handlesearchScroll = () => {
-			const search = window.location.search;
-
-			if (search) {
-				const sanitizesearch = (search: string) => {
-					return decodeURIComponent(
-						search.replace(/^#/, '').replace(/%20/g, ' ')
-					);
-				};
-				const result = sanitizesearch(search);
-				const element = document.getElementById(result);
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' });
-				}
-			}
-			if (!search) {
-				window.scrollTo(0, 0);
-			}
-		};
-
-		handlesearchScroll();
-
-		window.addEventListener('searchchange', handlesearchScroll);
-		return () => {
-			window.removeEventListener('searchchange', handlesearchScroll);
-		};
+		const url = new URL(window.location.toString());
+		const searchParam = url.searchParams.get('search') || '';
+		setFilter((prev) => ({ ...prev, searchTerm: searchParam }));
 	}, []);
 
 	useEffect(() => {
@@ -94,40 +64,21 @@ const Projects: React.FC = () => {
 				.toLowerCase()
 				.includes(filter.searchTerm.toLowerCase());
 
-			const isFrontEnd = project.technologies.some((tech) =>
-				['react', 'next'].includes(tech.toLowerCase())
-			);
-			const isBackEnd = project.technologies.some((tech) =>
-				['fastify', 'express'].includes(tech.toLowerCase())
-			);
-
-			const categoryMatch =
-				(filter.isFrontEnd && filter.isBackEnd && isFrontEnd && isBackEnd) ||
-				(filter.isFrontEnd && !filter.isBackEnd && isFrontEnd) ||
-				(!filter.isFrontEnd && filter.isBackEnd && isBackEnd) ||
-				(!filter.isFrontEnd && !filter.isBackEnd);
-
-			return (
-				techMatch &&
-				imageMatch &&
-				githubMatch &&
-				deployMatch &&
-				nameMatch &&
-				categoryMatch
-			);
+			return techMatch && imageMatch && githubMatch && deployMatch && nameMatch;
 		});
 
 		setFilteredProjects(filtered);
-	}, [
-		filter.selectedTechnologies,
-		filter.hasImage,
-		filter.hasGitHub,
-		filter.hasDeploy,
-		filter.searchTerm,
-		filter.isFrontEnd,
-		filter.isBackEnd,
-		user.projects,
-	]);
+	}, [filter, user.projects]);
+
+	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const searchValue = e.target.value;
+		setFilter((prev) => ({ ...prev, searchTerm: searchValue }));
+
+		// Atualizar a URL
+		const url = new URL(window.location.toString());
+		url.searchParams.set('search', searchValue);
+		window.history.pushState({}, '', url.toString());
+	};
 
 	const uniqueTechnologies = Array.from(
 		new Set(user.projects.flatMap((project) => project.technologies))
@@ -223,9 +174,7 @@ const Projects: React.FC = () => {
 							placeholder={t('projects.search')}
 							className="w-1/3"
 							value={filter.searchTerm}
-							onChange={(e) =>
-								setFilter((prev) => ({ ...prev, searchTerm: e.target.value }))
-							}
+							onChange={handleSearchChange}
 						/>
 
 						<p className="text-sm">
