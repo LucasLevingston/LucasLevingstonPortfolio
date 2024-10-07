@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectsCard';
 import Container from '../components/Container';
 import Section from '../components/Section';
-import { userBr, userEn } from '../data/userData';
+import { userBr, userEn } from '@/data/userData';
 import { useTranslation } from 'react-i18next';
 import { ProjectType } from '@/types/ProjectType';
 import { Toggle } from '@/components/ui/toggle';
@@ -19,8 +20,12 @@ import { Filter } from 'lucide-react';
 import { GoRepoForked } from 'react-icons/go';
 import { AiOutlineLink } from 'react-icons/ai';
 import { Input } from '@/components/ui/input';
+import { MdOutlineClear } from 'react-icons/md';
+import { GrClearOption } from 'react-icons/gr';
 
 const Projects: React.FC = () => {
+	const { t, i18n } = useTranslation();
+	const location = useLocation();
 	const [user, setUser] = useState(userEn);
 	const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>([]);
 	const [filter, setFilter] = useState({
@@ -33,8 +38,6 @@ const Projects: React.FC = () => {
 		isBackEnd: false,
 	});
 
-	const { t, i18n } = useTranslation();
-
 	useEffect(() => {
 		const currentUser = i18n.language === 'en' ? userEn : userBr;
 		setUser(currentUser);
@@ -42,40 +45,10 @@ const Projects: React.FC = () => {
 	}, [i18n.language]);
 
 	useEffect(() => {
-		const search = location.search;
-		if (!search) {
-			window.scrollTo(0, 0);
-		}
-	}, []);
-
-	useEffect(() => {
-		const handlesearchScroll = () => {
-			const search = window.location.search;
-
-			if (search) {
-				const sanitizesearch = (search: string) => {
-					return decodeURIComponent(
-						search.replace(/^#/, '').replace(/%20/g, ' ')
-					);
-				};
-				const result = sanitizesearch(search);
-				const element = document.getElementById(result);
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' });
-				}
-			}
-			if (!search) {
-				window.scrollTo(0, 0);
-			}
-		};
-
-		handlesearchScroll();
-
-		window.addEventListener('searchchange', handlesearchScroll);
-		return () => {
-			window.removeEventListener('searchchange', handlesearchScroll);
-		};
-	}, []);
+		const urlParams = new URLSearchParams(location.search);
+		const searchParam = urlParams.get('search') || '';
+		setFilter((prev) => ({ ...prev, searchTerm: searchParam }));
+	}, [location.search]);
 
 	useEffect(() => {
 		const filtered = user.projects.filter((project) => {
@@ -94,40 +67,42 @@ const Projects: React.FC = () => {
 				.toLowerCase()
 				.includes(filter.searchTerm.toLowerCase());
 
-			const isFrontEnd = project.technologies.some((tech) =>
-				['react', 'next'].includes(tech.toLowerCase())
-			);
-			const isBackEnd = project.technologies.some((tech) =>
-				['fastify', 'express'].includes(tech.toLowerCase())
-			);
-
-			const categoryMatch =
-				(filter.isFrontEnd && filter.isBackEnd && isFrontEnd && isBackEnd) ||
-				(filter.isFrontEnd && !filter.isBackEnd && isFrontEnd) ||
-				(!filter.isFrontEnd && filter.isBackEnd && isBackEnd) ||
-				(!filter.isFrontEnd && !filter.isBackEnd);
-
-			return (
-				techMatch &&
-				imageMatch &&
-				githubMatch &&
-				deployMatch &&
-				nameMatch &&
-				categoryMatch
-			);
+			return techMatch && imageMatch && githubMatch && deployMatch && nameMatch;
 		});
 
 		setFilteredProjects(filtered);
-	}, [
-		filter.selectedTechnologies,
-		filter.hasImage,
-		filter.hasGitHub,
-		filter.hasDeploy,
-		filter.searchTerm,
-		filter.isFrontEnd,
-		filter.isBackEnd,
-		user.projects,
-	]);
+	}, [filter, user.projects]);
+
+	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const searchValue = e.target.value;
+		setFilter((prev) => ({ ...prev, searchTerm: searchValue }));
+
+		const url = new URL(window.location.toString());
+		url.searchParams.set('search', searchValue);
+		window.history.pushState({}, '', url.toString());
+	};
+
+	const clearSearch = () => {
+		setFilter((prev) => ({ ...prev, searchTerm: '' }));
+		const url = new URL(window.location.toString());
+		url.searchParams.delete('search');
+		window.history.pushState({}, '', url.toString());
+	};
+
+	const clearAllFilters = () => {
+		setFilter({
+			selectedTechnologies: [],
+			hasImage: false,
+			hasGitHub: false,
+			hasDeploy: false,
+			searchTerm: '',
+			isFrontEnd: false,
+			isBackEnd: false,
+		});
+		const url = new URL(window.location.toString());
+		url.searchParams.delete('search');
+		window.history.pushState({}, '', url.toString());
+	};
 
 	const uniqueTechnologies = Array.from(
 		new Set(user.projects.flatMap((project) => project.technologies))
@@ -218,15 +193,27 @@ const Projects: React.FC = () => {
 							</PopoverContent>
 						</Popover>
 
-						<Input
-							type="text"
-							placeholder={t('projects.search')}
-							className="w-1/3"
-							value={filter.searchTerm}
-							onChange={(e) =>
-								setFilter((prev) => ({ ...prev, searchTerm: e.target.value }))
-							}
-						/>
+						<div className="relative w-1/3">
+							<Input
+								type="text"
+								placeholder={t('projects.search')}
+								className="pr-10"
+								value={filter.searchTerm}
+								onChange={handleSearchChange}
+							/>
+							<button
+								type="button"
+								className="absolute right-2 top-1/2 -translate-y-1/2 transform text-gray-500"
+								onClick={clearSearch}
+								hidden={!filter.searchTerm}
+							>
+								<MdOutlineClear className="hover:text-mainColor" />
+							</button>
+						</div>
+
+						<Button onClick={clearAllFilters} variant="outline">
+							<GrClearOption />
+						</Button>
 
 						<p className="text-sm">
 							{filteredProjects.length} {t('projects.filteredResults')}

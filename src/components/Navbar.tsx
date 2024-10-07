@@ -12,8 +12,6 @@ import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
 import { userBr, userEn } from '@/data/userData';
-import { ProjectType } from '@/types/ProjectType';
-import { projectsDataEn } from '@/data/projectsData';
 import Logo from '../assets/Logo.png';
 
 export function Navbar() {
@@ -116,7 +114,7 @@ export function Navbar() {
 									className="bg-main border-[2px] border-mainColor bg-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
 									key={section.title}
 									title={section.title}
-									href="/about"
+									href="/about?"
 								>
 									{section.description}
 								</ListItem>
@@ -143,7 +141,7 @@ export function Navbar() {
 							{project.map((project) => (
 								<ListItem
 									key={project.title}
-									href="/projects"
+									href="/projects?search="
 									title={project.title}
 								>
 									{project.description}
@@ -163,7 +161,7 @@ const ListItem = React.forwardRef<
 >(({ className, title, children, href, ...props }, ref) => {
 	return (
 		<li>
-			<Link to={`${href}?${title}`}>
+			<Link to={`${href}${title}`}>
 				<a
 					ref={ref}
 					className={cn(
@@ -173,7 +171,7 @@ const ListItem = React.forwardRef<
 					{...props}
 				>
 					<div className="text-sm font-bold leading-none">{title}</div>
-					<p className="line-clamp-2 text-sm leading-snug text-black text-muted-foreground dark:text-white">
+					<p className="line-clamp-2 text-sm leading-snug text-black  dark:text-white">
 						{children}
 					</p>
 				</a>

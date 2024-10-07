@@ -32,36 +32,11 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 		undefined
 	);
 
-	const checkSearchAndOpenAccordion = () => {
-		const search = location.search;
-		if (search) {
-			const sanitizeSearch = (search: string) => {
-				return search.replace(/\?/, '').replace(/%20/g, ' ');
-			};
-			const result = sanitizeSearch(search);
-			console.log(result);
-			const element = document.getElementById(result);
-
-			if (result === project.title) {
-				element?.scrollIntoView({ behavior: 'smooth' });
-				setOpenAccordion(project.title);
-			}
-		}
-	};
-
 	useEffect(() => {
-		checkSearchAndOpenAccordion();
-
-		const handleSearchChange = () => {
-			checkSearchAndOpenAccordion();
-		};
-
-		window.addEventListener('searchchange', handleSearchChange);
-
-		return () => {
-			window.removeEventListener('searchchange', handleSearchChange);
-		};
-	}, [project.title]);
+		const urlParams = new URLSearchParams(location.search);
+		const searchParam = urlParams.get('search') || '';
+		setOpenAccordion(searchParam);
+	}, [location.search]);
 
 	useEffect(() => {
 		if (!api) return;
