@@ -55,11 +55,59 @@ export const projectsDataBr: ProjectType[] = [
 			'vite',
 			'express',
 			'docker',
+			'prisma',
 			'git',
 			'github',
 			'postman',
 			'scrum',
 		],
+	},
+	{
+		title: 'Consulta Fácil',
+		description:
+			'Aplicação de consultas médicas com integração com Stripe, desenvolvida com NextJs, prisma, utilizando next auth para autenticação, tailwind para estilização, zod para validações e shadcn para componentes.',
+		technologies: [
+			'nextjs',
+			'typescript',
+			'stripe',
+			'nodejs',
+			'tailwindcss',
+			'postgresql',
+			'prisma',
+			'docker',
+			'git',
+			'github',
+			'zod',
+			'jwt',
+			'shadcn',
+			'next auth',
+		],
+		github: 'https://github.com/LucasLevingston/consultaFacil',
+	},
+	{
+		title: 'Anéis de Poder',
+		description:
+			'A aplicação consiste em um sistema de criação de anéis. Feito com React, tailwind, axios, zustand para o front, consumindo a API REST desenvolvida com node, typescript, Fastify, Swagger, zod para validações e vitest para testes unitários. Utilizado PosgreSql como banco de dados, Docker para container e Sequelize como ORM.',
+		technologies: [
+			'react',
+			'typescript',
+			'vite',
+			'nodejs',
+			'fastify',
+			'tailwindcss',
+			'postgresql',
+			'sequelize',
+			'docker',
+			'git',
+			'github',
+			'postman',
+			'zod',
+			'jwt',
+			'axios',
+			'zustand',
+			'vitest',
+		],
+		github: 'https://github.com/LucasLevingston/AneisDePoder',
 	},
 	{
 		title: 'Verbo Hub',
@@ -79,6 +127,7 @@ export const projectsDataBr: ProjectType[] = [
 			'postgresql',
 			'eslint',
 			'postman',
+			'amazonwebservices',
 			'git',
 			'github',
 		],
@@ -143,6 +192,44 @@ export const projectsDataBr: ProjectType[] = [
 			'nodejs',
 			'graphql',
 		],
+	},
+	{
+		title: 'Plann.er',
+		description:
+			'Plann.er é um sistema de backend para a organização de viagens. Este projeto tem como objetivo facilitar a criação e o gerenciamento de viagens, permitindo que os usuários adicionem destinos, datas, participantes e outras informações importantes.',
+		github: 'https://github.com/LucasLevingston/planner',
+		technologies: [
+			'typescript',
+			'zod',
+			'nodejs',
+			'fastify',
+			'prisma',
+			'sqlite',
+			'swagger',
+		],
+	},
+	{
+		title: 'FocalPoint',
+		description:
+			'Um sistema de gerenciamento de tarefas foi desenvolvido utilizando React para criar uma interface interativa e responsiva. O estado da aplicação é gerenciado com Zustand, o design é estilizado com Tailwind CSS e Shadcn, Zod valida os dados e Axios facilita a comunicação com APIs.',
+		github: 'https://github.com/LucasLevingston/focalPoint',
+		technologies: [
+			'typescript',
+			'react',
+			'zod',
+			'nodejs',
+			'zustand',
+			'axios',
+			'shadcn',
+			'tailwindcss',
+		],
+	},
+	{
+		title: 'Gerenciamento Escolar',
+		description:
+			'Um sistema de gerenciamento de notas escolares, feito com react, material ui, bootstrap, mockable para dados fictícios e axios para consumo.',
+		github: 'https://github.com/LucasLevingston/gerenciamento-escolar',
+		technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
 	},
 	{
 		title: 'Pass In Web - ReactJs',
@@ -271,11 +358,11 @@ export const projectsDataBr: ProjectType[] = [
 	},
 ];
 
-export const projectsDataEn = [
+export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'CRM Splen',
 		description:
-			'CRM developed during my internship at Splendore for selling undergraduate and postgraduate courses. The Scrum methodology was used throughout the project.',
+			'CRM developed during my internship at Splendore for selling undergraduate and graduate programs. Scrum methodology was used throughout the project.',
 		technologies: [
 			'typescript',
 			'react',
@@ -285,6 +372,7 @@ export const projectsDataEn = [
 			'vite',
 			'express',
 			'docker',
+			'prisma',
 			'git',
 			'github',
 			'postman',
@@ -292,9 +380,56 @@ export const projectsDataEn = [
 		],
 	},
 	{
+		title: 'Consulta Fácil',
+		description:
+			'Medical appointment application integrated with Stripe, developed with NextJs, Prisma, using NextAuth for authentication, Tailwind for styling, Zod for validations, and Shadcn for components.',
+		technologies: [
+			'nextjs',
+			'typescript',
+			'stripe',
+			'nodejs',
+			'tailwindcss',
+			'postgresql',
+			'prisma',
+			'docker',
+			'git',
+			'github',
+			'zod',
+			'jwt',
+			'shadcn',
+			'next auth',
+		],
+		github: 'https://github.com/LucasLevingston/consultaFacil',
+	},
+	{
+		title: 'Rings of Power',
+		description:
+			'The application consists of a system for creating rings. Built with React, Tailwind, Axios, and Zustand for the frontend, consuming a REST API developed with Node, TypeScript, Fastify, Swagger, Zod for validations, and Vitest for unit testing. PostgreSQL is used as the database, Docker for containers, and Sequelize as the ORM.',
+		technologies: [
+			'react',
+			'typescript',
+			'vite',
+			'nodejs',
+			'fastify',
+			'tailwindcss',
+			'postgresql',
+			'sequelize',
+			'docker',
+			'git',
+			'github',
+			'postman',
+			'zod',
+			'jwt',
+			'axios',
+			'zustand',
+			'vitest',
+		],
+		github: 'https://github.com/LucasLevingston/AneisDePoder',
+	},
+	{
 		title: 'Verbo Hub',
 		description:
-			'This is an event management system for the Verbo da Vida church in Patos, PB. Using GitFlow, we developed the back-end and front-end of the application along with unit tests. The interface is deployed on AWS CloudFront, and the API is deployed on AWS S3 Elastic Beanstalk.',
+			'A system for managing events for the Verbo da Vida church in Patos, PB. Using GitFlow, we developed the back and front-end of the application along with unit tests. The interface is deployed on AWS CloudFront, and the API is deployed on AWS S3 Elastic Beanstalk.',
 		images: [verbo1, verbo2, verbo3],
 		technologies: [
 			'react',
@@ -308,6 +443,7 @@ export const projectsDataEn = [
 			'postgresql',
 			'eslint',
 			'postman',
+			'amazonwebservices',
 			'git',
 			'github',
 		],
@@ -315,7 +451,7 @@ export const projectsDataEn = [
 	{
 		title: 'GymEvolution (In Progress)',
 		description:
-			'GymEvolution is a system for tracking fitness progress related to diet and workouts, featuring graphs, workout sheets, and nutritional and personal tracking.',
+			'GymEvolution is a system for fitness evolution related to diet and training, featuring graphs, workout sheets, and nutritional and personal tracking.',
 		images: [GymEvolution1, GymEvolution2, GymEvolution3],
 		technologies: [
 			'react',
@@ -338,7 +474,7 @@ export const projectsDataEn = [
 		title: 'VI Sercomp',
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
 		description:
-			'A voluntary project for the college, which is an application for the course congress. GitFlow was used for development. Together with a large team of students, we completed the project in 2 months.',
+			'A volunteer project from college, consisting of an application for the course congress. We utilized GitFlow for development. Together with a large team of students, we completed the project in 2 months.',
 		technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
 		link: 'https://sercomppb.com.br/',
 	},
@@ -346,7 +482,7 @@ export const projectsDataEn = [
 		title: 'Employee Management',
 		images: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
 		description:
-			'This is an employee management system with components from Shadcn, such as a registration form. It allows data modifications, employee promotions, and PDF generation for employees. All data is stored in Firebase.',
+			'A system for managing employees, featuring Shadcn components like a form for registration. It allows data changes, employee promotions, and PDF generation for them, all stored in Firebase.',
 		technologies: [
 			'react',
 			'typescript',
@@ -361,7 +497,7 @@ export const projectsDataEn = [
 	{
 		title: 'Caputeeno',
 		description:
-			'This project consists of a front-end application in ReactJS, where I completed a challenge seen on YouTube, developing the front-end of an e-commerce site. I changed the technologies used in the challenge to those I use in my daily work, resulting in a system 100% developed by me.',
+			'This project consists of a front-end application in ReactJS, based on a challenge seen on YouTube, developing the Front-End of an E-commerce. I changed the technologies used in the challenge to those I use daily, thus creating a 100% self-developed system.',
 		images: [caputeeno1, caputeeno2, caputeeno3],
 		github: 'https://github.com/LucasLevingston/capputeeno',
 		technologies: [
@@ -374,9 +510,47 @@ export const projectsDataEn = [
 		],
 	},
 	{
+		title: 'Plann.er',
+		description:
+			'Plann.er is a backend system for organizing trips. This project aims to facilitate the creation and management of trips, allowing users to add destinations, dates, participants, and other important information.',
+		github: 'https://github.com/LucasLevingston/planner',
+		technologies: [
+			'typescript',
+			'zod',
+			'nodejs',
+			'fastify',
+			'prisma',
+			'sqlite',
+			'swagger',
+		],
+	},
+	{
+		title: 'FocalPoint',
+		description:
+			'A task management system developed using React to create an interactive and responsive interface. The application state is managed with Zustand, the design is styled with Tailwind CSS and Shadcn, Zod validates the data, and Axios facilitates communication with APIs.',
+		github: 'https://github.com/LucasLevingston/focalPoint',
+		technologies: [
+			'typescript',
+			'react',
+			'zod',
+			'nodejs',
+			'zustand',
+			'axios',
+			'shadcn',
+			'tailwindcss',
+		],
+	},
+	{
+		title: 'School Management',
+		description:
+			'A system for managing school grades, built with React, Material UI, Bootstrap, Mockable for fictional data, and Axios for consumption.',
+		github: 'https://github.com/LucasLevingston/gerenciamento-escolar',
+		technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
+	},
+	{
 		title: 'Pass In Web - ReactJs',
 		description:
-			'This project consists of a front-end application in ReactJS, applying concepts of properties, states, and components, with typing in TypeScript, tooling with Vite, responsive interface with TailwindCSS, API consumption from Node.js, and URL states.',
+			'This project consists of a front-end application in ReactJS, applying the concepts of Properties, States, and Components, with TypeScript typing, tooling with Vite, responsive interface with TailwindCSS, consuming a Node.js API, and using URL states.',
 		images: [PIW1, PIW2, PIW3],
 		github: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
 		technologies: [
@@ -391,7 +565,7 @@ export const projectsDataEn = [
 	{
 		title: 'Blog Soft',
 		description:
-			'Development of a blog for studies. This consists of a challenge for a specific job vacancy to test knowledge. Both front-end and back-end were developed.',
+			'Development of a blog for studies. This consists of a challenge for a job application to test knowledge. Both front and back-end were developed.',
 		github: 'https://github.com/LucasLevingston/Blog',
 		technologies: [
 			'react',
@@ -412,7 +586,7 @@ export const projectsDataEn = [
 	{
 		title: 'Pass In Web - NodeJs',
 		description:
-			'This project consists of a back-end application in Node.js, applying concepts of REST API, using TypeScript, Fastify as the framework, integrating Prisma ORM + SQLite, and Zod for data validation.',
+			'This project consists of a back-end application in Node.js, applying the concepts of REST API, using TypeScript, Fastify as the framework, integrating Prisma ORM + SQLite, and Zod for data validation.',
 		images: [PiwNode1, PiwNode2, PiwNode3],
 		github: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
 		technologies: [
@@ -428,7 +602,7 @@ export const projectsDataEn = [
 	{
 		title: 'Threads Clone',
 		description:
-			'The Threads clone is a project replicating the Threads website.',
+			'The Threads clone is a project that replicates the Threads website.',
 		images: [T1, T2, T3],
 		github: 'https://github.com/LucasLevingston/threads_app',
 		link: 'https://threads-app-nextjs13.vercel.app/',
@@ -445,7 +619,7 @@ export const projectsDataEn = [
 	{
 		title: 'Spotify Clone',
 		description:
-			'The Spotify clone is a project replicating the Spotify website.',
+			'The Spotify clone is a project that replicates the Spotify website.',
 		images: [SP2, SP3, SP1],
 		github: 'https://github.com/LucasLevingston/spotify-clone',
 		link: 'https://spotify-nextjs13.vercel.app/',
@@ -462,7 +636,7 @@ export const projectsDataEn = [
 	{
 		title: 'Flexibble',
 		description:
-			'Flexibble is a web application aimed at being a collaborative platform for programming enthusiasts to showcase, collaborate on, and discover programming projects.',
+			'Flexibble is a web application aimed at being a collaborative platform for programming enthusiasts to showcase, collaborate, and discover programming projects.',
 		images: [F3, F2, F1],
 		github: 'https://github.com/LucasLevingston/grafbase_Flexibble',
 		link: 'https://flexibble-nexjs13.vercel.app/',
@@ -479,7 +653,7 @@ export const projectsDataEn = [
 	{
 		title: 'My Portfolio',
 		description:
-			'As a learning exercise, I developed my portfolio using the React framework. I utilized TypeScript and Tailwind CSS for styling. This was my first contact with React and a stepping stone for future projects.',
+			'As a learning experience, I developed my portfolio using the React framework. I used TypeScript and Tailwind CSS for styling. This was my first contact with React and the starting point for future projects.',
 		images: [MP1, MP2, MP3],
 		github: 'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
 		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
@@ -487,7 +661,7 @@ export const projectsDataEn = [
 	{
 		title: 'Minesweeper',
 		description:
-			'Minesweeper was a project in Java replicating an existing game where the goal is for the user to uncover all the fields without triggering any mines. If a mine is triggered, the user loses the game. For uncovering fields, I used the observer pattern. When there is a mine, neighboring fields will indicate there are between 1 and 4 mines nearby. By uncovering field by field, the game can be completed. For the graphical interface, I used JButton, where each field represents a button. I used the JUnit library for application testing.',
+			'Minesweeper was a project in Java based on an existing game where the goal is for the user to open all fields without triggering any mines. I used the observer pattern for field openings. When a field is mined, adjacent fields will indicate how many mines are nearby. Thus, by opening each field, the game can be completed. The graphical part used JButton, where each field represents a button. I used the JUnit library for application testing.',
 		images: [CM1, CM2, CM3],
 		github: 'https://github.com/LucasLevingston/Campo_Minado',
 		technologies: ['java'],
@@ -495,7 +669,7 @@ export const projectsDataEn = [
 	{
 		title: 'Calculator',
 		description:
-			'Calculator in Java using the Observer pattern and object-oriented programming, with a Swing graphical interface and support for addition, subtraction, multiplication, and division. A modular and interactive application that updates the screen in real-time. An example of organized code and skills in Java development.',
+			'Calculator in Java using the Observer pattern and object-oriented principles, featuring a Swing GUI and support for addition, subtraction, multiplication, and division. A modular, interactive application that updates the display in real time. An example of organized code and Java development skills.',
 		images: [CALC1, CALC2, CALC3],
 		github: 'https://github.com/LucasLevingston/Calculadora.git',
 		technologies: ['java'],

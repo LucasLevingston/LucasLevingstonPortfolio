@@ -10,7 +10,7 @@ const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({
 	technologies,
 }) => {
 	return (
-		<div className={`flex flex-wrap items-center gap-x-3`}>
+		<div className={`flex flex-wrap gap-x-3`}>
 			{technologies.map((technology) => (
 				<TechnologyIcon technology={technology} key={technology} />
 			))}
