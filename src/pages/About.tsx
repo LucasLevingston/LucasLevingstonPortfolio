@@ -134,11 +134,14 @@ export default function About() {
 									<Carousel setApi={setApi}>
 										<CarouselContent className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]">
 											{user.certificates.map((certificate, index) => (
-												<CarouselItem key={index}>
+												<CarouselItem
+													key={index}
+													className="h-full w-full rounded-2xl "
+												>
 													<img
 														src={certificate.image}
-														alt={`Imagem do certificado ${index}`}
 														className="h-full w-full rounded-2xl "
+														// style={{ border: 'none' }}
 													/>
 												</CarouselItem>
 											))}

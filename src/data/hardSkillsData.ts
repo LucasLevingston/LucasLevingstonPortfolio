@@ -3,7 +3,7 @@ import { HardSkillsType } from '../types/HardSkillsType';
 export const hardSkillsDataBr: HardSkillsType[] = [
 	{
 		category: 'Linguagens de Programação',
-		technologies: ['javascript', 'typescript'],
+		technologies: ['typescript', 'javascript'],
 	},
 	{
 		category: 'Frameworks',
@@ -19,7 +19,14 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 
 	{
 		category: 'Tecnologias:',
-		technologies: ['nodejs', 'swagger'],
+		technologies: [
+			'nodejs',
+			'swagger',
+			'zustand',
+			'zod',
+			'shadcn',
+			'next auth',
+		],
 	},
 
 	{
@@ -37,7 +44,15 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 
 	{
 		category: 'Outros',
-		technologies: ['docker', 'git', 'github', 'postman', 'figma', 'axios'],
+		technologies: [
+			'docker',
+			'git',
+			'github',
+			'postman',
+			'figma',
+			'axios',
+			'vitest',
+		],
 	},
 	{
 		category: 'ORM',
@@ -48,11 +63,10 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 		technologies: ['scrum'],
 	},
 ];
-
 export const hardSkillsDataEn: HardSkillsType[] = [
 	{
 		category: 'Programming Languages',
-		technologies: ['javascript', 'typescript'],
+		technologies: ['typescript', 'javascript'],
 	},
 	{
 		category: 'Frameworks',
@@ -65,10 +79,16 @@ export const hardSkillsDataEn: HardSkillsType[] = [
 			'express',
 		],
 	},
-
 	{
 		category: 'Technologies',
-		technologies: ['nodejs', 'swagger'],
+		technologies: [
+			'nodejs',
+			'swagger',
+			'zustand',
+			'zod',
+			'shadcn',
+			'next auth',
+		],
 	},
 	{
 		category: 'APIs',
@@ -84,7 +104,15 @@ export const hardSkillsDataEn: HardSkillsType[] = [
 	},
 	{
 		category: 'Others',
-		technologies: ['docker', 'git', 'github', 'postman', 'figma', 'axios'],
+		technologies: [
+			'docker',
+			'git',
+			'github',
+			'postman',
+			'figma',
+			'axios',
+			'vitest',
+		],
 	},
 	{
 		category: 'ORM',
