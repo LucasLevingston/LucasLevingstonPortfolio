@@ -19,14 +19,7 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 
 	{
 		category: 'Tecnologias:',
-		technologies: [
-			'nodejs',
-			'swagger',
-			'zustand',
-			'zod',
-			'shadcn',
-			'next auth',
-		],
+		technologies: ['nodejs', 'swagger', 'zustand', 'zod', 'shadcn', 'nextauth'],
 	},
 
 	{
@@ -81,14 +74,7 @@ export const hardSkillsDataEn: HardSkillsType[] = [
 	},
 	{
 		category: 'Technologies',
-		technologies: [
-			'nodejs',
-			'swagger',
-			'zustand',
-			'zod',
-			'shadcn',
-			'next auth',
-		],
+		technologies: ['nodejs', 'swagger', 'zustand', 'zod', 'shadcn', 'nextauth'],
 	},
 	{
 		category: 'APIs',

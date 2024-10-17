@@ -15,7 +15,7 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from '@/components/ui/popover';
-import TechnologyIcon from '@/components/TechnologyIcon';
+import TechnologyIcon from '@/components/Icon/TechnologyIcon';
 import { Filter } from 'lucide-react';
 import { GoRepoForked } from 'react-icons/go';
 import { AiOutlineLink } from 'react-icons/ai';

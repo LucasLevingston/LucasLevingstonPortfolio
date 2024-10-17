@@ -61,5 +61,7 @@
   "social.instagram.role": "Follow me on Instagram",
 
   "pagination.previous": "Previous",
-  "pagination.next": "Next"
+  "pagination.next": "Next",
+
+  "technologyHoverIcon.viewDocumentation":"View Documentation"
 }

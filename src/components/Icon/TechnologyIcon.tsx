@@ -13,11 +13,11 @@ export default function TechnologyIcon({
 	classname,
 }: TechnologyIconProps) {
 	return (
-		<div className={`${classname}  text-3xl`}>
+		<div className={`${classname} text-3xl`}>
 			{technology === 'scrum' ? (
 				<DiScrum className="  text-azulBebe" />
 			) : technology === 'rest' ? (
-				<p className=" text-xl font-bold text-azulBebe ">REST</p>
+				<p className=" cursor-default text-xl font-bold text-azulBebe ">REST</p>
 			) : technology === 'jwt' ? (
 				<img src={jwtSVG} alt="" className="w-[33px] rounded text-black" />
 			) : technology === 'zustand' ? (
@@ -40,7 +40,7 @@ export default function TechnologyIcon({
 						'https://b.stripecdn.com/manage-statics-srv/assets/public/favicon.ico'
 					}
 					alt=""
-					className="w-[30px] rounded dark:bg-white"
+					className={`${classname} w-[30px] rounded dark:bg-white`}
 				/>
 			) : technology === 'zod' ? (
 				<img
@@ -48,7 +48,7 @@ export default function TechnologyIcon({
 					alt=""
 					className="w-[30px] rounded "
 				/>
-			) : technology === 'next auth' ? (
+			) : technology === 'nextauth' ? (
 				<img src={nextAuthSVG} alt="" className="w-[30px]" />
 			) : technology === 'vite' ? (
 				<img

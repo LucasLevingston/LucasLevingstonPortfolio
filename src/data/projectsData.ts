@@ -65,7 +65,7 @@ export const projectsDataBr: ProjectType[] = [
 	{
 		title: 'Consulta Fácil',
 		description:
-			'Aplicação de consultas médicas com integração com Stripe, desenvolvida com NextJs, prisma, utilizando next auth para autenticação, tailwind para estilização, zod para validações e shadcn para componentes.',
+			'Aplicação de consultas médicas com integração com Stripe, desenvolvida com NextJs, prisma, utilizando nextauth para autenticação, tailwind para estilização, zod para validações e shadcn para componentes.',
 		technologies: [
 			'nextjs',
 			'typescript',
@@ -80,7 +80,7 @@ export const projectsDataBr: ProjectType[] = [
 			'zod',
 			'jwt',
 			'shadcn',
-			'next auth',
+			'nextauth',
 		],
 		github: 'https://github.com/LucasLevingston/consultaFacil',
 	},
@@ -397,7 +397,7 @@ export const projectsDataEn: ProjectType[] = [
 			'zod',
 			'jwt',
 			'shadcn',
-			'next auth',
+			'nextauth',
 		],
 		github: 'https://github.com/LucasLevingston/consultaFacil',
 	},

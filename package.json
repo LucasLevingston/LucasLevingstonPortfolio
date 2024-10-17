@@ -37,6 +37,7 @@
 		"react-router-dom": "^6.13.0",
 		"tailwind-merge": "^2.5.2",
 		"tailwindcss-animate": "^1.0.7",
+		"tailwindcss-animated": "^1.1.2",
 		"typewriter-effect": "^2.20.1"
 	},
 	"devDependencies": {

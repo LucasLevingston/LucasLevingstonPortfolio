@@ -9,6 +9,7 @@ import LanguageToggle from './LanguageToggle';
 import { ResumeButton } from './ResumeButon';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { useTranslation } from 'react-i18next';
+import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 
 export default function Sidebar({ home }: { home?: boolean }) {
 	const { t, i18n } = useTranslation();
@@ -25,7 +26,12 @@ export default function Sidebar({ home }: { home?: boolean }) {
 		}
 		return phoneNumber;
 	};
-
+	const photos = [
+		user.profilePicture,
+		user.whatsappImageUrl,
+		user.instagramImageUrl,
+		user.linkedinImageUrl,
+	];
 	return (
 		<div
 			className={
@@ -36,11 +42,25 @@ export default function Sidebar({ home }: { home?: boolean }) {
 			}
 		>
 			<h1 className="text-[32px] font-bold">{user.name}</h1>
-			<Avatar className="h-[175px] w-[175px] sm:h-28 sm:w-28">
-				<AvatarImage src={user.profilePicture} />
-				<AvatarFallback>LL</AvatarFallback>
-			</Avatar>
-
+			<Carousel>
+				<CarouselContent>
+					{photos.map((photo, index) => (
+						<CarouselItem key={index}>
+							<div className="p-1">
+								<Avatar className="mx-auto h-[175px] w-[175px] sm:h-28 sm:w-28">
+									<AvatarImage src={photo} alt={`User photo ${index + 1}`} />
+									<AvatarFallback>
+										{user.name
+											.split(' ')
+											.map((n) => n[0])
+											.join('')}
+									</AvatarFallback>
+								</Avatar>
+							</div>
+						</CarouselItem>
+					))}
+				</CarouselContent>
+			</Carousel>
 			<div className="mx-auto max-w-[100%] text-center font-bold">
 				{t('sidebar.greeting')} {user.name} {t('sidebar.am')}
 				<span className="text-mainColor">
