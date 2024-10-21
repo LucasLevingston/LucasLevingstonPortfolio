@@ -6,72 +6,108 @@ import jwtSVG from '@/assets/svgs/jwt.svg';
 
 interface TechnologyIconProps {
 	technology: string;
-	classname?: string;
+	className?: string;
+	hover?: boolean;
 }
 export default function TechnologyIcon({
 	technology,
-	classname,
+	className,
+	hover,
 }: TechnologyIconProps) {
+	const defaultClassNameSVG = hover ? 'w-[72px]' : 'w-[30px]';
+	const defaultClassNameIcon = hover ? 'text-7xl' : 'text-3xl';
+
+	const getTechnologyClass = (
+		technology: string
+	): { iconClassName?: string; svg?: string; element?: React.ReactNode } => {
+		switch (technology) {
+			case 'fastify':
+			case 'nextjs':
+				return { iconClassName: `devicon-${technology}-plain` };
+			case 'sqlite':
+			case 'firebase':
+			case 'docker':
+				return {
+					iconClassName: `devicon-${technology}-plain-wordmark colored`,
+				};
+			case 'express':
+			case 'github':
+			case 'prisma':
+				return {
+					iconClassName: `devicon-${technology}-original-wordmark`,
+				};
+			case 'scrum':
+				return {
+					element: (
+						<DiScrum
+							className={`text-lightBlue ${defaultClassNameIcon} ${className}`}
+						/>
+					),
+				};
+			case 'rest':
+				return {
+					element: (
+						<p className="text-lightBlue cursor-default text-xl font-bold">
+							REST
+						</p>
+					),
+				};
+			case 'jwt':
+				return {
+					svg: jwtSVG,
+				};
+			case 'zustand':
+				return {
+					svg: 'https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg',
+				};
+			case 'shadcn':
+				return {
+					iconClassName: 'dark:bg-white rounded',
+					svg: shadcnSVG,
+				};
+			case 'stripe':
+				return {
+					svg: 'https://b.stripecdn.com/manage-statics-srv/assets/public/favicon.ico',
+				};
+			case 'zod':
+				return {
+					svg: 'https://zod.dev/logo.svg',
+				};
+			case 'nexauth':
+				return {
+					svg: nextAuthSVG,
+				};
+
+			case 'vite':
+				return {
+					svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
+				};
+
+			default:
+				return {
+					iconClassName: `devicon-${technology}-plain colored`,
+				};
+		}
+	};
+	const { iconClassName, svg, element } = getTechnologyClass(technology);
+
 	return (
-		<div className={`${classname} text-3xl`}>
-			{technology === 'scrum' ? (
-				<DiScrum className="  text-azulBebe" />
-			) : technology === 'rest' ? (
-				<p className=" cursor-default text-xl font-bold text-azulBebe ">REST</p>
-			) : technology === 'jwt' ? (
-				<img src={jwtSVG} alt="" className="w-[33px] rounded text-black" />
-			) : technology === 'zustand' ? (
+		<>
+			{svg && (
 				<img
-					src={
-						'https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg'
-					}
+					className={`${defaultClassNameSVG} ${iconClassName} ${className}`}
+					src={svg}
 					alt=""
-					className="w-[33px] rounded text-black"
 				/>
-			) : technology === 'shadcn' ? (
-				<img
-					src={shadcnSVG}
-					alt=""
-					className="w-[30px] rounded dark:bg-white"
-				/>
-			) : technology === 'stripe' ? (
-				<img
-					src={
-						'https://b.stripecdn.com/manage-statics-srv/assets/public/favicon.ico'
-					}
-					alt=""
-					className={`${classname} w-[30px] rounded dark:bg-white`}
-				/>
-			) : technology === 'zod' ? (
-				<img
-					src={'https://zod.dev/logo.svg'}
-					alt=""
-					className="w-[30px] rounded "
-				/>
-			) : technology === 'nextauth' ? (
-				<img src={nextAuthSVG} alt="" className="w-[30px]" />
-			) : technology === 'vite' ? (
-				<img
-					src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-					className="devicon-nextjs-original w-[30px] "
-				/>
-			) : (
+			)}
+
+			{iconClassName && (
 				<i
-					className={
-						technology === 'fastify' || technology === 'nextjs'
-							? `devicon-${technology}-plain  `
-							: technology === 'sqlite' ||
-								  technology === 'firebase' ||
-								  technology === 'docker'
-								? `devicon-${technology}-plain-wordmark  colored  `
-								: technology === 'express' ||
-									  technology === 'github' ||
-									  technology === 'prisma'
-									? `devicon-${technology}-original-wordmark  `
-									: `devicon-${technology}-plain colored  `
-					}
+					className={`${defaultClassNameIcon} ${iconClassName} ${className}`}
 				></i>
 			)}
-		</div>
+
+			{element}
+		</>
 	);
 }

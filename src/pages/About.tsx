@@ -13,16 +13,16 @@ import {
 	CarouselContent,
 	CarouselItem,
 } from '@/components/ui/carousel';
-import TechnologiesSection from '@/components/ThecnologiesSection';
+import TechnologiesSection from '@/components/TechnologiesSection';
 import { useLocation } from 'react-router-dom';
 import CarouselPagination from '@/components/CarouselPagination';
 
 export default function About() {
+	const { t, i18n } = useTranslation();
+	const location = useLocation();
 	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
 	const [api, setApi] = useState<CarouselApi>();
-	const { t, i18n } = useTranslation();
 	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
-	const location = useLocation();
 
 	useEffect(() => {
 		setUser(i18n.language === 'en' ? userEn : userBr);
@@ -47,7 +47,7 @@ export default function About() {
 			const element = document.getElementById(search.substring(1));
 			element?.scrollIntoView({ behavior: 'smooth' });
 		}
-	}, []);
+	}, [location]);
 
 	return (
 		<div className="text-mainTextColor">

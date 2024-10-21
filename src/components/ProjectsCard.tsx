@@ -17,15 +17,24 @@ import {
 	CarouselContent,
 	CarouselItem,
 } from './ui/carousel';
-import TechnologiesSection from './ThecnologiesSection';
+import TechnologiesSection from './TechnologiesSection';
 import CarouselPagination from './CarouselPagination';
+import CustomButton from './CustomButton';
 
 interface ProjectCardProps {
 	project: ProjectType;
 	id: string;
 }
 
-export default function ProjectCard({ project, id }: ProjectCardProps) {
+interface ProjectCardProps {
+	project: ProjectType;
+	id: string;
+}
+
+export default function ProjectCard({
+	project: { title, description, technologies, images, github, link },
+	id,
+}: ProjectCardProps) {
 	const [currentImage, setCurrentImage] = useState(0);
 	const [api, setApi] = useState<CarouselApi>();
 	const [openAccordion, setOpenAccordion] = useState<string | undefined>(
@@ -55,7 +64,7 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 			value={openAccordion}
 			id={id}
 		>
-			<AccordionItem value={project.title}>
+			<AccordionItem value={title}>
 				<SectionItem
 					title={
 						<AccordionTrigger className="hover:cursor-pointer hover:no-underline">
@@ -63,13 +72,13 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 								<div className="text-xl font-bold">
 									<Typewriter
 										onInit={(typewriter) => {
-											typewriter.typeString(project.title).start();
+											typewriter.typeString(title).start();
 										}}
 									/>
 								</div>
-								{openAccordion !== project.title && (
+								{openAccordion !== title && (
 									<div className="flex w-full flex-wrap">
-										<TechnologiesSection technologies={project.technologies} />
+										<TechnologiesSection technologies={technologies} />
 									</div>
 								)}
 							</div>
@@ -79,21 +88,21 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 				>
 					<AccordionContent>
 						<div className="space-y-4">
-							<p className="text-base">{project.description}</p>
+							<p className="text-base">{description}</p>
 
 							<div className="space-y-1">
 								<p className="text-xl font-bold">
 									{t('projectCard.technologiesUsed')}
 								</p>
 								<div className="flex w-full flex-wrap">
-									<TechnologiesSection technologies={project.technologies} />
+									<TechnologiesSection technologies={technologies} />
 								</div>
 							</div>
 
-							{project.images && (
+							{images && (
 								<Carousel setApi={setApi}>
 									<CarouselContent className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]">
-										{project.images.map((image, index) => (
+										{images.map((image, index) => (
 											<CarouselItem key={index}>
 												<img
 													src={image}
@@ -108,41 +117,23 @@ export default function ProjectCard({ project, id }: ProjectCardProps) {
 											currentImage={currentImage}
 											setCurrentImage={setCurrentImage}
 											api={api}
-											images={project.images}
+											images={images}
 										/>
 									</div>
 								</Carousel>
 							)}
 
 							<div className="flex items-center justify-center space-x-4">
-								{project.github && (
-									<a
-										className="flex w-[150px] items-center justify-center space-x-1 rounded-md border-[3px] border-solid border-mainColor 
-                                        bg-mainColor p-3 text-[13px] font-bold text-mainTextColor no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
-										href={project.github}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<GoRepoForked className="text-2xl" />
-										<p className="text-bioBgColor dark:text-mainTextColor">
-											{t('projectCard.viewGitHub')}
-										</p>
-									</a>
+								{github && (
+									<CustomButton icon={<GoRepoForked />} link={github}>
+										{t('projectCard.viewGitHub')}
+									</CustomButton>
 								)}
 
-								{project.link && (
-									<a
-										className="flex w-[150px] items-center justify-center space-x-1 rounded-md border-[3px] border-solid border-mainColor 
-                                        bg-mainColor p-3 text-[13px] font-bold text-mainTextColor no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor"
-										href={project.link}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<AiOutlineLink className="text-2xl" />
-										<p className="text-bioBgColor dark:text-mainTextColor">
-											{t('projectCard.visitSite')}
-										</p>
-									</a>
+								{link && (
+									<CustomButton icon={<AiOutlineLink />} link={link}>
+										{t('projectCard.visitSite')}
+									</CustomButton>
 								)}
 							</div>
 						</div>

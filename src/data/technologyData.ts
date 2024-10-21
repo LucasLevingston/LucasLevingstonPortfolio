@@ -295,6 +295,13 @@ export const technologiesDataBr: { [key: string]: TechnologyType } = {
 			'Um framework front-end popular para desenvolvimento de sites responsivos e móveis.',
 		link: 'https://getbootstrap.com/',
 	},
+	python: {
+		label: 'Python',
+		value: 'python',
+		description:
+			'Uma linguagem de programação versátil e poderosa, conhecida por sua legibilidade e ampla gama de aplicações em desenvolvimento web, análise de dados, inteligência artificial e muito mais.',
+		link: 'https://www.python.org/',
+	},
 };
 export const technologiesDataEn: { [key: string]: TechnologyType } = {
 	typescript: {
@@ -578,5 +585,12 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
 		description:
 			'A popular front-end framework for developing responsive and mobile-first websites.',
 		link: 'https://getbootstrap.com/',
+	},
+	python: {
+		label: 'Python',
+		value: 'python',
+		description:
+			'Uma linguagem de programação versátil e poderosa, conhecida por sua legibilidade e ampla gama de aplicações em desenvolvimento web, análise de dados, inteligência artificial e muito mais.',
+		link: 'https://www.python.org/',
 	},
 };

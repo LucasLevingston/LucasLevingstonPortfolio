@@ -18,6 +18,8 @@ export const userBr: UserType = {
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
 		'Interesse em Desenvolvimento Full-Stack, Front-End ou Back-end.<br/> Tenho<span class="text-mainColor"> 1 ano e 3 meses de experiência </span> com desenvolvimento Full-Stack. Utilizo <span class="text-mainColor"> React, Typescript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum e Docker </span>.<br/>Atualmente estou no <span class="text-mainColor">9º semestre</span> do curso de Ciências da Computação.',
+	resumeUrl:
+		'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
 	profilePicture: Foto,
 	certificates: certificatesDataBr,
 	experiences: experiencesDataBr,
@@ -41,6 +43,8 @@ export const userEn: UserType = {
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
 		'Interest in Full-Stack, Front-End, or Back-End Development.<br /> I have <span class="text-mainColor">1 year and 3 months of experience</span> in Full-Stack development. I use <span class="text-mainColor">React, TypeScript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum, and Docker</span>.<br/> Currently, I am in the <span class="text-mainColor">9th semester </span> of my Computer Science course.',
+	resumeUrl:
+		'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
 	profilePicture: Foto,
 	certificates: certificatesDataEn,
 	experiences: experiencesDataEn,

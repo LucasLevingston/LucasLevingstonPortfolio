@@ -6,6 +6,7 @@ import 'flag-icons/css/flag-icons.min.css';
 import { useTranslation } from 'react-i18next';
 import LanguageToggle from './LanguageToggle';
 import i18n from '@/i18n';
+import CustomButton from './CustomButton';
 
 export default function Header() {
 	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
@@ -47,17 +48,9 @@ export default function Header() {
 					}}
 				/>
 			</div>
-			<a
-				className=" flex w-[130px] items-center justify-center rounded-[5px] border-[2px] border-mainColor bg-mainColor  p-3 text-center text-[16px] font-bold text-bioBgColor transition-[0.5s] hover:bg-transparent hover:text-mainColor dark:bg-mainColor dark:text-mainTextColor dark:hover:bg-transparent dark:hover:text-mainColor"
-				href={user.gitHub}
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<FaShareAltSquare className="text-[18px]" />
-				<span className="pl-2 text-bioBgColor dark:text-mainTextColor">
-					GitHub
-				</span>
-			</a>
+			<CustomButton icon={<FaShareAltSquare />} link={user.gitHub}>
+				GitHub
+			</CustomButton>
 		</div>
 	);
 }

@@ -45,10 +45,15 @@ const Projects: React.FC = () => {
 	}, [i18n.language]);
 
 	useEffect(() => {
-		const urlParams = new URLSearchParams(location.search);
-		const searchParam = urlParams.get('search') || '';
-		setFilter((prev) => ({ ...prev, searchTerm: searchParam }));
-	}, [location.search]);
+		const search = location.search;
+		if (!search) {
+			window.scrollTo(0, 0);
+		}
+		if (search) {
+			const element = document.getElementById(search.substring(1));
+			element?.scrollIntoView({ behavior: 'smooth' });
+		}
+	}, []);
 
 	useEffect(() => {
 		const filtered = user.projects.filter((project) => {

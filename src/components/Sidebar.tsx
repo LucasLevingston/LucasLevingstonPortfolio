@@ -108,7 +108,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 					</p>
 				</div>
 			</div>
-			<ResumeButton />
+			<ResumeButton url={user.resumeUrl} />
 		</div>
 	);
 }

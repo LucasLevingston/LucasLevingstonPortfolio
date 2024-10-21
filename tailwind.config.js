@@ -59,7 +59,7 @@ export default {
 				bioBgColor: '#212121',
 				bioBorderColor: '#ffffff',
 				aboutBgColor: '#131212',
-				azulBebe: '#35DCFA',
+				lightBlue: '#35DCFA',
 				transparent: 'transparent',
 			},
 			keyframes: {

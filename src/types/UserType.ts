@@ -8,6 +8,7 @@ export interface UserType {
 	name: string;
 	completName: string;
 	description: string;
+	resumeUrl: string;
 	profilePicture: string;
 	experiences: ExperienceType[];
 	formations: FormationType[];

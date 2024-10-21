@@ -8,7 +8,6 @@ import { technologiesDataBr, technologiesDataEn } from '@/data/technologyData';
 import TechnologyIcon from './TechnologyIcon';
 import i18next, { t } from 'i18next';
 import { TechnologyType } from '@/types/TechnologyType';
-import { CalendarIcon } from 'lucide-react';
 
 interface TechnologyHoverIconProps {
 	technology: string;
@@ -34,12 +33,12 @@ export default function TechnologyHoverIcon({
 
 	return (
 		<HoverCard>
-			<HoverCardTrigger className="hover:opacity-50">
-				<TechnologyIcon technology={technology} />
+			<HoverCardTrigger className="transition-all hover:opacity-30">
+				<TechnologyIcon technology={technology} className={classname} />
 			</HoverCardTrigger>
 			<HoverCardContent className="flex w-80 gap-4">
 				<div className="flex items-center space-x-4">
-					<TechnologyIcon technology={technology} classname="text-7xl" />
+					<TechnologyIcon technology={technology} hover={true} />
 				</div>
 				<div className="flex w-full flex-col justify-start text-left">
 					<h4 className="text-md font-semibold">{technologyData?.label}</h4>
