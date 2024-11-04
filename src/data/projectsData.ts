@@ -39,11 +39,19 @@ import sercomp5 from '../assets/sercomp5.png';
 import GymEvolution1 from '../assets/GymEvolution1.png';
 import GymEvolution2 from '../assets/GymEvolution2.png';
 import GymEvolution3 from '../assets/GymEvolution3.png';
+import consultaFacil1 from '../assets/consultafacil1.png';
+import consultaFacil2 from '../assets/consultafacil2.png';
+import consultaFacil3 from '../assets/consultafacil3.png';
+import consultaFacil4 from '../assets/consultafacil4.png';
+import aneis1 from '../assets/Aneis1.png';
+import aneis2 from '../assets/Aneis2.png';
+import aneis3 from '../assets/Aneis3.png';
 import { ProjectType } from '../types/ProjectType';
 
 export const projectsDataBr: ProjectType[] = [
 	{
 		title: 'CRM Splen',
+		favorite: true,
 		description:
 			'CRM feito no estágio na Splendore a fim de venda de graduações, pós-graduações, etc. Foi utilizada a metodologia Scrum para o caminhar do projeto.',
 		technologies: [
@@ -64,6 +72,7 @@ export const projectsDataBr: ProjectType[] = [
 	},
 	{
 		title: 'Consulta Fácil',
+		favorite: true,
 		description:
 			'Aplicação de consultas médicas com integração com Stripe, desenvolvida com NextJs, prisma, utilizando nextauth para autenticação, tailwind para estilização, zod para validações e shadcn para componentes.',
 		technologies: [
@@ -82,10 +91,13 @@ export const projectsDataBr: ProjectType[] = [
 			'shadcn',
 			'nextauth',
 		],
+		images: [consultaFacil1, consultaFacil2, consultaFacil3, consultaFacil4],
+		link: 'https://consulta-facil-next.vercel.app/',
 		github: 'https://github.com/LucasLevingston/consultaFacil',
 	},
 	{
 		title: 'Anéis de Poder',
+		favorite: true,
 		description:
 			'A aplicação consiste em um sistema de criação de anéis. Feito com React, tailwind, axios, zustand para o front, consumindo a API REST desenvolvida com node, typescript, Fastify, Swagger, zod para validações e vitest para testes unitários. Utilizado PosgreSql como banco de dados, Docker para container e Sequelize como ORM.',
 		technologies: [
@@ -107,14 +119,15 @@ export const projectsDataBr: ProjectType[] = [
 			'zustand',
 			'vitest',
 		],
+		images: [aneis1, aneis2, aneis3],
 		github: 'https://github.com/LucasLevingston/AneisDePoder',
 	},
 	{
 		title: 'Verbo Hub',
+		favorite: true,
 		description:
 			'Trata-se de um sistema de gestão de eventos para a igreja Verbo da Vida - Patos, PB. Com GitFlow, desenvolvemos o back e o front-end da aplicação juntamente com testes unitários. A interface está implantada no AWS CloudFront e a API está implantada no AWS S3 Elastic Beanstalk',
 		images: [verbo1, verbo2, verbo3],
-
 		technologies: [
 			'react',
 			'typescript',
@@ -133,7 +146,8 @@ export const projectsDataBr: ProjectType[] = [
 		],
 	},
 	{
-		title: 'GymEvolution (Em andamento)',
+		title: 'GymEvolution',
+		favorite: true,
 		description:
 			'GymEvolution Se trata de um sistema para evolução na musculação, realacionados a dieta e treino, com gráficos, planilhas de treinos, acompanhamento nutricional e pessoal.',
 		images: [GymEvolution1, GymEvolution2, GymEvolution3],
@@ -361,6 +375,7 @@ export const projectsDataBr: ProjectType[] = [
 export const projectsDataEn: ProjectType[] = [
 	{
 		title: 'CRM Splen',
+		favorite: true,
 		description:
 			'CRM developed during my internship at Splendore for selling undergraduate and graduate programs. Scrum methodology was used throughout the project.',
 		technologies: [
@@ -381,6 +396,7 @@ export const projectsDataEn: ProjectType[] = [
 	},
 	{
 		title: 'Consulta Fácil',
+		favorite: true,
 		description:
 			'Medical appointment application integrated with Stripe, developed with NextJs, Prisma, using NextAuth for authentication, Tailwind for styling, Zod for validations, and Shadcn for components.',
 		technologies: [
@@ -399,10 +415,13 @@ export const projectsDataEn: ProjectType[] = [
 			'shadcn',
 			'nextauth',
 		],
+		images: [consultaFacil1, consultaFacil2, consultaFacil3, consultaFacil4],
+		link: 'https://consulta-facil-next.vercel.app/',
 		github: 'https://github.com/LucasLevingston/consultaFacil',
 	},
 	{
 		title: 'Rings of Power',
+		favorite: true,
 		description:
 			'The application consists of a system for creating rings. Built with React, Tailwind, Axios, and Zustand for the frontend, consuming a REST API developed with Node, TypeScript, Fastify, Swagger, Zod for validations, and Vitest for unit testing. PostgreSQL is used as the database, Docker for containers, and Sequelize as the ORM.',
 		technologies: [
@@ -424,10 +443,12 @@ export const projectsDataEn: ProjectType[] = [
 			'zustand',
 			'vitest',
 		],
+		images: [aneis1, aneis2, aneis3],
 		github: 'https://github.com/LucasLevingston/AneisDePoder',
 	},
 	{
 		title: 'Verbo Hub',
+		favorite: true,
 		description:
 			'A system for managing events for the Verbo da Vida church in Patos, PB. Using GitFlow, we developed the back and front-end of the application along with unit tests. The interface is deployed on AWS CloudFront, and the API is deployed on AWS S3 Elastic Beanstalk.',
 		images: [verbo1, verbo2, verbo3],
@@ -449,7 +470,8 @@ export const projectsDataEn: ProjectType[] = [
 		],
 	},
 	{
-		title: 'GymEvolution (In Progress)',
+		title: 'GymEvolution',
+		favorite: true,
 		description:
 			'GymEvolution is a system for fitness evolution related to diet and training, featuring graphs, workout sheets, and nutritional and personal tracking.',
 		images: [GymEvolution1, GymEvolution2, GymEvolution3],

@@ -20,6 +20,7 @@ import {
 import TechnologiesSection from './TechnologiesSection';
 import CarouselPagination from './CarouselPagination';
 import CustomButton from './CustomButton';
+import starIcon from '@/assets/svgs/star.svg';
 
 interface ProjectCardProps {
 	project: ProjectType;
@@ -32,7 +33,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({
-	project: { title, description, technologies, images, github, link },
+	project: { title, description, technologies, images, github, link, favorite },
 	id,
 }: ProjectCardProps) {
 	const [currentImage, setCurrentImage] = useState(0);
@@ -69,12 +70,13 @@ export default function ProjectCard({
 					title={
 						<AccordionTrigger className="hover:cursor-pointer hover:no-underline">
 							<div className="flex flex-col justify-start gap-2 text-left">
-								<div className="text-xl font-bold">
+								<div className="flex items-center gap-2 text-xl font-bold">
 									<Typewriter
 										onInit={(typewriter) => {
 											typewriter.typeString(title).start();
 										}}
 									/>
+									{favorite && <img className="w-5" src={starIcon} />}
 								</div>
 								{openAccordion !== title && (
 									<div className="flex w-full flex-wrap">

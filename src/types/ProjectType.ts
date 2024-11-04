@@ -4,5 +4,6 @@ export interface ProjectType {
 	images?: string[];
 	github?: string;
 	link?: string;
+	favorite?: boolean;
 	technologies: string[];
 }
