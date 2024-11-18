@@ -11,16 +11,15 @@ import {
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
-import { userBr, userEn } from '@/data/userData';
 import Logo from '../assets/Logo.png';
+import useUserStore from '@/hooks/user-hooks';
 
 export function Navbar() {
 	const { t, i18n } = useTranslation();
-	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
 	const [activeButton, setActiveButton] = useState<string>('/');
+	const { user } = useUserStore();
 
 	useEffect(() => {
-		setUser(i18n.language === 'en' ? userEn : userBr);
 		setActiveButton(location.pathname);
 	}, [i18n.language]);
 
@@ -165,13 +164,13 @@ const ListItem = React.forwardRef<
 				<a
 					ref={ref}
 					className={cn(
-						'block select-none space-y-1 rounded-md border-[2px] border-mainColor bg-mainColor p-3 leading-none no-underline outline-none transition-colors  hover:bg-transparent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+						'block select-none space-y-1 rounded-md border-[2px] border-mainColor bg-mainColor p-3 leading-none no-underline outline-none transition-colors hover:bg-transparent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
 						className
 					)}
 					{...props}
 				>
 					<div className="text-sm font-bold leading-none">{title}</div>
-					<p className="line-clamp-2 text-sm leading-snug text-black  dark:text-white">
+					<p className="line-clamp-2 text-sm leading-snug text-black dark:text-white">
 						{children}
 					</p>
 				</a>

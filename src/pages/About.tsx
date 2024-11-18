@@ -6,7 +6,6 @@ import Section from '../components/Section';
 import Container from '../components/Container';
 import SectionItem from '../components/SectionItem';
 import { useTranslation } from 'react-i18next';
-import { userBr, userEn } from '../data/userData';
 import {
 	Carousel,
 	CarouselApi,
@@ -16,16 +15,16 @@ import {
 import TechnologiesSection from '@/components/TechnologiesSection';
 import { useLocation } from 'react-router-dom';
 import CarouselPagination from '@/components/CarouselPagination';
+import useUserStore from '@/hooks/user-hooks';
 
 export default function About() {
 	const { t, i18n } = useTranslation();
+	const { user } = useUserStore();
 	const location = useLocation();
 	const [currentCertificate, setCurrentCertificate] = useState<number>(0);
 	const [api, setApi] = useState<CarouselApi>();
-	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
 
 	useEffect(() => {
-		setUser(i18n.language === 'en' ? userEn : userBr);
 		i18n.changeLanguage(i18n.language);
 
 		if (!api) {
@@ -55,6 +54,15 @@ export default function About() {
 			<Container>
 				<Header />
 				<div>
+					<Section title={t('about.professionalProfile')}>
+						<div>
+							<p
+								dangerouslySetInnerHTML={{
+									__html: user.description,
+								}}
+							/>
+						</div>
+					</Section>
 					<Section
 						id={t('about.technologiesTitle')}
 						title={t('about.technologiesTitle')}
@@ -136,11 +144,11 @@ export default function About() {
 											{user.certificates.map((certificate, index) => (
 												<CarouselItem
 													key={index}
-													className="h-full w-full rounded-2xl "
+													className="h-full w-full rounded-2xl"
 												>
 													<img
 														src={certificate.image}
-														className="h-full w-full rounded-2xl "
+														className="h-full w-full rounded-2xl"
 														// style={{ border: 'none' }}
 													/>
 												</CarouselItem>

@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import ProjectCard from '../components/ProjectsCard';
 import Container from '../components/Container';
 import Section from '../components/Section';
-import { userBr, userEn } from '@/data/userData';
 import { useTranslation } from 'react-i18next';
 import { ProjectType } from '@/types/ProjectType';
 import { Toggle } from '@/components/ui/toggle';
@@ -22,11 +21,11 @@ import { AiOutlineLink } from 'react-icons/ai';
 import { Input } from '@/components/ui/input';
 import { MdOutlineClear } from 'react-icons/md';
 import { GrClearOption } from 'react-icons/gr';
+import useUserStore from '@/hooks/user-hooks';
 
 const Projects: React.FC = () => {
 	const { t, i18n } = useTranslation();
 	const location = useLocation();
-	const [user, setUser] = useState(userEn);
 	const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>([]);
 	const [filter, setFilter] = useState({
 		selectedTechnologies: [] as string[],
@@ -37,11 +36,10 @@ const Projects: React.FC = () => {
 		isFrontEnd: false,
 		isBackEnd: false,
 	});
+	const { user } = useUserStore();
 
 	useEffect(() => {
-		const currentUser = i18n.language === 'en' ? userEn : userBr;
-		setUser(currentUser);
-		setFilteredProjects(currentUser.projects);
+		setFilteredProjects(user.projects);
 	}, [i18n.language]);
 
 	useEffect(() => {

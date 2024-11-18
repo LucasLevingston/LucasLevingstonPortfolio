@@ -2,7 +2,7 @@ import React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
-import { useTheme } from '@/components/ThemeProvider';
+import { useTheme } from '@/components/providers/ThemeProvider';
 
 export function ModeToggle() {
 	const { theme, setTheme } = useTheme();
@@ -16,7 +16,7 @@ export function ModeToggle() {
 	};
 
 	return (
-		<div className="flex items-center space-x-2 ">
+		<div className="flex items-center space-x-2">
 			<Switch
 				id="theme-toggle"
 				checked={theme === 'dark'}

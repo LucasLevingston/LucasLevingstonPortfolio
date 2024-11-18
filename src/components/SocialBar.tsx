@@ -1,7 +1,6 @@
 import React from 'react';
 import { BsGithub, BsInstagram } from 'react-icons/bs';
 import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-import { userEn } from '../data/userData';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
 	HoverCard,
@@ -9,9 +8,10 @@ import {
 	HoverCardTrigger,
 } from '@/components/ui/hover-card';
 import { t } from 'i18next';
+import useUserStore from '@/hooks/user-hooks';
 
 export default function SocialBar() {
-	const user = userEn;
+	const { user } = useUserStore();
 
 	return (
 		<section className="mx-auto flex w-[200px] list-none items-center justify-center border-b-[1px] border-solid pb-3">
@@ -42,7 +42,7 @@ export default function SocialBar() {
 									href={user.gitHub}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
+									className="text-azulBebe pt-3 text-sm font-semibold hover:underline"
 								>
 									{t('social.github.name')}
 								</a>
@@ -79,7 +79,7 @@ export default function SocialBar() {
 									href={user.linkedin}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
+									className="text-azulBebe pt-3 text-sm font-semibold hover:underline"
 								>
 									{t('social.linkedin.name')}
 								</a>
@@ -118,7 +118,7 @@ export default function SocialBar() {
 									href={user.whatsapp}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
+									className="text-azulBebe pt-3 text-sm font-semibold hover:underline"
 								>
 									{t('social.whatsapp.label')}
 								</a>
@@ -155,7 +155,7 @@ export default function SocialBar() {
 									href={user.instagram}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
+									className="text-azulBebe pt-3 text-sm font-semibold hover:underline"
 								>
 									{t('social.instagram.name')}
 								</a>

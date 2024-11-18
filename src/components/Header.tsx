@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { FaShareAltSquare } from 'react-icons/fa';
 import Typewriter from 'typewriter-effect';
-import { userEn, userBr } from '../data/userData';
 import 'flag-icons/css/flag-icons.min.css';
 import { useTranslation } from 'react-i18next';
-import LanguageToggle from './LanguageToggle';
-import i18n from '@/i18n';
 import CustomButton from './CustomButton';
+import useUserStore from '@/hooks/user-hooks';
 
 export default function Header() {
-	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const { user } = useUserStore();
+
 	useEffect(() => {
-		setUser(i18n.language === 'en' ? userEn : userBr);
 		i18n.changeLanguage(i18n.language);
 	}, [i18n.language]);
 
@@ -41,13 +39,7 @@ export default function Header() {
 					/>
 				</div>
 			</div>
-			<div>
-				<p
-					dangerouslySetInnerHTML={{
-						__html: user.description,
-					}}
-				/>
-			</div>
+
 			<CustomButton icon={<FaShareAltSquare />} link={user.gitHub}>
 				GitHub
 			</CustomButton>

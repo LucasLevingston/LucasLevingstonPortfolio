@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import i18n from '@/i18n';
+import useUserStore from '@/hooks/user-hooks';
 
 const LanguageToggle: React.FC = () => {
+	const setUser = useUserStore((state) => state.setUser);
+
 	const handleLanguageChange = (checked: boolean) => {
 		i18n.changeLanguage(checked ? 'br' : 'en');
+		setUser(i18n.language);
 	};
 
 	return (

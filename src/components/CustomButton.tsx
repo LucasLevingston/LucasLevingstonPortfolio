@@ -23,9 +23,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 				href={link}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="flex justify-between space-x-1"
+				className="flex items-center justify-between space-x-1"
 			>
-				<span className="text-2xl">{icon}</span>
+				<span className="text-2xl text-bioBgColor dark:text-mainTextColor">
+					{icon}
+				</span>
 				<p className="text-bioBgColor dark:text-mainTextColor">{children}</p>
 			</a>
 		</Button>

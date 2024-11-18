@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
 import { Navbar } from './Navbar';
 import Typewriter from 'typewriter-effect';
 import SocialBar from './SocialBar';
-import { userBr, userEn } from '../data/userData';
-import { ModeToggle } from './ModeToggle';
-import LanguageToggle from './LanguageToggle';
+import { ModeToggle } from './toggles/ModeToggle';
+import LanguageToggle from './toggles/LanguageToggle';
 import { ResumeButton } from './ResumeButon';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { useTranslation } from 'react-i18next';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
+import { formatPhoneNumber } from '@/lib/constants/format-number';
+import useUserStore from '@/hooks/user-hooks';
 
 export default function Sidebar({ home }: { home?: boolean }) {
-	const { t, i18n } = useTranslation();
-	const [user, setUser] = useState(i18n.language === 'en' ? userEn : userBr);
+	const { t } = useTranslation();
+	const { user } = useUserStore();
 
-	useEffect(() => {
-		setUser(i18n.language === 'en' ? userEn : userBr);
-	}, [i18n.language]);
-
-	const formatPhoneNumber = (phoneNumber: string): string => {
-		const match = phoneNumber.match(/^(\d{2})(\d{5})(\d{4})$/);
-		if (match) {
-			return `(${match[1]}) ${match[2]}-${match[3]}`;
-		}
-		return phoneNumber;
-	};
 	const photos = [
 		user.profilePicture,
 		user.whatsappImageUrl,
@@ -93,7 +83,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 
 			<SocialBar />
 			<div>
-				<div className="flex w-[100%] justify-center  ">
+				<div className="flex w-[100%] justify-center">
 					<a className="text-none flex gap-2" href={`mailto:${user.email}`}>
 						<AiOutlineMail className="max-w-[20px] text-[25px] text-mainColor" />
 						<span className="transition-[1s] hover:text-mainColor">
