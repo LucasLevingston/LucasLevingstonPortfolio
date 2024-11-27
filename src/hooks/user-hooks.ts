@@ -10,20 +10,18 @@ interface useUserStoreProps {
 }
 
 const useUserStore = create<useUserStoreProps>((set) => ({
-	user: userEn,
+	user: userBr,
 	setUser: (language) => {
 		const user = language === 'en' ? userEn : userBr;
 		set({ user });
 	},
 }));
 
-// Hook personalizado para usar a loja e a tradução
 export const useUser = () => {
 	const { i18n } = useTranslation();
 	const user = useUserStore((state) => state.user);
 	const setUser = useUserStore((state) => state.setUser);
 
-	// Atualiza o usuário com base no idioma atual
 	useEffect(() => {
 		setUser(i18n.language);
 	}, [i18n.language, setUser]);
