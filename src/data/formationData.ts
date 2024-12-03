@@ -7,7 +7,7 @@ export const formationDataBr: FormationType[] = [
 		startsDate: 'Julho/2020',
 		endsDate: 'Julho/2025',
 		duration: '9 semestres',
-		currentStatus: 'Atualmente no 9º/10 semestre.',
+		currentStatus: 'Atualmente no 10º/10 semestre.',
 	},
 	{
 		title: 'Graduação em Engenharia Civil',
@@ -26,7 +26,7 @@ export const formationDataEn: FormationType[] = [
 		startsDate: 'July/2020',
 		endsDate: 'July/2025',
 		duration: '9 semesters',
-		currentStatus: 'Currently in the 9th/10th semester.',
+		currentStatus: 'Currently in the 10th/10th semester.',
 	},
 	{
 		title: 'Bachelor’s Degree in Civil Engineering',

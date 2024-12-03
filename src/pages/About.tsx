@@ -75,7 +75,7 @@ export default function About() {
 						id={t('about.experiencesTitle')}
 					>
 						{user.experiences.map((experience, index) => (
-							<SectionItem title={experience.enterprise} key={index}>
+							<SectionItem title={experience.role} key={index}>
 								<div className="space-y-2">
 									<p>
 										{t('about.start')}: {experience.startsDate} -{' '}
@@ -83,8 +83,8 @@ export default function About() {
 										{experience.location})
 									</p>
 									<p>
-										{t('about.position')}:{' '}
-										<span className="underline">{experience.role}</span>
+										{t('about.enterprise')}:{' '}
+										<span className="underline">{experience.enterprise}</span>
 									</p>
 									<p
 										dangerouslySetInnerHTML={{
@@ -108,7 +108,10 @@ export default function About() {
 										{formation.startsDate} - {formation.endsDate}
 									</p>
 									<p className="text-mainColor">
-										{t('about.currentStatus')}: {formation.currentStatus}
+										<span className="text-mainTextColor">
+											{t('about.currentStatus')}:{' '}
+										</span>
+										{formation.currentStatus}
 									</p>
 								</div>
 							</SectionItem>
@@ -186,6 +189,11 @@ export default function About() {
 									</div>
 								</div>
 							</SectionItem>
+						))}
+					</Section>
+					<Section title={'Soft Skills'} id={'Soft Skills'}>
+						{user.softSkills.map((skill) => (
+							<SectionItem title={skill}>{null}</SectionItem>
 						))}
 					</Section>
 				</div>

@@ -39,16 +39,16 @@ export const experiencesDataBr: ExperienceType[] = [
       e utilizando o <span class="text-mainColor">Git Flow</span> como fluxo de trabalho.
     `,
 	},
-	{
-		enterprise: 'EndoDerm',
-		location: 'Patos, PB',
-		startsDate: '06/2022',
-		endsDate: '10/2022',
-		role: 'Atendente de consultório médico',
-		description: `
-      Realizava agendamento de consultas, organização de planilhas e atendimento ao público.
-    `,
-	},
+	// {
+	// 	enterprise: 'EndoDerm',
+	// 	location: 'Patos, PB',
+	// 	startsDate: '06/2022',
+	// 	endsDate: '10/2022',
+	// 	role: 'Atendente de consultório médico',
+	// 	description: `
+	//     Realizava agendamento de consultas, organização de planilhas e atendimento ao público.
+	//   `,
+	// },
 ];
 
 export const experiencesDataEn: ExperienceType[] = [
@@ -90,14 +90,14 @@ export const experiencesDataEn: ExperienceType[] = [
       and used <span class="text-mainColor">Git Flow</span> as the workflow.
     `,
 	},
-	{
-		enterprise: 'EndoDerm',
-		location: 'Patos, PB',
-		startsDate: '06/2022',
-		endsDate: '10/2022',
-		role: 'Medical Office Attendant',
-		description: `
-      Scheduled appointments, organized spreadsheets, and provided customer service.
-    `,
-	},
+	// {
+	// 	enterprise: 'EndoDerm',
+	// 	location: 'Patos, PB',
+	// 	startsDate: '06/2022',
+	// 	endsDate: '10/2022',
+	// 	role: 'Medical Office Attendant',
+	// 	description: `
+	//     Scheduled appointments, organized spreadsheets, and provided customer service.
+	//   `,
+	// },
 ];
