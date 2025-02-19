@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindAnimate from 'tailwindcss-animate';
+import tailwindAnimated from 'tailwindcss-animated';
+import tailwindScrollbar from 'tailwind-scrollbar';
 export default {
 	darkMode: ['class'],
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -87,8 +90,8 @@ export default {
 		},
 	},
 	plugins: [
-		require('tailwindcss-animated'),
-		require('tailwind-scrollbar')({ nocompatible: true }),
+		tailwindAnimate,
+		tailwindScrollbar,
 		function ({ addUtilities }) {
 			const newUtilities = {
 				'.no-scrollbar::-webkit-scrollbar': {
@@ -101,6 +104,6 @@ export default {
 			};
 			addUtilities(newUtilities);
 		},
-		require('tailwindcss-animate'),
+		tailwindAnimated,
 	],
 };

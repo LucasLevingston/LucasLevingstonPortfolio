@@ -32,25 +32,17 @@ export default function Sidebar({ home }: { home?: boolean }) {
 			}
 		>
 			<h1 className="text-[32px] font-bold">{user.name}</h1>
-			<Carousel>
-				<CarouselContent>
-					{photos.map((photo, index) => (
-						<CarouselItem key={index}>
-							<div className="p-1">
-								<Avatar className="mx-auto h-[175px] w-[175px] sm:h-28 sm:w-28">
-									<AvatarImage src={photo} alt={`User photo ${index + 1}`} />
-									<AvatarFallback>
-										{user.name
-											.split(' ')
-											.map((n) => n[0])
-											.join('')}
-									</AvatarFallback>
-								</Avatar>
-							</div>
-						</CarouselItem>
-					))}
-				</CarouselContent>
-			</Carousel>
+
+			<Avatar className="mx-auto h-[175px] w-[175px] sm:h-28 sm:w-28">
+				<AvatarImage src={user.profilePicture} alt={`User photo`} />
+				<AvatarFallback>
+					{user.name
+						.split(' ')
+						.map((n) => n[0])
+						.join('')}
+				</AvatarFallback>
+			</Avatar>
+
 			<div className="mx-auto max-w-[100%] text-center font-bold">
 				{t('sidebar.greeting')} {user.name} {t('sidebar.am')}
 				<span className="text-mainColor">
