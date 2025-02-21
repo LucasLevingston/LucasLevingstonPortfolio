@@ -10,6 +10,7 @@ import CertificadoContribuicao from '../assets/Contribuindo em um Projeto.jpg';
 import CertificadoAmbienteJava from '../assets/Ambiente de Desenvolvimento Java.jpg';
 import NLWJourneyNodejs from '../assets/NLWJourneyNodejs.png';
 import NLWPocketJavascript from '../assets/NLWPocketJavascript.png';
+import NLWConnectReact from '../assets/CertificadoNLWConnectReact.png';
 import { CertificatesType } from '../types/CertificatesType';
 
 export const certificatesDataBr: CertificatesType[] = [
@@ -121,6 +122,21 @@ export const certificatesDataBr: CertificatesType[] = [
 		image: CertificadoAmbienteJava,
 		description: ['Configuração de um ambiente de desenvolvimento Java.'],
 		technologies: ['java', 'eclipse', 'intellij'],
+	},
+	{
+		title: 'NLW Connect - React',
+		image: NLWConnectReact,
+		description: [
+			'Fundamentos do React, Fundamentos do Next.js, padrão de composição de componentes, estilização com Tailwind, roteamento com App Router, Server Components, Client Components,formulários com React Hook Form, criação de cliente HTTP com Orval, configuração de toolchain com Biome, validação com Zod,tipagem com Typescript.',
+		],
+		technologies: [
+			'react',
+			'nextjs',
+			'nodejs',
+			'typescript',
+			'tailwindcss',
+			'zod',
+		],
 	},
 ];
 
@@ -236,5 +252,20 @@ export const certificatesDataEn: CertificatesType[] = [
 		image: CertificadoAmbienteJava,
 		description: ['Setting up a Java development environment.'],
 		technologies: ['java', 'eclipse', 'intellij'],
+	},
+	{
+		title: 'NLW Connect - React',
+		image: 'NLWConnectReact',
+		description: [
+			'Fundamentals of React, Fundamentals of Next.js, component composition pattern, styling with Tailwind, routing with App Router, Server Components, Client Components, forms with React Hook Form, creating an HTTP client with Orval, toolchain setup with Biome, validation with Zod, typing with TypeScript.',
+		],
+		technologies: [
+			'react',
+			'nextjs',
+			'nodejs',
+			'typescript',
+			'tailwindcss',
+			'zod',
+		],
 	},
 ];
