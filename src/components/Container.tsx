@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { ComponentProps } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-interface ContainerProps {
-	children: React.ReactNode;
-	className?: string;
-}
+interface ContainerProps extends ComponentProps<'div'> {}
 
-export default function Container({
-	children,
-	className,
-}: ContainerProps): JSX.Element {
+export default function Container({ children, ...props }: ContainerProps) {
 	return (
 		<div
-			className={`z-0 ml-auto h-full  p-6 dark:bg-aboutBgColor sm:max-w-[75%] sm:p-[50px] ${className} text-bioBgColor dark:text-bioBorderColor`}
+			{...props}
+			className={twMerge(
+				`z-0 ml-auto h-full p-6 text-bioBgColor dark:bg-aboutBgColor dark:text-bioBorderColor sm:max-w-[80%] sm:px-8 sm:py-4`
+			)}
 		>
-			<div className="min-h-screen ">{children}</div>
+			<div className="min-h-screen">{children}</div>
 		</div>
 	);
 }

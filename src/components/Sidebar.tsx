@@ -1,47 +1,28 @@
 import React from 'react';
 import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
-import { Navbar } from './Navbar';
 import Typewriter from 'typewriter-effect';
 import SocialBar from './SocialBar';
-import { ModeToggle } from './toggles/ModeToggle';
-import LanguageToggle from './toggles/LanguageToggle';
 import { ResumeButton } from './ResumeButon';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { useTranslation } from 'react-i18next';
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { formatPhoneNumber } from '@/lib/constants/format-number';
 import useUserStore from '@/hooks/user-hooks';
+import Photo from './Photo';
+import { ModeToggle } from './toggles/ModeToggle';
+import LanguageToggle from './toggles/LanguageToggle';
 
-export default function Sidebar({ home }: { home?: boolean }) {
+export default function Sidebar() {
 	const { t } = useTranslation();
 	const { user } = useUserStore();
 
-	const photos = [
-		user.profilePicture,
-		user.whatsappImageUrl,
-		user.instagramImageUrl,
-		user.linkedinImageUrl,
-	];
 	return (
 		<div
 			className={
-				'flex h-full w-full flex-col items-center justify-center gap-8 overflow-y-auto p-[20px_12px] text-center text-bioBgColor no-underline scrollbar no-scrollbar hover:no-underline dark:text-bioBorderColor sm:fixed sm:min-h-screen ' +
-				(home
-					? 'h-screen w-full bg-mainTextColor dark:bg-bioBgColor'
-					: 'border sm:w-1/4 md:border-r-[5px]')
+				'flex h-full w-full flex-col items-center justify-center gap-8 overflow-y-auto border p-[20px_12px] text-center text-bioBgColor no-underline scrollbar no-scrollbar hover:no-underline dark:text-bioBorderColor sm:fixed sm:min-h-screen sm:w-1/5 md:border-r-[5px]'
 			}
 		>
 			<h1 className="text-[32px] font-bold">{user.name}</h1>
 
-			<Avatar className="mx-auto h-[175px] w-[175px] sm:h-28 sm:w-28">
-				<AvatarImage src={user.profilePicture} alt={`User photo`} />
-				<AvatarFallback>
-					{user.name
-						.split(' ')
-						.map((n) => n[0])
-						.join('')}
-				</AvatarFallback>
-			</Avatar>
+			<Photo />
 
 			<div className="mx-auto max-w-[100%] text-center font-bold">
 				{t('sidebar.greeting')} {user.name} {t('sidebar.am')}
@@ -67,13 +48,13 @@ export default function Sidebar({ home }: { home?: boolean }) {
 			<div className="items-center justify-center space-y-2 font-bold">
 				<p>{t('sidebar.welcome')}</p>
 			</div>
-			<div className="flex flex-col gap-2">
-				<LanguageToggle />
-				<ModeToggle />
-			</div>
-			<Navbar />
 
-			<SocialBar />
+			<div className="space-y-2">
+				<ModeToggle />
+				<LanguageToggle />
+			</div>
+
+			<SocialBar className="border-b-[2px] border-solid border-black pb-3" />
 			<div>
 				<div className="flex w-[100%] justify-center">
 					<a className="text-none flex gap-2" href={`mailto:${user.email}`}>
@@ -90,7 +71,7 @@ export default function Sidebar({ home }: { home?: boolean }) {
 					</p>
 				</div>
 			</div>
-			<ResumeButton url={user.resumeUrl} />
+			<ResumeButton />
 		</div>
 	);
 }

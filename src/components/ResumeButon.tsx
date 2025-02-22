@@ -1,16 +1,16 @@
 import React from 'react';
-import { BsJournalText } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 import CustomButton from './CustomButton';
+import { useUser } from '@/hooks/user-hooks';
+import { FiDownload } from 'react-icons/fi';
 
-export function ResumeButton({ url }: { url: string }) {
+export function ResumeButton() {
 	const { t } = useTranslation();
+	const { resumeUrl } = useUser();
 
 	return (
-		<div className="flex w-full justify-center">
-			<CustomButton icon={<BsJournalText />} className="w-[170px]" link={url}>
-				{t('resume.viewResume')}
-			</CustomButton>
-		</div>
+		<CustomButton icon={<FiDownload />} className="w-[170px]" link={resumeUrl}>
+			{t('resume.viewResume')}
+		</CustomButton>
 	);
 }

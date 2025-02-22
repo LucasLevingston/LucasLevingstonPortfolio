@@ -70,12 +70,6 @@ export function Navbar() {
 			description: t('about.certificatesDescription'),
 			id: t('about.certificatesTitle'),
 		},
-		// {
-		// 	title: t('about.recommendationsTitle'),
-		// 	href: `/about?${t('about.recommendationsTitle')}`,
-		// 	description: t('about.recommendationsDescription'),
-		// 	id: t('about.recommendationsTitle'),
-		// },
 	];
 
 	const getButtonClass = (path: string) =>
@@ -85,13 +79,13 @@ export function Navbar() {
 
 	return (
 		<NavigationMenu>
-			<NavigationMenuList>
+			<NavigationMenuList className="flex flex-col gap-2 md:flex-row">
 				<NavigationMenuItem>
 					<NavigationMenuTrigger className={getButtonClass('/about')}>
 						<Link to={'/about'}>{t('navbar.about')}</Link>
 					</NavigationMenuTrigger>
 					<NavigationMenuContent className="dark:bg-bioBgColor">
-						<ul className="grid gap-2 p-4 md:w-[400px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
+						<ul className="grid gap-8 p-4 md:w-[400px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
 							<li className="row-span-3">
 								<NavigationMenuLink asChild>
 									<Link
@@ -170,7 +164,7 @@ const ListItem = React.forwardRef<
 					{...props}
 				>
 					<div className="text-sm font-bold leading-none">{title}</div>
-					<p className="line-clamp-2 text-sm leading-snug text-black dark:text-white">
+					<p className="line-clamp-2 text-xs leading-snug text-black dark:text-white">
 						{children}
 					</p>
 				</a>
