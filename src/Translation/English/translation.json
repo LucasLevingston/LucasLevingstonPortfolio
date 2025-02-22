@@ -2,6 +2,9 @@
 	"header.fullStack": "Full-Stack Developer",
 	"header.frontEnd": "Front-End Developer",
 	"header.backEnd": "Back-End Developer",
+
+  "home.greeting": "Hello I'm",
+
   
   "about.professionalProfile": "Professional Profile",
   "about.technologiesTitle": "Hard Skills",
@@ -47,7 +50,7 @@
 	"navbar.home": "Home",
 	"navbar.projects": "Projects",
 
-  "resume.viewResume": "View Resume",
+  "resume.viewResume": "Download CV",
 
   "social.github.name": "View on GitHub",
   "social.github.role": "Full-Stack Developer",
@@ -55,7 +58,7 @@
   "social.linkedin.name": "View on LinkedIn",
   "social.linkedin.role": "Full-Stack Developer",
   
-  "social.whatsapp.label": "WhatsApp",
+  "social.whatsapp.label2": "WhatsApp",
   "social.whatsapp.message": "Contact me!",
   
   "social.instagram.name": "View on Instagram",
@@ -64,5 +67,10 @@
   "pagination.previous": "Previous",
   "pagination.next": "Next",
 
-  "technologyHoverIcon.viewDocumentation":"View Documentation"
+  "technologyHoverIcon.viewDocumentation":"View Documentation",
+
+  "stats.years": "Years of experience",
+  "stats.projectsCompleted": "Projects completed",
+  "stats.technologiesMastered": "Technologies mastered",
+  "stats.codeCommits": "Code commits"
 }

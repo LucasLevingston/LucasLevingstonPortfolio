@@ -2,6 +2,9 @@
 	"header.fullStack": "Desenvolvedor Full-Stack",
 	"header.frontEnd": "Desenvolvedor Front-End",
 	"header.backEnd": "Desenvolvedor Back-End",
+
+  "home.greeting": "Olá, meu nome é",
+
   
   "about.professionalProfile": "Perfil Profissional",
   "about.technologiesTitle": "Hard Skills",
@@ -47,7 +50,7 @@
 	"navbar.home": "Início",
 	"navbar.projects": "Projetos",
 
-  "resume.viewResume": "Ver currículo",
+  "resume.viewResume": "Baixar CV",
 
   "social.github.name": "Ver no GitHub",
   "social.github.role": "Desenvolvedor Full-Stack",
@@ -64,5 +67,10 @@
   "pagination.previous": "Anterior",
   "pagination.next": "Próximo",
 
-  "technologyHoverIcon.viewDocumentation":"Ver documentação"
+  "technologyHoverIcon.viewDocumentation":"Ver documentação",
+
+  "stats.years": "Anos de experiência",
+  "stats.projectsCompleted": "Projetos feitos",
+  "stats.technologiesMastered": "Tecnologias dominadas",
+  "stats.codeCommits": "Commits de códigos"
 }
