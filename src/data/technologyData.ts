@@ -302,6 +302,19 @@ export const technologiesDataBr: { [key: string]: TechnologyType } = {
 			'Uma linguagem de programação versátil e poderosa, conhecida por sua legibilidade e ampla gama de aplicações em desenvolvimento web, análise de dados, inteligência artificial e muito mais.',
 		link: 'https://www.python.org/',
 	},
+	reactnative: {
+		label: 'React Native',
+		value: 'reactnative',
+		description: 'Um framework para construir aplicações móveis usando React.',
+		link: 'https://reactnative.dev/',
+	},
+	expo: {
+		label: 'Expo',
+		value: 'expo',
+		description:
+			'Uma ferramenta e framework para desenvolvimento rápido e fácil de aplicações React Native.',
+		link: 'https://expo.dev/',
+	},
 };
 export const technologiesDataEn: { [key: string]: TechnologyType } = {
 	typescript: {
@@ -592,5 +605,18 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
 		description:
 			'Uma linguagem de programação versátil e poderosa, conhecida por sua legibilidade e ampla gama de aplicações em desenvolvimento web, análise de dados, inteligência artificial e muito mais.',
 		link: 'https://www.python.org/',
+	},
+	reactnative: {
+		label: 'React Native',
+		value: 'reactnative',
+		description: 'A framework for building mobile applications using React.',
+		link: 'https://reactnative.dev/',
+	},
+	expo: {
+		label: 'Expo',
+		value: 'expo',
+		description:
+			'A tool and framework for quick and easy development of React Native applications.',
+		link: 'https://expo.dev/',
 	},
 };

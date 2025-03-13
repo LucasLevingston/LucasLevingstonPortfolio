@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+
+import type React from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
@@ -6,7 +9,7 @@ import ProjectCard from '../components/ProjectsCard';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import { useTranslation } from 'react-i18next';
-import { ProjectType } from '@/types/ProjectType';
+import type { ProjectType } from '@/types/ProjectType';
 import { Toggle } from '@/components/ui/toggle';
 import { Button } from '@/components/ui/button';
 import {
@@ -35,6 +38,7 @@ const Projects: React.FC = () => {
 		searchTerm: '',
 		isFrontEnd: false,
 		isBackEnd: false,
+		isMobile: false,
 	});
 	const { user } = useUserStore();
 
@@ -69,8 +73,16 @@ const Projects: React.FC = () => {
 			const nameMatch = project.title
 				.toLowerCase()
 				.includes(filter.searchTerm.toLowerCase());
+			const mobileMatch = filter.isMobile ? project.isMobile : true;
 
-			return techMatch && imageMatch && githubMatch && deployMatch && nameMatch;
+			return (
+				techMatch &&
+				imageMatch &&
+				githubMatch &&
+				deployMatch &&
+				nameMatch &&
+				mobileMatch
+			);
 		});
 
 		setFilteredProjects(filtered);
@@ -101,6 +113,7 @@ const Projects: React.FC = () => {
 			searchTerm: '',
 			isFrontEnd: false,
 			isBackEnd: false,
+			isMobile: false,
 		});
 		const url = new URL(window.location.toString());
 		url.searchParams.delete('search');
@@ -191,6 +204,14 @@ const Projects: React.FC = () => {
 										}
 									>
 										<p>Back-End</p>
+									</Toggle>
+									<Toggle
+										pressed={filter.isMobile}
+										onPressedChange={(value) =>
+											setFilter((prev) => ({ ...prev, isMobile: value }))
+										}
+									>
+										<p>Mobile</p>
 									</Toggle>
 								</div>
 							</PopoverContent>

@@ -22,8 +22,9 @@ export default function TechnologyHoverIcon({
 			i18next.language === 'br' ? technologiesDataBr : technologiesDataEn;
 
 		const technology = technologiesData[key];
+
 		if (!technology) {
-			console.log('tecnologia não encontrada:', key);
+			console.log('Technology not found:', key);
 		}
 
 		return technology;
@@ -47,7 +48,7 @@ export default function TechnologyHoverIcon({
 						href={technologyData?.link}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
+						className="text-azulBebe pt-3 text-sm font-semibold hover:underline"
 					>
 						{t('technologyHoverIcon.viewDocumentation')}{' '}
 					</a>

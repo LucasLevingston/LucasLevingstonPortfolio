@@ -27,7 +27,7 @@ export default function SectionItem({
 					</Avatar>
 				)}
 				<div className="flex flex-col">
-					<p>{title}</p>
+					<div>{title}</div>
 					{recommendation && (
 						<p className="text-sm">{recommendation.position}</p>
 					)}
@@ -36,7 +36,7 @@ export default function SectionItem({
 					<HoverCard>
 						<HoverCardTrigger asChild>
 							<a
-								className="text-[30px]  transition-[1s] hover:text-mainColor "
+								className="text-[30px] transition-[1s] hover:text-mainColor"
 								href={recommendation.linkedinUrl}
 								target="_blank"
 								rel="noopener noreferrer"
@@ -61,7 +61,7 @@ export default function SectionItem({
 										href={recommendation.linkedinUrl}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="pt-3 text-sm font-semibold text-azulBebe hover:underline"
+										className="text-azulBebe pt-3 text-sm font-semibold hover:underline"
 									>
 										{t('social.linkedin.name')}
 									</a>

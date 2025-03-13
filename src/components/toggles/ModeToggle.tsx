@@ -17,17 +17,19 @@ export function ModeToggle() {
 
 	return (
 		<div className="flex items-center space-x-2">
-			<Switch
-				id="theme-toggle"
-				checked={theme === 'dark'}
-				onCheckedChange={handleToggle}
-			/>
-			<Label htmlFor="theme-toggle">
-				{theme === 'dark' ? (
-					<Moon className="h-4 w-4" />
-				) : (
-					<Sun className="h-4 w-4" />
-				)}
+			<Label htmlFor="language-toggle" className="flex items-center gap-2">
+				<Switch
+					id="theme-toggle"
+					checked={theme === 'dark'}
+					onCheckedChange={handleToggle}
+				/>
+				<Label htmlFor="theme-toggle">
+					{theme === 'dark' ? (
+						<Moon className="size-[25px]" />
+					) : (
+						<Sun className="size-[25px]" />
+					)}
+				</Label>
 			</Label>
 		</div>
 	);

@@ -21,6 +21,7 @@ import TechnologiesSection from './TechnologiesSection';
 import CarouselPagination from './CarouselPagination';
 import CustomButton from './CustomButton';
 import starIcon from '@/assets/svgs/star.svg';
+import PhoneFrame from './PhoneFrame';
 
 interface ProjectCardProps {
 	project: ProjectType;
@@ -33,7 +34,16 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({
-	project: { title, description, technologies, images, github, link, favorite },
+	project: {
+		title,
+		description,
+		technologies,
+		images,
+		github,
+		link,
+		favorite,
+		isMobile,
+	},
 	id,
 }: ProjectCardProps) {
 	const [currentImage, setCurrentImage] = useState(0);
@@ -103,16 +113,31 @@ export default function ProjectCard({
 
 							{images && (
 								<Carousel setApi={setApi}>
-									<CarouselContent className="h-[200px] w-full sm:h-[576px] sm:w-[1024px]">
-										{images.map((image, index) => (
-											<CarouselItem key={index}>
-												<img
-													src={image}
-													alt={`Imagem ${index}`}
-													className="h-full w-full rounded-2xl"
-												/>
-											</CarouselItem>
-										))}
+									<CarouselContent>
+										{images.map((image, index) =>
+											isMobile ? (
+												<CarouselItem
+													key={index}
+													className="flex justify-center"
+												>
+													<PhoneFrame>
+														<img
+															src={image || '/placeholder.svg'}
+															alt={`Imagem ${index}`}
+															className="h-full w-full object-cover"
+														/>
+													</PhoneFrame>
+												</CarouselItem>
+											) : (
+												<CarouselItem key={index}>
+													<img
+														src={image || '/placeholder.svg'}
+														alt={`Imagem ${index}`}
+														className="h-full w-full rounded-2xl sm:h-[576px] sm:w-[1024px]"
+													/>
+												</CarouselItem>
+											)
+										)}
 									</CarouselContent>
 									<div className="py-2 text-center text-sm text-muted-foreground">
 										<CarouselPagination

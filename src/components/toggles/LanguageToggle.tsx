@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import i18n from '@/i18n';
@@ -23,11 +23,11 @@ const LanguageToggle: React.FC = () => {
 				<span>
 					{i18n.language === 'en' ? (
 						<span className="flex items-center gap-2">
-							<span className="fi fi-us fis rounded-full text-[30px]"></span>
+							<span className="fi fi-us fis rounded-full text-[25px]"></span>
 						</span>
 					) : (
 						<span className="flex items-center gap-2">
-							<span className="fi fi-br fis rounded-full text-[30px]"></span>
+							<span className="fi fi-br fis rounded-full text-[25px]"></span>
 						</span>
 					)}
 				</span>

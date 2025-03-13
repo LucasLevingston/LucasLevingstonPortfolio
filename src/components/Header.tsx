@@ -7,7 +7,6 @@ import { Navbar } from './Navbar';
 
 export default function Header() {
 	const { i18n } = useTranslation();
-	const { user } = useUserStore();
 
 	useEffect(() => {
 		i18n.changeLanguage(i18n.language);

@@ -6,4 +6,5 @@ export interface ProjectType {
 	link?: string;
 	favorite?: boolean;
 	technologies: string[];
+	isMobile?: boolean;
 }

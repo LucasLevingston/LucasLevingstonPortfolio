@@ -1,3 +1,5 @@
+'use client';
+
 import { Link } from 'react-router-dom';
 import {
 	NavigationMenu,
@@ -8,6 +10,8 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
@@ -77,74 +81,104 @@ export function Navbar() {
 			activeButton === path ? 'bg-transparent' : 'bg-mainColor'
 		} w-[90px] rounded-[5px] border-[2px] border-mainColor p-0 px-2 transition-[0.5s] font-bold`;
 
+	const navigationContent = (
+		<NavigationMenuList className="flex flex-row gap-2">
+			<NavigationMenuItem>
+				<NavigationMenuTrigger className={getButtonClass('/about')}>
+					<Link to={'/about'}>{t('navbar.about')}</Link>
+				</NavigationMenuTrigger>
+				<NavigationMenuContent className="dark:bg-bioBgColor">
+					<ul className="grid gap-8 p-4 md:w-[400px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
+						<li className="row-span-3">
+							<NavigationMenuLink asChild>
+								<Link
+									className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+									to={`/about?${t('about.technologiesTitle')}`}
+								>
+									<img
+										src={Logo || '/placeholder.svg'}
+										className="rounded-full"
+									/>
+									<div className="mb-2 mt-4 text-lg font-medium">
+										{t('about.technologiesTitle')}
+									</div>
+									<p className="text-sm leading-tight text-muted-foreground">
+										{t('about.technologiesDescription')}
+									</p>
+								</Link>
+							</NavigationMenuLink>
+						</li>
+						{aboutSections.map((section) => (
+							<ListItem
+								className="bg-main border-[2px] border-mainColor bg-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
+								key={section.title}
+								title={section.title}
+								href="/about?"
+							>
+								{section.description}
+							</ListItem>
+						))}
+					</ul>
+				</NavigationMenuContent>
+			</NavigationMenuItem>
+			<NavigationMenuItem>
+				<NavigationMenuLink
+					href="/"
+					className={
+						'font-bold' + navigationMenuTriggerStyle() + getButtonClass('/')
+					}
+				>
+					{t('navbar.home')}
+				</NavigationMenuLink>
+			</NavigationMenuItem>
+			<NavigationMenuItem>
+				<NavigationMenuTrigger className={getButtonClass('/projects')}>
+					<Link to="/projects">{t('navbar.projects')}</Link>
+				</NavigationMenuTrigger>
+				<NavigationMenuContent className="dark:bg-bioBgColor">
+					<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[300px]">
+						{project.map((project) => (
+							<ListItem
+								key={project.title}
+								href="/projects?search="
+								title={project.title}
+							>
+								{project.description}
+							</ListItem>
+						))}
+					</ul>
+				</NavigationMenuContent>
+			</NavigationMenuItem>
+		</NavigationMenuList>
+	);
+
 	return (
-		<NavigationMenu>
-			<NavigationMenuList className="flex flex-col gap-2 md:flex-row">
-				<NavigationMenuItem>
-					<NavigationMenuTrigger className={getButtonClass('/about')}>
-						<Link to={'/about'}>{t('navbar.about')}</Link>
-					</NavigationMenuTrigger>
-					<NavigationMenuContent className="dark:bg-bioBgColor">
-						<ul className="grid gap-8 p-4 md:w-[400px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
-							<li className="row-span-3">
-								<NavigationMenuLink asChild>
-									<Link
-										className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-										to={`/about?${t('about.technologiesTitle')}`}
-									>
-										<img src={Logo} className="rounded-full" />
-										<div className="mb-2 mt-4 text-lg font-medium">
-											{t('about.technologiesTitle')}
-										</div>
-										<p className="text-sm leading-tight text-muted-foreground">
-											{t('about.technologiesDescription')}
-										</p>
-									</Link>
-								</NavigationMenuLink>
-							</li>
-							{aboutSections.map((section) => (
-								<ListItem
-									className="bg-main border-[2px] border-mainColor bg-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
-									key={section.title}
-									title={section.title}
-									href="/about?"
-								>
-									{section.description}
-								</ListItem>
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<NavigationMenuLink
-						href="/"
-						className={
-							'font-bold' + navigationMenuTriggerStyle() + getButtonClass('/')
-						}
+		<>
+			<div className="hidden md:block">
+				<NavigationMenu>{navigationContent}</NavigationMenu>
+			</div>
+
+			<div className="md:hidden">
+				<Sheet>
+					<SheetTrigger asChild>
+						<button className="flex h-10 w-10 items-center justify-center rounded-md border border-mainColor bg-mainColor text-white hover:bg-transparent hover:text-mainColor">
+							<Menu className="h-6 w-6" />
+							<span className="sr-only">Toggle menu</span>
+						</button>
+					</SheetTrigger>
+					<SheetContent
+						side="right"
+						className="w-[80%] dark:bg-bioBgColor sm:w-[350px]"
 					>
-						{t('navbar.home')}
-					</NavigationMenuLink>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<NavigationMenuTrigger className={getButtonClass('/projects')}>
-						<Link to="/projects">{t('navbar.projects')}</Link>
-					</NavigationMenuTrigger>
-					<NavigationMenuContent className="dark:bg-bioBgColor">
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[300px]">
-							{project.map((project) => (
-								<ListItem
-									key={project.title}
-									href="/projects?search="
-									title={project.title}
-								>
-									{project.description}
-								</ListItem>
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
-			</NavigationMenuList>
-		</NavigationMenu>
+						<div className="mt-6">
+							<NavigationMenu className="w-full">
+								{navigationContent}
+							</NavigationMenu>
+						</div>
+					</SheetContent>
+				</Sheet>
+			</div>
+		</>
 	);
 }
 

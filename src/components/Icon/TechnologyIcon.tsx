@@ -3,6 +3,8 @@ import { DiScrum } from 'react-icons/di';
 import nextAuthSVG from '@/assets/svgs/next-auth.svg';
 import shadcnSVG from '@/assets/svgs/shadcn.svg';
 import jwtSVG from '@/assets/svgs/jwt.svg';
+import reactNativeSVG from '@/assets/svgs/reactnative.svg';
+import expoSVG from '@/assets/svgs/expo.svg';
 
 interface TechnologyIconProps {
 	technology: string;
@@ -30,6 +32,16 @@ export default function TechnologyIcon({
 				return {
 					iconClassName: `devicon-${technology}-plain-wordmark colored`,
 				};
+			case 'reactnative':
+				return {
+					svg: reactNativeSVG,
+					iconClassName: 'dark:invert',
+				};
+			case 'expo':
+				return {
+					svg: expoSVG,
+					iconClassName: 'dark:invert',
+				};
 			case 'express':
 			case 'github':
 			case 'prisma':
@@ -47,7 +59,7 @@ export default function TechnologyIcon({
 			case 'rest':
 				return {
 					element: (
-						<p className="text-lightBlue cursor-default text-xl font-bold">
+						<p className="cursor-default text-xl font-bold text-lightBlue">
 							REST
 						</p>
 					),

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './ui/button';
+import { twMerge } from 'tailwind-merge';
 
 interface CustomButtonProps {
 	icon?: React.ReactNode;
@@ -18,7 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 		'flex w-[150px] h-[50px] items-center  space-x-1 rounded-md border-[3px] border-solid border-mainColor bg-mainColor p-3 text-[13px] font-bold text-mainTextColor no-underline transition-[0.5s] hover:bg-transparent hover:text-mainColor';
 
 	return (
-		<Button className={defaultClassNameButton + className}>
+		<Button className={twMerge(defaultClassNameButton, className)}>
 			<a
 				href={link}
 				target="_blank"

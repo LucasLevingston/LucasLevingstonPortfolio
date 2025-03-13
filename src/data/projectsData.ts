@@ -46,29 +46,34 @@ import consultaFacil4 from '../assets/consultafacil4.png';
 import aneis1 from '../assets/Aneis1.png';
 import aneis2 from '../assets/Aneis2.png';
 import aneis3 from '../assets/Aneis3.png';
+import nerby1 from '@/assets/Nearby1.png';
+import nerby2 from '@/assets/Nearby2.png';
+import nerby3 from '@/assets/Nearby3.png';
 import { ProjectType } from '../types/ProjectType';
 
 export const projectsDataBr: ProjectType[] = [
 	{
-		title: 'CRM Splen',
+		title: 'GymEvolution',
 		favorite: true,
 		description:
-			'CRM feito no estágio na Splendore a fim de venda de graduações, pós-graduações, etc. Foi utilizada a metodologia Scrum para o caminhar do projeto.',
+			'GymEvolution Se trata de um sistema para evolução na musculação, realacionados a dieta e treino, com gráficos, planilhas de treinos, acompanhamento nutricional e pessoal.',
+		images: [GymEvolution1, GymEvolution2, GymEvolution3],
 		technologies: [
-			'typescript',
 			'react',
+			'typescript',
 			'nodejs',
-			'tailwindcss',
-			'mongodb',
+			'fastify',
 			'vite',
-			'express',
-			'docker',
+			'tailwindcss',
 			'prisma',
+			'swagger',
+			'sqlite',
+			'eslint',
+			'postman',
 			'git',
 			'github',
-			'postman',
-			'scrum',
 		],
+		github: 'https://github.com/LucasLevingston/gymevolution',
 	},
 	{
 		title: 'Consulta Fácil',
@@ -95,6 +100,28 @@ export const projectsDataBr: ProjectType[] = [
 		link: 'https://consulta-facil-next.vercel.app/',
 		github: 'https://github.com/LucasLevingston/consultaFacil',
 	},
+	{
+		title: 'CRM Splen',
+		favorite: true,
+		description:
+			'CRM feito no estágio na Splendore a fim de venda de graduações, pós-graduações, etc. Foi utilizada a metodologia Scrum para o caminhar do projeto.',
+		technologies: [
+			'typescript',
+			'react',
+			'nodejs',
+			'tailwindcss',
+			'mongodb',
+			'vite',
+			'express',
+			'docker',
+			'prisma',
+			'git',
+			'github',
+			'postman',
+			'scrum',
+		],
+	},
+
 	{
 		title: 'Anéis de Poder',
 		favorite: true,
@@ -123,6 +150,15 @@ export const projectsDataBr: ProjectType[] = [
 		github: 'https://github.com/LucasLevingston/AneisDePoder',
 	},
 	{
+		title: 'Nearby - Mobile',
+		description:
+			'Sistema mobile de recomendação de restaurantes. Desenvolvido com React Native, aplicação dos conceitos de Propriedades, Estados e Componentes,tipagem com Typescript, Expo Framework, interface com StyleSheet, roteamento por arquivos com Expo Router, consumo de API Node.js,Bottom Sheet, leitura de QRCode com câmera, exibição de mapa.',
+		images: [nerby1, nerby2, nerby3],
+		github: 'https://github.com/LucasLevingston/Nearby',
+		technologies: ['reactnative', 'typescript', 'expo', 'css3'],
+		isMobile: true,
+	},
+	{
 		title: 'Verbo Hub',
 		favorite: true,
 		description:
@@ -145,29 +181,7 @@ export const projectsDataBr: ProjectType[] = [
 			'github',
 		],
 	},
-	{
-		title: 'GymEvolution',
-		favorite: true,
-		description:
-			'GymEvolution Se trata de um sistema para evolução na musculação, realacionados a dieta e treino, com gráficos, planilhas de treinos, acompanhamento nutricional e pessoal.',
-		images: [GymEvolution1, GymEvolution2, GymEvolution3],
-		technologies: [
-			'react',
-			'typescript',
-			'nodejs',
-			'fastify',
-			'vite',
-			'tailwindcss',
-			'prisma',
-			'swagger',
-			'sqlite',
-			'eslint',
-			'postman',
-			'git',
-			'github',
-		],
-		github: 'https://github.com/LucasLevingston/gymevolution',
-	},
+
 	{
 		title: 'VI Sercomp',
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
@@ -374,25 +388,27 @@ export const projectsDataBr: ProjectType[] = [
 
 export const projectsDataEn: ProjectType[] = [
 	{
-		title: 'CRM Splen',
+		title: 'GymEvolution',
 		favorite: true,
 		description:
-			'CRM developed during my internship at Splendore for selling undergraduate and graduate programs. Scrum methodology was used throughout the project.',
+			'GymEvolution is a system for fitness evolution related to diet and training, featuring graphs, workout sheets, and nutritional and personal tracking.',
+		images: [GymEvolution1, GymEvolution2, GymEvolution3],
 		technologies: [
-			'typescript',
 			'react',
+			'typescript',
 			'nodejs',
-			'tailwindcss',
-			'mongodb',
+			'fastify',
 			'vite',
-			'express',
-			'docker',
+			'tailwindcss',
 			'prisma',
+			'swagger',
+			'sqlite',
+			'eslint',
+			'postman',
 			'git',
 			'github',
-			'postman',
-			'scrum',
 		],
+		github: 'https://github.com/LucasLevingston/gymevolution',
 	},
 	{
 		title: 'Consulta Fácil',
@@ -419,6 +435,28 @@ export const projectsDataEn: ProjectType[] = [
 		link: 'https://consulta-facil-next.vercel.app/',
 		github: 'https://github.com/LucasLevingston/consultaFacil',
 	},
+	{
+		title: 'CRM Splen',
+		favorite: true,
+		description:
+			'CRM developed during my internship at Splendore for selling undergraduate and graduate programs. Scrum methodology was used throughout the project.',
+		technologies: [
+			'typescript',
+			'react',
+			'nodejs',
+			'tailwindcss',
+			'mongodb',
+			'vite',
+			'express',
+			'docker',
+			'prisma',
+			'git',
+			'github',
+			'postman',
+			'scrum',
+		],
+	},
+
 	{
 		title: 'Rings of Power',
 		favorite: true,
@@ -447,6 +485,15 @@ export const projectsDataEn: ProjectType[] = [
 		github: 'https://github.com/LucasLevingston/AneisDePoder',
 	},
 	{
+		title: 'Nearby - Mobile',
+		description:
+			'Mobile restaurant recommendation system. Developed with React Native, utilizing the concepts of Props, State, and Components, typed with TypeScript, using Expo Framework, styled with StyleSheet, routing through files with Expo Router, consuming a Node.js API, implementing Bottom Sheet, reading QR Codes with the camera, and displaying maps.',
+		images: [nerby1, nerby2, nerby3],
+		github: 'https://github.com/LucasLevingston/Nearby',
+		technologies: ['reactnative', 'typescript', 'expo', 'css3'],
+		isMobile: true,
+	},
+	{
 		title: 'Verbo Hub',
 		favorite: true,
 		description:
@@ -469,29 +516,7 @@ export const projectsDataEn: ProjectType[] = [
 			'github',
 		],
 	},
-	{
-		title: 'GymEvolution',
-		favorite: true,
-		description:
-			'GymEvolution is a system for fitness evolution related to diet and training, featuring graphs, workout sheets, and nutritional and personal tracking.',
-		images: [GymEvolution1, GymEvolution2, GymEvolution3],
-		technologies: [
-			'react',
-			'typescript',
-			'nodejs',
-			'fastify',
-			'vite',
-			'tailwindcss',
-			'prisma',
-			'swagger',
-			'sqlite',
-			'eslint',
-			'postman',
-			'git',
-			'github',
-		],
-		github: 'https://github.com/LucasLevingston/gymevolution',
-	},
+
 	{
 		title: 'VI Sercomp',
 		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],

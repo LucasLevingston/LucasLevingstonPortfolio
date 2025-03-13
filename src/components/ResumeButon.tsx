@@ -9,7 +9,7 @@ export function ResumeButton() {
 	const { resumeUrl } = useUser();
 
 	return (
-		<CustomButton icon={<FiDownload />} className="w-[170px]" link={resumeUrl}>
+		<CustomButton icon={<FiDownload />} className="w-[150px]" link={resumeUrl}>
 			{t('resume.viewResume')}
 		</CustomButton>
 	);
