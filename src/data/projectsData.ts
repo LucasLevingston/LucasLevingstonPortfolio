@@ -72,8 +72,13 @@ export const projectsDataBr: ProjectType[] = [
 			'postman',
 			'git',
 			'github',
+			'jwt',
+			'rest',
+			'shadcn',
+			'zod',
 		],
-		github: 'https://github.com/LucasLevingston/gymevolution',
+		frontEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolution',
+		backEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolutionAPI',
 	},
 	{
 		title: 'Consulta Fácil',
@@ -98,7 +103,7 @@ export const projectsDataBr: ProjectType[] = [
 		],
 		images: [consultaFacil1, consultaFacil2, consultaFacil3, consultaFacil4],
 		link: 'https://consulta-facil-next.vercel.app/',
-		github: 'https://github.com/LucasLevingston/consultaFacil',
+		repositoryUrl: 'https://github.com/LucasLevingston/consultaFacil',
 	},
 	{
 		title: 'CRM Splen',
@@ -147,14 +152,14 @@ export const projectsDataBr: ProjectType[] = [
 			'vitest',
 		],
 		images: [aneis1, aneis2, aneis3],
-		github: 'https://github.com/LucasLevingston/AneisDePoder',
+		repositoryUrl: 'https://github.com/LucasLevingston/AneisDePoder',
 	},
 	{
 		title: 'Nearby - Mobile',
 		description:
 			'Sistema mobile de recomendação de restaurantes. Desenvolvido com React Native, aplicação dos conceitos de Propriedades, Estados e Componentes,tipagem com Typescript, Expo Framework, interface com StyleSheet, roteamento por arquivos com Expo Router, consumo de API Node.js,Bottom Sheet, leitura de QRCode com câmera, exibição de mapa.',
 		images: [nerby1, nerby2, nerby3],
-		github: 'https://github.com/LucasLevingston/Nearby',
+		repositoryUrl: 'https://github.com/LucasLevingston/Nearby',
 		technologies: ['reactnative', 'typescript', 'expo', 'css3'],
 		isMobile: true,
 	},
@@ -204,14 +209,14 @@ export const projectsDataBr: ProjectType[] = [
 			'git',
 			'github',
 		],
-		github: 'https://github.com/LucasLevingston/taugor-project',
+		repositoryUrl: 'https://github.com/LucasLevingston/taugor-project',
 	},
 	{
 		title: 'Caputeeno',
 		description:
 			'Este projeto consiste em uma aplicação front-end em ReactJS, onde me realizei um desafio visto no youtube, desenvolvendo o Front-End de um E-commerce. Mudei as tecnologias utilizadas no desafio e utilizei as que uso no meu dia a dia, assim com um sistema 100% desenvolvido por mim.',
 		images: [caputeeno1, caputeeno2, caputeeno3],
-		github: 'https://github.com/LucasLevingston/capputeeno',
+		repositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
 		technologies: [
 			'vite',
 			'react',
@@ -225,7 +230,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Plann.er',
 		description:
 			'Plann.er é um sistema de backend para a organização de viagens. Este projeto tem como objetivo facilitar a criação e o gerenciamento de viagens, permitindo que os usuários adicionem destinos, datas, participantes e outras informações importantes.',
-		github: 'https://github.com/LucasLevingston/planner',
+		repositoryUrl: 'https://github.com/LucasLevingston/planner',
 		technologies: [
 			'typescript',
 			'zod',
@@ -240,7 +245,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'FocalPoint',
 		description:
 			'Um sistema de gerenciamento de tarefas foi desenvolvido utilizando React para criar uma interface interativa e responsiva. O estado da aplicação é gerenciado com Zustand, o design é estilizado com Tailwind CSS e Shadcn, Zod valida os dados e Axios facilita a comunicação com APIs.',
-		github: 'https://github.com/LucasLevingston/focalPoint',
+		repositoryUrl: 'https://github.com/LucasLevingston/focalPoint',
 		technologies: [
 			'typescript',
 			'react',
@@ -256,7 +261,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Gerenciamento Escolar',
 		description:
 			'Um sistema de gerenciamento de notas escolares, feito com react, material ui, bootstrap, mockable para dados fictícios e axios para consumo.',
-		github: 'https://github.com/LucasLevingston/gerenciamento-escolar',
+		repositoryUrl: 'https://github.com/LucasLevingston/gerenciamento-escolar',
 		technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
 	},
 	{
@@ -264,7 +269,7 @@ export const projectsDataBr: ProjectType[] = [
 		description:
 			'Este projeto consiste em uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.',
 		images: [PIW1, PIW2, PIW3],
-		github: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
+		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
 		technologies: [
 			'vite',
 			'react',
@@ -278,7 +283,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Blog Soft',
 		description:
 			'Desenvolvimento de um blog para estudos. Consiste em um desafio de determinada vaga de emprego para testes de conhecimentos. Feito front e back-end.',
-		github: 'https://github.com/LucasLevingston/Blog',
+		repositoryUrl: 'https://github.com/LucasLevingston/Blog',
 		technologies: [
 			'react',
 			'typescript',
@@ -300,7 +305,7 @@ export const projectsDataBr: ProjectType[] = [
 		description:
 			'Este projeto no consiste em uma aplicação back-end em Node.js, aplicação dos conceitos de API REST, utilizando TypeScript, Fastify como framework, integração do Prisma ORM + SQLite e Zod para validação de dados.',
 		images: [PiwNode1, PiwNode2, PiwNode3],
-		github: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
+		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
 		technologies: [
 			'typescript',
 			'nodejs',
@@ -315,7 +320,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Threads Clone',
 		description: '	O Threads clone é um projeto do clone do site Threads. ',
 		images: [T1, T2, T3],
-		github: 'https://github.com/LucasLevingston/threads_app',
+		repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
 		link: 'https://threads-app-nextjs13.vercel.app/',
 		technologies: [
 			'react',
@@ -331,7 +336,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Spotify Clone',
 		description: '	O Spotify clone é um projeto do clone do site Spotify.',
 		images: [SP2, SP3, SP1],
-		github: 'https://github.com/LucasLevingston/spotify-clone',
+		repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
 		link: 'https://spotify-nextjs13.vercel.app/',
 		technologies: [
 			'react',
@@ -348,7 +353,7 @@ export const projectsDataBr: ProjectType[] = [
 		description:
 			'O Flexibble é uma aplicação web que tem como objetivo ser uma plataforma colaborativa para entusiastas da programação mostrarem, colaborarem e descobrirem projetos de programação.',
 		images: [F3, F2, F1],
-		github: 'https://github.com/LucasLevingston/grafbase_Flexibble',
+		repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
 		link: 'https://flexibble-nexjs13.vercel.app/',
 		technologies: [
 			'react',
@@ -365,7 +370,8 @@ export const projectsDataBr: ProjectType[] = [
 		description:
 			'Como forma de aprendizado, desenvolvi meu portfólio  utilizando o framework react. Utilizando a linguagem TypeScript e o Tailwind CSS para estilização. Foi meu primeiro contato com react e o pontapé para projetos futuros.',
 		images: [MP1, MP2, MP3],
-		github: 'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
+		repositoryUrl:
+			'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
 		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
 	},
 	{
@@ -373,7 +379,7 @@ export const projectsDataBr: ProjectType[] = [
 		description:
 			'Campo minado foi um projeto na linguagem Java de um jogo já existente, onde o objetivo do jogo é o usuário abrir todos os campos do jogo sem abrir nenhum campo que esteja minado, caso ele abra, irá perder o jogo. Para a abertura de campos, utilizei o padrão observer. Quando tem um campo que esteja minado, os campos vizinhos irão avisar que tem entre 1 e 4 campos minados dentre os seus vizinhos. Com isso, abrindo campo por campo, até completar o jogo. Na parte gráfica utilizei o Jbutton, onde cada campo representa um botão. Utilizei a biblioteca do JUnit para os testes da aplicação.',
 		images: [CM1, CM2, CM3],
-		github: 'https://github.com/LucasLevingston/Campo_Minado',
+		repositoryUrl: 'https://github.com/LucasLevingston/Campo_Minado',
 		technologies: ['java'],
 	},
 	{
@@ -381,7 +387,7 @@ export const projectsDataBr: ProjectType[] = [
 		description:
 			'Calculadora em Java utilizando o padrão Observer e orientação a objetos, com interface gráfica Swing e suporte para adição, subtração, multiplicação e divisão. Aplicação modular e interativa, atualizando a tela em tempo real. Exemplo de código organizado e habilidades em desenvolvimento Java.',
 		images: [CALC1, CALC2, CALC3],
-		github: 'https://github.com/LucasLevingston/Calculadora.git',
+		repositoryUrl: 'https://github.com/LucasLevingston/Calculadora.git',
 		technologies: ['java'],
 	},
 ];
@@ -407,8 +413,13 @@ export const projectsDataEn: ProjectType[] = [
 			'postman',
 			'git',
 			'github',
+			'jwt',
+			'rest',
+			'shadcn',
+			'zod',
 		],
-		github: 'https://github.com/LucasLevingston/gymevolution',
+		frontEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolution',
+		backEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolutionAPI',
 	},
 	{
 		title: 'Consulta Fácil',
@@ -433,7 +444,7 @@ export const projectsDataEn: ProjectType[] = [
 		],
 		images: [consultaFacil1, consultaFacil2, consultaFacil3, consultaFacil4],
 		link: 'https://consulta-facil-next.vercel.app/',
-		github: 'https://github.com/LucasLevingston/consultaFacil',
+		repositoryUrl: 'https://github.com/LucasLevingston/consultaFacil',
 	},
 	{
 		title: 'CRM Splen',
@@ -482,14 +493,14 @@ export const projectsDataEn: ProjectType[] = [
 			'vitest',
 		],
 		images: [aneis1, aneis2, aneis3],
-		github: 'https://github.com/LucasLevingston/AneisDePoder',
+		repositoryUrl: 'https://github.com/LucasLevingston/AneisDePoder',
 	},
 	{
 		title: 'Nearby - Mobile',
 		description:
 			'Mobile restaurant recommendation system. Developed with React Native, utilizing the concepts of Props, State, and Components, typed with TypeScript, using Expo Framework, styled with StyleSheet, routing through files with Expo Router, consuming a Node.js API, implementing Bottom Sheet, reading QR Codes with the camera, and displaying maps.',
 		images: [nerby1, nerby2, nerby3],
-		github: 'https://github.com/LucasLevingston/Nearby',
+		repositoryUrl: 'https://github.com/LucasLevingston/Nearby',
 		technologies: ['reactnative', 'typescript', 'expo', 'css3'],
 		isMobile: true,
 	},
@@ -539,14 +550,14 @@ export const projectsDataEn: ProjectType[] = [
 			'git',
 			'github',
 		],
-		github: 'https://github.com/LucasLevingston/taugor-project',
+		repositoryUrl: 'https://github.com/LucasLevingston/taugor-project',
 	},
 	{
 		title: 'Caputeeno',
 		description:
 			'This project consists of a front-end application in ReactJS, based on a challenge seen on YouTube, developing the Front-End of an E-commerce. I changed the technologies used in the challenge to those I use daily, thus creating a 100% self-developed system.',
 		images: [caputeeno1, caputeeno2, caputeeno3],
-		github: 'https://github.com/LucasLevingston/capputeeno',
+		repositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
 		technologies: [
 			'vite',
 			'react',
@@ -560,7 +571,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'Plann.er',
 		description:
 			'Plann.er is a backend system for organizing trips. This project aims to facilitate the creation and management of trips, allowing users to add destinations, dates, participants, and other important information.',
-		github: 'https://github.com/LucasLevingston/planner',
+		repositoryUrl: 'https://github.com/LucasLevingston/planner',
 		technologies: [
 			'typescript',
 			'zod',
@@ -575,7 +586,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'FocalPoint',
 		description:
 			'A task management system developed using React to create an interactive and responsive interface. The application state is managed with Zustand, the design is styled with Tailwind CSS and Shadcn, Zod validates the data, and Axios facilitates communication with APIs.',
-		github: 'https://github.com/LucasLevingston/focalPoint',
+		repositoryUrl: 'https://github.com/LucasLevingston/focalPoint',
 		technologies: [
 			'typescript',
 			'react',
@@ -591,7 +602,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'School Management',
 		description:
 			'A system for managing school grades, built with React, Material UI, Bootstrap, Mockable for fictional data, and Axios for consumption.',
-		github: 'https://github.com/LucasLevingston/gerenciamento-escolar',
+		repositoryUrl: 'https://github.com/LucasLevingston/gerenciamento-escolar',
 		technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
 	},
 	{
@@ -599,7 +610,7 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'This project consists of a front-end application in ReactJS, applying the concepts of Properties, States, and Components, with TypeScript typing, tooling with Vite, responsive interface with TailwindCSS, consuming a Node.js API, and using URL states.',
 		images: [PIW1, PIW2, PIW3],
-		github: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
+		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
 		technologies: [
 			'vite',
 			'react',
@@ -613,7 +624,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'Blog Soft',
 		description:
 			'Development of a blog for studies. This consists of a challenge for a job application to test knowledge. Both front and back-end were developed.',
-		github: 'https://github.com/LucasLevingston/Blog',
+		repositoryUrl: 'https://github.com/LucasLevingston/Blog',
 		technologies: [
 			'react',
 			'typescript',
@@ -635,7 +646,7 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'This project consists of a back-end application in Node.js, applying the concepts of REST API, using TypeScript, Fastify as the framework, integrating Prisma ORM + SQLite, and Zod for data validation.',
 		images: [PiwNode1, PiwNode2, PiwNode3],
-		github: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
+		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
 		technologies: [
 			'typescript',
 			'nodejs',
@@ -651,7 +662,7 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'The Threads clone is a project that replicates the Threads website.',
 		images: [T1, T2, T3],
-		github: 'https://github.com/LucasLevingston/threads_app',
+		repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
 		link: 'https://threads-app-nextjs13.vercel.app/',
 		technologies: [
 			'react',
@@ -668,7 +679,7 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'The Spotify clone is a project that replicates the Spotify website.',
 		images: [SP2, SP3, SP1],
-		github: 'https://github.com/LucasLevingston/spotify-clone',
+		repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
 		link: 'https://spotify-nextjs13.vercel.app/',
 		technologies: [
 			'react',
@@ -685,7 +696,7 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'Flexibble is a web application aimed at being a collaborative platform for programming enthusiasts to showcase, collaborate, and discover programming projects.',
 		images: [F3, F2, F1],
-		github: 'https://github.com/LucasLevingston/grafbase_Flexibble',
+		repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
 		link: 'https://flexibble-nexjs13.vercel.app/',
 		technologies: [
 			'react',
@@ -702,7 +713,8 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'As a learning experience, I developed my portfolio using the React framework. I used TypeScript and Tailwind CSS for styling. This was my first contact with React and the starting point for future projects.',
 		images: [MP1, MP2, MP3],
-		github: 'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
+		repositoryUrl:
+			'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
 		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
 	},
 	{
@@ -710,7 +722,7 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'Minesweeper was a project in Java based on an existing game where the goal is for the user to open all fields without triggering any mines. I used the observer pattern for field openings. When a field is mined, adjacent fields will indicate how many mines are nearby. Thus, by opening each field, the game can be completed. The graphical part used JButton, where each field represents a button. I used the JUnit library for application testing.',
 		images: [CM1, CM2, CM3],
-		github: 'https://github.com/LucasLevingston/Campo_Minado',
+		repositoryUrl: 'https://github.com/LucasLevingston/Campo_Minado',
 		technologies: ['java'],
 	},
 	{
@@ -718,7 +730,7 @@ export const projectsDataEn: ProjectType[] = [
 		description:
 			'Calculator in Java using the Observer pattern and object-oriented principles, featuring a Swing GUI and support for addition, subtraction, multiplication, and division. A modular, interactive application that updates the display in real time. An example of organized code and Java development skills.',
 		images: [CALC1, CALC2, CALC3],
-		github: 'https://github.com/LucasLevingston/Calculadora.git',
+		repositoryUrl: 'https://github.com/LucasLevingston/Calculadora.git',
 		technologies: ['java'],
 	},
 ];

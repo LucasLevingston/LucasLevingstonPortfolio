@@ -42,11 +42,13 @@
 	"projectCard.technologiesUsed": "Tecnologias Utilizadas",
 	"projectCard.viewGitHub": "Ver GitHub",
 	"projectCard.visitSite": "Visitar Site",
+  "projectCard.viewFrontEndRepo": "Repositório Front-End",
+  "projectCard.viewBackEndRepo": "Repositório Back-End",
+  
   
 	"sidebar.greeting": "Olá, meu nome é",
   "sidebar.am": "e eu sou",
 	"sidebar.welcome": "Seja bem-vindo!",
-
 	"sidebar.role.fullStack": "Desenvolvedor Full-Stack",
 	"sidebar.role.frontEnd": "Desenvolvedor Front-End",
 	"sidebar.role.backEnd": "Desenvolvedor Back-End",

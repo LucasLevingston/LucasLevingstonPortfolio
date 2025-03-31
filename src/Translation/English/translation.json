@@ -42,7 +42,9 @@
 	"projectCard.visitSite": "Visit Site",
   "projectCard.projectCurrentSlide": "Image",
   "projectCard.of": "of",
-  
+  "projectCard.viewFrontEndRepo": "Front-End Repository",
+  "projectCard.viewBackEndRepo": "Back-End Repository",
+
 	"sidebar.greeting": "Hello, my name is",
 	"sidebar.am": "and i am",
 	"sidebar.welcome": "Welcome!",

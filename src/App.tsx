@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
-import React from 'react';
 import Projects from './pages/Projects';
 import { ThemeProvider } from './components/providers/ThemeProvider';
 import { I18nextProvider } from 'react-i18next';

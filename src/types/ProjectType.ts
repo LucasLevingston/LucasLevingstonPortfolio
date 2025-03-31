@@ -2,7 +2,9 @@ export interface ProjectType {
 	title: string;
 	description: string;
 	images?: string[];
-	github?: string;
+	frontEndRepositoryUrl?: string;
+	backEndRepositoryUrl?: string;
+	repositoryUrl?: string;
 	link?: string;
 	favorite?: boolean;
 	technologies: string[];
