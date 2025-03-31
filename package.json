@@ -45,6 +45,7 @@
 		"tailwindcss-animate": "^1.0.7",
 		"tailwindcss-animated": "^1.1.2",
 		"tsparticles": "^3.8.1",
+		"tw-merge": "^0.0.1-alpha.3",
 		"typewriter-effect": "^2.21.0",
 		"zustand": "^5.0.1"
 	},

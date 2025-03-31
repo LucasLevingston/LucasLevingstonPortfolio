@@ -14,7 +14,7 @@
 	"about.start": "Início",
 	"about.end": "Fim",
 	"about.enterprise": "Empresa",
-	"about.educationTitle": "Educação",
+	"about.educationTitle": "Formação",
 	"about.educationDescription": "Formação educacional e qualificações.",
 	"about.currentStatus": "Situação Atual",
 	"about.certificatesTitle": "Certificados",
@@ -24,6 +24,11 @@
 	"about.recommendationsDescription": "Depoimentos e endossos.",
 	"about.certificadeCurrentSlide": "Certificado",
 	"about.of": "de",
+  "about.personalInfo": "Informações pessoais",
+  "about.address": "Endereço",
+  "about.phone": "Telefone",
+  "about.email": "Email",
+  "about.location": "Localidade",
 
   
 	"projects.title": "Meus Projetos",

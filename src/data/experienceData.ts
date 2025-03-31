@@ -2,6 +2,31 @@ import { ExperienceType } from '../types/ExperienceType';
 
 export const experiencesDataBr: ExperienceType[] = [
 	{
+		enterprise: 'Multi UEPB',
+		location: 'Patos, PB',
+		startsDate: '06/2023',
+		endsDate: '12/2024',
+		role: 'Líder do time de desenvolvimento Front-end',
+		description: `
+     Liderei o time de desenvolvimento Front-End da Startup Multi da UEPB, onde foi realizado um sistema de aluguel de utensílios da universidade. 
+     Fiquei à frente do desenvolvimento e organização de tarefas para os outros desenvolvedores. Nesse período <span class="text-mainColor">atuamos com React, Typescript e Tailwind CSS.</span>
+    `,
+	},
+	{
+		enterprise: 'Sercomp VI UEPB',
+		location: 'Patos, PB',
+		startsDate: '04/2023',
+		endsDate: '06/2024',
+		role: 'Desenvolvedor Full-Stack',
+		description: `
+      Participei do desenvolvimento do site do VI Sercomp da UEPB. 
+      Atuei com diversas pessoas do curso, em um ambiente real de trabalho. 
+      Desenvolvi com 
+      <span class="text-mainColor">React, JavaScript, CSS, Node e Vite</span>, 
+      e utilizando o <span class="text-mainColor">Git Flow</span> como fluxo de trabalho.
+    `,
+	},
+	{
 		enterprise: 'Splendore',
 		location: 'Patos, PB',
 		startsDate: '06/2023',
@@ -25,33 +50,45 @@ export const experiencesDataBr: ExperienceType[] = [
       aprimorando a Developer Experience.
     `,
 	},
+
+	{
+		enterprise: 'EndoDerm',
+		location: 'Patos, PB',
+		startsDate: '06/2022',
+		endsDate: '10/2022',
+		role: 'Atendente de consultório médico',
+		description: `
+	    Realizava agendamento de consultas, organização de planilhas e atendimento ao público.
+	  `,
+	},
+];
+
+export const experiencesDataEn: ExperienceType[] = [
+	{
+		enterprise: 'Multi UEPB',
+		location: 'Patos, PB',
+		startsDate: '06/2023',
+		endsDate: '12/2024',
+		role: 'Frontend Development Team Lead',
+		description: `
+    I led the Frontend development team at the Multi UEPB startup, where we developed a rental system for university utensils. 
+    I was responsible for development and task organization for other developers. During this period, <span class="text-mainColor">we worked with React, TypeScript, and Tailwind CSS.</span>
+  `,
+	},
 	{
 		enterprise: 'Sercomp VI UEPB',
 		location: 'Patos, PB',
 		startsDate: '04/2023',
 		endsDate: '06/2024',
-		role: 'Desenvolvedor Full-Stack',
+		role: 'Full-Stack Developer',
 		description: `
-      Participei do desenvolvimento do site do VI Sercomp da UEPB. 
-      Atuei com diversas pessoas do curso, em um ambiente real de trabalho. 
-      Desenvolvi com 
-      <span class="text-mainColor">React, JavaScript, CSS, Node e Vite</span>, 
-      e utilizando o <span class="text-mainColor">Git Flow</span> como fluxo de trabalho.
+      Participated in the development of the VI Sercomp website for UEPB. 
+      Worked with various people from the course, in a real work environment. 
+      Developed using 
+      <span class="text-mainColor">React, JavaScript, CSS, Node, and Vite</span>, 
+      and used <span class="text-mainColor">Git Flow</span> as the workflow.
     `,
 	},
-	// {
-	// 	enterprise: 'EndoDerm',
-	// 	location: 'Patos, PB',
-	// 	startsDate: '06/2022',
-	// 	endsDate: '10/2022',
-	// 	role: 'Atendente de consultório médico',
-	// 	description: `
-	//     Realizava agendamento de consultas, organização de planilhas e atendimento ao público.
-	//   `,
-	// },
-];
-
-export const experiencesDataEn: ExperienceType[] = [
 	{
 		enterprise: 'Splendore',
 		location: 'Patos, PB',
@@ -76,28 +113,15 @@ export const experiencesDataEn: ExperienceType[] = [
       improving Developer Experience.
     `,
 	},
+
 	{
-		enterprise: 'Sercomp VI UEPB',
+		enterprise: 'EndoDerm',
 		location: 'Patos, PB',
-		startsDate: '04/2023',
-		endsDate: '06/2024',
-		role: 'Full-Stack Developer',
+		startsDate: '06/2022',
+		endsDate: '10/2022',
+		role: 'Medical Office Attendant',
 		description: `
-      Participated in the development of the VI Sercomp website for UEPB. 
-      Worked with various people from the course, in a real work environment. 
-      Developed using 
-      <span class="text-mainColor">React, JavaScript, CSS, Node, and Vite</span>, 
-      and used <span class="text-mainColor">Git Flow</span> as the workflow.
-    `,
+	    Scheduled appointments, organized spreadsheets, and provided customer service.
+	  `,
 	},
-	// {
-	// 	enterprise: 'EndoDerm',
-	// 	location: 'Patos, PB',
-	// 	startsDate: '06/2022',
-	// 	endsDate: '10/2022',
-	// 	role: 'Medical Office Attendant',
-	// 	description: `
-	//     Scheduled appointments, organized spreadsheets, and provided customer service.
-	//   `,
-	// },
 ];

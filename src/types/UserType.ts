@@ -26,4 +26,6 @@ export interface UserType {
 	email: string;
 	recomendations: RecommendationType[];
 	softSkills: string[];
+	address: string;
+	location: string;
 }

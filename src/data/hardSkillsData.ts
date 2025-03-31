@@ -19,7 +19,7 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 
 	{
 		category: 'Tecnologias:',
-		technologies: ['nodejs', 'swagger', 'zustand', 'zod', 'shadcn', 'nextauth'],
+		technologies: ['nodejs', 'swagger', 'zustand', 'zod', 'shadcn'],
 	},
 
 	{

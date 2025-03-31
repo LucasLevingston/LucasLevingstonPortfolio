@@ -1,6 +1,4 @@
 import React from 'react';
-import { DiScrum } from 'react-icons/di';
-import { FaLink } from 'react-icons/fa';
 import { HardSkillsType } from '../types/HardSkillsType';
 import SectionItem from './SectionItem';
 import TechnologiesSection from './TechnologiesSection';

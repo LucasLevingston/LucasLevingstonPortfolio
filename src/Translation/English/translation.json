@@ -24,6 +24,11 @@
 	"about.recommendationsDescription": "Testimonials and endorsements.",
 	"about.certificadeCurrentSlide": "Certificate",
 	"about.of": "of",
+  "about.personalInfo": "Personal Information",
+  "about.address": "Address",
+  "about.phone": "Phone",
+  "about.email": "Email",
+  "about.location": "Location",
   
 	"projects.title": "My Projects",
   "projects.filterByTechnology":"Filter By Technology",

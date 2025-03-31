@@ -18,7 +18,7 @@ export const userBr: UserType = {
 	name: 'Lucas Levingston',
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
-		'Interesse em Desenvolvimento Full-Stack, Front-End ou Back-end.<br/> Tenho<span class="text-mainColor"> 1 ano e 8 meses de experiência </span> com desenvolvimento Full-Stack. Domino as tecnologias<span class="text-mainColor"> React, Typescript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum e Docker</span>.<br/>Atualmente estou no <span class="text-mainColor">10º semestre</span> do curso de Ciências da Computação.',
+		'Interesse em Desenvolvimento Full-Stack, Front-End ou Back-end.<br/> Tenho<span class="text-mainColor"> 1 ano e 10 meses de experiência </span> com desenvolvimento Full-Stack. Domino as tecnologias<span class="text-mainColor"> React, Typescript, Node.Js, Tailwind CSS, React Native, SQL e NoSQL, ORMs, APIs, testes de APIs com postman, versionamento com git, metodologias ágeis e conteinerização com docker.</span>.<br/>Atualmente estou no <span class="text-mainColor">10º semestre</span> do curso de Ciências da Computação.',
 	resumeUrl:
 		'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
 	profilePicture: Foto,
@@ -38,13 +38,15 @@ export const userBr: UserType = {
 	email: 'lucaslevingston94@gmail.com',
 	recomendations: recommendationDataBr,
 	softSkills: softSkillsBr,
+	address: 'Rua Severino Soares, 70 - Jardim Guanabara',
+	location: 'Patos - PB',
 };
 
 export const userEn: UserType = {
 	name: 'Lucas Levingston',
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
-		'Interest in Full-Stack, Front-End, or Back-End Development.<br /> I have <span class="text-mainColor">1 year and 8 months of experience</span> in Full-Stack development. I dominate as technologies<span class="text-mainColor"> React, TypeScript, Tailwind CSS, MongoDB, Prisma, Express, Postman, Git, GitHub, Scrum, and Docker</span>.<br/> Currently, I am in the <span class="text-mainColor">10th semester </span> of my Computer Science course.',
+		'Interest in Full-Stack, Front-End, or Back-End Development.<br/> I have <span class="text-mainColor">1 year and 10 months of experience</span> in Full-Stack development. I am proficient in <span class="text-mainColor">React, TypeScript, Node.js, Tailwind CSS, React Native, SQL and NoSQL, ORMs, APIs, API testing with Postman, version control with Git, agile methodologies, and containerization with Docker.</span><br/> I am currently in the <span class="text-mainColor">10th semester</span> of my Computer Science course.',
 	resumeUrl:
 		'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
 	profilePicture: Foto,
@@ -64,4 +66,6 @@ export const userEn: UserType = {
 	email: 'lucaslevingston94@gmail.com',
 	recomendations: recommendationDataEn,
 	softSkills: softSkillsEn,
+	address: 'Rua Severino Soares, 70 - Jardim Guanabara',
+	location: 'Patos - PB',
 };

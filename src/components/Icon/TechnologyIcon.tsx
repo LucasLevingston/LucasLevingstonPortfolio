@@ -5,6 +5,7 @@ import shadcnSVG from '@/assets/svgs/shadcn.svg';
 import jwtSVG from '@/assets/svgs/jwt.svg';
 import reactNativeSVG from '@/assets/svgs/reactnative.svg';
 import expoSVG from '@/assets/svgs/expo.svg';
+import { twMerge } from 'tailwind-merge';
 
 interface TechnologyIconProps {
 	technology: string;
@@ -68,6 +69,7 @@ export default function TechnologyIcon({
 				return {
 					svg: jwtSVG,
 				};
+
 			case 'zustand':
 				return {
 					svg: 'https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg',
@@ -107,7 +109,7 @@ export default function TechnologyIcon({
 		<>
 			{svg && (
 				<img
-					className={`${defaultClassNameSVG} ${iconClassName} ${className}`}
+					className={twMerge(defaultClassNameSVG, iconClassName, className)}
 					src={svg}
 					alt=""
 				/>
@@ -115,7 +117,7 @@ export default function TechnologyIcon({
 
 			{iconClassName && (
 				<i
-					className={`${defaultClassNameIcon} ${iconClassName} ${className}`}
+					className={twMerge(defaultClassNameIcon, iconClassName, className)}
 				></i>
 			)}
 
