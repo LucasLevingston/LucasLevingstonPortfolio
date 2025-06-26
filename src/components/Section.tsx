@@ -14,7 +14,7 @@ function SectionRoot({
 	return (
 		<div
 			id={id}
-			className={`space-y-3 border-b-[1px] border-solid border-borderColor py-3 ${className}`}
+			className={`space-y-3 border-solid border-borderColor py-3 ${className}`}
 		>
 			{children}
 		</div>

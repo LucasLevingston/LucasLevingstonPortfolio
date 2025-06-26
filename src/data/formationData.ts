@@ -6,8 +6,9 @@ export const formationDataBr: FormationType[] = [
 		institution: 'Universidade Estadual da Paraíba (UEPB)',
 		startsDate: 'Julho/2020',
 		endsDate: 'Julho/2025',
-		duration: '9 semestres',
+		duration: '10 semestres',
 		currentStatus: 'Atualmente no 10º/10 semestre.',
+		graduated: true,
 	},
 	{
 		title: 'Graduação em Engenharia Civil',
@@ -16,6 +17,7 @@ export const formationDataBr: FormationType[] = [
 		endsDate: 'Julho/2020',
 		duration: '1 semestre',
 		currentStatus: 'Trancado',
+		graduated: false,
 	},
 ];
 
@@ -25,15 +27,17 @@ export const formationDataEn: FormationType[] = [
 		institution: 'State University of Paraíba (UEPB)',
 		startsDate: 'July/2020',
 		endsDate: 'July/2025',
-		duration: '9 semesters',
+		duration: '10 semesters',
 		currentStatus: 'Currently in the 10th/10th semester.',
+		graduated: true,
 	},
 	{
 		title: 'Bachelor’s Degree in Civil Engineering',
-		institution: 'Universidade Estadual da Paraíba (UEPB)',
+		institution: 'State University of Paraíba (UEPB)',
 		startsDate: 'February/2020',
 		endsDate: 'July/2020',
 		duration: '1 semester',
 		currentStatus: 'Deferred',
+		graduated: false,
 	},
 ];

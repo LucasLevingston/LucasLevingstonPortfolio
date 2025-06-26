@@ -29,6 +29,11 @@
   "about.phone": "Telefone",
   "about.email": "Email",
   "about.location": "Localidade",
+  "about.completedSuccessfully": "Completo",
+  "about.graduated": "Graduado",
+  "about.deferred": "Trancado",
+  "about.duration": "Duração",
+  "about.period": "Período",
 
   
 	"projects.title": "Meus Projetos",

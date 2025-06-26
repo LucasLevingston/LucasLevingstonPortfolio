@@ -57,6 +57,11 @@ export default {
 					5: 'hsl(var(--chart-5))',
 				},
 				mainColor: '#ff2200',
+				lightMainColor: '#dc2626', // red-50
+				mainBorder: '#fecaca', // red-200
+				'main-color-dark': '#991b1b', // red-800
+				'light-main-color-dark': '#450a0a', // red-950
+				'main-border-dark': '#7f1d1d', // red-900
 				mainTextColor: '#fff',
 				borderColor: '#434040',
 				bioBgColor: '#212121',

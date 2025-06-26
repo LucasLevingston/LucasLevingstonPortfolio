@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
-import { AiOutlineLink } from 'react-icons/ai';
-import { GoRepoForked } from 'react-icons/go';
+import { useTranslation } from 'react-i18next';
 import Typewriter from 'typewriter-effect';
 import type { ProjectType } from '../types/ProjectType';
 import Section from './Section';
-import SectionItem from './SectionItem';
-import { t } from 'i18next';
 import {
 	Accordion,
 	AccordionItem,
@@ -18,11 +15,24 @@ import {
 	CarouselContent,
 	CarouselItem,
 } from './ui/carousel';
+import { Card, CardContent, CardHeader } from './ui/card';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
 import TechnologiesSection from './TechnologiesSection';
 import CarouselPagination from './CarouselPagination';
-import CustomButton from './CustomButton';
-import starIcon from '@/assets/svgs/star.svg';
 import PhoneFrame from './PhoneFrame';
+import {
+	Star,
+	Github,
+	ExternalLink,
+	Code,
+	ImageIcon,
+	Smartphone,
+	Monitor,
+	ChevronDown,
+} from 'lucide-react';
+import TechnologyIcon from './Icon/TechnologyIcon';
+import { ImageViewer } from './image-viewer';
 
 interface ProjectCardProps {
 	project: ProjectType;
@@ -44,6 +54,7 @@ export default function ProjectCard({
 	},
 	id,
 }: ProjectCardProps) {
+	const { t } = useTranslation();
 	const [currentImage, setCurrentImage] = useState(0);
 	const [api, setApi] = useState<CarouselApi>();
 	const [openAccordion, setOpenAccordion] = useState<string | undefined>(
@@ -66,137 +77,231 @@ export default function ProjectCard({
 	}, [api]);
 
 	return (
-		<Section.Root id={id}>
-			<Accordion
-				type="single"
-				collapsible
-				onValueChange={setOpenAccordion}
-				value={openAccordion}
-				className="w-full"
-			>
-				<AccordionItem value={title} className="border-none">
-					<SectionItem.Root className="py-5">
-						<SectionItem.Header>
-							<AccordionTrigger className="flex-1 hover:cursor-pointer hover:no-underline">
-								<div className="flex flex-col justify-start gap-2 text-left">
-									<div className="flex items-center gap-2 text-xl font-bold">
-										<Typewriter
-											onInit={(typewriter) => {
-												typewriter.typeString(title).start();
-											}}
-										/>
-										{favorite && (
-											<img
-												className="w-5"
-												src={starIcon || '/placeholder.svg'}
-											/>
+		<Card className="transition-shadow hover:shadow-md">
+			<Section.Root id={id}>
+				<Accordion
+					type="single"
+					collapsible
+					onValueChange={setOpenAccordion}
+					value={openAccordion}
+					className="w-full"
+				>
+					<AccordionItem value={title} className="border-none">
+						<CardHeader className="pb-3">
+							<AccordionTrigger className="p-0 hover:no-underline">
+								<div className="flex w-full items-center justify-between">
+									<div className="flex items-center gap-3">
+										<div className="rounded-lg p-2">
+											{isMobile ? (
+												<Smartphone className="h-4 w-4 text-mainColor" />
+											) : (
+												<Monitor className="h-4 w-4 text-mainColor" />
+											)}
+										</div>
+										<div className="text-left">
+											<div className="flex items-center gap-2">
+												<h3 className="text-lg font-semibold text-foreground">
+													<Typewriter
+														onInit={(typewriter) => {
+															typewriter.typeString(title).start();
+														}}
+													/>
+												</h3>
+												{favorite && (
+													<Star className="h-4 w-4 fill-current text-mainColor" />
+												)}
+											</div>
+											{openAccordion !== title && (
+												<div className="mt-2 flex flex-wrap gap-1">
+													{technologies.slice(0, 6).map((tech) => (
+														<div key={tech} className="rounded p-1">
+															<TechnologyIcon technology={tech} />
+														</div>
+													))}
+													{technologies.length > 6 && (
+														<Badge
+															variant="outline"
+															className="border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+														>
+															+{technologies.length - 6}
+														</Badge>
+													)}
+												</div>
+											)}
+										</div>
+									</div>
+									<div className="flex items-center gap-2">
+										{images && images.length > 0 && (
+											<ImageIcon className="h-4 w-4 text-mainColor" />
+										)}
+										{(repositoryUrl ||
+											frontEndRepositoryUrl ||
+											backEndRepositoryUrl) && (
+											<Github className="h-4 w-4 text-mainColor" />
+										)}
+										{link && (
+											<ExternalLink className="h-4 w-4 text-mainColor" />
 										)}
 									</div>
-									{openAccordion !== title && (
-										<div className="flex w-full flex-wrap">
-											<TechnologiesSection technologies={technologies} />
-										</div>
-									)}
 								</div>
 							</AccordionTrigger>
-						</SectionItem.Header>
-						<SectionItem.Content>
-							<AccordionContent>
-								<div className="space-y-4">
-									<p className="text-base">{description}</p>
+						</CardHeader>
 
-									<div className="space-y-1">
-										<p className="text-xl font-bold">
-											{t('projectCard.technologiesUsed')}
+						<AccordionContent>
+							<CardContent className="pt-0">
+								<div className="space-y-6">
+									<div className="rounded-lg p-4">
+										<p className="text-sm leading-relaxed text-foreground">
+											{description}
 										</p>
-										<div className="flex w-full flex-wrap">
-											<TechnologiesSection technologies={technologies} />
-										</div>
 									</div>
 
-									{images && (
-										<Carousel setApi={setApi}>
-											<CarouselContent>
-												{images.map((image, index) =>
-													isMobile ? (
-														<CarouselItem
-															key={index}
-															className="flex justify-center"
-														>
-															<PhoneFrame>
-																<img
-																	src={image || '/placeholder.svg'}
-																	alt={`Imagem ${index}`}
-																	className="h-full w-full object-cover"
-																/>
-															</PhoneFrame>
-														</CarouselItem>
-													) : (
-														<CarouselItem key={index}>
-															<img
-																src={image || '/placeholder.svg'}
-																alt={`Imagem ${index}`}
-																className="h-full w-full rounded-2xl sm:h-[576px] sm:w-[1024px]"
-															/>
-														</CarouselItem>
-													)
-												)}
-											</CarouselContent>
-											<div className="py-2 text-center text-sm text-muted-foreground">
-												<CarouselPagination
-													currentImage={currentImage}
-													setCurrentImage={setCurrentImage}
-													api={api}
-													images={images}
-												/>
+									<div>
+										<div className="mb-3 flex items-center gap-2">
+											<Code className="h-4 w-4 text-mainColor" />
+											<h4 className="text-sm font-semibold text-foreground">
+												Tecnologias utilizadas
+											</h4>
+										</div>
+										<TechnologiesSection technologies={technologies} />
+									</div>
+
+									{images && images.length > 0 && (
+										<div>
+											<div className="mb-3 flex items-center gap-2">
+												<ImageIcon className="h-4 w-4 text-mainColor" />
+												<h4 className="text-sm font-semibold text-foreground">
+													Screenshots
+												</h4>
 											</div>
-										</Carousel>
+											<Carousel setApi={setApi}>
+												<CarouselContent className="h-[180px]">
+													{images.map((image, index) =>
+														isMobile ? (
+															<CarouselItem
+																key={index}
+																className="flex justify-center"
+															>
+																<ImageViewer
+																	src={image || '/placeholder.svg'}
+																	alt={`Screenshot ${index + 1}`}
+																>
+																	<PhoneFrame>
+																		<img
+																			src={image || '/placeholder.svg'}
+																			alt={`Screenshot ${index + 1}`}
+																			className="h-full w-full object-cover"
+																		/>
+																	</PhoneFrame>
+																</ImageViewer>
+															</CarouselItem>
+														) : (
+															<CarouselItem key={index}>
+																<ImageViewer
+																	src={image || '/placeholder.svg'}
+																	alt={`Screenshot ${index + 1}`}
+																>
+																	<div className="h-full rounded-lg p-2">
+																		<img
+																			src={image || '/placeholder.svg'}
+																			alt={`Screenshot ${index + 1}`}
+																			className="h-full w-full rounded-lg object-contain"
+																		/>
+																	</div>
+																</ImageViewer>
+															</CarouselItem>
+														)
+													)}
+												</CarouselContent>
+												<div className="py-2 text-center text-xs text-mainColor dark:text-mainColor">
+													<CarouselPagination
+														currentImage={currentImage}
+														setCurrentImage={setCurrentImage}
+														api={api}
+														images={images}
+													/>
+												</div>
+											</Carousel>
+										</div>
 									)}
 
-									<div className="flex items-center justify-center space-x-4">
+									{/* Action Buttons */}
+									<div className="flex flex-wrap items-center justify-center gap-3 border-t border-mainBorder pt-4 dark:border-main-border-dark">
 										{frontEndRepositoryUrl && (
-											<CustomButton
-												icon={<GoRepoForked />}
-												link={frontEndRepositoryUrl}
-												className="w-48"
+											<Button
+												asChild
+												variant="outline"
+												className="gap-2 border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 											>
-												{t('projectCard.viewFrontEndRepo')}
-											</CustomButton>
+												<a
+													href={frontEndRepositoryUrl}
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													<Github className="h-4 w-4 text-mainColor" />
+													Ver Front-End
+												</a>
+											</Button>
 										)}
 
 										{backEndRepositoryUrl && (
-											<CustomButton
-												icon={<GoRepoForked />}
-												link={backEndRepositoryUrl}
-												className="w-48"
+											<Button
+												asChild
+												variant="outline"
+												className="gap-2 border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 											>
-												{t('projectCard.viewBackEndRepo')}
-											</CustomButton>
+												<a
+													href={backEndRepositoryUrl}
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													<Github className="h-4 w-4 text-mainColor" />
+													Ver Back-End
+												</a>
+											</Button>
 										)}
 
 										{!frontEndRepositoryUrl &&
 											!backEndRepositoryUrl &&
 											repositoryUrl && (
-												<CustomButton
-													icon={<GoRepoForked />}
-													link={repositoryUrl}
+												<Button
+													asChild
+													variant="outline"
+													className="gap-2 border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 												>
-													{t('projectCard.viewGitHub')}
-												</CustomButton>
+													<a
+														href={repositoryUrl}
+														target="_blank"
+														rel="noopener noreferrer"
+													>
+														<Github className="h-4 w-4 text-mainColor" />
+														Ver GitHub
+													</a>
+												</Button>
 											)}
 
 										{link && (
-											<CustomButton icon={<AiOutlineLink />} link={link}>
-												{t('projectCard.visitSite')}
-											</CustomButton>
+											<Button
+												asChild
+												className="gap-2 bg-mainColor text-sm text-white hover:bg-main-color-dark"
+											>
+												<a
+													href={link}
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													<ExternalLink className="h-4 w-4" />
+													Visitar Site
+												</a>
+											</Button>
 										)}
 									</div>
 								</div>
-							</AccordionContent>
-						</SectionItem.Content>
-					</SectionItem.Root>
-				</AccordionItem>
-			</Accordion>
-		</Section.Root>
+							</CardContent>
+						</AccordionContent>
+					</AccordionItem>
+				</Accordion>
+			</Section.Root>
+		</Card>
 	);
 }

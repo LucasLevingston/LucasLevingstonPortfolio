@@ -18,7 +18,7 @@ export const userBr: UserType = {
 	name: 'Lucas Levingston',
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
-		'Interesse em Desenvolvimento Full-Stack, Front-End ou Back-end.<br/> Tenho<span class="text-mainColor"> 1 ano e 10 meses de experiência </span> com desenvolvimento Full-Stack. Domino as tecnologias<span class="text-mainColor"> React, Typescript, Node.Js, Tailwind CSS, React Native, SQL e NoSQL, ORMs, APIs, testes de APIs com postman, versionamento com git, metodologias ágeis e conteinerização com docker.</span>.<br/>Atualmente estou no <span class="text-mainColor">10º semestre</span> do curso de Ciências da Computação.',
+		'Interesse em Desenvolvimento Full-Stack, Front-End ou Back-end.<br/> Possuo<span class="text-mainColor"> 2 anos </span> com desenvolvimento Full-Stack. Domino as tecnologias<span class="text-mainColor"> React, Typescript, Node.Js, Tailwind CSS, React Native, SQL e NoSQL, ORMs, APIs, testes de APIs com postman, versionamento com git, metodologias ágeis e conteinerização com docker</span>.<br/> <span class="text-mainColor">Graduado</span> em Ciências da Computação.',
 	resumeUrl:
 		'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
 	profilePicture: Foto,
@@ -32,7 +32,7 @@ export const userBr: UserType = {
 	linkedinImageUrl: FotoLinkedin,
 	instagram: 'https://www.instagram.com/lucaolevingston/?hl=pt-br',
 	instagramImageUrl: FotoInstagram,
-	phone: '83999616220',
+	phone: '(83) 99961-6220',
 	whatsapp: 'https://wa.me/message/BL2FCNM72L7GJ1',
 	whatsappImageUrl: FotoWhatsapp,
 	email: 'lucaslevingston94@gmail.com',
@@ -46,7 +46,7 @@ export const userEn: UserType = {
 	name: 'Lucas Levingston',
 	completName: 'Lucas Levingston Araújo Gadelha Medeiros',
 	description:
-		'Interest in Full-Stack, Front-End, or Back-End Development.<br/> I have <span class="text-mainColor">1 year and 10 months of experience</span> in Full-Stack development. I am proficient in <span class="text-mainColor">React, TypeScript, Node.js, Tailwind CSS, React Native, SQL and NoSQL, ORMs, APIs, API testing with Postman, version control with Git, agile methodologies, and containerization with Docker.</span><br/> I am currently in the <span class="text-mainColor">10th semester</span> of my Computer Science course.',
+		'Interest in Full-Stack, Front-End or Back-End Development.<br/> I have <span class="text-mainColor">2 years</span> of experience in Full-Stack development. I master the technologies <span class="text-mainColor">React, TypeScript, Node.js, Tailwind CSS, React Native, SQL and NoSQL, ORMs, APIs, API testing with Postman, version control with Git, agile methodologies, and containerization with Docker</span>.<br/> <span class="text-mainColor">Graduated</span> in Computer Science.',
 	resumeUrl:
 		'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
 	profilePicture: Foto,
@@ -60,7 +60,7 @@ export const userEn: UserType = {
 	linkedinImageUrl: FotoLinkedin,
 	instagram: 'https://www.instagram.com/lucaolevingston/?hl=en',
 	instagramImageUrl: FotoInstagram,
-	phone: '83999616220',
+	phone: '(83) 99961-6220',
 	whatsapp: 'https://wa.me/message/BL2FCNM72L7GJ1',
 	whatsappImageUrl: FotoWhatsapp,
 	email: 'lucaslevingston94@gmail.com',

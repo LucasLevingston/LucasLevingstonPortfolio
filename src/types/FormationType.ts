@@ -5,4 +5,5 @@ export interface FormationType {
 	currentStatus?: string;
 	startsDate: string;
 	endsDate: string;
+	graduated?: boolean;
 }

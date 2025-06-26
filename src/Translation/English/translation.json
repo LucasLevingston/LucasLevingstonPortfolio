@@ -29,6 +29,12 @@
   "about.phone": "Phone",
   "about.email": "Email",
   "about.location": "Location",
+  "about.completedSuccessfully": "Completed",
+"about.graduated": "Graduated",
+"about.deferred": "Deferred",
+"about.duration": "Duration",
+"about.period": "Period",
+
   
 	"projects.title": "My Projects",
   "projects.filterByTechnology":"Filter By Technology",
