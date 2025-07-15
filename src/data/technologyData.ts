@@ -1,4 +1,4 @@
-import { TechnologyType } from '@/types/TechnologyType';
+import type { TechnologyType } from '@/types/TechnologyType';
 
 export const technologiesDataBr: { [key: string]: TechnologyType } = {
 	typescript: {
@@ -295,6 +295,20 @@ export const technologiesDataBr: { [key: string]: TechnologyType } = {
 			'Um framework front-end popular para desenvolvimento de sites responsivos e móveis.',
 		link: 'https://getbootstrap.com/',
 	},
+	orval: {
+		label: 'Orval',
+		value: 'orval',
+		description:
+			'biblioteca de gestão de APIs para aplicações frontend, especificamente projetada para simplificar o consumo de APIs em projetos JavaScript e TypeScript',
+		link: 'https://orval.dev/',
+	},
+	redis: {
+		label: 'Redis',
+		value: 'redis',
+		description:
+			'Armazenamento de dados em memória de alta performance, utilizado como banco de dados, cache e broker de mensagens em aplicações distribuídas.',
+		link: 'https://redis.io/',
+	},
 	python: {
 		label: 'Python',
 		value: 'python',
@@ -315,7 +329,60 @@ export const technologiesDataBr: { [key: string]: TechnologyType } = {
 			'Uma ferramenta e framework para desenvolvimento rápido e fácil de aplicações React Native.',
 		link: 'https://expo.dev/',
 	},
+	drizzle: {
+		label: 'Drizzle ORM',
+		value: 'drizzle',
+		description:
+			'Um ORM leve para TypeScript/Node.js, compatível com PostgreSQL.',
+		link: 'https://orm.drizzle.team/',
+	},
+	'react-router-dom': {
+		label: 'React Router DOM',
+		value: 'react-router-dom',
+		description: 'Biblioteca para gerenciamento de rotas em aplicações React.',
+		link: 'https://reactrouter.com/',
+	},
+	'react-query': {
+		label: 'React Query',
+		value: 'react-query',
+		description:
+			'Biblioteca para gerenciamento de estado de servidor e cache em React.',
+		link: 'https://tanstack.com/query/latest',
+	},
+	'custom-hooks': {
+		label: 'Custom Hooks',
+		value: 'custom-hooks',
+		description: 'Hooks personalizados no React para reutilização de lógica.',
+		link: '',
+	},
+	'audio-recording': {
+		label: 'Gravação de Áudio',
+		value: 'audio-recording',
+		description: 'Gravação e upload de áudio no navegador via Web APIs.',
+		link: '',
+	},
+	transcription: {
+		label: 'Transcrição (IA)',
+		value: 'transcription',
+		description: 'Uso de IA para transcrever áudio em texto.',
+		link: '',
+	},
+	embeddings: {
+		label: 'Embeddings (IA)',
+		value: 'embeddings',
+		description:
+			'Geração de embeddings via IA para representação vetorial de texto.',
+		link: '',
+	},
+	gemini: {
+		label: 'API Gemini',
+		value: 'gemini',
+		description:
+			'Integração com API do Gemini para respostas inteligentes usando IA.',
+		link: '',
+	},
 };
+
 export const technologiesDataEn: { [key: string]: TechnologyType } = {
 	typescript: {
 		label: 'TypeScript',
@@ -599,11 +666,25 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
 			'A popular front-end framework for developing responsive and mobile-first websites.',
 		link: 'https://getbootstrap.com/',
 	},
+	orval: {
+		label: 'Orval',
+		value: 'orval',
+		description:
+			'API management library for frontend applications, specifically designed to simplify API consumption in JavaScript and TypeScript projects.',
+		link: 'https://orval.dev/',
+	},
+	redis: {
+		label: 'Redis',
+		value: 'redis',
+		description:
+			'High-performance in-memory data store, used as a database, cache, and message broker in distributed applications.',
+		link: 'https://redis.io/',
+	},
 	python: {
 		label: 'Python',
 		value: 'python',
 		description:
-			'Uma linguagem de programação versátil e poderosa, conhecida por sua legibilidade e ampla gama de aplicações em desenvolvimento web, análise de dados, inteligência artificial e muito mais.',
+			'A versatile and powerful programming language, known for its readability and wide range of applications in web development, data analysis, artificial intelligence, and more.',
 		link: 'https://www.python.org/',
 	},
 	reactnative: {
@@ -618,5 +699,56 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
 		description:
 			'A tool and framework for quick and easy development of React Native applications.',
 		link: 'https://expo.dev/',
+	},
+	drizzle: {
+		label: 'Drizzle ORM',
+		value: 'drizzle',
+		description:
+			'A lightweight ORM for TypeScript/Node.js, compatible with PostgreSQL.',
+		link: 'https://orm.drizzle.team/',
+	},
+	'react-router-dom': {
+		label: 'React Router DOM',
+		value: 'react-router-dom',
+		description: 'Library for managing routes in React applications.',
+		link: 'https://reactrouter.com/',
+	},
+	'react-query': {
+		label: 'React Query',
+		value: 'react-query',
+		description: 'Library for server state management and caching in React.',
+		link: 'https://tanstack.com/query/latest',
+	},
+	'custom-hooks': {
+		label: 'Custom Hooks',
+		value: 'custom-hooks',
+		description: 'Custom hooks in React for logic reuse.',
+		link: '',
+	},
+	'audio-recording': {
+		label: 'Audio Recording',
+		value: 'audio-recording',
+		description: 'Recording and uploading audio in the browser via Web APIs.',
+		link: '',
+	},
+	transcription: {
+		label: 'Transcription (AI)',
+		value: 'transcription',
+		description: 'Using AI to transcribe audio to text.',
+		link: '',
+	},
+	embeddings: {
+		label: 'Embeddings (AI)',
+		value: 'embeddings',
+		description:
+			'Generating embeddings via AI for vector representation of text.',
+		link: '',
+	},
+	gemini: {
+		label: 'Gemini API',
+		value: 'gemini',
+		description:
+			'Integration with Gemini API for intelligent responses using AI.',
+		link: '',
 	},
 };

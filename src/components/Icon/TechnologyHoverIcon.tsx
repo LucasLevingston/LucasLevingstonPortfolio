@@ -1,13 +1,11 @@
-import React from 'react';
 import {
 	HoverCard,
 	HoverCardContent,
 	HoverCardTrigger,
 } from '@/components/ui/hover-card';
-import { technologiesDataBr, technologiesDataEn } from '@/data/technologyData';
 import TechnologyIcon from './TechnologyIcon';
-import i18next, { t } from 'i18next';
-import { TechnologyType } from '@/types/TechnologyType';
+import { t } from 'i18next';
+import { getTechnologyData } from '@/lib/utils/getTechnologyData';
 
 interface TechnologyHoverIconProps {
 	technology: string;
@@ -17,19 +15,6 @@ export default function TechnologyHoverIcon({
 	technology,
 	classname,
 }: TechnologyHoverIconProps) {
-	function getTechnologyData(key: string): TechnologyType | undefined {
-		const technologiesData =
-			i18next.language === 'br' ? technologiesDataBr : technologiesDataEn;
-
-		const technology = technologiesData[key];
-
-		if (!technology) {
-			console.log('Technology not found:', key);
-		}
-
-		return technology;
-	}
-
 	const technologyData = getTechnologyData(technology);
 
 	return (

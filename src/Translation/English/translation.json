@@ -38,9 +38,12 @@
   
 	"projects.title": "My Projects",
   "projects.filterByTechnology":"Filter By Technology",
+  "projects.filterBy":"Filter by",
   "projects.technologies":"Technologies",
   "projects.filteredResults":"results",
   "projects.search":"Search by name...",
+  "projects.clear":"Clear",
+
   "projects.hasImage":"Has image",
   
 	"projectCard.technologiesUsed": "Technologies Used",

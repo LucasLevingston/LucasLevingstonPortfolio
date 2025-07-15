@@ -1,10 +1,14 @@
+import {
+	expoSVG,
+	geminiSVG,
+	jwtSVG,
+	nextAuthSVG,
+	reactNativeSVG,
+	shadcnSVG,
+} from '@/assets/svgs';
 import React from 'react';
 import { DiScrum } from 'react-icons/di';
-import nextAuthSVG from '@/assets/svgs/next-auth.svg';
-import shadcnSVG from '@/assets/svgs/shadcn.svg';
-import jwtSVG from '@/assets/svgs/jwt.svg';
-import reactNativeSVG from '@/assets/svgs/reactnative.svg';
-import expoSVG from '@/assets/svgs/expo.svg';
+
 import { twMerge } from 'tailwind-merge';
 
 interface TechnologyIconProps {
@@ -74,9 +78,13 @@ export default function TechnologyIcon({
 				return {
 					svg: 'https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg',
 				};
+			case 'orval':
+				return {
+					svg: 'https://orval.dev/images/emblem.svg',
+				};
 			case 'shadcn':
 				return {
-					iconClassName: 'dark:bg-white rounded',
+					iconClassName: 'dark:invert',
 					svg: shadcnSVG,
 				};
 			case 'stripe':
@@ -85,7 +93,7 @@ export default function TechnologyIcon({
 				};
 			case 'zod':
 				return {
-					svg: 'https://zod.dev/logo.svg',
+					svg: 'https://v3.zod.dev/logo.svg',
 				};
 			case 'nexauth':
 				return {
@@ -96,7 +104,19 @@ export default function TechnologyIcon({
 				return {
 					svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
 				};
-
+			case 'tanstackquery':
+				return {
+					svg: 'https://tanstack.com/assets/splash-dark-8nwlc0Nt.png',
+				};
+			case 'drizzle':
+				return {
+					svg: 'https://images.ctfassets.net/sw4ojjqn6qvl/18smWj9R0PQ0yfsQurVCeu/3f47e4f9d73617ccd9a62be2c20de826/drizzle-logo.svg?',
+					iconClassName: 'dark:invert',
+				};
+			case 'gemini':
+				return {
+					svg: geminiSVG,
+				};
 			default:
 				return {
 					iconClassName: `devicon-${technology}-plain colored`,

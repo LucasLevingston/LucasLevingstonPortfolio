@@ -43,7 +43,7 @@ import {
 } from 'lucide-react';
 import { ImageViewer } from '@/components/image-viewer';
 
-export default function About() {
+export function About() {
 	const { t, i18n } = useTranslation();
 	const { user } = useUserStore();
 	const location = useLocation();
@@ -413,18 +413,16 @@ export default function About() {
 										</div>
 										{user.certificates[currentCertificate].image && (
 											<Carousel setApi={setApi}>
-												<CarouselContent className="w-400 h-[200px]">
+												<CarouselContent className="h-full w-[500px]">
 													{user.certificates.map((certificate, index) => (
 														<CarouselItem key={index} className="h-full w-full">
 															<ImageViewer
-																src={certificate.image || '/placeholder.svg'}
+																src={certificate.image}
 																alt={certificate.title}
 															>
-																<div className="/20 h-full w-full rounded-lg p-2">
+																<div className="h-full w-full rounded-lg p-2">
 																	<img
-																		src={
-																			certificate.image || '/placeholder.svg'
-																		}
+																		src={certificate.image}
 																		className="h-full w-full rounded-lg object-contain"
 																		alt={certificate.title}
 																	/>

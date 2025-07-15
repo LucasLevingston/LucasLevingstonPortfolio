@@ -10,11 +10,11 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/cn';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
-import Logo from '../assets/Logo.png';
 import useUserStore from '@/hooks/user-hooks';
+import { Logo } from '@/assets/images';
 
 export function Navbar() {
 	const { t, i18n } = useTranslation();
@@ -93,10 +93,7 @@ export function Navbar() {
 									className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
 									to={`/about?${t('about.technologiesTitle')}`}
 								>
-									<img
-										src={Logo || '/placeholder.svg'}
-										className="rounded-full"
-									/>
+									<img src={Logo} className="rounded-full" />
 									<div className="mb-2 mt-4 text-lg font-medium">
 										{t('about.technologiesTitle')}
 									</div>

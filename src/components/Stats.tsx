@@ -1,6 +1,6 @@
 import { technologiesDataBr } from '@/data/technologyData';
 import { useUser } from '@/hooks/user-hooks';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import { useTranslation } from 'react-i18next';
 

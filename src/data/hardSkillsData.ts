@@ -16,10 +16,9 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 			'express',
 		],
 	},
-
 	{
 		category: 'Tecnologias:',
-		technologies: ['nodejs', 'swagger', 'zustand', 'zod', 'shadcn'],
+		technologies: ['nodejs', 'swagger', 'zustand', 'zod', 'shadcn', 'gemini'],
 	},
 
 	{
@@ -45,11 +44,12 @@ export const hardSkillsDataBr: HardSkillsType[] = [
 			'figma',
 			'axios',
 			'vitest',
+			'tanstackquery',
 		],
 	},
 	{
 		category: 'ORM',
-		technologies: ['prisma', 'sequelize'],
+		technologies: ['prisma', 'sequelize', 'drizzle'],
 	},
 	{
 		category: 'Metodologias ágeis',

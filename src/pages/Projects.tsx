@@ -1,11 +1,13 @@
+'use client';
+
 import type React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
-import ProjectCard from '../components/ProjectCard';
-import Container from '../components/Container';
-import Section from '../components/Section';
+import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header';
+import ProjectCard from '@/components/ProjectCard';
+import Container from '@/components/Container';
+import Section from '@/components/Section';
 import { useTranslation } from 'react-i18next';
 import type { ProjectType } from '@/types/ProjectType';
 import { Toggle } from '@/components/ui/toggle';
@@ -33,8 +35,11 @@ import {
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import useUserStore from '@/hooks/user-hooks';
+import { technologiesDataBr, technologiesDataEn } from '@/data/technologyData';
+import i18next from 'i18next';
+import { getTechnologyData } from '@/lib/utils/getTechnologyData';
 
-const Projects: React.FC = () => {
+export const Projects: React.FC = () => {
 	const { t, i18n } = useTranslation();
 	const location = useLocation();
 	const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>([]);
@@ -44,6 +49,7 @@ const Projects: React.FC = () => {
 		hasGitHub: false,
 		hasDeploy: false,
 		searchTerm: '',
+		technologySearchTerm: '',
 		isFrontEnd: false,
 		isBackEnd: false,
 		isMobile: false,
@@ -52,7 +58,7 @@ const Projects: React.FC = () => {
 
 	useEffect(() => {
 		setFilteredProjects(user.projects);
-	}, [i18n.language]);
+	}, [i18n.language, user.projects]);
 
 	useEffect(() => {
 		const search = location.search;
@@ -63,7 +69,7 @@ const Projects: React.FC = () => {
 			const element = document.getElementById(search.substring(1));
 			element?.scrollIntoView({ behavior: 'smooth' });
 		}
-	}, []);
+	}, [location.search]);
 
 	useEffect(() => {
 		const filtered = user.projects.filter((project) => {
@@ -72,7 +78,6 @@ const Projects: React.FC = () => {
 						project.technologies.includes(tech)
 					)
 				: true;
-
 			const imageMatch = filter.hasImage
 				? (project.images?.length ?? 0) > 0
 				: true;
@@ -82,6 +87,12 @@ const Projects: React.FC = () => {
 				.toLowerCase()
 				.includes(filter.searchTerm.toLowerCase());
 			const mobileMatch = filter.isMobile ? project.isMobile : true;
+			const frontEndMatch = filter.isFrontEnd
+				? project.frontEndRepositoryUrl
+				: true;
+			const backEndMatch = filter.isBackEnd
+				? project.backEndRepositoryUrl
+				: true;
 
 			return (
 				techMatch &&
@@ -89,17 +100,17 @@ const Projects: React.FC = () => {
 				githubMatch &&
 				deployMatch &&
 				nameMatch &&
-				mobileMatch
+				mobileMatch &&
+				frontEndMatch &&
+				backEndMatch
 			);
 		});
-
 		setFilteredProjects(filtered);
 	}, [filter, user.projects]);
 
 	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const searchValue = e.target.value;
 		setFilter((prev) => ({ ...prev, searchTerm: searchValue }));
-
 		const url = new URL(window.location.toString());
 		url.searchParams.set('search', searchValue);
 		window.history.pushState({}, '', url.toString());
@@ -112,6 +123,17 @@ const Projects: React.FC = () => {
 		window.history.pushState({}, '', url.toString());
 	};
 
+	const handleTechnologySearchChange = (
+		e: React.ChangeEvent<HTMLInputElement>
+	) => {
+		const searchValue = e.target.value;
+		setFilter((prev) => ({ ...prev, technologySearchTerm: searchValue }));
+	};
+
+	const clearTechnologySearch = () => {
+		setFilter((prev) => ({ ...prev, technologySearchTerm: '' }));
+	};
+
 	const clearAllFilters = () => {
 		setFilter({
 			selectedTechnologies: [],
@@ -119,6 +141,7 @@ const Projects: React.FC = () => {
 			hasGitHub: false,
 			hasDeploy: false,
 			searchTerm: '',
+			technologySearchTerm: '',
 			isFrontEnd: false,
 			isBackEnd: false,
 			isMobile: false,
@@ -128,9 +151,16 @@ const Projects: React.FC = () => {
 		window.history.pushState({}, '', url.toString());
 	};
 
-	const uniqueTechnologies = Array.from(
-		new Set(user.projects.flatMap((project) => project.technologies))
-	);
+	const uniqueTechnologies = useMemo(() => {
+		const allTechnologies = Array.from(
+			new Set(user.projects.flatMap((project) => project.technologies))
+		);
+		const searchTermLower = filter.technologySearchTerm.toLowerCase();
+		return allTechnologies.filter((tech) => {
+			const techData = getTechnologyData(tech);
+			return techData?.label.toLowerCase().includes(searchTermLower);
+		});
+	}, [user.projects, filter.technologySearchTerm]);
 
 	const handleToggleChange = (technology: string) => {
 		setFilter((prev) => ({
@@ -158,7 +188,6 @@ const Projects: React.FC = () => {
 			<Sidebar />
 			<Container>
 				<Header />
-
 				<Section.Root>
 					<Section.Title className="flex items-center gap-3 text-xl font-semibold text-foreground">
 						<FolderOpen className="h-5 w-5 text-mainColor" />
@@ -173,48 +202,75 @@ const Projects: React.FC = () => {
 											<PopoverTrigger asChild>
 												<Button
 													variant="outline"
-													className="relative border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
+													className="relative border-mainBorder bg-transparent text-sm hover:bg-mainBorder dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 												>
 													<Filter className="mr-2 h-4 w-4 text-mainColor" />
-													Filtros
+													{t('projects.filterByTechnology')}
 													{getActiveFiltersCount() > 0 && (
-														<Badge className="ml-2 h-5 w-5 rounded-full bg-mainColor p-0 text-xs text-white">
+														<Badge className="ml-2 h-5 w-5 rounded-full bg-mainColor p-1 text-xs text-white">
 															{getActiveFiltersCount()}
 														</Badge>
 													)}
 												</Button>
 											</PopoverTrigger>
-											<PopoverContent className="w-96" align="start">
+											<PopoverContent className="w-[350px]" align="start">
 												<div className="space-y-4">
 													<div>
 														<h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-foreground">
 															<Monitor className="h-4 w-4 text-mainColor" />
-															Tecnologias
+															{t('projects.technologies')}
 														</h4>
-														<div className="grid grid-cols-3 gap-2">
-															{uniqueTechnologies.map((tech) => (
-																<Toggle
-																	key={tech}
+														<div className="relative mb-4">
+															<Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-mainColor" />
+															<Input
+																type="text"
+																placeholder={t('projects.search')}
+																className="border-mainBorder pl-10 pr-10 text-sm focus:border-red-500 dark:border-main-border-dark"
+																value={filter.technologySearchTerm}
+																onChange={handleTechnologySearchChange}
+															/>
+															{filter.technologySearchTerm && (
+																<Button
+																	variant="ghost"
 																	size="sm"
-																	pressed={filter.selectedTechnologies.includes(
-																		tech
-																	)}
-																	onPressedChange={() =>
-																		handleToggleChange(tech)
-																	}
-																	className="h-12 w-12 justify-center p-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																	className="absolute right-1 top-1/2 h-6 w-6 -translate-y-1/2 transform p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+																	onClick={clearTechnologySearch}
 																>
-																	<TechnologyIcon technology={tech} />
-																</Toggle>
-															))}
+																	<X className="h-3 w-3 text-mainColor" />
+																</Button>
+															)}
+														</div>
+														<div className="grid grid-cols-3 gap-2">
+															{uniqueTechnologies.length > 0 ? (
+																uniqueTechnologies.map((tech) => (
+																	<Toggle
+																		key={tech}
+																		size="sm"
+																		pressed={filter.selectedTechnologies.includes(
+																			tech
+																		)}
+																		onPressedChange={() =>
+																			handleToggleChange(tech)
+																		}
+																		className="m-2 h-12 justify-center gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																	>
+																		<TechnologyIcon technology={tech} />
+																		{getTechnologyData(tech)?.label}
+																	</Toggle>
+																))
+															) : (
+																<p className="col-span-3 text-center text-sm text-muted-foreground">
+																	{t('projects.noTechnologiesFound')}
+																</p>
+															)}
 														</div>
 													</div>
-
 													<div className="border-t pt-4">
-														<h4 className="mb-3 text-sm font-medium text-foreground">
-															Filtrar por
+														<h4 className="mb-3 flex items-center gap-2 text-sm font-medium text-foreground">
+															<Filter className="h-4 w-4 text-mainColor" />
+															{t('projects.filterBy')}
 														</h4>
-														<div className="grid grid-cols-2 gap-2">
+														<div className="grid grid-cols-3 gap-2">
 															<Toggle
 																size="sm"
 																pressed={filter.hasImage}
@@ -224,12 +280,13 @@ const Projects: React.FC = () => {
 																		hasImage: value,
 																	}))
 																}
-																className="justify-start gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																className="m-2 h-12 justify-center gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
 															>
 																<ImageIcon className="h-4 w-4" />
-																<span className="text-xs">Imagens</span>
+																<span className="text-xs">
+																	{t('projects.hasImage')}
+																</span>
 															</Toggle>
-
 															<Toggle
 																size="sm"
 																pressed={filter.hasGitHub}
@@ -239,12 +296,11 @@ const Projects: React.FC = () => {
 																		hasGitHub: value,
 																	}))
 																}
-																className="justify-start gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																className="m-2 h-12 justify-center gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
 															>
 																<Github className="h-4 w-4" />
 																<span className="text-xs">GitHub</span>
 															</Toggle>
-
 															<Toggle
 																size="sm"
 																pressed={filter.hasDeploy}
@@ -254,12 +310,11 @@ const Projects: React.FC = () => {
 																		hasDeploy: value,
 																	}))
 																}
-																className="justify-start gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																className="m-2 h-12 justify-center gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
 															>
 																<ExternalLink className="h-4 w-4" />
 																<span className="text-xs">Deploy</span>
 															</Toggle>
-
 															<Toggle
 																size="sm"
 																pressed={filter.isMobile}
@@ -269,12 +324,11 @@ const Projects: React.FC = () => {
 																		isMobile: value,
 																	}))
 																}
-																className="justify-start gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																className="m-2 h-12 justify-center gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
 															>
 																<Smartphone className="h-4 w-4" />
 																<span className="text-xs">Mobile</span>
 															</Toggle>
-
 															<Toggle
 																size="sm"
 																pressed={filter.isFrontEnd}
@@ -284,12 +338,11 @@ const Projects: React.FC = () => {
 																		isFrontEnd: value,
 																	}))
 																}
-																className="justify-start gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																className="m-2 h-12 justify-center gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
 															>
 																<Monitor className="h-4 w-4" />
 																<span className="text-xs">Front-End</span>
 															</Toggle>
-
 															<Toggle
 																size="sm"
 																pressed={filter.isBackEnd}
@@ -299,7 +352,7 @@ const Projects: React.FC = () => {
 																		isBackEnd: value,
 																	}))
 																}
-																className="justify-start gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
+																className="m-2 h-12 justify-center gap-2 data-[state=on]:bg-lightMainColor data-[state=on]:text-mainColor dark:data-[state=on]:bg-light-main-color-dark dark:data-[state=on]:text-red-300"
 															>
 																<Server className="h-4 w-4" />
 																<span className="text-xs">Back-End</span>
@@ -309,13 +362,11 @@ const Projects: React.FC = () => {
 												</div>
 											</PopoverContent>
 										</Popover>
-
-										{/* Search Input */}
 										<div className="relative max-w-md flex-1">
 											<Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-mainColor" />
 											<Input
 												type="text"
-												placeholder="Buscar projetos..."
+												placeholder={t('projects.search')}
 												className="border-mainBorder pl-10 pr-10 text-sm focus:border-red-500 dark:border-main-border-dark"
 												value={filter.searchTerm}
 												onChange={handleSearchChange}
@@ -331,30 +382,27 @@ const Projects: React.FC = () => {
 												</Button>
 											)}
 										</div>
-
-										{/* Clear All Filters */}
-										<Button
-											onClick={clearAllFilters}
-											variant="outline"
-											size="sm"
-											className="border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
-										>
-											<RotateCcw className="mr-2 h-4 w-4 text-mainColor" />
-											Limpar
-										</Button>
-
-										{/* Results Count */}
+										{filteredProjects.length !== user.projects.length && (
+											<Button
+												onClick={clearAllFilters}
+												variant="outline"
+												size="sm"
+												className="border-mainBorder bg-transparent text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
+											>
+												<RotateCcw className="mr-2 h-4 w-4 text-mainColor" />
+												{t('projects.clear')}
+											</Button>
+										)}
 										<div className="flex items-center gap-2">
 											<Badge
 												variant="outline"
 												className="border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
 											>
-												{filteredProjects.length} resultados
+												{filteredProjects.length}{' '}
+												{t('projects.filteredResults')}
 											</Badge>
 										</div>
 									</div>
-
-									{/* Active Filters Display */}
 									{getActiveFiltersCount() > 0 && (
 										<div className="mt-4 border-t border-mainBorder pt-4 dark:border-main-border-dark">
 											<div className="flex flex-wrap gap-2">
@@ -362,10 +410,10 @@ const Projects: React.FC = () => {
 													<Badge
 														key={tech}
 														variant="outline"
-														className="gap-1 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+														className="gap-2 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
 													>
 														<TechnologyIcon technology={tech} />
-														{tech}
+														<p className="capitalize">{tech}</p>
 														<Button
 															variant="ghost"
 															size="sm"
@@ -376,13 +424,145 @@ const Projects: React.FC = () => {
 														</Button>
 													</Badge>
 												))}
+												{filter.hasImage && (
+													<Badge
+														variant="outline"
+														className="gap-2 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+													>
+														<ImageIcon className="h-3 w-3" />
+														<p className="capitalize">
+															{t('projects.hasImage')}
+														</p>
+														<Button
+															variant="ghost"
+															size="sm"
+															className="ml-1 h-3 w-3 p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+															onClick={() =>
+																setFilter((prev) => ({
+																	...prev,
+																	hasImage: false,
+																}))
+															}
+														>
+															<X className="h-2 w-2 text-mainColor" />
+														</Button>
+													</Badge>
+												)}
+												{filter.hasGitHub && (
+													<Badge
+														variant="outline"
+														className="gap-2 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+													>
+														<Github className="h-3 w-3" />
+														<p className="capitalize">GitHub</p>
+														<Button
+															variant="ghost"
+															size="sm"
+															className="ml-1 h-3 w-3 p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+															onClick={() =>
+																setFilter((prev) => ({
+																	...prev,
+																	hasGitHub: false,
+																}))
+															}
+														>
+															<X className="h-2 w-2 text-mainColor" />
+														</Button>
+													</Badge>
+												)}
+												{filter.hasDeploy && (
+													<Badge
+														variant="outline"
+														className="gap-2 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+													>
+														<ExternalLink className="h-3 w-3" />
+														<p className="capitalize">Deploy</p>
+														<Button
+															variant="ghost"
+															size="sm"
+															className="ml-1 h-3 w-3 p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+															onClick={() =>
+																setFilter((prev) => ({
+																	...prev,
+																	hasDeploy: false,
+																}))
+															}
+														>
+															<X className="h-2 w-2 text-mainColor" />
+														</Button>
+													</Badge>
+												)}
+												{filter.isMobile && (
+													<Badge
+														variant="outline"
+														className="gap-2 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+													>
+														<Smartphone className="h-3 w-3" />
+														<p className="capitalize">Mobile</p>
+														<Button
+															variant="ghost"
+															size="sm"
+															className="ml-1 h-3 w-3 p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+															onClick={() =>
+																setFilter((prev) => ({
+																	...prev,
+																	isMobile: false,
+																}))
+															}
+														>
+															<X className="h-2 w-2 text-mainColor" />
+														</Button>
+													</Badge>
+												)}
+												{filter.isFrontEnd && (
+													<Badge
+														variant="outline"
+														className="gap-2 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+													>
+														<Monitor className="h-3 w-3" />
+														<p className="capitalize">Front-End</p>
+														<Button
+															variant="ghost"
+															size="sm"
+															className="ml-1 h-3 w-3 p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+															onClick={() =>
+																setFilter((prev) => ({
+																	...prev,
+																	isFrontEnd: false,
+																}))
+															}
+														>
+															<X className="h-2 w-2 text-mainColor" />
+														</Button>
+													</Badge>
+												)}
+												{filter.isBackEnd && (
+													<Badge
+														variant="outline"
+														className="gap-2 border-mainBorder text-xs text-mainColor dark:border-main-border-dark dark:text-mainColor"
+													>
+														<Server className="h-3 w-3" />
+														<p className="capitalize">Back-End</p>
+														<Button
+															variant="ghost"
+															size="sm"
+															className="ml-1 h-3 w-3 p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+															onClick={() =>
+																setFilter((prev) => ({
+																	...prev,
+																	isBackEnd: false,
+																}))
+															}
+														>
+															<X className="h-2 w-2 text-mainColor" />
+														</Button>
+													</Badge>
+												)}
 											</div>
 										</div>
 									)}
 								</CardContent>
 							</Card>
-
-							{/* Projects List */}
 							<div className="space-y-4">
 								{filteredProjects.length > 0 ? (
 									filteredProjects.map((project) => (
@@ -406,10 +586,10 @@ const Projects: React.FC = () => {
 												<Button
 													onClick={clearAllFilters}
 													variant="outline"
-													className="border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
+													className="border-mainBorder bg-transparent text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 												>
 													<RotateCcw className="mr-2 h-4 w-4 text-mainColor" />
-													Limpar filtros
+													{t('projects.clear')}
 												</Button>
 											</div>
 										</CardContent>
@@ -423,5 +603,3 @@ const Projects: React.FC = () => {
 		</div>
 	);
 };
-
-export default Projects;

@@ -40,6 +40,8 @@
   "projects.filterByTechnology":"Filtrar por tecnologia",
   "projects.technologies":"Tecnologias",
   "projects.filteredResults":"resultados",
+  "projects.filterBy": "Filtrar por",
+  "projects.clear":"Limpar",
   "projects.search":"Pesquisar por nome...",
   "projects.hasImage":"Possui imagem",
 

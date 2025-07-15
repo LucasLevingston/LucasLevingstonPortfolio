@@ -10,7 +10,7 @@ import LanguageToggle from '@/components/toggles/LanguageToggle';
 import { useTranslation } from 'react-i18next';
 import Typewriter from 'typewriter-effect';
 
-export default function Home() {
+export function Home() {
 	const user = useUser();
 	const { t } = useTranslation();
 	return (

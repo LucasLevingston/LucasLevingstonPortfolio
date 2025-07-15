@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Typewriter from 'typewriter-effect';
@@ -21,6 +23,7 @@ import { Button } from './ui/button';
 import TechnologiesSection from './TechnologiesSection';
 import CarouselPagination from './CarouselPagination';
 import PhoneFrame from './PhoneFrame';
+import { DesktopFrame } from './DesktopFrame'; // Import the new DesktopFrame
 import {
 	Star,
 	Github,
@@ -29,7 +32,6 @@ import {
 	ImageIcon,
 	Smartphone,
 	Monitor,
-	ChevronDown,
 } from 'lucide-react';
 import TechnologyIcon from './Icon/TechnologyIcon';
 import { ImageViewer } from './image-viewer';
@@ -69,12 +71,15 @@ export default function ProjectCard({
 
 	useEffect(() => {
 		if (!api) return;
-
 		setCurrentImage(api.selectedScrollSnap());
 		api.on('select', () => {
 			setCurrentImage(api.selectedScrollSnap());
 		});
 	}, [api]);
+
+	// Get the first image for the preview
+	const previewImage =
+		images && images.length > 0 ? images[0] : '/placeholder.svg';
 
 	return (
 		<Card className="transition-shadow hover:shadow-md">
@@ -88,8 +93,8 @@ export default function ProjectCard({
 				>
 					<AccordionItem value={title} className="border-none">
 						<CardHeader className="pb-3">
-							<AccordionTrigger className="p-0 hover:no-underline">
-								<div className="flex w-full items-center justify-between">
+							<AccordionTrigger className="w-full p-0 hover:no-underline">
+								<div className="flex w-full flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
 									<div className="flex items-center gap-3">
 										<div className="rounded-lg p-2">
 											{isMobile ? (
@@ -130,7 +135,30 @@ export default function ProjectCard({
 											)}
 										</div>
 									</div>
-									<div className="flex items-center gap-2">
+									{openAccordion !== title && images && images.length > 0 && (
+										<div className="w-full px-6 pb-4 sm:w-auto sm:px-0 sm:pb-0">
+											<div className="relative flex h-48 w-full items-center justify-center overflow-hidden rounded-md">
+												{isMobile ? (
+													<PhoneFrame className="h-full max-h-[180px]">
+														<img
+															src={previewImage || '/placeholder.svg'}
+															alt={`Preview of ${title}`}
+															className="h-full w-full object-cover"
+														/>
+													</PhoneFrame>
+												) : (
+													<DesktopFrame className="h-full max-h-[180px]">
+														<img
+															src={previewImage || '/placeholder.svg'}
+															alt={`Preview of ${title}`}
+															className="h-full w-full object-contain"
+														/>
+													</DesktopFrame>
+												)}
+											</div>
+										</div>
+									)}
+									<div className="flex items-center gap-2 sm:ml-auto">
 										{images && images.length > 0 && (
 											<ImageIcon className="h-4 w-4 text-mainColor" />
 										)}
@@ -146,7 +174,6 @@ export default function ProjectCard({
 								</div>
 							</AccordionTrigger>
 						</CardHeader>
-
 						<AccordionContent>
 							<CardContent className="pt-0">
 								<div className="space-y-6">
@@ -155,7 +182,6 @@ export default function ProjectCard({
 											{description}
 										</p>
 									</div>
-
 									<div>
 										<div className="mb-3 flex items-center gap-2">
 											<Code className="h-4 w-4 text-mainColor" />
@@ -165,7 +191,6 @@ export default function ProjectCard({
 										</div>
 										<TechnologiesSection technologies={technologies} />
 									</div>
-
 									{images && images.length > 0 && (
 										<div>
 											<div className="mb-3 flex items-center gap-2">
@@ -175,7 +200,7 @@ export default function ProjectCard({
 												</h4>
 											</div>
 											<Carousel setApi={setApi}>
-												<CarouselContent className="h-[180px]">
+												<CarouselContent className="h-full w-[500px]">
 													{images.map((image, index) =>
 														isMobile ? (
 															<CarouselItem
@@ -224,14 +249,13 @@ export default function ProjectCard({
 											</Carousel>
 										</div>
 									)}
-
 									{/* Action Buttons */}
-									<div className="flex flex-wrap items-center justify-center gap-3 border-t border-mainBorder pt-4 dark:border-main-border-dark">
+									<div className="flex flex-wrap items-center justify-center gap-3 border-mainBorder pt-4 dark:border-main-border-dark">
 										{frontEndRepositoryUrl && (
 											<Button
 												asChild
 												variant="outline"
-												className="gap-2 border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
+												className="gap-2 border-mainBorder bg-transparent text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 											>
 												<a
 													href={frontEndRepositoryUrl}
@@ -243,12 +267,11 @@ export default function ProjectCard({
 												</a>
 											</Button>
 										)}
-
 										{backEndRepositoryUrl && (
 											<Button
 												asChild
 												variant="outline"
-												className="gap-2 border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
+												className="gap-2 border-mainBorder bg-transparent text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 											>
 												<a
 													href={backEndRepositoryUrl}
@@ -260,14 +283,13 @@ export default function ProjectCard({
 												</a>
 											</Button>
 										)}
-
 										{!frontEndRepositoryUrl &&
 											!backEndRepositoryUrl &&
 											repositoryUrl && (
 												<Button
 													asChild
 													variant="outline"
-													className="gap-2 border-mainBorder text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
+													className="gap-2 border-mainBorder bg-transparent text-sm hover:bg-lightMainColor dark:border-main-border-dark dark:hover:bg-light-main-color-dark"
 												>
 													<a
 														href={repositoryUrl}
@@ -279,7 +301,6 @@ export default function ProjectCard({
 													</a>
 												</Button>
 											)}
-
 										{link && (
 											<Button
 												asChild

@@ -1,55 +1,5 @@
-import SP1 from '../assets/SPOTIFY1.png';
-import SP2 from '../assets/SPOTIFY2.png';
-import SP3 from '../assets/SPOTIFY3.png';
-import CM1 from '../assets/CampoMinado1.jpg';
-import CM2 from '../assets/CampoMinado2.jpg';
-import CM3 from '../assets/CampoMinado3.jpg';
-import CALC1 from '../assets/Calc1.jpg';
-import CALC2 from '../assets/Calc2.jpg';
-import CALC3 from '../assets/Calc3.jpg';
-import MP1 from '../assets/MP1.png';
-import MP2 from '../assets/MP2.png';
-import MP3 from '../assets/MP3.png';
-import F1 from '../assets/Flexibble1.jpg';
-import F2 from '../assets/Flexibble2.jpg';
-import F3 from '../assets/Flexibble3.jpg';
-import T1 from '../assets/threads1.png';
-import T2 from '../assets/threads2.png';
-import T3 from '../assets/threads3.png';
-import PIW1 from '../assets/PIW1.jpg';
-import PIW2 from '../assets/PIW2.jpg';
-import PIW3 from '../assets/PIW3.jpg';
-import PiwNode1 from '../assets/pass-in-web-node1.jpg';
-import PiwNode2 from '../assets/pass-in-web-node2.jpg';
-import PiwNode3 from '../assets/pass-in-web-node3.jpg';
-import GestaoFuncionarios1 from '../assets/GestaoFuncionarios1.jpg';
-import GestaoFuncionarios2 from '../assets/GestaoFuncionarios2.jpg';
-import GestaoFuncionarios3 from '../assets/GestaoFuncionarios3.jpg';
-import caputeeno1 from '../assets/caputeeno1.jpg';
-import caputeeno2 from '../assets/caputeeno2.jpg';
-import caputeeno3 from '../assets/caputeeno3.jpg';
-import verbo1 from '../assets/verbo1.png';
-import verbo2 from '../assets/verbo2.png';
-import verbo3 from '../assets/verbo3.png';
-import sercomp1 from '../assets/sercomp1.png';
-import sercomp2 from '../assets/sercomp2.png';
-import sercomp3 from '../assets/sercomp3.png';
-import sercomp4 from '../assets/sercomp4.png';
-import sercomp5 from '../assets/sercomp5.png';
-import GymEvolution1 from '../assets/GymEvolution1.png';
-import GymEvolution2 from '../assets/GymEvolution2.png';
-import GymEvolution3 from '../assets/GymEvolution3.png';
-import consultaFacil1 from '../assets/consultafacil1.png';
-import consultaFacil2 from '../assets/consultafacil2.png';
-import consultaFacil3 from '../assets/consultafacil3.png';
-import consultaFacil4 from '../assets/consultafacil4.png';
-import aneis1 from '../assets/Aneis1.png';
-import aneis2 from '../assets/Aneis2.png';
-import aneis3 from '../assets/Aneis3.png';
-import nerby1 from '@/assets/Nearby1.png';
-import nerby2 from '@/assets/Nearby2.png';
-import nerby3 from '@/assets/Nearby3.png';
-import { ProjectType } from '../types/ProjectType';
+import { projectImages } from '@/assets/images';
+import type { ProjectType } from '@/types/ProjectType';
 
 export const projectsDataBr: ProjectType[] = [
 	{
@@ -57,7 +7,7 @@ export const projectsDataBr: ProjectType[] = [
 		favorite: true,
 		description:
 			'GymEvolution Se trata de um sistema para evolução na musculação, realacionados a dieta e treino, com gráficos, planilhas de treinos, acompanhamento nutricional e pessoal.',
-		images: [GymEvolution1, GymEvolution2, GymEvolution3],
+		images: projectImages.gymEvolution,
 		technologies: [
 			'react',
 			'typescript',
@@ -101,7 +51,7 @@ export const projectsDataBr: ProjectType[] = [
 			'shadcn',
 			'nextauth',
 		],
-		images: [consultaFacil1, consultaFacil2, consultaFacil3, consultaFacil4],
+		images: projectImages.consultaFacil,
 		link: 'https://consulta-facil-next.vercel.app/',
 		repositoryUrl: 'https://github.com/LucasLevingston/consultaFacil',
 	},
@@ -126,7 +76,6 @@ export const projectsDataBr: ProjectType[] = [
 			'scrum',
 		],
 	},
-
 	{
 		title: 'Anéis de Poder',
 		favorite: true,
@@ -151,15 +100,64 @@ export const projectsDataBr: ProjectType[] = [
 			'zustand',
 			'vitest',
 		],
-		images: [aneis1, aneis2, aneis3],
+		images: projectImages.aneis,
 		repositoryUrl: 'https://github.com/LucasLevingston/AneisDePoder',
+	},
+	{
+		title: 'DevStage',
+		favorite: false,
+		description:
+			'Sistema desenvolvido com fundamentos sólidos de React e Next.js, utilizando padrão de composição de componentes, estilização com Tailwind CSS, roteamento com App Router, Server e Client Components. Conta com formulários otimizados com React Hook Form, validação com Zod, tipagem com TypeScript e comunicação via cliente HTTP gerado com Orval. Toda a toolchain foi configurada com Biome, garantindo padronização e qualidade de código.',
+		technologies: [
+			'react',
+			'nextjs',
+			'typescript',
+			'nodejs',
+			'fastify',
+			'tailwindcss',
+			'orval',
+			'drizzle',
+			'redis',
+			'zod',
+			'typescript',
+		],
+		images: [],
+		backEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-server',
+		frontEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-client',
+	},
+	{
+		title: 'Let me Ask',
+		favorite: true,
+		description:
+			'Sistema full-stack para criação de salas de aula interativas. Alunos podem enviar perguntas por texto ou áudio, que são transcritas com IA (Gemini API) e respondidas com base na transcrição da aula. O back-end é construído com Node.js, Fastify, Docker, PostgreSQL e Drizzle ORM. O front-end usa React, Vite, Tailwind CSS, React Router DOM e React Query. Áudio é gravado no navegador e tratado com hooks personalizados.',
+		technologies: [
+			'nodejs',
+			'fastify',
+			'docker',
+			'postgresql',
+			'react',
+			'vite',
+			'tailwindcss',
+			'tanstackquery',
+			'drizzle',
+			'gemini',
+			'axios',
+			'typescript',
+			'jwt',
+			'zod',
+		],
+		images: [],
+		backEndRepositoryUrl:
+			'https://github.com/LucasLevingston/let-me-ask-server',
+		frontEndRepositoryUrl:
+			'https://github.com/LucasLevingston/let-me-ask-client',
 	},
 	{
 		title: 'Nearby - Mobile',
 		description:
 			'Sistema mobile de recomendação de restaurantes. Desenvolvido com React Native, aplicação dos conceitos de Propriedades, Estados e Componentes,tipagem com Typescript, Expo Framework, interface com StyleSheet, roteamento por arquivos com Expo Router, consumo de API Node.js,Bottom Sheet, leitura de QRCode com câmera, exibição de mapa.',
-		images: [nerby1, nerby2, nerby3],
-		repositoryUrl: 'https://github.com/LucasLevingston/Nearby',
+		images: projectImages.nearby,
+		frontEndRepositoryUrl: 'https://github.com/LucasLevingston/Nearby',
 		technologies: ['reactnative', 'typescript', 'expo', 'css3'],
 		isMobile: true,
 	},
@@ -168,7 +166,7 @@ export const projectsDataBr: ProjectType[] = [
 		favorite: true,
 		description:
 			'Trata-se de um sistema de gestão de eventos para a igreja Verbo da Vida - Patos, PB. Com GitFlow, desenvolvemos o back e o front-end da aplicação juntamente com testes unitários. A interface está implantada no AWS CloudFront e a API está implantada no AWS S3 Elastic Beanstalk',
-		images: [verbo1, verbo2, verbo3],
+		images: projectImages.verbo,
 		technologies: [
 			'react',
 			'typescript',
@@ -186,10 +184,9 @@ export const projectsDataBr: ProjectType[] = [
 			'github',
 		],
 	},
-
 	{
 		title: 'VI Sercomp',
-		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
+		images: projectImages.sercomp,
 		description:
 			'Um projeto voluntário da faculdade, onde se trata de uma aplicação para o congresso do curso. Foi utilizado GitFlow para desenvolvimento. Juntamente com uma grande equipe de alunos conseguimos concluir o projeto em 2 meses.',
 		technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
@@ -197,9 +194,9 @@ export const projectsDataBr: ProjectType[] = [
 	},
 	{
 		title: 'Gestão de Funcionários',
-		images: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
+		images: projectImages.gestaoFuncionarios,
 		description:
-			'Se trata de um sistema de gestão de funcionários com componentes do Shadcn como por exemplo o  formulário para o registro. Ele tem alterações de dados, promoção de funcionários e geração de PDF para os mesmos. Tudo armazenado no Firebase.',
+			'Se trata de um sistema de gestão de funcionários com componentes do Shadcn como por exemplo o  formulário para o registro. Ele tem alterações de dados, promoção de funcionários e geração de PDF para os mesmos. Tudo armazenado no Firebase.',
 		technologies: [
 			'react',
 			'typescript',
@@ -209,14 +206,14 @@ export const projectsDataBr: ProjectType[] = [
 			'git',
 			'github',
 		],
-		repositoryUrl: 'https://github.com/LucasLevingston/taugor-project',
+		frontEndRepositoryUrl: 'https://github.com/LucasLevingston/taugor-project',
 	},
 	{
 		title: 'Caputeeno',
 		description:
 			'Este projeto consiste em uma aplicação front-end em ReactJS, onde me realizei um desafio visto no youtube, desenvolvendo o Front-End de um E-commerce. Mudei as tecnologias utilizadas no desafio e utilizei as que uso no meu dia a dia, assim com um sistema 100% desenvolvido por mim.',
-		images: [caputeeno1, caputeeno2, caputeeno3],
-		repositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
+		images: projectImages.caputeeno,
+		frontEndRepositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
 		technologies: [
 			'vite',
 			'react',
@@ -265,11 +262,14 @@ export const projectsDataBr: ProjectType[] = [
 		technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
 	},
 	{
-		title: 'Pass In Web - ReactJs',
+		title: 'Pass In Web',
 		description:
-			'Este projeto consiste em uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.',
-		images: [PIW1, PIW2, PIW3],
-		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
+			'Este projeto consiste em uma aplicação full-stack para gerenciamento de eventos. O front-end é desenvolvido em ReactJS com TypeScript, Vite, TailwindCSS e consumo de API Node.js. O back-end é construído em Node.js com TypeScript, Fastify, Prisma ORM, SQLite e Zod para validação de dados.',
+		images: projectImages.passInWeb.combined,
+		frontEndRepositoryUrl:
+			'https://github.com/LucasLevingston/pass-in-web-reactjs',
+		backEndRepositoryUrl:
+			'https://github.com/LucasLevingston/pass-in-web-nodejs',
 		technologies: [
 			'vite',
 			'react',
@@ -277,6 +277,11 @@ export const projectsDataBr: ProjectType[] = [
 			'tailwindcss',
 			'git',
 			'github',
+			'nodejs',
+			'fastify',
+			'prisma',
+			'sqlite',
+			'zod',
 		],
 	},
 	{
@@ -301,25 +306,9 @@ export const projectsDataBr: ProjectType[] = [
 		],
 	},
 	{
-		title: 'Pass In Web - NodeJs',
-		description:
-			'Este projeto no consiste em uma aplicação back-end em Node.js, aplicação dos conceitos de API REST, utilizando TypeScript, Fastify como framework, integração do Prisma ORM + SQLite e Zod para validação de dados.',
-		images: [PiwNode1, PiwNode2, PiwNode3],
-		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
-		technologies: [
-			'typescript',
-			'nodejs',
-			'fastify',
-			'prisma',
-			'sqlite',
-			'git',
-			'github',
-		],
-	},
-	{
 		title: 'Threads Clone',
-		description: '	O Threads clone é um projeto do clone do site Threads. ',
-		images: [T1, T2, T3],
+		description: 'O Threads clone é um projeto do clone do site Threads. ',
+		images: projectImages.threads,
 		repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
 		link: 'https://threads-app-nextjs13.vercel.app/',
 		technologies: [
@@ -334,8 +323,8 @@ export const projectsDataBr: ProjectType[] = [
 	},
 	{
 		title: 'Spotify Clone',
-		description: '	O Spotify clone é um projeto do clone do site Spotify.',
-		images: [SP2, SP3, SP1],
+		description: 'O Spotify clone é um projeto do clone do site Spotify.',
+		images: projectImages.spotify,
 		repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
 		link: 'https://spotify-nextjs13.vercel.app/',
 		technologies: [
@@ -352,7 +341,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Flexibble',
 		description:
 			'O Flexibble é uma aplicação web que tem como objetivo ser uma plataforma colaborativa para entusiastas da programação mostrarem, colaborarem e descobrirem projetos de programação.',
-		images: [F3, F2, F1],
+		images: projectImages.flexibble,
 		repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
 		link: 'https://flexibble-nexjs13.vercel.app/',
 		technologies: [
@@ -368,8 +357,8 @@ export const projectsDataBr: ProjectType[] = [
 	{
 		title: 'Meu Portfólio ',
 		description:
-			'Como forma de aprendizado, desenvolvi meu portfólio  utilizando o framework react. Utilizando a linguagem TypeScript e o Tailwind CSS para estilização. Foi meu primeiro contato com react e o pontapé para projetos futuros.',
-		images: [MP1, MP2, MP3],
+			'Como forma de aprendizado, desenvolvi meu portfólio utilizando o framework react. Utilizando a linguagem TypeScript e o Tailwind CSS para estilização. Foi meu primeiro contato com react e o pontapé para projetos futuros.',
+		images: projectImages.meuPortfolio,
 		repositoryUrl:
 			'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
 		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
@@ -378,7 +367,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Campo Minado',
 		description:
 			'Campo minado foi um projeto na linguagem Java de um jogo já existente, onde o objetivo do jogo é o usuário abrir todos os campos do jogo sem abrir nenhum campo que esteja minado, caso ele abra, irá perder o jogo. Para a abertura de campos, utilizei o padrão observer. Quando tem um campo que esteja minado, os campos vizinhos irão avisar que tem entre 1 e 4 campos minados dentre os seus vizinhos. Com isso, abrindo campo por campo, até completar o jogo. Na parte gráfica utilizei o Jbutton, onde cada campo representa um botão. Utilizei a biblioteca do JUnit para os testes da aplicação.',
-		images: [CM1, CM2, CM3],
+		images: projectImages.campoMinado,
 		repositoryUrl: 'https://github.com/LucasLevingston/Campo_Minado',
 		technologies: ['java'],
 	},
@@ -386,7 +375,7 @@ export const projectsDataBr: ProjectType[] = [
 		title: 'Calculadora',
 		description:
 			'Calculadora em Java utilizando o padrão Observer e orientação a objetos, com interface gráfica Swing e suporte para adição, subtração, multiplicação e divisão. Aplicação modular e interativa, atualizando a tela em tempo real. Exemplo de código organizado e habilidades em desenvolvimento Java.',
-		images: [CALC1, CALC2, CALC3],
+		images: projectImages.calculadora,
 		repositoryUrl: 'https://github.com/LucasLevingston/Calculadora.git',
 		technologies: ['java'],
 	},
@@ -398,7 +387,7 @@ export const projectsDataEn: ProjectType[] = [
 		favorite: true,
 		description:
 			'GymEvolution is a system for fitness evolution related to diet and training, featuring graphs, workout sheets, and nutritional and personal tracking.',
-		images: [GymEvolution1, GymEvolution2, GymEvolution3],
+		images: projectImages.gymEvolution,
 		technologies: [
 			'react',
 			'typescript',
@@ -442,7 +431,7 @@ export const projectsDataEn: ProjectType[] = [
 			'shadcn',
 			'nextauth',
 		],
-		images: [consultaFacil1, consultaFacil2, consultaFacil3, consultaFacil4],
+		images: projectImages.consultaFacil,
 		link: 'https://consulta-facil-next.vercel.app/',
 		repositoryUrl: 'https://github.com/LucasLevingston/consultaFacil',
 	},
@@ -467,7 +456,6 @@ export const projectsDataEn: ProjectType[] = [
 			'scrum',
 		],
 	},
-
 	{
 		title: 'Rings of Power',
 		favorite: true,
@@ -492,14 +480,63 @@ export const projectsDataEn: ProjectType[] = [
 			'zustand',
 			'vitest',
 		],
-		images: [aneis1, aneis2, aneis3],
+		images: projectImages.aneis,
 		repositoryUrl: 'https://github.com/LucasLevingston/AneisDePoder',
+	},
+	{
+		title: 'DevStage',
+		favorite: false,
+		description:
+			'System developed with solid React and Next.js fundamentals, using component composition patterns, Tailwind CSS for styling, App Router for routing, Server and Client Components. It features optimized forms with React Hook Form, Zod for validation, TypeScript for typing, and API communication via an HTTP client generated with Orval. The entire toolchain was configured with Biome, ensuring code standardization and quality.',
+		technologies: [
+			'react',
+			'nextjs',
+			'typescript',
+			'nodejs',
+			'fastify',
+			'tailwindcss',
+			'orval',
+			'drizzle',
+			'redis',
+			'zod',
+			'typescript',
+		],
+		images: [],
+		backEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-server',
+		frontEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-client',
+	},
+	{
+		title: 'Let me Ask',
+		favorite: true,
+		description:
+			'Full-stack system for creating interactive classrooms. Students can send questions via text or audio, which are transcribed with AI (Gemini API) and answered based on the lecture transcription. The backend is built with Node.js, Fastify, Docker, PostgreSQL, and Drizzle ORM. The frontend uses React, Vite, Tailwind CSS, React Router DOM, and React Query. Audio is recorded in the browser and handled with custom hooks.',
+		technologies: [
+			'nodejs',
+			'fastify',
+			'docker',
+			'postgresql',
+			'react',
+			'vite',
+			'tailwindcss',
+			'tanstackquery',
+			'drizzle',
+			'gemini',
+			'axios',
+			'typescript',
+			'jwt',
+			'zod',
+		],
+		images: [],
+		backEndRepositoryUrl:
+			'https://github.com/LucasLevingston/let-me-ask-server',
+		frontEndRepositoryUrl:
+			'https://github.com/LucasLevingston/let-me-ask-client',
 	},
 	{
 		title: 'Nearby - Mobile',
 		description:
 			'Mobile restaurant recommendation system. Developed with React Native, utilizing the concepts of Props, State, and Components, typed with TypeScript, using Expo Framework, styled with StyleSheet, routing through files with Expo Router, consuming a Node.js API, implementing Bottom Sheet, reading QR Codes with the camera, and displaying maps.',
-		images: [nerby1, nerby2, nerby3],
+		images: projectImages.nearby,
 		repositoryUrl: 'https://github.com/LucasLevingston/Nearby',
 		technologies: ['reactnative', 'typescript', 'expo', 'css3'],
 		isMobile: true,
@@ -509,7 +546,7 @@ export const projectsDataEn: ProjectType[] = [
 		favorite: true,
 		description:
 			'A system for managing events for the Verbo da Vida church in Patos, PB. Using GitFlow, we developed the back and front-end of the application along with unit tests. The interface is deployed on AWS CloudFront, and the API is deployed on AWS S3 Elastic Beanstalk.',
-		images: [verbo1, verbo2, verbo3],
+		images: projectImages.verbo,
 		technologies: [
 			'react',
 			'typescript',
@@ -527,10 +564,9 @@ export const projectsDataEn: ProjectType[] = [
 			'github',
 		],
 	},
-
 	{
 		title: 'VI Sercomp',
-		images: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
+		images: projectImages.sercomp,
 		description:
 			'A volunteer project from college, consisting of an application for the course congress. We utilized GitFlow for development. Together with a large team of students, we completed the project in 2 months.',
 		technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
@@ -538,7 +574,7 @@ export const projectsDataEn: ProjectType[] = [
 	},
 	{
 		title: 'Employee Management',
-		images: [GestaoFuncionarios1, GestaoFuncionarios2, GestaoFuncionarios3],
+		images: projectImages.gestaoFuncionarios,
 		description:
 			'A system for managing employees, featuring Shadcn components like a form for registration. It allows data changes, employee promotions, and PDF generation for them, all stored in Firebase.',
 		technologies: [
@@ -556,7 +592,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'Caputeeno',
 		description:
 			'This project consists of a front-end application in ReactJS, based on a challenge seen on YouTube, developing the Front-End of an E-commerce. I changed the technologies used in the challenge to those I use daily, thus creating a 100% self-developed system.',
-		images: [caputeeno1, caputeeno2, caputeeno3],
+		images: projectImages.caputeeno,
 		repositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
 		technologies: [
 			'vite',
@@ -606,11 +642,14 @@ export const projectsDataEn: ProjectType[] = [
 		technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
 	},
 	{
-		title: 'Pass In Web - ReactJs',
+		title: 'Pass In Web',
 		description:
-			'This project consists of a front-end application in ReactJS, applying the concepts of Properties, States, and Components, with TypeScript typing, tooling with Vite, responsive interface with TailwindCSS, consuming a Node.js API, and using URL states.',
-		images: [PIW1, PIW2, PIW3],
-		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-reactjs',
+			'This project consists of a full-stack application for event management. The frontend is developed in ReactJS with TypeScript, Vite, TailwindCSS, and Node.js API consumption. The backend is built in Node.js with TypeScript, Fastify, Prisma ORM, SQLite, and Zod for data validation.',
+		images: projectImages.passInWeb.combined,
+		frontEndRepositoryUrl:
+			'https://github.com/LucasLevingston/pass-in-web-reactjs',
+		backEndRepositoryUrl:
+			'https://github.com/LucasLevingston/pass-in-web-nodejs',
 		technologies: [
 			'vite',
 			'react',
@@ -618,6 +657,11 @@ export const projectsDataEn: ProjectType[] = [
 			'tailwindcss',
 			'git',
 			'github',
+			'nodejs',
+			'fastify',
+			'prisma',
+			'sqlite',
+			'zod',
 		],
 	},
 	{
@@ -642,26 +686,10 @@ export const projectsDataEn: ProjectType[] = [
 		],
 	},
 	{
-		title: 'Pass In Web - NodeJs',
-		description:
-			'This project consists of a back-end application in Node.js, applying the concepts of REST API, using TypeScript, Fastify as the framework, integrating Prisma ORM + SQLite, and Zod for data validation.',
-		images: [PiwNode1, PiwNode2, PiwNode3],
-		repositoryUrl: 'https://github.com/LucasLevingston/pass-in-web-nodejs',
-		technologies: [
-			'typescript',
-			'nodejs',
-			'fastify',
-			'prisma',
-			'sqlite',
-			'git',
-			'github',
-		],
-	},
-	{
 		title: 'Threads Clone',
 		description:
 			'The Threads clone is a project that replicates the Threads website.',
-		images: [T1, T2, T3],
+		images: projectImages.threads,
 		repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
 		link: 'https://threads-app-nextjs13.vercel.app/',
 		technologies: [
@@ -678,7 +706,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'Spotify Clone',
 		description:
 			'The Spotify clone is a project that replicates the Spotify website.',
-		images: [SP2, SP3, SP1],
+		images: projectImages.spotify,
 		repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
 		link: 'https://spotify-nextjs13.vercel.app/',
 		technologies: [
@@ -695,7 +723,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'Flexibble',
 		description:
 			'Flexibble is a web application aimed at being a collaborative platform for programming enthusiasts to showcase, collaborate, and discover programming projects.',
-		images: [F3, F2, F1],
+		images: projectImages.flexibble,
 		repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
 		link: 'https://flexibble-nexjs13.vercel.app/',
 		technologies: [
@@ -712,7 +740,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'My Portfolio',
 		description:
 			'As a learning experience, I developed my portfolio using the React framework. I used TypeScript and Tailwind CSS for styling. This was my first contact with React and the starting point for future projects.',
-		images: [MP1, MP2, MP3],
+		images: projectImages.meuPortfolio,
 		repositoryUrl:
 			'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
 		technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
@@ -721,7 +749,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'Minesweeper',
 		description:
 			'Minesweeper was a project in Java based on an existing game where the goal is for the user to open all fields without triggering any mines. I used the observer pattern for field openings. When a field is mined, adjacent fields will indicate how many mines are nearby. Thus, by opening each field, the game can be completed. The graphical part used JButton, where each field represents a button. I used the JUnit library for application testing.',
-		images: [CM1, CM2, CM3],
+		images: projectImages.campoMinado,
 		repositoryUrl: 'https://github.com/LucasLevingston/Campo_Minado',
 		technologies: ['java'],
 	},
@@ -729,7 +757,7 @@ export const projectsDataEn: ProjectType[] = [
 		title: 'Calculator',
 		description:
 			'Calculator in Java using the Observer pattern and object-oriented principles, featuring a Swing GUI and support for addition, subtraction, multiplication, and division. A modular, interactive application that updates the display in real time. An example of organized code and Java development skills.',
-		images: [CALC1, CALC2, CALC3],
+		images: projectImages.calculadora,
 		repositoryUrl: 'https://github.com/LucasLevingston/Calculadora.git',
 		technologies: ['java'],
 	},
