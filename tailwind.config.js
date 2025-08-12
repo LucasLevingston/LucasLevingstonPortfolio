@@ -1,114 +1,103 @@
 /** @type {import('tailwindcss').Config} */
-import tailwindAnimate from 'tailwindcss-animate';
-import tailwindAnimated from 'tailwindcss-animated';
-import tailwindScrollbar from 'tailwind-scrollbar';
+
+import tailwindScrollbar from 'tailwind-scrollbar'
+
 export default {
-	darkMode: ['class'],
-	content: ['./src/**/*.{js,ts,jsx,tsx}'],
-	theme: {
-		extend: {
-			fontFamily: {
-				mainFont: ['Roboto-Regular', 'sans-serif'],
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)',
-			},
-			colors: {
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))',
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))',
-				},
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))',
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))',
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))',
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))',
-				},
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				chart: {
-					1: 'hsl(var(--chart-1))',
-					2: 'hsl(var(--chart-2))',
-					3: 'hsl(var(--chart-3))',
-					4: 'hsl(var(--chart-4))',
-					5: 'hsl(var(--chart-5))',
-				},
-				mainColor: '#ff2200',
-				lightMainColor: '#dc2626', // red-50
-				mainBorder: '#fecaca', // red-200
-				'main-color-dark': '#991b1b', // red-800
-				'light-main-color-dark': '#450a0a', // red-950
-				'main-border-dark': '#7f1d1d', // red-900
-				mainTextColor: '#fff',
-				borderColor: '#434040',
-				bioBgColor: '#212121',
-				bioBorderColor: '#ffffff',
-				aboutBgColor: '#131212',
-				lightBlue: '#35DCFA',
-				transparent: 'transparent',
-			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0',
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)',
-					},
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)',
-					},
-					to: {
-						height: '0',
-					},
-				},
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-			},
-		},
-	},
-	plugins: [
-		tailwindAnimate,
-		tailwindScrollbar,
-		function ({ addUtilities }) {
-			const newUtilities = {
-				'.no-scrollbar::-webkit-scrollbar': {
-					display: 'none',
-				},
-				'.no-scrollbar': {
-					'-ms-overflow-style': 'none',
-					'scrollbar-width': 'none',
-				},
-			};
-			addUtilities(newUtilities);
-		},
-		tailwindAnimated,
-	],
-};
+  darkMode: ['class'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        mainFont: ['Roboto-Regular', 'sans-serif'],
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        mainColor: '#ff2200',
+        lightMainColor: '#dc2626',
+        mainBorder: '#fecaca',
+        'main-color-dark': '#991b1b',
+        'light-main-color-dark': '#450a0a',
+        'main-border-dark': '#7f1d1d',
+        mainTextColor: '#fff',
+        borderColor: '#434040',
+        bioBgColor: '#212121',
+        bioBorderColor: '#ffffff',
+        aboutBgColor: '#131212',
+        lightBlue: '#35DCFA',
+        transparent: 'transparent',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
+  },
+  plugins: [
+    require('tailwindcss-animate'),
+    require('tailwindcss-animated'),
+    tailwindScrollbar,
+    ({ addUtilities }) => {
+      const newUtilities = {
+        '.no-scrollbar::-webkit-scrollbar': {
+          display: 'none',
+        },
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
+}

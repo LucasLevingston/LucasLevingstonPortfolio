@@ -67,6 +67,10 @@ import NLWJourneyNodejs from './NLWJourneyNodejs.png';
 import NLWPocketJavascript from './NLWPocketJavascript.png';
 import NLWConnectReact from './CertificadoNLWConnectReact.png';
 import NLWAgentsFullStack from './NLWAgentsFullStack.png';
+import rhcontrol1 from './rhcontrol1.png';
+import rhcontrol2 from './rhcontrol2.png';
+import rhcontrol3 from './rhcontrol3.png';
+import rhcontrol4 from './rhcontrol4.png';
 import Logo from './Logo.png';
 
 export const projectImages = {
@@ -81,10 +85,14 @@ export const projectImages = {
 		node: [PiwNode1, PiwNode2, PiwNode3],
 		combined: [PIW1, PIW2, PIW3, PiwNode1, PiwNode2, PiwNode3],
 	},
-	gestaoFuncionarios: [
+	rhcontrol: [
 		GestaoFuncionarios1,
 		GestaoFuncionarios2,
 		GestaoFuncionarios3,
+    rhcontrol1,
+    rhcontrol2,
+    rhcontrol3,
+    rhcontrol4,
 	],
 	caputeeno: [caputeeno1, caputeeno2, caputeeno3],
 	verbo: [verbo1, verbo2, verbo3],
