@@ -1,19 +1,19 @@
 import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
-import Header from '@/components/custom/Header'
-import Photo from '@/components/custom/Photo'
+import Header from '@/components/custom/header'
+import Photo from '@/components/custom/photo'
 import { ResumeButton } from '@/components/custom/resume-button'
-import Stats from '@/components/custom/Stats'
 import SocialBar from '@/components/custom/social-bar'
+import Stats from '@/components/custom/stats'
 import LanguageToggle from '@/components/toggles/LanguageToggle'
 import { ModeToggle } from '@/components/toggles/ModeToggle'
-import { useUser } from '@/hooks/user-hooks'
+import { useUser } from '@/hooks/use-user'
 
 export function Home() {
-  const user = useUser()
+  const { user } = useUser()
   const { t } = useTranslation()
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen p-4 dark:bg-aboutBgColor">
       <Header />
       <div className="container mx-auto px-4 py-8 md:py-6 lg:py-8 xl:py-12">
         <div className="flex flex-col items-center justify-between gap-8 lg:flex-row lg:items-start">

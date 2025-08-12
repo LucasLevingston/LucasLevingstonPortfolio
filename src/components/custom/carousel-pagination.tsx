@@ -13,7 +13,7 @@ interface CarouselPaginationProps {
   currentImage: number
   setCurrentImage: (index: number) => void
   api: CarouselApi
-  images: any[]
+  images: string[]
 }
 
 const CarouselPagination: React.FC<CarouselPaginationProps> = ({
@@ -26,14 +26,13 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
     <Pagination>
       <PaginationContent>
         <CustomButton
-          // className={`hidden sm:inline-flex ${paginationButtonClassName}`}
           disabled={currentImage === 0}
           onClick={() => {
             setCurrentImage(0)
             api?.scrollTo(0)
           }}
           size="sm"
-          variant="outline"
+          
         >
           <CustomButton.Icon>
             <ChevronsLeft />
@@ -47,9 +46,9 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
             api?.scrollPrev()
           }}
           size="sm"
-          variant="outline"
+          
         >
-          {' '}
+          
           <CustomButton.Icon>
             <ChevronLeft />
           </CustomButton.Icon>
@@ -62,13 +61,13 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
               api?.scrollTo(currentImage - 1)
             }}
             size="sm"
-            variant="outline"
+            
           >
             <CustomButton.Label>{currentImage}</CustomButton.Label>
           </CustomButton>
         )}
 
-        <CustomButton disabled size="sm" variant="outline">
+        <CustomButton disabled size="sm" >
           <CustomButton.Label>{currentImage + 1}</CustomButton.Label>
         </CustomButton>
 
@@ -79,7 +78,7 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
               api?.scrollTo(currentImage + 1)
             }}
             size="sm"
-            variant="outline"
+            
           >
             <CustomButton.Label>{currentImage + 2}</CustomButton.Label>
           </CustomButton>
@@ -92,7 +91,7 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
             api?.scrollNext()
           }}
           size="sm"
-          variant="outline"
+          
         >
           {' '}
           <CustomButton.Icon>
@@ -107,7 +106,7 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
             api?.scrollTo(images.length - 1)
           }}
           size="sm"
-          variant="outline"
+          
         >
           <CustomButton.Icon>
             <ChevronsRight />

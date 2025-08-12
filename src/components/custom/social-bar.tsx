@@ -10,7 +10,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
-import useUserStore from '@/hooks/user-hooks'
+import { useUser } from '@/hooks/use-user'
 import { CustomButton } from './custom-button'
 
 interface SocialLink {
@@ -73,7 +73,7 @@ interface SocialBarProps {
 }
 
 export default function SocialBar({ className }: SocialBarProps) {
-  const { user } = useUserStore()
+  const { user } = useUser()
 
   return (
     <section
@@ -84,7 +84,7 @@ export default function SocialBar({ className }: SocialBarProps) {
           <HoverCard>
             <CustomButton
               asChild
-              className="rounded-full h-8 w-8 p-6"
+              className="rounded-full h-8 w-8 p-5"
               href={user[link.url]}
             >
               <HoverCardTrigger>

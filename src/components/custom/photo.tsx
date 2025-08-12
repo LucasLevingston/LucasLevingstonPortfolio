@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
-import { useUser } from '@/hooks/user-hooks'
+import { useUser } from '@/hooks/use-user'
 
 interface PhotoProps {
   className?: string
 }
 
 const Photo = ({ className }: PhotoProps) => {
-  const { profilePicture } = useUser()
+  const {
+    user: { profilePicture },
+  } = useUser()
   return (
     <div
       className={twMerge(

@@ -41,11 +41,11 @@ import {
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel'
-import useUserStore from '@/hooks/user-hooks'
+import { useUser } from '@/hooks/use-user'
 
 export function About() {
   const { t, i18n } = useTranslation()
-  const { user } = useUserStore()
+  const { user } = useUser()
   const location = useLocation()
   const [currentCertificate, setCurrentCertificate] = useState<number>(0)
   const [api, setApi] = useState<CarouselApi>()

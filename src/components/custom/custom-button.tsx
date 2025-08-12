@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils/cn'
 interface CustomButtonIconProps extends ComponentProps<'p'> {}
 
 export function CustomButtonIcon(props: CustomButtonIconProps) {
-  return <p {...props} className={cn(props.className, 'text-mainColor')} />
+  return <p {...props} className={cn('text-mainColor', props.className)} />
 }
 
 interface CustomButtonLabelProps extends ComponentProps<'p'> {}
@@ -21,15 +21,20 @@ interface CustomButtonProps extends ComponentProps<typeof Button> {
 }
 
 const defaultClassNameButton =
-  'gap-2 border-mainColor bg-transparent text-sm hover:opacity-70 dark:border-mainBorderDark dark:hover:bg-lightMainColorDark cursor-pointer border-[2px]'
+  'gap-2 border-mainColor bg-transparent text-sm hover:opacity-70 dark:border-mainColor dark:hover:bg-lightMainColorDark cursor-pointer border-2'
 
 function CustomButton({ href, target, ...props }: CustomButtonProps) {
   if (href) {
     return (
-      <Link className="cursor-pointer" target={target || '_blank'} to={href}>
+      <Link
+        className="cursor-pointer"
+        target={target || 'noopener noreferrer'}
+        to={href}
+      >
         <Button
           {...props}
-          className={cn(props.className, defaultClassNameButton)}
+          asChild={props.asChild}
+          className={cn(defaultClassNameButton, props.className)}
           variant={props.variant || 'outline'}
         />
       </Link>
@@ -38,9 +43,9 @@ function CustomButton({ href, target, ...props }: CustomButtonProps) {
 
   return (
     <Button
+      {...props}
       className={cn(defaultClassNameButton, props.className)}
       variant={props.variant || 'outline'}
-      {...props}
     />
   )
 }

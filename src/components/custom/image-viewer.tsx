@@ -35,7 +35,7 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
           {children}
         </div>
       </DialogTrigger>
-      <DialogContent className="max-h-[95vh] max-w-[95vw] border-mainBorder dark:bg-black/95 bg-white p-0 dark:border-main-border-dark">
+      <DialogContent className="max-h-[85vh] max-w-[85vw] border-mainBorder dark:bg-black/95 bg-white p-0 dark:border-main-border-dark">
         <div className="relative flex h-full w-full items-center justify-center">
           <TransformWrapper initialScale={1} maxScale={3} minScale={0.5}>
             {({ zoomIn, zoomOut, resetTransform, instance }) => (
@@ -45,31 +45,29 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                     disabled={instance.transformState.scale <= 0.5}
                     onClick={() => zoomOut()}
                     size="sm"
-                    variant="outline"
                   >
-                    <ZoomOut className="h-4 w-4" />
+                    <CustomButton.Icon>
+                      <ZoomOut />
+                    </CustomButton.Icon>
                   </CustomButton>
                   <CustomButton
                     disabled={instance.transformState.scale >= 3}
                     onClick={() => zoomIn()}
                     size="sm"
-                    variant="outline"
                   >
-                    <ZoomIn className="h-4 w-4" />
+                    <CustomButton.Icon>
+                      <ZoomIn />
+                    </CustomButton.Icon>
                   </CustomButton>
-                  <CustomButton
-                    onClick={handleRotate}
-                    size="sm"
-                    variant="outline"
-                  >
-                    <RotateCw className="h-4 w-4" />
+                  <CustomButton onClick={handleRotate} size="sm">
+                    <CustomButton.Icon>
+                      <RotateCw />
+                    </CustomButton.Icon>
                   </CustomButton>
-                  <CustomButton
-                    onClick={handleDownload}
-                    size="sm"
-                    variant="outline"
-                  >
-                    <Download className="h-4 w-4" />
+                  <CustomButton onClick={handleDownload} size="sm">
+                    <CustomButton.Icon>
+                      <Download />
+                    </CustomButton.Icon>
                   </CustomButton>
                   <CustomButton
                     onClick={() => {
@@ -77,7 +75,6 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                       setRotation(0)
                     }}
                     size="sm"
-                    variant="outline"
                   >
                     Reset
                   </CustomButton>
@@ -117,12 +114,6 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                     }}
                   />
                 </TransformComponent>
-
-                <div className="absolute bottom-4 left-1/2 z-50 -translate-x-1/2 transform">
-                  <div className="rounded-md bg-black/50 px-4 py-2 text-center text-xs text-white">
-                    <p>Arraste para mover • Scroll para zoom</p>
-                  </div>
-                </div>
               </>
             )}
           </TransformWrapper>

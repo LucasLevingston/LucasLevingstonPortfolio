@@ -28,4 +28,5 @@ export interface UserType {
 	softSkills: string[];
 	address: string;
 	location: string;
+	totalCommits?: number;
 }

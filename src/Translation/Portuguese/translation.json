@@ -1,29 +1,28 @@
 {
-	"header.fullStack": "Desenvolvedor Full-Stack",
-	"header.frontEnd": "Desenvolvedor Front-End",
-	"header.backEnd": "Desenvolvedor Back-End",
+  "header.fullStack": "Desenvolvedor Full-Stack",
+  "header.frontEnd": "Desenvolvedor Front-End",
+  "header.backEnd": "Desenvolvedor Back-End",
 
   "home.greeting": "Olá, meu nome é",
 
-  
   "about.professionalProfile": "Perfil Profissional",
   "about.technologiesTitle": "Hard Skills",
-	"about.technologiesDescription": "Uma lista de habilidades técnicas e proficiências.",
-	"about.experiencesTitle": "Experiências",
-	"about.experiencesDescription": "Experiências profissionais e cargos ocupados.",
-	"about.start": "Início",
-	"about.end": "Fim",
-	"about.enterprise": "Empresa",
-	"about.educationTitle": "Formação",
-	"about.educationDescription": "Formação educacional e qualificações.",
-	"about.currentStatus": "Situação Atual",
-	"about.certificatesTitle": "Certificados",
-	"about.certificatesDescription": "Certificados e credenciais adquiridos.",
-	"about.usedTechnologies": "Tecnologias Utilizadas",
-	"about.recommendationsTitle": "Recomendações",
-	"about.recommendationsDescription": "Depoimentos e endossos.",
-	"about.certificadeCurrentSlide": "Certificado",
-	"about.of": "de",
+  "about.technologiesDescription": "Uma lista de habilidades técnicas e proficiências.",
+  "about.experiencesTitle": "Experiências",
+  "about.experiencesDescription": "Experiências profissionais e cargos ocupados.",
+  "about.start": "Início",
+  "about.end": "Fim",
+  "about.enterprise": "Empresa",
+  "about.educationTitle": "Formação",
+  "about.educationDescription": "Formação educacional e qualificações.",
+  "about.currentStatus": "Situação Atual",
+  "about.certificatesTitle": "Certificados",
+  "about.certificatesDescription": "Certificados e credenciais adquiridos.",
+  "about.usedTechnologies": "Tecnologias Utilizadas",
+  "about.recommendationsTitle": "Recomendações",
+  "about.recommendationsDescription": "Depoimentos e endossos.",
+  "about.certificadeCurrentSlide": "Certificado",
+  "about.of": "de",
   "about.personalInfo": "Informações pessoais",
   "about.address": "Endereço",
   "about.phone": "Telefone",
@@ -35,53 +34,55 @@
   "about.duration": "Duração",
   "about.period": "Período",
 
-  
-	"projects.title": "Meus Projetos",
-  "projects.filterByTechnology":"Filtrar por tecnologia",
-  "projects.technologies":"Tecnologias",
-  "projects.filteredResults":"resultados",
+  "projects.title": "Meus Projetos",
+  "projects.filterByTechnology": "Filtrar por tecnologia",
+  "projects.technologies": "Tecnologias",
+  "projects.filteredResults": "resultados",
   "projects.filterBy": "Filtrar por",
-  "projects.clear":"Limpar",
-  "projects.search":"Pesquisar por nome...",
-  "projects.hasImage":"Possui imagem",
+  "projects.clear": "Limpar",
+  "projects.search": "Pesquisar por nome...",
+  "projects.hasImage": "Possui imagem",
 
-
-	"projectCard.technologiesUsed": "Tecnologias Utilizadas",
-	"projectCard.viewGitHub": "Ver GitHub",
-	"projectCard.visitSite": "Visitar Site",
+  "projectCard.technologiesUsed": "Tecnologias Utilizadas",
+  "projectCard.viewGitHub": "Ver GitHub",
+  "projectCard.visitSite": "Visitar Site",
+  "projectCard.images": "Imagens",
+  "projectCard.of": "de",
   "projectCard.viewFrontEndRepo": "Repositório Front-End",
   "projectCard.viewBackEndRepo": "Repositório Back-End",
-  
-  
-	"sidebar.greeting": "Olá, meu nome é",
+  "projectCard.projectEvolution": "Evolução do projeto",
+  "projectCard.currentVersion": "Versao Atual",
+
+
+  "sidebar.greeting": "Olá, meu nome é",
   "sidebar.am": "e eu sou",
-	"sidebar.welcome": "Seja bem-vindo!",
-	"sidebar.role.fullStack": "Desenvolvedor Full-Stack",
-	"sidebar.role.frontEnd": "Desenvolvedor Front-End",
-	"sidebar.role.backEnd": "Desenvolvedor Back-End",
+  "sidebar.welcome": "Seja bem-vindo!",
+  "sidebar.role.fullStack": "Desenvolvedor Full-Stack",
+  "sidebar.role.frontEnd": "Desenvolvedor Front-End",
+  "sidebar.role.backEnd": "Desenvolvedor Back-End",
 
   "navbar.about": "Sobre",
-	"navbar.home": "Início",
-	"navbar.projects": "Projetos",
+  "navbar.home": "Início",
+  "navbar.projects": "Projetos",
 
   "resume.viewResume": "Ver CV",
 
   "social.github.name": "Ver no GitHub",
   "social.github.role": "Desenvolvedor Full-Stack",
-  
+
   "social.linkedin.name": "Ver no LinkedIn",
   "social.linkedin.role": "Desenvolvedor Full-Stack",
-  
+
   "social.whatsapp.label": "WhatsApp",
   "social.whatsapp.message": "Entre em contato comigo!",
-  
+
   "social.instagram.name": "Ver no Instagram",
   "social.instagram.role": "Siga-me no Instagram",
 
   "pagination.previous": "Anterior",
   "pagination.next": "Próximo",
 
-  "technologyHoverIcon.viewDocumentation":"Ver documentação",
+  "technologyHoverIcon.viewDocumentation": "Ver documentação",
 
   "stats.years": "Anos de experiência",
   "stats.projectsCompleted": "Projetos feitos",

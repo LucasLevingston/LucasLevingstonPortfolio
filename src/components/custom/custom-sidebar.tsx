@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { AiFillPhone, AiOutlineMail } from 'react-icons/ai'
 import Typewriter from 'typewriter-effect'
-import useUserStore from '@/hooks/user-hooks'
+import { useUser } from '@/hooks/use-user'
 import { formatPhoneNumber } from '@/lib/constants/format-number'
 import LanguageToggle from '../toggles/LanguageToggle'
 import { ModeToggle } from '../toggles/ModeToggle'
@@ -11,7 +11,7 @@ import SocialBar from './social-bar'
 
 export default function Sidebar() {
   const { t } = useTranslation()
-  const { user } = useUserStore()
+  const { user } = useUser()
 
   return (
     <div className="hidden dark:bg-bioBgColor h-full w-full flex-col items-center justify-center gap-8 overflow-y-auto border p-[20px_12px] text-center text-bioBgColor no-underline scrollbar no-scrollbar hover:no-underline dark:text-bioBorderColor md:fixed md:flex md:min-h-screen md:w-1/5 md:border-r-[5px]">

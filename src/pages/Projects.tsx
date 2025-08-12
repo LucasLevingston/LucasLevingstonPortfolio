@@ -15,12 +15,12 @@ import type React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
-import Container from '@/components/custom/Container'
+import Container from '@/components/custom/container'
 import { CustomBadge } from '@/components/custom/custom-badge'
 import { CustomButton } from '@/components/custom/custom-button'
 import Sidebar from '@/components/custom/custom-sidebar'
 import { CustomToggle } from '@/components/custom/custom-toggle'
-import Header from '@/components/custom/Header'
+import Header from '@/components/custom/header'
 import ProjectCard from '@/components/custom/project-card'
 import Section from '@/components/custom/section'
 import TechnologyIcon from '@/components/Icon/TechnologyIcon'
@@ -32,7 +32,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import useUserStore from '@/hooks/user-hooks'
+import { useUser } from '@/hooks/use-user'
 import { getTechnologyData } from '@/lib/utils/getTechnologyData'
 import type { ProjectType } from '@/types/ProjectType'
 
@@ -51,7 +51,7 @@ export const Projects: React.FC = () => {
     isBackEnd: false,
     isMobile: false,
   })
-  const { user } = useUserStore()
+  const { user } = useUser()
   const filterToggles = [
     {
       key: 'hasImage',
@@ -424,7 +424,7 @@ export const Projects: React.FC = () => {
                 {filteredProjects.length > 0 ? (
                   filteredProjects.map(project => (
                     <ProjectCard
-                      id={project.title}
+                      allProjects={user.projects}
                       key={project.title}
                       project={project}
                     />

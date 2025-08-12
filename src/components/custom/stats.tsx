@@ -1,53 +1,11 @@
-import { useEffect, useState } from 'react'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 import { technologiesDataBr } from '@/data/technology-data'
-import { useUser } from '@/hooks/user-hooks'
+import { useUser } from '@/hooks/use-user'
 
 const Stats = () => {
-  const user = useUser()
+  const { user } = useUser()
   const { t } = useTranslation()
-  const [commitCount, setCommitCount] = useState(0)
-
-  const token = import.meta.env.VITE_GITHUB_TOKEN
-  const username = import.meta.env.VITE_GITHUB_USER
-
-  const fetchCommitCount = async () => {
-    try {
-      const response = await fetch(
-        `https://api.github.com/users/${username}/repos`,
-        {
-          headers: {
-            Authorization: `token ${token}`,
-          },
-        }
-      )
-
-      const repos = await response.json()
-      let totalCommits = 0
-
-      for (const repo of repos) {
-        const commitsResponse = await fetch(
-          `https://api.github.com/repos/${username}/${repo.name}/commits`,
-          {
-            headers: {
-              Authorization: `token ${token}`,
-            },
-          }
-        )
-        const commits = await commitsResponse.json()
-        totalCommits += commits.length
-      }
-
-      setCommitCount(totalCommits)
-    } catch (error) {
-      console.error('Erro ao buscar commits:', error)
-    }
-  }
-
-  useEffect(() => {
-    fetchCommitCount()
-  }, [])
 
   const stats = [
     {
@@ -63,7 +21,7 @@ const Stats = () => {
       text: t('stats.technologiesMastered'),
     },
     {
-      num: commitCount,
+      num: user.totalCommits,
       text: t('stats.codeCommits'),
     },
   ]
@@ -80,9 +38,9 @@ const Stats = () => {
               >
                 <CountUp
                   className="text-4xl font-extrabold !text-mainColor xl:text-6xl"
-                  delay={2}
+                  delay={1}
                   duration={5}
-                  end={stat.num}
+                  end={stat.num || 0}
                 />
                 <p
                   className={`${stat.text.length < 15 ? 'max-w-[100px]' : 'max-w-[150px]'} font-semibold leading-snug`}

@@ -4,7 +4,7 @@ export const experiencesDataBr: ExperienceType[] = [
   {
     enterprise: 'Multi UEPB',
     location: 'Patos, PB',
-    startsDate: '06/2023',
+    startsDate: '06/2024',
     endsDate: '12/2024',
     role: 'Líder do time de desenvolvimento Front-end',
     description: `
@@ -15,7 +15,7 @@ export const experiencesDataBr: ExperienceType[] = [
   {
     enterprise: 'Sercomp VI UEPB',
     location: 'Patos, PB',
-    startsDate: '04/2023',
+    startsDate: '04/2024',
     endsDate: '06/2024',
     role: 'Desenvolvedor Full-Stack',
     description: `
@@ -67,7 +67,7 @@ export const experiencesDataEn: ExperienceType[] = [
   {
     enterprise: 'Multi UEPB',
     location: 'Patos, PB',
-    startsDate: '06/2023',
+    startsDate: '06/2024',
     endsDate: '12/2024',
     role: 'Frontend Development Team Lead',
     description: `
@@ -78,7 +78,7 @@ export const experiencesDataEn: ExperienceType[] = [
   {
     enterprise: 'Sercomp VI UEPB',
     location: 'Patos, PB',
-    startsDate: '04/2023',
+    startsDate: '04/2024',
     endsDate: '06/2024',
     role: 'Full-Stack Developer',
     description: `
