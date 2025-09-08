@@ -9,8 +9,8 @@ export const CustomBadge = ({ ...props }: CustomBadgeProps) => {
     <Badge
       {...props}
       className={cn(
-        props.className,
-        'border-mainColor bg-transparent text-sm  dark:border-mainBorderDark  border-[2px]'
+        'border-mainColor bg-transparent text-sm  dark:border-mainBorderDark  border-[2px]',
+        props.className
       )}
       variant="outline"
     />

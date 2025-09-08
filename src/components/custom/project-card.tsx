@@ -8,6 +8,7 @@ import {
   Github,
   ImageIcon,
   Monitor,
+  Settings,
   Smartphone,
   Star,
 } from 'lucide-react'
@@ -37,6 +38,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { sortTechnologiesByFrequency } from '@/lib/utils/technology-utils'
 import type { ProjectType } from '@/types/ProjectType'
+import { Badge } from '../ui/badge'
 import CarouselPagination from './carousel-pagination'
 import { CustomBadge } from './custom-badge'
 import { CustomButton } from './custom-button'
@@ -65,6 +67,9 @@ export default function ProjectCard({
     link,
     repositoryUrl,
     versions,
+    endsDate,
+    isDeveloping,
+    startsDate,
     showEvolution,
   },
   allProjects,
@@ -133,7 +138,7 @@ export default function ProjectCard({
                           />
                         </CardTitle>
                         {favorite && (
-                          <Star className="h-4 w-4 fill-current !text-mainColor" />
+                          <Star className="h-4 w-4 fill-current text-yellow-400" />
                         )}
                         {showEvolution && versions && versions.length > 0 && (
                           <GitBranch className="h-4 w-4 !text-mainColor" />
@@ -142,6 +147,7 @@ export default function ProjectCard({
                       <div>
                         <CardDescription>{description}</CardDescription>
                       </div>
+
                       {openAccordion !== title && (
                         <div className="mt-2 flex flex-wrap gap-1">
                           {sortedTechnologies.slice(0, 6).map(tech => (
@@ -158,6 +164,7 @@ export default function ProjectCard({
                       )}
                     </div>
                   </div>
+
                   {openAccordion !== title && images && images.length > 0 && (
                     <div className="w-full px-6 pb-4 sm:w-auto sm:px-0 sm:pb-0">
                       <div className="relative flex h-48 w-full items-center justify-center overflow-hidden rounded-md">
@@ -182,6 +189,12 @@ export default function ProjectCard({
                     </div>
                   )}
                   <div className="flex items-center gap-2 sm:ml-auto">
+                    {isDeveloping && (
+                      <Badge className="flex items-center gap-1 border-green-300 bg-green-100 text-sm text-green-800 hover:bg-green-100 dark:bg-green-900 dark:text-green-300">
+                        <Settings className="h-4 w-4" />
+                        {t('projectCard.inDevelopment')}
+                      </Badge>
+                    )}
                     {images && images.length > 0 && (
                       <ImageIcon className="h-4 w-4 !text-mainColor" />
                     )}
@@ -204,6 +217,24 @@ export default function ProjectCard({
                     <p className="text-foreground text-sm leading-relaxed">
                       {about}
                     </p>
+                    <div className="mt-4 text-sm space-y-1">
+                      {startsDate && (
+                        <div>
+                          <span className="font-semibold text-mainColor">
+                            {t('about.start')}:
+                          </span>{' '}
+                          {startsDate}
+                        </div>
+                      )}
+                      {endsDate && (
+                        <div>
+                          <span className="font-semibold text-mainColor">
+                            {t('about.end')}:
+                          </span>{' '}
+                          {endsDate}
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {showEvolution && versions && versions.length > 0 && (
@@ -224,11 +255,10 @@ export default function ProjectCard({
                           {versions
                             .map((version, index) => (
                               <TabsTrigger
-                                key={version.date}
+                                key={version.startsDate}
                                 value={String(index)}
                               >
                                 {t('projectCard.currentVersion')}{' '}
-                               
                               </TabsTrigger>
                             ))
                             .reverse()}
@@ -238,7 +268,7 @@ export default function ProjectCard({
                           .map((version, index) => (
                             <TabsContent
                               className="mt-4"
-                              key={version.date}
+                              key={version.startsDate}
                               value={String(index)}
                             >
                               <div className="space-y-4">

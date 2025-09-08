@@ -7,11 +7,13 @@ export interface ProjectVersion {
   backEndRepositoryUrl?: string
   link?: string
   technologies: string[]
-  date?: string
+  startsDate?: string
+  endsDate?: string
 }
 
 export interface ProjectType {
   title: string
+
   favorite?: boolean
   description: string
   about?: string
@@ -24,4 +26,7 @@ export interface ProjectType {
   isMobile?: boolean
   versions?: ProjectVersion[]
   showEvolution?: boolean
+  isDeveloping?: boolean
+  startsDate?: string
+  endsDate?: string
 }

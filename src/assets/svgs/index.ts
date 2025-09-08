@@ -1,8 +1,8 @@
-import geminiSVG from '@/assets/svgs/gemini.svg';
-import nextAuthSVG from '@/assets/svgs/next-auth.svg';
-import shadcnSVG from '@/assets/svgs/shadcn.svg';
-import jwtSVG from '@/assets/svgs/jwt.svg';
-import reactNativeSVG from '@/assets/svgs/reactnative.svg';
-import expoSVG from '@/assets/svgs/expo.svg';
-
-export { geminiSVG, expoSVG, jwtSVG, nextAuthSVG, reactNativeSVG, shadcnSVG };
+export { default as expoSVG } from '@/assets/svgs/expo.svg'
+export { default as geminiSVG } from '@/assets/svgs/gemini.svg'
+export { default as jwtSVG } from '@/assets/svgs/jwt.svg'
+export { default as mercadopagoPNG } from '@/assets/svgs/mercadopago.png'
+export { default as nextAuthSVG } from '@/assets/svgs/next-auth.svg'
+export { default as reactNativeSVG } from '@/assets/svgs/reactnative.svg'
+export { default as shadcnSVG } from '@/assets/svgs/shadcn.svg'
+export { default as tanstackquerySVG } from '@/assets/svgs/tanstackquery.svg'
