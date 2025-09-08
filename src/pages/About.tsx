@@ -125,7 +125,7 @@ export function About() {
                   <p
                     className="text-base leading-relaxed text-foreground"
                     dangerouslySetInnerHTML={{
-                      __html: user.description,
+                      __html: user.professionalProfile,
                     }}
                   />
                 </CardContent>

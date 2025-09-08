@@ -3,12 +3,42 @@ import type { ProjectType } from '@/types/ProjectType'
 
 export const projectsDataBr: ProjectType[] = [
   {
+    title: 'ExpertGP',
+    favorite: true,
+    description:
+      'Plataforma completa para gestão pública municipal, com foco em programas, ações, indicadores, funcionários e contratos.',
+    about:
+      'Sistema para gestão pública municipal. O sistema oferece dashboards interativos, controle de documentos, autenticação segura com permissões. Tem como foco principal a modernização e digitalização da administração municipal, redução de retrabalho e aumento da transparência na gestão pública.',
+    technologies: [
+      'react',
+      'typescript',
+      'vite',
+      'tailwindcss',
+      'shadcn',
+      'zustand',
+      'tanstackquery',
+      'fastify',
+      'nodejs',
+      'prisma',
+      'postgresql',
+      'docker',
+      'vitest',
+      'amazonwebservices',
+      'mercadopago',
+    ],
+    link: 'https://expert-gp.vercel.app/',
+    isMobile: false,
+    showEvolution: false,
+    startsDate: '06/2025',
+    isDeveloping: true,
+  },
+  {
     title: 'GymEvolution',
     favorite: true,
     description:
       'Sistema completo para evolução na musculação com acompanhamento nutricional e de treinos.',
     about:
-      'Sistema desenvolvido seguindo princípios de arquitetura limpa e separação de responsabilidades entre frontend e backend. Implementa práticas de versionamento semântico, documentação de API com padrões OpenAPI, e validação robusta de dados. Oferece dashboards interativos com visualização de dados em tempo real, permitindo acompanhamento detalhado do progresso físico e nutricional. Facilita a criação de rotinas personalizadas e o monitoramento de metas, proporcionando uma experiência completa para profissionais e praticantes de musculação.',
+      'Sistema completo para evolução na musculação, com acompanhamento integrado de treinos e nutrição. A plataforma possibilita que praticantes e profissionais acompanhem a evolução física e nutricional de forma clara e objetiva. Permite a criação de rotinas personalizadas, definição de metas e monitoramento de resultados, garantindo uma experiência completa para quem busca performance e saúde.',
     images: projectImages.gymEvolution,
     technologies: [
       'react',
@@ -38,7 +68,7 @@ export const projectsDataBr: ProjectType[] = [
     description:
       'Plataforma de consultas médicas com sistema de pagamentos integrado.',
     about:
-      'Aplicação desenvolvida com foco em segurança e experiência do usuário, implementando autenticação robusta e integração com gateway de pagamento. Utiliza práticas de desenvolvimento modernas como validação de formulários em tempo real, componentização reutilizável e gerenciamento de estado eficiente. O sistema oferece agendamento simplificado, gestão de consultas e processamento seguro de pagamentos, melhorando significativamente a eficiência operacional de clínicas e a experiência dos pacientes.',
+      'Plataforma de consultas médicas online com sistema de pagamentos integrado, projetada para otimizar a experiência de pacientes e aumentar a eficiência operacional de clínicas. O sistema permite agendamentos, gestão centralizada de consultas e processamento de pagamentos, reduzindo filas, burocracia e falhas no fluxo de atendimento. Com foco em segurança e usabilidade, a aplicação implementa autenticação, integração com pagamentos, além de validação em tempo real de formulários, proporcionando maior agilidade no atendimento, redução de processos manuais e aumento da satisfação dos pacientes e profissionais de saúde.',
     technologies: [
       'nextjs',
       'typescript',
@@ -64,7 +94,7 @@ export const projectsDataBr: ProjectType[] = [
     favorite: true,
     description: 'Sistema CRM para gestão de vendas de cursos e graduações.',
     about:
-      'Projeto desenvolvido seguindo metodologia ágil Scrum com sprints bem definidas e entregas incrementais. Implementa práticas de desenvolvimento colaborativo, code review e integração contínua. O sistema centraliza o gerenciamento de leads, automatiza processos de vendas e oferece relatórios detalhados de performance. Proporciona maior eficiência na conversão de prospects, melhor acompanhamento do funil de vendas e insights valiosos para tomada de decisões estratégicas.',
+      'Sistema CRM especializado em gestão de vendas de cursos e graduações, projetado para aumentar a eficiência comercial e a taxa de conversão de prospects. A plataforma centraliza o gerenciamento de leads, automatiza processos de vendas e disponibiliza relatórios detalhados de performance, permitindo decisões mais assertivas e acompanhamento preciso do funil. O projeto foi desenvolvido em equipe utilizando a metodologia ágil Scrum, com sprints bem definidas, code review e integração contínua, garantindo qualidade e entregas incrementais, resultando na melhoria significativa na conversão de leads, maior visibilidade para gestores e otimização do ciclo de vendas.',
     technologies: [
       'typescript',
       'react',
@@ -462,12 +492,42 @@ export const projectsDataBr: ProjectType[] = [
 
 export const projectsDataEn: ProjectType[] = [
   {
+    title: 'ExpertGP',
+    favorite: true,
+    description:
+      'Complete platform for municipal public management, focusing on programs, actions, indicators, employees, and contracts.',
+    about:
+      'ExpertGP is a modern solution that integrates frontend and backend to modernize and optimize city hall management. The application provides interactive dashboards, program and indicator management, employee and contract control, as well as secure authentication with permission management. The project was developed with a focus on scalability, security, and usability.',
+    technologies: [
+      'react',
+      'typescript',
+      'vite',
+      'tailwindcss',
+      'shadcn',
+      'zustand',
+      'tanstackquery',
+      'fastify',
+      'nodejs',
+      'prisma',
+      'postgresql',
+      'docker',
+      'vitest',
+      'amazonwebservices',
+      'mercadopago',
+    ],
+    link: 'https://expert-gp.vercel.app/',
+    isMobile: false,
+    showEvolution: false,
+    startsDate: '06/2025',
+    isDeveloping: true,
+  },
+  {
     title: 'GymEvolution',
     favorite: true,
     description:
-      'Complete system for fitness evolution with nutritional and training tracking.',
+      'Complete system for bodybuilding progress with nutritional and training support.',
     about:
-      'System developed following clean architecture principles and separation of responsibilities between frontend and backend. Implements semantic versioning practices, API documentation with OpenAPI standards, and robust data validation. Offers interactive dashboards with real-time data visualization, enabling detailed tracking of physical and nutritional progress. Facilitates the creation of personalized routines and goal monitoring, providing a complete experience for fitness professionals and practitioners.',
+      'System developed following clean architecture principles and separation of responsibilities between frontend and backend. Implements semantic versioning practices, API documentation with OpenAPI standards, and robust data validation. Provides interactive dashboards with real-time data visualization, enabling detailed monitoring of physical and nutritional progress. Facilitates the creation of personalized routines and goal tracking, delivering a complete experience for professionals and fitness enthusiasts.',
     images: projectImages.gymEvolution,
     technologies: [
       'react',
@@ -496,7 +556,7 @@ export const projectsDataEn: ProjectType[] = [
     favorite: true,
     description: 'Medical appointment platform with integrated payment system.',
     about:
-      'Application developed with focus on security and user experience, implementing robust authentication and payment gateway integration. Uses modern development practices such as real-time form validation, reusable componentization, and efficient state management. The system offers simplified scheduling, consultation management, and secure payment processing, significantly improving clinic operational efficiency and patient experience.',
+      'Application developed with a focus on security and user experience, implementing robust authentication and payment gateway integration. Applies modern development practices such as real-time form validation, reusable components, and efficient state management. The system offers simplified scheduling, appointment management, and secure payment processing, significantly improving clinic efficiency and patient experience.',
     technologies: [
       'nextjs',
       'typescript',
@@ -520,9 +580,9 @@ export const projectsDataEn: ProjectType[] = [
   {
     title: 'CRM Splen',
     favorite: true,
-    description: 'CRM system for managing course and degree sales.',
+    description: 'CRM system for managing sales of courses and degrees.',
     about:
-      'Project developed following agile Scrum methodology with well-defined sprints and incremental deliveries. Implements collaborative development practices, code review, and continuous integration. The system centralizes lead management, automates sales processes, and offers detailed performance reports. Provides greater efficiency in prospect conversion, better sales funnel tracking, and valuable insights for strategic decision-making.',
+      'Project developed using the agile Scrum methodology with well-defined sprints and incremental deliveries. Implements collaborative development practices, code review, and continuous integration. The system centralizes lead management, automates sales processes, and provides detailed performance reports. It increases efficiency in prospect conversion, improves sales funnel monitoring, and delivers valuable insights for strategic decision-making.',
     technologies: [
       'typescript',
       'react',

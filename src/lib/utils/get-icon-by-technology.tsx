@@ -4,9 +4,11 @@ import {
   expoSVG,
   geminiSVG,
   jwtSVG,
+  mercadopagoPNG,
   nextAuthSVG,
   reactNativeSVG,
   shadcnSVG,
+  tanstackquerySVG,
 } from '@/assets/svgs'
 
 export const getIconByTechnology = (
@@ -87,7 +89,8 @@ export const getIconByTechnology = (
       }
     case 'tanstackquery':
       return {
-        svg: 'https://tanstack.com/assets/splash-dark-8nwlc0Nt.png',
+        svg: tanstackquerySVG,
+        iconClassName: 'dark:invert',
       }
     case 'drizzle':
       return {
@@ -98,6 +101,8 @@ export const getIconByTechnology = (
       return {
         svg: geminiSVG,
       }
+    case 'mercadopago':
+      return { svg: mercadopagoPNG }
     default:
       return {
         iconClassName: `devicon-${technology}-plain colored`,

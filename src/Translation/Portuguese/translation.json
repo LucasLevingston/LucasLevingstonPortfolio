@@ -52,6 +52,7 @@
   "projectCard.viewBackEndRepo": "Repositório Back-End",
   "projectCard.projectEvolution": "Evolução do projeto",
   "projectCard.currentVersion": "Versao Atual",
+  "projectCard.inDevelopment": "Em desenvolvimento",
 
 
   "sidebar.greeting": "Olá, meu nome é",
