@@ -1,3 +1,4 @@
+import parse from 'html-react-parser'
 import {
   Award,
   BookOpen,
@@ -122,12 +123,9 @@ export function About() {
             <Section.Content>
               <Card>
                 <CardContent>
-                  <p
-                    className="text-base leading-relaxed text-foreground"
-                    dangerouslySetInnerHTML={{
-                      __html: user.professionalProfile,
-                    }}
-                  />
+                  <p className="text-base leading-relaxed text-foreground">
+                    {parse(user.professionalProfile)}
+                  </p>
                 </CardContent>
               </Card>
             </Section.Content>
@@ -253,12 +251,9 @@ export function About() {
                       </div>
 
                       <div className="rounded-lg border-l-4 border-mainColor p-4">
-                        <p
-                          className="text-base leading-relaxed text-foreground"
-                          dangerouslySetInnerHTML={{
-                            __html: experience.description,
-                          }}
-                        />
+                        <p className="text-base leading-relaxed text-foreground">
+                          {parse(experience.description)}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -436,7 +431,9 @@ export function About() {
                       <CarouselPagination
                         api={api}
                         currentImage={currentCertificate}
-                        images={user.certificates}
+                        images={user.certificates.map(
+                          certificate => certificate.image
+                        )}
                         setCurrentImage={setCurrentCertificate}
                       />
                     </div>

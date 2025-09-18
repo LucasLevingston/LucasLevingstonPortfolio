@@ -1,9 +1,9 @@
-import i18n from 'i18next'
+import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import en from '@/Translation/English/translation.json' with { type: 'json' }
 import br from '@/Translation/Portuguese/translation.json' with { type: 'json' }
 
-i18n.use(initReactI18next).init({
+i18next.use(initReactI18next).init({
   resources: {
     en: { translation: en },
     br: { translation: br },
@@ -15,4 +15,4 @@ i18n.use(initReactI18next).init({
   },
 })
 
-export default i18n
+export default i18next

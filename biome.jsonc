@@ -52,6 +52,7 @@
         "noSvgWithoutTitle": "off"
       },
       "style": {
+        "noExportedImports": "off",
         "useBlockStatements": "off",
         "noNonNullAssertion": "off",
         "useImportType": "off",

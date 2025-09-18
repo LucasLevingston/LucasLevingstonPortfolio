@@ -1,3 +1,4 @@
+import parse from 'html-react-parser'
 import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
 import Header from '@/components/custom/header'
@@ -42,12 +43,9 @@ export function Home() {
               <span className="!text-mainColor">{user.name}</span>
             </h1>
 
-            <p
-              className="mb-6 text-sm sm:mb-9 sm:text-base"
-              dangerouslySetInnerHTML={{
-                __html: user.description,
-              }}
-            />
+            <p className="mb-6 text-sm sm:mb-9 sm:text-base">
+              {parse(user.description)}
+            </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8 lg:justify-start">
               <ResumeButton />
               <SocialBar />

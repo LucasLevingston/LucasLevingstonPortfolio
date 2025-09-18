@@ -1,21 +1,15 @@
 export const softSkillsBr = [
-	'Boa comunicação e trabalho em equipe.',
-	'Proatividade e resolução de problemas.',
-	'Foco em resultados e qualidade do código.',
-	'Capacidade de aprendizado rápido.',
-	'Fácil adaptação.',
-	'Colaboração.',
-	'Comunicação.',
-	'Inteligência Emocional.',
-];
+  'Comunicação clara',
+  'Trabalho em equipe',
+  'Resolução de problemas',
+  'Aprendizado contínuo',
+  'Adaptabilidade',
+]
 
 export const softSkillsEn = [
-	'Good communication and teamwork.',
-	'Proactivity and problem-solving.',
-	'Focus on results and code quality.',
-	'Ability to learn quickly.',
-	'Easy adaptability.',
-	'Collaboration.',
-	'Communication.',
-	'Emotional Intelligence.',
-];
+  'Clear communication',
+  'Teamwork',
+  'Problem solving',
+  'Continuous learning',
+  'Adaptability',
+]
