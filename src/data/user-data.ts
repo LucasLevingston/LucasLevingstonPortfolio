@@ -52,15 +52,15 @@ export const userEn: UserType = {
   name: 'Lucas Levingston',
   completName: 'Lucas Levingston Araújo Gadelha Medeiros',
   description: `
-  Full-Stack Developer with <span class="!text-mainColor"><u>2 years</u></span> of experience in academic projects, internships, and startups, working on complete systems from requirements gathering to production delivery.<br/>
-  <span class="!text-mainColor"><u>Graduated</u></span> in Computer Science from the State University of Paraíba.
+  Full-Stack Developer with <span class="!text-mainColor"><u>2 years of experience</u></span> in academic projects, internships, and startups, working on the development of complete systems, from requirements gathering to production delivery.<br/>
+  <span class="!text-mainColor"><u>Graduated in Computer Science</u></span> from the State University of Paraíba and <span class="!text-mainColor"><u>post-graduating in Web Development</u></span> from Faculeste.
 `,
 
   professionalProfile: `
-  Full-Stack Developer with <span class="!text-mainColor"><u>2 years</u></span> of experience in academic projects, internships, and startups, working on complete systems from requirements gathering to production delivery.<br/>
-  <span class="!text-mainColor"><u>Graduated</u></span> in Computer Science from the State University of Paraíba, with solid expertise in <span class="!text-mainColor"><u>React, TypeScript, Node.js, Prisma, PostgreSQL, Docker</u></span>, and agile methodologies.<br/>
-  Acted as both team leader and developer on real-world systems, including <span class="!text-mainColor"><u>CRM Splen</u></span>, used for managing course sales; <span class="!text-mainColor"><u>Multi UEPB</u></span>, a platform for university equipment rentals; <span class="!text-mainColor"><u>Verbo Hub</u></span>, an event management system; <span class="!text-mainColor"><u>Consulta Fácil</u></span>, a medical appointment scheduling system integrated with Stripe; <span class="!text-mainColor"><u>Gym Evolution</u></span>, a platform for workout and diet tracking with payment integrations and automated testing; and <span class="!text-mainColor"><u>ExpertGP</u></span>, a public management system for municipalities.<br/>
-  Results-driven, with a strong focus on <span class="!text-mainColor"><u>code quality</u></span>, <span class="!text-mainColor"><u>scalability</u></span>, and <span class="!text-mainColor"><u>usability</u></span>, always aiming to deliver real value to users and generate a positive business impact.<br/>
+  Full-Stack Developer with <span class="!text-mainColor"><u>2 years of experience</u></span> in academic projects, internships, and startups, developing complete systems from requirements gathering to production deployment.<br/>
+  <span class="!text-mainColor"><u>Graduated in Computer Science</u></span> from the State University of Paraíba and <span class="!text-mainColor"><u>post-graduating in Web Development</u></span> from Faculeste, I have solid experience in <span class="!text-mainColor"><u>React, TypeScript, Node.js, Prisma, PostgreSQL, Docker</u></span>, and agile methodologies.<br/>
+  I have acted as a team leader and developer in real-world systems, including the <span class="!text-mainColor"><u>Splen CRM</u></span>, used for managing course sales; the <span class="!text-mainColor"><u>Multi UEPB</u></span> platform, for renting university products; the <span class="!text-mainColor"><u>Verbo Hub</u></span>, an event management system; <span class="!text-mainColor"><u>Consulta Fácil</u></span>, a medical appointment scheduling system integrated with Stripe; <span class="!text-mainColor"><u>Gym Evolution</u></span>, a workout and diet tracking system with payment integrations and automated tests; and <span class="!text-mainColor"><u>ExpertGP</u></span>, a system for municipal public management.<br/>
+  I am results-oriented, with a focus on <span class="!text-mainColor"><u>code quality</u></span>, <span class="!text-mainColor"><u>scalability</u></span>, and <span class="!text-mainColor"><u>usability</u></span>, always seeking to deliver real value to the user and generate a positive impact on business.<br/>
   Interested in <span class="!text-mainColor"><u>Full-Stack, Front-End, and Back-End development</u></span>.
 `,
   resumeUrl:
