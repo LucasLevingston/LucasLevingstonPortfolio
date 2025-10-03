@@ -43,7 +43,7 @@ function SectionContent({
   children,
   className = '',
 }: SectionContentProps): JSX.Element {
-  return <div className={`space-y-2 pl-3 ${className}`}>{children}</div>
+  return <div className={`${className}`}>{children}</div>
 }
 
 interface SectionProps {

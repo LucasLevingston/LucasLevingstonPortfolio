@@ -5,7 +5,6 @@ import {
   Briefcase,
   Building2,
   Calendar,
-  CheckCircle,
   Clock,
   Code,
   ExternalLink,
@@ -43,6 +42,8 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel'
 import { useUser } from '@/hooks/use-user'
+import { cn } from '@/lib/utils/cn'
+import { formationStatus } from '@/types/FormationType'
 
 export function About() {
   const { t, i18n } = useTranslation()
@@ -102,7 +103,7 @@ export function About() {
     }
 
     return (
-      <Badge className="border-red-300 bg-red-100 text-base text-red-800 hover:bg-red-100 dark:bg-red-900 dark:text-red-300">
+      <Badge className="border-blue-300 bg-blue-100 text-base text-blue-800 hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-300">
         <PlayCircle className="mr-1 h-3 w-3" />
         {t('about.inProgress')}
       </Badge>
@@ -215,8 +216,11 @@ export function About() {
 
             <Section.Content className="flex flex-col gap-2">
               {user.experiences.map((experience, index) => (
-                <Card className="transition-shadow hover:shadow-md" key={index}>
-                  <CardHeader>
+                <Card
+                  className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
+                  key={index}
+                >
+                  <CardHeader className="p-0 gap-4 flex flex-col">
                     <Section.Title className="flex items-center gap-2">
                       <Briefcase className="h-4 w-4 !text-mainColor" />
                       <h3 className="text-lg font-semibold text-foreground">
@@ -224,7 +228,7 @@ export function About() {
                       </h3>
                     </Section.Title>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-0">
                     <div className="space-y-3">
                       <div className="flex items-center gap-4 text-base !text-mainColor dark:!text-mainColor">
                         <div className="flex items-center gap-1">
@@ -270,14 +274,14 @@ export function About() {
             <Section.Content className="space-y-4">
               {user.formations.map((formation, index) => (
                 <Card
-                  className="transition-all duration-300 hover:shadow-md"
+                  className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
                   key={index}
                 >
-                  <CardHeader>
+                  <CardHeader className="p-0">
                     <div className="flex w-full items-start justify-between gap-4">
                       <div className="flex flex-1 items-center gap-3">
-                        <div className="rounded-lg p-2">
-                          <BookOpen className="h-4 w-4 !text-mainColor" />
+                        <div className="rounded-lg">
+                          <BookOpen className="h-4 w-4 text-mainColor" />
                         </div>
                         <h3 className="flex-1 text-lg font-semibold text-foreground">
                           {formation.title}
@@ -286,9 +290,9 @@ export function About() {
                       {getEducationStatusBadge(formation)}
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 rounded-lg p-3">
+                  <CardContent className="p-0">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3 rounded-lg">
                         <Building2 className="h-4 w-4 !text-mainColor" />
                         <span className="text-base font-medium text-foreground">
                           {formation.institution}
@@ -296,7 +300,7 @@ export function About() {
                       </div>
 
                       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                        <div className="/20 flex items-center gap-3 rounded-lg p-3">
+                        <div className="flex items-center gap-3 rounded-lg">
                           <Calendar className="h-4 w-4 !text-mainColor" />
                           <div>
                             <span className="block text-base font-medium tracking-wide">
@@ -309,7 +313,7 @@ export function About() {
                         </div>
 
                         {formation.duration && (
-                          <div className="/20 flex items-center gap-3 rounded-lg p-3">
+                          <div className="flex items-center gap-3 rounded-lg p-3">
                             <Clock className="h-4 w-4 !text-mainColor" />
                             <div>
                               <span className="block text-base font-medium tracking-wide">
@@ -323,37 +327,48 @@ export function About() {
                         )}
                       </div>
 
-                      {!formation.graduated && formation.currentStatus && (
-                        <div className="rounded-lg border-l-4 border-mainColor p-4">
-                          <div className="flex items-center gap-2">
-                            <Zap className="h-4 w-4 !text-mainColor" />
-                            <span className="text-base font-medium tracking-wide !text-mainColor">
-                              {t('about.currentStatus')}:
-                            </span>
-                          </div>
-                          <span className="mt-1 block text-base">
-                            {formation.currentStatus}
+                      <div
+                        className={cn(
+                          'rounded-lg border-l-4 p-4',
+                          formation.currentStatus ===
+                            formationStatus.COMPLETED && 'border-green-500',
+                          formation.currentStatus ===
+                            formationStatus.DEFERRED && 'border-red-500',
+                          formation.currentStatus ===
+                            formationStatus.IN_PROGRESS && 'border-blue-500'
+                        )}
+                      >
+                        {' '}
+                        <div className="flex items-center gap-2">
+                          <Zap className="h-4 w-4 !text-mainColor" />
+                          <span className="text-base font-medium tracking-wide underline">
+                            {t('about.currentStatus')}:
                           </span>
                         </div>
-                      )}
-
-                      {formation.graduated && (
-                        <div className="rounded-lg border-l-4 border-green-500 p-4">
-                          <div className="flex items-center gap-2">
-                            <Zap className="h-4 w-4 !text-mainColor" />
-
-                            <span className="text-base font-medium tracking-wide !text-mainColor">
-                              {t('about.currentStatus')}:
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4" />
-                            <span className="text-base font-medium">
+                        <span className="mt-1 block text-base">
+                          {formation.currentStatus ===
+                            formationStatus.COMPLETED && (
+                            <span className="flex items-center gap-2 font-medium text-green-600">
+                              <Trophy className="h-4 w-4" />
                               {t('about.completedSuccessfully')}
                             </span>
-                          </div>
-                        </div>
-                      )}
+                          )}
+                          {formation.currentStatus ===
+                            formationStatus.DEFERRED && (
+                            <span className="flex items-center gap-2 font-medium text-red-600">
+                              <PauseCircle className="h-4 w-4" />
+                              {t('about.deferred')}
+                            </span>
+                          )}
+                          {formation.currentStatus ===
+                            formationStatus.IN_PROGRESS && (
+                            <span className="flex items-center gap-2 font-medium text-blue-600">
+                              <PlayCircle className="h-4 w-4" />
+                              {t('about.inProgress')}
+                            </span>
+                          )}
+                        </span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -367,10 +382,10 @@ export function About() {
               {t('about.certificatesTitle')}
             </Section.Title>
             <Section.Content>
-              <Card>
-                <CardHeader>
+              <Card className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+                <CardHeader className="p-0">
                   <div className="flex items-center gap-3">
-                    <div className="rounded-lg p-2">
+                    <div className="rounded-lg ">
                       <Trophy className="h-4 w-4 !text-mainColor" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground">
@@ -378,9 +393,9 @@ export function About() {
                     </h3>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-0">
                   <div className="space-y-4">
-                    <div className="rounded-lg p-4">
+                    <div className="rounded-lg ">
                       {user.certificates[currentCertificate].description.map(
                         (description, index) => (
                           <p
@@ -414,7 +429,7 @@ export function About() {
                                 alt={certificate.title}
                                 src={certificate.image}
                               >
-                                <div className="h-full w-full rounded-lg p-2">
+                                <div className="h-full w-full rounded-lg ">
                                   <img
                                     alt={certificate.title}
                                     className="h-full w-full rounded-lg object-contain"
@@ -451,10 +466,10 @@ export function About() {
             <Section.Content className="space-y-4">
               {user.recomendations.map(recomendation => (
                 <Card
-                  className="transition-shadow hover:shadow-md"
-                  key={recomendation.name}
+                  className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
+                  key={recomendation.id}
                 >
-                  <CardHeader>
+                  <CardHeader className="p-0">
                     <div className="flex items-center gap-4">
                       <SectionItem.Avatar
                         imageUrl={recomendation.linkedinImageUrl}
@@ -473,7 +488,7 @@ export function About() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-0">
                     <div className="space-y-3">
                       <div className="flex items-center gap-2">
                         <Building2 className="h-4 w-4 !text-mainColor" />
@@ -481,7 +496,7 @@ export function About() {
                           {recomendation.company}
                         </p>
                       </div>
-                      <div className="rounded-lg border-l-4 border-mainColor p-4">
+                      <div className="rounded-lg border-l-4 p-4 border-mainColor">
                         <div className="mb-2 flex items-center gap-2">
                           <Calendar className="h-4 w-4 !text-mainColor" />
                           <p className="text-base font-medium tracking-wide !text-mainColor dark:!text-mainColor">
@@ -512,7 +527,7 @@ export function About() {
                 <Card className="transition-shadow hover:shadow-md" key={index}>
                   <CardContent className="pt-6">
                     <div className="flex items-center gap-3">
-                      <div className="rounded-lg p-2">
+                      <div className="rounded-lg ">
                         <Lightbulb className="h-4 w-4 !text-mainColor" />
                       </div>
                       <p className="text-base font-medium text-foreground">

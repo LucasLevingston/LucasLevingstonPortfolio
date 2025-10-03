@@ -4,7 +4,7 @@ export const recommendationDataBr: RecommendationType[] = [
   {
     name: 'Lucas Henrique',
     linkedinImageUrl:
-      'https://media.licdn.com/dms/image/v2/D4D03AQFCsFQe8VxKYQ/profile-displayphoto-shrink_800_800/B4DZQ.3foCHUAc-/0/1736221523682?e=1755734400&v=beta&t=nQY0XGgweemj-z01gaO375fNdHX0rgr45bGFvjFH8Pk',
+      'https://media.licdn.com/dms/image/v2/D4D03AQFCsFQe8VxKYQ/profile-displayphoto-shrink_200_200/B4DZQ.3foCHUAY-/0/1736221523682?e=1762387200&v=beta&t=ws2bzqJ0cr9tdl38x13Z9Y9Tu6KOktbZeKZ7GOtJX2A',
     position: 'Desenvolvedor Fullstack | Node | TypeScript | React | Express',
     date: '9 de fevereiro de 2024',
     linkedinUrl: 'https://www.linkedin.com/in/lhenrique-oliveira/',
@@ -19,7 +19,7 @@ export const recommendationDataEn: RecommendationType[] = [
     date: 'February 9, 2024',
     position: 'Fullstack Developer | Node | TypeScript | React | Express',
     linkedinImageUrl:
-      'https://media.licdn.com/dms/image/v2/D4D03AQFCsFQe8VxKYQ/profile-displayphoto-shrink_800_800/B4DZQ.3foCHUAc-/0/1736221523682?e=1755734400&v=beta&t=nQY0XGgweemj-z01gaO375fNdHX0rgr45bGFvjFH8Pk',
+      'https://media.licdn.com/dms/image/v2/D4D03AQFCsFQe8VxKYQ/profile-displayphoto-shrink_200_200/B4DZQ.3foCHUAY-/0/1736221523682?e=1762387200&v=beta&t=ws2bzqJ0cr9tdl38x13Z9Y9Tu6KOktbZeKZ7GOtJX2A',
     linkedinUrl: 'https://www.linkedin.com/in/lhenrique-oliveira/',
     comments:
       'A professional and excellent individual, very competent. He played a significant role in the design and implementation of various features on both the front-end and back-end of the project.',
