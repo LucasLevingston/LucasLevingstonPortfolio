@@ -15,12 +15,12 @@ export const userBr: UserType = {
   name: 'Lucas Levingston',
   completName: 'Lucas Levingston Araújo Gadelha Medeiros',
   description: `
-  Desenvolvedor Full-Stack com <span class="!text-mainColor"><u>2 anos</u></span> de experiência em projetos acadêmicos, estágios e startups, atuando no desenvolvimento de sistemas completos, desde a coleta de requisitos até a entrega em produção.<br/>
-  <span class="!text-mainColor"><u>Graduado</u></span> em Ciências da Computação pela Universidade Estadual da Paraíba.
+  Desenvolvedor Full-Stack com <span class="!text-mainColor"><u>2 anos de experiência</u></span> em projetos acadêmicos, estágios e startups, atuando no desenvolvimento de sistemas completos, desde a coleta de requisitos até a entrega em produção.<br/>
+  <span class="!text-mainColor"><u>Graduado em Ciência da Computação</u></span> pela Universidade Estadual da Paraíba e <span class="!text-mainColor"><u>pós-graduando em Desenvolvimento Web</u></span> pela Faculeste.
 `,
   professionalProfile: `
-  Desenvolvedor Full-Stack com <span class="!text-mainColor"><u>2 anos</u></span> de experiência em projetos acadêmicos, estágios e startups, atuando no desenvolvimento de sistemas completos, desde a coleta de requisitos até a entrega em produção.<br/>
-  <span class="!text-mainColor"><u>Graduado</u></span> em Ciências da Computação pela Universidade Estadual da Paraíba, possuo sólida experiência em <span class="!text-mainColor"><u>React, TypeScript, Node.js, Prisma, PostgreSQL, Docker</u></span> e metodologias ágeis.<br/>
+  Desenvolvedor Full-Stack com <span class="!text-mainColor"><u>2 anos de experiência</u></span> em projetos acadêmicos, estágios e startups, atuando no desenvolvimento de sistemas completos, desde a coleta de requisitos até a entrega em produção.<br/>
+  <span class="!text-mainColor"><u>Graduado em Ciências da Computação</u></span> pela Universidade Estadual da Paraíba e <span class="!text-mainColor"><u>pós-graduando em Desenvolvimento Web</u></span> pela Faculeste, possuo sólida experiência em <span class="!text-mainColor"><u>React, TypeScript, Node.js, Prisma, PostgreSQL, Docker</u></span> e metodologias ágeis.<br/>
   Atuei como líder de equipe e desenvolvedor em sistemas reais, incluindo o <span class="!text-mainColor"><u>CRM Splen</u></span>, utilizado no gerenciamento de vendas de cursos; a plataforma <span class="!text-mainColor"><u>Multi UEPB</u></span>, voltada ao aluguel de produtos universitários; o <span class="!text-mainColor"><u>Verbo Hub</u></span>, sistema de gestão de eventos; o <span class="!text-mainColor"><u>Consulta Fácil</u></span>, sistema para agendamento de consultas médicas integrado ao Stripe; o <span class="!text-mainColor"><u>Gym Evolution</u></span>, sistema de acompanhamento de treinos e dietas com integrações de pagamento e testes automatizados; e o <span class="!text-mainColor"><u>ExpertGP</u></span>, sistema para gestão pública municipal.<br/>
   Sou orientado a resultados, com foco em <span class="!text-mainColor"><u>qualidade de código</u></span>, <span class="!text-mainColor"><u>escalabilidade</u></span> e <span class="!text-mainColor"><u>usabilidade</u></span>, sempre buscando entregar valor real ao usuário e gerar impacto positivo nos negócios.<br/>
   Interesse em <span class="!text-mainColor"><u>desenvolvimento Full-Stack, Front-End e Back-End</u></span>.
