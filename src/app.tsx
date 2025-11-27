@@ -25,6 +25,11 @@ function App() {
                   element={<Projects />}
                   path="/projects"
                 />
+                {/* <Route
+                  caseSensitive={false}
+                  element={<ResumePDF user={user} />}
+                  path="/resume"
+                /> */}
                 <Route caseSensitive={false} element={<Home />} path="/" />
               </Routes>
             </BrowserRouter>

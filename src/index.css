@@ -149,5 +149,9 @@
   body {
     @apply bg-sidebar-accent text-foreground;
   }
+ .highlight {
+    @apply font-bold;
+    color: var(--color-mainColor);
 
+  }
 }

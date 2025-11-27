@@ -5,12 +5,10 @@ import { CustomButton } from './custom-button'
 
 export function ResumeButton() {
   const { t } = useTranslation()
-  const {
-    user: { resumeUrl },
-  } = useUser()
+  const { user } = useUser()
 
   return (
-    <CustomButton href={resumeUrl}>
+    <CustomButton href={user.resumeUrl}>
       <CustomButton.Icon>
         <Eye />
       </CustomButton.Icon>

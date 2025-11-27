@@ -8,6 +8,7 @@ import {
   Clock,
   Code,
   ExternalLink,
+  Globe,
   GraduationCap,
   Heart,
   Lightbulb,
@@ -255,9 +256,16 @@ export function About() {
                       </div>
 
                       <div className="rounded-lg border-l-4 border-mainColor p-4">
-                        <p className="text-base leading-relaxed text-foreground">
-                          {parse(experience.description)}
-                        </p>
+                        <ul className="list-disc ml-5 space-y-1">
+                          {experience.features.map((feature, idx) => (
+                            <li
+                              className="text-base leading-relaxed text-foreground"
+                              key={idx}
+                            >
+                              {parse(feature)}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </CardContent>
@@ -467,7 +475,7 @@ export function About() {
               {user.recomendations.map(recomendation => (
                 <Card
                   className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
-                  key={recomendation.id}
+                  key={recomendation.date}
                 >
                   <CardHeader className="p-0">
                     <div className="flex items-center gap-4">
@@ -514,6 +522,35 @@ export function About() {
                   </CardContent>
                 </Card>
               ))}
+            </Section.Content>
+          </Section.Root>
+
+          <Section.Root id={t('about.languagesTitle')}>
+            <Section.Title className="flex items-center gap-3 text-xl font-semibold text-foreground">
+              <Globe className="h-5 w-5 !text-mainColor" />
+              {t('about.languagesTitle')}
+            </Section.Title>
+            <Section.Content>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="space-y-3">
+                    {user.languages && (
+                      <div className="grid gap-3">
+                        {user.languages.map((lang, idx) => (
+                          <div className="flex items-center gap-3" key={idx}>
+                            <Badge className="border-mainColor bg-mainColor/10 text-base text-foreground">
+                              {lang.language}
+                            </Badge>
+                            <p className="text-base text-foreground">
+                              {lang.type}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
             </Section.Content>
           </Section.Root>
 

@@ -15,18 +15,27 @@ export const userBr: UserType = {
   name: 'Lucas Levingston',
   completName: 'Lucas Levingston Araújo Gadelha Medeiros',
   description: `
-  Desenvolvedor Full-Stack com <span class="!text-mainColor"><u>2 anos de experiência</u></span> em projetos acadêmicos, estágios e startups, atuando no desenvolvimento de sistemas completos, desde a coleta de requisitos até a entrega em produção.<br/>
-  <span class="!text-mainColor"><u>Graduado em Ciência da Computação</u></span> pela Universidade Estadual da Paraíba e <span class="!text-mainColor"><u>pós-graduando em Desenvolvimento Web</u></span> pela Faculeste.
+  Desenvolvedor Full-Stack com <span class="highlight">3 anos de experiência</span> com freelas, projetos, estágios e startups. 
+  Graduado em <span class="highlight">Ciência da Computação pela UEPB</span> e pós-graduando em 
+  <span class="highlight">Desenvolvimento Web pela Faculeste</span>.
 `,
   professionalProfile: `
-  Desenvolvedor Full-Stack com <span class="!text-mainColor"><u>2 anos de experiência</u></span> em projetos acadêmicos, estágios e startups, atuando no desenvolvimento de sistemas completos, desde a coleta de requisitos até a entrega em produção.<br/>
-  <span class="!text-mainColor"><u>Graduado em Ciências da Computação</u></span> pela Universidade Estadual da Paraíba e <span class="!text-mainColor"><u>pós-graduando em Desenvolvimento Web</u></span> pela Faculeste, possuo sólida experiência em <span class="!text-mainColor"><u>React, TypeScript, Node.js, Prisma, PostgreSQL, Docker</u></span> e metodologias ágeis.<br/>
-  Atuei como líder de equipe e desenvolvedor em sistemas reais, incluindo o <span class="!text-mainColor"><u>CRM Splen</u></span>, utilizado no gerenciamento de vendas de cursos; a plataforma <span class="!text-mainColor"><u>Multi UEPB</u></span>, voltada ao aluguel de produtos universitários; o <span class="!text-mainColor"><u>Verbo Hub</u></span>, sistema de gestão de eventos; o <span class="!text-mainColor"><u>Consulta Fácil</u></span>, sistema para agendamento de consultas médicas integrado ao Stripe; o <span class="!text-mainColor"><u>Gym Evolution</u></span>, sistema de acompanhamento de treinos e dietas com integrações de pagamento e testes automatizados; e o <span class="!text-mainColor"><u>ExpertGP</u></span>, sistema para gestão pública municipal.<br/>
-  Sou orientado a resultados, com foco em <span class="!text-mainColor"><u>qualidade de código</u></span>, <span class="!text-mainColor"><u>escalabilidade</u></span> e <span class="!text-mainColor"><u>usabilidade</u></span>, sempre buscando entregar valor real ao usuário e gerar impacto positivo nos negócios.<br/>
-  Interesse em <span class="!text-mainColor"><u>desenvolvimento Full-Stack, Front-End e Back-End</u></span>.
+Desenvolvedor Full-Stack com <span class="highlight">3 anos de experiência</span> com freelas, projetos, estágios e startups. 
+Graduado em <span class="highlight">Ciência da Computação pela UEPB</span> e pós-graduando em 
+<span class="highlight">Desenvolvimento Web pela Faculeste</span>.
+<br/>
+Atuação com <span class="highlight">React, Next.js, Node.js, Prisma, PostgreSQL, MongoDB, Fastify, TypeScript, Tailwind, Docker e AWS</span>, 
+com domínio de <span class="highlight">arquitetura, testes, versionamento, CI/CD e Scrum</span>.
+<br/>
+Experiência em <span class="highlight">sistemas completos, escaláveis e prontos para produção</span>, com foco em 
+<span class="highlight">qualidade, segurança, performance e previsibilidade de entregas</span>. Forte domínio de 
+<span class="highlight">Clean Code, SOLID, arquiteturas de software, documentação, pipelines automatizados</span>, 
+automação de deploy e padrões de projeto.
+<br/>
+Interesse em desenvolvimento <span class="highlight">Full-Stack, Front-End e Back-End</span>.
 `,
   resumeUrl:
-    'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
+    'https://docs.google.com/document/d/1qI_1p0rpyBPJPNHA6MpwM5gGlmV-kN0X2CtzfsdtzyM/edit?usp=sharing',
   profilePicture: generalImages.foto,
   certificates: certificatesDataBr,
   experiences: experiencesDataBr,
@@ -40,48 +49,72 @@ export const userBr: UserType = {
   instagramImageUrl: generalImages.fotoInstagram,
   phone: '(83) 99961-6220',
   whatsapp: 'https://wa.me/message/BL2FCNM72L7GJ1',
+  portfolioUrl: 'https://lucas-levingston.vercel.app/',
   whatsappImageUrl: generalImages.fotoWhatsapp,
   email: 'lucaslevingston94@gmail.com',
   recomendations: recommendationDataBr,
   softSkills: softSkillsBr,
   address: 'Rua Severino Soares, 70 - Jardim Guanabara',
   location: 'Patos - PB',
+  languages: [
+    {
+      language: 'Português',
+      type: 'Nativo',
+    },
+    {
+      language: 'Inglês',
+      type: 'Intermediário (boa leitura técnica, escrita e conversação básica)',
+    },
+  ],
 }
 
 export const userEn: UserType = {
   name: 'Lucas Levingston',
   completName: 'Lucas Levingston Araújo Gadelha Medeiros',
-  description: `
-  Full-Stack Developer with <span class="!text-mainColor"><u>2 years of experience</u></span> in academic projects, internships, and startups, working on the development of complete systems, from requirements gathering to production delivery.<br/>
-  <span class="!text-mainColor"><u>Graduated in Computer Science</u></span> from the State University of Paraíba and <span class="!text-mainColor"><u>post-graduating in Web Development</u></span> from Faculeste.
-`,
-
-  professionalProfile: `
-  Full-Stack Developer with <span class="!text-mainColor"><u>2 years of experience</u></span> in academic projects, internships, and startups, developing complete systems from requirements gathering to production deployment.<br/>
-  <span class="!text-mainColor"><u>Graduated in Computer Science</u></span> from the State University of Paraíba and <span class="!text-mainColor"><u>post-graduating in Web Development</u></span> from Faculeste, I have solid experience in <span class="!text-mainColor"><u>React, TypeScript, Node.js, Prisma, PostgreSQL, Docker</u></span>, and agile methodologies.<br/>
-  I have acted as a team leader and developer in real-world systems, including the <span class="!text-mainColor"><u>Splen CRM</u></span>, used for managing course sales; the <span class="!text-mainColor"><u>Multi UEPB</u></span> platform, for renting university products; the <span class="!text-mainColor"><u>Verbo Hub</u></span>, an event management system; <span class="!text-mainColor"><u>Consulta Fácil</u></span>, a medical appointment scheduling system integrated with Stripe; <span class="!text-mainColor"><u>Gym Evolution</u></span>, a workout and diet tracking system with payment integrations and automated tests; and <span class="!text-mainColor"><u>ExpertGP</u></span>, a system for municipal public management.<br/>
-  I am results-oriented, with a focus on <span class="!text-mainColor"><u>code quality</u></span>, <span class="!text-mainColor"><u>scalability</u></span>, and <span class="!text-mainColor"><u>usability</u></span>, always seeking to deliver real value to the user and generate a positive impact on business.<br/>
-  Interested in <span class="!text-mainColor"><u>Full-Stack, Front-End, and Back-End development</u></span>.
-`,
+  description: `  Full-Stack Developer with <span class="highlight">3 years of experience</span> in freelance, projects, internships, and startups. 
+  Graduated in <span class="highlight">Computer Science from UEPB</span> and currently pursuing a postgraduate degree in    <span class="highlight">Web Development at Faculeste</span>.`,
+  professionalProfile: `Full-Stack Developer with <span class="highlight">3 years of experience</span> in freelance, projects, internships, and startups. 
+Graduated in <span class="highlight">Computer Science from UEPB</span> and currently pursuing a postgraduate degree in  <span class="highlight">Web Development at Faculeste</span>. <br/>
+Working with <span class="highlight">React, Next.js, Node.js, Prisma, PostgreSQL, MongoDB, Fastify, TypeScript, Tailwind, Docker, and AWS</span>, 
+with expertise in <span class="highlight">architecture, testing, version control, CI/CD, and Scrum</span>. <br/>
+Experience in <span class="highlight">complete, scalable, production-ready systems</span>, focusing on  <span class="highlight">quality, security, performance, and delivery predictability</span>. Strong expertise in  <span class="highlight">Clean Code, SOLID, software architectures, documentation, automated pipelines</span>, 
+deployment automation, and design patterns. <br/>
+Interested in <span class="highlight">Full-Stack, Front-End, and Back-End development</span>.`,
   resumeUrl:
-    'https://docs.google.com/document/d/12krEMbPJzIrSUoN4tKSt3C5REMoSwNpGPSmVNa9UE9I/edit?usp=sharing',
+    '[https://docs.google.com/document/d/1qI_1p0rpyBPJPNHA6MpwM5gGlmV-kN0X2CtzfsdtzyM/edit?usp=sharing](https://docs.google.com/document/d/1qI_1p0rpyBPJPNHA6MpwM5gGlmV-kN0X2CtzfsdtzyM/edit?usp=sharing)',
   profilePicture: generalImages.foto,
   certificates: certificatesDataEn,
   experiences: experiencesDataEn,
   projects: projectsDataEn,
   hardSkills: hardSkillsDataEn,
   formations: formationDataEn,
-  gitHub: 'https://github.com/LucasLevingston',
-  linkedin: 'https://www.linkedin.com/in/lucas-levingston-44b851231/',
+  gitHub:
+    '[https://github.com/LucasLevingston](https://github.com/LucasLevingston)',
+  linkedin:
+    '[https://www.linkedin.com/in/lucas-levingston-44b851231/](https://www.linkedin.com/in/lucas-levingston-44b851231/)',
   linkedinImageUrl: generalImages.fotoLinkedin,
-  instagram: 'https://www.instagram.com/lucaolevingston/?hl=en',
+  instagram:
+    '[https://www.instagram.com/lucaolevingston/?hl=pt-br](https://www.instagram.com/lucaolevingston/?hl=pt-br)',
   instagramImageUrl: generalImages.fotoInstagram,
   phone: '(83) 99961-6220',
-  whatsapp: 'https://wa.me/message/BL2FCNM72L7GJ1',
+  whatsapp:
+    '[https://wa.me/message/BL2FCNM72L7GJ1](https://wa.me/message/BL2FCNM72L7GJ1)',
+  portfolioUrl:
+    '[https://lucas-levingston.vercel.app/](https://lucas-levingston.vercel.app/)',
   whatsappImageUrl: generalImages.fotoWhatsapp,
-  email: 'lucaslevingston94@gmail.com',
+  email: '[lucaslevingston94@gmail.com](mailto:lucaslevingston94@gmail.com)',
   recomendations: recommendationDataEn,
   softSkills: softSkillsEn,
   address: 'Rua Severino Soares, 70 - Jardim Guanabara',
   location: 'Patos - PB',
+  languages: [
+    {
+      language: 'Portuguese',
+      type: 'Native',
+    },
+    {
+      language: 'English',
+      type: 'Intermediate (good technical reading, writing, and basic conversation)',
+    },
+  ],
 }

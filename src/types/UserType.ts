@@ -3,6 +3,7 @@ import { ExperienceType } from './ExperienceType'
 import { FormationType } from './FormationType'
 import { HardSkillsType } from './HardSkillsType'
 import { ProjectType } from './ProjectType'
+import { RecommendationType } from './RecommendationType'
 
 export interface UserType {
   name: string
@@ -26,8 +27,10 @@ export interface UserType {
   whatsappImageUrl: string
   email: string
   recomendations: RecommendationType[]
+  portfolioUrl?: string
   softSkills: string[]
   address: string
   location: string
   totalCommits?: number
+  languages?: { language: string; type: string }[]
 }

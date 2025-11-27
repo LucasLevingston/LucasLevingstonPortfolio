@@ -2,53 +2,68 @@ import { ExperienceType } from '../types/ExperienceType'
 
 export const experiencesDataBr: ExperienceType[] = [
   {
+    enterprise: 'Freelancer Full-Stack',
+    location: 'Remoto',
+    startsDate: '01/2023',
+    endsDate: 'Atual',
+    role: 'Desenvolvedor Full-Stack',
+    features: [
+      'Criação de aplicações full-stack completas utilizando <span className="highlight">React</span>, <span className="highlight">Next.js</span>, <span className="highlight">Node.js</span>, Fastify, Express, <span className="highlight">Prisma</span> e <span className="highlight">TypeScript</span>, com integração de bancos relacionais e não-relacionais (<span className="highlight">PostgreSQL</span>, <span className="highlight">MongoDB</span>)',
+      'Implementação de sistemas de pagamento completos com <span className="highlight">Stripe</span> (pagamentos únicos, recorrentes, subscriptions, webhooks e reconciliação) e <span className="highlight">Mercado Pago</span> (Pix, cartão, QRCode, callbacks e antifraude)',
+      'Construção de APIs <span className="highlight">confiáveis</span> e bem documentadas com <span className="highlight">logs estruturados</span>, versionamento, documentação <span className="highlight">Swagger</span> e tratamento profissional de erros',
+      'Desenvolvimento de interfaces com <span className="highlight">ShadCN UI</span> + <span className="highlight">Tailwind CSS</span>, componentização, acessibilidade e design system consistente',
+      'Configuração de ambientes e <span className="highlight">CI/CD</span> em <span className="highlight">Vercel</span>, <span className="highlight">Render</span> e <span className="highlight">AWS</span> com pipelines de build, testes e deploy automático',
+      'Uso de <span className="highlight">Docker</span> para padronização de ambiente, containers de banco e orquestração local',
+      'Implementação de testes unitários e de integração com <span className="highlight">Vitest</span>, <span className="highlight">Jest</span> e <span className="highlight">Supertest</span>',
+      'Aplicação de práticas de segurança: autenticação <span className="highlight">JWT</span>, controle de permissões (<span className="highlight">RBAC</span>), <span className="highlight">CORS</span>, logs estruturados e variáveis de ambiente',
+      'Domínio em performance front-end com <span className="highlight">SSR</span>, <span className="highlight">SSG</span>, <span className="highlight">ISR</span>, <span className="highlight">code splitting</span>, memoization, <span className="highlight">SWR/TanStack Query</span> e otimização de assets',
+      'Gestão completa com clientes: captura de requisitos, prototipação, estimativas, entregas por sprint e <span className="highlight">handoff técnico</span>',
+      'Experiência em manutenção e evolução de sistemas existentes, incluindo <span className="highlight">refatoração</span>, melhorias de <span className="highlight">UI/UX</span> e migração de stack',
+    ],
+  },
+  {
     enterprise: 'Multi UEPB',
     location: 'Patos, PB',
     startsDate: '06/2024',
     endsDate: '12/2024',
     role: 'Líder do time de desenvolvimento Front-end',
-    description: `
-     Liderei o time de desenvolvimento Front-End da Startup Multi da UEPB, onde foi realizado um sistema de aluguel de utensílios da universidade. 
-     Fiquei à frente do desenvolvimento e organização de tarefas para os outros desenvolvedores. Nesse período <span class="!text-mainColor">atuamos com React, Typescript e Tailwind CSS.</span>
-    `,
+    features: [
+      'Liderança técnica e coordenação de equipe de <span className="highlight">6 desenvolvedores</span>, definindo arquitetura front-end em <span className="highlight">React</span> + <span className="highlight">TypeScript</span> + <span className="highlight">Vite</span>',
+      'Organização do backlog, definição de tarefas, priorização e manutenção do fluxo de trabalho com <span className="highlight">Scrum</span>',
+      'Implantação de <span className="highlight">CI/CD</span> com pipelines de build → testes → deploy automático, garantindo entregas consistentes',
+      'Implementação de testes unitários e de integração com <span className="highlight">Vitest</span>',
+      'Adoção de <span className="highlight">Clean Code</span>, convenções de código, linting/formatting automáticos, commit lint e code reviews para manter qualidade e padronização',
+      'Otimização de performance com <span className="highlight">lazy loading</span>, <span className="highlight">code splitting</span>, memoização e otimização de assets',
+      'Entrega de um sistema funcional de aluguel de utensílios acadêmicos, usado por <span className="highlight">100+ usuários ativos</span>, demonstrando capacidade de entrega de produto real em ambiente de produção',
+    ],
   },
   {
     enterprise: 'Sercomp VI UEPB',
     location: 'Patos, PB',
-    startsDate: '04/2024',
-    endsDate: '06/2024',
+    startsDate: '01/2024',
+    endsDate: '07/2024',
     role: 'Desenvolvedor Full-Stack',
-    description: `
-      Participei do desenvolvimento do site do VI Sercomp da UEPB. 
-      Atuei com diversas pessoas do curso, em um ambiente real de trabalho. 
-      Desenvolvi com 
-      <span class="!text-mainColor">React, JavaScript, CSS, Node e Vite</span>, 
-      e utilizando o <span class="!text-mainColor">Git Flow</span> como fluxo de trabalho.
-    `,
+    features: [
+      'Desenvolvimento do site para evento com mais de <span className="highlight">200 participantes</span>, com alta estabilidade e <span className="highlight">100% de uptime</span> no período',
+      'Uso de <span className="highlight">React</span> + <span className="highlight">Vite</span>, com otimização de build e melhoria de desempenho no front-end',
+      'Integração com APIs, consumo de dados, gerenciamento de estado, otimização de interfaces e responsividade',
+      'Configuração de <span className="highlight">deploy automatizado</span> e monitoramento',
+      'Aplicação de boas práticas de versionamento, documentação de código, padronização e fluxo de trabalho orientado à qualidade',
+    ],
   },
   {
-    enterprise: 'Splendore',
+    enterprise: 'Anhanguera',
     location: 'Patos, PB',
     startsDate: '06/2023',
-    endsDate: '01/2024',
-    role: 'Estagiário de Desenvolvedor Web',
-    description: `
-      Liderei o desenvolvimento de um sistema de CRM, usado no gerenciamento das vendas dos cursos da Unopar na região, 
-      atendendo centenas de alunos. Trabalhei com desenvolvimento web, 
-      <span class="!text-mainColor">
-      desenvolvendo tanto o Back e o Front de aplicações utilizando React, Typescript, Tailwind, Mongo, Prisma, 
-      Express e Docker. 
-      </span><br />
-      Encarregado da coleta de requisitos, design de projeto e escolha da Stack de tecnologias utilizada. 
-      Atuei na implementação de diversas rotas e lógica de negócio de uma 
-      <span class="!text-mainColor">API REST</span>, 
-      além de desenvolver as 
-      <span class="!text-mainColor">
-      interfaces e features presentes no front-end
-      </span>. <br/>
-      Realizei a reformulação e modularização do back-end, padronizando a organização de pastas e arquivos do projeto, 
-      aprimorando a Developer Experience.
-    `,
+    endsDate: '06/2024',
+    role: 'Estagiário de Desenvolvimento Web',
+    features: [
+      'Construção de <span className="highlight">CRM</span> para gerenciar vendas e alunos da cidade de Patos, PB, com back-end usando API REST + banco de dados (<span className="highlight">Prisma</span> + <span className="highlight">MongoDB</span>)',
+      'Estruturação da arquitetura da API REST (camadas, serviços, repositórios, middlewares e DTOs)',
+      'Implementação de autenticação, segurança básica, validação de dados, tratamento de erros e documentação de APIs',
+      'Implementação de testes unitários e de integração',
+      'Análise de requisitos, documentação e organização do código',
+    ],
   },
 
   {
@@ -57,61 +72,76 @@ export const experiencesDataBr: ExperienceType[] = [
     startsDate: '06/2022',
     endsDate: '10/2022',
     role: 'Atendente de consultório médico',
-    description: `
-	    Realizava agendamento de consultas, organização de planilhas e atendimento ao público.
-	  `,
+    features: [
+      'Agendamento de consultas, organização de planilhas e atendimento ao público',
+    ],
   },
 ]
 
 export const experiencesDataEn: ExperienceType[] = [
+  {
+    enterprise: 'Full-Stack Freelancer',
+    location: 'Remote',
+    startsDate: '01/2023',
+    endsDate: 'Present',
+    role: 'Full-Stack Developer',
+    features: [
+      'Creation of complete full-stack applications using <span className="highlight">React</span>, <span className="highlight">Next.js</span>, <span className="highlight">Node.js</span>, Fastify, Express, <span className="highlight">Prisma</span>, and <span className="highlight">TypeScript</span>, with integration of relational and non-relational databases (<span className="highlight">PostgreSQL</span>, <span className="highlight">MongoDB</span>)',
+      'Implementation of complete payment systems with <span className="highlight">Stripe</span> (single payments, recurring, subscriptions, webhooks, and reconciliation) and <span className="highlight">Mercado Pago</span> (Pix, card, QRCode, callbacks, and anti-fraud)',
+      'Construction of <span className="highlight">reliable</span>, well-documented APIs with <span className="highlight">structured logging</span>, versioning, <span className="highlight">Swagger</span> documentation and professional error handling',
+      'Development of interfaces with <span className="highlight">ShadCN UI</span> + <span className="highlight">Tailwind CSS</span>, componentization, accessibility, and consistent design system',
+      'Configuration of environments and <span className="highlight">CI/CD</span> on <span className="highlight">Vercel</span>, <span className="highlight">Render</span>, and <span className="highlight">AWS</span> with build pipelines, tests, and automatic deployment',
+      'Use of <span className="highlight">Docker</span> for environment standardization, database containers, and local orchestration',
+      'Implementation of unit and integration tests with <span className="highlight">Vitest</span>, <span className="highlight">Jest</span>, and <span className="highlight">Supertest</span>',
+      'Application of security practices: <span className="highlight">JWT</span> authentication, permission control (<span className="highlight">RBAC</span>), <span className="highlight">CORS</span>, structured logging, and environment variables',
+      'Expertise in front-end performance with <span className="highlight">SSR</span>, <span className="highlight">SSG</span>, <span className="highlight">ISR</span>, <span className="highlight">code splitting</span>, memoization, <span className="highlight">SWR/TanStack Query</span> and asset optimization',
+      'Complete client management: requirements capture, prototyping, estimations, sprint deliveries, and <span className="highlight">technical handoff</span>',
+      'Experience in maintenance and evolution of existing systems, including <span className="highlight">refactoring</span>, <span className="highlight">UI/UX</span> improvements, and stack migration',
+    ],
+  },
   {
     enterprise: 'Multi UEPB',
     location: 'Patos, PB',
     startsDate: '06/2024',
     endsDate: '12/2024',
     role: 'Frontend Development Team Lead',
-    description: `
-    I led the Frontend development team at the Multi UEPB startup, where we developed a rental system for university utensils. 
-    I was responsible for development and task organization for other developers. During this period, <span class="!text-mainColor">we worked with React, TypeScript, and Tailwind CSS.</span>
-  `,
+    features: [
+      'Technical leadership and coordination of a <span className="highlight">6-developer team</span>, defining front-end architecture in <span className="highlight">React</span> + <span className="highlight">TypeScript</span> + <span className="highlight">Vite</span>',
+      'Organization of backlog, task definition, prioritization, and workflow maintenance with <span className="highlight">Scrum</span>',
+      'Implementation of <span className="highlight">CI/CD</span> with build → test → deploy pipelines, ensuring consistent deliveries',
+      'Implementation of unit and integration tests with <span className="highlight">Vitest</span>',
+      'Adoption of <span className="highlight">Clean Code</span>, code conventions, automatic linting/formatting, commit lint, and code reviews to maintain quality and standardization',
+      'Performance optimization with <span className="highlight">lazy loading</span>, <span className="highlight">code splitting</span>, memoization, and asset optimization',
+      'Delivery of a functional academic utensil rental system used by <span className="highlight">100+ active users</span>, demonstrating capability to deliver real products in production environments',
+    ],
   },
   {
     enterprise: 'Sercomp VI UEPB',
     location: 'Patos, PB',
-    startsDate: '04/2024',
-    endsDate: '06/2024',
+    startsDate: '01/2024',
+    endsDate: '07/2024',
     role: 'Full-Stack Developer',
-    description: `
-      Participated in the development of the VI Sercomp website for UEPB. 
-      Worked with various people from the course, in a real work environment. 
-      Developed using 
-      <span class="!text-mainColor">React, JavaScript, CSS, Node, and Vite</span>, 
-      and used <span class="!text-mainColor">Git Flow</span> as the workflow.
-    `,
+    features: [
+      'Development of an event website with over <span className="highlight">200 participants</span>, with high stability and <span className="highlight">100% uptime</span> during the period',
+      'Use of <span className="highlight">React</span> + <span className="highlight">Vite</span>, with build optimization and front-end performance improvements',
+      'API integration, data consumption, state management, interface optimization, and responsiveness',
+      'Configuration of <span className="highlight">automated deployment</span> and monitoring',
+      'Application of best practices in versioning, code documentation, standardization, and quality-oriented workflow',
+    ],
   },
   {
-    enterprise: 'Splendore',
+    enterprise: 'Anhanguera',
     location: 'Patos, PB',
     startsDate: '06/2023',
-    endsDate: '01/2024',
+    endsDate: '06/2024',
     role: 'Web Development Intern',
-    description: `
-      I led the development of a CRM system used for managing Unopar course sales in the region, 
-      serving hundreds of students. I worked on web development, 
-      <span class="!text-mainColor">
-      developing both the back-end and front-end of applications using React, TypeScript, Tailwind, MongoDB, Prisma, 
-      Express, and Docker. 
-      </span><br />
-      Responsible for requirements gathering, project design, and technology stack selection. 
-      I implemented various routes and business logic of a 
-      <span class="!text-mainColor">REST API</span>, 
-      as well as developing the 
-      <span class="!text-mainColor">
-      front-end interfaces and features
-      </span>. <br/>
-      I restructured and modularized the back-end, standardizing the organization of project folders and files, 
-      improving Developer Experience.
-    `,
+    features: [
+      'Construction of a <span className="highlight">CRM</span> to manage sales and students in the city of Patos, PB, with back-end using REST API + database (<span className="highlight">Prisma</span> + <span className="highlight">MongoDB</span>)',
+      'Structuring of the REST API architecture (layers, services, repositories, middlewares and DTOs)',
+      'Implementation of authentication, basic security, data validation, error handling and API documentation',
+      'Implementation of unit and integration tests',
+      'Requirements analysis, documentation and code organization',
+    ],
   },
 
   {
@@ -120,8 +150,8 @@ export const experiencesDataEn: ExperienceType[] = [
     startsDate: '06/2022',
     endsDate: '10/2022',
     role: 'Medical Office Attendant',
-    description: `
-	    Scheduled appointments, organized spreadsheets, and provided customer service.
-	  `,
+    features: [
+      'Scheduled appointments, organized spreadsheets, and provided customer service',
+    ],
   },
 ]

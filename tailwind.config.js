@@ -3,10 +3,14 @@
 import tailwindScrollbar from 'tailwind-scrollbar'
 
 export default {
+  experimental: {
+    disableColorFunction: true,
+  },
   darkMode: ['class'],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
@@ -18,6 +22,9 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      highlight: {
+        bold: { fontWeight: '700', color: '#ff2200' },
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -95,6 +102,10 @@ export default {
         '.no-scrollbar': {
           '-ms-overflow-style': 'none',
           'scrollbar-width': 'none',
+        },
+        '.highlight': {
+          fontWeight: '700',
+          color: '#ff2200',
         },
       }
       addUtilities(newUtilities)

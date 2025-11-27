@@ -6,9 +6,9 @@ export const projectsDataBr: ProjectType[] = [
     title: 'ExpertGP',
     favorite: true,
     description:
-      'Plataforma completa para gestão pública municipal, com foco em programas, ações, indicadores, funcionários e contratos.',
+      'Sistema de gestão pública municipal com dashboards em tempo real.',
     about:
-      'Sistema para gestão pública municipal. O sistema oferece dashboards interativos, controle de documentos, autenticação segura com permissões. Tem como foco principal a modernização e digitalização da administração municipal, redução de retrabalho e aumento da transparência na gestão pública.',
+      'Plataforma para gestão de programas, ações, indicadores, funcionários e contratos. Inclui autenticação com permissões avançadas, logs de auditoria, integração com Mercado Pago e deploy automatizado em AWS com CI/CD completo.',
     technologies: [
       'react',
       'typescript',
@@ -26,49 +26,32 @@ export const projectsDataBr: ProjectType[] = [
       'amazonwebservices',
       'mercadopago',
     ],
+    features: [
+      'Dashboards em tempo real com sincronização eficiente (<span className="highlight">TanStack Query</span>)',
+      'Autenticação <span className="highlight">JWT</span> + Refresh Token com <span className="highlight">RBAC</span> avançado',
+      'Logs de auditoria e rastreamento de ações',
+      'Clean Architecture com separação de responsabilidades',
+      'Testes automatizados (unit + integration com <span className="highlight">Vitest</span>)',
+      '<span className="highlight">CI/CD</span> completo (build → testes → deploy)',
+      'Ambientes isolados (dev/staging/prod) em <span className="highlight">AWS</span>',
+      'Integração <span className="highlight">Mercado Pago</span> para transações',
+      'Validações com <span className="highlight">Zod</span> e schemas tipados',
+      'Componentes reutilizáveis com <span className="highlight">ShadCN UI</span>',
+    ],
     link: 'https://expert-gp.vercel.app/',
     isMobile: false,
     showEvolution: false,
     startsDate: '06/2025',
     isDeveloping: true,
   },
-  {
-    title: 'GymEvolution',
-    favorite: true,
-    description:
-      'Sistema completo para evolução na musculação com acompanhamento nutricional e de treinos.',
-    about:
-      'Sistema completo para evolução na musculação, com acompanhamento integrado de treinos e nutrição. A plataforma possibilita que praticantes e profissionais acompanhem a evolução física e nutricional de forma clara e objetiva. Permite a criação de rotinas personalizadas, definição de metas e monitoramento de resultados, garantindo uma experiência completa para quem busca performance e saúde.',
-    images: projectImages.gymEvolution,
-    technologies: [
-      'react',
-      'typescript',
-      'nodejs',
-      'fastify',
-      'vite',
-      'tailwindcss',
-      'prisma',
-      'swagger',
-      'sqlite',
-      'eslint',
-      'postman',
-      'git',
-      'github',
-      'jwt',
-      'rest',
-      'shadcn',
-      'zod',
-    ],
-    frontEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolution',
-    backEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolutionAPI',
-  },
+
   {
     title: 'Consulta Fácil',
     favorite: true,
     description:
-      'Plataforma de consultas médicas com sistema de pagamentos integrado.',
+      'Plataforma de consultas médicas com pagamentos integrados via Stripe.',
     about:
-      'Plataforma de consultas médicas online com sistema de pagamentos integrado, projetada para otimizar a experiência de pacientes e aumentar a eficiência operacional de clínicas. O sistema permite agendamentos, gestão centralizada de consultas e processamento de pagamentos, reduzindo filas, burocracia e falhas no fluxo de atendimento. Com foco em segurança e usabilidade, a aplicação implementa autenticação, integração com pagamentos, além de validação em tempo real de formulários, proporcionando maior agilidade no atendimento, redução de processos manuais e aumento da satisfação dos pacientes e profissionais de saúde.',
+      'Permite agendamento de consultas, gerenciamento de pacientes e processamento seguro de pagamentos. Suporta 100+ agendamentos simultâneos, oferece autenticação JWT com NextAuth e revalidação dinâmica de dados.',
     technologies: [
       'nextjs',
       'typescript',
@@ -85,16 +68,113 @@ export const projectsDataBr: ProjectType[] = [
       'shadcn',
       'nextauth',
     ],
+    features: [
+      'Integração completa com <span className="highlight">Stripe</span>: pagamentos, cartões salvos e webhooks',
+      'Reprocessamento automático de falhas e conciliação de transações',
+      'Escalabilidade para <span className="highlight">100+ agendamentos</span> simultâneos',
+      'SSR otimizado com <span className="highlight">Next.js</span> (ISR dinâmico)',
+      '<span className="highlight">NextAuth</span> com proteção de rotas e sessão server-side',
+      'Validação com <span className="highlight">Zod</span> (front + back)',
+      'Logs estruturados e monitoramento de transações',
+      'Deploy automático em <span className="highlight">Vercel</span> (CD)',
+      'Interface responsiva com <span className="highlight">ShadCN UI</span> + Tailwind',
+      'Segurança com <span className="highlight">JWT</span> + Refresh Tokens',
+    ],
     images: projectImages.consultaFacil,
     link: 'https://consulta-facil-next.vercel.app/',
     repositoryUrl: 'https://github.com/LucasLevingston/consultaFacil',
   },
+
+  {
+    title: 'Verbo Hub',
+    favorite: true,
+    description:
+      'Sistema de gestão de eventos para comunidades com suporte a participantes ilimitados.',
+    about:
+      'Gerencia eventos com balanceamento de carga automático para 200+ participantes simultâneos. Oferece 99,9% de uptime com infraestrutura em AWS, painel administrativo com componentes reutilizáveis e documentação de API com Swagger.',
+    images: projectImages.verbo,
+    technologies: [
+      'react',
+      'typescript',
+      'nodejs',
+      'express',
+      'tailwindcss',
+      'docker',
+      'vite',
+      'swagger',
+      'postgresql',
+      'prisma',
+      'vitest',
+      'postman',
+      'amazonwebservices',
+      'git',
+      'github',
+    ],
+    features: [
+      '<span className="highlight">AWS CloudFront</span> (CDN) + Elastic Beanstalk com <span className="highlight">99,9% uptime</span>',
+      'Balanceamento de carga automático para eventos com <span className="highlight">200+ participantes</span>',
+      'Suporte a participantes ilimitados com elasticidade',
+      'Cache estratégico em endpoints críticos para performance',
+      'Testes automatizados com <span className="highlight">Vitest</span> (prevenção de regressões)',
+      'Documentação de API com <span className="highlight">Swagger/OpenAPI</span>',
+      'Deploy automatizado com <span className="highlight">Docker</span> + GitFlow',
+      'Logs estruturados e monitoramento em produção',
+      'Painel administrativo com componentes reutilizáveis',
+      '<span className="highlight">CI/CD</span> com pipelines de entrega contínua',
+    ],
+  },
+
+  {
+    title: 'GymEvolution',
+
+    description:
+      'Sistema de acompanhamento de evolução na musculação com treinos e nutrição.',
+    about:
+      'Permite criar rotinas personalizadas, acompanhar progresso físico e nutricional em tempo real. Inclui autenticação JWT, validações com Zod e testes com Vitest. Banco de dados escalável de SQLite para desenvolvimento até PostgreSQL em produção.',
+    images: projectImages.gymEvolution,
+    technologies: [
+      'react',
+      'typescript',
+      'nodejs',
+      'fastify',
+      'vite',
+      'tailwindcss',
+      'prisma',
+      'swagger',
+      'sqlite',
+      'vitest',
+      'eslint',
+      'postman',
+      'git',
+      'github',
+      'jwt',
+      'rest',
+      'shadcn',
+      'zod',
+    ],
+    features: [
+      'Rotinas de treino personalizadas com progressão',
+      'Acompanhamento nutricional integrado',
+      'Visualização de progresso físico em tempo real',
+      'Arquitetura <span className="highlight">Fastify</span> para alta performance',
+      'Validações com <span className="highlight">Zod</span> em toda a stack',
+      'Testes unitários e de integração com <span className="highlight">Vitest</span>',
+      'Documentação de API com <span className="highlight">Swagger</span>',
+      'Segurança com <span className="highlight">JWT</span> + Refresh Tokens',
+      'Escalabilidade: <span className="highlight">SQLite → PostgreSQL</span>',
+      'Interface responsiva com <span className="highlight">ShadCN UI</span>',
+    ],
+    frontEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolution',
+    backEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolutionAPI',
+  },
+
   {
     title: 'CRM Splen',
-    favorite: true,
-    description: 'Sistema CRM para gestão de vendas de cursos e graduações.',
+
+    description:
+      'Sistema CRM para gestão centralizada de leads e vendas de cursos.',
     about:
-      'Sistema CRM especializado em gestão de vendas de cursos e graduações, projetado para aumentar a eficiência comercial e a taxa de conversão de prospects. A plataforma centraliza o gerenciamento de leads, automatiza processos de vendas e disponibiliza relatórios detalhados de performance, permitindo decisões mais assertivas e acompanhamento preciso do funil. O projeto foi desenvolvido em equipe utilizando a metodologia ágil Scrum, com sprints bem definidas, code review e integração contínua, garantindo qualidade e entregas incrementais, resultando na melhoria significativa na conversão de leads, maior visibilidade para gestores e otimização do ciclo de vendas.',
+      'Centraliza leads, automatiza processos de vendas e oferece relatórios de performance. Implementa arquitetura em camadas com DTOs para validação, CI/CD com builds automatizados e Docker para padronização entre ambientes.',
     technologies: [
       'typescript',
       'react',
@@ -109,15 +189,29 @@ export const projectsDataBr: ProjectType[] = [
       'github',
       'postman',
       'scrum',
+      'eslint',
+    ],
+    features: [
+      'Gerenciamento centralizado de leads',
+      'Automação de processos de vendas',
+      'Relatórios de performance detalhados',
+      'Arquitetura em camadas (controllers, services, repositories)',
+      'DTOs para validação de dados e consistência',
+      '<span className="highlight">CI/CD</span> com builds automatizados',
+      'Code reviews e linting automático (ESLint/Prettier)',
+      'Docker para padronização dev/prod',
+      'Metodologia <span className="highlight">Scrum</span> com sprints',
+      '<span className="highlight">MongoDB</span> com <span className="highlight">Prisma</span> para acesso eficiente',
     ],
   },
+
   {
     title: 'Anéis de Poder',
-    favorite: true,
+
     description:
-      'Sistema de criação e personalização de anéis com interface interativa.',
+      'E-commerce de customização de anéis com interface interativa.',
     about:
-      'Desenvolvido com arquitetura orientada a testes e cobertura de código abrangente. Implementa padrões de design como Repository Pattern e Dependency Injection, garantindo código maintível e escalável. Utiliza containerização para ambientes consistentes e documentação automatizada de API. O sistema oferece interface intuitiva para customização de produtos, gerenciamento de inventário e processamento de pedidos, otimizando o processo de vendas e melhorando a experiência do cliente.',
+      'Permite customização visual de produtos, gerenciamento de inventário e processamento de pedidos. Implementa Repository Pattern, validações com Zod, testes com Vitest e documentação com Swagger. Deploy containerizado com Docker.',
     technologies: [
       'react',
       'typescript',
@@ -136,17 +230,30 @@ export const projectsDataBr: ProjectType[] = [
       'axios',
       'zustand',
       'vitest',
+      'swagger',
+    ],
+    features: [
+      'Customização interativa de produtos',
+      'Gerenciamento de inventário integrado',
+      'Repository Pattern + Dependency Injection',
+      'Arquitetura orientada a testes',
+      'Validações com <span className="highlight">Zod</span> em front e back',
+      'Testes unitários e de integração com <span className="highlight">Vitest</span>',
+      'Autenticação com <span className="highlight">JWT</span> e Refresh Tokens',
+      'Documentação de API com <span className="highlight">Swagger</span>',
+      'Deploy containerizado com <span className="highlight">Docker</span>',
+      'CORS configurado e proteção de rotas',
     ],
     images: projectImages.aneis,
     repositoryUrl: 'https://github.com/LucasLevingston/AneisDePoder',
   },
+
   {
     title: 'DevStage',
     favorite: false,
-    description:
-      'Plataforma de desenvolvimento com componentes reutilizáveis e arquitetura moderna.',
+    description: 'Plataforma de desenvolvimento com componentes reutilizáveis.',
     about:
-      'Sistema construído com foco em performance e developer experience, implementando Server-Side Rendering e otimizações de bundle. Utiliza geração automática de clientes HTTP, garantindo type-safety end-to-end e reduzindo erros de integração. Aplica padrões de composição de componentes e design system consistente. Oferece ferramentas de desenvolvimento padronizadas, acelera o time-to-market de novos projetos e garante consistência visual e funcional em toda a aplicação.',
+      'Oferece design system consistente, geração automática de clientes HTTP com Orval e type-safety end-to-end. Utiliza SSR otimizado, cache com Redis e ORM Drizzle para queries type-safe.',
     technologies: [
       'react',
       'nextjs',
@@ -158,18 +265,33 @@ export const projectsDataBr: ProjectType[] = [
       'drizzle',
       'redis',
       'zod',
+      'docker',
+      'git',
     ],
-    images: [],
+    features: [
+      'Geração automática de clientes HTTP com <span className="highlight">Orval</span>',
+      'Type-safety end-to-end (back → front)',
+      'SSR otimizado com <span className="highlight">Next.js</span>',
+      'Cache estratégico com <span className="highlight">Redis</span>',
+      'ORM <span className="highlight">Drizzle</span> com queries type-safe',
+      'Design system consistente em toda plataforma',
+      'Componentes reutilizáveis com padrões de composição',
+      'Otimização avançada de bundle',
+      'Docker + <span className="highlight">CI/CD</span> automatizado',
+      'Developer experience otimizada',
+    ],
+
     backEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-server',
     frontEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-client',
   },
+
   {
     title: 'Let me Ask',
-    favorite: true,
+
     description:
-      'Sistema de salas interativas com transcrição e resposta automática por IA.',
+      'Sistema de salas interativas com transcrição de áudio e respostas por IA.',
     about:
-      'Aplicação full-stack que implementa processamento de áudio em tempo real e integração com inteligência artificial. Utiliza hooks customizados para gerenciamento de estado complexo e otimização de performance. Aplica práticas de clean architecture e separation of concerns. O sistema revoluciona a interação em salas de aula, permitindo participação mais inclusiva através de múltiplos canais de comunicação, melhorando o engajamento dos alunos e facilitando o acompanhamento do aprendizado.',
+      'Processa áudio em tempo real, integra Google Gemini para transcrição e respostas automáticas. Sincroniza dados com TanStack Query, implementa clean architecture e suporta múltiplos canais de comunicação integrados.',
     technologies: [
       'nodejs',
       'fastify',
@@ -185,8 +307,22 @@ export const projectsDataBr: ProjectType[] = [
       'typescript',
       'jwt',
       'zod',
+      'shadcn',
+      'git',
     ],
-    images: [],
+    features: [
+      'Processamento de áudio em tempo real',
+      'Integração com <span className="highlight">Google Gemini</span> (IA)',
+      'Transcrição automática de áudio',
+      'Respostas automáticas alimentadas por IA',
+      'Sincronização em tempo real com <span className="highlight">TanStack Query</span>',
+      'Clean Architecture e separação de responsabilidades',
+      'Hooks customizados para state management complexo',
+      'ORM <span className="highlight">Drizzle</span> com queries type-safe',
+      'Deploy e execução com <span className="highlight">Docker</span>',
+      'Múltiplos canais de comunicação integrados',
+    ],
+
     backEndRepositoryUrl:
       'https://github.com/LucasLevingston/let-me-ask-server',
     frontEndRepositoryUrl:
@@ -195,54 +331,186 @@ export const projectsDataBr: ProjectType[] = [
   {
     title: 'Nearby - Mobile',
     description:
-      'Aplicativo móvel de recomendação de restaurantes com geolocalização.',
+      'Aplicativo móvel para descobrir restaurantes próximos por geolocalização.',
     about:
-      'Desenvolvido seguindo princípios de mobile-first design e otimização para diferentes dispositivos. Implementa navegação baseada em arquivos, integração com APIs nativas do dispositivo e interface responsiva. Utiliza componentes reutilizáveis e gerenciamento eficiente de estado. Oferece experiência personalizada baseada em localização, facilita descoberta de estabelecimentos próximos e melhora a tomada de decisão dos usuários através de informações contextualizadas.',
+      'Recomendações de estabelecimentos por localização, offline básico e integração com APIs nativas para melhor experiência móvel.',
     images: projectImages.nearby,
-    frontEndRepositoryUrl: 'https://github.com/LucasLevingston/Nearby',
-    technologies: ['reactnative', 'typescript', 'expo', 'css3'],
+    repositoryUrl: 'https://github.com/LucasLevingston/Nearby',
+    technologies: ['reactnative', 'typescript', 'expo', 'css3', 'git'],
     isMobile: true,
+    features: [
+      'Recomendações por <span className="highlight">geolocalização</span> e filtros contextuais',
+      'Integração com APIs nativas (GPS, câmera) para melhor UX',
+      'Cache e suporte <span className="highlight">offline</span> básico',
+      'Notificações push para novidades e reservas',
+      'Interface mobile otimizada com componentes reusáveis',
+    ],
   },
   {
-    title: 'Verbo Hub',
-    favorite: true,
-    description: 'Sistema de gestão de eventos para organizações religiosas.',
+    title: 'Pass In Web',
+    description: 'Plataforma para gestão de eventos com check-in automático.',
     about:
-      'Projeto desenvolvido com GitFlow para controle de versão estruturado e deploy automatizado em cloud. Implementa testes unitários abrangentes e práticas de CI/CD. Utiliza arquitetura escalável com separação clara entre camadas. O sistema centraliza o gerenciamento de eventos, facilita o controle de participantes e oferece relatórios detalhados, melhorando significativamente a organização de atividades e o engajamento da comunidade.',
-    images: projectImages.verbo,
+      'Automatiza check-in de participantes, controla presença em tempo real e oferece relatórios detalhados. Implementa validação robusta com Zod, autenticação JWT segura, testes com Vitest e documentação com Swagger.',
+    images: projectImages.passInWeb.combined,
+    technologies: [
+      'vite',
+      'react',
+      'typescript',
+      'tailwindcss',
+      'git',
+      'github',
+      'nodejs',
+      'fastify',
+      'prisma',
+      'sqlite',
+      'zod',
+      'jwt',
+      'swagger',
+      'vitest',
+    ],
+    features: [
+      'Check-in automatizado de participantes',
+      'Controle em tempo real de presença',
+      'Relatórios detalhados por evento',
+      'Validação com <span className="highlight">Zod</span> em toda a stack',
+      'JWT seguro com proteção de rotas (<span className="highlight">JWT</span>)',
+      'Testes unitários com <span className="highlight">Vitest</span>',
+      'Documentação API com <span className="highlight">Swagger</span>',
+      'Versionamento semântico com <span className="highlight">Git</span>',
+      'Componentes modulares reutilizáveis',
+      'Separação clara frontend/backend',
+    ],
+    frontEndRepositoryUrl:
+      'https://github.com/LucasLevingston/pass-in-web-reactjs',
+    backEndRepositoryUrl:
+      'https://github.com/LucasLevingston/pass-in-web-nodejs',
+  },
+  {
+    title: 'Blog Soft',
+    description:
+      'Plataforma de blog com CRUD completo e painel administrativo.',
+    about:
+      'Oferece sistema de publicação intuitivo, gerenciamento de conteúdo eficiente e interface otimizada para leitura. Implementa arquitetura RESTful com documentação Swagger, validação com Zod e aplicações de SEO.',
+    repositoryUrl: 'https://github.com/LucasLevingston/Blog',
     technologies: [
       'react',
       'typescript',
       'nodejs',
       'fastify',
-      'tailwindcss',
-      'docker',
       'vite',
+      'tailwindcss',
+      'prisma',
       'swagger',
-      'postgresql',
+      'sqlite',
       'eslint',
       'postman',
-      'amazonwebservices',
       'git',
       'github',
+      'zod',
+      'jwt',
+    ],
+    features: [
+      'Editor de publicações intuitivo e painel administrativo',
+      'SEO básico e otimizações para leitura',
+      'API REST documentada com <span className="highlight">Swagger</span>',
+      'Validações com <span className="highlight">Zod</span>',
+      'Autenticação e controle de permissões',
     ],
   },
+
   {
-    title: 'VI Sercomp',
-    images: projectImages.sercomp,
+    title: 'Threads Clone',
+
     description:
-      'Portal oficial do congresso acadêmico com informações e inscrições.',
+      'Réplica da rede social Threads com posts, interações e navegação dinâmica.',
     about:
-      'Projeto colaborativo desenvolvido com metodologia ágil e trabalho em equipe multidisciplinar. Implementa práticas de versionamento colaborativo e code review. Utiliza componentes modulares e design responsivo. O sistema centraliza informações do evento, facilita o processo de inscrição e oferece uma experiência unificada para participantes, melhorando a organização do congresso e aumentando o engajamento acadêmico.',
-    technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
-    link: 'https://sercomppb.com.br/',
+      'Implementa sistema de posts com interações, navegação dinâmica e gerenciamento de estado avançado. Autenticação social integrada, otimizações de performance e deploy em Vercel.',
+    images: projectImages.threads,
+    repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
+    link: 'https://threads-app-nextjs13.vercel.app/',
+    technologies: [
+      'react',
+      'typescript',
+      'nextjs',
+      'tailwindcss',
+      'mongodb',
+      'git',
+      'github',
+      'vercel',
+    ],
+    features: [
+      'Feed em tempo real com carregamento incremental',
+      'Reações, comentários e compartilhamentos',
+      'Autenticação social integrada',
+      'SEO e otimizações de rendering (SSR/ISR)',
+      'Deploy em <span className="highlight">Vercel</span>',
+    ],
   },
+
+  {
+    title: 'Spotify Clone',
+
+    description: 'Réplica da interface e funcionalidades do Spotify.',
+    about:
+      'Oferece navegação complexa, reprodução de áudio com gerenciamento de estado e interface responsiva. Backend com PostgreSQL e otimizações personalizadas para streaming de música.',
+    images: projectImages.spotify,
+    repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
+    link: 'https://spotify-nextjs13.vercel.app/',
+    technologies: [
+      'react',
+      'typescript',
+      'nextjs',
+      'tailwindcss',
+      'postgresql',
+      'git',
+      'github',
+      'vercel',
+    ],
+    features: [
+      'Reprodução de áudio com controle de fila e <span className="highlight">progress bar</span>',
+      'Playlists e gerenciamento local de preferências',
+      'Streaming otimizado com backend em <span className="highlight">PostgreSQL</span>',
+      'UI responsiva para desktop e mobile',
+      'Deploy e demonstração pública',
+    ],
+  },
+
+  {
+    title: 'Flexibble',
+
+    description:
+      'Plataforma para desenvolvedores compartilharem e colaborarem em projetos.',
+    about:
+      'Facilita networking profissional entre desenvolvedores com vitrine para projetos. Integração com APIs GraphQL, autenticação social e otimizações de SEO avançadas.',
+    images: projectImages.flexibble,
+    repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
+    link: 'https://flexibble-nexjs13.vercel.app/',
+    technologies: [
+      'react',
+      'typescript',
+      'nextjs',
+      'graphql',
+      'tailwindcss',
+      'git',
+      'github',
+      'vercel',
+    ],
+    features: [
+      'Vitrine para projetos com filtros e busca',
+      'Autenticação e perfil de usuário',
+      'Integração com <span className="highlight">GraphQL</span>',
+      'SEO e otimizações para discoverability',
+      'Compartilhamento fácil de projetos',
+    ],
+  },
+
   {
     title: 'RHControl',
-    images: projectImages.rhcontrol,
-    description: 'Sistema completo para administração de recursos humanos.',
+
+    description:
+      'Sistema para administração de recursos humanos e gestão de pessoal.',
     about:
-      'Desenvolvido com foco em usabilidade e automação de processos administrativos. Implementa validação robusta de formulários, geração automática de documentos e sincronização em tempo real. Utiliza design system consistente e componentes reutilizáveis. O sistema automatiza tarefas de RH, reduz erros manuais e oferece relatórios detalhados, melhorando significativamente a eficiência operacional e a gestão de pessoas.',
+      'Automatiza tarefas de RH, gera documentos automáticos e sincroniza dados em tempo real com Firebase. Oferece relatórios detalhados e interface consistente com design system ShadCN UI.',
     technologies: [
       'react',
       'typescript',
@@ -251,6 +519,16 @@ export const projectsDataBr: ProjectType[] = [
       'vite',
       'git',
       'github',
+      'shadcn',
+      'zustand',
+      'eslint',
+    ],
+    features: [
+      'Relatórios em tempo real com <span className="highlight">Firebase</span>',
+      'Autenticação e permissões centralizadas',
+      'Design system com <span className="highlight">ShadCN UI</span>',
+      'Componentes reutilizáveis e evolução de versão',
+      'Sincronização de dados em tempo real',
     ],
     frontEndRepositoryUrl:
       'https://github.com/LucasLevingston/rhcontrol-project',
@@ -294,14 +572,33 @@ export const projectsDataBr: ProjectType[] = [
       },
     ],
   },
+
+  {
+    title: 'VI Sercomp',
+    images: projectImages.sercomp,
+    description:
+      'Portal oficial do congresso acadêmico com informações e inscrições.',
+    about:
+      'Centraliza informações do evento, facilita processo de inscrição e oferece experiência unificada para participantes através de design responsivo e componentes modulares.',
+    technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
+    link: 'https://sercomppb.com.br/',
+    features: [
+      'Página informativa do evento com agenda e palestrantes',
+      'Formulário de inscrição e confirmação por e-mail',
+      'Design responsivo para todos dispositivos',
+      'SEO básico para descoberta do evento',
+      'Deploy estável e monitoramento de uptime',
+    ],
+  },
+
   {
     title: 'Caputeeno',
-    description:
-      'E-commerce moderno com interface intuitiva e experiência otimizada.',
+
+    description: 'E-commerce com interface intuitiva e experiência otimizada.',
     about:
-      'Projeto desenvolvido com arquitetura frontend moderna e integração com APIs GraphQL. Implementa otimizações de performance, lazy loading e cache inteligente. Utiliza componentização avançada e gerenciamento de estado eficiente. Oferece experiência de compra fluida, catálogo organizado e processo de checkout simplificado, aumentando as taxas de conversão e melhorando a satisfação do cliente.',
+      'Oferece catálogo organizado, lazy loading e cache inteligente. Implementa otimizações de performance, gerenciamento de estado eficiente e checkout simplificado.',
     images: projectImages.caputeeno,
-    frontEndRepositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
+    repositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
     technologies: [
       'vite',
       'react',
@@ -309,13 +606,25 @@ export const projectsDataBr: ProjectType[] = [
       'tailwindcss',
       'nodejs',
       'graphql',
+      'git',
+      'github',
+    ],
+    features: [
+      'Catálogo inteligente com <span className="highlight">lazy loading</span>',
+      'Checkout simplificado e seguro',
+      'Cache de assets e otimizações de performance',
+      'Gestão de inventário e variantes de produto',
+      'Interface responsiva com foco em conversão',
     ],
   },
+
   {
     title: 'Plann.er',
-    description: 'API robusta para organização e gerenciamento de viagens.',
+    favorite: false,
+    description:
+      'API para organização e gerenciamento colaborativo de viagens.',
     about:
-      'Backend desenvolvido com arquitetura RESTful e documentação automatizada. Implementa validação rigorosa de dados, tratamento de erros padronizado e logging estruturado. Utiliza ORM para abstração de banco de dados e migrations versionadas. Facilita o planejamento colaborativo de viagens, centraliza informações importantes e oferece APIs bem documentadas para integração com diferentes frontends, melhorando a experiência de organização de grupos.',
+      'Oferece APIs bem documentadas com Swagger, validação rigorosa com Zod e tratamento de erros padronizado. Facilita planejamento colaborativo e centraliza informações de viagens em grupo.',
     repositoryUrl: 'https://github.com/LucasLevingston/planner',
     technologies: [
       'typescript',
@@ -325,14 +634,25 @@ export const projectsDataBr: ProjectType[] = [
       'prisma',
       'sqlite',
       'swagger',
+      'git',
+      'rest',
+    ],
+    features: [
+      'APIs bem documentadas com <span className="highlight">Swagger</span>',
+      'Validação com <span className="highlight">Zod</span> e tratamento de erros consistente',
+      'Endpoints versionados e testáveis',
+      'Autenticação básica e controle de acesso',
+      'Logs e monitoramento para análise de uso',
     ],
   },
+
   {
     title: 'FocalPoint',
+    favorite: false,
     description:
       'Gerenciador de tarefas com interface moderna e funcionalidades avançadas.',
     about:
-      'Sistema desenvolvido com foco em produtividade e experiência do usuário. Implementa gerenciamento de estado otimizado, sincronização de dados e interface responsiva. Utiliza validação em tempo real e feedback visual imediato. Oferece organização eficiente de tarefas, acompanhamento de progresso e interface intuitiva, melhorando significativamente a produtividade pessoal e profissional dos usuários.',
+      'Oferece organização eficiente de tarefas, validação em tempo real e feedback visual imediato. Implementa gerenciamento de estado otimizado com Zustand e sincronização de dados.',
     repositoryUrl: 'https://github.com/LucasLevingston/focalPoint',
     technologies: [
       'typescript',
@@ -343,161 +663,99 @@ export const projectsDataBr: ProjectType[] = [
       'axios',
       'shadcn',
       'tailwindcss',
+      'git',
+      'github',
+    ],
+    features: [
+      'Quadro de tarefas com prioridade e filtros',
+      'Sincronização de estado com <span className="highlight">Zustand</span>',
+      'Feedback visual imediato e validações em tempo real',
+      'Exportação de tarefas e relatórios simples',
+      'Interfaces reutilizáveis para fluxo de trabalho',
     ],
   },
+
   {
     title: 'Gerenciamento Escolar',
+    favorite: false,
     description:
       'Sistema educacional para controle de notas e desempenho acadêmico.',
     about:
-      'Aplicação desenvolvida com componentes reutilizáveis e design responsivo. Implementa consumo eficiente de APIs e tratamento de dados educacionais. Utiliza bibliotecas de UI estabelecidas para consistência visual. Centraliza informações acadêmicas, facilita o acompanhamento de desempenho e oferece relatórios detalhados, melhorando a gestão educacional e o acompanhamento do progresso dos estudantes.',
+      'Centraliza informações acadêmicas, facilita acompanhamento de desempenho e oferece relatórios detalhados. Utiliza Material UI para consistência visual e componentes prontos.',
     repositoryUrl: 'https://github.com/LucasLevingston/gerenciamento-escolar',
     technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
-  },
-  {
-    title: 'Pass In Web',
-    description: 'Plataforma completa para gestão de eventos e participantes.',
-    about:
-      'Sistema full-stack desenvolvido com separação clara entre frontend e backend. Implementa validação robusta de dados, autenticação segura e interface responsiva. Utiliza ORM para abstração de banco de dados e documentação automatizada. Automatiza o processo de check-in, facilita o controle de participantes e oferece relatórios em tempo real, melhorando significativamente a organização de eventos e a experiência dos participantes.',
-    images: projectImages.passInWeb.combined,
-    frontEndRepositoryUrl:
-      'https://github.com/LucasLevingston/pass-in-web-reactjs',
-    backEndRepositoryUrl:
-      'https://github.com/LucasLevingston/pass-in-web-nodejs',
-    technologies: [
-      'vite',
-      'react',
-      'typescript',
-      'tailwindcss',
-      'git',
-      'github',
-      'nodejs',
-      'fastify',
-      'prisma',
-      'sqlite',
-      'zod',
+    features: [
+      'Controle de notas e frequências',
+      'Relatórios detalhados por aluno e turma',
+      'Painel de administração com <span className="highlight">Material UI</span>',
+      'Exportação de relatórios e documentos',
+      'Configurações por perfil (professor/administrador)',
     ],
   },
-  {
-    title: 'Blog Soft',
-    description:
-      'Plataforma de blog com sistema de publicação e gerenciamento de conteúdo.',
-    about:
-      'Desenvolvido como solução completa para publicação de conteúdo, implementando CRUD completo e interface administrativa. Utiliza arquitetura RESTful com documentação automatizada e validação rigorosa. Aplica práticas de SEO e otimização de performance. Oferece sistema de publicação intuitivo, gerenciamento de conteúdo eficiente e interface otimizada para leitura, facilitando a criação e distribuição de conteúdo digital.',
-    repositoryUrl: 'https://github.com/LucasLevingston/Blog',
-    technologies: [
-      'react',
-      'typescript',
-      'nodejs',
-      'fastify',
-      'vite',
-      'tailwindcss',
-      'prisma',
-      'swagger',
-      'sqlite',
-      'eslint',
-      'postman',
-      'git',
-      'github',
-    ],
-  },
-  {
-    title: 'Threads Clone',
-    description:
-      'Réplica funcional da rede social Threads com recursos interativos.',
-    about:
-      'Projeto desenvolvido com foco em replicação de funcionalidades complexas de redes sociais. Implementa sistema de posts, interações e navegação dinâmica. Utiliza gerenciamento de estado avançado e otimizações de performance. Demonstra capacidade de análise e reprodução de interfaces complexas, oferecendo experiência similar ao produto original com código próprio e arquitetura escalável.',
-    images: projectImages.threads,
-    repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
-    link: 'https://threads-app-nextjs13.vercel.app/',
-    technologies: [
-      'react',
-      'typescript',
-      'nextjs',
-      'tailwindcss',
-      'mongodb',
-      'git',
-      'github',
-    ],
-  },
-  {
-    title: 'Spotify Clone',
-    description: 'Reprodução da interface e funcionalidades do Spotify.',
-    about:
-      'Clone desenvolvido com atenção aos detalhes de UX/UI e funcionalidades de streaming. Implementa navegação complexa, gerenciamento de estado para reprodução e interface responsiva. Utiliza práticas modernas de desenvolvimento frontend. Demonstra habilidade em recriar interfaces sofisticadas, oferecendo experiência de usuário similar ao produto original com arquitetura própria e otimizações personalizadas.',
-    images: projectImages.spotify,
-    repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
-    link: 'https://spotify-nextjs13.vercel.app/',
-    technologies: [
-      'react',
-      'typescript',
-      'nextjs',
-      'tailwindcss',
-      'postgresql',
-      'git',
-      'github',
-    ],
-  },
-  {
-    title: 'Flexibble',
-    description:
-      'Plataforma colaborativa para desenvolvedores compartilharem projetos.',
-    about:
-      'Sistema desenvolvido com foco em comunidade e colaboração entre desenvolvedores. Implementa integração com APIs GraphQL, autenticação social e interface moderna. Utiliza otimizações de performance e SEO. Facilita o networking profissional, oferece vitrine para projetos e promove colaboração na comunidade de desenvolvimento, criando um ecossistema valioso para crescimento profissional.',
-    images: projectImages.flexibble,
-    repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
-    link: 'https://flexibble-nexjs13.vercel.app/',
-    technologies: [
-      'react',
-      'typescript',
-      'nextjs',
-      'graphql',
-      'tailwindcss',
-      'git',
-      'github',
-    ],
-  },
+
   {
     title: 'Meu Portfólio',
+    favorite: false,
     description:
       'Portfólio pessoal desenvolvido como primeiro projeto em React.',
     about:
-      'Projeto inicial desenvolvido como introdução ao ecossistema React, implementando componentes funcionais e hooks básicos. Utiliza design responsivo e animações sutis. Aplica boas práticas de estruturação de código e organização de componentes. Serve como vitrine profissional, demonstra evolução técnica e oferece apresentação organizada de projetos e habilidades, facilitando oportunidades profissionais.',
+      'Serve como vitrine profissional com apresentação organizada de projetos e habilidades. Implementa design responsivo com Tailwind CSS e animações sutis.',
     images: projectImages.meuPortfolio,
     repositoryUrl:
       'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
     technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
+    features: [
+      'Design responsivo com foco em portfólio profissional',
+      'Animações sutis para melhorar experiência',
+      'Seção de projetos com links e repositórios',
+      'Deploy público e fácil atualização',
+    ],
   },
+
   {
     title: 'Campo Minado',
+    favorite: false,
     description:
       'Implementação do clássico jogo Campo Minado com interface gráfica.',
     about:
-      'Jogo desenvolvido aplicando padrões de design como Observer Pattern e programação orientada a objetos. Implementa lógica complexa de jogo, interface gráfica interativa e cobertura de testes unitários. Utiliza estruturas de dados eficientes e algoritmos otimizados. Demonstra domínio de conceitos fundamentais de programação, oferece entretenimento interativo e serve como exemplo de aplicação de padrões de design em projetos práticos.',
+      'Aplica padrões de design como Observer Pattern e programação orientada a objetos. Implementa lógica complexa de jogo, interface gráfica interativa e testes unitários.',
     images: projectImages.campoMinado,
     repositoryUrl: 'https://github.com/LucasLevingston/Campo_Minado',
     technologies: ['java'],
+    features: [
+      'Lógica de jogo completa com flags e abertura de células',
+      'Padrões de design aplicados (<span className="highlight">Observer</span>)',
+      'Interface gráfica com interação mouse/teclado',
+      'Testes unitários cobrindo regras principais',
+    ],
   },
+
   {
     title: 'Calculadora',
+    favorite: false,
     description:
       'Calculadora funcional com interface gráfica e operações matemáticas.',
     about:
-      'Aplicação desenvolvida com foco em arquitetura modular e padrões de design. Implementa Observer Pattern para atualizações de interface, programação orientada a objetos e interface gráfica responsiva. Utiliza componentes reutilizáveis e lógica de negócio separada. Oferece ferramenta útil para cálculos básicos, demonstra aplicação prática de conceitos de programação e serve como base para desenvolvimento de aplicações desktop mais complexas.',
+      'Implementa Observer Pattern para atualizações de interface e arquitetura modular. Oferece ferramenta para cálculos básicos com separação entre lógica de negócio e interface.',
     images: projectImages.calculadora,
     repositoryUrl: 'https://github.com/LucasLevingston/Calculadora.git',
     technologies: ['java'],
+    features: [
+      'Operações matemáticas básicas com interface gráfica',
+      'Separação entre lógica e apresentação',
+      'Atualização da UI via <span className="highlight">Observer Pattern</span>',
+    ],
   },
 ]
 
 export const projectsDataEn: ProjectType[] = [
   {
     title: 'ExpertGP',
-    favorite: true,
+
     description:
-      'Complete platform for municipal public management, focusing on programs, actions, indicators, employees, and contracts.',
+      'Municipal public management system with real-time dashboards.',
     about:
-      'ExpertGP is a modern solution that integrates frontend and backend to modernize and optimize city hall management. The application provides interactive dashboards, program and indicator management, employee and contract control, as well as secure authentication with permission management. The project was developed with a focus on scalability, security, and usability.',
+      'Platform for managing programs, actions, indicators, employees, and contracts. Includes authentication with advanced permissions, audit logs, Mercado Pago integration, and automated AWS deployment with complete CI/CD.',
     technologies: [
       'react',
       'typescript',
@@ -515,48 +773,32 @@ export const projectsDataEn: ProjectType[] = [
       'amazonwebservices',
       'mercadopago',
     ],
+    features: [
+      'Real-time dashboards with efficient synchronization (TanStack Query)',
+      'JWT + Refresh Token authentication with advanced RBAC',
+      'Audit logs and action tracking',
+      'Clean Architecture with separation of concerns',
+      'Automated tests (unit + integration with Vitest)',
+      'Complete CI/CD (build → tests → deploy)',
+      'Isolated environments (dev/staging/prod) on AWS',
+      'Mercado Pago integration for transactions',
+      'Rigorous validations with Zod/typed schemas',
+      'Reusable components with ShadCN UI',
+    ],
     link: 'https://expert-gp.vercel.app/',
     isMobile: false,
     showEvolution: false,
     startsDate: '06/2025',
     isDeveloping: true,
   },
-  {
-    title: 'GymEvolution',
-    favorite: true,
-    description:
-      'Complete system for bodybuilding progress with nutritional and training support.',
-    about:
-      'System developed following clean architecture principles and separation of responsibilities between frontend and backend. Implements semantic versioning practices, API documentation with OpenAPI standards, and robust data validation. Provides interactive dashboards with real-time data visualization, enabling detailed monitoring of physical and nutritional progress. Facilitates the creation of personalized routines and goal tracking, delivering a complete experience for professionals and fitness enthusiasts.',
-    images: projectImages.gymEvolution,
-    technologies: [
-      'react',
-      'typescript',
-      'nodejs',
-      'fastify',
-      'vite',
-      'tailwindcss',
-      'prisma',
-      'swagger',
-      'sqlite',
-      'eslint',
-      'postman',
-      'git',
-      'github',
-      'jwt',
-      'rest',
-      'shadcn',
-      'zod',
-    ],
-    frontEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolution',
-    backEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolutionAPI',
-  },
+
   {
     title: 'Consulta Fácil',
-    favorite: true,
-    description: 'Medical appointment platform with integrated payment system.',
+
+    description:
+      'Medical consultation platform with Stripe integrated payments.',
     about:
-      'Application developed with a focus on security and user experience, implementing robust authentication and payment gateway integration. Applies modern development practices such as real-time form validation, reusable components, and efficient state management. The system offers simplified scheduling, appointment management, and secure payment processing, significantly improving clinic efficiency and patient experience.',
+      'Allows appointment scheduling, patient management, and secure payment processing. Supports 100+ simultaneous appointments, offers JWT authentication with NextAuth and dynamic data revalidation.',
     technologies: [
       'nextjs',
       'typescript',
@@ -573,16 +815,112 @@ export const projectsDataEn: ProjectType[] = [
       'shadcn',
       'nextauth',
     ],
+    features: [
+      'Complete Stripe: single payments, saved cards, webhooks',
+      'Automatic failure reprocessing + transaction reconciliation',
+      'Scalability for 100+ simultaneous appointments',
+      'Optimized SSR with Next.js (dynamic ISR revalidation)',
+      'NextAuth with route protection and server-side session',
+      'Rigorous validation with Zod (front + back)',
+      'Structured logs + transaction monitoring',
+      'Automatic deployment on Vercel with CD',
+      'Responsive interface with ShadCN UI + Tailwind',
+      'JWT + Refresh Tokens for security',
+    ],
     images: projectImages.consultaFacil,
     link: 'https://consulta-facil-next.vercel.app/',
     repositoryUrl: 'https://github.com/LucasLevingston/consultaFacil',
   },
+
+  {
+    title: 'Verbo Hub',
+
+    description:
+      'Event management system for communities with unlimited participants support.',
+    about:
+      'Manages events with automatic load balancing for 200+ simultaneous participants. Offers 99.9% uptime with AWS infrastructure, administrative panel with reusable components, and API documentation with Swagger.',
+    images: projectImages.verbo,
+    technologies: [
+      'react',
+      'typescript',
+      'nodejs',
+      'express',
+      'tailwindcss',
+      'docker',
+      'vite',
+      'swagger',
+      'postgresql',
+      'prisma',
+      'vitest',
+      'postman',
+      'amazonwebservices',
+      'git',
+      'github',
+    ],
+    features: [
+      'AWS CloudFront (CDN) + Elastic Beanstalk with 99.9% uptime',
+      'Automatic load balancing for events with 200+ participants',
+      'Unlimited participants support with elasticity',
+      'Strategic caching on critical endpoints',
+      'Automated tests with Vitest (regression prevention)',
+      'API documentation with Swagger/OpenAPI',
+      'Automated deployment with Docker + GitFlow',
+      'Structured logs + production monitoring',
+      'Administrative panel with reusable components',
+      'CI/CD with continuous delivery pipelines',
+    ],
+  },
+
+  {
+    title: 'GymEvolution',
+
+    description:
+      'Bodybuilding evolution tracking system with training and nutrition.',
+    about:
+      'Allows creating personalized routines, tracking physical and nutritional progress in real-time. Includes JWT authentication, Zod validations, and Vitest testing. Scalable database from SQLite for development to PostgreSQL in production.',
+    images: projectImages.gymEvolution,
+    technologies: [
+      'react',
+      'typescript',
+      'nodejs',
+      'fastify',
+      'vite',
+      'tailwindcss',
+      'prisma',
+      'swagger',
+      'sqlite',
+      'vitest',
+      'eslint',
+      'postman',
+      'git',
+      'github',
+      'jwt',
+      'rest',
+      'shadcn',
+      'zod',
+    ],
+    features: [
+      'Personalized training routines with progression',
+      'Integrated nutritional tracking',
+      'Real-time physical progress visualization',
+      'Fastify architecture for maximum performance',
+      'Rigorous validations with Zod across stack',
+      'Unit + integration tests with Vitest',
+      'API documentation with Swagger',
+      'JWT + Refresh Tokens for security',
+      'SQLite → PostgreSQL easily scalable',
+      'Responsive interface with ShadCN UI',
+    ],
+    frontEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolution',
+    backEndRepositoryUrl: 'https://github.com/LucasLevingston/gymevolutionAPI',
+  },
+
   {
     title: 'CRM Splen',
-    favorite: true,
-    description: 'CRM system for managing sales of courses and degrees.',
+
+    description: 'CRM system for centralized lead and course sales management.',
     about:
-      'Project developed using the agile Scrum methodology with well-defined sprints and incremental deliveries. Implements collaborative development practices, code review, and continuous integration. The system centralizes lead management, automates sales processes, and provides detailed performance reports. It increases efficiency in prospect conversion, improves sales funnel monitoring, and delivers valuable insights for strategic decision-making.',
+      'Centralizes leads, automates sales processes, and provides performance reports. Implements layered architecture with DTOs for validation, CI/CD with automated builds, and Docker for environment standardization.',
     technologies: [
       'typescript',
       'react',
@@ -597,15 +935,28 @@ export const projectsDataEn: ProjectType[] = [
       'github',
       'postman',
       'scrum',
+      'eslint',
+    ],
+    features: [
+      'Centralized lead management',
+      'Sales process automation',
+      'Detailed performance reports',
+      'Layered architecture (controllers, services, repositories)',
+      'DTOs for robust data validation',
+      'CI/CD with automated builds',
+      'Code reviews + automatic linting (ESLint/Prettier)',
+      'Docker for dev/prod standardization',
+      'Scrum methodology with sprints',
+      'MongoDB with Prisma for efficient access',
     ],
   },
+
   {
     title: 'Rings of Power',
-    favorite: true,
-    description:
-      'Ring creation and customization system with interactive interface.',
+
+    description: 'Ring customization e-commerce with interactive interface.',
     about:
-      'Developed with test-oriented architecture and comprehensive code coverage. Implements design patterns like Repository Pattern and Dependency Injection, ensuring maintainable and scalable code. Uses containerization for consistent environments and automated API documentation. The system offers intuitive interface for product customization, inventory management, and order processing, optimizing the sales process and improving customer experience.',
+      'Allows visual product customization, inventory management, and order processing. Implements Repository Pattern, Zod validations, Vitest testing, and Swagger documentation. Containerized deployment with Docker.',
     technologies: [
       'react',
       'typescript',
@@ -624,17 +975,30 @@ export const projectsDataEn: ProjectType[] = [
       'axios',
       'zustand',
       'vitest',
+      'swagger',
+    ],
+    features: [
+      'Interactive product customization',
+      'Integrated inventory management',
+      'Repository Pattern + Dependency Injection',
+      'Test-oriented architecture',
+      'Zod validation on front + back',
+      'Unit + integration tests with Vitest',
+      'JWT + Refresh Tokens',
+      'API documentation with Swagger',
+      'Docker for consistent environments',
+      'CORS configured + route protection',
     ],
     images: projectImages.aneis,
     repositoryUrl: 'https://github.com/LucasLevingston/AneisDePoder',
   },
+
   {
     title: 'DevStage',
     favorite: false,
-    description:
-      'Development platform with reusable components and modern architecture.',
+    description: 'Development platform with reusable components.',
     about:
-      'System built with focus on performance and developer experience, implementing Server-Side Rendering and bundle optimizations. Uses automatic HTTP client generation, ensuring end-to-end type-safety and reducing integration errors. Applies component composition patterns and consistent design system. Offers standardized development tools, accelerates time-to-market for new projects, and ensures visual and functional consistency across the entire application.',
+      'Provides consistent design system, automatic HTTP client generation with Orval, and end-to-end type-safety. Uses optimized SSR, Redis caching, and Drizzle ORM for type-safe queries.',
     technologies: [
       'react',
       'nextjs',
@@ -646,18 +1010,33 @@ export const projectsDataEn: ProjectType[] = [
       'drizzle',
       'redis',
       'zod',
+      'docker',
+      'git',
     ],
-    images: [],
+    features: [
+      'Automatic HTTP client generation with Orval',
+      'End-to-end type-safety (back → front)',
+      'Optimized SSR with Next.js',
+      'Strategic caching with Redis',
+      'Drizzle ORM with type-safe queries',
+      'Consistent design system across platform',
+      'Reusable components with composition patterns',
+      'Advanced bundle optimization',
+      'Docker + automated CI/CD',
+      'Optimized developer experience',
+    ],
+
     backEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-server',
     frontEndRepositoryUrl: 'https://github.com/LucasLevingston/devstage-client',
   },
+
   {
     title: 'Let me Ask',
-    favorite: true,
+
     description:
-      'Interactive classroom system with AI transcription and automatic responses.',
+      'Interactive classroom system with audio transcription and AI responses.',
     about:
-      'Full-stack application implementing real-time audio processing and artificial intelligence integration. Uses custom hooks for complex state management and performance optimization. Applies clean architecture and separation of concerns practices. The system revolutionizes classroom interaction, enabling more inclusive participation through multiple communication channels, improving student engagement and facilitating learning tracking.',
+      'Processes audio in real-time, integrates Google Gemini for transcription and automatic responses. Syncs data with TanStack Query, implements clean architecture, and supports multiple integrated communication channels.',
     technologies: [
       'nodejs',
       'fastify',
@@ -673,68 +1052,205 @@ export const projectsDataEn: ProjectType[] = [
       'typescript',
       'jwt',
       'zod',
+      'shadcn',
+      'git',
     ],
-    images: [],
+    features: [
+      'Real-time audio processing',
+      'Google Gemini (IA) integration',
+      'Automatic audio transcription',
+      'AI-powered automatic responses',
+      'Real-time synchronization with TanStack Query',
+      'Clean Architecture + separation of concerns',
+      'Custom hooks for complex state management',
+      'Drizzle ORM with type-safe queries',
+      'Docker for containerization',
+      'Multiple integrated communication channels',
+    ],
+
     backEndRepositoryUrl:
       'https://github.com/LucasLevingston/let-me-ask-server',
     frontEndRepositoryUrl:
       'https://github.com/LucasLevingston/let-me-ask-client',
   },
+
   {
     title: 'Nearby - Mobile',
-    description: 'Mobile restaurant recommendation app with geolocation.',
+    description: 'Mobile app to discover nearby restaurants by geolocation.',
     about:
-      'Developed following mobile-first design principles and optimization for different devices. Implements file-based navigation, integration with native device APIs, and responsive interface. Uses reusable components and efficient state management. Offers personalized location-based experience, facilitates discovery of nearby establishments, and improves user decision-making through contextualized information.',
+      'Provides establishment recommendations based on location. Responsive interface with reusable components, integration with native device APIs, and efficient state management.',
     images: projectImages.nearby,
     repositoryUrl: 'https://github.com/LucasLevingston/Nearby',
-    technologies: ['reactnative', 'typescript', 'expo', 'css3'],
+    technologies: ['reactnative', 'typescript', 'expo', 'css3', 'git'],
     isMobile: true,
   },
+
   {
-    title: 'Verbo Hub',
-    favorite: true,
-    description: 'Event management system for religious organizations.',
+    title: 'Pass In Web',
+
+    description: 'Event management platform with automated check-in.',
     about:
-      'Project developed with GitFlow for structured version control and automated cloud deployment. Implements comprehensive unit testing and CI/CD practices. Uses scalable architecture with clear layer separation. The system centralizes event management, facilitates participant control, and offers detailed reports, significantly improving activity organization and community engagement.',
-    images: projectImages.verbo,
+      'Automates participant check-in, controls real-time attendance, and provides detailed reports. Implements Zod validation, secure JWT authentication, Vitest testing, and Swagger documentation.',
+    images: projectImages.passInWeb.combined,
+    technologies: [
+      'vite',
+      'react',
+      'typescript',
+      'tailwindcss',
+      'git',
+      'github',
+      'nodejs',
+      'fastify',
+      'prisma',
+      'sqlite',
+      'zod',
+      'jwt',
+      'swagger',
+      'vitest',
+    ],
+    features: [
+      'Automated participant check-in',
+      'Real-time attendance control',
+      'Detailed reports per event',
+      'Validation with <span className="highlight">Zod</span> across the stack',
+      'Secure JWT with route protection',
+      'Unit tests with <span className="highlight">Vitest</span>',
+      'API documentation with <span className="highlight">Swagger</span>',
+      'Semantic versioning with <span className="highlight">Git</span>',
+      'Reusable modular components',
+      'Clear frontend/backend separation',
+    ],
+    frontEndRepositoryUrl:
+      'https://github.com/LucasLevingston/pass-in-web-reactjs',
+    backEndRepositoryUrl:
+      'https://github.com/LucasLevingston/pass-in-web-nodejs',
+  },
+
+  {
+    title: 'Blog Soft',
+    description: 'Blog platform with complete CRUD and administrative panel.',
+    about:
+      'Provides intuitive publishing system, efficient content management, and reading-optimized interface. Implements RESTful architecture with Swagger documentation, Zod validation, and SEO best practices.',
+    features: [
+      'Editor de publicações intuitivo e painel administrativo',
+      'SEO básico e otimizações para leitura',
+      'API REST documentada com <span className="highlight">Swagger</span>',
+      'Validações com <span className="highlight">Zod</span>',
+      'Autenticação e controle de permissões',
+    ],
+    repositoryUrl: 'https://github.com/LucasLevingston/Blog',
     technologies: [
       'react',
       'typescript',
       'nodejs',
       'fastify',
-      'tailwindcss',
-      'docker',
       'vite',
+      'tailwindcss',
+      'prisma',
       'swagger',
-      'postgresql',
+      'sqlite',
       'eslint',
       'postman',
-      'amazonwebservices',
       'git',
       'github',
+      'zod',
+      'jwt',
     ],
   },
+
   {
-    title: 'VI Sercomp',
-    images: projectImages.sercomp,
+    title: 'Threads Clone',
+
     description:
-      'Official portal for academic congress with information and registrations.',
+      'Threads social network replica with posts, interactions, and dynamic navigation.',
     about:
-      'Collaborative project developed with agile methodology and multidisciplinary teamwork. Implements collaborative versioning practices and code review. Uses modular components and responsive design. The system centralizes event information, facilitates the registration process, and offers a unified experience for participants, improving congress organization and increasing academic engagement.',
-    technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
-    link: 'https://sercomppb.com.br/',
+      'Implements post system with interactions, dynamic navigation, and advanced state management. Integrated social authentication, performance optimizations, and Vercel deployment.',
+    images: projectImages.threads,
+    repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
+    link: 'https://threads-app-nextjs13.vercel.app/',
+    technologies: [
+      'react',
+      'typescript',
+      'nextjs',
+      'tailwindcss',
+      'mongodb',
+      'git',
+      'github',
+      'vercel',
+    ],
+    features: [
+      'Feed em tempo real com carregamento incremental',
+      'Reações, comentários e compartilhamentos',
+      'Autenticação social integrada',
+      'SEO e otimizações de rendering (SSR/ISR)',
+      'Deploy em <span className="highlight">Vercel</span>',
+    ],
   },
+
+  {
+    title: 'Spotify Clone',
+
+    description: 'Spotify interface and functionality replica.',
+    about:
+      'Offers complex navigation, audio playback with state management, and responsive interface. PostgreSQL backend with personalized streaming optimizations.',
+    images: projectImages.spotify,
+    repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
+    link: 'https://spotify-nextjs13.vercel.app/',
+    technologies: [
+      'react',
+      'typescript',
+      'nextjs',
+      'tailwindcss',
+      'postgresql',
+      'git',
+      'github',
+      'vercel',
+    ],
+    features: [
+      'Reprodução de áudio com controle de fila e progress bar',
+      'Playlists e gerenciamento local de preferências',
+      'Streaming otimizado com backend em <span className="highlight">PostgreSQL</span>',
+      'UI responsiva para desktop e mobile',
+      'Deploy e demonstração pública',
+    ],
+  },
+
+  {
+    title: 'Flexibble',
+
+    description:
+      'Platform for developers to share and collaborate on projects.',
+    about:
+      'Facilitates professional networking between developers with project showcase. GraphQL API integration, social authentication, and advanced SEO optimizations.',
+    images: projectImages.flexibble,
+    repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
+    link: 'https://flexibble-nexjs13.vercel.app/',
+    technologies: [
+      'react',
+      'typescript',
+      'nextjs',
+      'graphql',
+      'tailwindcss',
+      'git',
+      'github',
+      'vercel',
+    ],
+    features: [
+      'Vitrine para projetos com filtros e busca',
+      'Autenticação e perfil de usuário',
+      'Integração com <span className="highlight">GraphQL</span>',
+      'SEO e otimizações para discoverability',
+      'Compartilhamento fácil de projetos',
+    ],
+  },
+
   {
     title: 'RHControl',
-    description: 'Complete system for human resources administration.',
-    images: [
-      projectImages.rhcontrol[3],
-      projectImages.rhcontrol[4],
-      projectImages.rhcontrol[5],
-      projectImages.rhcontrol[6],
-    ],
+
+    description:
+      'System for human resources administration and personnel management.',
     about:
-      'Developed with focus on usability and automation of administrative processes. Implements robust form validation, automatic document generation, and real-time synchronization. Uses consistent design system and reusable components. The system automates HR tasks, reduces manual errors, and offers detailed reports, significantly improving operational efficiency and people management.',
+      'Automates HR tasks, generates automatic documents, and syncs data in real-time with Firebase. Provides detailed reports and consistent interface with ShadCN UI design system.',
     technologies: [
       'react',
       'typescript',
@@ -743,9 +1259,20 @@ export const projectsDataEn: ProjectType[] = [
       'vite',
       'git',
       'github',
+      'shadcn',
+      'zustand',
+      'eslint',
     ],
+    features: [
+      'Relatórios em tempo real com <span className="highlight">Firebase</span>',
+      'Autenticação e permissões centralizadas',
+      'Design system com <span className="highlight">ShadCN UI</span>',
+      'Componentes reutilizáveis e evolução de versão',
+      'Sincronização de dados em tempo real',
+    ],
+    frontEndRepositoryUrl:
+      'https://github.com/LucasLevingston/rhcontrol-project',
     showEvolution: true,
-    repositoryUrl: 'https://github.com/LucasLevingston/rhccontrol-project',
     versions: [
       {
         images: [
@@ -785,12 +1312,32 @@ export const projectsDataEn: ProjectType[] = [
       },
     ],
   },
+
+  {
+    title: 'VI Sercomp',
+    images: projectImages.sercomp,
+    description:
+      'Official academic congress portal with information and registration.',
+    about:
+      'Centralizes event information, facilitates registration process, and provides unified experience for participants through responsive design and modular components.',
+    technologies: ['react', 'javascript', 'css3', 'git', 'vite', 'github'],
+    link: 'https://sercomppb.com.br/',
+    features: [
+      'Página informativa do evento com agenda e palestrantes',
+      'Formulário de inscrição e confirmação por e-mail',
+      'Design responsivo para todos dispositivos',
+      'SEO básico para descoberta do evento',
+      'Deploy estável e monitoramento de uptime',
+    ],
+  },
+
   {
     title: 'Caputeeno',
+
     description:
-      'Modern e-commerce with intuitive interface and optimized experience.',
+      'E-commerce with intuitive interface and optimized experience.',
     about:
-      'Project developed with modern frontend architecture and GraphQL API integration. Implements performance optimizations, lazy loading, and intelligent caching. Uses advanced componentization and efficient state management. Offers fluid shopping experience, organized catalog, and simplified checkout process, increasing conversion rates and improving customer satisfaction.',
+      'Provides organized catalog, lazy loading, and intelligent caching. Implements performance optimizations, efficient state management, and simplified checkout.',
     images: projectImages.caputeeno,
     repositoryUrl: 'https://github.com/LucasLevingston/capputeeno',
     technologies: [
@@ -800,13 +1347,24 @@ export const projectsDataEn: ProjectType[] = [
       'tailwindcss',
       'nodejs',
       'graphql',
+      'git',
+      'github',
+    ],
+    features: [
+      'Catálogo inteligente com <span className="highlight">lazy loading</span>',
+      'Checkout simplificado e seguro',
+      'Cache de assets e otimizações de <span className="highlight">performance</span>',
+      'Gestão de inventário e variantes de produto',
+      'Interface responsiva com foco em conversão',
     ],
   },
+
   {
     title: 'Plann.er',
-    description: 'Robust API for travel organization and management.',
+    favorite: false,
+    description: 'API for collaborative travel organization and management.',
     about:
-      'Backend developed with RESTful architecture and automated documentation. Implements rigorous data validation, standardized error handling, and structured logging. Uses ORM for database abstraction and versioned migrations. Facilitates collaborative trip planning, centralizes important information, and offers well-documented APIs for integration with different frontends, improving group organization experience.',
+      'Provides well-documented APIs with Swagger, rigorous validation with Zod, and standardized error handling. Facilitates collaborative planning and centralizes group travel information.',
     repositoryUrl: 'https://github.com/LucasLevingston/planner',
     technologies: [
       'typescript',
@@ -816,13 +1374,24 @@ export const projectsDataEn: ProjectType[] = [
       'prisma',
       'sqlite',
       'swagger',
+      'git',
+      'rest',
+    ],
+    features: [
+      'APIs bem documentadas com <span className="highlight">Swagger</span>',
+      'Validação com <span className="highlight">Zod</span> e tratamento de erros consistente',
+      'Endpoints versionados e testáveis',
+      'Autenticação básica e controle de acesso',
+      'Logs e monitoramento para análise de uso',
     ],
   },
+
   {
     title: 'FocalPoint',
+    favorite: false,
     description: 'Task manager with modern interface and advanced features.',
     about:
-      "System developed with focus on productivity and user experience. Implements optimized state management, data synchronization, and responsive interface. Uses real-time validation and immediate visual feedback. Offers efficient task organization, progress tracking, and intuitive interface, significantly improving users' personal and professional productivity.",
+      'Provides efficient task organization, real-time validation, and immediate visual feedback. Implements optimized state management with Zustand and data synchronization.',
     repositoryUrl: 'https://github.com/LucasLevingston/focalPoint',
     technologies: [
       'typescript',
@@ -833,146 +1402,86 @@ export const projectsDataEn: ProjectType[] = [
       'axios',
       'shadcn',
       'tailwindcss',
+      'git',
+      'github',
+    ],
+    features: [
+      'Quadro de tarefas com prioridade e filtros',
+      'Sincronização de estado com <span className="highlight">Zustand</span>',
+      'Feedback visual imediato e validações em tempo real',
+      'Exportação de tarefas e relatórios simples',
+      'Interfaces reutilizáveis para fluxo de trabalho',
     ],
   },
+
   {
     title: 'School Management',
+    favorite: false,
     description:
       'Educational system for grade control and academic performance.',
     about:
-      'Application developed with reusable components and responsive design. Implements efficient API consumption and educational data handling. Uses established UI libraries for visual consistency. Centralizes academic information, facilitates performance tracking, and offers detailed reports, improving educational management and student progress monitoring.',
+      'Centralizes academic information, facilitates performance tracking, and provides detailed reports. Uses Material UI for visual consistency and ready-to-use components.',
     repositoryUrl: 'https://github.com/LucasLevingston/gerenciamento-escolar',
     technologies: ['javascript', 'react', 'bootstrap', 'axios', 'materialui'],
-  },
-  {
-    title: 'Pass In Web',
-    description: 'Complete platform for event and participant management.',
-    about:
-      'Full-stack system developed with clear separation between frontend and backend. Implements robust data validation, secure authentication, and responsive interface. Uses ORM for database abstraction and automated documentation. Automates check-in process, facilitates participant control, and offers real-time reports, significantly improving event organization and participant experience.',
-    images: projectImages.passInWeb.combined,
-    frontEndRepositoryUrl:
-      'https://github.com/LucasLevingston/pass-in-web-reactjs',
-    backEndRepositoryUrl:
-      'https://github.com/LucasLevingston/pass-in-web-nodejs',
-    technologies: [
-      'vite',
-      'react',
-      'typescript',
-      'tailwindcss',
-      'git',
-      'github',
-      'nodejs',
-      'fastify',
-      'prisma',
-      'sqlite',
-      'zod',
+    features: [
+      'Controle de notas e frequências',
+      'Relatórios detalhados por aluno e turma',
+      'Painel de administração com Material UI',
+      'Exportação de relatórios e documentos',
+      'Configurações por perfil (professor/administrador)',
     ],
   },
-  {
-    title: 'Blog Soft',
-    description: 'Blog platform with publishing system and content management.',
-    about:
-      'Developed as complete solution for content publishing, implementing full CRUD and administrative interface. Uses RESTful architecture with automated documentation and rigorous validation. Applies SEO practices and performance optimization. Offers intuitive publishing system, efficient content management, and reading-optimized interface, facilitating digital content creation and distribution.',
-    repositoryUrl: 'https://github.com/LucasLevingston/Blog',
-    technologies: [
-      'react',
-      'typescript',
-      'nodejs',
-      'fastify',
-      'vite',
-      'tailwindcss',
-      'prisma',
-      'swagger',
-      'sqlite',
-      'eslint',
-      'postman',
-      'git',
-      'github',
-    ],
-  },
-  {
-    title: 'Threads Clone',
-    description:
-      'Functional replica of Threads social network with interactive features.',
-    about:
-      'Project developed with focus on replicating complex social media functionalities. Implements posting system, interactions, and dynamic navigation. Uses advanced state management and performance optimizations. Demonstrates ability to analyze and reproduce complex interfaces, offering experience similar to the original product with proprietary code and scalable architecture.',
-    images: projectImages.threads,
-    repositoryUrl: 'https://github.com/LucasLevingston/threads_app',
-    link: 'https://threads-app-nextjs13.vercel.app/',
-    technologies: [
-      'react',
-      'typescript',
-      'nextjs',
-      'tailwindcss',
-      'mongodb',
-      'git',
-      'github',
-    ],
-  },
-  {
-    title: 'Spotify Clone',
-    description: 'Reproduction of Spotify interface and functionalities.',
-    about:
-      'Clone developed with attention to UX/UI details and streaming functionalities. Implements complex navigation, state management for playback, and responsive interface. Uses modern frontend development practices. Demonstrates ability to recreate sophisticated interfaces, offering user experience similar to the original product with proprietary architecture and custom optimizations.',
-    images: projectImages.spotify,
-    repositoryUrl: 'https://github.com/LucasLevingston/spotify-clone',
-    link: 'https://spotify-nextjs13.vercel.app/',
-    technologies: [
-      'react',
-      'typescript',
-      'nextjs',
-      'tailwindcss',
-      'postgresql',
-      'git',
-      'github',
-    ],
-  },
-  {
-    title: 'Flexibble',
-    description: 'Collaborative platform for developers to share projects.',
-    about:
-      'System developed with focus on community and collaboration among developers. Implements GraphQL API integration, social authentication, and modern interface. Uses performance optimizations and SEO. Facilitates professional networking, offers project showcase, and promotes collaboration in the development community, creating a valuable ecosystem for professional growth.',
-    images: projectImages.flexibble,
-    repositoryUrl: 'https://github.com/LucasLevingston/grafbase_Flexibble',
-    link: 'https://flexibble-nexjs13.vercel.app/',
-    technologies: [
-      'react',
-      'typescript',
-      'nextjs',
-      'graphql',
-      'tailwindcss',
-      'git',
-      'github',
-    ],
-  },
+
   {
     title: 'My Portfolio',
+    favorite: false,
     description: 'Personal portfolio developed as first React project.',
     about:
-      'Initial project developed as introduction to React ecosystem, implementing functional components and basic hooks. Uses responsive design and subtle animations. Applies good practices for code structuring and component organization. Serves as professional showcase, demonstrates technical evolution, and offers organized presentation of projects and skills, facilitating professional opportunities.',
+      'Serves as professional showcase with organized project presentation and skills. Implements responsive design with Tailwind CSS and subtle animations.',
     images: projectImages.meuPortfolio,
     repositoryUrl:
       'https://github.com/LucasLevingston/LucasLevingstonPortifolio',
     technologies: ['react', 'typescript', 'tailwindcss', 'git', 'github'],
+    features: [
+      'Design responsivo com foco em portfólio profissional (<span className="highlight">Tailwind CSS</span>)',
+      'Animações sutis para melhorar experiência',
+      'Seção de projetos com links e repositórios',
+      'Deploy público e fácil atualização',
+    ],
   },
+
   {
     title: 'Minesweeper',
+    favorite: false,
     description:
-      'Implementation of classic Minesweeper game with graphical interface.',
+      'Classic Minesweeper game implementation with graphical interface.',
     about:
-      'Game developed applying design patterns like Observer Pattern and object-oriented programming. Implements complex game logic, interactive graphical interface, and unit test coverage. Uses efficient data structures and optimized algorithms. Demonstrates mastery of fundamental programming concepts, offers interactive entertainment, and serves as example of applying design patterns in practical projects.',
+      'Applies design patterns like Observer Pattern and object-oriented programming. Implements complex game logic, interactive graphical interface, and unit tests.',
     images: projectImages.campoMinado,
     repositoryUrl: 'https://github.com/LucasLevingston/Campo_Minado',
     technologies: ['java'],
+    features: [
+      'Lógica de jogo completa com flags e abertura de células',
+      'Padrões de design aplicados (Observer)',
+      'Interface gráfica com interação mouse/teclado',
+      'Testes unitários cobrindo regras principais',
+    ],
   },
+
   {
     title: 'Calculator',
+    favorite: false,
     description:
-      'Functional calculator with graphical interface and mathematical operations.',
+      'Functional calculator with graphical interface and math operations.',
     about:
-      'Application developed with focus on modular architecture and design patterns. Implements Observer Pattern for interface updates, object-oriented programming, and responsive graphical interface. Uses reusable components and separated business logic. Offers useful tool for basic calculations, demonstrates practical application of programming concepts, and serves as foundation for developing more complex desktop applications.',
+      'Implements Observer Pattern for interface updates and modular architecture. Provides basic calculation tool with separated business logic and interface.',
     images: projectImages.calculadora,
     repositoryUrl: 'https://github.com/LucasLevingston/Calculadora.git',
     technologies: ['java'],
+    features: [
+      'Operações matemáticas básicas com interface gráfica',
+      'Separação entre lógica e apresentação',
+      'Atualização da UI via Observer Pattern',
+    ],
   },
 ]

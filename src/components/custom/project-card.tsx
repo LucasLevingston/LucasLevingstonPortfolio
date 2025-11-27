@@ -1,7 +1,9 @@
 'use client'
+import parse from 'html-react-parser'
 
 import {
   ArrowRight,
+  Check,
   Code,
   ExternalLink,
   GitBranch,
@@ -71,6 +73,7 @@ export default function ProjectCard({
     isDeveloping,
     startsDate,
     showEvolution,
+    features,
   },
   allProjects,
 }: ProjectCardProps) {
@@ -211,13 +214,13 @@ export default function ProjectCard({
               </AccordionTrigger>
             </CardHeader>
             <AccordionContent>
-              <CardContent className="pt-0">
+              <CardContent>
                 <div className="space-y-6">
-                  <div className="rounded-lg p-4">
+                  <div className="rounded-lg space-y-2">
                     <p className="text-foreground text-sm leading-relaxed">
                       {about}
                     </p>
-                    <div className="mt-4 text-sm space-y-1">
+                    <div className="text-sm space-y-1">
                       {startsDate && (
                         <div>
                           <span className="font-semibold text-mainColor">
@@ -236,6 +239,28 @@ export default function ProjectCard({
                       )}
                     </div>
                   </div>
+
+                  {features && features.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 !text-mainColor" />
+                        <h4 className="font-semibold text-foreground text-sm">
+                          {t('projectCard.features') || 'Features Principais'}
+                        </h4>
+                      </div>
+                      <ul className="grid gap-2 sm:grid-cols-2">
+                        {features.map((feature, index) => (
+                          <li
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                            key={index}
+                          >
+                            <Check className="mt-0.5 h-4 w-4 flex-shrink-0 !text-mainColor" />
+                            <span>{parse(feature)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {showEvolution && versions && versions.length > 0 && (
                     <div>

@@ -9,6 +9,7 @@ export interface ProjectVersion {
   technologies: string[]
   startsDate?: string
   endsDate?: string
+  features?: string[]
 }
 
 export interface ProjectType {
@@ -19,6 +20,7 @@ export interface ProjectType {
   about?: string
   images?: string[]
   technologies: string[]
+  features?: string[]
   link?: string
   repositoryUrl?: string
   frontEndRepositoryUrl?: string
