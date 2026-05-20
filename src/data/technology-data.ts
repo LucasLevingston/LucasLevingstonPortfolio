@@ -388,6 +388,104 @@ export const technologiesDataBr: { [key: string]: TechnologyType } = {
       'Integração com API do Gemini para respostas inteligentes usando IA.',
     link: '',
   },
+  yup: {
+    label: 'Yup',
+    value: 'yup',
+    description:
+      'Biblioteca JavaScript para validação de esquemas e parsing de objetos.',
+    link: 'https://github.com/jquense/yup',
+  },
+  githubactions: {
+    label: 'GitHub Actions',
+    value: 'githubactions',
+    description:
+      'Plataforma de CI/CD integrada ao GitHub para automação de workflows.',
+    link: 'https://github.com/features/actions',
+  },
+  biome: {
+    label: 'Biome',
+    value: 'biome',
+    description:
+      'Ferramenta de formatação e linting rápida para JavaScript e TypeScript.',
+    link: 'https://biomejs.dev/',
+  },
+  nativewind: {
+    label: 'NativeWind',
+    value: 'nativewind',
+    description:
+      'Biblioteca que traz o Tailwind CSS para aplicações React Native.',
+    link: 'https://www.nativewind.dev/',
+  },
+  vuejs: {
+    label: 'Vue.js',
+    value: 'vuejs',
+    description:
+      'Framework JavaScript progressivo para construção de interfaces de usuário.',
+    link: 'https://vuejs.org/',
+  },
+  css: {
+    label: 'CSS',
+    value: 'css',
+    description:
+      'Linguagem de folhas de estilo usada para descrever a apresentação de documentos HTML.',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  },
+  springboot: {
+    label: 'Spring Boot',
+    value: 'springboot',
+    description:
+      'Framework Java para criação de aplicações standalone com configuração mínima.',
+    link: 'https://spring.io/projects/spring-boot',
+  },
+  'spring-security': {
+    label: 'Spring Security',
+    value: 'spring-security',
+    description:
+      'Framework de autenticação e controle de acesso para aplicações Spring.',
+    link: 'https://spring.io/projects/spring-security',
+  },
+  gradle: {
+    label: 'Gradle',
+    value: 'gradle',
+    description:
+      'Ferramenta de automação de build flexível e de alto desempenho.',
+    link: 'https://gradle.org/',
+  },
+  awss3: {
+    label: 'AWS S3',
+    value: 'awss3',
+    description:
+      'Serviço de armazenamento de objetos escalável e durável da Amazon Web Services.',
+    link: 'https://aws.amazon.com/s3/',
+  },
+  vercel: {
+    label: 'Vercel',
+    value: 'vercel',
+    description:
+      'Plataforma de deploy e hospedagem para aplicações frontend e full-stack.',
+    link: 'https://vercel.com/',
+  },
+  render: {
+    label: 'Render',
+    value: 'render',
+    description:
+      'Plataforma de cloud para deploy de aplicações web, APIs e bancos de dados com infraestrutura gerenciada.',
+    link: 'https://render.com/',
+  },
+  hibernate: {
+    label: 'Hibernate',
+    value: 'hibernate',
+    description:
+      'Framework ORM para Java que simplifica o mapeamento de objetos para tabelas relacionais.',
+    link: 'https://hibernate.org/',
+  },
+  jpa: {
+    label: 'JPA',
+    value: 'jpa',
+    description:
+      'Java Persistence API — especificação padrão para persistência de dados em aplicações Java.',
+    link: 'https://jakarta.ee/specifications/persistence/',
+  },
 }
 
 export const technologiesDataEn: { [key: string]: TechnologyType } = {
@@ -757,6 +855,103 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
     description:
       'Integration with Gemini API for intelligent responses using AI.',
     link: '',
+  },
+  yup: {
+    label: 'Yup',
+    value: 'yup',
+    description:
+      'JavaScript schema validation and object parsing library.',
+    link: 'https://github.com/jquense/yup',
+  },
+  githubactions: {
+    label: 'GitHub Actions',
+    value: 'githubactions',
+    description:
+      'CI/CD platform integrated with GitHub for workflow automation.',
+    link: 'https://github.com/features/actions',
+  },
+  biome: {
+    label: 'Biome',
+    value: 'biome',
+    description:
+      'Fast formatter and linter for JavaScript and TypeScript.',
+    link: 'https://biomejs.dev/',
+  },
+  nativewind: {
+    label: 'NativeWind',
+    value: 'nativewind',
+    description:
+      'Library that brings Tailwind CSS to React Native applications.',
+    link: 'https://www.nativewind.dev/',
+  },
+  vuejs: {
+    label: 'Vue.js',
+    value: 'vuejs',
+    description:
+      'A progressive JavaScript framework for building user interfaces.',
+    link: 'https://vuejs.org/',
+  },
+  css: {
+    label: 'CSS',
+    value: 'css',
+    description:
+      'Style sheet language used to describe the presentation of HTML documents.',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  },
+  springboot: {
+    label: 'Spring Boot',
+    value: 'springboot',
+    description:
+      'Java framework for creating standalone applications with minimal configuration.',
+    link: 'https://spring.io/projects/spring-boot',
+  },
+  'spring-security': {
+    label: 'Spring Security',
+    value: 'spring-security',
+    description:
+      'Authentication and access control framework for Spring applications.',
+    link: 'https://spring.io/projects/spring-security',
+  },
+  gradle: {
+    label: 'Gradle',
+    value: 'gradle',
+    description: 'A flexible and high-performance build automation tool.',
+    link: 'https://gradle.org/',
+  },
+  awss3: {
+    label: 'AWS S3',
+    value: 'awss3',
+    description:
+      'Scalable and durable object storage service from Amazon Web Services.',
+    link: 'https://aws.amazon.com/s3/',
+  },
+  vercel: {
+    label: 'Vercel',
+    value: 'vercel',
+    description:
+      'Deployment and hosting platform for frontend and full-stack applications.',
+    link: 'https://vercel.com/',
+  },
+  render: {
+    label: 'Render',
+    value: 'render',
+    description:
+      'Cloud platform for deploying web apps, APIs, and databases with managed infrastructure.',
+    link: 'https://render.com/',
+  },
+  hibernate: {
+    label: 'Hibernate',
+    value: 'hibernate',
+    description:
+      'Java ORM framework that simplifies mapping objects to relational tables.',
+    link: 'https://hibernate.org/',
+  },
+  jpa: {
+    label: 'JPA',
+    value: 'jpa',
+    description:
+      'Java Persistence API — the standard specification for data persistence in Java applications.',
+    link: 'https://jakarta.ee/specifications/persistence/',
   },
   mercadopago: {
     label: 'Mercado Pago',

@@ -111,7 +111,7 @@
 
 
 
-@theme {
+/* @theme {
   --color-mainColor: #ff2200;
   --color-lightMainColor: #dc2626;
   --color-mainBorder: #fecaca;
@@ -124,10 +124,10 @@
   --color-bioBorderColor: #ffffff;
   --color-aboutBgColor: #131212;
   --color-lightBlue: #35DCFA;
-}
+} */
 
 
-/* @theme {
+@theme {
   --color-mainColor: #2563eb; 
   --color-lightMainColor: #3b82f6; 
   --color-mainBorder: #bfdbfe; 
@@ -136,11 +136,11 @@
   --color-mainBorderDark: #1e3a8a;
   --color-mainTextColor: #fff;
   --color-borderColor: #434040;
-  --color-bioBgColor: #612121;
+  --color-bioBgColor: #212121;
   --color-bioBorderColor: #ffffff;
-  --color-aboutBgColor: #261915;
+  --color-aboutBgColor: #131212;
   --color-lightBlue: #35dcfa; 
-}*/
+}
 @layer base {
   * {
     @apply border-border;

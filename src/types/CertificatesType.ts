@@ -3,4 +3,7 @@ export interface CertificatesType {
 	image: string;
 	description: string[];
 	technologies: string[];
+	hours: number;
+	startsDate: string;
+	completionDate: string;
 }

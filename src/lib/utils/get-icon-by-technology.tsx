@@ -1,5 +1,5 @@
-import React from 'react'
-import { DiScrum } from 'react-icons/di'
+import React from 'react';
+import { DiScrum } from 'react-icons/di';
 import {
   expoSVG,
   geminiSVG,
@@ -7,9 +7,10 @@ import {
   mercadopagoPNG,
   nextAuthSVG,
   reactNativeSVG,
+  rendersvg,
   shadcnSVG,
   tanstackquerySVG,
-} from '@/assets/svgs'
+} from '@/assets/svgs';
 
 export const getIconByTechnology = (
   technology: string
@@ -103,6 +104,63 @@ export const getIconByTechnology = (
       }
     case 'mercadopago':
       return { svg: mercadopagoPNG }
+    case 'yup':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">Yup</p>
+        ),
+      }
+    case 'githubactions':
+      return { iconClassName: 'devicon-githubactions-plain colored' }
+    case 'biome':
+      return {
+        svg: 'https://biomejs.dev/img/logo.svg',
+      }
+    case 'nativewind':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">NW</p>
+        ),
+      }
+    case 'vuejs':
+      return { iconClassName: 'devicon-vuejs-plain colored' }
+    case 'css':
+      return { iconClassName: 'devicon-css3-plain colored' }
+    case 'hibernate':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">
+            HB
+          </p>
+        ),
+      }
+    case 'jpa':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">
+            JPA
+          </p>
+        ),
+      }
+    case 'springboot':
+      return { iconClassName: 'devicon-spring-plain colored' }
+    case 'spring-security':
+      return {
+        svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg',
+      }
+    case 'awss3':
+      return {
+        svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+      }
+    case 'vercel':
+      return {
+        svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg',
+        iconClassName: 'dark:invert',
+      }
+      case 'render':
+        return {
+        svg: rendersvg,
+      }
     default:
       return {
         iconClassName: `devicon-${technology}-plain colored`,

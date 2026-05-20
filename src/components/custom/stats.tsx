@@ -9,7 +9,7 @@ const Stats = () => {
 
   const stats = [
     {
-      num: 2,
+      num: 3,
       text: t('stats.years'),
     },
     {

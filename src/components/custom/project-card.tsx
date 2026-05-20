@@ -73,7 +73,7 @@ export default function ProjectCard({
     isDeveloping,
     startsDate,
     showEvolution,
-    features,
+    features,thumbnail
   },
   allProjects,
 }: ProjectCardProps) {
@@ -106,8 +106,7 @@ export default function ProjectCard({
     })
   }, [api])
 
-  const previewImage =
-    images && images.length > 0 ? images[0] : '/placeholder.svg'
+  const previewImage = thumbnail || images?.[0] 
 
   return (
     <Card className="transition-shadow hover:shadow-md">
@@ -168,7 +167,7 @@ export default function ProjectCard({
                     </div>
                   </div>
 
-                  {openAccordion !== title && images && images.length > 0 && (
+                  {openAccordion !== title && previewImage  && (
                     <div className="w-full px-6 pb-4 sm:w-auto sm:px-0 sm:pb-0">
                       <div className="relative flex h-48 w-full items-center justify-center overflow-hidden rounded-md">
                         {isMobile ? (
@@ -275,15 +274,16 @@ export default function ProjectCard({
                         value={selectedVersion}
                       >
                         <TabsList
-                          className={`grid w-full grid-cols-${versions.length}`}
+                          className="grid w-full"
+                          style={{ gridTemplateColumns: `repeat(${versions.length}, minmax(0, 1fr))` }}
                         >
                           {versions
                             .map((version, index) => (
                               <TabsTrigger
-                                key={version.startsDate}
+                                key={index}
                                 value={String(index)}
                               >
-                                {t('projectCard.currentVersion')}{' '}
+                                {version.name ?? `v${index + 1}`}
                               </TabsTrigger>
                             ))
                             .reverse()}
@@ -293,7 +293,7 @@ export default function ProjectCard({
                           .map((version, index) => (
                             <TabsContent
                               className="mt-4"
-                              key={version.startsDate}
+                              key={index}
                               value={String(index)}
                             >
                               <div className="space-y-4">

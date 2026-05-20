@@ -271,9 +271,6 @@ const ListItem = React.forwardRef<
       <CustomButton
         className={cn(
           'max-w-[130px] justify-start text-left h-auto p-3 flex-col items-start',
-          'border-[2px] border-mainColor bgmainColor',
-          'hover:bg-transparent hover:text-accent-foreground',
-          'focus:bg-accent focus:text-accent-foreground',
           className
         )}
         href={`${href}${title}`}

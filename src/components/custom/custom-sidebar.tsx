@@ -14,7 +14,7 @@ export default function Sidebar() {
   const { user } = useUser()
 
   return (
-    <div className="hidden dark:bg-bioBgColor h-full w-full flex-col items-center justify-center gap-8 overflow-y-auto border p-[20px_12px] text-center text-bioBgColor no-underline scrollbar no-scrollbar hover:no-underline dark:text-bioBorderColor md:fixed md:flex md:min-h-screen md:w-1/5 md:border-r-[5px]">
+    <div className="hidden bg-transparent h-full w-full flex-col items-center justify-center gap-8 overflow-y-auto border p-[20px_12px] text-center text-bioBgColor no-underline scrollbar no-scrollbar hover:no-underline dark:text-bioBorderColor md:fixed md:flex md:min-h-screen md:w-1/5 md:border-r-[5px]">
       <h1 className="text-[32px] font-bold">{user.name}</h1>
 
       <Photo />

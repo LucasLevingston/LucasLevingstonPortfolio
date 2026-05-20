@@ -15,12 +15,12 @@ export const userBr: UserType = {
   name: 'Lucas Levingston',
   completName: 'Lucas Levingston Araújo Gadelha Medeiros',
   description: `
-  Desenvolvedor Full-Stack com <span class="highlight">3 anos de experiência</span> com freelas, projetos, estágios e startups. 
+  Desenvolvedor Full-Stack com <span class="highlight">3 anos de experiência com desenvolvimento Full-Stack</span>. 
   Graduado em <span class="highlight">Ciência da Computação pela UEPB</span> e pós-graduando em 
   <span class="highlight">Desenvolvimento Web pela Faculeste</span>.
 `,
   professionalProfile: `
-Desenvolvedor Full-Stack com <span class="highlight">3 anos de experiência</span> com freelas, projetos, estágios e startups. 
+Desenvolvedor Full-Stack com <span class="highlight">3 anos de experiência com desenvolvimento Full-Stack</span>. 
 Graduado em <span class="highlight">Ciência da Computação pela UEPB</span> e pós-graduando em 
 <span class="highlight">Desenvolvimento Web pela Faculeste</span>.
 <br/>
@@ -89,20 +89,20 @@ Interested in <span class="highlight">Full-Stack, Front-End, and Back-End develo
   hardSkills: hardSkillsDataEn,
   formations: formationDataEn,
   gitHub:
-    '[https://github.com/LucasLevingston](https://github.com/LucasLevingston)',
+    'https://github.com/LucasLevingston',
   linkedin:
-    '[https://www.linkedin.com/in/lucas-levingston-44b851231/](https://www.linkedin.com/in/lucas-levingston-44b851231/)',
+    'https://www.linkedin.com/in/lucas-levingston-44b851231/',
   linkedinImageUrl: generalImages.fotoLinkedin,
   instagram:
-    '[https://www.instagram.com/lucaolevingston/?hl=pt-br](https://www.instagram.com/lucaolevingston/?hl=pt-br)',
+    'https://www.instagram.com/lucaolevingston/?hl=pt-br',
   instagramImageUrl: generalImages.fotoInstagram,
   phone: '(83) 99961-6220',
   whatsapp:
-    '[https://wa.me/message/BL2FCNM72L7GJ1](https://wa.me/message/BL2FCNM72L7GJ1)',
+    'https://wa.me/message/BL2FCNM72L7GJ1',
   portfolioUrl:
-    '[https://lucas-levingston.vercel.app/](https://lucas-levingston.vercel.app/)',
+    'https://lucas-levingston.vercel.app/',
   whatsappImageUrl: generalImages.fotoWhatsapp,
-  email: '[lucaslevingston94@gmail.com](mailto:lucaslevingston94@gmail.com)',
+  email: 'lucaslevingston94@gmail.com',
   recomendations: recommendationDataEn,
   softSkills: softSkillsEn,
   address: 'Rua Severino Soares, 70 - Jardim Guanabara',

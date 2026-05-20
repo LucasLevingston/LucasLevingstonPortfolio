@@ -8,7 +8,7 @@ export default function Container({ children, ...props }: ContainerProps) {
     <div
       {...props}
       className={twMerge(
-        'z-0 ml-auto h-full p-6 text-bioBgColor dark:bg-aboutBgColor dark:text-bioBorderColor sm:max-w-[80%] sm:px-8 sm:py-4'
+        'z-0 ml-auto h-full p-6 text-bioBgColor dark:text-bioBorderColor sm:max-w-[80%] sm:px-8 sm:py-4 '
       )}
     >
       <div className="min-h-screen">{children}</div>

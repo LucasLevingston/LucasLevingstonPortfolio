@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <I18nextProvider defaultNS={'translation'} i18n={i18n}>
         <AnimatePresence mode="wait">
-          <div className="font-mainFont leading-5">
+          <div className="font-mainFont leading-5 bg-gradient-to-br from-mainColor/5 via-zinc-400 to-mainColor/5">
             <BrowserRouter>
               <Routes>
                 <Route

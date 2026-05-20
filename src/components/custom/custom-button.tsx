@@ -21,7 +21,7 @@ interface CustomButtonProps extends ComponentProps<typeof Button> {
 }
 
 const defaultClassNameButton =
-  'gap-2 border-mainColor bg-transparent text-sm hover:opacity-70 dark:border-mainColor dark:hover:bg-lightMainColorDark cursor-pointer border-2'
+  'gap-2 border-mainColor bg-transparent text-sm hover:opacity-70 dark:border-mainColor dark:hover:shadow-lightMainColorDark cursor-pointer border-2 rounded-xl'
 
 function CustomButton({ href, target, ...props }: CustomButtonProps) {
   if (href) {

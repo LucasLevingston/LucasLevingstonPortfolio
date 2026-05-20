@@ -31,4 +31,5 @@ export interface ProjectType {
   isDeveloping?: boolean
   startsDate?: string
   endsDate?: string
+  thumbnail?: string
 }
