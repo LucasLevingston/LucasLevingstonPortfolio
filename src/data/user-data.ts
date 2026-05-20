@@ -71,17 +71,17 @@ Interesse em desenvolvimento <span class="highlight">Full-Stack, Front-End e Bac
 export const userEn: UserType = {
   name: 'Lucas Levingston',
   completName: 'Lucas Levingston Araújo Gadelha Medeiros',
-  description: `  Full-Stack Developer with <span class="highlight">3 years of experience</span> in freelance, projects, internships, and startups. 
+  description: `  Full-Stack Developer with <span class="highlight">3 years of experience with Full-Stack development</span>. 
   Graduated in <span class="highlight">Computer Science from UEPB</span> and currently pursuing a postgraduate degree in    <span class="highlight">Web Development at Faculeste</span>.`,
-  professionalProfile: `Full-Stack Developer with <span class="highlight">3 years of experience</span> in freelance, projects, internships, and startups. 
+  professionalProfile: `Full-Stack Developer with <span class="highlight">3 years of experience with Full-Stack development</span>. 
 Graduated in <span class="highlight">Computer Science from UEPB</span> and currently pursuing a postgraduate degree in  <span class="highlight">Web Development at Faculeste</span>. <br/>
 Working with <span class="highlight">React, Next.js, Node.js, Prisma, PostgreSQL, MongoDB, Fastify, TypeScript, Tailwind, Docker, and AWS</span>, 
 with expertise in <span class="highlight">architecture, testing, version control, CI/CD, and Scrum</span>. <br/>
-Experience in <span class="highlight">complete, scalable, production-ready systems</span>, focusing on  <span class="highlight">quality, security, performance, and delivery predictability</span>. Strong expertise in  <span class="highlight">Clean Code, SOLID, software architectures, documentation, automated pipelines</span>, 
+Experience in <span class="highlight">complete, scalable, production-ready systems</span>, focusing on <span class="highlight">quality, security, performance, and delivery predictability</span>. Strong expertise in  <span class="highlight">Clean Code, SOLID, software architectures, documentation, automated pipelines</span>, 
 deployment automation, and design patterns. <br/>
 Interested in <span class="highlight">Full-Stack, Front-End, and Back-End development</span>.`,
   resumeUrl:
-    '[https://docs.google.com/document/d/1qI_1p0rpyBPJPNHA6MpwM5gGlmV-kN0X2CtzfsdtzyM/edit?usp=sharing](https://docs.google.com/document/d/1qI_1p0rpyBPJPNHA6MpwM5gGlmV-kN0X2CtzfsdtzyM/edit?usp=sharing)',
+    'https://docs.google.com/document/d/1qI_1p0rpyBPJPNHA6MpwM5gGlmV-kN0X2CtzfsdtzyM/edit?usp=sharing',
   profilePicture: generalImages.foto,
   certificates: certificatesDataEn,
   experiences: experiencesDataEn,
