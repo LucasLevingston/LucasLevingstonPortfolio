@@ -1,3 +1,15 @@
+import aneis1 from './aneis/Aneis1.png'
+import aneis2 from './aneis/Aneis2.png'
+import aneis3 from './aneis/Aneis3.png'
+import CALC1 from './calculadora/Calc1.jpg'
+import CALC2 from './calculadora/Calc2.jpg'
+import CALC3 from './calculadora/Calc3.jpg'
+import CM1 from './campoMinado/CampoMinado1.jpg'
+import CM2 from './campoMinado/CampoMinado2.jpg'
+import CM3 from './campoMinado/CampoMinado3.jpg'
+import caputeeno1 from './caputeeno/caputeeno1.jpg'
+import caputeeno2 from './caputeeno/caputeeno2.jpg'
+import caputeeno3 from './caputeeno/caputeeno3.jpg'
 import CertificadoAmbienteJava from './certificates/Ambiente de Desenvolvimento Java.jpg'
 import GitH from './certificates/CertificadoGiteGitHub.jpg'
 import NLWConnectReact from './certificates/CertificadoNLWConnectReact.png'
@@ -14,25 +26,25 @@ import CertificadoJavaCompleto from './certificates/Java Completo Do Zero ao Pro
 import NLWAgentsFullStack from './certificates/NLWAgentsFullStack.png'
 import NLWJourneyNodejs from './certificates/NLWJourneyNodejs.png'
 import NLWPocketJavascript from './certificates/NLWPocketJavascript.png'
-import aneis1 from './aneis/Aneis1.png'
-import aneis2 from './aneis/Aneis2.png'
-import aneis3 from './aneis/Aneis3.png'
-import CALC1 from './calculadora/Calc1.jpg'
-import CALC2 from './calculadora/Calc2.jpg'
-import CALC3 from './calculadora/Calc3.jpg'
-import CM1 from './campoMinado/CampoMinado1.jpg'
-import CM2 from './campoMinado/CampoMinado2.jpg'
-import CM3 from './campoMinado/CampoMinado3.jpg'
-import caputeeno1 from './caputeeno/caputeeno1.jpg'
-import caputeeno2 from './caputeeno/caputeeno2.jpg'
-import caputeeno3 from './caputeeno/caputeeno3.jpg'
 import codeplay1 from './codeplay/codeplay1.png'
+import codeplay2 from './codeplay/codeplay2.png'
+import codeplay3 from './codeplay/codeplay3.png'
+import codeplay4 from './codeplay/codeplay4.png'
+import codeplay5 from './codeplay/codeplay5.png'
+import codeplay6 from './codeplay/codeplay6.png'
+import codeplay7 from './codeplay/codeplay7.png'
 import consultaFacil1 from './consultaFacil/consultafacil1.png'
 import consultaFacil2 from './consultaFacil/consultafacil2.png'
 import consultaFacil3 from './consultaFacil/consultafacil3.png'
 import consultaFacil4 from './consultaFacil/consultafacil4.png'
 import consultaFacil5 from './consultaFacil/consultafacil5.png'
 import expertgp1 from './expertgp/expertgp1.png'
+import expertgp2 from './expertgp/expertgp2.png'
+import expertgp3 from './expertgp/expertgp3.png'
+import expertgp4 from './expertgp/expertgp4.png'
+import expertgp5 from './expertgp/expertgp5.png'
+import expertgp6 from './expertgp/expertgp6.png'
+import expertgp7 from './expertgp/expertgp7.png'
 import F1 from './flexibble/Flexibble1.jpg'
 import F2 from './flexibble/Flexibble2.jpg'
 import F3 from './flexibble/Flexibble3.jpg'
@@ -90,67 +102,95 @@ import verbo2 from './verbo/verbo2.png'
 import verbo3 from './verbo/verbo3.png'
 
 export const projectImages = {
-	spotify: [SP1, SP2, SP3],
-	campoMinado: [CM1, CM2, CM3],
-	calculadora: [CALC1, CALC2, CALC3],
-	meuPortfolio: [MP1, MP2, MP3],
-	flexibble: [F1, F2, F3],
-	threads: [T1, T2, T3],
-	passInWeb: {
-		react: [PIW1, PIW2, PIW3],
-		node: [PiwNode1, PiwNode2, PiwNode3],
-		combined: [PIW1, PIW2, PIW3, PiwNode1, PiwNode2, PiwNode3],
-	},
-	rhcontrol: [
-		GestaoFuncionarios1,
-		GestaoFuncionarios2,
-		GestaoFuncionarios3,
-		rhcontrol1,
-		rhcontrol2,
-		rhcontrol3,
-		rhcontrol4,
-	],
-	rotaFinanceira: [rotaFinanceira1, rotaFinanceira2, rotaFinanceira3, rotaFinanceira4, rotaFinanceira5, rotaFinanceira6, rotaFinanceira7, rotaFinanceira8, rotaFinanceira9, rotaFinanceira10, rotaFinanceira11],
-	codeplay: [codeplay1],
-	caputeeno: [caputeeno1, caputeeno2, caputeeno3],
-	verbo: [verbo1, verbo2, verbo3],
-	sercomp: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
-	gymEvolution: [GymEvolution1, GymEvolution2, GymEvolution3],
-	consultaFacil: [
-		consultaFacil1,
-		consultaFacil2,
-		consultaFacil3,
-		consultaFacil4,
-		consultaFacil5,
-	],
-	expertgp: [expertgp1],
-	aneis: [aneis1, aneis2, aneis3],
-	nearby: [nerby1, nerby2, nerby3],
+  spotify: [SP1, SP2, SP3],
+  campoMinado: [CM1, CM2, CM3],
+  calculadora: [CALC1, CALC2, CALC3],
+  meuPortfolio: [MP1, MP2, MP3],
+  flexibble: [F1, F2, F3],
+  threads: [T1, T2, T3],
+  passInWeb: {
+    react: [PIW1, PIW2, PIW3],
+    node: [PiwNode1, PiwNode2, PiwNode3],
+    combined: [PIW1, PIW2, PIW3, PiwNode1, PiwNode2, PiwNode3],
+  },
+  rhcontrol: [
+    GestaoFuncionarios1,
+    GestaoFuncionarios2,
+    GestaoFuncionarios3,
+    rhcontrol1,
+    rhcontrol2,
+    rhcontrol3,
+    rhcontrol4,
+  ],
+  rotaFinanceira: [
+    rotaFinanceira1,
+    rotaFinanceira2,
+    rotaFinanceira3,
+    rotaFinanceira4,
+    rotaFinanceira5,
+    rotaFinanceira6,
+    rotaFinanceira7,
+    rotaFinanceira8,
+    rotaFinanceira9,
+    rotaFinanceira10,
+    rotaFinanceira11,
+  ],
+  codeplay: [
+    codeplay1,
+    codeplay2,
+    codeplay3,
+    codeplay4,
+    codeplay5,
+    codeplay6,
+    codeplay7,
+  ],
+  caputeeno: [caputeeno1, caputeeno2, caputeeno3],
+  verbo: [verbo1, verbo2, verbo3],
+  sercomp: [sercomp1, sercomp2, sercomp3, sercomp4, sercomp5],
+  gymEvolution: [GymEvolution1, GymEvolution2, GymEvolution3],
+  consultaFacil: [
+    consultaFacil1,
+    consultaFacil2,
+    consultaFacil3,
+    consultaFacil4,
+    consultaFacil5,
+  ],
+  expertgp: [
+    expertgp1,
+    expertgp2,
+    expertgp3,
+    expertgp4,
+    expertgp5,
+    expertgp6,
+    expertgp7,
+  ],
+  aneis: [aneis1, aneis2, aneis3],
+  nearby: [nerby1, nerby2, nerby3],
 }
 
 export const certificateImages = {
-	satanderOpenAcademy: CertificadoSantanderOpenAcademy,
-	gitHub: GitH,
-	sercomp: CertificadoSercomp,
-	react: CertificadoReact,
-	node: CertificadoNode,
-	fullStack: CertificadoFullStack,
-	java: CertificadoJava,
-	javaCompleto: CertificadoJavaCompleto,
-	aplicacoesRest: CertificadoAplicacoesRest,
-	portfolio: CertificadoPortfolio,
-	contribuicao: CertificadoContribuicao,
-	ambienteJava: CertificadoAmbienteJava,
-	nlwJourneyNodejs: NLWJourneyNodejs,
-	nlwPocketJavascript: NLWPocketJavascript,
-	nlwConnectReact: NLWConnectReact,
-	nlwAgentsFullStack: NLWAgentsFullStack,
+  satanderOpenAcademy: CertificadoSantanderOpenAcademy,
+  gitHub: GitH,
+  sercomp: CertificadoSercomp,
+  react: CertificadoReact,
+  node: CertificadoNode,
+  fullStack: CertificadoFullStack,
+  java: CertificadoJava,
+  javaCompleto: CertificadoJavaCompleto,
+  aplicacoesRest: CertificadoAplicacoesRest,
+  portfolio: CertificadoPortfolio,
+  contribuicao: CertificadoContribuicao,
+  ambienteJava: CertificadoAmbienteJava,
+  nlwJourneyNodejs: NLWJourneyNodejs,
+  nlwPocketJavascript: NLWPocketJavascript,
+  nlwConnectReact: NLWConnectReact,
+  nlwAgentsFullStack: NLWAgentsFullStack,
 }
 
 export const generalImages = {
-	foto: Foto,
-	fotoLinkedin: FotoLinkedin,
-	fotoWhatsapp: FotoWhatsapp,
-	fotoInstagram: FotoInstagram,
-	logo: Logo,
+  foto: Foto,
+  fotoLinkedin: FotoLinkedin,
+  fotoWhatsapp: FotoWhatsapp,
+  fotoInstagram: FotoInstagram,
+  logo: Logo,
 }

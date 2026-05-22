@@ -14,7 +14,7 @@ export function Home() {
   const { user } = useUser()
   const { t } = useTranslation()
   return (
-    <div className="min-h-screen p-4 dark:bg-aboutBgColor">
+    <div className="min-h-screen p-4">
       <Header />
       <div className="container mx-auto px-4 py-8 md:py-6 lg:py-8 xl:py-12">
         <div className="flex flex-col items-center justify-between gap-8 lg:flex-row lg:items-start">

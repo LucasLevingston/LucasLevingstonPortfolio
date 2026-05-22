@@ -10,6 +10,7 @@ export interface ProjectVersion {
   startsDate?: string
   endsDate?: string
   features?: string[]
+  docsUrl?: string
 }
 
 export interface ProjectType {

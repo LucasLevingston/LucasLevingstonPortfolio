@@ -1,4 +1,4 @@
 export interface HardSkillsType {
-	category: string;
-	technologies: string[];
+  category: string
+  technologies: string[]
 }

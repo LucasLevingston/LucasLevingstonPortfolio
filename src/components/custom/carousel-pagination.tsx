@@ -32,7 +32,6 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
             api?.scrollTo(0)
           }}
           size="sm"
-          
         >
           <CustomButton.Icon>
             <ChevronsLeft />
@@ -46,9 +45,7 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
             api?.scrollPrev()
           }}
           size="sm"
-          
         >
-          
           <CustomButton.Icon>
             <ChevronLeft />
           </CustomButton.Icon>
@@ -61,13 +58,12 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
               api?.scrollTo(currentImage - 1)
             }}
             size="sm"
-            
           >
             <CustomButton.Label>{currentImage}</CustomButton.Label>
           </CustomButton>
         )}
 
-        <CustomButton disabled size="sm" >
+        <CustomButton disabled size="sm">
           <CustomButton.Label>{currentImage + 1}</CustomButton.Label>
         </CustomButton>
 
@@ -78,7 +74,6 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
               api?.scrollTo(currentImage + 1)
             }}
             size="sm"
-            
           >
             <CustomButton.Label>{currentImage + 2}</CustomButton.Label>
           </CustomButton>
@@ -91,7 +86,6 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
             api?.scrollNext()
           }}
           size="sm"
-          
         >
           {' '}
           <CustomButton.Icon>
@@ -106,7 +100,6 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
             api?.scrollTo(images.length - 1)
           }}
           size="sm"
-          
         >
           <CustomButton.Icon>
             <ChevronsRight />

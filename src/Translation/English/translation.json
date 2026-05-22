@@ -56,7 +56,6 @@
   "projectCard.currentVersion": "Current Version",
   "projectCard.inDevelopment": "Developing",
   "projectCard.features": "Features",
-  
 
   "sidebar.greeting": "Hello, my name is",
   "sidebar.am": "and i am",
@@ -70,7 +69,6 @@
   "navbar.home": "Home",
   "navbar.projects": "Projects",
   "about.languagesTitle": "Languages",
-
 
   "resume.viewResume": "View CV",
 

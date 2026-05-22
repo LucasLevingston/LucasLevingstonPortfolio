@@ -88,19 +88,14 @@ Interested in <span class="highlight">Full-Stack, Front-End, and Back-End develo
   projects: projectsDataEn,
   hardSkills: hardSkillsDataEn,
   formations: formationDataEn,
-  gitHub:
-    'https://github.com/LucasLevingston',
-  linkedin:
-    'https://www.linkedin.com/in/lucas-levingston-44b851231/',
+  gitHub: 'https://github.com/LucasLevingston',
+  linkedin: 'https://www.linkedin.com/in/lucas-levingston-44b851231/',
   linkedinImageUrl: generalImages.fotoLinkedin,
-  instagram:
-    'https://www.instagram.com/lucaolevingston/?hl=pt-br',
+  instagram: 'https://www.instagram.com/lucaolevingston/?hl=pt-br',
   instagramImageUrl: generalImages.fotoInstagram,
   phone: '(83) 99961-6220',
-  whatsapp:
-    'https://wa.me/message/BL2FCNM72L7GJ1',
-  portfolioUrl:
-    'https://lucas-levingston.vercel.app/',
+  whatsapp: 'https://wa.me/message/BL2FCNM72L7GJ1',
+  portfolioUrl: 'https://lucas-levingston.vercel.app/',
   whatsappImageUrl: generalImages.fotoWhatsapp,
   email: 'lucaslevingston94@gmail.com',
   recomendations: recommendationDataEn,

@@ -43,7 +43,7 @@ function SectionContent({
   children,
   className = '',
 }: SectionContentProps): JSX.Element {
-  return <div className={`${className}`}>{children}</div>
+  return <div className={`shadow-md ${className}`}>{children}</div>
 }
 
 interface SectionProps {

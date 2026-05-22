@@ -73,7 +73,8 @@ export default function ProjectCard({
     isDeveloping,
     startsDate,
     showEvolution,
-    features,thumbnail
+    features,
+    thumbnail,
   },
   allProjects,
 }: ProjectCardProps) {
@@ -106,7 +107,7 @@ export default function ProjectCard({
     })
   }, [api])
 
-  const previewImage = thumbnail || images?.[0] 
+  const previewImage = thumbnail || images?.[0]
 
   return (
     <Card className="transition-shadow hover:shadow-md">
@@ -167,7 +168,7 @@ export default function ProjectCard({
                     </div>
                   </div>
 
-                  {openAccordion !== title && previewImage  && (
+                  {openAccordion !== title && previewImage && (
                     <div className="w-full px-6 pb-4 sm:w-auto sm:px-0 sm:pb-0">
                       <div className="relative flex h-48 w-full items-center justify-center overflow-hidden rounded-md">
                         {isMobile ? (
@@ -275,14 +276,13 @@ export default function ProjectCard({
                       >
                         <TabsList
                           className="grid w-full"
-                          style={{ gridTemplateColumns: `repeat(${versions.length}, minmax(0, 1fr))` }}
+                          style={{
+                            gridTemplateColumns: `repeat(${versions.length}, minmax(0, 1fr))`,
+                          }}
                         >
                           {versions
                             .map((version, index) => (
-                              <TabsTrigger
-                                key={index}
-                                value={String(index)}
-                              >
+                              <TabsTrigger key={index} value={String(index)}>
                                 {version.name ?? `v${index + 1}`}
                               </TabsTrigger>
                             ))

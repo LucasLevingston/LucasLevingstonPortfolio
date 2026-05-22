@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -109,8 +109,6 @@
   --sidebar-ring: oklch(0.637 0.237 25.331);
 }
 
-
-
 /* @theme {
   --color-mainColor: #ff2200;
   --color-lightMainColor: #dc2626;
@@ -126,20 +124,19 @@
   --color-lightBlue: #35DCFA;
 } */
 
-
 @theme {
-  --color-mainColor: #2563eb; 
-  --color-lightMainColor: #3b82f6; 
-  --color-mainBorder: #bfdbfe; 
+  --color-mainColor: #2563eb;
+  --color-lightMainColor: #3b82f6;
+  --color-mainBorder: #bfdbfe;
   --color-mainColorDark: #1e40af;
-  --color-lightMainColorDark: #1d4ed8; 
+  --color-lightMainColorDark: #1d4ed8;
   --color-mainBorderDark: #1e3a8a;
   --color-mainTextColor: #fff;
   --color-borderColor: #434040;
   --color-bioBgColor: #212121;
   --color-bioBorderColor: #ffffff;
   --color-aboutBgColor: #131212;
-  --color-lightBlue: #35dcfa; 
+  --color-lightBlue: #35dcfa;
 }
 @layer base {
   * {
@@ -149,9 +146,8 @@
   body {
     @apply bg-sidebar-accent text-foreground;
   }
- .highlight {
+  .highlight {
     @apply font-bold;
     color: var(--color-mainColor);
-
   }
 }

@@ -859,8 +859,7 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
   yup: {
     label: 'Yup',
     value: 'yup',
-    description:
-      'JavaScript schema validation and object parsing library.',
+    description: 'JavaScript schema validation and object parsing library.',
     link: 'https://github.com/jquense/yup',
   },
   githubactions: {
@@ -873,8 +872,7 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
   biome: {
     label: 'Biome',
     value: 'biome',
-    description:
-      'Fast formatter and linter for JavaScript and TypeScript.',
+    description: 'Fast formatter and linter for JavaScript and TypeScript.',
     link: 'https://biomejs.dev/',
   },
   nativewind: {

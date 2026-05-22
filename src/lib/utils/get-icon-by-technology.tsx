@@ -1,5 +1,5 @@
-import React from 'react';
-import { DiScrum } from 'react-icons/di';
+import React from 'react'
+import { DiScrum } from 'react-icons/di'
 import {
   expoSVG,
   geminiSVG,
@@ -10,7 +10,7 @@ import {
   rendersvg,
   shadcnSVG,
   tanstackquerySVG,
-} from '@/assets/svgs';
+} from '@/assets/svgs'
 
 export const getIconByTechnology = (
   technology: string
@@ -129,17 +129,13 @@ export const getIconByTechnology = (
     case 'hibernate':
       return {
         element: (
-          <p className="cursor-default text-xl font-bold text-lightBlue">
-            HB
-          </p>
+          <p className="cursor-default text-xl font-bold text-lightBlue">HB</p>
         ),
       }
     case 'jpa':
       return {
         element: (
-          <p className="cursor-default text-xl font-bold text-lightBlue">
-            JPA
-          </p>
+          <p className="cursor-default text-xl font-bold text-lightBlue">JPA</p>
         ),
       }
     case 'springboot':
@@ -157,8 +153,8 @@ export const getIconByTechnology = (
         svg: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg',
         iconClassName: 'dark:invert',
       }
-      case 'render':
-        return {
+    case 'render':
+      return {
         svg: rendersvg,
       }
     default:

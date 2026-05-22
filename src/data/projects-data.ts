@@ -27,7 +27,7 @@ export const projectsDataBr: ProjectType[] = [
       'mercadopago',
       'vercel',
       'render',
-      'githubactions'
+      'githubactions',
     ],
     features: [
       'Dashboards em tempo real com sincronização eficiente (<span className="highlight">TanStack Query</span>)',
@@ -126,10 +126,9 @@ export const projectsDataBr: ProjectType[] = [
           projectImages.consultaFacil[1],
           projectImages.consultaFacil[2],
           projectImages.consultaFacil[3],
-        ]
+        ],
       },
       {
-
         name: 'Versão 2.0 - Arquitetura Desacoplada',
         images: [projectImages.consultaFacil[4]],
         description:
@@ -177,11 +176,7 @@ export const projectsDataBr: ProjectType[] = [
           'Estrutura preparada para microsserviços futuramente',
         ],
         startsDate: '2026-01-01',
-
       },
-
-
-
     ],
   },
   {
@@ -190,7 +185,7 @@ export const projectsDataBr: ProjectType[] = [
     description:
       'Plataforma fullstack TypeScript para compartilhamento, organização e descoberta de projetos e snippets de programação.',
     about:
-      'O CodePlay é uma plataforma fullstack construída com TypeScript em toda a stack — Next.js no frontend e Node.js com Express no backend. Utiliza Prisma com MongoDB para persistência flexível, AWS S3 para upload e armazenamento de arquivos, e Orval para geração automática de clientes HTTP tipados. O projeto adota Biome para linting e formatação unificados, GitHub Actions para CI/CD, e Vitest para cobertura de testes.',
+      'O CodePlay é uma plataforma fullstack desenvolvida com TypeScript em toda a aplicação, utilizando Next.js no frontend e Node.js com Express no backend. O projeto foi criado com foco em escalabilidade, organização e experiência moderna de desenvolvimento. A arquitetura segue conceitos de DDD (Domain-Driven Design), ajudando a manter o código desacoplado, limpo e fácil de evoluir. No frontend, a aplicação utiliza TanStack Query para gerenciamento de cache e sincronização de dados, ShadCN UI para construção de interfaces modernas e reutilizáveis, além de Zustand para gerenciamento de estado global. A comunicação entre frontend e backend é totalmente tipada através do Orval integrado ao Swagger/OpenAPI, gerando automaticamente clientes HTTP tipados. As validações são feitas com Zod, trazendo mais segurança no tratamento de dados. No backend, a autenticação utiliza JWT para controle seguro de acesso às rotas protegidas. A API possui documentação interativa com Swagger e Scalar, facilitando testes e integração dos endpoints. A persistência de dados é feita com Prisma ORM utilizando MongoDB, enquanto uploads e armazenamento de arquivos são realizados com AWS S3. O projeto também utiliza Biome para linting e formatação padronizada, Vitest para testes automatizados e GitHub Actions para CI/CD, executando lint, testes e build automaticamente a cada alteração no repositório. Além disso, toda a aplicação é containerizada com Docker e Docker Compose, simplificando o ambiente de desenvolvimento e deploy.',
     technologies: [
       'typescript',
       'nextjs',
@@ -205,6 +200,7 @@ export const projectsDataBr: ProjectType[] = [
       'tailwindcss',
       'shadcn',
       'docker',
+      'dockercompose',
       'githubactions',
       'biome',
       'orval',
@@ -214,21 +210,26 @@ export const projectsDataBr: ProjectType[] = [
       'tanstackquery',
       'zustand',
       'swagger',
+      'scalar',
+      'ddd',
     ],
     images: projectImages.codeplay,
     features: [
       'Upload e armazenamento de arquivos na nuvem com <span className="highlight">AWS S3</span>',
       'Geração automática de clientes HTTP tipados com <span className="highlight">Orval</span>',
+      'Validação de dados segura e reutilizável com <span className="highlight">Zod</span>',
+      'Arquitetura escalável baseada em <span className="highlight">DDD</span>',
       'Type-safety end-to-end com <span className="highlight">TypeScript</span> em toda a stack',
-      'Testes automatizados (unit + integration) com <span className="highlight">Vitest</span>',
+      'Testes automatizados unitários e de integração com <span className="highlight">Vitest</span>',
       'Persistência flexível com <span className="highlight">Prisma</span> + <span className="highlight">MongoDB</span>',
       'Linting e formatação unificados com <span className="highlight">Biome</span>',
       '<span className="highlight">CI/CD</span> automatizado com <span className="highlight">GitHub Actions</span>',
-      'Documentação de API com <span className="highlight">Swagger</span>',
+      'Documentação interativa da API com <span className="highlight">Swagger</span> + <span className="highlight">Scalar</span>',
       'Gerenciamento de estado global com <span className="highlight">Zustand</span>',
       'Sincronização eficiente de dados com <span className="highlight">TanStack Query</span>',
       'Autenticação segura com <span className="highlight">JWT</span>',
-      'Containerização completa com <span className="highlight">Docker</span>',
+      'Containerização completa com <span className="highlight">Docker</span> + <span className="highlight">Docker Compose</span>',
+      'Interfaces modernas e reutilizáveis com <span className="highlight">ShadCN UI</span>',
     ],
     frontEndRepositoryUrl: 'https://github.com/LucasLevingston/code-play-web',
     backEndRepositoryUrl: 'https://github.com/LucasLevingston/code-play-api',
@@ -238,6 +239,7 @@ export const projectsDataBr: ProjectType[] = [
     startsDate: '04/2026',
     endsDate: '05/2026',
   },
+
   {
     title: 'RHControl',
     thumbnail: projectImages.rhcontrol[3],
@@ -257,7 +259,7 @@ export const projectsDataBr: ProjectType[] = [
       'zustand',
       'eslint',
       'zod',
-      'axios'
+      'axios',
     ],
     features: [
       'Relatórios em tempo real com <span className="highlight">Firebase</span>',
@@ -268,6 +270,7 @@ export const projectsDataBr: ProjectType[] = [
     ],
     frontEndRepositoryUrl:
       'https://github.com/LucasLevingston/rhcontrol-project',
+    link: 'https://rh-control-system.vercel.app/',
     showEvolution: true,
     versions: [
       {
@@ -315,7 +318,7 @@ export const projectsDataBr: ProjectType[] = [
           'zustand',
           'eslint',
           'zod',
-          'axios'
+          'axios',
         ],
       },
     ],
@@ -415,11 +418,7 @@ export const projectsDataBr: ProjectType[] = [
         name: 'Versão 1.0 - Vue.js',
         description:
           'Primeira versão do sistema desenvolvida utilizando Vue.js e CSS puro, focada em funcionalidades básicas de controle financeiro.',
-        technologies: [
-          'vuejs',
-          'typescript',
-          'css3',
-        ],
+        technologies: ['vuejs', 'typescript', 'css3'],
         features: [
           'Cadastro manual de receitas e despesas',
           'Controle básico financeiro',
@@ -865,7 +864,8 @@ export const projectsDataBr: ProjectType[] = [
   {
     title: 'Caputeeno',
 
-    description: 'E-commerce de produtos com catálogo dinâmico, carrinho de compras e integração GraphQL.',
+    description:
+      'E-commerce de produtos com catálogo dinâmico, carrinho de compras e integração GraphQL.',
     about:
       'E-commerce construído com React, TypeScript e Vite no frontend, consumindo uma API GraphQL no backend. Implementa catálogo de produtos com filtros, lazy loading para performance, carrinho de compras com persistência de estado e checkout simplificado. Foco em boas práticas de UX e otimizações de carregamento.',
     images: projectImages.caputeeno,
@@ -1048,18 +1048,18 @@ export const projectsDataEn: ProjectType[] = [
       'mercadopago',
       'vercel',
       'render',
-      'githubactions'
+      'githubactions',
     ],
     features: [
       'Real-time dashboards with efficient synchronization (<span className="highlight">TanStack Query</span>)',
       '<span className="highlight">JWT</span> + Refresh Token authentication with advanced <span className="highlight">RBAC</span>',
       'Audit logs and action tracking',
-      'Clean Architecture with separation of concerns',
-      'Automated tests (unit + integration with <span className="highlight">Vitest</span>)',
-      'Full <span className="highlight">CI/CD</span> pipeline (build → tests → deploy)',
+      'Clean Architecture with clear responsibility separation',
+      'Automated testing (unit + integration with <span className="highlight">Vitest</span>)',
+      'Complete <span className="highlight">CI/CD</span> pipeline (build → tests → deploy)',
       'Isolated environments (dev/staging/prod) on <span className="highlight">AWS</span>',
       '<span className="highlight">Mercado Pago</span> integration for transactions',
-      'Validations with <span className="highlight">Zod</span> and typed schemas',
+      'Validation with <span className="highlight">Zod</span> and typed schemas',
       'Reusable components with <span className="highlight">ShadCN UI</span>',
     ],
     link: 'https://expert-gp.vercel.app/',
@@ -1069,13 +1069,14 @@ export const projectsDataEn: ProjectType[] = [
     endsDate: '04/2026',
     images: projectImages.expertgp,
   },
+
   {
     title: 'Consulta Fácil',
     favorite: true,
     description:
-      'Fullstack platform for scheduling and managing healthcare appointments.',
+      'Fullstack healthcare appointment scheduling and management platform.',
     about:
-      'Consulta Fácil started as a monolithic application using Next.js with an integrated API and evolved into a decoupled architecture with a Next.js frontend and a Spring Boot backend. The system was designed to deliver scalability, security, and high performance in medical appointment management.',
+      'Consulta Fácil started as a monolithic application using Next.js with an integrated API and evolved into a decoupled architecture with a Next.js frontend and Spring Boot backend. The system was designed to provide scalability, security, and high performance for healthcare appointment management.',
     technologies: [
       'nextjs',
       'react',
@@ -1113,7 +1114,7 @@ export const projectsDataEn: ProjectType[] = [
       {
         name: 'Version 1.0 - Monolithic',
         description:
-          'First system architecture using Next.js with an integrated backend via API Routes.',
+          'First system architecture using Next.js with an integrated backend through API Routes.',
         technologies: [
           'nextjs',
           'typescript',
@@ -1129,15 +1130,15 @@ export const projectsDataEn: ProjectType[] = [
           'nextauth',
         ],
         features: [
-          'Full <span className="highlight">Stripe</span> integration: payments, saved cards, and webhooks',
+          'Complete <span className="highlight">Stripe</span> integration: payments, saved cards, and webhooks',
           'Automatic failure reprocessing and transaction reconciliation',
-          'Scalability for <span className="highlight">100+ simultaneous</span> bookings',
+          'Scalability for <span className="highlight">100+ simultaneous appointments</span>',
           'Optimized SSR with <span className="highlight">Next.js</span> (dynamic ISR)',
           '<span className="highlight">NextAuth</span> with route protection and server-side sessions',
           'Validation with <span className="highlight">Zod</span> (front + back)',
           'Structured logs and transaction monitoring',
           'Automatic deployment on <span className="highlight">Vercel</span>',
-          'Responsive UI with <span className="highlight">ShadCN UI</span> + Tailwind',
+          'Responsive interface with <span className="highlight">ShadCN UI</span> + Tailwind',
           'Security with <span className="highlight">JWT</span> + Refresh Tokens',
         ],
         startsDate: '2025-01-01',
@@ -1147,13 +1148,13 @@ export const projectsDataEn: ProjectType[] = [
           projectImages.consultaFacil[1],
           projectImages.consultaFacil[2],
           projectImages.consultaFacil[3],
-        ]
+        ],
       },
       {
         name: 'Version 2.0 - Decoupled Architecture',
         images: [projectImages.consultaFacil[4]],
         description:
-          'Full refactor of the application separating frontend and backend, using Spring Boot for greater scalability and organization.',
+          'Complete refactor separating frontend and backend, using Spring Boot for better scalability and organization.',
         technologies: [
           'nextjs',
           'react',
@@ -1186,27 +1187,28 @@ export const projectsDataEn: ProjectType[] = [
           'Robust backend with <span className="highlight">Spring Boot</span>',
           'Authentication using <span className="highlight">Spring Security</span> + JWT',
           'Automatic documentation with <span className="highlight">Swagger/OpenAPI</span>',
-          'Cache management and data sync with <span className="highlight">TanStack Query</span>',
-          'Global state control using <span className="highlight">Zustand</span>',
-          'Layered architecture for greater scalability',
-          'Modern and typed RESTful API',
+          'Cache management and synchronization with <span className="highlight">TanStack Query</span>',
+          'Global state management using <span className="highlight">Zustand</span>',
+          'Layered architecture for better scalability',
+          'Modern typed RESTful API',
           'Robust persistence with <span className="highlight">PostgreSQL</span>',
           'Full containerization with <span className="highlight">Docker</span>',
           'Form and schema validation using <span className="highlight">Zod</span>',
-          'Modern UI using <span className="highlight">ShadCN UI</span> + TailwindCSS',
-          'Architecture ready for future microservices',
+          'Modern interface with <span className="highlight">ShadCN UI</span> + TailwindCSS',
+          'Architecture prepared for future microservices',
         ],
         startsDate: '2026-01-01',
       },
     ],
   },
+
   {
     title: 'CodePlay',
     favorite: true,
     description:
-      'TypeScript fullstack platform for sharing, organizing, and discovering programming projects and snippets.',
+      'Fullstack TypeScript platform for sharing, organizing, and discovering programming projects and snippets.',
     about:
-      'CodePlay is a fullstack platform built with TypeScript across the entire stack — Next.js on the frontend and Node.js with Express on the backend. It uses Prisma with MongoDB for flexible persistence, AWS S3 for file upload and storage, and Orval for automatic typed HTTP client generation. The project adopts Biome for unified linting and formatting, GitHub Actions for CI/CD, and Vitest for test coverage.',
+      'CodePlay is a fullstack platform built entirely with TypeScript, using Next.js on the frontend and Node.js with Express on the backend. The project was created focusing on scalability, organization, and modern developer experience. The architecture follows DDD (Domain-Driven Design) concepts, helping keep the code decoupled, clean, and easy to evolve. On the frontend, the application uses TanStack Query for cache management and synchronization, ShadCN UI for building modern reusable interfaces, and Zustand for global state management. Communication between frontend and backend is fully typed through Orval integrated with Swagger/OpenAPI, automatically generating typed HTTP clients. Validations are handled with Zod for safer data handling. On the backend, authentication uses JWT for secure route access control. The API provides interactive documentation with Swagger and Scalar, simplifying endpoint testing and integration. Data persistence is managed with Prisma ORM using MongoDB, while uploads and file storage are handled with AWS S3. The project also uses Biome for linting and formatting, Vitest for automated tests, and GitHub Actions for CI/CD, automatically running lint, tests, and builds on every repository update. Additionally, the entire application is containerized with Docker and Docker Compose, simplifying development and deployment environments.',
     technologies: [
       'typescript',
       'nextjs',
@@ -1221,6 +1223,7 @@ export const projectsDataEn: ProjectType[] = [
       'tailwindcss',
       'shadcn',
       'docker',
+      'dockercompose',
       'githubactions',
       'biome',
       'orval',
@@ -1230,21 +1233,26 @@ export const projectsDataEn: ProjectType[] = [
       'tanstackquery',
       'zustand',
       'swagger',
+      'scalar',
+      'ddd',
     ],
     images: projectImages.codeplay,
     features: [
       'Cloud file upload and storage with <span className="highlight">AWS S3</span>',
-      'Automatic typed HTTP client generation with <span className="highlight">Orval</span>',
+      'Automatic generation of typed HTTP clients with <span className="highlight">Orval</span>',
+      'Secure and reusable data validation with <span className="highlight">Zod</span>',
+      'Scalable architecture based on <span className="highlight">DDD</span>',
       'End-to-end type safety with <span className="highlight">TypeScript</span> across the stack',
-      'Automated tests (unit + integration) with <span className="highlight">Vitest</span>',
+      'Automated unit and integration testing with <span className="highlight">Vitest</span>',
       'Flexible persistence with <span className="highlight">Prisma</span> + <span className="highlight">MongoDB</span>',
       'Unified linting and formatting with <span className="highlight">Biome</span>',
       'Automated <span className="highlight">CI/CD</span> with <span className="highlight">GitHub Actions</span>',
-      'API documentation with <span className="highlight">Swagger</span>',
+      'Interactive API documentation with <span className="highlight">Swagger</span> + <span className="highlight">Scalar</span>',
       'Global state management with <span className="highlight">Zustand</span>',
       'Efficient data synchronization with <span className="highlight">TanStack Query</span>',
       'Secure authentication with <span className="highlight">JWT</span>',
-      'Full containerization with <span className="highlight">Docker</span>',
+      'Full containerization with <span className="highlight">Docker</span> + <span className="highlight">Docker Compose</span>',
+      'Modern reusable interfaces with <span className="highlight">ShadCN UI</span>',
     ],
     frontEndRepositoryUrl: 'https://github.com/LucasLevingston/code-play-web',
     backEndRepositoryUrl: 'https://github.com/LucasLevingston/code-play-api',
@@ -1254,13 +1262,13 @@ export const projectsDataEn: ProjectType[] = [
     startsDate: '04/2026',
     endsDate: '05/2026',
   },
+
   {
     title: 'RHControl',
     thumbnail: projectImages.rhcontrol[3],
-    description:
-      'System for human resources administration and personnel management.',
+    description: 'Human resources and personnel management system.',
     about:
-      'Automates HR tasks, generates documents automatically, and syncs data in real time with Firebase. Provides detailed reports and a consistent interface with the ShadCN UI design system.',
+      'Automates HR tasks, generates automatic documents, and synchronizes data in real time with Firebase. Provides detailed reports and a consistent interface using the ShadCN UI design system.',
     technologies: [
       'react',
       'typescript',
@@ -1273,7 +1281,7 @@ export const projectsDataEn: ProjectType[] = [
       'zustand',
       'eslint',
       'zod',
-      'axios'
+      'axios',
     ],
     features: [
       'Real-time reports with <span className="highlight">Firebase</span>',
@@ -1284,6 +1292,7 @@ export const projectsDataEn: ProjectType[] = [
     ],
     frontEndRepositoryUrl:
       'https://github.com/LucasLevingston/rhcontrol-project',
+    link: 'https://rh-control-system.vercel.app/',
     showEvolution: true,
     versions: [
       {
@@ -1305,38 +1314,14 @@ export const projectsDataEn: ProjectType[] = [
         ],
         features: [
           'Authentication and access control with <span className="highlight">Firebase Auth</span>',
-          'Real-time data synchronization with <span className="highlight">Firestore</span>',
+          'Real-time synchronization with <span className="highlight">Firestore</span>',
           'Responsive interface with <span className="highlight">ShadCN UI</span> + Tailwind',
           'Employee registration and visualization',
-          'Versioning with <span className="highlight">Git</span>',
-        ],
-      },
-      {
-        name: 'Version 2.0',
-        images: [
-          projectImages.rhcontrol[3],
-          projectImages.rhcontrol[4],
-          projectImages.rhcontrol[5],
-          projectImages.rhcontrol[6],
-        ],
-        technologies: [
-          'react',
-          'typescript',
-          'tailwindcss',
-          'firebase',
-          'vite',
-          'git',
-          'github',
-          'shadcn',
-          'zustand',
-          'eslint',
-          'zod',
-          'axios'
+          'Version control with <span className="highlight">Git</span>',
         ],
       },
     ],
   },
-
   {
     title: 'GymEvolution',
     description:
@@ -1385,7 +1370,7 @@ export const projectsDataEn: ProjectType[] = [
     description:
       'Mobile app for financial management and vehicle maintenance aimed at rideshare drivers.',
     about:
-      'Rota Financeira was built to help rideshare drivers centralize financial control and vehicle maintenance in a single platform. The app lets users record income, expenses, operating costs, and track preventive maintenance, giving a clear picture of the driver\'s financial health. The project underwent a full refactor, migrating from Vue.js with plain CSS to a modern architecture using Expo, React Native, and TypeScript.',
+      "Rota Financeira was built to help rideshare drivers centralize financial control and vehicle maintenance in a single platform. The app lets users record income, expenses, operating costs, and track preventive maintenance, giving a clear picture of the driver's financial health. The project underwent a full refactor, migrating from Vue.js with plain CSS to a modern architecture using Expo, React Native, and TypeScript.",
     technologies: [
       'expo',
       'reactnative',
@@ -1429,11 +1414,7 @@ export const projectsDataEn: ProjectType[] = [
         name: 'Version 1.0 - Vue.js',
         description:
           'First version of the system built with Vue.js and plain CSS, focused on basic financial control features.',
-        technologies: [
-          'vuejs',
-          'typescript',
-          'css3',
-        ],
+        technologies: ['vuejs', 'typescript', 'css3'],
         features: [
           'Manual income and expense registration',
           'Basic financial control',
@@ -1477,8 +1458,7 @@ export const projectsDataEn: ProjectType[] = [
   },
   {
     title: 'CRM Splen',
-    description:
-      'CRM system for centralized lead and course sales management.',
+    description: 'CRM system for centralized lead and course sales management.',
     about:
       'Centralizes leads, automates sales processes, and provides performance reports. Implements a layered architecture with DTOs for validation, CI/CD with automated builds, and Docker for environment standardization.',
     technologies: [
@@ -1555,8 +1535,7 @@ export const projectsDataEn: ProjectType[] = [
   },
   {
     title: 'Rings of Power',
-    description:
-      'Ring customization e-commerce with an interactive interface.',
+    description: 'Ring customization e-commerce with an interactive interface.',
     about:
       'Allows visual product customization, inventory management, and order processing. Implements Repository Pattern, Zod validations, Vitest tests, and Swagger documentation. Containerized deployment with Docker.',
     technologies: [
@@ -1795,7 +1774,7 @@ export const projectsDataEn: ProjectType[] = [
 
   {
     title: 'Spotify Clone',
-    description: 'Replica of Spotify\'s interface and features.',
+    description: "Replica of Spotify's interface and features.",
     about:
       'Offers complex navigation, audio playback with state management, and a responsive interface. Backend with PostgreSQL and custom optimizations for music streaming.',
     images: projectImages.spotify,
@@ -1868,7 +1847,8 @@ export const projectsDataEn: ProjectType[] = [
 
   {
     title: 'Caputeeno',
-    description: 'Product e-commerce with a dynamic catalog, shopping cart, and GraphQL API integration.',
+    description:
+      'Product e-commerce with a dynamic catalog, shopping cart, and GraphQL API integration.',
     about:
       'E-commerce built with React, TypeScript, and Vite on the frontend, consuming a GraphQL API on the backend. Implements a product catalog with filters, lazy loading for performance, a shopping cart with state persistence, and a simplified checkout. Focus on UX best practices and loading optimizations.',
     images: projectImages.caputeeno,
@@ -1896,8 +1876,7 @@ export const projectsDataEn: ProjectType[] = [
   {
     title: 'Plann.er',
     favorite: false,
-    description:
-      'API for collaborative trip organization and management.',
+    description: 'API for collaborative trip organization and management.',
     about:
       'Provides well-documented APIs with Swagger, strict Zod validation, and standardized error handling. Facilitates collaborative planning and centralizes group trip information.',
     repositoryUrl: 'https://github.com/LucasLevingston/planner',
