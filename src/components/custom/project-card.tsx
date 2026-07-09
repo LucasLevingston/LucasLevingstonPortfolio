@@ -110,7 +110,7 @@ export default function ProjectCard({
   const previewImage = thumbnail || images?.[0]
 
   return (
-    <Card className="transition-shadow hover:shadow-md">
+    <Card className="transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
       <Section.Root id={title}>
         <Accordion
           className="w-full"
