@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import type { ComponentProps } from 'react'
-import { Link } from 'react-router-dom'
 import { Toggle } from '@/components/ui/toggle'
 import { cn } from '@/lib/utils/cn'
 
@@ -25,7 +25,7 @@ const defaultClassNameToggle =
 function CustomToggle({ href, className, ...props }: CustomToggleProps) {
   if (href) {
     return (
-      <Link className="cursor-pointer" target="_blank" to={href}>
+      <Link className="cursor-pointer" href={href} target="_blank">
         <Toggle className={cn(defaultClassNameToggle, className)} {...props} />
       </Link>
     )

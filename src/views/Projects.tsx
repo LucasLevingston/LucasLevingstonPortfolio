@@ -1,3 +1,5 @@
+'use client'
+
 import {
   ExternalLink,
   Filter,
@@ -11,10 +13,10 @@ import {
   Smartphone,
   X,
 } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 import type React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
 import Container from '@/components/custom/container'
 import { CustomBadge } from '@/components/custom/custom-badge'
 import { CustomButton } from '@/components/custom/custom-button'
@@ -38,7 +40,7 @@ import type { ProjectType } from '@/types/ProjectType'
 
 export const Projects: React.FC = () => {
   const { t, i18n } = useTranslation()
-  const location = useLocation()
+  const searchParams = useSearchParams()
   const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>([])
   const [filter, setFilter] = useState({
     selectedTechnologies: [] as string[],
@@ -95,15 +97,15 @@ export const Projects: React.FC = () => {
   }, [i18n.language, user.projects])
 
   useEffect(() => {
-    const search = location.search
+    const search = searchParams.toString()
     if (!search) {
       window.scrollTo(0, 0)
     }
     if (search) {
-      const element = document.getElementById(search.substring(1))
+      const element = document.getElementById(search)
       element?.scrollIntoView({ behavior: 'smooth' })
     }
-  }, [location.search])
+  }, [searchParams])
 
   useEffect(() => {
     const filtered = user.projects.filter(project => {

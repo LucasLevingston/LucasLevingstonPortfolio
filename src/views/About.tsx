@@ -1,4 +1,6 @@
-import { motion, useReducedMotion } from 'framer-motion'
+'use client'
+
+import { motion } from 'framer-motion'
 import parse from 'html-react-parser'
 import {
   Award,
@@ -23,9 +25,9 @@ import {
   User,
   Zap,
 } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
 import CarouselPagination from '@/components/custom/carousel-pagination'
 import Container from '@/components/custom/container'
 import Sidebar from '@/components/custom/custom-sidebar'
@@ -52,24 +54,20 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const
 export function About() {
   const { t, i18n } = useTranslation()
   const { user } = useUser()
-  const location = useLocation()
+  const searchParams = useSearchParams()
   const [currentCertificate, setCurrentCertificate] = useState<number>(0)
   const [api, setApi] = useState<CarouselApi>()
-  const reduceMotion = useReducedMotion()
 
-  const reveal = (index: number) =>
-    reduceMotion
-      ? {}
-      : {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          viewport: { once: true, amount: 0.2 },
-          transition: {
-            duration: 0.5,
-            delay: Math.min(index * 0.06, 0.3),
-            ease: EASE_OUT,
-          },
-        }
+  const reveal = (index: number) => ({
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.2 },
+    transition: {
+      duration: 0.5,
+      delay: Math.min(index * 0.06, 0.3),
+      ease: EASE_OUT,
+    },
+  })
 
   useEffect(() => {
     i18n.changeLanguage(i18n.language)
@@ -85,15 +83,15 @@ export function About() {
   }, [i18n.language, api])
 
   useEffect(() => {
-    const search = location.search
+    const search = searchParams.toString()
     if (!search) {
       window.scrollTo(0, 0)
     }
     if (search) {
-      const element = document.getElementById(search.substring(1))
+      const element = document.getElementById(search)
       element?.scrollIntoView({ behavior: 'smooth' })
     }
-  }, [location])
+  }, [searchParams])
 
   const getEducationStatusBadge = (formation: any) => {
     if (formation.graduated) {

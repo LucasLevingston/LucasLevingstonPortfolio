@@ -1,4 +1,6 @@
-import { motion, useReducedMotion } from 'framer-motion'
+'use client'
+
+import { motion } from 'framer-motion'
 import parse from 'html-react-parser'
 import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
@@ -16,16 +18,12 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const
 export function Home() {
   const { user } = useUser()
   const { t } = useTranslation()
-  const reduceMotion = useReducedMotion()
 
-  const rise = (delay: number) =>
-    reduceMotion
-      ? {}
-      : {
-          initial: { opacity: 0, y: 16 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.5, delay, ease: EASE_OUT },
-        }
+  const rise = (delay: number) => ({
+    initial: { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay, ease: EASE_OUT },
+  })
 
   return (
     <div className="min-h-screen p-4">
