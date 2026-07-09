@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "removeComments": true,
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -10,19 +9,31 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "allowJs": true,
     "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["node", "vite/client"],
-    "strictNullChecks": true
+    "types": ["node"],
+    "strictNullChecks": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
 }

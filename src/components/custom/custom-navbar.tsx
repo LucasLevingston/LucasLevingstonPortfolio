@@ -1,8 +1,9 @@
 import { Menu } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AiFillPhone, AiOutlineMail } from 'react-icons/ai'
-import { Link, useLocation } from 'react-router-dom'
 import Typewriter from 'typewriter-effect'
 import { generalImages } from '@/assets/images'
 import {
@@ -26,13 +27,13 @@ import SocialBar from './social-bar'
 
 export function Navbar() {
   const { t, i18n } = useTranslation()
-  const location = useLocation()
+  const pathname = usePathname()
   const [activeButton, setActiveButton] = useState<string>('/')
   const { user } = useUser()
 
   useEffect(() => {
-    setActiveButton(location.pathname)
-  }, [location.pathname, i18n.language])
+    setActiveButton(pathname)
+  }, [pathname, i18n.language])
 
   const project: {
     title: string
@@ -105,7 +106,7 @@ export function Navbar() {
               <NavigationMenuLink asChild>
                 <Link
                   className="flex h-full w-full select-none flex-col border-2 border-mainColor justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                  to={`/about?${t('about.technologiesTitle')}`}
+                  href={`/about?${t('about.technologiesTitle')}`}
                 >
                   <img
                     alt=""

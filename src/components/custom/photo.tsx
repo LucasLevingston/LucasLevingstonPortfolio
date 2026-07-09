@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { twMerge } from 'tailwind-merge'
 import { useUser } from '@/hooks/use-user'
 
@@ -10,7 +10,6 @@ const Photo = ({ className }: PhotoProps) => {
   const {
     user: { profilePicture },
   } = useUser()
-  const reduceMotion = useReducedMotion()
   return (
     <div
       className={twMerge(
@@ -52,18 +51,10 @@ const Photo = ({ className }: PhotoProps) => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <motion.circle
-            animate={
-              reduceMotion
-                ? { strokeDasharray: '16 25 92 72' }
-                : {
-                    strokeDasharray: [
-                      '15 120 25 25',
-                      '16 25 92 72',
-                      '4 250 22 22',
-                    ],
-                    rotate: [120, 360],
-                  }
-            }
+            animate={{
+              strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
+              rotate: [120, 360],
+            }}
             className="stroke-mainColor"
             cx="253"
             cy="253"
@@ -72,15 +63,11 @@ const Photo = ({ className }: PhotoProps) => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="4"
-            transition={
-              reduceMotion
-                ? { duration: 0.3 }
-                : {
-                    duration: 20,
-                    repeat: Number.POSITIVE_INFINITY,
-                    repeatType: 'reverse',
-                  }
-            }
+            transition={{
+              duration: 20,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: 'reverse',
+            }}
           />
         </motion.svg>
       </motion.div>

@@ -1,3 +1,5 @@
+'use client'
+
 import { useReducedMotion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 import Particles from 'react-tsparticles'

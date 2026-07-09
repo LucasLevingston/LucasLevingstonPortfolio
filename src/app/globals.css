@@ -1,16 +1,10 @@
 @import "tailwindcss";
-@import "@fontsource/geist-sans/latin-400.css";
-@import "@fontsource/geist-sans/latin-500.css";
-@import "@fontsource/geist-sans/latin-600.css";
-@import "@fontsource/geist-sans/latin-700.css";
-@import "@fontsource/geist-sans/latin-800.css";
-@import "@fontsource-variable/geist-mono";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

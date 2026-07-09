@@ -1,4 +1,6 @@
-import { motion, useReducedMotion } from 'framer-motion'
+'use client'
+
+import { motion } from 'framer-motion'
 import parse from 'html-react-parser'
 import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
@@ -16,26 +18,22 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const
 export function Home() {
   const { user } = useUser()
   const { t } = useTranslation()
-  const reduceMotion = useReducedMotion()
 
-  const rise = (delay: number) =>
-    reduceMotion
-      ? {}
-      : {
-          initial: { opacity: 0, y: 16 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.5, delay, ease: EASE_OUT },
-        }
+  const rise = (delay: number) => ({
+    initial: { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay, ease: EASE_OUT },
+  })
 
   return (
     <div className="min-h-screen p-4">
       <Header />
       <div className="container mx-auto px-4 py-10 md:py-12 lg:py-16">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex flex-col justify-between items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
           <motion.div {...rise(0)}>
             <Photo className="h-[200px] w-[200px] sm:h-[280px] sm:w-[280px] lg:h-[360px] lg:w-[360px]" />
           </motion.div>
-          <div className="max-w-2xl text-center lg:text-left">
+          <div className="max-w-5xl text-center lg:text-left">
             <motion.span
               {...rise(0.1)}
               className="mb-2 inline-block font-mono text-base text-mainColor sm:text-lg"

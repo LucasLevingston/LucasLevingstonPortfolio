@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import { type ComponentProps } from 'react'
-import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn'
 
@@ -28,8 +28,8 @@ function CustomButton({ href, target, ...props }: CustomButtonProps) {
     return (
       <Link
         className="cursor-pointer"
+        href={href}
         target={target || 'noopener noreferrer'}
-        to={href}
       >
         <Button
           {...props}
