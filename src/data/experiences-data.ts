@@ -2,6 +2,27 @@ import { ExperienceType } from '../types/ExperienceType'
 
 export const experiencesDataBr: ExperienceType[] = [
   {
+    enterprise: 'Compass UOL',
+    location: 'Remoto',
+    startsDate: '07/2026',
+    endsDate: 'Atual',
+    role: 'Desenvolvedor Front-End',
+    features: [
+      'Desenvolvimento e manutenção de aplicações web utilizando <span className="highlight">React.js</span>, <span className="highlight">Next.js</span> e <span className="highlight">TypeScript</span>',
+      'Implementação de interfaces modernas, responsivas e acessíveis com <span className="highlight">Tailwind CSS</span>, seguindo Design Systems e boas práticas de UI/UX',
+      'Consumo e integração de APIs RESTful com foco em escalabilidade e performance',
+      'Aplicação de princípios <span className="highlight">SOLID</span>, <span className="highlight">Clean Code</span> e arquitetura front-end escalável, incluindo <span className="highlight">micro-frontends</span>',
+      'Gerenciamento de estado com <span className="highlight">Redux</span> e uso avançado de <span className="highlight">React Hooks</span> (useMemo, useCallback, useEffect, hooks customizados)',
+      'Otimização de <span className="highlight">performance</span> com estratégias de <span className="highlight">cache</span>, memoization, code splitting e lazy loading',
+      'Implementação de <span className="highlight">testes</span> unitários e de integração para garantir qualidade e confiabilidade do código',
+      'Tipagem estática com <span className="highlight">TypeScript</span>, elevando segurança e manutenibilidade do código',
+      'Colaboração em equipes ágeis utilizando Git, Code Review e metodologias Scrum/Kanban',
+      'Atuação na correção de bugs, implementação de novas funcionalidades e melhoria contínua da experiência do usuário',
+      'Desenvolvimento com foco em qualidade, performance e manutenibilidade do código',
+    ],
+  },
+
+  {
     enterprise: 'Freelancer Full-Stack',
     location: 'Remoto',
     startsDate: '01/2023',
@@ -50,6 +71,27 @@ export const experiencesDataBr: ExperienceType[] = [
 ]
 
 export const experiencesDataEn: ExperienceType[] = [
+  {
+    enterprise: 'Compass UOL',
+    location: 'Remote',
+    startsDate: '07/2026',
+    endsDate: 'Present',
+    role: 'Front-End Developer',
+    features: [
+      'Development and maintenance of web applications using <span className="highlight">React.js</span>, <span className="highlight">Next.js</span>, and <span className="highlight">TypeScript</span>',
+      'Implementation of modern, responsive, and accessible interfaces with <span className="highlight">Tailwind CSS</span>, following Design Systems and UI/UX best practices',
+      'Consumption and integration of RESTful APIs focused on scalability and performance',
+      'Application of <span className="highlight">SOLID</span> principles, <span className="highlight">Clean Code</span>, and scalable front-end architecture, including <span className="highlight">micro-frontends</span>',
+      'State management with <span className="highlight">Redux</span> and advanced use of <span className="highlight">React Hooks</span> (useMemo, useCallback, useEffect, custom hooks)',
+      'Performance optimization with <span className="highlight">caching</span> strategies, memoization, code splitting, and lazy loading',
+      'Implementation of unit and integration <span className="highlight">tests</span> to ensure code quality and reliability',
+      'Static typing with <span className="highlight">TypeScript</span>, improving code safety and maintainability',
+      'Collaboration in agile teams using Git, Code Review, and Scrum/Kanban methodologies',
+      'Bug fixing, new feature implementation, and continuous improvement of user experience',
+      'Development focused on code quality, performance, and maintainability',
+    ],
+  },
+
   {
     enterprise: 'Full-Stack Freelancer',
     location: 'Remote',
