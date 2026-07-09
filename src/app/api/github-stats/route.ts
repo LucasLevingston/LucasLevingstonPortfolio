@@ -1,8 +1,8 @@
+import { env } from '@/env'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const token = process.env.GITHUB_TOKEN
-  const user = process.env.GITHUB_USER
+  const { NEXT_GITHUB_TOKEN: token, NEXT_GITHUB_USER: user } = env
 
   if (!(token && user)) {
     return NextResponse.json({ totalCommits: 0 })
