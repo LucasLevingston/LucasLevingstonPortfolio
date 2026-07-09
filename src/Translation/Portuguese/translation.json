@@ -43,6 +43,8 @@
   "projects.clear": "Limpar",
   "projects.search": "Pesquisar por nome...",
   "projects.hasImage": "Possui imagem",
+  "projects.backToProjects": "Voltar para projetos",
+  "projects.notFound": "Projeto não encontrado",
 
   "projectCard.technologiesUsed": "Tecnologias Utilizadas",
   "projectCard.viewGitHub": "Ver GitHub",

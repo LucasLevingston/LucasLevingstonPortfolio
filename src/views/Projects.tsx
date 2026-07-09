@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import {
   ExternalLink,
   Filter,
@@ -15,7 +16,7 @@ import {
 } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import type React from 'react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Container from '@/components/custom/container'
 import { CustomBadge } from '@/components/custom/custom-badge'
@@ -38,10 +39,16 @@ import { useUser } from '@/hooks/use-user'
 import { getTechnologyData } from '@/lib/utils/getTechnologyData'
 import type { ProjectType } from '@/types/ProjectType'
 
+const INITIAL_VISIBLE = 6
+const LOAD_STEP = 6
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
+
 export const Projects: React.FC = () => {
   const { t, i18n } = useTranslation()
   const searchParams = useSearchParams()
   const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>([])
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE)
+  const sentinelRef = useRef<HTMLDivElement>(null)
   const [filter, setFilter] = useState({
     selectedTechnologies: [] as string[],
     hasImage: false,
@@ -142,7 +149,39 @@ export const Projects: React.FC = () => {
       )
     })
     setFilteredProjects(filtered)
+    setVisibleCount(INITIAL_VISIBLE)
   }, [filter, user.projects])
+
+  useEffect(() => {
+    const node = sentinelRef.current
+    if (!node) {
+      return
+    }
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount(prev =>
+            Math.min(prev + LOAD_STEP, filteredProjects.length)
+          )
+        }
+      },
+      { rootMargin: '200px' }
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [filteredProjects.length])
+
+  const visibleProjects = filteredProjects.slice(0, visibleCount)
+
+  const reveal = (index: number) => ({
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: {
+      duration: 0.4,
+      delay: Math.min(index * 0.06, 0.3),
+      ease: EASE_OUT,
+    },
+  })
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value
@@ -424,13 +463,19 @@ export const Projects: React.FC = () => {
               </Card>
               <div className="space-y-4">
                 {filteredProjects.length > 0 ? (
-                  filteredProjects.map(project => (
-                    <ProjectCard
-                      allProjects={user.projects}
-                      key={project.title}
-                      project={project}
-                    />
-                  ))
+                  <>
+                    {visibleProjects.map((project, index) => (
+                      <motion.div key={project.title} {...reveal(index)}>
+                        <ProjectCard
+                          allProjects={user.projects}
+                          project={project}
+                        />
+                      </motion.div>
+                    ))}
+                    {visibleCount < filteredProjects.length && (
+                      <div className="h-1 w-full" ref={sentinelRef} />
+                    )}
+                  </>
                 ) : (
                   <Card className="border-mainBorder dark:border-main-border-dark">
                     <CardContent className="pt-6">

@@ -44,6 +44,8 @@
   "projects.clear": "Clear",
 
   "projects.hasImage": "Has image",
+  "projects.backToProjects": "Back to projects",
+  "projects.notFound": "Project not found",
 
   "projectCard.technologiesUsed": "Technologies Used",
   "projectCard.viewGitHub": "View GitHub",
