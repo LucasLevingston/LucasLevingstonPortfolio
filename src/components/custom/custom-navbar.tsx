@@ -111,6 +111,8 @@ export function Navbar() {
                   <img
                     alt=""
                     className="rounded-full"
+                    decoding="async"
+                    loading="lazy"
                     src={generalImages.logo || '/placeholder.svg'}
                   />
                   <div className="mb-2 mt-4 text-lg font-medium">

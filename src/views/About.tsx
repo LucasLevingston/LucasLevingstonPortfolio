@@ -209,6 +209,8 @@ export function About() {
                       <img
                         alt={`${experience.enterprise} logo`}
                         className="absolute top-6 right-6 h-12 w-12 object-contain rounded-md bg-white p-1"
+                        decoding="async"
+                        loading="lazy"
                         src={experience.logo}
                       />
                     )}
@@ -432,6 +434,8 @@ export function About() {
                                   <img
                                     alt={certificate.title}
                                     className="h-full w-full rounded-lg object-contain"
+                                    decoding="async"
+                                    loading="lazy"
                                     src={certificate.image}
                                   />
                                 </div>
