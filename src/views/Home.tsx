@@ -29,11 +29,11 @@ export function Home() {
     <div className="min-h-screen p-4">
       <Header />
       <div className="container mx-auto px-4 py-10 md:py-12 lg:py-16">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex flex-col justify-between items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
           <motion.div {...rise(0)}>
             <Photo className="h-[200px] w-[200px] sm:h-[280px] sm:w-[280px] lg:h-[360px] lg:w-[360px]" />
           </motion.div>
-          <div className="max-w-2xl text-center lg:text-left">
+          <div className="max-w-5xl text-center lg:text-left">
             <motion.span
               {...rise(0.1)}
               className="mb-2 inline-block font-mono text-base text-mainColor sm:text-lg"
