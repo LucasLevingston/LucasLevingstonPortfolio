@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/geist-mono": "^5.2.8",
+    "@fontsource/geist-sans": "^5.2.5",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.14",
@@ -50,8 +52,6 @@
     "react-tsparticles": "^2.12.2",
     "react-zoom-pan-pinch": "^3.7.0",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-animated": "^2.0.0",
     "typewriter-effect": "^2.21.0",
     "zustand": "^5.0.1"
   },
@@ -63,7 +63,6 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
-    "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.6.3",
     "ultracite": "5.1.2",

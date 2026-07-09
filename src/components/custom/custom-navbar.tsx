@@ -99,7 +99,7 @@ export function Navbar() {
         >
           <NavigationMenuTrigger>{t('navbar.about')}</NavigationMenuTrigger>
         </CustomButton>
-        <NavigationMenuContent className="dark:bg-biobg-Color">
+        <NavigationMenuContent className="dark:bg-bioBgColor">
           <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[300px] lg:grid-cols-[.75fr_1fr]">
             <li className="row-span-3">
               <NavigationMenuLink asChild>
@@ -123,7 +123,7 @@ export function Navbar() {
             </li>
             {aboutSections.map(section => (
               <ListItem
-                className="bg-main border-[2px] border-mainColor bgmainColor hover:bg-transparent hover:text-aboutbg-Color dark:hover:text-mainTextColor"
+                className="border-2 border-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
                 href="/about?"
                 key={section.title}
                 title={section.title}
@@ -161,7 +161,7 @@ export function Navbar() {
         >
           <NavigationMenuTrigger>{t('navbar.projects')}</NavigationMenuTrigger>
         </CustomButton>
-        <NavigationMenuContent className="dark:bg-biobg-Color">
+        <NavigationMenuContent className="dark:bg-bioBgColor">
           <ul className="grid w-[400px] gap-1 p-4 md:w-[500px] md:grid-cols-2 lg:w-[300px]">
             {project.map(({ title, description }) => {
               return (
@@ -191,7 +191,7 @@ export function Navbar() {
             </CustomButton>
           </SheetTrigger>
           <SheetContent
-            className="w-[80%] dark:bg-biobg-Color sm:w-[350px]"
+            className="w-[80%] dark:bg-bioBgColor sm:w-[350px]"
             side="right"
           >
             <div className="">

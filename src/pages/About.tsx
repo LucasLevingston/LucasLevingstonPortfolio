@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from 'framer-motion'
 import parse from 'html-react-parser'
 import {
   Award,
@@ -46,12 +47,29 @@ import { useUser } from '@/hooks/use-user'
 import { cn } from '@/lib/utils/cn'
 import { formationStatus } from '@/types/FormationType'
 
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
+
 export function About() {
   const { t, i18n } = useTranslation()
   const { user } = useUser()
   const location = useLocation()
   const [currentCertificate, setCurrentCertificate] = useState<number>(0)
   const [api, setApi] = useState<CarouselApi>()
+  const reduceMotion = useReducedMotion()
+
+  const reveal = (index: number) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true, amount: 0.2 },
+          transition: {
+            duration: 0.5,
+            delay: Math.min(index * 0.06, 0.3),
+            ease: EASE_OUT,
+          },
+        }
 
   useEffect(() => {
     i18n.changeLanguage(i18n.language)
@@ -73,7 +91,6 @@ export function About() {
     }
     if (search) {
       const element = document.getElementById(search.substring(1))
-      console.log(element)
       element?.scrollIntoView({ behavior: 'smooth' })
     }
   }, [location])
@@ -138,60 +155,31 @@ export function About() {
               <User className="h-5 w-5 !text-mainColor" />
               {t('about.personalInfo')}
             </Section.Title>
-            <Section.Content className="grid gap-6 md:grid-cols-2">
-              <Card>
-                <CardContent className="space-y-4 pt-6">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 !text-mainColor" />
-                    <div>
-                      <p className="mb-1 text-base font-medium tracking-wide !text-mainColor dark:!text-mainColor">
-                        {t('about.location')}
-                      </p>
-                      <p className="text-base text-foreground">
-                        {user.location}
-                      </p>
-                    </div>
+            <Section.Content className="grid gap-x-8 gap-y-5 divide-y divide-border sm:grid-cols-2 sm:divide-y-0">
+              {[
+                {
+                  icon: MapPin,
+                  label: t('about.location'),
+                  value: user.location,
+                },
+                {
+                  icon: MapPin,
+                  label: t('about.address'),
+                  value: user.address,
+                },
+                { icon: Mail, label: t('about.email'), value: user.email },
+                { icon: Phone, label: t('about.phone'), value: user.phone },
+              ].map(item => (
+                <div className="flex items-center gap-3" key={item.label}>
+                  <item.icon className="h-4 w-4 shrink-0 !text-mainColor" />
+                  <div>
+                    <p className="mb-1 text-sm font-medium tracking-wide text-muted-foreground">
+                      {item.label}
+                    </p>
+                    <p className="text-base text-foreground">{item.value}</p>
                   </div>
-
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 !text-mainColor" />
-
-                    <div>
-                      <p className="mb-1 text-base font-medium tracking-wide !text-mainColor dark:!text-mainColor">
-                        {t('about.address')}
-                      </p>
-                      <p className="text-base text-foreground">
-                        {user.address}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="space-y-4 pt-6">
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 !text-mainColor" />
-                    <div>
-                      <p className="mb-1 text-base font-medium tracking-wide !text-mainColor dark:!text-mainColor">
-                        {t('about.email')}
-                      </p>
-                      <p className="text-base text-foreground">{user.email}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 !text-mainColor" />
-
-                    <div>
-                      <p className="mb-1 text-base font-medium tracking-wide !text-mainColor dark:!text-mainColor">
-                        {t('about.phone')}
-                      </p>
-                      <p className="text-base text-foreground">{user.phone}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+              ))}
             </Section.Content>
           </Section.Root>
 
@@ -217,66 +205,65 @@ export function About() {
 
             <Section.Content className="flex flex-col gap-2">
               {user.experiences.map((experience, index) => (
-                <Card
-                  className="relative transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
-                  key={index}
-                >
-                  {experience.logo && (
-                    <img
-                      alt={`${experience.enterprise} logo`}
-                      className="absolute top-6 right-6 h-12 w-12 object-contain rounded-md bg-white p-1"
-                      src={experience.logo}
-                    />
-                  )}
-                  <CardHeader className="p-0 gap-4 flex flex-col">
-                    <Section.Title className="flex items-center gap-2">
-                      <Briefcase className="h-4 w-4 !text-mainColor" />
-                      <h3 className="text-lg font-semibold text-foreground">
-                        {experience.role}
-                      </h3>
-                    </Section.Title>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-4 text-base !text-mainColor dark:!text-mainColor">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          <span>
-                            {t('about.start')}: {experience.startsDate} -{' '}
-                            {t('about.end')}: {experience.endsDate}
+                <motion.div key={index} {...reveal(index)}>
+                  <Card className="relative transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+                    {experience.logo && (
+                      <img
+                        alt={`${experience.enterprise} logo`}
+                        className="absolute top-6 right-6 h-12 w-12 object-contain rounded-md bg-white p-1"
+                        src={experience.logo}
+                      />
+                    )}
+                    <CardHeader className="p-0 gap-4 flex flex-col">
+                      <Section.Title className="flex items-center gap-2">
+                        <Briefcase className="h-4 w-4 !text-mainColor" />
+                        <h3 className="text-lg font-semibold text-foreground">
+                          {experience.role}
+                        </h3>
+                      </Section.Title>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-4 text-base !text-mainColor dark:!text-mainColor">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            <span>
+                              {t('about.start')}: {experience.startsDate} -{' '}
+                              {t('about.end')}: {experience.endsDate}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="h-3 w-3" />
+                            <span>{experience.location}</span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <Building2 className="h-4 w-4 !text-mainColor" />
+                          <span className="text-base text-foreground">
+                            {t('about.enterprise')}:{' '}
+                            <span className="font-medium !text-mainColor dark:!text-mainColor">
+                              {experience.enterprise}
+                            </span>
                           </span>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-3 w-3" />
-                          <span>{experience.location}</span>
+
+                        <div className="rounded-lg border-l-4 border-mainColor p-4">
+                          <ul className="list-disc ml-5 space-y-1">
+                            {experience.features.map((feature, idx) => (
+                              <li
+                                className="text-base leading-relaxed text-foreground"
+                                key={idx}
+                              >
+                                {parse(feature)}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-
-                      <div className="flex items-center gap-2">
-                        <Building2 className="h-4 w-4 !text-mainColor" />
-                        <span className="text-base text-foreground">
-                          {t('about.enterprise')}:{' '}
-                          <span className="font-medium !text-mainColor dark:!text-mainColor">
-                            {experience.enterprise}
-                          </span>
-                        </span>
-                      </div>
-
-                      <div className="rounded-lg border-l-4 border-mainColor p-4">
-                        <ul className="list-disc ml-5 space-y-1">
-                          {experience.features.map((feature, idx) => (
-                            <li
-                              className="text-base leading-relaxed text-foreground"
-                              key={idx}
-                            >
-                              {parse(feature)}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </Section.Content>
           </Section.Root>
@@ -288,105 +275,104 @@ export function About() {
             </Section.Title>
             <Section.Content className="space-y-4">
               {user.formations.map((formation, index) => (
-                <Card
-                  className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
-                  key={index}
-                >
-                  <CardHeader className="p-0">
-                    <div className="flex w-full items-start justify-between gap-4">
-                      <div className="flex flex-1 items-center gap-3">
-                        <div className="rounded-lg">
-                          <BookOpen className="h-4 w-4 text-mainColor" />
-                        </div>
-                        <h3 className="flex-1 text-lg font-semibold text-foreground">
-                          {formation.title}
-                        </h3>
-                      </div>
-                      {getEducationStatusBadge(formation)}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3 rounded-lg">
-                        <Building2 className="h-4 w-4 !text-mainColor" />
-                        <span className="text-base font-medium text-foreground">
-                          {formation.institution}
-                        </span>
-                      </div>
-
-                      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                        <div className="flex items-center gap-3 rounded-lg">
-                          <Calendar className="h-4 w-4 !text-mainColor" />
-                          <div>
-                            <span className="block text-base font-medium tracking-wide">
-                              {t('about.period')}
-                            </span>
-                            <span className="text-base text-foreground">
-                              {formation.startsDate} - {formation.endsDate}
-                            </span>
+                <motion.div key={index} {...reveal(index)}>
+                  <Card className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+                    <CardHeader className="p-0">
+                      <div className="flex w-full items-start justify-between gap-4">
+                        <div className="flex flex-1 items-center gap-3">
+                          <div className="rounded-lg">
+                            <BookOpen className="h-4 w-4 text-mainColor" />
                           </div>
+                          <h3 className="flex-1 text-lg font-semibold text-foreground">
+                            {formation.title}
+                          </h3>
+                        </div>
+                        {getEducationStatusBadge(formation)}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-3 rounded-lg">
+                          <Building2 className="h-4 w-4 !text-mainColor" />
+                          <span className="text-base font-medium text-foreground">
+                            {formation.institution}
+                          </span>
                         </div>
 
-                        {formation.duration && (
-                          <div className="flex items-center gap-3 rounded-lg p-3">
-                            <Clock className="h-4 w-4 !text-mainColor" />
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                          <div className="flex items-center gap-3 rounded-lg">
+                            <Calendar className="h-4 w-4 !text-mainColor" />
                             <div>
                               <span className="block text-base font-medium tracking-wide">
-                                {t('about.duration')}
+                                {t('about.period')}
                               </span>
                               <span className="text-base text-foreground">
-                                {formation.duration}
+                                {formation.startsDate} - {formation.endsDate}
                               </span>
                             </div>
                           </div>
-                        )}
-                      </div>
 
-                      <div
-                        className={cn(
-                          'rounded-lg border-l-4 p-4',
-                          formation.currentStatus ===
-                            formationStatus.COMPLETED && 'border-green-500',
-                          formation.currentStatus ===
-                            formationStatus.DEFERRED && 'border-red-500',
-                          formation.currentStatus ===
-                            formationStatus.IN_PROGRESS && 'border-blue-500'
-                        )}
-                      >
-                        {' '}
-                        <div className="flex items-center gap-2">
-                          <Zap className="h-4 w-4 !text-mainColor" />
-                          <span className="text-base font-medium tracking-wide underline">
-                            {t('about.currentStatus')}:
+                          {formation.duration && (
+                            <div className="flex items-center gap-3 rounded-lg p-3">
+                              <Clock className="h-4 w-4 !text-mainColor" />
+                              <div>
+                                <span className="block text-base font-medium tracking-wide">
+                                  {t('about.duration')}
+                                </span>
+                                <span className="text-base text-foreground">
+                                  {formation.duration}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        <div
+                          className={cn(
+                            'rounded-lg border-l-4 p-4',
+                            formation.currentStatus ===
+                              formationStatus.COMPLETED && 'border-green-500',
+                            formation.currentStatus ===
+                              formationStatus.DEFERRED && 'border-red-500',
+                            formation.currentStatus ===
+                              formationStatus.IN_PROGRESS && 'border-blue-500'
+                          )}
+                        >
+                          {' '}
+                          <div className="flex items-center gap-2">
+                            <Zap className="h-4 w-4 !text-mainColor" />
+                            <span className="text-base font-medium tracking-wide underline">
+                              {t('about.currentStatus')}:
+                            </span>
+                          </div>
+                          <span className="mt-1 block text-base">
+                            {formation.currentStatus ===
+                              formationStatus.COMPLETED && (
+                              <span className="flex items-center gap-2 font-medium text-green-600">
+                                <Trophy className="h-4 w-4" />
+                                {t('about.completedSuccessfully')}
+                              </span>
+                            )}
+                            {formation.currentStatus ===
+                              formationStatus.DEFERRED && (
+                              <span className="flex items-center gap-2 font-medium text-red-600">
+                                <PauseCircle className="h-4 w-4" />
+                                {t('about.deferred')}
+                              </span>
+                            )}
+                            {formation.currentStatus ===
+                              formationStatus.IN_PROGRESS && (
+                              <span className="flex items-center gap-2 font-medium text-blue-600">
+                                <PlayCircle className="h-4 w-4" />
+                                {t('about.inProgress')}
+                              </span>
+                            )}
                           </span>
                         </div>
-                        <span className="mt-1 block text-base">
-                          {formation.currentStatus ===
-                            formationStatus.COMPLETED && (
-                            <span className="flex items-center gap-2 font-medium text-green-600">
-                              <Trophy className="h-4 w-4" />
-                              {t('about.completedSuccessfully')}
-                            </span>
-                          )}
-                          {formation.currentStatus ===
-                            formationStatus.DEFERRED && (
-                            <span className="flex items-center gap-2 font-medium text-red-600">
-                              <PauseCircle className="h-4 w-4" />
-                              {t('about.deferred')}
-                            </span>
-                          )}
-                          {formation.currentStatus ===
-                            formationStatus.IN_PROGRESS && (
-                            <span className="flex items-center gap-2 font-medium text-blue-600">
-                              <PlayCircle className="h-4 w-4" />
-                              {t('about.inProgress')}
-                            </span>
-                          )}
-                        </span>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </Section.Content>
           </Section.Root>
@@ -479,55 +465,56 @@ export function About() {
               {t('about.recommendationsTitle')}
             </Section.Title>
             <Section.Content className="space-y-4">
-              {user.recomendations.map(recomendation => (
-                <Card
-                  className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
-                  key={recomendation.date}
-                >
-                  <CardHeader className="p-0">
-                    <div className="flex items-center gap-4">
-                      <SectionItem.Avatar
-                        imageUrl={recomendation.linkedinImageUrl}
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-foreground">
-                          {recomendation.name}
-                        </h3>
-                        <p className="text-base !text-mainColor dark:!text-mainColor">
-                          {recomendation.position}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <ExternalLink className="h-4 w-4 !text-mainColor" />
-                        <SectionItem.LinkedIn recommendation={recomendation} />
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2">
-                        <Building2 className="h-4 w-4 !text-mainColor" />
-                        <p className="text-base font-medium text-foreground">
-                          {recomendation.company}
-                        </p>
-                      </div>
-                      <div className="rounded-lg border-l-4 p-4 border-mainColor">
-                        <div className="mb-2 flex items-center gap-2">
-                          <Calendar className="h-4 w-4 !text-mainColor" />
-                          <p className="text-base font-medium tracking-wide !text-mainColor dark:!text-mainColor">
-                            {recomendation.date}
+              {user.recomendations.map((recomendation, index) => (
+                <motion.div key={recomendation.date} {...reveal(index)}>
+                  <Card className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+                    <CardHeader className="p-0">
+                      <div className="flex items-center gap-4">
+                        <SectionItem.Avatar
+                          imageUrl={recomendation.linkedinImageUrl}
+                        />
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-foreground">
+                            {recomendation.name}
+                          </h3>
+                          <p className="text-base !text-mainColor dark:!text-mainColor">
+                            {recomendation.position}
                           </p>
                         </div>
-                        <div className="flex gap-2">
-                          <MessageSquare className="mt-1 h-4 w-4 flex-shrink-0 !text-mainColor" />
-                          <p className="text-base italic leading-relaxed text-foreground">
-                            "{recomendation.comments}"
-                          </p>
+                        <div className="flex items-center gap-2">
+                          <ExternalLink className="h-4 w-4 !text-mainColor" />
+                          <SectionItem.LinkedIn
+                            recommendation={recomendation}
+                          />
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <Building2 className="h-4 w-4 !text-mainColor" />
+                          <p className="text-base font-medium text-foreground">
+                            {recomendation.company}
+                          </p>
+                        </div>
+                        <div className="rounded-lg border-l-4 p-4 border-mainColor">
+                          <div className="mb-2 flex items-center gap-2">
+                            <Calendar className="h-4 w-4 !text-mainColor" />
+                            <p className="text-base font-medium tracking-wide !text-mainColor dark:!text-mainColor">
+                              {recomendation.date}
+                            </p>
+                          </div>
+                          <div className="flex gap-2">
+                            <MessageSquare className="mt-1 h-4 w-4 flex-shrink-0 !text-mainColor" />
+                            <p className="text-base italic leading-relaxed text-foreground">
+                              "{recomendation.comments}"
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </Section.Content>
           </Section.Root>
@@ -538,26 +525,18 @@ export function About() {
               {t('about.languagesTitle')}
             </Section.Title>
             <Section.Content>
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="space-y-3">
-                    {user.languages && (
-                      <div className="grid gap-3">
-                        {user.languages.map((lang, idx) => (
-                          <div className="flex items-center gap-3" key={idx}>
-                            <Badge className="border-mainColor bg-mainColor/10 text-base text-foreground">
-                              {lang.language}
-                            </Badge>
-                            <p className="text-base text-foreground">
-                              {lang.type}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+              {user.languages && (
+                <div className="flex flex-wrap gap-x-6 gap-y-3">
+                  {user.languages.map((lang, idx) => (
+                    <div className="flex items-center gap-3" key={idx}>
+                      <Badge className="border-mainColor bg-mainColor/10 text-base text-foreground">
+                        {lang.language}
+                      </Badge>
+                      <p className="text-base text-foreground">{lang.type}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </Section.Content>
           </Section.Root>
 
@@ -566,21 +545,18 @@ export function About() {
               <Heart className="h-5 w-5 !text-mainColor" />
               {'Soft Skills'}
             </Section.Title>
-            <Section.Content className="grid gap-4 md:grid-cols-2">
-              {user.softSkills.map((skill, index) => (
-                <Card className="transition-shadow hover:shadow-md" key={index}>
-                  <CardContent className="pt-6">
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-lg ">
-                        <Lightbulb className="h-4 w-4 !text-mainColor" />
-                      </div>
-                      <p className="text-base font-medium text-foreground">
-                        {skill}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            <Section.Content>
+              <div className="flex flex-wrap gap-2">
+                {user.softSkills.map((skill, index) => (
+                  <Badge
+                    className="gap-1.5 border-mainColor bg-mainColor/10 py-1.5 text-sm text-foreground"
+                    key={index}
+                  >
+                    <Lightbulb className="h-3.5 w-3.5 !text-mainColor" />
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
             </Section.Content>
           </Section.Root>
         </div>

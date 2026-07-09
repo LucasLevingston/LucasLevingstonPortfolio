@@ -1,8 +1,16 @@
 @import "tailwindcss";
+@import "@fontsource/geist-sans/latin-400.css";
+@import "@fontsource/geist-sans/latin-500.css";
+@import "@fontsource/geist-sans/latin-600.css";
+@import "@fontsource/geist-sans/latin-700.css";
+@import "@fontsource/geist-sans/latin-800.css";
+@import "@fontsource-variable/geist-mono";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -109,21 +117,6 @@
   --sidebar-ring: oklch(0.637 0.237 25.331);
 }
 
-/* @theme {
-  --color-mainColor: #ff2200;
-  --color-lightMainColor: #dc2626;
-  --color-mainBorder: #fecaca;
-  --color-mainColorDark: #991b1b;
-  --color-lightMainColorDark: #450a0a;
-  --color-mainBorderDark: #7f1d1d;
-  --color-mainTextColor: #fff;
-  --color-borderColor: #434040;
-  --color-bioBgColor: #212121;
-  --color-bioBorderColor: #ffffff;
-  --color-aboutBgColor: #131212;
-  --color-lightBlue: #35DCFA;
-} */
-
 @theme {
   --color-mainColor: #2563eb;
   --color-lightMainColor: #3b82f6;
@@ -144,10 +137,41 @@
   }
 
   body {
-    @apply bg-sidebar-accent text-foreground;
+    @apply bg-sidebar-accent font-sans text-foreground;
   }
   .highlight {
-    @apply font-bold;
+    @apply font-semibold;
     color: var(--color-mainColor);
   }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@theme {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 }

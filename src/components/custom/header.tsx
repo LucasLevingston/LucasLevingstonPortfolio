@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Typewriter from 'typewriter-effect'
 import 'flag-icons/css/flag-icons.min.css'
 import { useTranslation } from 'react-i18next'
 import { Navbar } from './custom-navbar'
@@ -12,34 +11,12 @@ export default function Header() {
   }, [i18n.language])
 
   return (
-    <div className="py-4 xl:py-8">
-      <div className="container mx-auto flex items-center justify-between">
-        <div>
-          <div className="flex justify-between">
-            <h1 className="text-4xl font-bold">
-              Lucas
-              <span className="text-3xl !text-mainColor">.dev</span>
-            </h1>
-          </div>
-          <div className="font-bold !text-mainColor">
-            <Typewriter
-              onInit={typewriter => {
-                typewriter
-                  .typeString('Full-Stack Developer')
-                  .pauseFor(5000)
-                  .deleteChars(20)
-                  .typeString('Front-End Developer')
-                  .pauseFor(5000)
-                  .deleteChars(19)
-                  .typeString('Back-End Developer')
-                  .pauseFor(5000)
-                  .deleteChars(18)
-                  .typeString('Full-Stack Developer')
-                  .start()
-              }}
-            />
-          </div>
-        </div>
+    <div className="py-4 xl:py-6">
+      <div className="container mx-auto flex h-14 items-center justify-between">
+        <h1 className="text-2xl font-bold tracking-tight">
+          Lucas
+          <span className="!text-mainColor">.dev</span>
+        </h1>
 
         <Navbar />
       </div>

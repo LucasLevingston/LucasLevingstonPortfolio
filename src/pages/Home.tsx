@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from 'framer-motion'
 import parse from 'html-react-parser'
 import { useTranslation } from 'react-i18next'
 import Typewriter from 'typewriter-effect'
@@ -10,17 +11,35 @@ import LanguageToggle from '@/components/toggles/LanguageToggle'
 import { ModeToggle } from '@/components/toggles/ModeToggle'
 import { useUser } from '@/hooks/use-user'
 
+const EASE_OUT = [0.16, 1, 0.3, 1] as const
+
 export function Home() {
   const { user } = useUser()
   const { t } = useTranslation()
+  const reduceMotion = useReducedMotion()
+
+  const rise = (delay: number) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 16 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.5, delay, ease: EASE_OUT },
+        }
+
   return (
     <div className="min-h-screen p-4">
       <Header />
-      <div className="container mx-auto px-4 py-8 md:py-6 lg:py-8 xl:py-12">
-        <div className="flex flex-col items-center justify-between gap-8 lg:flex-row lg:items-start">
-          <Photo className="h-[200px] w-[200px] sm:h-[300px] sm:w-[300px] lg:h-[400px] lg:w-[400px] xl:h-[506px] xl:w-[506px]" />
+      <div className="container mx-auto px-4 py-10 md:py-12 lg:py-16">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
+          <motion.div {...rise(0)}>
+            <Photo className="h-[200px] w-[200px] sm:h-[280px] sm:w-[280px] lg:h-[360px] lg:w-[360px]" />
+          </motion.div>
           <div className="max-w-2xl text-center lg:text-left">
-            <span className="mb-2 inline-block text-lg sm:text-xl">
+            <motion.span
+              {...rise(0.1)}
+              className="mb-2 inline-block font-mono text-base text-mainColor sm:text-lg"
+            >
               <Typewriter
                 onInit={typewriter => {
                   typewriter
@@ -37,23 +56,32 @@ export function Home() {
                     .start()
                 }}
               />
-            </span>
-            <h1 className="mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+            </motion.span>
+            <motion.h1
+              {...rise(0.18)}
+              className="mb-4 text-3xl font-bold tracking-tight sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl"
+            >
               {t('home.greeting')} <br className="hidden sm:inline" />{' '}
               <span className="!text-mainColor">{user.name}</span>
-            </h1>
+            </motion.h1>
 
-            <p className="mb-6 text-sm sm:mb-9 sm:text-base">
+            <motion.p
+              {...rise(0.26)}
+              className="mb-6 max-w-xl text-sm leading-relaxed text-foreground/85 sm:mb-9 sm:text-base"
+            >
               {parse(user.description)}
-            </p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8 lg:justify-start">
+            </motion.p>
+            <motion.div
+              {...rise(0.34)}
+              className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 lg:justify-start"
+            >
               <ResumeButton />
               <SocialBar />
-              <div className="mt-4 flex gap-2 sm:mt-0 sm:flex-col sm:gap-0 sm:space-y-2">
+              <div className="mt-2 flex gap-2 sm:mt-0 sm:gap-1">
                 <ModeToggle />
                 <LanguageToggle />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

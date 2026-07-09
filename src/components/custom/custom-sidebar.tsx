@@ -14,7 +14,7 @@ export default function Sidebar() {
   const { user } = useUser()
 
   return (
-    <div className="hidden bg-transparent h-full w-full flex-col items-center justify-center gap-8 overflow-y-auto border p-[20px_12px] text-center text-bioBgColor no-underline scrollbar no-scrollbar hover:no-underline dark:text-bioBorderColor md:fixed md:flex md:min-h-screen md:w-1/5 md:border-r-[5px]">
+    <div className="hidden bg-transparent h-full w-full flex-col items-center justify-center gap-8 overflow-y-auto border p-[20px_12px] text-center text-bioBgColor no-underline no-scrollbar hover:no-underline dark:text-bioBorderColor md:fixed md:flex md:min-h-screen md:w-1/5 md:border-r-[5px]">
       <h1 className="text-[32px] font-bold">{user.name}</h1>
 
       <Photo />
@@ -49,7 +49,7 @@ export default function Sidebar() {
         <LanguageToggle />
       </div>
 
-      <SocialBar className="border-b-[2px] border-solid border-black pb-3" />
+      <SocialBar className="border-b-2 border-solid border-border pb-3" />
       <div>
         <div className="flex w-[100%] justify-center">
           <a className="text-none flex gap-2" href={`mailto:${user.email}`}>
