@@ -206,7 +206,7 @@ export function About() {
             <Section.Content className="flex flex-col gap-2">
               {user.experiences.map((experience, index) => (
                 <motion.div key={index} {...reveal(index)}>
-                  <Card className="relative transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+                  <Card className="relative transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg p-6 gap-2 flex flex-col">
                     {experience.logo && (
                       <img
                         alt={`${experience.enterprise} logo`}
@@ -276,7 +276,7 @@ export function About() {
             <Section.Content className="space-y-4">
               {user.formations.map((formation, index) => (
                 <motion.div key={index} {...reveal(index)}>
-                  <Card className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+                  <Card className="transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg p-6 gap-2 flex flex-col">
                     <CardHeader className="p-0">
                       <div className="flex w-full items-start justify-between gap-4">
                         <div className="flex flex-1 items-center gap-3">
@@ -383,7 +383,7 @@ export function About() {
               {t('about.certificatesTitle')}
             </Section.Title>
             <Section.Content>
-              <Card className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+              <Card className="transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg p-6 gap-2 flex flex-col">
                 <CardHeader className="p-0">
                   <div className="flex items-center gap-3">
                     <div className="rounded-lg ">
@@ -467,7 +467,7 @@ export function About() {
             <Section.Content className="space-y-4">
               {user.recomendations.map((recomendation, index) => (
                 <motion.div key={recomendation.date} {...reveal(index)}>
-                  <Card className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col">
+                  <Card className="transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg p-6 gap-2 flex flex-col">
                     <CardHeader className="p-0">
                       <div className="flex items-center gap-4">
                         <SectionItem.Avatar
