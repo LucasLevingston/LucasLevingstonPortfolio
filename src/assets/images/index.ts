@@ -100,6 +100,8 @@ import T3 from './threads/threads3.png'
 import verbo1 from './verbo/verbo1.png'
 import verbo2 from './verbo/verbo2.png'
 import verbo3 from './verbo/verbo3.png'
+import airLogo from './logos/air.png'
+import anhangueraLogo from './logos/anhanguera.png'
 
 export const projectImages = {
   spotify: [SP1, SP2, SP3],
@@ -193,4 +195,9 @@ export const generalImages = {
   fotoWhatsapp: FotoWhatsapp,
   fotoInstagram: FotoInstagram,
   logo: Logo,
+}
+
+export const enterpriseLogos = {
+  air: airLogo,
+  anhanguera: anhangueraLogo,
 }

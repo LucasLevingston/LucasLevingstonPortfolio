@@ -218,9 +218,16 @@ export function About() {
             <Section.Content className="flex flex-col gap-2">
               {user.experiences.map((experience, index) => (
                 <Card
-                  className="transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
+                  className="relative transition-shadow hover:shadow-md p-6 gap-2 flex flex-col"
                   key={index}
                 >
+                  {experience.logo && (
+                    <img
+                      alt={`${experience.enterprise} logo`}
+                      className="absolute top-6 right-6 h-12 w-12 object-contain rounded-md bg-white p-1"
+                      src={experience.logo}
+                    />
+                  )}
                   <CardHeader className="p-0 gap-4 flex flex-col">
                     <Section.Title className="flex items-center gap-2">
                       <Briefcase className="h-4 w-4 !text-mainColor" />

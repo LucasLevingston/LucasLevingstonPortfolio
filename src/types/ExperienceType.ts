@@ -5,4 +5,5 @@ export interface ExperienceType {
   endsDate: string
   role: string
   features: string[]
+  logo?: string
 }

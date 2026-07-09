@@ -1,12 +1,14 @@
+import { enterpriseLogos } from '../assets/images'
 import { ExperienceType } from '../types/ExperienceType'
 
 export const experiencesDataBr: ExperienceType[] = [
   {
-    enterprise: 'Compass UOL',
+    enterprise: 'AI/R',
     location: 'Remoto',
     startsDate: '07/2026',
     endsDate: 'Atual',
     role: 'Desenvolvedor Front-End',
+    logo: enterpriseLogos.air,
     features: [
       'Desenvolvimento e manutenção de aplicações web utilizando <span className="highlight">React.js</span>, <span className="highlight">Next.js</span> e <span className="highlight">TypeScript</span>',
       'Implementação de interfaces modernas, responsivas e acessíveis com <span className="highlight">Tailwind CSS</span>, seguindo Design Systems e boas práticas de UI/UX',
@@ -49,6 +51,7 @@ export const experiencesDataBr: ExperienceType[] = [
     startsDate: '06/2023',
     endsDate: '06/2024',
     role: 'Estagiário de Desenvolvimento Web',
+    logo: enterpriseLogos.anhanguera,
     features: [
       'Construção de <span className="highlight">CRM</span> para gerenciar vendas e alunos da cidade de Patos, PB, com back-end usando API REST + banco de dados (<span className="highlight">Prisma</span> + <span className="highlight">MongoDB</span>)',
       'Estruturação da arquitetura da API REST (camadas, serviços, repositórios, middlewares e DTOs)',
@@ -72,11 +75,12 @@ export const experiencesDataBr: ExperienceType[] = [
 
 export const experiencesDataEn: ExperienceType[] = [
   {
-    enterprise: 'Compass UOL',
+    enterprise: 'AI/R',
     location: 'Remote',
     startsDate: '07/2026',
     endsDate: 'Present',
     role: 'Front-End Developer',
+    logo: enterpriseLogos.air,
     features: [
       'Development and maintenance of web applications using <span className="highlight">React.js</span>, <span className="highlight">Next.js</span>, and <span className="highlight">TypeScript</span>',
       'Implementation of modern, responsive, and accessible interfaces with <span className="highlight">Tailwind CSS</span>, following Design Systems and UI/UX best practices',
@@ -119,6 +123,7 @@ export const experiencesDataEn: ExperienceType[] = [
     startsDate: '06/2023',
     endsDate: '06/2024',
     role: 'Web Development Intern',
+    logo: enterpriseLogos.anhanguera,
     features: [
       'Construction of a <span className="highlight">CRM</span> to manage sales and students in the city of Patos, PB, with back-end using REST API + database (<span className="highlight">Prisma</span> + <span className="highlight">MongoDB</span>)',
       'Structuring of the REST API architecture (layers, services, repositories, middlewares and DTOs)',
