@@ -87,10 +87,12 @@ export default function SocialBar({ className }: SocialBarProps) {
               className="rounded-full h-8 w-8 p-5"
               href={user[link.url]}
             >
-              <HoverCardTrigger>
-                <CustomButton.Icon className="text-2xl text-black dark:text-white">
-                  {link.icon}
-                </CustomButton.Icon>
+              <HoverCardTrigger asChild>
+                <span>
+                  <CustomButton.Icon className="text-2xl text-black dark:text-white">
+                    {link.icon}
+                  </CustomButton.Icon>
+                </span>
               </HoverCardTrigger>
             </CustomButton>
             <HoverCardContent className="w-80">

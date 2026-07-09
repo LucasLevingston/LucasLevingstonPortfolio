@@ -145,7 +145,9 @@ export function Navbar() {
           href="/"
           target="_self"
         >
-          <NavigationMenuLink>{t('navbar.home')}</NavigationMenuLink>
+          <NavigationMenuLink asChild>
+            <span>{t('navbar.home')}</span>
+          </NavigationMenuLink>
         </CustomButton>
       </NavigationMenuItem>
 
@@ -263,11 +265,11 @@ export function Navbar() {
 }
 
 const ListItem = React.forwardRef<
-  React.ElementRef<'a'>,
+  React.ElementRef<'li'>,
   React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, href }) => {
+>(({ className, title, children, href }, ref) => {
   return (
-    <li>
+    <li ref={ref}>
       <CustomButton
         className={cn(
           'max-w-[130px] justify-start text-left h-auto p-3 flex-col items-start',
