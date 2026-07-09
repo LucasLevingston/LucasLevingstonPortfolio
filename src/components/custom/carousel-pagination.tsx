@@ -1,13 +1,7 @@
-import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
-} from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import type React from 'react'
 import type { CarouselApi } from '@/components/ui/carousel'
-import { Pagination, PaginationContent } from '@/components/ui/pagination'
-import { CustomButton } from './custom-button'
+import { cn } from '@/lib/utils/cn'
 
 interface CarouselPaginationProps {
   currentImage: number
@@ -22,91 +16,50 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
   api,
   images,
 }) => {
+  const goTo = (index: number) => {
+    setCurrentImage(index)
+    api?.scrollTo(index)
+  }
+
   return (
-    <Pagination>
-      <PaginationContent>
-        <CustomButton
-          disabled={currentImage === 0}
-          onClick={() => {
-            setCurrentImage(0)
-            api?.scrollTo(0)
-          }}
-          size="sm"
-        >
-          <CustomButton.Icon>
-            <ChevronsLeft />
-          </CustomButton.Icon>
-        </CustomButton>
+    <div className="flex items-center justify-center gap-3">
+      <button
+        aria-label="Previous image"
+        className="text-mainColor transition-opacity hover:opacity-70 disabled:pointer-events-none disabled:opacity-30"
+        disabled={currentImage === 0}
+        onClick={() => goTo(currentImage - 1)}
+        type="button"
+      >
+        <ChevronLeft className="h-4 w-4" />
+      </button>
 
-        <CustomButton
-          disabled={currentImage === 0}
-          onClick={() => {
-            setCurrentImage(currentImage - 1)
-            api?.scrollPrev()
-          }}
-          size="sm"
-        >
-          <CustomButton.Icon>
-            <ChevronLeft />
-          </CustomButton.Icon>
-        </CustomButton>
+      <div className="flex items-center gap-1.5">
+        {images.map((_, index) => (
+          <button
+            aria-label={`Go to image ${index + 1}`}
+            className={cn(
+              'h-1.5 rounded-full transition-all duration-200',
+              index === currentImage
+                ? 'w-4 bg-mainColor'
+                : 'w-1.5 bg-mainColor/30 hover:bg-mainColor/60'
+            )}
+            key={index}
+            onClick={() => goTo(index)}
+            type="button"
+          />
+        ))}
+      </div>
 
-        {currentImage > 0 && (
-          <CustomButton
-            onClick={() => {
-              setCurrentImage(currentImage - 1)
-              api?.scrollTo(currentImage - 1)
-            }}
-            size="sm"
-          >
-            <CustomButton.Label>{currentImage}</CustomButton.Label>
-          </CustomButton>
-        )}
-
-        <CustomButton disabled size="sm">
-          <CustomButton.Label>{currentImage + 1}</CustomButton.Label>
-        </CustomButton>
-
-        {currentImage < images.length - 1 && (
-          <CustomButton
-            onClick={() => {
-              setCurrentImage(currentImage + 1)
-              api?.scrollTo(currentImage + 1)
-            }}
-            size="sm"
-          >
-            <CustomButton.Label>{currentImage + 2}</CustomButton.Label>
-          </CustomButton>
-        )}
-
-        <CustomButton
-          disabled={currentImage === images.length - 1}
-          onClick={() => {
-            setCurrentImage(currentImage + 1)
-            api?.scrollNext()
-          }}
-          size="sm"
-        >
-          {' '}
-          <CustomButton.Icon>
-            <ChevronRight />
-          </CustomButton.Icon>
-        </CustomButton>
-
-        <CustomButton
-          disabled={currentImage === images.length - 1}
-          onClick={() => {
-            setCurrentImage(images.length - 1)
-            api?.scrollTo(images.length - 1)
-          }}
-          size="sm"
-        >
-          <CustomButton.Icon>
-            <ChevronsRight />
-          </CustomButton.Icon>
-        </CustomButton>
-      </PaginationContent>
-    </Pagination>
+      <button
+        aria-label="Next image"
+        className="text-mainColor transition-opacity hover:opacity-70 disabled:pointer-events-none disabled:opacity-30"
+        disabled={currentImage === images.length - 1}
+        onClick={() => goTo(currentImage + 1)}
+        type="button"
+      >
+        <ChevronRight className="h-4 w-4" />
+      </button>
+    </div>
   )
 }
 

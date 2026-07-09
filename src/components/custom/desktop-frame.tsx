@@ -10,15 +10,16 @@ export function DesktopFrame({ children, className }: DesktopFrameProps) {
   return (
     <div
       className={cn(
-        'relative mx-auto aspect-[16/9] w-full max-w-full overflow-hidden rounded-xl border-8 border-gray-800 bg-gray-900 shadow-lg dark:border-gray-200 dark:bg-gray-100',
+        'relative mx-auto flex aspect-video w-full max-w-full flex-col overflow-hidden rounded-xl border border-mainBorder bg-card shadow-lg transition-shadow duration-300 hover:shadow-xl dark:border-main-border-dark',
         className
       )}
     >
-      <div className="absolute inset-0 flex items-center justify-center">
-        {children}
+      <div className="flex h-6 shrink-0 items-center gap-1.5 border-mainBorder border-b bg-muted/60 px-3 dark:border-main-border-dark">
+        <span className="h-2 w-2 rounded-full bg-red-400/70" />
+        <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
+        <span className="h-2 w-2 rounded-full bg-green-400/70" />
       </div>
-      {/* Monitor stand */}
-      <div className="absolute bottom-0 left-1/2 h-2 w-1/3 -translate-x-1/2 rounded-b-lg bg-gray-700 dark:bg-gray-300" />
+      <div className="relative flex-1 overflow-hidden">{children}</div>
     </div>
   )
 }

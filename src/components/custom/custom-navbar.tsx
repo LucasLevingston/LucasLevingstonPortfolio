@@ -18,6 +18,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { useUser } from '@/hooks/use-user'
 import { formatPhoneNumber } from '@/lib/constants/format-number'
 import { cn } from '@/lib/utils/cn'
+import { getProjectSlug } from '@/lib/utils/project-slug'
 import LanguageToggle from '../toggles/LanguageToggle'
 import { ModeToggle } from '../toggles/ModeToggle'
 import { CustomButton } from './custom-button'
@@ -170,7 +171,11 @@ export function Navbar() {
           <ul className="grid w-[400px] gap-1 p-4 md:w-[500px] md:grid-cols-2 lg:w-[300px]">
             {project.map(({ title, description }) => {
               return (
-                <ListItem href="/projects?search=" key={title} title={title}>
+                <ListItem
+                  href={`/projects/${getProjectSlug(title)}`}
+                  key={title}
+                  title={title}
+                >
                   {description}
                 </ListItem>
               )
