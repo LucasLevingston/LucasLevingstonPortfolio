@@ -176,6 +176,8 @@ export default function ProjectCard({
                             <img
                               alt={`Preview of ${title}`}
                               className="h-full w-full object-cover"
+                              decoding="async"
+                              loading="lazy"
                               src={previewImage || '/placeholder.svg'}
                             />
                           </PhoneFrame>
@@ -184,6 +186,8 @@ export default function ProjectCard({
                             <img
                               alt={`Preview of ${title}`}
                               className="h-full w-full object-contain"
+                              decoding="async"
+                              loading="lazy"
                               src={previewImage || '/placeholder.svg'}
                             />
                           </DesktopFrame>
@@ -334,6 +338,8 @@ export default function ProjectCard({
                                                     <img
                                                       alt={`Screenshot ${i + 1}`}
                                                       className="h-full w-full object-cover"
+                                                      decoding="async"
+                                                      loading="lazy"
                                                       src={
                                                         image ||
                                                         '/placeholder.svg'
@@ -355,6 +361,8 @@ export default function ProjectCard({
                                                     <img
                                                       alt={`Screenshot ${i + 1}`}
                                                       className="h-full w-full rounded-lg object-contain"
+                                                      decoding="async"
+                                                      loading="lazy"
                                                       src={
                                                         image ||
                                                         '/placeholder.svg'
@@ -424,6 +432,8 @@ export default function ProjectCard({
                                     <img
                                       alt={`Screenshot ${index + 1}`}
                                       className="h-full w-full object-cover"
+                                      decoding="async"
+                                      loading="lazy"
                                       src={image || '/placeholder.svg'}
                                     />
                                   </PhoneFrame>
@@ -439,6 +449,8 @@ export default function ProjectCard({
                                     <img
                                       alt={`Screenshot ${index + 1}`}
                                       className="h-full w-full rounded-lg object-contain"
+                                      decoding="async"
+                                      loading="lazy"
                                       src={image || '/placeholder.svg'}
                                     />
                                   </ImageViewer>

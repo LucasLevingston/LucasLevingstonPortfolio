@@ -22,6 +22,8 @@ export default function TechnologyIcon({
         <img
           alt=""
           className={twMerge(defaultClassNameSVG, iconClassName, className)}
+          decoding="async"
+          loading="lazy"
           src={svg}
         />
       )}

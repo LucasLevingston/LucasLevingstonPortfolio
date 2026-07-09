@@ -102,7 +102,9 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                 >
                   <img
                     alt={alt}
+                    decoding="async"
                     draggable={false}
+                    loading="lazy"
                     src={src || '/placeholder.svg'}
                     style={{
                       transform: `rotate(${rotation}deg)`,
