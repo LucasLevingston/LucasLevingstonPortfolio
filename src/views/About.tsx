@@ -1,6 +1,5 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AboutCertificatesSection } from '@/components/custom/about/about-certificates-section'
@@ -13,26 +12,17 @@ import { AboutProfessionalProfile } from '@/components/custom/about/about-profes
 import { AboutRecommendationsSection } from '@/components/custom/about/about-recommendations-section'
 import { AboutSoftSkillsSection } from '@/components/custom/about/about-soft-skills-section'
 import { PageShell } from '@/components/custom/page-shell'
+import { useScrollToSearchAnchor } from '@/hooks/use-scroll-to-search-anchor'
 import { useUser } from '@/hooks/use-user'
 
 export function About() {
   const { i18n } = useTranslation()
   const { user } = useUser()
-  const searchParams = useSearchParams()
+  useScrollToSearchAnchor()
 
   useEffect(() => {
     i18n.changeLanguage(i18n.language)
   }, [i18n, i18n.language])
-
-  useEffect(() => {
-    const search = searchParams.toString()
-    if (!search) {
-      window.scrollTo(0, 0)
-      return
-    }
-    const element = document.getElementById(search)
-    element?.scrollIntoView({ behavior: 'smooth' })
-  }, [searchParams])
 
   return (
     <PageShell>

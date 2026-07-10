@@ -11,8 +11,7 @@ import Section from '@/components/custom/section'
 import { Card, CardContent } from '@/components/ui/card'
 import { useProjectBySlug } from '@/hooks/use-project-by-slug'
 import { useUser } from '@/hooks/use-user'
-
-const EASE_OUT = [0.16, 1, 0.3, 1] as const
+import { pageEnter } from '@/lib/utils/motion-reveal'
 
 interface ProjectDetailProps {
   slug: string
@@ -33,11 +32,7 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
           <ArrowLeft className="h-4 w-4" />
           {t('projects.backToProjects')}
         </Link>
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, ease: EASE_OUT }}
-        >
+        <motion.div {...pageEnter()}>
           <Card>
             <CardContent className="space-y-6 pt-6">
               <ProjectDetailHeader project={project} />

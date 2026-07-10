@@ -18,3 +18,19 @@ export function mountReveal(index: number) {
     transition: { duration: 0.4, delay: delayFor(index), ease: EASE_OUT },
   }
 }
+
+export function riseIn(delay: number) {
+  return {
+    initial: { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay, ease: EASE_OUT },
+  }
+}
+
+export function pageEnter() {
+  return {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, ease: EASE_OUT },
+  }
+}

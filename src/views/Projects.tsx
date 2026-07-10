@@ -1,32 +1,21 @@
 'use client'
 
 import { FolderOpen } from 'lucide-react'
-import { useSearchParams } from 'next/navigation'
 import type React from 'react'
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PageShell } from '@/components/custom/page-shell'
 import { ProjectFilterBar } from '@/components/custom/projects/project-filter-bar'
 import { ProjectList } from '@/components/custom/projects/project-list'
 import Section from '@/components/custom/section'
-import { useUser } from '@/hooks/use-user'
 import { useProjectFilters } from '@/hooks/use-project-filters'
+import { useScrollToSearchAnchor } from '@/hooks/use-scroll-to-search-anchor'
+import { useUser } from '@/hooks/use-user'
 
 export const Projects: React.FC = () => {
   const { t } = useTranslation()
-  const searchParams = useSearchParams()
   const { user } = useUser()
   const filters = useProjectFilters(user.projects)
-
-  useEffect(() => {
-    const search = searchParams.toString()
-    if (!search) {
-      window.scrollTo(0, 0)
-      return
-    }
-    const element = document.getElementById(search)
-    element?.scrollIntoView({ behavior: 'smooth' })
-  }, [searchParams])
+  useScrollToSearchAnchor()
 
   return (
     <PageShell>
