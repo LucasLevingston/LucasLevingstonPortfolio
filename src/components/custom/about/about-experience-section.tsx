@@ -1,0 +1,93 @@
+import { motion } from 'framer-motion'
+import parse from 'html-react-parser'
+import { Briefcase, Building2, Calendar, MapPin } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import Section from '@/components/custom/section'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { scrollReveal } from '@/lib/utils/motion-reveal'
+import type { ExperienceType } from '@/types/ExperienceType'
+
+interface AboutExperienceSectionProps {
+  experiences: ExperienceType[]
+}
+
+export function AboutExperienceSection({
+  experiences,
+}: AboutExperienceSectionProps) {
+  const { t } = useTranslation()
+
+  return (
+    <Section.Root id={t('about.experiencesTitle')}>
+      <Section.Title className="flex items-center gap-3 text-xl font-semibold text-foreground">
+        <Briefcase className="h-5 w-5 !text-mainColor" />
+        {t('about.experiencesTitle')}
+      </Section.Title>
+
+      <Section.Content className="flex flex-col gap-2">
+        {experiences.map((experience, index) => (
+          <motion.div key={experience.enterprise} {...scrollReveal(index)}>
+            <Card className="relative flex flex-col gap-2 p-6 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+              {experience.logo && (
+                <img
+                  alt={`${experience.enterprise} logo`}
+                  className="absolute top-6 right-6 h-12 w-12 rounded-md bg-white object-contain p-1"
+                  decoding="async"
+                  loading="lazy"
+                  src={experience.logo}
+                />
+              )}
+              <CardHeader className="flex flex-col gap-4 p-0">
+                <Section.Title className="flex items-center gap-2">
+                  <Briefcase className="h-4 w-4 !text-mainColor" />
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {experience.role}
+                  </h3>
+                </Section.Title>
+              </CardHeader>
+              <CardContent className="p-0">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4 text-base !text-mainColor dark:!text-mainColor">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-3 w-3" />
+                      <span>
+                        {t('about.start')}: {experience.startsDate} -{' '}
+                        {t('about.end')}: {experience.endsDate}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="h-3 w-3" />
+                      <span>{experience.location}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Building2 className="h-4 w-4 !text-mainColor" />
+                    <span className="text-base text-foreground">
+                      {t('about.enterprise')}:{' '}
+                      <span className="font-medium !text-mainColor dark:!text-mainColor">
+                        {experience.enterprise}
+                      </span>
+                    </span>
+                  </div>
+
+                  <div className="rounded-lg border-l-4 border-mainColor p-4">
+                    <ul className="ml-5 list-disc space-y-1">
+                      {experience.features.map((feature, idx) => (
+                        <li
+                          className="text-base leading-relaxed text-foreground"
+                          key={idx}
+                        >
+                          {parse(feature)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </Section.Content>
+    </Section.Root>
+  )
+}

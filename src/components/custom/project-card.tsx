@@ -1,16 +1,6 @@
 'use client'
-import {
-  ExternalLink,
-  GitBranch,
-  Github,
-  ImageIcon,
-  Monitor,
-  Settings,
-  Smartphone,
-  Star,
-} from 'lucide-react'
+import { GitBranch, Monitor, Smartphone, Star } from 'lucide-react'
 import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
 import TechnologyIcon from '@/components/Icon/TechnologyIcon'
 import {
   Card,
@@ -21,10 +11,10 @@ import {
 import { getProjectSlug } from '@/lib/utils/project-slug'
 import { sortTechnologiesByFrequency } from '@/lib/utils/technology-utils'
 import type { ProjectType } from '@/types/ProjectType'
-import { Badge } from '../ui/badge'
 import { CustomBadge } from './custom-badge'
 import { DesktopFrame } from './desktop-frame'
 import PhoneFrame from './phone-frame'
+import { ProjectStatusIcons } from './projects/project-status-icons'
 import Section from './section'
 
 interface ProjectCardProps {
@@ -51,8 +41,6 @@ export default function ProjectCard({
   },
   allProjects,
 }: ProjectCardProps) {
-  const { t } = useTranslation()
-
   const sortedTechnologies = sortTechnologiesByFrequency(
     technologies,
     allProjects
@@ -132,23 +120,15 @@ export default function ProjectCard({
                   </div>
                 </div>
               )}
-              <div className="flex items-center gap-2 sm:ml-auto">
-                {isDeveloping && (
-                  <Badge className="flex items-center gap-1 border-green-300 bg-green-100 text-sm text-green-800 hover:bg-green-100 dark:bg-green-900 dark:text-green-300">
-                    <Settings className="h-4 w-4" />
-                    {t('projectCard.inDevelopment')}
-                  </Badge>
-                )}
-                {images && images.length > 0 && (
-                  <ImageIcon className="h-4 w-4 !text-mainColor" />
-                )}
-                {(repositoryUrl ||
-                  frontEndRepositoryUrl ||
-                  backEndRepositoryUrl) && (
-                  <Github className="h-4 w-4 !text-mainColor" />
-                )}
-                {link && <ExternalLink className="h-4 w-4 !text-mainColor" />}
-              </div>
+              <ProjectStatusIcons
+                backEndRepositoryUrl={backEndRepositoryUrl}
+                className="sm:ml-auto"
+                frontEndRepositoryUrl={frontEndRepositoryUrl}
+                images={images}
+                isDeveloping={isDeveloping}
+                link={link}
+                repositoryUrl={repositoryUrl}
+              />
             </div>
           </CardHeader>
         </Section.Root>
