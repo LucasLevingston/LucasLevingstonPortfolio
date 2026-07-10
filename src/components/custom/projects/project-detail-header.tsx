@@ -6,8 +6,8 @@ interface ProjectDetailHeaderProps {
   project: ProjectType
 }
 
-export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
-  const {
+export function ProjectDetailHeader({
+  project: {
     title,
     description,
     favorite,
@@ -20,8 +20,8 @@ export function ProjectDetailHeader({ project }: ProjectDetailHeaderProps) {
     frontEndRepositoryUrl,
     backEndRepositoryUrl,
     link,
-  } = project
-
+  },
+}: ProjectDetailHeaderProps) {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-center gap-3">

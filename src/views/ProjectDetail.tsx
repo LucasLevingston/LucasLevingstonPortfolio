@@ -3,17 +3,14 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
-import Container from '@/components/custom/container'
-import Sidebar from '@/components/custom/custom-sidebar'
-import Header from '@/components/custom/header'
+import { PageShell } from '@/components/custom/page-shell'
 import { ProjectDetails } from '@/components/custom/project-details'
 import { ProjectDetailHeader } from '@/components/custom/projects/project-detail-header'
 import Section from '@/components/custom/section'
 import { Card, CardContent } from '@/components/ui/card'
+import { useProjectBySlug } from '@/hooks/use-project-by-slug'
 import { useUser } from '@/hooks/use-user'
-import { getProjectIndexBySlug } from '@/lib/utils/project-slug'
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const
 
@@ -24,40 +21,31 @@ interface ProjectDetailProps {
 export function ProjectDetail({ slug }: ProjectDetailProps) {
   const { t } = useTranslation()
   const { user } = useUser()
-
-  const index = getProjectIndexBySlug(slug)
-  if (index === -1) {
-    notFound()
-  }
-  const project = user.projects[index]
+  const project = useProjectBySlug(slug)
 
   return (
-    <div className="min-h-screen text-foreground">
-      <Sidebar />
-      <Container>
-        <Header />
-        <Section.Root>
-          <Link
-            className="mb-4 inline-flex items-center gap-2 text-sm text-mainColor hover:opacity-70"
-            href="/projects"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {t('projects.backToProjects')}
-          </Link>
-          <motion.div
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: EASE_OUT }}
-          >
-            <Card>
-              <CardContent className="space-y-6 pt-6">
-                <ProjectDetailHeader project={project} />
-                <ProjectDetails allProjects={user.projects} project={project} />
-              </CardContent>
-            </Card>
-          </motion.div>
-        </Section.Root>
-      </Container>
-    </div>
+    <PageShell>
+      <Section.Root>
+        <Link
+          className="mb-4 inline-flex items-center gap-2 text-sm text-mainColor hover:opacity-70"
+          href="/projects"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          {t('projects.backToProjects')}
+        </Link>
+        <motion.div
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, ease: EASE_OUT }}
+        >
+          <Card>
+            <CardContent className="space-y-6 pt-6">
+              <ProjectDetailHeader project={project} />
+              <ProjectDetails allProjects={user.projects} project={project} />
+            </CardContent>
+          </Card>
+        </motion.div>
+      </Section.Root>
+    </PageShell>
   )
 }

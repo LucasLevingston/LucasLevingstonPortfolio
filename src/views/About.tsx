@@ -12,9 +12,7 @@ import { AboutPersonalInfo } from '@/components/custom/about/about-personal-info
 import { AboutProfessionalProfile } from '@/components/custom/about/about-professional-profile'
 import { AboutRecommendationsSection } from '@/components/custom/about/about-recommendations-section'
 import { AboutSoftSkillsSection } from '@/components/custom/about/about-soft-skills-section'
-import Container from '@/components/custom/container'
-import Sidebar from '@/components/custom/custom-sidebar'
-import Header from '@/components/custom/header'
+import { PageShell } from '@/components/custom/page-shell'
 import { useUser } from '@/hooks/use-user'
 
 export function About() {
@@ -37,27 +35,23 @@ export function About() {
   }, [searchParams])
 
   return (
-    <div className="text-foreground">
-      <Sidebar />
-      <Container>
-        <Header />
-        <div className="space-y-8">
-          <AboutProfessionalProfile profile={user.professionalProfile} />
-          <AboutPersonalInfo
-            address={user.address}
-            email={user.email}
-            location={user.location}
-            phone={user.phone}
-          />
-          <AboutHardSkillsSection skills={user.hardSkills} />
-          <AboutExperienceSection experiences={user.experiences} />
-          <AboutEducationSection formations={user.formations} />
-          <AboutCertificatesSection certificates={user.certificates} />
-          <AboutRecommendationsSection recommendations={user.recomendations} />
-          <AboutLanguagesSection languages={user.languages} />
-          <AboutSoftSkillsSection skills={user.softSkills} />
-        </div>
-      </Container>
-    </div>
+    <PageShell>
+      <div className="space-y-8">
+        <AboutProfessionalProfile profile={user.professionalProfile} />
+        <AboutPersonalInfo
+          address={user.address}
+          email={user.email}
+          location={user.location}
+          phone={user.phone}
+        />
+        <AboutHardSkillsSection skills={user.hardSkills} />
+        <AboutExperienceSection experiences={user.experiences} />
+        <AboutEducationSection formations={user.formations} />
+        <AboutCertificatesSection certificates={user.certificates} />
+        <AboutRecommendationsSection recommendations={user.recomendations} />
+        <AboutLanguagesSection languages={user.languages} />
+        <AboutSoftSkillsSection skills={user.softSkills} />
+      </div>
+    </PageShell>
   )
 }
