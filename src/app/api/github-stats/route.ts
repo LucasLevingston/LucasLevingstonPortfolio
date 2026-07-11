@@ -1,5 +1,5 @@
-import { env } from '@/env'
 import { NextResponse } from 'next/server'
+import { env } from '@/env'
 
 export async function GET() {
   const { NEXT_GITHUB_TOKEN: token, NEXT_GITHUB_USER: user } = env

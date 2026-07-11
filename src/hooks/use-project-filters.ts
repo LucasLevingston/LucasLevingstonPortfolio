@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { PROJECT_FILTER_TOGGLES } from '@/lib/constants/project-filter-toggles'
+import { PROJECT_FILTER_TOGGLES } from '@/lib/utils/constants/project-filter-toggles'
 import { getTechnologyData } from '@/lib/utils/getTechnologyData'
 import type { ProjectType } from '@/types/ProjectType'
 

@@ -1,0 +1,1 @@
+export { AboutSoftSkillsSection } from './AboutSoftSkillsSection'

@@ -1,0 +1,1 @@
+export { AboutProfessionalProfile } from './AboutProfessionalProfile'
