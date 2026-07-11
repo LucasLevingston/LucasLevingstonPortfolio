@@ -1,7 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { AboutCertificatesSection } from '@/components/custom/about/about-certificates-section'
 import { AboutEducationSection } from '@/components/custom/about/about-education-section'
 import { AboutExperienceSection } from '@/components/custom/about/about-experience-section'
@@ -16,13 +14,8 @@ import { useScrollToSearchAnchor } from '@/hooks/use-scroll-to-search-anchor'
 import { useUser } from '@/hooks/use-user'
 
 export function About() {
-  const { i18n } = useTranslation()
   const { user } = useUser()
   useScrollToSearchAnchor()
-
-  useEffect(() => {
-    i18n.changeLanguage(i18n.language)
-  }, [i18n, i18n.language])
 
   return (
     <PageShell>

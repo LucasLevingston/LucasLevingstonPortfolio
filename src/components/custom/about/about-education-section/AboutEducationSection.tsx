@@ -11,50 +11,17 @@ import {
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import Section from '@/components/custom/section'
-import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils/cn'
 import { scrollReveal } from '@/lib/utils/motion-reveal'
-import { formationStatus, type FormationType } from '@/types/FormationType'
+import { formationStatus } from '@/types/FormationType'
+import type { AboutEducationSectionProps } from './about-education-section.types'
+import { EducationStatusBadge } from './EducationStatusBadge'
 
-interface AboutEducationSectionProps {
-  formations: FormationType[]
-}
-
-function EducationStatusBadge({ formation }: { formation: FormationType }) {
-  const { t } = useTranslation()
-
-  if (formation.graduated) {
-    return (
-      <Badge className="border-green-300 bg-green-100 text-base text-green-800 hover:bg-green-100 dark:bg-green-900 dark:text-green-300">
-        <Trophy className="mr-1 h-3 w-3" />
-        {t('about.graduated')}
-      </Badge>
-    )
-  }
-
-  if (
-    formation.currentStatus?.toLowerCase().includes('trancado') ||
-    formation.currentStatus?.toLowerCase().includes('deferred')
-  ) {
-    return (
-      <Badge
-        className="border-red-300 bg-red-50 text-base text-red-700 dark:bg-red-950 dark:text-red-300"
-        variant="outline"
-      >
-        <PauseCircle className="mr-1 h-3 w-3" />
-        {t('about.deferred')}
-      </Badge>
-    )
-  }
-
-  return (
-    <Badge className="border-blue-300 bg-blue-100 text-base text-blue-800 hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-300">
-      <PlayCircle className="mr-1 h-3 w-3" />
-      {t('about.inProgress')}
-    </Badge>
-  )
-}
+const EDUCATION_CARD_CLASS_NAME = cn(
+  'flex flex-col gap-2 p-6 transition-[transform,box-shadow] duration-200',
+  'ease-out hover:-translate-y-1 hover:shadow-lg'
+)
 
 export function AboutEducationSection({
   formations,
@@ -70,7 +37,7 @@ export function AboutEducationSection({
       <Section.Content className="space-y-4">
         {formations.map((formation, index) => (
           <motion.div key={formation.title} {...scrollReveal(index)}>
-            <Card className="flex flex-col gap-2 p-6 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+            <Card className={EDUCATION_CARD_CLASS_NAME}>
               <CardHeader className="p-0">
                 <div className="flex w-full items-start justify-between gap-4">
                   <div className="flex flex-1 items-center gap-3">

@@ -2,14 +2,11 @@
 
 import { X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import TechnologyIcon from '@/components/Icon/TechnologyIcon'
 import { CustomBadge } from '@/components/custom/custom-badge'
+import TechnologyIcon from '@/components/Icon/TechnologyIcon'
 import { Button } from '@/components/ui/button'
-import type { ProjectActiveFilterBadge } from '@/hooks/use-project-filters'
-
-interface ProjectActiveFilterBadgesProps {
-  badges: ProjectActiveFilterBadge[]
-}
+import { getBadgeLabel } from './get-badge-label'
+import type { ProjectActiveFilterBadgesProps } from './project-active-filter-badges.types'
 
 export function ProjectActiveFilterBadges({
   badges,
@@ -34,13 +31,7 @@ export function ProjectActiveFilterBadges({
             ) : (
               <badge.toggle.icon className="h-3 w-3" />
             )}
-            <p className="capitalize">
-              {badge.kind === 'technology'
-                ? badge.label
-                : badge.toggle.labelKey.startsWith('projects.')
-                  ? t(badge.toggle.labelKey)
-                  : badge.toggle.labelKey}
-            </p>
+            <p className="capitalize">{getBadgeLabel(badge, t)}</p>
             <Button
               className="ml-1 h-3 w-3 p-0"
               onClick={badge.clearAction}

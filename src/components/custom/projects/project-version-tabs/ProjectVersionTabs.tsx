@@ -2,17 +2,11 @@
 
 import { ArrowRight, GitBranch, ImageIcon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { ProjectImageCarousel } from '@/components/custom/projects/project-image-carousel'
 import TechnologiesSection from '@/components/custom/technology-section'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import type { ProjectVersion } from '@/types/ProjectType'
-import { ProjectImageCarousel } from '@/components/custom/projects/project-image-carousel'
+import type { ProjectVersionTabsProps } from './project-version-tabs.types'
 import { useProjectVersionTabs } from './use-project-version-tabs'
-
-interface ProjectVersionTabsProps {
-  versions: ProjectVersion[]
-  isMobile?: boolean
-  paginationImages?: string[]
-}
 
 export function ProjectVersionTabs({
   versions,

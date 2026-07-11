@@ -2,32 +2,28 @@
 
 import { Filter, Monitor, Search, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import TechnologyIcon from '@/components/Icon/TechnologyIcon'
 import { CustomBadge } from '@/components/custom/custom-badge'
 import { CustomButton } from '@/components/custom/custom-button'
 import { CustomToggle } from '@/components/custom/custom-toggle'
+import TechnologyIcon from '@/components/Icon/TechnologyIcon'
 import { Input } from '@/components/ui/input'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import type { ProjectFilterState } from '@/hooks/use-project-filters'
+import { cn } from '@/lib/utils/cn'
 import { PROJECT_FILTER_TOGGLES } from '@/lib/utils/constants/project-filter-toggles'
 import { getTechnologyData } from '@/lib/utils/getTechnologyData'
+import type { ProjectTechnologyFilterPopoverProps } from './project-technology-filter-popover.types'
 
-interface ProjectTechnologyFilterPopoverProps {
-  filter: ProjectFilterState
-  uniqueTechnologies: string[]
-  activeFiltersCount: number
-  onTechnologySearchChange: (value: string) => void
-  onClearTechnologySearch: () => void
-  onToggleTechnology: (technology: string) => void
-  onSetBooleanFilter: (
-    filterKey: (typeof PROJECT_FILTER_TOGGLES)[number]['filterKey'],
-    value: boolean
-  ) => void
-}
+const SEARCH_ICON_CLASS_NAME =
+  'absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform !text-mainColor'
+
+const CLEAR_SEARCH_BUTTON_CLASS_NAME = cn(
+  'absolute top-1/2 right-1 h-6 w-6 -translate-y-1/2 transform p-0',
+  'hover:bg-lightMainColor'
+)
 
 export function ProjectTechnologyFilterPopover({
   filter,
@@ -61,7 +57,7 @@ export function ProjectTechnologyFilterPopover({
               {t('projects.technologies')}
             </h4>
             <div className="relative mb-4">
-              <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform !text-mainColor" />
+              <Search className={SEARCH_ICON_CLASS_NAME} />
               <Input
                 className="border-mainBorder pr-10 pl-10 text-sm"
                 onChange={e => onTechnologySearchChange(e.target.value)}
@@ -71,7 +67,7 @@ export function ProjectTechnologyFilterPopover({
               />
               {filter.technologySearchTerm && (
                 <CustomButton
-                  className="absolute top-1/2 right-1 h-6 w-6 -translate-y-1/2 transform p-0 hover:bg-lightMainColor"
+                  className={CLEAR_SEARCH_BUTTON_CLASS_NAME}
                   onClick={onClearTechnologySearch}
                   size="sm"
                   variant="ghost"

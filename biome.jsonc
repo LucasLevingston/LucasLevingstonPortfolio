@@ -66,7 +66,13 @@
         "noUnusedTemplateLiteral": "error",
         "useNumberNamespace": "error",
         "noInferrableTypes": "error",
-        "noEnum": "off"
+        "noEnum": "off",
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["kebab-case", "export"]
+          }
+        }
       },
       "suspicious": {
         "noArrayIndexKey": "off",
@@ -81,5 +87,27 @@
         "noImgElement": "off"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["src/components/ui/**"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noNamespaceImport": "off"
+          },
+          "nursery": {
+            "noShadow": "off"
+          },
+          "a11y": {
+            "useSemanticElements": "off",
+            "noRedundantRoles": "off"
+          },
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    }
+  ]
 }

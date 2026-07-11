@@ -5,11 +5,11 @@ export function countTechnologyFrequency(
 ): Record<string, number> {
   const technologyCount: Record<string, number> = {}
 
-  projects.map(project => {
-    return project.technologies.map(tech => {
+  for (const project of projects) {
+    for (const tech of project.technologies) {
       technologyCount[tech] = (technologyCount[tech] || 0) + 1
-    })
-  })
+    }
+  }
 
   return technologyCount
 }

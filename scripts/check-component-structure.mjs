@@ -21,6 +21,11 @@ import path from 'node:path'
 import ts from 'typescript'
 
 const MAX_LINE_LENGTH = 100
+// import/export lines are governed by biome's own formatter (lineWidth) -
+// a single-specifier import from a long path has nowhere to wrap to and
+// biome's organizeImports collapses manual multi-line wrapping back down,
+// so gating those lines here just fights the formatter with no fix available.
+const IMPORT_LINE_PATTERN = /^\s*(import\s|export\s.*from\s|}\s*from\s)/
 const HOOK_NAMES = new Set([
   'useState',
   'useEffect',
@@ -140,7 +145,7 @@ for (const file of files) {
   const lines = source.split('\n')
 
   lines.forEach((line, i) => {
-    if (line.length >= MAX_LINE_LENGTH) {
+    if (line.length >= MAX_LINE_LENGTH && !IMPORT_LINE_PATTERN.test(line)) {
       report.push(
         `${file}:${i + 1} — line has ${line.length} chars (must be < ${MAX_LINE_LENGTH})`
       )

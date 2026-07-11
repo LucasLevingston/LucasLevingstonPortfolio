@@ -12,7 +12,7 @@ export function Home() {
     <div className="min-h-screen p-4">
       <Header />
       <HomeHero description={user.description} name={user.name} />
-      <Stats  />
+      <Stats />
     </div>
   )
 }
