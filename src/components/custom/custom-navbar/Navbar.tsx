@@ -21,8 +21,19 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { formatPhoneNumber } from '@/lib/constants/format-number'
 import { cn } from '@/lib/utils/cn'
 import { getProjectSlug } from '@/lib/utils/project-slug'
-import { useCustomNavbar } from './use-custom-navbar'
 import { ListItem } from './list-item'
+import { useCustomNavbar } from './use-custom-navbar'
+
+const FEATURED_LINK_CLASS_NAME = cn(
+  'flex h-full w-full select-none flex-col justify-end',
+  'border-2 border-mainColor rounded-md p-6 no-underline outline-none',
+  'bg-gradient-to-b from-muted/50 to-muted focus:shadow-md'
+)
+
+const NAV_LIST_ITEM_CLASS_NAME = cn(
+  'border-2 border-mainColor hover:bg-transparent',
+  'hover:text-aboutBgColor dark:hover:text-mainTextColor'
+)
 
 export function Navbar() {
   const { t, user, projects, aboutSections, isActive } = useCustomNavbar()
@@ -46,7 +57,7 @@ export function Navbar() {
             <li className="row-span-3">
               <NavigationMenuLink asChild>
                 <Link
-                  className="flex h-full w-full select-none flex-col border-2 border-mainColor justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                  className={FEATURED_LINK_CLASS_NAME}
                   href={`/about?${t('about.technologiesTitle')}`}
                 >
                   <img
@@ -67,7 +78,7 @@ export function Navbar() {
             </li>
             {aboutSections.map(section => (
               <ListItem
-                className="border-2 border-mainColor hover:bg-transparent hover:text-aboutBgColor dark:hover:text-mainTextColor"
+                className={NAV_LIST_ITEM_CLASS_NAME}
                 href="/about?"
                 key={section.title}
                 title={section.title}
