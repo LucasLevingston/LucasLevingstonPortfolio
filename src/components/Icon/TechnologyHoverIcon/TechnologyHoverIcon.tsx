@@ -1,18 +1,15 @@
 import { t } from 'i18next'
+import { memo } from 'react'
 import TechnologyIcon from '@/components/Icon/TechnologyIcon'
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
+import type { TechnologyHoverIconProps } from './technology-hover-icon.types'
 import { useTechnologyHoverIcon } from './use-technology-hover-icon'
 
-interface TechnologyHoverIconProps {
-  technology: string
-  classname?: string
-}
-
-export default function TechnologyHoverIcon({
+function TechnologyHoverIconComponent({
   technology,
   classname,
 }: TechnologyHoverIconProps) {
@@ -43,3 +40,7 @@ export default function TechnologyHoverIcon({
     </HoverCard>
   )
 }
+
+const TechnologyHoverIcon = memo(TechnologyHoverIconComponent)
+
+export default TechnologyHoverIcon

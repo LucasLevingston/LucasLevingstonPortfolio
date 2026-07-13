@@ -26,6 +26,9 @@ const MAX_LINE_LENGTH = 100
 // biome's organizeImports collapses manual multi-line wrapping back down,
 // so gating those lines here just fights the formatter with no fix available.
 const IMPORT_LINE_PATTERN = /^\s*(import\s|export\s.*from\s|}\s*from\s)/
+// A line that's just `key: 'https://...',` (an icon/asset URL literal) has
+// the same "nowhere to wrap" problem as a long import specifier.
+const URL_LITERAL_LINE_PATTERN = /^\s*\w+:\s*['"]https?:\/\/[^'"]*['"],?\s*$/
 const HOOK_NAMES = new Set([
   'useState',
   'useEffect',
@@ -44,8 +47,18 @@ function toPosix(file) {
   return file.replace(/\\/g, '/')
 }
 
+const TEST_FILE_PATTERN = /\.(test|spec)\.(ts|tsx)$/
+
 function isExempt(file) {
-  return toPosix(file).includes('/components/ui/')
+  const normalized = toPosix(file)
+  return (
+    normalized.includes('/components/ui/') ||
+    TEST_FILE_PATTERN.test(normalized) ||
+    // Data modules hold narrative content (descriptions, translated copy) as
+    // single string literals - there's no reasonable wrap point, same as
+    // the IMPORT_LINE_PATTERN/URL_LITERAL_LINE_PATTERN exemptions above.
+    normalized.includes('src/data/')
+  )
 }
 
 function isComponentFile(file) {
@@ -145,7 +158,11 @@ for (const file of files) {
   const lines = source.split('\n')
 
   lines.forEach((line, i) => {
-    if (line.length >= MAX_LINE_LENGTH && !IMPORT_LINE_PATTERN.test(line)) {
+    if (
+      line.length >= MAX_LINE_LENGTH &&
+      !IMPORT_LINE_PATTERN.test(line) &&
+      !URL_LITERAL_LINE_PATTERN.test(line)
+    ) {
       report.push(
         `${file}:${i + 1} — line has ${line.length} chars (must be < ${MAX_LINE_LENGTH})`
       )

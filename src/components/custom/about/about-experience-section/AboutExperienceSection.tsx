@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion'
 import parse from 'html-react-parser'
 import { Briefcase, Building2, Calendar, MapPin } from 'lucide-react'
+import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import Section from '@/components/custom/section'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { cn } from '@/lib/utils/cn'
 import { scrollReveal } from '@/lib/utils/motion-reveal'
-import type { ExperienceType } from '@/types/ExperienceType'
-
-interface AboutExperienceSectionProps {
-  experiences: ExperienceType[]
-}
+import type { AboutExperienceSectionProps } from './about-experience-section.types'
 
 export function AboutExperienceSection({
   experiences,
@@ -26,27 +24,34 @@ export function AboutExperienceSection({
       <Section.Content className="flex flex-col gap-2">
         {experiences.map((experience, index) => (
           <motion.div key={experience.enterprise} {...scrollReveal(index)}>
-            <Card className="relative flex flex-col gap-2 p-6 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-              {experience.logo && (
-                <img
-                  alt={`${experience.enterprise} logo`}
-                  className="absolute top-6 right-6 h-12 w-12 rounded-md bg-white object-contain p-1"
-                  decoding="async"
-                  loading="lazy"
-                  src={experience.logo}
-                />
-              )}
+            <Card className="p-6">
               <CardHeader className="flex flex-col gap-4 p-0">
-                <Section.Title className="flex items-center gap-2">
-                  <Briefcase className="h-4 w-4 !text-mainColor" />
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {experience.role}
-                  </h3>
-                </Section.Title>
+                <div className="flex items-center justify-between">
+                  <Section.Title className="flex items-center gap-2">
+                    <Briefcase className="h-4 w-4 !text-mainColor" />
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {experience.role}
+                    </h3>
+                  </Section.Title>
+                  {experience.logo && (
+                    <Image
+                      alt={`${experience.enterprise} logo`}
+                      className="rounded-md"
+                      height={64}
+                      src={experience.logo}
+                      width={64}
+                    />
+                  )}
+                </div>
               </CardHeader>
               <CardContent className="p-0">
                 <div className="space-y-3">
-                  <div className="flex items-center gap-4 text-base !text-mainColor dark:!text-mainColor">
+                  <div
+                    className={cn(
+                      'flex items-center gap-4 text-base',
+                      '!text-mainColor dark:!text-mainColor'
+                    )}
+                  >
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       <span>

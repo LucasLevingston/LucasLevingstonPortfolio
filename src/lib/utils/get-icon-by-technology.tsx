@@ -79,7 +79,7 @@ export const getIconByTechnology = (
       return {
         svg: 'https://v3.zod.dev/logo.svg',
       }
-    case 'nexauth':
+    case 'nextauth':
       return {
         svg: nextAuthSVG,
       }

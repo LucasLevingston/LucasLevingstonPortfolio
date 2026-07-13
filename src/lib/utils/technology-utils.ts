@@ -20,7 +20,7 @@ export function sortTechnologiesByFrequency(
 ): string[] {
   const frequencyMap = countTechnologyFrequency(projects)
 
-  return technologies.sort((a, b) => {
+  return [...technologies].sort((a, b) => {
     const freqA = frequencyMap[a] || 0
     const freqB = frequencyMap[b] || 0
 

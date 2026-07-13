@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { sortTechnologiesByFrequency } from '@/lib/utils/technology-utils'
 import type { ProjectType } from '@/types/ProjectType'
 
@@ -7,9 +8,9 @@ export function useProjectDetails(
 ) {
   const { technologies, showEvolution, versions } = project
 
-  const sortedTechnologies = sortTechnologiesByFrequency(
-    technologies,
-    allProjects
+  const sortedTechnologies = useMemo(
+    () => sortTechnologiesByFrequency(technologies, allProjects),
+    [technologies, allProjects]
   )
   const hasVersions = Boolean(showEvolution && versions && versions.length > 0)
 

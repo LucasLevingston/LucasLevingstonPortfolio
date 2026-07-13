@@ -18,11 +18,6 @@ import { formationStatus } from '@/types/FormationType'
 import type { AboutEducationSectionProps } from './about-education-section.types'
 import { EducationStatusBadge } from './EducationStatusBadge'
 
-const EDUCATION_CARD_CLASS_NAME = cn(
-  'flex flex-col gap-2 p-6 transition-[transform,box-shadow] duration-200',
-  'ease-out hover:-translate-y-1 hover:shadow-lg'
-)
-
 export function AboutEducationSection({
   formations,
 }: AboutEducationSectionProps) {
@@ -37,7 +32,7 @@ export function AboutEducationSection({
       <Section.Content className="space-y-4">
         {formations.map((formation, index) => (
           <motion.div key={formation.title} {...scrollReveal(index)}>
-            <Card className={EDUCATION_CARD_CLASS_NAME}>
+            <Card className="p-6">
               <CardHeader className="p-0">
                 <div className="flex w-full items-start justify-between gap-4">
                   <div className="flex flex-1 items-center gap-3">

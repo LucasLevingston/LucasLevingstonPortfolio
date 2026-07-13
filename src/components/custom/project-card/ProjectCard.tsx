@@ -1,6 +1,7 @@
 'use client'
 import { GitBranch, Monitor, Smartphone, Star } from 'lucide-react'
 import Link from 'next/link'
+import { memo } from 'react'
 import { CustomBadge } from '@/components/custom/custom-badge'
 import { DesktopFrame } from '@/components/custom/desktop-frame'
 import PhoneFrame from '@/components/custom/phone-frame'
@@ -13,18 +14,11 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import type { ProjectType } from '@/types/ProjectType'
+import { cn } from '@/lib/utils/cn'
+import type { ProjectCardProps } from './project-card.types'
 import { useProjectCard } from './use-project-card'
 
-interface ProjectCardProps {
-  project: ProjectType
-  allProjects: ProjectType[]
-}
-
-export default function ProjectCard({
-  project,
-  allProjects,
-}: ProjectCardProps) {
+function ProjectCardComponent({ project, allProjects }: ProjectCardProps) {
   const {
     description,
     title,
@@ -47,10 +41,20 @@ export default function ProjectCard({
 
   return (
     <Link href={href}>
-      <Card className="cursor-pointer transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+      <Card
+        className={cn(
+          'cursor-pointer transition-[transform,box-shadow] duration-200 ease-out',
+          'hover:-translate-y-1 hover:shadow-lg'
+        )}
+      >
         <Section.Root id={title}>
           <CardHeader className="pb-3">
-            <div className="flex w-full flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <div
+              className={cn(
+                'flex w-full flex-col items-start justify-between gap-4',
+                'sm:flex-row sm:items-center'
+              )}
+            >
               <div className="flex items-center gap-3">
                 <div className="rounded-lg p-2">
                   {isMobile ? (
@@ -92,7 +96,12 @@ export default function ProjectCard({
 
               {previewImage && (
                 <div className="w-full px-6 pb-4 sm:w-auto sm:px-0 sm:pb-0">
-                  <div className="relative flex h-48 w-full items-center justify-center overflow-hidden rounded-md">
+                  <div
+                    className={cn(
+                      'relative flex h-48 w-full items-center justify-center',
+                      'overflow-hidden rounded-md'
+                    )}
+                  >
                     {isMobile ? (
                       <PhoneFrame className="h-full max-h-[180px]">
                         <img
@@ -133,3 +142,7 @@ export default function ProjectCard({
     </Link>
   )
 }
+
+const ProjectCard = memo(ProjectCardComponent)
+
+export default ProjectCard

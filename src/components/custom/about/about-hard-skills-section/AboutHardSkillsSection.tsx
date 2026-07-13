@@ -2,12 +2,7 @@ import { Code } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { HardSkillsSection } from '@/components/custom/hard-skills-section'
 import Section from '@/components/custom/section'
-import { Card, CardContent } from '@/components/ui/card'
-import type { HardSkillsType } from '@/types/HardSkillsType'
-
-interface AboutHardSkillsSectionProps {
-  skills: HardSkillsType[]
-}
+import type { AboutHardSkillsSectionProps } from './about-hard-skills-section.types'
 
 export function AboutHardSkillsSection({
   skills,
@@ -21,11 +16,7 @@ export function AboutHardSkillsSection({
         {t('about.technologiesTitle')}
       </Section.Title>
       <Section.Content>
-        <Card>
-          <CardContent className="pt-6">
-            <HardSkillsSection skills={skills} />
-          </CardContent>
-        </Card>
+        <HardSkillsSection skills={skills} />
       </Section.Content>
     </Section.Root>
   )

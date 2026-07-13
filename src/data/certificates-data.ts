@@ -232,6 +232,17 @@ export const certificatesDataBr: CertificatesType[] = [
       'mongo',
     ],
   },
+  {
+    title: 'React Testing Library and Jest: The Complete Guide',
+    image: certificateImages.reactTestingLibraryJest,
+    description: [
+      'Curso completo sobre testes de componentes React com React Testing Library e Jest, cobrindo queries, eventos de usuário, mocks, testes assíncronos e boas práticas de testes automatizados.',
+    ],
+    technologies: ['react', 'javascript', 'typescript', 'jest'],
+    hours: 7.5,
+    startsDate: '07/2026',
+    completionDate: '07/2026',
+  },
 ]
 
 export const certificatesDataEn: CertificatesType[] = [
@@ -445,5 +456,16 @@ export const certificatesDataEn: CertificatesType[] = [
       'postgresql',
       'mongo',
     ],
+  },
+  {
+    title: 'React Testing Library and Jest: The Complete Guide',
+    image: certificateImages.reactTestingLibraryJest,
+    description: [
+      'Complete course on testing React components with React Testing Library and Jest, covering queries, user events, mocks, asynchronous testing and automated testing best practices.',
+    ],
+    technologies: ['react', 'javascript', 'typescript', 'jest'],
+    hours: 7.5,
+    startsDate: '07/2026',
+    completionDate: '07/2026',
   },
 ]

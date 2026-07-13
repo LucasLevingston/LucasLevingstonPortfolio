@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { PROJECT_FILTER_TOGGLES } from '@/lib/utils/constants/project-filter-toggles'
 import { getTechnologyData } from '@/lib/utils/getTechnologyData'
 import type { ProjectType } from '@/types/ProjectType'
@@ -98,44 +98,47 @@ export function useProjectFilters(projects: ProjectType[]) {
     })
   }, [projects, filter.technologySearchTerm])
 
-  const handleSearchChange = (value: string) => {
+  const handleSearchChange = useCallback((value: string) => {
     setFilter(prev => ({ ...prev, searchTerm: value }))
     updateUrlSearchParam(value)
-  }
+  }, [])
 
-  const clearSearch = () => {
+  const clearSearch = useCallback(() => {
     setFilter(prev => ({ ...prev, searchTerm: '' }))
     updateUrlSearchParam(null)
-  }
+  }, [])
 
-  const handleTechnologySearchChange = (value: string) => {
+  const handleTechnologySearchChange = useCallback((value: string) => {
     setFilter(prev => ({ ...prev, technologySearchTerm: value }))
-  }
+  }, [])
 
-  const clearTechnologySearch = () => {
+  const clearTechnologySearch = useCallback(() => {
     setFilter(prev => ({ ...prev, technologySearchTerm: '' }))
-  }
+  }, [])
 
-  const clearAllFilters = () => {
+  const clearAllFilters = useCallback(() => {
     setFilter(INITIAL_FILTER)
     updateUrlSearchParam(null)
-  }
+  }, [])
 
-  const toggleTechnology = (technology: string) => {
+  const toggleTechnology = useCallback((technology: string) => {
     setFilter(prev => ({
       ...prev,
       selectedTechnologies: prev.selectedTechnologies.includes(technology)
         ? prev.selectedTechnologies.filter(tech => tech !== technology)
         : [...prev.selectedTechnologies, technology],
     }))
-  }
+  }, [])
 
-  const setBooleanFilter = (
-    filterKey: (typeof PROJECT_FILTER_TOGGLES)[number]['filterKey'],
-    value: boolean
-  ) => {
-    setFilter(prev => ({ ...prev, [filterKey]: value }))
-  }
+  const setBooleanFilter = useCallback(
+    (
+      filterKey: (typeof PROJECT_FILTER_TOGGLES)[number]['filterKey'],
+      value: boolean
+    ) => {
+      setFilter(prev => ({ ...prev, [filterKey]: value }))
+    },
+    []
+  )
 
   const activeFiltersCount =
     filter.selectedTechnologies.length +
@@ -146,24 +149,27 @@ export function useProjectFilters(projects: ProjectType[]) {
     (filter.isBackEnd ? 1 : 0) +
     (filter.isMobile ? 1 : 0)
 
-  const activeFilterBadges: ProjectActiveFilterBadge[] = [
-    ...filter.selectedTechnologies.map(
-      (tech): ProjectActiveFilterBadge => ({
-        id: tech,
-        kind: 'technology',
-        label: tech,
-        clearAction: () => toggleTechnology(tech),
-      })
-    ),
-    ...PROJECT_FILTER_TOGGLES.filter(toggle => filter[toggle.filterKey]).map(
-      (toggle): ProjectActiveFilterBadge => ({
-        id: toggle.key,
-        kind: 'toggle',
-        toggle,
-        clearAction: () => setBooleanFilter(toggle.filterKey, false),
-      })
-    ),
-  ]
+  const activeFilterBadges: ProjectActiveFilterBadge[] = useMemo(
+    () => [
+      ...filter.selectedTechnologies.map(
+        (tech): ProjectActiveFilterBadge => ({
+          id: tech,
+          kind: 'technology',
+          label: tech,
+          clearAction: () => toggleTechnology(tech),
+        })
+      ),
+      ...PROJECT_FILTER_TOGGLES.filter(toggle => filter[toggle.filterKey]).map(
+        (toggle): ProjectActiveFilterBadge => ({
+          id: toggle.key,
+          kind: 'toggle',
+          toggle,
+          clearAction: () => setBooleanFilter(toggle.filterKey, false),
+        })
+      ),
+    ],
+    [filter, toggleTechnology, setBooleanFilter]
+  )
 
   return {
     filter,

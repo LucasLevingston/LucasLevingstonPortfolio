@@ -26,6 +26,7 @@ import CertificadoJavaCompleto from './certificates/Java Completo Do Zero ao Pro
 import NLWAgentsFullStack from './certificates/NLWAgentsFullStack.png'
 import NLWJourneyNodejs from './certificates/NLWJourneyNodejs.png'
 import NLWPocketJavascript from './certificates/NLWPocketJavascript.png'
+import CertificadoReactTestingLibraryJest from './certificates/tests.jpg'
 import codeplay1 from './codeplay/codeplay1.png'
 import codeplay2 from './codeplay/codeplay2.png'
 import codeplay3 from './codeplay/codeplay3.png'
@@ -200,6 +201,7 @@ export const certificateImages = {
   nlwPocketJavascript: NLWPocketJavascript.src,
   nlwConnectReact: NLWConnectReact.src,
   nlwAgentsFullStack: NLWAgentsFullStack.src,
+  reactTestingLibraryJest: CertificadoReactTestingLibraryJest.src,
 }
 
 export const generalImages = {

@@ -13,7 +13,7 @@ export function useScrollToSearchAnchor() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    const search = searchParams.toString()
+    const search = searchParams.get('search')
     if (!search) {
       window.scrollTo(0, 0)
       return

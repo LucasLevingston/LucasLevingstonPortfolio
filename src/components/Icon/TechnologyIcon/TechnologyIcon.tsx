@@ -1,13 +1,9 @@
+import { memo } from 'react'
 import { twMerge } from 'tailwind-merge'
+import type { TechnologyIconProps } from './technology-icon.types'
 import { useTechnologyIcon } from './use-technology-icon'
 
-interface TechnologyIconProps {
-  technology: string
-  className?: string
-  hover?: boolean
-}
-
-export default function TechnologyIcon({
+function TechnologyIconComponent({
   technology,
   className,
   hover,
@@ -35,3 +31,7 @@ export default function TechnologyIcon({
     </>
   )
 }
+
+const TechnologyIcon = memo(TechnologyIconComponent)
+
+export default TechnologyIcon

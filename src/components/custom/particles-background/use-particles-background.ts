@@ -1,5 +1,5 @@
 import { useReducedMotion } from 'framer-motion'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { Engine } from 'tsparticles-engine'
 import { loadSlim } from 'tsparticles-slim'
 
@@ -32,48 +32,51 @@ export function useParticlesBackground() {
   const linkOpacity = isDark ? 0.25 : 0.15
   const particleOpacity = isDark ? 0.5 : 0.35
 
-  const options = {
-    fullScreen: { enable: false },
-    background: { color: { value: 'transparent' } },
-    fpsLimit: 60,
-    particles: {
-      color: { value: particleColor },
-      links: {
-        color: particleColor,
-        distance: 140,
-        enable: true,
-        opacity: linkOpacity,
-        width: 1,
+  const options = useMemo(
+    () => ({
+      fullScreen: { enable: false },
+      background: { color: { value: 'transparent' } },
+      fpsLimit: 60,
+      particles: {
+        color: { value: particleColor },
+        links: {
+          color: particleColor,
+          distance: 140,
+          enable: true,
+          opacity: linkOpacity,
+          width: 1,
+        },
+        move: {
+          enable: !reduceMotion,
+          direction: 'none' as const,
+          outModes: { default: 'out' as const },
+          random: false,
+          speed: 0.4,
+          straight: false,
+        },
+        number: {
+          density: { enable: true, area: 900 },
+          value: 55,
+        },
+        opacity: { value: particleOpacity },
+        shape: { type: 'circle' as const },
+        size: { value: { min: 1, max: 2.5 } },
       },
-      move: {
-        enable: !reduceMotion,
-        direction: 'none' as const,
-        outModes: { default: 'out' as const },
-        random: false,
-        speed: 0.4,
-        straight: false,
-      },
-      number: {
-        density: { enable: true, area: 900 },
-        value: 55,
-      },
-      opacity: { value: particleOpacity },
-      shape: { type: 'circle' as const },
-      size: { value: { min: 1, max: 2.5 } },
-    },
-    interactivity: {
-      events: {
-        onHover: { enable: !reduceMotion, mode: 'grab' as const },
-      },
-      modes: {
-        grab: {
-          distance: 160,
-          links: { opacity: isDark ? 0.5 : 0.35 },
+      interactivity: {
+        events: {
+          onHover: { enable: !reduceMotion, mode: 'grab' as const },
+        },
+        modes: {
+          grab: {
+            distance: 160,
+            links: { opacity: isDark ? 0.5 : 0.35 },
+          },
         },
       },
-    },
-    detectRetina: true,
-  }
+      detectRetina: true,
+    }),
+    [particleColor, linkOpacity, particleOpacity, reduceMotion, isDark]
+  )
 
   return { init, options }
 }
