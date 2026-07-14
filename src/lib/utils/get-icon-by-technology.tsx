@@ -25,6 +25,10 @@ export const getIconByTechnology = (
       return {
         iconClassName: `devicon-${technology}-plain-wordmark colored`,
       }
+    case 'dockercompose':
+      return { iconClassName: 'devicon-docker-plain-wordmark colored' }
+    case 'jest':
+      return { iconClassName: 'devicon-jest-plain' }
     case 'reactnative':
       return {
         svg: reactNativeSVG,
@@ -79,7 +83,7 @@ export const getIconByTechnology = (
       return {
         svg: 'https://v3.zod.dev/logo.svg',
       }
-    case 'nexauth':
+    case 'nextauth':
       return {
         svg: nextAuthSVG,
       }
@@ -136,6 +140,56 @@ export const getIconByTechnology = (
       return {
         element: (
           <p className="cursor-default text-xl font-bold text-lightBlue">JPA</p>
+        ),
+      }
+    case 'scalar':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">SCL</p>
+        ),
+      }
+    case 'ddd':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">DDD</p>
+        ),
+      }
+    case 'ia':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">IA</p>
+        ),
+      }
+    case 'excel':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">XLS</p>
+        ),
+      }
+    case 'java-fundamentals':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">
+            JAVA
+          </p>
+        ),
+      }
+    case 'oop':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">OOP</p>
+        ),
+      }
+    case 'functional-programming':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">FP</p>
+        ),
+      }
+    case 'javafx':
+      return {
+        element: (
+          <p className="cursor-default text-xl font-bold text-lightBlue">FX</p>
         ),
       }
     case 'springboot':

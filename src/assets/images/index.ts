@@ -26,6 +26,7 @@ import CertificadoJavaCompleto from './certificates/Java Completo Do Zero ao Pro
 import NLWAgentsFullStack from './certificates/NLWAgentsFullStack.png'
 import NLWJourneyNodejs from './certificates/NLWJourneyNodejs.png'
 import NLWPocketJavascript from './certificates/NLWPocketJavascript.png'
+import CertificadoReactTestingLibraryJest from './certificates/tests.jpg'
 import codeplay1 from './codeplay/codeplay1.png'
 import codeplay2 from './codeplay/codeplay2.png'
 import codeplay3 from './codeplay/codeplay3.png'
@@ -58,6 +59,12 @@ import GymEvolution2 from './gymEvolution/GymEvolution2.png'
 import GymEvolution3 from './gymEvolution/GymEvolution3.png'
 import airLogo from './logos/air.png'
 import anhangueraLogo from './logos/anhanguera.png'
+import dioLogo from './logos/dio.png'
+import faculesteLogo from './logos/faculeste.jpg'
+import fipLogo from './logos/fip.png'
+import rocketseatLogo from './logos/rocketseat.webp'
+import udemyLogo from './logos/udemy.png'
+import uepbLogo from './logos/uepb.png'
 import MP1 from './meuPortfolio/MP1.png'
 import MP2 from './meuPortfolio/MP2.png'
 import MP3 from './meuPortfolio/MP3.png'
@@ -200,6 +207,7 @@ export const certificateImages = {
   nlwPocketJavascript: NLWPocketJavascript.src,
   nlwConnectReact: NLWConnectReact.src,
   nlwAgentsFullStack: NLWAgentsFullStack.src,
+  reactTestingLibraryJest: CertificadoReactTestingLibraryJest.src,
 }
 
 export const generalImages = {
@@ -213,4 +221,10 @@ export const generalImages = {
 export const enterpriseLogos = {
   air: airLogo.src,
   anhanguera: anhangueraLogo.src,
+  faculeste: faculesteLogo.src,
+  dio: dioLogo.src,
+  uepb: uepbLogo.src,
+  rocketseat: rocketseatLogo.src,
+  udemy: udemyLogo.src,
+  fip: fipLogo.src,
 }

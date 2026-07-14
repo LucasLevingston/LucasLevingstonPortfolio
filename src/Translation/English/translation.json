@@ -31,6 +31,8 @@
   "about.completedSuccessfully": "Completed",
   "about.graduated": "Graduated",
   "about.inProgress": "In Progress",
+  "about.currentJob": "Current",
+  "about.untilNow": "to present",
   "about.deferred": "Deferred",
   "about.duration": "Duration",
   "about.period": "Period",

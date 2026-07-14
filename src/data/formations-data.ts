@@ -4,6 +4,7 @@ export const formationDataBr: FormationType[] = [
   {
     title: 'Pós-graduação em Desenvolvimento Web',
     institution: 'Faculeste – Faculdade do Leste Mineiro',
+    institutionKey: 'faculeste',
     startsDate: 'Outubro/2025',
     endsDate: 'Fevereiro/2026',
     duration: '4 meses',
@@ -13,6 +14,7 @@ export const formationDataBr: FormationType[] = [
   {
     title: 'Graduação em Ciências da Computação',
     institution: 'Universidade Estadual da Paraíba (UEPB)',
+    institutionKey: 'uepb',
     startsDate: 'Julho/2020',
     endsDate: 'Julho/2025',
     duration: '10 semestres',
@@ -22,6 +24,7 @@ export const formationDataBr: FormationType[] = [
   {
     title: 'Graduação em Engenharia Civil',
     institution: 'Centro Universitário de Patos (UNIFIP)',
+    institutionKey: 'unifip',
     startsDate: 'Fevereiro/2020',
     endsDate: 'Julho/2020',
     duration: '1 semestre',
@@ -34,6 +37,7 @@ export const formationDataEn: FormationType[] = [
   {
     title: 'Postgraduate in Web Development',
     institution: 'Faculeste – Faculdade do Leste Mineiro',
+    institutionKey: 'faculeste',
     startsDate: 'October/2025',
     endsDate: 'February/2026',
     duration: '4 months',
@@ -43,6 +47,7 @@ export const formationDataEn: FormationType[] = [
   {
     title: 'Bachelor’s Degree in Computer Science',
     institution: 'State University of Paraíba (UEPB)',
+    institutionKey: 'uepb',
     startsDate: 'July/2020',
     endsDate: 'July/2025',
     duration: '10 semesters',
@@ -51,7 +56,8 @@ export const formationDataEn: FormationType[] = [
   },
   {
     title: 'Bachelor’s Degree in Civil Engineering',
-    institution: 'State University of Paraíba (UEPB)',
+    institution: 'University Center of Patos (UNIFIP)',
+    institutionKey: 'unifip',
     startsDate: 'February/2020',
     endsDate: 'July/2020',
     duration: '1 semester',

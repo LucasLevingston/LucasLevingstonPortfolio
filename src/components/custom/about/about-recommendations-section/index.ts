@@ -1,0 +1,1 @@
+export { AboutRecommendationsSection } from './AboutRecommendationsSection'
