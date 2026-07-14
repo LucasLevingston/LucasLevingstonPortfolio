@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils/cn'
 import { scrollReveal } from '@/lib/utils/motion-reveal'
 import type { AboutExperienceSectionProps } from './about-experience-section.types'
+import { CurrentJobBadge } from './CurrentJobBadge'
+import { isCurrentJob } from './is-current-job'
 
 export function AboutExperienceSection({
   experiences,
@@ -32,6 +34,7 @@ export function AboutExperienceSection({
                     <h3 className="text-lg font-semibold text-foreground">
                       {experience.role}
                     </h3>
+                    <CurrentJobBadge endsDate={experience.endsDate} />
                   </Section.Title>
                   {experience.logo && (
                     <Image
@@ -55,8 +58,16 @@ export function AboutExperienceSection({
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       <span>
-                        {t('about.start')}: {experience.startsDate} -{' '}
-                        {t('about.end')}: {experience.endsDate}
+                        {isCurrentJob(experience.endsDate) ? (
+                          <>
+                            {experience.startsDate} {t('about.untilNow')}
+                          </>
+                        ) : (
+                          <>
+                            {t('about.start')}: {experience.startsDate} -{' '}
+                            {t('about.end')}: {experience.endsDate}
+                          </>
+                        )}
                       </span>
                     </div>
                     <div className="flex items-center gap-1">

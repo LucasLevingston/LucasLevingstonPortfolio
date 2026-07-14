@@ -486,6 +486,75 @@ export const technologiesDataBr: { [key: string]: TechnologyType } = {
       'Java Persistence API — especificação padrão para persistência de dados em aplicações Java.',
     link: 'https://jakarta.ee/specifications/persistence/',
   },
+  jest: {
+    label: 'Jest',
+    value: 'jest',
+    description:
+      'Um framework de testes em JavaScript com foco em simplicidade, usado para testar componentes React e código Node.js.',
+    link: 'https://jestjs.io/',
+  },
+  dockercompose: {
+    label: 'Docker Compose',
+    value: 'dockercompose',
+    description:
+      'Uma ferramenta para definir e executar aplicações Docker com múltiplos containers.',
+    link: 'https://docs.docker.com/compose/',
+  },
+  scalar: {
+    label: 'Scalar',
+    value: 'scalar',
+    description:
+      'Uma ferramenta moderna de documentação e referência interativa de APIs, alternativa ao Swagger UI.',
+    link: 'https://scalar.com/',
+  },
+  ddd: {
+    label: 'DDD',
+    value: 'ddd',
+    description:
+      'Domain-Driven Design — abordagem de desenvolvimento de software que modela o código em torno do domínio do negócio.',
+    link: 'https://martinfowler.com/bliki/DomainDrivenDesign.html',
+  },
+  ia: {
+    label: 'Inteligência Artificial',
+    value: 'ia',
+    description:
+      'Conceitos e ferramentas de Inteligência Artificial aplicados ao desenvolvimento de software.',
+    link: '',
+  },
+  excel: {
+    label: 'Excel',
+    value: 'excel',
+    description:
+      'Software de planilhas eletrônicas da Microsoft, usado para análise e organização de dados.',
+    link: 'https://www.microsoft.com/microsoft-365/excel',
+  },
+  'java-fundamentals': {
+    label: 'Fundamentos de Java',
+    value: 'java-fundamentals',
+    description: 'Conceitos essenciais da linguagem Java.',
+    link: '',
+  },
+  oop: {
+    label: 'Orientação a Objetos',
+    value: 'oop',
+    description:
+      'Paradigma de programação baseado em classes e objetos, com pilares como herança, encapsulamento e polimorfismo.',
+    link: '',
+  },
+  'functional-programming': {
+    label: 'Programação Funcional',
+    value: 'functional-programming',
+    description:
+      'Paradigma de programação que trata a computação como avaliação de funções matemáticas, evitando estado mutável.',
+    link: '',
+  },
+  javafx: {
+    label: 'JavaFX',
+    value: 'javafx',
+    description:
+      'Uma biblioteca para construção de interfaces gráficas ricas em aplicações Java.',
+    link: 'https://openjfx.io/',
+  },
 }
 
 export const technologiesDataEn: { [key: string]: TechnologyType } = {
@@ -957,5 +1026,74 @@ export const technologiesDataEn: { [key: string]: TechnologyType } = {
     description:
       'The leading online payment platform in Latin America, offering checkout solutions, recurring payments, and integrations for e-commerce.',
     link: 'https://www.mercadopago.com.br/developers/en',
+  },
+  jest: {
+    label: 'Jest',
+    value: 'jest',
+    description:
+      'A JavaScript testing framework focused on simplicity, used to test React components and Node.js code.',
+    link: 'https://jestjs.io/',
+  },
+  dockercompose: {
+    label: 'Docker Compose',
+    value: 'dockercompose',
+    description:
+      'A tool for defining and running multi-container Docker applications.',
+    link: 'https://docs.docker.com/compose/',
+  },
+  scalar: {
+    label: 'Scalar',
+    value: 'scalar',
+    description:
+      'A modern interactive API documentation and reference tool, an alternative to Swagger UI.',
+    link: 'https://scalar.com/',
+  },
+  ddd: {
+    label: 'DDD',
+    value: 'ddd',
+    description:
+      'Domain-Driven Design — a software development approach that models code around the business domain.',
+    link: 'https://martinfowler.com/bliki/DomainDrivenDesign.html',
+  },
+  ia: {
+    label: 'Artificial Intelligence',
+    value: 'ia',
+    description:
+      'Artificial Intelligence concepts and tools applied to software development.',
+    link: '',
+  },
+  excel: {
+    label: 'Excel',
+    value: 'excel',
+    description:
+      "Microsoft's spreadsheet software, used for data analysis and organization.",
+    link: 'https://www.microsoft.com/microsoft-365/excel',
+  },
+  'java-fundamentals': {
+    label: 'Java Fundamentals',
+    value: 'java-fundamentals',
+    description: 'Essential concepts of the Java language.',
+    link: '',
+  },
+  oop: {
+    label: 'Object Orientation',
+    value: 'oop',
+    description:
+      'Programming paradigm based on classes and objects, with pillars such as inheritance, encapsulation, and polymorphism.',
+    link: '',
+  },
+  'functional-programming': {
+    label: 'Functional Programming',
+    value: 'functional-programming',
+    description:
+      'Programming paradigm that treats computation as the evaluation of mathematical functions, avoiding mutable state.',
+    link: '',
+  },
+  javafx: {
+    label: 'JavaFX',
+    value: 'javafx',
+    description:
+      'A library for building rich graphical user interfaces in Java applications.',
+    link: 'https://openjfx.io/',
   },
 }

@@ -115,6 +115,41 @@ describe('getIconByTechnology', () => {
     })
   })
 
+  it('returns a devicon-based class for dockercompose and jest', () => {
+    expect(getIconByTechnology('dockercompose')).toEqual({
+      iconClassName: 'devicon-docker-plain-wordmark colored',
+    })
+    expect(getIconByTechnology('jest')).toEqual({
+      iconClassName: 'devicon-jest-plain',
+    })
+  })
+
+  it('renders text elements for scalar, ddd, ia, excel, java-fundamentals, oop, functional-programming and javafx', () => {
+    render(getIconByTechnology('scalar').element)
+    expect(screen.getByText('SCL')).toBeInTheDocument()
+
+    render(getIconByTechnology('ddd').element)
+    expect(screen.getByText('DDD')).toBeInTheDocument()
+
+    render(getIconByTechnology('ia').element)
+    expect(screen.getByText('IA')).toBeInTheDocument()
+
+    render(getIconByTechnology('excel').element)
+    expect(screen.getByText('XLS')).toBeInTheDocument()
+
+    render(getIconByTechnology('java-fundamentals').element)
+    expect(screen.getByText('JAVA')).toBeInTheDocument()
+
+    render(getIconByTechnology('oop').element)
+    expect(screen.getByText('OOP')).toBeInTheDocument()
+
+    render(getIconByTechnology('functional-programming').element)
+    expect(screen.getByText('FP')).toBeInTheDocument()
+
+    render(getIconByTechnology('javafx').element)
+    expect(screen.getByText('FX')).toBeInTheDocument()
+  })
+
   it('falls back to a generic devicon class for unknown technologies', () => {
     expect(getIconByTechnology('some-unknown-tech')).toEqual({
       iconClassName: 'devicon-some-unknown-tech-plain colored',

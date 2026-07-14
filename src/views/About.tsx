@@ -7,7 +7,6 @@ import { AboutHardSkillsSection } from '@/components/custom/about/about-hard-ski
 import { AboutLanguagesSection } from '@/components/custom/about/about-languages-section'
 import { AboutPersonalInfo } from '@/components/custom/about/about-personal-info'
 import { AboutProfessionalProfile } from '@/components/custom/about/about-professional-profile'
-import { AboutRecommendationsSection } from '@/components/custom/about/about-recommendations-section'
 import { AboutSoftSkillsSection } from '@/components/custom/about/about-soft-skills-section'
 import { PageShell } from '@/components/custom/page-shell'
 import { useScrollToSearchAnchor } from '@/hooks/use-scroll-to-search-anchor'
@@ -31,7 +30,7 @@ export function About() {
         <AboutExperienceSection experiences={user.experiences} />
         <AboutEducationSection formations={user.formations} />
         <AboutCertificatesSection certificates={user.certificates} />
-        <AboutRecommendationsSection recommendations={user.recomendations} />
+        {/* <AboutRecommendationsSection recommendations={user.recomendations} /> */}
         <AboutLanguagesSection languages={user.languages} />
         <AboutSoftSkillsSection skills={user.softSkills} />
       </div>

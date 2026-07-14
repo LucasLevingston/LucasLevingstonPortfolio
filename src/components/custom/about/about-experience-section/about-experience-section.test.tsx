@@ -58,6 +58,32 @@ describe('AboutExperienceSection', () => {
     expect(screen.queryByAltText('Acme Corp logo')).not.toBeInTheDocument()
   })
 
+  it('shows the current-job badge and "start until now" phrasing for an ongoing role', () => {
+    render(
+      <AboutExperienceSection
+        experiences={[{ ...baseExperience, endsDate: 'Atual' }]}
+      />
+    )
+
+    expect(screen.getByText('about.currentJob')).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        (_, element) =>
+          element?.tagName === 'SPAN' &&
+          element.textContent === '2021 about.untilNow'
+      )
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByText('about.end', { exact: false })
+    ).not.toBeInTheDocument()
+  })
+
+  it('does not show the current-job badge for a finished role', () => {
+    render(<AboutExperienceSection experiences={[baseExperience]} />)
+
+    expect(screen.queryByText('about.currentJob')).not.toBeInTheDocument()
+  })
+
   it('renders multiple experiences', () => {
     render(
       <AboutExperienceSection

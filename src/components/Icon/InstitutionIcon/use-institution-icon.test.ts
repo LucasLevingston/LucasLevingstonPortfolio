@@ -1,13 +1,14 @@
 import { describe, expect, it } from 'vitest'
+import { INSTITUTIONS } from '@/data/institutions-data'
 import { useInstitutionIcon } from './use-institution-icon'
 
 describe('useInstitutionIcon', () => {
-  it('returns the known initials and color for a mapped institution key', () => {
+  it('returns the known initials, color and logo for a mapped institution key', () => {
     const result = useInstitutionIcon('Udemy', 'udemy')
 
     expect(result.initials).toBe('UD')
     expect(result.colorClassName).toBe('bg-[#A435F0]')
-    expect(result.logo).toBeUndefined()
+    expect(result.logo).toBe(INSTITUTIONS.udemy.logo)
   })
 
   it('returns known initials for a multi-letter acronym institution', () => {
@@ -15,6 +16,7 @@ describe('useInstitutionIcon', () => {
 
     expect(result.initials).toBe('UEPB')
     expect(result.colorClassName).toBe('bg-[#0B3D91]')
+    expect(result.logo).toBe(INSTITUTIONS.uepb.logo)
   })
 
   it('derives initials from the first two words when no institutionKey is given', () => {

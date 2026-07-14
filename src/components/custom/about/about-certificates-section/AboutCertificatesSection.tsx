@@ -13,6 +13,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils/cn'
 import type { AboutCertificatesSectionProps } from './about-certificates-section.types'
@@ -44,24 +46,26 @@ export function AboutCertificatesSection({
           )}
         >
           <CardHeader className="p-0">
-            <div className="flex items-center gap-3">
-              <div className="rounded-lg">
-                <Trophy className="h-4 w-4 !text-mainColor" />
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="rounded-lg">
+                  <Trophy className="h-4 w-4 !text-mainColor" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground">
+                  {certificate.title}
+                </h3>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">
-                {certificate.title}
-              </h3>
+              <div className="flex shrink-0 items-center gap-2">
+                <InstitutionIcon
+                  institution={certificate.institution}
+                  institutionKey={certificate.institutionKey}
+                />
+                <span className="text-sm font-medium text-foreground">
+                  {certificate.institution}
+                </span>
+              </div>
             </div>
           </CardHeader>
-          <div className="flex items-center gap-2">
-            <InstitutionIcon
-              institution={certificate.institution}
-              institutionKey={certificate.institutionKey}
-            />
-            <span className="text-base font-medium text-foreground">
-              {certificate.institution}
-            </span>
-          </div>
           <CardContent className="p-0">
             <div className="space-y-4">
               <div className="rounded-lg">
@@ -84,22 +88,35 @@ export function AboutCertificatesSection({
                 <TechnologiesSection technologies={certificate.technologies} />
               </div>
               {certificate.image && (
-                <Carousel setApi={setApi}>
-                  <CarouselContent className="h-full w-[500px]">
+                <Carousel className="mx-auto w-full max-w-md" setApi={setApi}>
+                  <CarouselContent>
                     {certificates.map(cert => (
-                      <CarouselItem className="h-full w-full" key={cert.title}>
+                      <CarouselItem key={cert.title}>
                         <ImageViewer alt={cert.title} src={cert.image}>
-                          <Image
-                            alt={cert.title}
-                            className="rounded-lg object-contain"
-                            fill
-                            sizes="(max-width: 640px) 100vw, 500px"
-                            src={cert.image}
-                          />
+                          <div
+                            className={cn(
+                              'relative aspect-[4/3] w-full overflow-hidden',
+                              'rounded-xl border border-borderColor bg-muted/20'
+                            )}
+                          >
+                            <Image
+                              alt={cert.title}
+                              className="object-contain"
+                              fill
+                              sizes="(max-width: 640px) 100vw, 448px"
+                              src={cert.image}
+                            />
+                          </div>
                         </ImageViewer>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
+                  {certificates.length > 1 && (
+                    <>
+                      <CarouselPrevious className="left-2" />
+                      <CarouselNext className="right-2" />
+                    </>
+                  )}
                 </Carousel>
               )}
               <div className="py-2 text-center text-base !text-mainColor dark:!text-mainColor">
