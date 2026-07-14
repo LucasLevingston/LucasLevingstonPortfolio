@@ -94,6 +94,8 @@ describe('Navbar', () => {
 
     await user.click(trigger as HTMLElement)
 
-    expect(await screen.findByText('Lucas Levingston')).toBeInTheDocument()
+    expect(
+      (await screen.findAllByText('Lucas Levingston')).length
+    ).toBeGreaterThan(0)
   })
 })

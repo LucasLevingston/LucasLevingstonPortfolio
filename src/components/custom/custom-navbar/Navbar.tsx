@@ -1,7 +1,6 @@
-import { Menu } from 'lucide-react'
+import { Mail, Menu, Phone } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AiFillPhone, AiOutlineMail } from 'react-icons/ai'
 import { generalImages } from '@/assets/images'
 import { CustomButton } from '@/components/custom/custom-button'
 import Photo from '@/components/custom/photo'
@@ -18,7 +17,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { formatPhoneNumber } from '@/lib/constants/format-number'
 import { cn } from '@/lib/utils/cn'
 import { getProjectSlug } from '@/lib/utils/project-slug'
@@ -153,54 +157,61 @@ export function Navbar() {
             </CustomButton>
           </SheetTrigger>
           <SheetContent
-            className="w-[80%] dark:bg-bioBgColor sm:w-[350px]"
+            className={cn(
+              'flex w-[85%] flex-col overflow-y-auto dark:bg-bioBgColor',
+              'sm:w-[350px] landscape:w-[60%] landscape:sm:w-[350px]'
+            )}
             side="right"
           >
-            <div className="">
-              <div className="flex flex-col justify-center items-center gap-8">
-                <h1 className="text-[32px] font-bold">{user.name}</h1>
-
-                <Photo />
-                <NavigationMenu className="w-full">
-                  {navigationContent}
-                </NavigationMenu>
-                <div className="mx-auto max-w-[100%] text-center font-bold">
-                  {t('sidebar.greeting')} {user.name} {t('sidebar.am')}
-                  <span className="!text-mainColor">
-                    <RoleTypewriter />
-                  </span>
-                </div>
-                <div className="items-center justify-center space-y-2 font-bold">
-                  <p>{t('sidebar.welcome')}</p>
-                </div>
-
-                <div className="space-y-2">
-                  <ModeToggle />
-                  <LanguageToggle />
-                </div>
-
-                <SocialBar className="border-b-[2px] border-solid border-black pb-3" />
-                <div>
-                  <div className="flex w-[100%] justify-center">
-                    <a
-                      className="text-none flex gap-2"
-                      href={`mailto:${user.email}`}
-                    >
-                      <AiOutlineMail className="max-w-[20px] text-[25px] !text-mainColor" />
-                      <span className="transition-[1s] hover:!text-mainColor">
-                        {user.email}
-                      </span>
-                    </a>
-                  </div>
-                  <div className="flex w-full justify-center gap-2">
-                    <AiFillPhone className="mr-[5px] max-w-[20px] text-[25px] !text-mainColor" />
-                    <p className="text-none hover:max-w-[225px]">
-                      {formatPhoneNumber(user.phone)}
-                    </p>
-                  </div>
-                </div>
-                <ResumeButton />
+            <SheetTitle className="sr-only">{user.name}</SheetTitle>
+            <div className="flex flex-col items-center gap-6 py-2 text-center landscape:gap-3">
+              <div className="flex flex-col items-center gap-2">
+                <Photo className="h-20 w-20 landscape:h-14 landscape:w-14" />
+                <h1 className="text-xl font-bold landscape:text-lg">
+                  {user.name}
+                </h1>
+                <p className="font-semibold text-mainColor text-sm">
+                  <RoleTypewriter />
+                </p>
               </div>
+
+              <NavigationMenu className="w-full">
+                {navigationContent}
+              </NavigationMenu>
+
+              <p className="max-w-[100%] text-muted-foreground text-sm landscape:hidden">
+                {t('sidebar.welcome')}
+              </p>
+
+              <div className="flex items-center gap-2">
+                <ModeToggle />
+                <LanguageToggle />
+              </div>
+
+              <div
+                className={cn(
+                  'flex w-full flex-col items-center gap-3 border-border border-t pt-4',
+                  'landscape:gap-2 landscape:pt-2'
+                )}
+              >
+                <SocialBar />
+                <a
+                  className={cn(
+                    'flex items-center gap-2 text-sm transition-colors',
+                    'hover:text-mainColor'
+                  )}
+                  href={`mailto:${user.email}`}
+                >
+                  <Mail className="h-4 w-4 shrink-0 !text-mainColor" />
+                  {user.email}
+                </a>
+                <div className="flex items-center gap-2 text-sm">
+                  <Phone className="h-4 w-4 shrink-0 !text-mainColor" />
+                  {formatPhoneNumber(user.phone)}
+                </div>
+              </div>
+
+              <ResumeButton />
             </div>
           </SheetContent>
         </Sheet>
