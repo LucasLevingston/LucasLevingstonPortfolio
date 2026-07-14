@@ -12,6 +12,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Sercomp 2023',
@@ -24,6 +26,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'UEPB',
+    institutionKey: 'uepb',
   },
   {
     title: 'NLW Pocket: Javascript - Full-stack Intermediário',
@@ -46,6 +50,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Journey - Nodejs',
@@ -64,6 +70,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Unite RocketSeat - React',
@@ -75,6 +83,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Unite RocketSeat - Node',
@@ -86,6 +96,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'Introdução ao Desenvolvimento Full Stack',
@@ -97,6 +109,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Introdução à Plataforma Java',
@@ -106,6 +120,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Introdução a Aplicações Rest',
@@ -115,6 +131,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Crie Um Portfólio Vencedor',
@@ -126,6 +144,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Contribuindo em um Projeto Open Source',
@@ -137,6 +157,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Ambiente de Desenvolvimento Java',
@@ -146,6 +168,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Java Completo: Do zero ao profissional + Projetos',
@@ -168,6 +192,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2022',
     completionDate: '03/2025',
+    institution: 'Udemy',
+    institutionKey: 'udemy',
   },
   {
     title: 'NLW Connect - React',
@@ -186,6 +212,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Agents - FullStack',
@@ -212,6 +240,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'Formação: TypeScript Fullstack Developer',
@@ -231,6 +261,8 @@ export const certificatesDataBr: CertificatesType[] = [
       'postgresql',
       'mongo',
     ],
+    institution: 'Santander Open Academy',
+    institutionKey: 'santander',
   },
   {
     title: 'React Testing Library and Jest: The Complete Guide',
@@ -242,6 +274,8 @@ export const certificatesDataBr: CertificatesType[] = [
     hours: 7.5,
     startsDate: '07/2026',
     completionDate: '07/2026',
+    institution: 'Udemy',
+    institutionKey: 'udemy',
   },
 ]
 
@@ -256,6 +290,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Sercomp 2023',
@@ -268,6 +304,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'UEPB',
+    institutionKey: 'uepb',
   },
   {
     title: 'NLW Pocket: Javascript - Intermediate Full-stack',
@@ -291,6 +329,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Journey - Node.js',
@@ -309,6 +349,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Unite RocketSeat - React',
@@ -320,6 +362,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Unite RocketSeat - Node',
@@ -331,6 +375,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'Introduction to Full Stack Development',
@@ -342,6 +388,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Introduction to the Java Platform',
@@ -353,6 +401,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Introduction to REST Applications',
@@ -362,6 +412,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Create a Winning Portfolio',
@@ -373,6 +425,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Contributing to an Open Source Project',
@@ -384,6 +438,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
   },
   {
     title: 'Java Development Environment',
@@ -393,6 +449,32 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'DIO',
+    institutionKey: 'dio',
+  },
+  {
+    title: 'Complete Java: From Zero to Professional + Projects',
+    image: certificateImages.ambienteJava,
+    description: ['Setting up a Java development environment.'],
+    technologies: [
+      'java',
+      'eclipse',
+      'intellij',
+      'java fundamentals',
+      'object orientation',
+      'functional programming',
+      'mysql',
+      'mongodb',
+      'spring boot',
+      'javafx',
+      'jpa',
+      'hibernate',
+    ],
+    hours: 8,
+    startsDate: '01/2022',
+    completionDate: '03/2025',
+    institution: 'Udemy',
+    institutionKey: 'udemy',
   },
   {
     title: 'NLW Connect - React',
@@ -411,6 +493,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'NLW Agents - FullStack',
@@ -437,6 +521,8 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 8,
     startsDate: '01/2023',
     completionDate: '01/2023',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat',
   },
   {
     title: 'Bootcamp: TypeScript Fullstack Developer',
@@ -456,6 +542,8 @@ export const certificatesDataEn: CertificatesType[] = [
       'postgresql',
       'mongo',
     ],
+    institution: 'Santander Open Academy',
+    institutionKey: 'santander',
   },
   {
     title: 'React Testing Library and Jest: The Complete Guide',
@@ -467,5 +555,7 @@ export const certificatesDataEn: CertificatesType[] = [
     hours: 7.5,
     startsDate: '07/2026',
     completionDate: '07/2026',
+    institution: 'Udemy',
+    institutionKey: 'udemy',
   },
 ]

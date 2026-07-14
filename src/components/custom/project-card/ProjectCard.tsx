@@ -1,5 +1,6 @@
 'use client'
 import { GitBranch, Monitor, Smartphone, Star } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { memo } from 'react'
 import { CustomBadge } from '@/components/custom/custom-badge'
@@ -104,21 +105,21 @@ function ProjectCardComponent({ project, allProjects }: ProjectCardProps) {
                   >
                     {isMobile ? (
                       <PhoneFrame className="h-full max-h-[180px]">
-                        <img
+                        <Image
                           alt={`Preview of ${title}`}
-                          className="h-full w-full object-cover"
-                          decoding="async"
-                          loading="lazy"
+                          className="object-cover"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 400px"
                           src={previewImage || '/placeholder.svg'}
                         />
                       </PhoneFrame>
                     ) : (
                       <DesktopFrame className="h-full max-h-[180px]">
-                        <img
+                        <Image
                           alt={`Preview of ${title}`}
-                          className="h-full w-full object-contain"
-                          decoding="async"
-                          loading="lazy"
+                          className="object-contain"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 400px"
                           src={previewImage || '/placeholder.svg'}
                         />
                       </DesktopFrame>

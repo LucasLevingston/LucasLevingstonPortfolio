@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import CarouselPagination from '@/components/custom/carousel-pagination'
 import { DesktopFrame } from '@/components/custom/desktop-frame'
 import { ImageViewer } from '@/components/custom/image-viewer'
@@ -9,13 +10,8 @@ import {
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel'
+import type { ProjectImageCarouselProps } from './project-image-carousel.types'
 import { useProjectImageCarousel } from './use-project-image-carousel'
-
-interface ProjectImageCarouselProps {
-  images: string[]
-  isMobile?: boolean
-  paginationImages?: string[]
-}
 
 export function ProjectImageCarousel({
   images,
@@ -36,11 +32,11 @@ export function ProjectImageCarousel({
                 src={image || '/placeholder.svg'}
               >
                 <PhoneFrame>
-                  <img
+                  <Image
                     alt={`Screenshot ${index + 1}`}
-                    className="h-full w-full object-cover"
-                    decoding="async"
-                    loading="lazy"
+                    className="object-cover"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 400px"
                     src={image || '/placeholder.svg'}
                   />
                 </PhoneFrame>
@@ -53,11 +49,11 @@ export function ProjectImageCarousel({
                   alt={`Screenshot ${index + 1}`}
                   src={image || '/placeholder.svg'}
                 >
-                  <img
+                  <Image
                     alt={`Screenshot ${index + 1}`}
-                    className="h-full w-full rounded-lg object-contain"
-                    decoding="async"
-                    loading="lazy"
+                    className="rounded-lg object-contain"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 400px"
                     src={image || '/placeholder.svg'}
                   />
                 </ImageViewer>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { memo } from 'react'
 import { twMerge } from 'tailwind-merge'
 import type { TechnologyIconProps } from './technology-icon.types'
@@ -10,16 +11,18 @@ function TechnologyIconComponent({
 }: TechnologyIconProps) {
   const { svgSizeClassName, iconSizeClassName, iconClassName, svg, element } =
     useTechnologyIcon(technology, hover)
+  const size = hover ? 72 : 30
 
   return (
     <>
       {svg && (
-        <img
+        <Image
           alt=""
           className={twMerge(svgSizeClassName, iconClassName, className)}
-          decoding="async"
-          loading="lazy"
+          height={size}
           src={svg}
+          unoptimized
+          width={size}
         />
       )}
 

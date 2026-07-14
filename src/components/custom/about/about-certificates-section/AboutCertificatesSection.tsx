@@ -1,23 +1,22 @@
 'use client'
 
 import { Award, Code, Trophy } from 'lucide-react'
+import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import CarouselPagination from '@/components/custom/carousel-pagination'
 import { ImageViewer } from '@/components/custom/image-viewer'
 import Section from '@/components/custom/section'
 import TechnologiesSection from '@/components/custom/technology-section'
+import InstitutionIcon from '@/components/Icon/InstitutionIcon'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel'
-import type { CertificatesType } from '@/types/CertificatesType'
+import { cn } from '@/lib/utils/cn'
+import type { AboutCertificatesSectionProps } from './about-certificates-section.types'
 import { useAboutCertificatesSection } from './use-about-certificates-section'
-
-interface AboutCertificatesSectionProps {
-  certificates: CertificatesType[]
-}
 
 export function AboutCertificatesSection({
   certificates,
@@ -38,7 +37,12 @@ export function AboutCertificatesSection({
         {t('about.certificatesTitle')}
       </Section.Title>
       <Section.Content>
-        <Card className="flex flex-col gap-2 p-6 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+        <Card
+          className={cn(
+            'flex flex-col gap-2 p-6 transition-[transform,box-shadow] duration-200 ease-out',
+            'hover:-translate-y-1 hover:shadow-lg'
+          )}
+        >
           <CardHeader className="p-0">
             <div className="flex items-center gap-3">
               <div className="rounded-lg">
@@ -49,6 +53,15 @@ export function AboutCertificatesSection({
               </h3>
             </div>
           </CardHeader>
+          <div className="flex items-center gap-2">
+            <InstitutionIcon
+              institution={certificate.institution}
+              institutionKey={certificate.institutionKey}
+            />
+            <span className="text-base font-medium text-foreground">
+              {certificate.institution}
+            </span>
+          </div>
           <CardContent className="p-0">
             <div className="space-y-4">
               <div className="rounded-lg">
@@ -76,15 +89,13 @@ export function AboutCertificatesSection({
                     {certificates.map(cert => (
                       <CarouselItem className="h-full w-full" key={cert.title}>
                         <ImageViewer alt={cert.title} src={cert.image}>
-                          <div className="h-full w-full rounded-lg">
-                            <img
-                              alt={cert.title}
-                              className="h-full w-full rounded-lg object-contain"
-                              decoding="async"
-                              loading="lazy"
-                              src={cert.image}
-                            />
-                          </div>
+                          <Image
+                            alt={cert.title}
+                            className="rounded-lg object-contain"
+                            fill
+                            sizes="(max-width: 640px) 100vw, 500px"
+                            src={cert.image}
+                          />
                         </ImageViewer>
                       </CarouselItem>
                     ))}

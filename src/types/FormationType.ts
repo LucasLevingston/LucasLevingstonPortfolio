@@ -1,6 +1,9 @@
+import type { InstitutionKey } from '@/data/institutions-data'
+
 export interface FormationType {
   title: string
   institution: string
+  institutionKey?: InstitutionKey
   duration: string
   currentStatus?: formationStatus
   startsDate: string

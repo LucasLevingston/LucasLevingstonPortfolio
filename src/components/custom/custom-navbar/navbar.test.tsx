@@ -1,6 +1,7 @@
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { Navbar } from './Navbar'
 
 let mockPathname = '/'
@@ -38,7 +39,11 @@ beforeAll(() => {
 describe('Navbar', () => {
   it('renders the desktop navigation triggers', () => {
     mockPathname = '/'
-    render(<Navbar />)
+    render(
+      <TestQueryClientProvider>
+        <Navbar />
+      </TestQueryClientProvider>
+    )
     expect(
       within(screen.getAllByRole('navigation')[0]).getByText('navbar.about')
     ).toBeInTheDocument()
@@ -52,14 +57,22 @@ describe('Navbar', () => {
 
   it('highlights the active route', () => {
     mockPathname = '/'
-    render(<Navbar />)
+    render(
+      <TestQueryClientProvider>
+        <Navbar />
+      </TestQueryClientProvider>
+    )
     const homeLink = screen.getAllByText('navbar.home')[0]
     expect(homeLink).toHaveClass('bg-mainColor')
   })
 
   it('does not highlight an inactive route', () => {
     mockPathname = '/about'
-    render(<Navbar />)
+    render(
+      <TestQueryClientProvider>
+        <Navbar />
+      </TestQueryClientProvider>
+    )
     const homeLink = screen.getAllByText('navbar.home')[0]
     expect(homeLink).not.toHaveClass('bg-mainColor')
   })
@@ -67,7 +80,11 @@ describe('Navbar', () => {
   it('opens the mobile sheet with the user info on trigger click', async () => {
     mockPathname = '/'
     const user = userEvent.setup()
-    render(<Navbar />)
+    render(
+      <TestQueryClientProvider>
+        <Navbar />
+      </TestQueryClientProvider>
+    )
 
     const menuButtons = screen.getAllByRole('button')
     const trigger = menuButtons.find(button =>

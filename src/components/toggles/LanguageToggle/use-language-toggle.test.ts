@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { userBr, userEn } from '@/data/user-data'
 import i18n from '@/i18n'
 import { useStorage } from '@/storage/use-storage'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { useLanguageToggle } from './use-language-toggle'
 
 describe('useLanguageToggle', () => {
@@ -33,7 +34,9 @@ describe('useLanguageToggle', () => {
   }
 
   it('reports isPortuguese as true when i18n.language is "br"', async () => {
-    const { result } = renderHook(() => useLanguageToggle())
+    const { result } = renderHook(() => useLanguageToggle(), {
+      wrapper: TestQueryClientProvider,
+    })
     await flushFetch()
 
     expect(result.current.isPortuguese).toBe(true)
@@ -42,7 +45,9 @@ describe('useLanguageToggle', () => {
   it('reports isPortuguese as false when i18n.language is not "br"', async () => {
     i18n.changeLanguage('en')
 
-    const { result } = renderHook(() => useLanguageToggle())
+    const { result } = renderHook(() => useLanguageToggle(), {
+      wrapper: TestQueryClientProvider,
+    })
     await flushFetch()
 
     expect(result.current.isPortuguese).toBe(false)
@@ -50,7 +55,9 @@ describe('useLanguageToggle', () => {
 
   it('handleLanguageChange(true) switches i18n to "br" and syncs the store', async () => {
     i18n.changeLanguage('en')
-    const { result } = renderHook(() => useLanguageToggle())
+    const { result } = renderHook(() => useLanguageToggle(), {
+      wrapper: TestQueryClientProvider,
+    })
     await flushFetch()
 
     act(() => {
@@ -62,7 +69,9 @@ describe('useLanguageToggle', () => {
   })
 
   it('handleLanguageChange(false) switches i18n to "en" and syncs the store', async () => {
-    const { result } = renderHook(() => useLanguageToggle())
+    const { result } = renderHook(() => useLanguageToggle(), {
+      wrapper: TestQueryClientProvider,
+    })
     await flushFetch()
 
     act(() => {

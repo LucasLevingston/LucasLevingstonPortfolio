@@ -6,7 +6,7 @@ export default function Header() {
   useHeader()
 
   return (
-    <div className="py-4 xl:py-6">
+    <div>
       <div className="container mx-auto flex h-14 items-center justify-between">
         <h1 className="text-2xl font-bold tracking-tight">
           Lucas

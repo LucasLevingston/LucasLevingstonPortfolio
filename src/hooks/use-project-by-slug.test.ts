@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { userBr } from '@/data/user-data'
 import '@/i18n'
 import { useStorage } from '@/storage/use-storage'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 
 vi.mock('next/navigation', () => ({
   useParams: () => ({ slug: 'some-project' }),
@@ -28,14 +29,18 @@ describe('useProjectBySlug', () => {
   })
 
   it('returns the project matching the slug', () => {
-    const { result } = renderHook(() => useProjectBySlug('expertgp'))
+    const { result } = renderHook(() => useProjectBySlug('expertgp'), {
+      wrapper: TestQueryClientProvider,
+    })
 
     expect(result.current.title).toBe('ExpertGP')
   })
 
   it('calls notFound for a slug that does not match any project', () => {
     expect(() =>
-      renderHook(() => useProjectBySlug('not-a-real-project'))
+      renderHook(() => useProjectBySlug('not-a-real-project'), {
+        wrapper: TestQueryClientProvider,
+      })
     ).toThrow()
   })
 })

@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { twMerge } from 'tailwind-merge'
 import { useUser } from '@/hooks/use-user'
-
-interface PhotoProps {
-  className?: string
-}
+import type { PhotoProps } from './photo.types'
 
 const Photo = ({ className }: PhotoProps) => {
   const {
@@ -32,13 +30,15 @@ const Photo = ({ className }: PhotoProps) => {
           className="absolute inset-0 flex items-center justify-center"
           initial={{ opacity: 0 }}
         >
-          <img
+          <Image
             alt=""
             className={twMerge(
               'sm:w-h-44 h-[175px] w-[175px] rounded-full object-contain sm:h-44',
               className
             )}
+            height={175}
             src={profilePicture}
+            width={175}
           />
         </motion.div>
         <motion.svg

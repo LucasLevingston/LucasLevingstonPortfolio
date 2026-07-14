@@ -1,20 +1,32 @@
-import type React from 'react'
 import { JSX } from 'react'
+import { cn } from '@/lib/utils/cn'
+import type {
+  SectionContentProps,
+  SectionProps,
+  SectionRootProps,
+  SectionTitleProps,
+  SectionVariant,
+} from './section.types'
 
-interface SectionRootProps {
-  children: React.ReactNode
-  id?: string
-  className?: string
+const SECTION_VARIANT_CLASS_NAME: Record<SectionVariant, string> = {
+  primary: 'rounded-xl border border-borderColor bg-card p-6',
+  secondary: 'rounded-xl border border-border bg-muted/40 p-6',
+  ghost: 'py-3',
 }
 
 function SectionRoot({
   children,
   id,
-  className = '',
+  className,
+  variant = 'ghost',
 }: SectionRootProps): JSX.Element {
   return (
     <div
-      className={`space-y-3 border-solid border-borderColor py-3 ${className}`}
+      className={cn(
+        'space-y-3',
+        SECTION_VARIANT_CLASS_NAME[variant],
+        className
+      )}
       id={id}
     >
       {children}
@@ -22,35 +34,15 @@ function SectionRoot({
   )
 }
 
-interface SectionTitleProps {
-  children: React.ReactNode
-  className?: string
-}
-
-function SectionTitle({
-  children,
-  className = '',
-}: SectionTitleProps): JSX.Element {
-  return <div className={`text-xl font-bold ${className}`}>{children}</div>
-}
-
-interface SectionContentProps {
-  children: React.ReactNode
-  className?: string
+function SectionTitle({ children, className }: SectionTitleProps): JSX.Element {
+  return <div className={cn('text-xl font-bold', className)}>{children}</div>
 }
 
 function SectionContent({
   children,
-  className = '',
+  className,
 }: SectionContentProps): JSX.Element {
-  return <div className={`shadow-md ${className}`}>{children}</div>
-}
-
-interface SectionProps {
-  children: React.ReactNode
-  title?: string
-  className?: string
-  id?: string
+  return <div className={className}>{children}</div>
 }
 
 function Section({
@@ -58,9 +50,10 @@ function Section({
   title,
   className,
   id,
+  variant,
 }: SectionProps): JSX.Element {
   return (
-    <SectionRoot className="bg-black" id={id}>
+    <SectionRoot id={id} variant={variant}>
       {title && <SectionTitle>{title}</SectionTitle>}
       <SectionContent className={className}>{children}</SectionContent>
     </SectionRoot>

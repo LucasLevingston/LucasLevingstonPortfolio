@@ -1,6 +1,7 @@
 import { act, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import '@/i18n'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import Stats from './Stats'
 
 beforeEach(() => {
@@ -21,7 +22,11 @@ afterEach(() => {
 describe('Stats', () => {
   it('renders a label for each stat', async () => {
     await act(() => {
-      render(<Stats />)
+      render(
+        <TestQueryClientProvider>
+          <Stats />
+        </TestQueryClientProvider>
+      )
     })
 
     expect(screen.getByText('Anos de experiência')).toBeInTheDocument()
@@ -31,7 +36,13 @@ describe('Stats', () => {
   })
 
   it('renders a CountUp number next to each label', async () => {
-    const { container } = await act(async () => render(<Stats />))
+    const { container } = await act(async () =>
+      render(
+        <TestQueryClientProvider>
+          <Stats />
+        </TestQueryClientProvider>
+      )
+    )
 
     const counters = container.querySelectorAll('.text-4xl')
     expect(counters).toHaveLength(4)

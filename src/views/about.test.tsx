@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { userBr } from '@/data/user-data'
 import { useStorage } from '@/storage/use-storage'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { About } from './About'
 
 const noop = () => {
@@ -83,9 +84,11 @@ describe('About', () => {
 
   it('renders the professional profile, personal info and hard skills sections', async () => {
     render(
-      <ThemeProvider>
-        <About />
-      </ThemeProvider>
+      <TestQueryClientProvider>
+        <ThemeProvider>
+          <About />
+        </ThemeProvider>
+      </TestQueryClientProvider>
     )
     await flushEffects()
 

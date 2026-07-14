@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { userBr } from '@/data/user-data'
 import { useStorage } from '@/storage/use-storage'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { Projects } from './Projects'
 
 const noop = () => {
@@ -83,9 +84,11 @@ describe('Projects', () => {
 
   it('renders the projects title, filter bar and the project list', async () => {
     render(
-      <ThemeProvider>
-        <Projects />
-      </ThemeProvider>
+      <TestQueryClientProvider>
+        <ThemeProvider>
+          <Projects />
+        </ThemeProvider>
+      </TestQueryClientProvider>
     )
     await flushEffects()
 

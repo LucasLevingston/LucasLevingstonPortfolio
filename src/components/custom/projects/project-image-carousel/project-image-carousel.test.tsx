@@ -23,7 +23,7 @@ vi.mock('embla-carousel-react', () => {
 })
 
 describe('ProjectImageCarousel', () => {
-  const images = ['a.png', 'b.png', 'c.png']
+  const images = ['/a.png', '/b.png', '/c.png']
 
   it('renders one slide per image', () => {
     const { container } = render(<ProjectImageCarousel images={images} />)

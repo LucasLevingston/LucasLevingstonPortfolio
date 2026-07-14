@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import '@/i18n'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { useStats } from './use-stats'
 
 beforeEach(() => {
@@ -20,7 +21,9 @@ afterEach(() => {
 
 describe('useStats', () => {
   it('returns four stat entries with translated labels and numeric values', async () => {
-    const { result } = await act(async () => renderHook(() => useStats()))
+    const { result } = await act(async () =>
+      renderHook(() => useStats(), { wrapper: TestQueryClientProvider })
+    )
 
     expect(result.current).toHaveLength(4)
 

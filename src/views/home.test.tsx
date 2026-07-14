@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { userBr } from '@/data/user-data'
 import { useStorage } from '@/storage/use-storage'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { Home } from './Home'
 
 function mockMatchMedia(matches = false) {
@@ -67,9 +68,11 @@ describe('Home', () => {
 
   it('renders the header, hero greeting and stats', async () => {
     render(
-      <ThemeProvider>
-        <Home />
-      </ThemeProvider>
+      <TestQueryClientProvider>
+        <ThemeProvider>
+          <Home />
+        </ThemeProvider>
+      </TestQueryClientProvider>
     )
     await flushEffects()
 

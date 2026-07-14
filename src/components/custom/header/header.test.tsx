@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import Header from './Header'
 
 const changeLanguage = vi.fn()
@@ -36,18 +37,30 @@ beforeAll(() => {
 
 describe('Header', () => {
   it('renders the site title', () => {
-    render(<Header />)
+    render(
+      <TestQueryClientProvider>
+        <Header />
+      </TestQueryClientProvider>
+    )
     expect(screen.getByText('Lucas')).toBeInTheDocument()
     expect(screen.getByText('.dev')).toBeInTheDocument()
   })
 
   it('renders the Navbar', () => {
-    render(<Header />)
+    render(
+      <TestQueryClientProvider>
+        <Header />
+      </TestQueryClientProvider>
+    )
     expect(screen.getByText('navbar.about')).toBeInTheDocument()
   })
 
   it('syncs the current language on mount via useHeader', () => {
-    render(<Header />)
+    render(
+      <TestQueryClientProvider>
+        <Header />
+      </TestQueryClientProvider>
+    )
     expect(changeLanguage).toHaveBeenCalledWith('br')
   })
 })

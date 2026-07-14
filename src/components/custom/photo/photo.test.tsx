@@ -1,6 +1,7 @@
 import { act, render } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import '@/i18n'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import Photo from './Photo'
 
 beforeEach(() => {
@@ -21,7 +22,11 @@ afterEach(() => {
 describe('Photo', () => {
   it('renders the user profile picture', async () => {
     await act(() => {
-      render(<Photo />)
+      render(
+        <TestQueryClientProvider>
+          <Photo />
+        </TestQueryClientProvider>
+      )
     })
 
     const image = document.querySelector('img') as HTMLImageElement
@@ -32,7 +37,11 @@ describe('Photo', () => {
 
   it('renders the decorative animated border svg', async () => {
     await act(() => {
-      render(<Photo />)
+      render(
+        <TestQueryClientProvider>
+          <Photo />
+        </TestQueryClientProvider>
+      )
     })
 
     const svg = document.querySelector('svg')
@@ -42,7 +51,11 @@ describe('Photo', () => {
 
   it('applies a custom className to the wrapper and image', async () => {
     const { container } = await act(async () =>
-      render(<Photo className="custom-photo" />)
+      render(
+        <TestQueryClientProvider>
+          <Photo className="custom-photo" />
+        </TestQueryClientProvider>
+      )
     )
 
     expect(container.firstElementChild).toHaveClass('custom-photo')

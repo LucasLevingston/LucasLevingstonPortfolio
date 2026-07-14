@@ -11,6 +11,8 @@ const certificates = [
     hours: 10,
     startsDate: '2022-01-01',
     completionDate: '2022-02-01',
+    institution: 'Udemy',
+    institutionKey: 'udemy' as const,
   },
   {
     title: 'Certificate B',
@@ -20,6 +22,8 @@ const certificates = [
     hours: 20,
     startsDate: '2022-03-01',
     completionDate: '2022-04-01',
+    institution: 'Rocketseat',
+    institutionKey: 'rocketseat' as const,
   },
 ]
 

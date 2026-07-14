@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import Sidebar from './Sidebar'
 
 const GREETING_PATTERN = /sidebar.greeting/
@@ -14,20 +15,32 @@ vi.mock('react-i18next', () => ({
 
 describe('Sidebar', () => {
   it("renders the user's name as a heading", () => {
-    render(<Sidebar />)
+    render(
+      <TestQueryClientProvider>
+        <Sidebar />
+      </TestQueryClientProvider>
+    )
     expect(
       screen.getByRole('heading', { name: 'Lucas Levingston' })
     ).toBeInTheDocument()
   })
 
   it('renders the translated greeting and welcome copy', () => {
-    render(<Sidebar />)
+    render(
+      <TestQueryClientProvider>
+        <Sidebar />
+      </TestQueryClientProvider>
+    )
     expect(screen.getByText('sidebar.welcome')).toBeInTheDocument()
     expect(screen.getByText(GREETING_PATTERN)).toBeInTheDocument()
   })
 
   it("renders the user's email as a mailto link", () => {
-    render(<Sidebar />)
+    render(
+      <TestQueryClientProvider>
+        <Sidebar />
+      </TestQueryClientProvider>
+    )
     const emailLink = screen.getByText('lucaslevingston94@gmail.com')
     expect(emailLink.closest('a')).toHaveAttribute(
       'href',
@@ -36,7 +49,11 @@ describe('Sidebar', () => {
   })
 
   it('renders the formatted phone number', () => {
-    render(<Sidebar />)
+    render(
+      <TestQueryClientProvider>
+        <Sidebar />
+      </TestQueryClientProvider>
+    )
     expect(screen.getByText('(83) 99961-6220')).toBeInTheDocument()
   })
 })

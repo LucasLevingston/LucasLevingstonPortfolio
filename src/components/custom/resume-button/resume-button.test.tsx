@@ -1,6 +1,7 @@
 import { act, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import '@/i18n'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { ResumeButton } from './ResumeButton'
 
 const RESUME_LINK_LABEL_PATTERN = /Ver CV/i
@@ -23,7 +24,11 @@ afterEach(() => {
 describe('ResumeButton', () => {
   it('renders a link to the resume URL with the translated label', async () => {
     await act(() => {
-      render(<ResumeButton />)
+      render(
+        <TestQueryClientProvider>
+          <ResumeButton />
+        </TestQueryClientProvider>
+      )
     })
 
     const link = screen.getByRole('link', { name: RESUME_LINK_LABEL_PATTERN })
@@ -34,7 +39,13 @@ describe('ResumeButton', () => {
   })
 
   it('renders the eye icon alongside the label', async () => {
-    const { container } = await act(() => render(<ResumeButton />))
+    const { container } = await act(() =>
+      render(
+        <TestQueryClientProvider>
+          <ResumeButton />
+        </TestQueryClientProvider>
+      )
+    )
 
     expect(container.querySelector('.lucide-eye')).toBeInTheDocument()
     expect(screen.getByText('Ver CV')).toBeInTheDocument()

@@ -41,7 +41,10 @@ describe('ImageViewer', () => {
     await user.click(screen.getByText('Open image'))
 
     expect(screen.getByRole('dialog')).toBeInTheDocument()
-    expect(screen.getByAltText('Screenshot')).toHaveAttribute('src', '/img.png')
+    expect(screen.getByAltText('Screenshot')).toHaveAttribute(
+      'src',
+      expect.stringContaining(encodeURIComponent('/img.png'))
+    )
     expect(screen.getByText('100%')).toBeInTheDocument()
     expect(screen.getByText('Reset')).toBeInTheDocument()
   })

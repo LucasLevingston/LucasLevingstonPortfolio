@@ -1,4 +1,5 @@
 import { Menu } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { AiFillPhone, AiOutlineMail } from 'react-icons/ai'
 import { generalImages } from '@/assets/images'
@@ -60,12 +61,12 @@ export function Navbar() {
                   className={FEATURED_LINK_CLASS_NAME}
                   href={`/about?${t('about.technologiesTitle')}`}
                 >
-                  <img
+                  <Image
                     alt=""
                     className="rounded-full"
-                    decoding="async"
-                    loading="lazy"
+                    height={183}
                     src={generalImages.logo || '/placeholder.svg'}
+                    width={275}
                   />
                   <div className="mb-2 mt-4 text-lg font-medium">
                     {t('about.technologiesTitle')}

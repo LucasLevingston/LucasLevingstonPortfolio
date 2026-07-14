@@ -1,15 +1,11 @@
 import { Download, RotateCw, ZoomIn, ZoomOut } from 'lucide-react'
-import type React from 'react'
+import Image from 'next/image'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 import { CustomButton } from '@/components/custom/custom-button'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { cn } from '@/lib/utils/cn'
+import type { ImageViewerProps } from './image-viewer.types'
 import { useImageViewer } from './use-image-viewer'
-
-interface ImageViewerProps {
-  src: string
-  alt: string
-  children: React.ReactNode
-}
 
 export function ImageViewer({ src, alt, children }: ImageViewerProps) {
   const {
@@ -24,11 +20,16 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
   return (
     <Dialog onOpenChange={setIsOpen} open={isOpen}>
       <DialogTrigger asChild>
-        <div className="cursor-pointer transition-opacity hover:opacity-80">
+        <div className="relative h-full w-full cursor-pointer transition-opacity hover:opacity-80">
           {children}
         </div>
       </DialogTrigger>
-      <DialogContent className="max-h-[85vh] max-w-[85vw] border-mainBorder dark:bg-black/95 bg-white p-0 dark:border-main-border-dark">
+      <DialogContent
+        className={cn(
+          'h-[85vh] w-[85vw] border-mainBorder bg-white p-0',
+          'dark:border-main-border-dark dark:bg-black/95'
+        )}
+      >
         <div className="relative flex h-full w-full items-center justify-center">
           <TransformWrapper initialScale={1} maxScale={3} minScale={0.5}>
             {({ zoomIn, zoomOut, resetTransform, instance }) => (
@@ -84,6 +85,8 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
+                    width: '100%',
+                    height: '100%',
                   }}
                   wrapperStyle={{
                     width: '100%',
@@ -93,16 +96,14 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                     alignItems: 'center',
                   }}
                 >
-                  <img
+                  <Image
                     alt={alt}
-                    decoding="async"
                     draggable={false}
-                    loading="lazy"
+                    fill
+                    sizes="85vw"
                     src={src || '/placeholder.svg'}
                     style={{
                       transform: `rotate(${rotation}deg)`,
-                      maxWidth: '100%',
-                      maxHeight: '100%',
                       objectFit: 'contain',
                       userSelect: 'none',
                       pointerEvents: 'auto',

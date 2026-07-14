@@ -1,5 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import { useCustomNavbar } from './use-custom-navbar'
 
 let mockPathname = '/'
@@ -17,7 +18,9 @@ vi.mock('react-i18next', () => ({
 
 describe('useCustomNavbar', () => {
   it('exposes the user, translated projects and about sections', async () => {
-    const { result } = renderHook(() => useCustomNavbar())
+    const { result } = renderHook(() => useCustomNavbar(), {
+      wrapper: TestQueryClientProvider,
+    })
 
     expect(result.current.user.name).toBe('Lucas Levingston')
     expect(result.current.projects).toHaveLength(4)
@@ -47,7 +50,9 @@ describe('useCustomNavbar', () => {
 
   it('marks the current pathname as active', async () => {
     mockPathname = '/about'
-    const { result } = renderHook(() => useCustomNavbar())
+    const { result } = renderHook(() => useCustomNavbar(), {
+      wrapper: TestQueryClientProvider,
+    })
 
     await waitFor(() => expect(result.current.isActive('/about')).toBe(true))
     expect(result.current.isActive('/')).toBe(false)
@@ -55,7 +60,9 @@ describe('useCustomNavbar', () => {
 
   it('defaults isActive to false for a path that was never visited', () => {
     mockPathname = '/'
-    const { result } = renderHook(() => useCustomNavbar())
+    const { result } = renderHook(() => useCustomNavbar(), {
+      wrapper: TestQueryClientProvider,
+    })
     expect(result.current.isActive('/projects')).toBe(false)
   })
 })

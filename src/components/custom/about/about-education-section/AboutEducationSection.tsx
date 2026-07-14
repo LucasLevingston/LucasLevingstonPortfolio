@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import {
-  Building2,
   Calendar,
   Clock,
   GraduationCap,
@@ -11,6 +10,7 @@ import {
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import Section from '@/components/custom/section'
+import InstitutionIcon from '@/components/Icon/InstitutionIcon'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils/cn'
 import { scrollReveal } from '@/lib/utils/motion-reveal'
@@ -49,7 +49,10 @@ export function AboutEducationSection({
               <CardContent className="p-0">
                 <div className="space-y-2">
                   <div className="flex items-center gap-3 rounded-lg">
-                    <Building2 className="h-4 w-4 !text-mainColor" />
+                    <InstitutionIcon
+                      institution={formation.institution}
+                      institutionKey={formation.institutionKey}
+                    />
                     <span className="text-base font-medium text-foreground">
                       {formation.institution}
                     </span>

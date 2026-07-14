@@ -1,6 +1,7 @@
 import { act, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import '@/i18n'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import SocialBar from './SocialBar'
 
 beforeEach(() => {
@@ -21,7 +22,11 @@ afterEach(() => {
 describe('SocialBar', () => {
   it('renders a link for each social network with the correct href', async () => {
     await act(() => {
-      render(<SocialBar />)
+      render(
+        <TestQueryClientProvider>
+          <SocialBar />
+        </TestQueryClientProvider>
+      )
     })
 
     const links = screen.getAllByRole('link')
@@ -40,7 +45,11 @@ describe('SocialBar', () => {
 
   it('applies a custom className to the wrapper section', async () => {
     const { container } = await act(async () =>
-      render(<SocialBar className="custom-social" />)
+      render(
+        <TestQueryClientProvider>
+          <SocialBar className="custom-social" />
+        </TestQueryClientProvider>
+      )
     )
 
     expect(container.querySelector('section')).toHaveClass('custom-social')

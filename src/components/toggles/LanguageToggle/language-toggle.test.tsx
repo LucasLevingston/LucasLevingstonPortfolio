@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { userBr } from '@/data/user-data'
 import i18n from '@/i18n'
 import { useStorage } from '@/storage/use-storage'
+import { TestQueryClientProvider } from '@/test/test-query-client'
 import LanguageToggle from './LanguageToggle'
 
 async function flushFetch() {
@@ -34,7 +35,11 @@ describe('LanguageToggle', () => {
   })
 
   it('renders checked when the current language is Portuguese', async () => {
-    render(<LanguageToggle />)
+    render(
+      <TestQueryClientProvider>
+        <LanguageToggle />
+      </TestQueryClientProvider>
+    )
     await flushFetch()
 
     expect(screen.getByRole('switch')).toBeChecked()
@@ -43,7 +48,11 @@ describe('LanguageToggle', () => {
   it('renders unchecked when the current language is English', async () => {
     i18n.changeLanguage('en')
 
-    render(<LanguageToggle />)
+    render(
+      <TestQueryClientProvider>
+        <LanguageToggle />
+      </TestQueryClientProvider>
+    )
     await flushFetch()
 
     expect(screen.getByRole('switch')).not.toBeChecked()
@@ -53,7 +62,11 @@ describe('LanguageToggle', () => {
     i18n.changeLanguage('en')
     const user = userEvent.setup()
 
-    render(<LanguageToggle />)
+    render(
+      <TestQueryClientProvider>
+        <LanguageToggle />
+      </TestQueryClientProvider>
+    )
     await flushFetch()
 
     const toggle = screen.getByRole('switch')
