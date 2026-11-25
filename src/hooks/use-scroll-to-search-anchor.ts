@@ -3,6 +3,8 @@
 import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
+const SELECTOR_SPECIAL_CHARS = /["\\]/gu
+
 /**
  * Scrolls to the element whose id matches the current `search` query
  * param (e.g. `?search=about.experiencesTitle`), or to the top of the
@@ -18,7 +20,9 @@ export function useScrollToSearchAnchor() {
       window.scrollTo(0, 0)
       return
     }
-    const element = document.getElementById(search)
+    // Attribute selector instead of `#id`: section ids may contain spaces.
+    const escaped = search.replace(SELECTOR_SPECIAL_CHARS, '\\$&')
+    const element = document.querySelector(`[id="${escaped}"]`)
     element?.scrollIntoView({ behavior: 'smooth' })
   }, [searchParams])
 }

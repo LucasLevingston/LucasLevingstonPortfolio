@@ -1,11 +1,20 @@
-import React from 'react'
 import { CustomButton } from '@/components/custom/custom-button'
 import { cn } from '@/lib/utils/cn'
+import type { ListItemProps } from './list-item.types'
 
-export const ListItem = React.forwardRef<
-  React.ElementRef<'li'>,
-  React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, href }, ref) => {
+const DESCRIPTION_CLASS_NAME = cn(
+  'text-xs leading-relaxed text-black dark:text-white',
+  'break-words whitespace-normal'
+)
+
+// React 19 passes `ref` as a regular prop, so no forwardRef wrapper.
+export function ListItem({
+  className,
+  title,
+  children,
+  href,
+  ref,
+}: ListItemProps) {
   return (
     <li ref={ref}>
       <CustomButton
@@ -17,12 +26,9 @@ export const ListItem = React.forwardRef<
       >
         <div className="w-full space-y-1">
           <div className="text-sm font-bold leading-none">{title}</div>
-          <p className="text-xs leading-relaxed text-black dark:text-white break-words whitespace-normal">
-            {children}
-          </p>{' '}
+          <p className={DESCRIPTION_CLASS_NAME}>{children}</p>{' '}
         </div>
       </CustomButton>
     </li>
   )
-})
-ListItem.displayName = 'ListItem'
+}

@@ -4,6 +4,11 @@ import { twMerge } from 'tailwind-merge'
 import type { TechnologyIconProps } from './technology-icon.types'
 import { useTechnologyIcon } from './use-technology-icon'
 
+// The size class only sets the width; a square box with object-contain keeps
+// both rendered dimensions equal to width/height (no Next.js aspect warning)
+// while wide logos stay undistorted inside it.
+const SVG_BOX_CLASS_NAME = 'aspect-square object-contain'
+
 function TechnologyIconComponent({
   technology,
   className,
@@ -15,20 +20,25 @@ function TechnologyIconComponent({
 
   return (
     <>
-      {svg && (
+      {svg ? (
         <Image
           alt=""
-          className={twMerge(svgSizeClassName, iconClassName, className)}
+          className={twMerge(
+            svgSizeClassName,
+            SVG_BOX_CLASS_NAME,
+            iconClassName,
+            className
+          )}
           height={size}
           src={svg}
           unoptimized
           width={size}
         />
-      )}
+      ) : null}
 
-      {iconClassName && (
+      {iconClassName ? (
         <i className={twMerge(iconSizeClassName, iconClassName, className)} />
-      )}
+      ) : null}
 
       {element}
     </>

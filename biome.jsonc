@@ -1,5 +1,14 @@
 {
-  "extends": ["ultracite"],
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/next",
+    "ultracite/biome/vitest"
+  ],
+  "files": {
+    // SVG assets are artwork, not source code: keep them out of lint/format.
+    "includes": ["!**/*.svg"]
+  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
@@ -34,20 +43,16 @@
     "enabled": true,
     "rules": {
       "nursery": {
-        "useSortedClasses": {
+        "useTailwindSortedClasses": {
           "fix": "safe",
-          "level": "off",
-          "options": {
-            "attributes": ["classList"],
-            "functions": ["cn", "clsx", "cva", "tw"]
-          }
+          "level": "off"
         }
       },
       "complexity": {
         "useSimplifiedLogicExpression": "off",
         "noExcessiveCognitiveComplexity": "off"
       },
-      "recommended": true,
+      "preset": "recommended",
       "a11y": {
         "noSvgWithoutTitle": "off"
       },
@@ -90,24 +95,38 @@
   },
   "overrides": [
     {
+      // Tests are not linted: only the app code that ships is held to the rules.
+      "includes": ["**/*.test.ts", "**/*.test.tsx", "vitest.setup.ts"],
+      "linter": { "enabled": false }
+    },
+    {
       "includes": ["src/components/ui/**"],
       "linter": {
         "rules": {
           "performance": {
             "noNamespaceImport": "off"
           },
-          "nursery": {
-            "noShadow": "off"
-          },
           "a11y": {
             "useSemanticElements": "off",
-            "noRedundantRoles": "off"
+            "noRedundantRoles": "off",
+            // Radix `*.Label` parts are menu headings, not form labels.
+            "noLabelWithoutControl": "off"
           },
           "style": {
             "useFilenamingConvention": "off"
+          },
+          "suspicious": {
+            "noShadow": "off",
+            // shadcn/ui output still uses forwardRef; regenerate rather than hand-edit.
+            "noReactForwardRef": "off"
           }
         }
       }
     }
-  ]
+  ],
+  "tailwind": {
+    "attributes": ["class", "className", "classList"],
+    "mergeFunctions": ["cn", "clsx", "tw"],
+    "variantFunctions": ["cva"]
+  }
 }

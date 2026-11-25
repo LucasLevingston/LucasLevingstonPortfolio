@@ -4,7 +4,7 @@ import '@/i18n'
 import type { ProjectType } from '@/types/ProjectType'
 import { ProjectDetails } from './ProjectDetails'
 
-const START_DATE_LABEL_PATTERN = /Início|Start/
+const START_DATE_LABEL_PATTERN = /Início|Start/u
 
 beforeAll(() => {
   class ResizeObserverStub {

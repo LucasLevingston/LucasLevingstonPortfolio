@@ -1,6 +1,6 @@
 export interface AboutPersonalInfoProps {
-  location: string
   address: string
   email: string
+  location: string
   phone: string
 }

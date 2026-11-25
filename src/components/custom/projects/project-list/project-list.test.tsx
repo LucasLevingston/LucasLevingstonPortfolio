@@ -20,6 +20,7 @@ vi.mock('@/components/custom/project-card', () => ({
 class MockIntersectionObserver implements IntersectionObserver {
   readonly root = null
   readonly rootMargin = ''
+  readonly scrollMargin = ''
   readonly thresholds: readonly number[] = []
   observe = vi.fn()
   unobserve = vi.fn()

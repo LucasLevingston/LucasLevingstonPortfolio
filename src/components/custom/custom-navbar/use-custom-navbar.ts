@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next'
 import { useUser } from '@/hooks/use-user'
 
 interface NavSection {
-  title: string
   description: string
   id: string
+  title: string
 }
 
 export function useCustomNavbar() {

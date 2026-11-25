@@ -1,14 +1,17 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
+import { loadSlim } from '@tsparticles/slim'
 import { useReducedMotion } from 'framer-motion'
-import { loadSlim } from 'tsparticles-slim'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { useParticlesBackground } from './use-particles-background'
+import {
+  loadParticlesEngine,
+  useParticlesBackground,
+} from './use-particles-background'
 
 vi.mock('framer-motion', () => ({
   useReducedMotion: vi.fn(),
 }))
 
-vi.mock('tsparticles-slim', () => ({
+vi.mock('@tsparticles/slim', () => ({
   loadSlim: vi.fn(),
 }))
 
@@ -23,7 +26,7 @@ describe('useParticlesBackground', () => {
 
     const { result } = renderHook(() => useParticlesBackground())
 
-    expect(result.current.options.particles.color.value).toBe('#2563eb')
+    expect(result.current.options.particles.color.value).toBe('#1e40af')
     expect(result.current.options.particles.links.opacity).toBe(0.15)
     expect(result.current.options.particles.opacity.value).toBe(0.35)
     expect(result.current.options.particles.move.enable).toBe(true)
@@ -41,7 +44,7 @@ describe('useParticlesBackground', () => {
     const { result } = renderHook(() => useParticlesBackground())
 
     await waitFor(() => {
-      expect(result.current.options.particles.color.value).toBe('#3b82f6')
+      expect(result.current.options.particles.color.value).toBe('#4db5ff')
     })
     expect(result.current.options.particles.links.opacity).toBe(0.25)
     expect(result.current.options.particles.opacity.value).toBe(0.5)
@@ -54,7 +57,7 @@ describe('useParticlesBackground', () => {
     vi.mocked(useReducedMotion).mockReturnValue(false)
 
     const { result } = renderHook(() => useParticlesBackground())
-    expect(result.current.options.particles.color.value).toBe('#2563eb')
+    expect(result.current.options.particles.color.value).toBe('#1e40af')
 
     await act(async () => {
       document.documentElement.classList.add('dark')
@@ -62,7 +65,7 @@ describe('useParticlesBackground', () => {
     })
 
     await waitFor(() => {
-      expect(result.current.options.particles.color.value).toBe('#3b82f6')
+      expect(result.current.options.particles.color.value).toBe('#4db5ff')
     })
   })
 
@@ -77,13 +80,10 @@ describe('useParticlesBackground', () => {
     )
   })
 
-  it('exposes an init function that loads the slim tsparticles engine', async () => {
-    vi.mocked(useReducedMotion).mockReturnValue(false)
-
-    const { result } = renderHook(() => useParticlesBackground())
+  it('loadParticlesEngine loads the slim tsparticles engine', async () => {
     const fakeEngine = {} as never
 
-    await result.current.init(fakeEngine)
+    await loadParticlesEngine(fakeEngine)
 
     expect(loadSlim).toHaveBeenCalledWith(fakeEngine)
   })

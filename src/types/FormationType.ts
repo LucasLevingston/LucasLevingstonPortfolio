@@ -1,14 +1,14 @@
 import type { InstitutionKey } from '@/data/institutions-data'
 
 export interface FormationType {
-  title: string
-  institution: string
-  institutionKey?: InstitutionKey
-  duration: string
   currentStatus?: formationStatus
-  startsDate: string
+  duration: string
   endsDate: string
   graduated?: boolean
+  institution: string
+  institutionKey?: InstitutionKey
+  startsDate: string
+  title: string
 }
 
 export enum formationStatus {

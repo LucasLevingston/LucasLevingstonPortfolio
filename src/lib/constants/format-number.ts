@@ -1,9 +1,9 @@
-const PHONE_NUMBER_PATTERN = /^(\d{2})(\d{5})(\d{4})$/
+const PHONE_NUMBER_PATTERN = /^(?<area>\d{2})(?<prefix>\d{5})(?<line>\d{4})$/u
 
 export const formatPhoneNumber = (phoneNumber: string): string => {
-  const match = phoneNumber.match(PHONE_NUMBER_PATTERN)
-  if (match) {
-    return `(${match[1]}) ${match[2]}-${match[3]}`
+  const groups = phoneNumber.match(PHONE_NUMBER_PATTERN)?.groups
+  if (groups) {
+    return `(${groups.area}) ${groups.prefix}-${groups.line}`
   }
   return phoneNumber
 }

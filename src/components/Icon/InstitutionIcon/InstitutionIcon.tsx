@@ -18,7 +18,7 @@ function InstitutionIconComponent({
     return (
       <Image
         alt={institution}
-        className={cn('rounded-full object-contain', className)}
+        className={cn('size-6 rounded-full object-contain', className)}
         height={24}
         src={logo}
         width={24}

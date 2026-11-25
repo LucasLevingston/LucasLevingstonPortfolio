@@ -35,6 +35,9 @@ const FEATURED_LINK_CLASS_NAME = cn(
   'bg-gradient-to-b from-muted/50 to-muted focus:shadow-md'
 )
 
+const ACTIVE_NAV_CLASS_NAME =
+  'bg-mainColor text-mainColorForeground border-mainColor'
+
 const NAV_LIST_ITEM_CLASS_NAME = cn(
   'border-2 border-mainColor hover:bg-transparent',
   'hover:text-aboutBgColor dark:hover:text-mainTextColor'
@@ -50,7 +53,7 @@ export function Navbar() {
           asChild
           className={cn(
             'transition-colors',
-            isActive('/about') && 'bg-mainColor text-white border-mainColor'
+            isActive('/about') && ACTIVE_NAV_CLASS_NAME
           )}
           href="/about"
           target="_self"
@@ -100,7 +103,7 @@ export function Navbar() {
           asChild
           className={cn(
             'transition-colors',
-            isActive('/') && 'bg-mainColor text-white border-mainColor'
+            isActive('/') && ACTIVE_NAV_CLASS_NAME
           )}
           href="/"
           target="_self"
@@ -116,7 +119,7 @@ export function Navbar() {
           asChild
           className={cn(
             'transition-colors',
-            isActive('/projects') && 'bg-mainColor text-white border-mainColor'
+            isActive('/projects') && ACTIVE_NAV_CLASS_NAME
           )}
           href="/projects"
           target="_self"
@@ -125,17 +128,15 @@ export function Navbar() {
         </CustomButton>
         <NavigationMenuContent className="dark:bg-bioBgColor">
           <ul className="grid w-[400px] gap-1 p-4 md:w-[500px] md:grid-cols-2 lg:w-[300px]">
-            {projects.map(({ title, description }) => {
-              return (
-                <ListItem
-                  href={`/projects/${getProjectSlug(title)}`}
-                  key={title}
-                  title={title}
-                >
-                  {description}
-                </ListItem>
-              )
-            })}
+            {projects.map(({ title, description }) => (
+              <ListItem
+                href={`/projects/${getProjectSlug(title)}`}
+                key={title}
+                title={title}
+              >
+                {description}
+              </ListItem>
+            ))}
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>

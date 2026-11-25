@@ -1,9 +1,9 @@
-export type RecommendationType = {
-  name: string
-  date: string
-  position: string
-  linkedinUrl: string
-  linkedinImageUrl: string
+export interface RecommendationType {
   comments: string
   company: string
+  date: string
+  linkedinImageUrl: string
+  linkedinUrl: string
+  name: string
+  position: string
 }

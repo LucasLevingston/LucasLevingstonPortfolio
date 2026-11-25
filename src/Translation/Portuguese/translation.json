@@ -44,6 +44,7 @@
   "projects.filterBy": "Filtrar por",
   "projects.clear": "Limpar",
   "projects.search": "Pesquisar por nome...",
+  "projects.noTechnologiesFound": "Nenhuma tecnologia encontrada",
   "projects.hasImage": "Possui imagem",
   "projects.backToProjects": "Voltar para projetos",
   "projects.notFound": "Projeto não encontrado",
@@ -70,6 +71,8 @@
   "navbar.about": "Sobre",
   "navbar.home": "Início",
   "navbar.projects": "Projetos",
+
+  "language.label": "Idioma",
   "about.languagesTitle": "Idiomas",
 
   "resume.viewResume": "Ver CV",

@@ -1,5 +1,5 @@
 import { t } from 'i18next'
-import React, { JSX } from 'react'
+import { JSX } from 'react'
 import { FaLinkedin } from 'react-icons/fa'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
@@ -8,20 +8,18 @@ import {
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
 
-interface RecommendationType {
-  name: string
-  position: string
-  linkedinUrl: string
-  linkedinImageUrl: string
-  company: string
-  date: string
-  comments: string
-}
+import type {
+  SectionItemAvatarProps,
+  SectionItemContentProps,
+  SectionItemHeaderProps,
+  SectionItemLinkedInProps,
+  SectionItemProps,
+  SectionItemRootProps,
+  SectionItemTitleProps,
+} from './section-item.types'
 
-interface SectionItemRootProps {
-  children: React.ReactNode
-  className?: string
-}
+const TITLE_CLASS_NAME =
+  'flex items-center gap-3 border-l-[5px] border-mainColor pl-2 text-xl font-bold'
 
 function SectionItemRoot({
   children,
@@ -30,28 +28,11 @@ function SectionItemRoot({
   return <div className={`flex flex-col gap-1 ${className}`}>{children}</div>
 }
 
-interface SectionItemHeaderProps {
-  children: React.ReactNode
-  className?: string
-}
-
 function SectionItemHeader({
   children,
   className = '',
 }: SectionItemHeaderProps): JSX.Element {
-  return (
-    <div
-      className={`flex items-center gap-3 border-l-[5px] border-mainColor pl-2 text-xl font-bold sm:border-l-[5px] xl:border-l-[5px] ${className}`}
-    >
-      {children}
-    </div>
-  )
-}
-
-interface SectionItemTitleProps {
-  children: React.ReactNode
-  subtitle?: string
-  className?: string
+  return <div className={`${TITLE_CLASS_NAME} ${className}`}>{children}</div>
 }
 
 function SectionItemTitle({
@@ -62,15 +43,9 @@ function SectionItemTitle({
   return (
     <div className={`flex flex-col ${className}`}>
       <div>{children}</div>
-      {subtitle && <p className="text-sm">{subtitle}</p>}
+      {subtitle ? <p className="text-sm">{subtitle}</p> : null}
     </div>
   )
-}
-
-interface SectionItemAvatarProps {
-  imageUrl?: string
-  fallback?: string
-  className?: string
 }
 
 function SectionItemAvatar({
@@ -84,11 +59,6 @@ function SectionItemAvatar({
       <AvatarFallback>{fallback}</AvatarFallback>
     </Avatar>
   )
-}
-
-interface SectionItemLinkedInProps {
-  recommendation: RecommendationType
-  className?: string
 }
 
 function SectionItemLinkedIn({
@@ -133,23 +103,11 @@ function SectionItemLinkedIn({
   )
 }
 
-interface SectionItemContentProps {
-  children: React.ReactNode
-  className?: string
-}
-
 function SectionItemContent({
   children,
   className = '',
 }: SectionItemContentProps): JSX.Element {
   return <div className={`pl-7 ${className}`}>{children}</div>
-}
-
-interface SectionItemProps {
-  children: React.ReactNode
-  title?: string | React.ReactNode
-  className?: string
-  recommendation?: RecommendationType
 }
 
 function SectionItem({
@@ -161,15 +119,15 @@ function SectionItem({
   return (
     <SectionItemRoot className={className}>
       <SectionItemHeader>
-        {recommendation && (
+        {recommendation ? (
           <SectionItemAvatar imageUrl={recommendation.linkedinImageUrl} />
-        )}
+        ) : null}
         <SectionItemTitle subtitle={recommendation?.position}>
           {title}
         </SectionItemTitle>
-        {recommendation && (
+        {recommendation ? (
           <SectionItemLinkedIn recommendation={recommendation} />
-        )}
+        ) : null}
       </SectionItemHeader>
       <SectionItemContent>{children}</SectionItemContent>
     </SectionItemRoot>

@@ -33,16 +33,17 @@ describe('useLanguageToggle', () => {
     })
   }
 
-  it('reports isPortuguese as true when i18n.language is "br"', async () => {
+  it('reports "br" at index 0 when i18n.language is "br"', async () => {
     const { result } = renderHook(() => useLanguageToggle(), {
       wrapper: TestQueryClientProvider,
     })
     await flushFetch()
 
-    expect(result.current.isPortuguese).toBe(true)
+    expect(result.current.currentLanguage).toBe('br')
+    expect(result.current.activeIndex).toBe(0)
   })
 
-  it('reports isPortuguese as false when i18n.language is not "br"', async () => {
+  it('reports "en" at index 1 when i18n.language is not "br"', async () => {
     i18n.changeLanguage('en')
 
     const { result } = renderHook(() => useLanguageToggle(), {
@@ -50,10 +51,21 @@ describe('useLanguageToggle', () => {
     })
     await flushFetch()
 
-    expect(result.current.isPortuguese).toBe(false)
+    expect(result.current.currentLanguage).toBe('en')
+    expect(result.current.activeIndex).toBe(1)
   })
 
-  it('handleLanguageChange(true) switches i18n to "br" and syncs the store', async () => {
+  it('exposes the translated group label and a unique radio group name', async () => {
+    const { result } = renderHook(() => useLanguageToggle(), {
+      wrapper: TestQueryClientProvider,
+    })
+    await flushFetch()
+
+    expect(result.current.groupLabel).toBe('Idioma')
+    expect(result.current.groupName.startsWith('language-')).toBe(true)
+  })
+
+  it('handleLanguageChange("br") switches i18n to "br" and syncs the store', async () => {
     i18n.changeLanguage('en')
     const { result } = renderHook(() => useLanguageToggle(), {
       wrapper: TestQueryClientProvider,
@@ -61,21 +73,21 @@ describe('useLanguageToggle', () => {
     await flushFetch()
 
     act(() => {
-      result.current.handleLanguageChange(true)
+      result.current.handleLanguageChange('br')
     })
 
     expect(i18n.language).toBe('br')
     expect(useStorage.getState().user).toBe(userBr)
   })
 
-  it('handleLanguageChange(false) switches i18n to "en" and syncs the store', async () => {
+  it('handleLanguageChange("en") switches i18n to "en" and syncs the store', async () => {
     const { result } = renderHook(() => useLanguageToggle(), {
       wrapper: TestQueryClientProvider,
     })
     await flushFetch()
 
     act(() => {
-      result.current.handleLanguageChange(false)
+      result.current.handleLanguageChange('en')
     })
 
     expect(i18n.language).toBe('en')

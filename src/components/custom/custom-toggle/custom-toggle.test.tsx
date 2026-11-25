@@ -37,8 +37,8 @@ describe('CustomToggle', () => {
     expect(screen.getByText('icon')).toHaveClass('text-mainColor')
   })
 
-  it('renders CustomToggle.Label as plain text', () => {
-    render(<CustomToggle.Label>label</CustomToggle.Label>)
+  it('renders CustomToggle.Text as plain text', () => {
+    render(<CustomToggle.Text>label</CustomToggle.Text>)
     expect(screen.getByText('label')).toBeInTheDocument()
   })
 })

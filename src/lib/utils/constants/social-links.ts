@@ -4,21 +4,21 @@ import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 
 export interface SocialUser {
   gitHub: string
-  linkedin: string
-  whatsapp: string
   instagram: string
-  linkedinImageUrl: string
-  whatsappImageUrl: string
   instagramImageUrl: string
+  linkedin: string
+  linkedinImageUrl: string
+  whatsapp: string
+  whatsappImageUrl: string
 }
 
 export interface SocialLink {
-  Icon: IconType
-  url: keyof SocialUser
   avatarUrl: (user: SocialUser) => string
-  username: string
-  role: string
+  Icon: IconType
   name: string
+  role: string
+  url: keyof SocialUser
+  username: string
 }
 
 export const SOCIAL_LINKS: SocialLink[] = [

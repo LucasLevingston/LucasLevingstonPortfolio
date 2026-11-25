@@ -6,31 +6,31 @@ import { ProjectType } from './ProjectType'
 import { RecommendationType } from './RecommendationType'
 
 export interface UserType {
-  name: string
+  address: string
+  certificates: CertificatesType[]
   completName: string
   description: string
-  professionalProfile: string
-  resumeUrl: string
-  profilePicture: string
+  email: string
   experiences: ExperienceType[]
   formations: FormationType[]
-  projects: ProjectType[]
-  certificates: CertificatesType[]
-  hardSkills: HardSkillsType[]
   gitHub: string
-  linkedin: string
-  linkedinImageUrl: string
+  hardSkills: HardSkillsType[]
   instagram: string
   instagramImageUrl: string
+  languages?: { language: string; type: string }[]
+  linkedin: string
+  linkedinImageUrl: string
+  location: string
+  name: string
   phone: string
+  portfolioUrl?: string
+  professionalProfile: string
+  profilePicture: string
+  projects: ProjectType[]
+  recomendations: RecommendationType[]
+  resumeUrl: string
+  softSkills: string[]
+  totalCommits?: number
   whatsapp: string
   whatsappImageUrl: string
-  email: string
-  recomendations: RecommendationType[]
-  portfolioUrl?: string
-  softSkills: string[]
-  address: string
-  location: string
-  totalCommits?: number
-  languages?: { language: string; type: string }[]
 }

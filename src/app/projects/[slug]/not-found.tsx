@@ -24,9 +24,9 @@ export default function NotFound() {
                 <CustomButton.Icon>
                   <RotateCcw />
                 </CustomButton.Icon>
-                <CustomButton.Label>
+                <CustomButton.Text>
                   {t('projects.backToProjects')}
-                </CustomButton.Label>
+                </CustomButton.Text>
               </CustomButton>
             </div>
           </CardContent>

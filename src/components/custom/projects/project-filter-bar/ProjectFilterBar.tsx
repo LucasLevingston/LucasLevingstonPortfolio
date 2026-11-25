@@ -9,12 +9,17 @@ import { ProjectTechnologyFilterPopover } from '@/components/custom/projects/pro
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import type { UseProjectFiltersResult } from '@/hooks/use-project-filters'
+import { cn } from '@/lib/utils/cn'
+import type { ProjectFilterBarProps } from './project-filter-bar.types'
+import { useProjectFilterBar } from './use-project-filter-bar'
 
-interface ProjectFilterBarProps {
-  filters: UseProjectFiltersResult
-  totalCount: number
-}
+const SEARCH_ICON_CLASS_NAME =
+  'absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform !text-mainColor'
+
+const CLEAR_SEARCH_CLASS_NAME = cn(
+  'absolute top-1/2 right-1 h-6 w-6 -translate-y-1/2 transform p-0',
+  'hover:bg-lightMainColor'
+)
 
 export function ProjectFilterBar({
   filters,
@@ -35,6 +40,7 @@ export function ProjectFilterBar({
     toggleTechnology,
     setBooleanFilter,
   } = filters
+  const { handleSearchInputChange } = useProjectFilterBar(handleSearchChange)
 
   return (
     <Card>
@@ -50,31 +56,31 @@ export function ProjectFilterBar({
             uniqueTechnologies={uniqueTechnologies}
           />
           <div className="relative max-w-md flex-1">
-            <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform !text-mainColor" />
+            <Search className={SEARCH_ICON_CLASS_NAME} />
             <Input
-              className="border-mainBorder pr-10 pl-10 text-sm focus:border-red-500 dark:border-main-border-dark"
-              onChange={e => handleSearchChange(e.target.value)}
+              className="border-mainBorder pr-10 pl-10 text-sm focus:border-mainColor"
+              onChange={handleSearchInputChange}
               placeholder={t('projects.search')}
               type="text"
               value={filter.searchTerm}
             />
-            {filter.searchTerm && (
+            {filter.searchTerm ? (
               <Button
-                className="absolute top-1/2 right-1 h-6 w-6 -translate-y-1/2 transform p-0 hover:bg-lightMainColor dark:hover:bg-light-main-color-dark"
+                className={CLEAR_SEARCH_CLASS_NAME}
                 onClick={clearSearch}
                 size="sm"
                 variant="ghost"
               >
                 <X className="h-3 w-3 !text-mainColor" />
               </Button>
-            )}
+            ) : null}
           </div>
           {filteredProjects.length !== totalCount && (
             <CustomButton onClick={clearAllFilters}>
               <CustomButton.Icon>
                 <RotateCcw />
               </CustomButton.Icon>
-              <CustomButton.Label>{t('projects.clear')}</CustomButton.Label>
+              <CustomButton.Text>{t('projects.clear')}</CustomButton.Text>
             </CustomButton>
           )}
           <div className="flex items-center gap-2">

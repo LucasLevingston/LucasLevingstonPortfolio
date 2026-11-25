@@ -9,8 +9,8 @@ export type InstitutionKey =
   | 'unifip'
 
 export interface InstitutionMeta {
-  initials: string
   colorClassName: string
+  initials: string
   logo?: string
 }
 

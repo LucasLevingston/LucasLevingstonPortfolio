@@ -87,7 +87,7 @@ export function AboutCertificatesSection({
               <div className="flex w-full flex-wrap">
                 <TechnologiesSection technologies={certificate.technologies} />
               </div>
-              {certificate.image && (
+              {certificate.image ? (
                 <Carousel className="mx-auto w-full max-w-md" setApi={setApi}>
                   <CarouselContent>
                     {certificates.map(cert => (
@@ -118,7 +118,7 @@ export function AboutCertificatesSection({
                     </>
                   )}
                 </Carousel>
-              )}
+              ) : null}
               <div className="py-2 text-center text-base !text-mainColor dark:!text-mainColor">
                 <CarouselPagination
                   api={api}

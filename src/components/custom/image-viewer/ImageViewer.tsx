@@ -12,9 +12,12 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
     rotation,
     isOpen,
     setIsOpen,
+    transformRef,
     handleRotate,
     handleDownload,
-    resetRotation,
+    handleZoomIn,
+    handleZoomOut,
+    handleReset,
   } = useImageViewer(src, alt)
 
   return (
@@ -27,17 +30,22 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
       <DialogContent
         className={cn(
           'h-[85vh] w-[85vw] border-mainBorder bg-white p-0',
-          'dark:border-main-border-dark dark:bg-black/95'
+          'dark:bg-black/95'
         )}
       >
         <div className="relative flex h-full w-full items-center justify-center">
-          <TransformWrapper initialScale={1} maxScale={3} minScale={0.5}>
-            {({ zoomIn, zoomOut, resetTransform, instance }) => (
+          <TransformWrapper
+            initialScale={1}
+            maxScale={3}
+            minScale={0.5}
+            ref={transformRef}
+          >
+            {({ state }) => (
               <>
                 <div className="absolute right-[40%] top-4 z-50 flex gap-2">
                   <CustomButton
-                    disabled={instance.transformState.scale <= 0.5}
-                    onClick={() => zoomOut()}
+                    disabled={state.scale <= 0.5}
+                    onClick={handleZoomOut}
                     size="sm"
                   >
                     <CustomButton.Icon>
@@ -45,8 +53,8 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                     </CustomButton.Icon>
                   </CustomButton>
                   <CustomButton
-                    disabled={instance.transformState.scale >= 3}
-                    onClick={() => zoomIn()}
+                    disabled={state.scale >= 3}
+                    onClick={handleZoomIn}
                     size="sm"
                   >
                     <CustomButton.Icon>
@@ -63,20 +71,14 @@ export function ImageViewer({ src, alt, children }: ImageViewerProps) {
                       <Download />
                     </CustomButton.Icon>
                   </CustomButton>
-                  <CustomButton
-                    onClick={() => {
-                      resetTransform()
-                      resetRotation()
-                    }}
-                    size="sm"
-                  >
+                  <CustomButton onClick={handleReset} size="sm">
                     Reset
                   </CustomButton>
                 </div>
 
                 <div className="absolute left-4 top-4 z-50">
                   <div className="rounded-md bg-black/50 px-3 py-1 text-sm font-medium text-white">
-                    {Math.round(instance.transformState.scale * 100)}%
+                    {Math.round(state.scale * 100)}%
                   </div>
                 </div>
 

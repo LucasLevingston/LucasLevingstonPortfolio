@@ -43,6 +43,7 @@
   "projects.technologies": "Technologies",
   "projects.filteredResults": "results",
   "projects.search": "Search by name...",
+  "projects.noTechnologiesFound": "No technologies found",
   "projects.clear": "Clear",
 
   "projects.hasImage": "Has image",
@@ -72,6 +73,8 @@
   "navbar.about": "About",
   "navbar.home": "Home",
   "navbar.projects": "Projects",
+
+  "language.label": "Language",
   "about.languagesTitle": "Languages",
 
   "resume.viewResume": "View CV",

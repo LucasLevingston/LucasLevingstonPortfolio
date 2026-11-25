@@ -63,14 +63,14 @@ export function ProjectImageCarousel({
         )}
       </CarouselContent>
       <div className="py-2 text-center !text-mainColor text-xs dark:!text-mainColor">
-        {pagination && (
+        {pagination ? (
           <CarouselPagination
             api={api}
             currentImage={currentImage}
             images={pagination}
             setCurrentImage={setCurrentImage}
           />
-        )}
+        ) : null}
       </div>
     </Carousel>
   )

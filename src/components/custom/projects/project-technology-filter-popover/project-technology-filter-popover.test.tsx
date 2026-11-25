@@ -11,7 +11,7 @@ vi.mock('react-i18next', () => ({
   }),
 }))
 
-const FILTER_TRIGGER_PATTERN = /projects.filterByTechnology/
+const FILTER_TRIGGER_PATTERN = /projects.filterByTechnology/u
 
 const BASE_FILTER: ProjectFilterState = {
   selectedTechnologies: [],

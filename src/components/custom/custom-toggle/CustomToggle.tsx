@@ -3,22 +3,22 @@ import { Toggle } from '@/components/ui/toggle'
 import { cn } from '@/lib/utils/cn'
 import type {
   CustomToggleIconProps,
-  CustomToggleLabelProps,
   CustomToggleProps,
+  CustomToggleTextProps,
 } from './custom-toggle.types'
 
 export function CustomToggleIcon(props: CustomToggleIconProps) {
   return <p className="text-mainColor" {...props} />
 }
 
-export function CustomToggleLabel(props: CustomToggleLabelProps) {
+export function CustomToggleText(props: CustomToggleTextProps) {
   return <p {...props} />
 }
 
 const defaultClassNameToggle = cn(
   'm-2 h-12 justify-center gap-2 cursor-pointer',
   'data-[state=on]:border-mainColor data-[state=on]:border',
-  'dark:data-[state=on]:bg-light-main-color-dark'
+  'dark:data-[state=on]:bg-lightMainColor'
 )
 
 function CustomToggle({ href, className, ...props }: CustomToggleProps) {
@@ -33,6 +33,6 @@ function CustomToggle({ href, className, ...props }: CustomToggleProps) {
 }
 
 CustomToggle.Icon = CustomToggleIcon
-CustomToggle.Label = CustomToggleLabel
+CustomToggle.Text = CustomToggleText
 
 export { CustomToggle }

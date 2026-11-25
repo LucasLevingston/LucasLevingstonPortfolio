@@ -36,7 +36,7 @@ export function AboutExperienceSection({
                     </h3>
                     <CurrentJobBadge endsDate={experience.endsDate} />
                   </Section.Title>
-                  {experience.logo && (
+                  {experience.logo ? (
                     <Image
                       alt={`${experience.enterprise} logo`}
                       className="rounded-md"
@@ -44,7 +44,7 @@ export function AboutExperienceSection({
                       src={experience.logo}
                       width={64}
                     />
-                  )}
+                  ) : null}
                 </div>
               </CardHeader>
               <CardContent className="p-0">
