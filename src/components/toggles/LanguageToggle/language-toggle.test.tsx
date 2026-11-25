@@ -1,7 +1,7 @@
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { userBr } from '@/data/user-data'
+import { userBr, userEn } from '@/data/user-data'
 import i18n from '@/i18n'
 import { useStorage } from '@/storage/use-storage'
 import { TestQueryClientProvider } from '@/test/test-query-client'
@@ -15,6 +15,14 @@ async function flushFetch() {
     await Promise.resolve()
     await Promise.resolve()
   })
+}
+
+function renderToggle() {
+  return render(
+    <TestQueryClientProvider>
+      <LanguageToggle />
+    </TestQueryClientProvider>
+  )
 }
 
 describe('LanguageToggle', () => {
@@ -34,47 +42,55 @@ describe('LanguageToggle', () => {
     vi.unstubAllGlobals()
   })
 
-  it('renders checked when the current language is Portuguese', async () => {
-    render(
-      <TestQueryClientProvider>
-        <LanguageToggle />
-      </TestQueryClientProvider>
-    )
+  it('renders a labelled radio group with one option per language', async () => {
+    renderToggle()
     await flushFetch()
 
-    expect(screen.getByRole('switch')).toBeChecked()
+    expect(screen.getByRole('group', { name: 'Idioma' })).toBeInTheDocument()
+    expect(screen.getAllByRole('radio')).toHaveLength(2)
   })
 
-  it('renders unchecked when the current language is English', async () => {
-    i18n.changeLanguage('en')
-
-    render(
-      <TestQueryClientProvider>
-        <LanguageToggle />
-      </TestQueryClientProvider>
-    )
+  it('checks Portuguese when the current language is "br"', async () => {
+    renderToggle()
     await flushFetch()
 
-    expect(screen.getByRole('switch')).not.toBeChecked()
+    expect(screen.getByRole('radio', { name: 'Português' })).toBeChecked()
+    expect(screen.getByRole('radio', { name: 'English' })).not.toBeChecked()
   })
 
-  it('toggles the language when clicked', async () => {
+  it('checks English when the current language is "en"', async () => {
     i18n.changeLanguage('en')
+
+    renderToggle()
+    await flushFetch()
+
+    expect(screen.getByRole('radio', { name: 'English' })).toBeChecked()
+    expect(screen.getByRole('radio', { name: 'Português' })).not.toBeChecked()
+  })
+
+  it('switches the language when another option is clicked', async () => {
     const user = userEvent.setup()
 
-    render(
-      <TestQueryClientProvider>
-        <LanguageToggle />
-      </TestQueryClientProvider>
-    )
+    renderToggle()
     await flushFetch()
 
-    const toggle = screen.getByRole('switch')
-    expect(toggle).not.toBeChecked()
+    await user.click(screen.getByText('EN'))
 
-    await user.click(toggle)
+    expect(screen.getByRole('radio', { name: 'English' })).toBeChecked()
+    expect(i18n.language).toBe('en')
+    expect(useStorage.getState().user).toBe(userEn)
+  })
 
-    expect(toggle).toBeChecked()
-    expect(i18n.language).toBe('br')
+  it('switches the language with the arrow keys', async () => {
+    const user = userEvent.setup()
+
+    renderToggle()
+    await flushFetch()
+
+    screen.getByRole('radio', { name: 'Português' }).focus()
+    await user.keyboard('{ArrowRight}')
+
+    expect(i18n.language).toBe('en')
+    expect(screen.getByRole('radio', { name: 'English' })).toBeChecked()
   })
 })

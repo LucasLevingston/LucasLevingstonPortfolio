@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { TestQueryClientProvider } from '@/test/test-query-client'
 import Sidebar from './Sidebar'
 
-const GREETING_PATTERN = /sidebar.greeting/
+const GREETING_PATTERN = /sidebar.greeting/u
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({

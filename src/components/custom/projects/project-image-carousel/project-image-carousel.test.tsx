@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { ProjectImageCarousel } from './ProjectImageCarousel'
 
-const GO_TO_IMAGE_PATTERN = /Go to image/i
+const GO_TO_IMAGE_PATTERN = /Go to image/iu
 
 vi.mock('embla-carousel-react', () => {
   const api = {

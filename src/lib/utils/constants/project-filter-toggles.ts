@@ -1,18 +1,15 @@
 import {
   ExternalLink,
-  Github,
   ImageIcon,
-  type LucideIcon,
   Monitor,
   Server,
   Smartphone,
 } from 'lucide-react'
+import type { ComponentType } from 'react'
+import { FaGithub } from 'react-icons/fa'
 import type { ProjectFilterState } from '@/hooks/use-project-filters'
 
 export interface ProjectFilterToggle {
-  key: string
-  icon: LucideIcon
-  labelKey: string
   filterKey: keyof Pick<
     ProjectFilterState,
     | 'hasImage'
@@ -22,6 +19,9 @@ export interface ProjectFilterToggle {
     | 'isFrontEnd'
     | 'isBackEnd'
   >
+  icon: ComponentType<{ className?: string }>
+  key: string
+  labelKey: string
 }
 
 export const PROJECT_FILTER_TOGGLES: ProjectFilterToggle[] = [
@@ -33,7 +33,7 @@ export const PROJECT_FILTER_TOGGLES: ProjectFilterToggle[] = [
   },
   {
     key: 'hasGitHub',
-    icon: Github,
+    icon: FaGithub,
     labelKey: 'GitHub',
     filterKey: 'hasGitHub',
   },

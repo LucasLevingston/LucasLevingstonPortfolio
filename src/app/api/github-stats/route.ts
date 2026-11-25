@@ -1,65 +1,86 @@
 import { NextResponse } from 'next/server'
 import { env } from '@/env'
 
+const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql'
+// GitHub launched in 2008, so no account has contributions before it.
+const FIRST_GITHUB_YEAR = 2008
+// Let the CDN serve the count for an hour and refresh it in the background,
+// so visitors never wait on the GitHub API.
+const SUCCESS_CACHE_CONTROL =
+  'public, s-maxage=3600, stale-while-revalidate=86400'
+
+interface ContributionsCollection {
+  totalCommitContributions?: number
+}
+
+interface ContributionsResponse {
+  data?: { user?: Record<string, ContributionsCollection | null> | null }
+}
+
+function getYearsUntil(currentYear: number) {
+  return Array.from(
+    { length: currentYear - FIRST_GITHUB_YEAR + 1 },
+    (_, index) => FIRST_GITHUB_YEAR + index
+  )
+}
+
+// contributionsCollection only spans up to one year, so every year gets its
+// own aliased field - all of them resolved in a single request.
+function buildContributionsQuery(years: number[]) {
+  const fields = years
+    .map(
+      year =>
+        `y${year}: contributionsCollection(` +
+        `from: "${year}-01-01T00:00:00Z", to: "${year}-12-31T23:59:59Z"` +
+        ') { totalCommitContributions }'
+    )
+    .join('\n')
+
+  return `query($login: String!) { user(login: $login) { ${fields} } }`
+}
+
+function sumCommits(payload: ContributionsResponse) {
+  return Object.values(payload.data?.user ?? {}).reduce(
+    (total, collection) => total + (collection?.totalCommitContributions ?? 0),
+    0
+  )
+}
+
 export async function GET() {
   const { NEXT_GITHUB_TOKEN: token, NEXT_GITHUB_USER: username } = env
 
-  if (!token || !username) {
+  if (!(token && username)) {
     return NextResponse.json({ totalCommits: 0 })
   }
 
   try {
-    const currentYear = new Date().getFullYear()
-    let totalCommits = 0
+    const years = getYearsUntil(new Date().getFullYear())
+    const response = await fetch(GITHUB_GRAPHQL_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: buildContributionsQuery(years),
+        variables: { login: username },
+      }),
+      cache: 'no-store',
+    })
 
-    for (let year = 2008; year <= currentYear; year++) {
-      const from = `${year}-01-01T00:00:00Z`
-      const to = `${year}-12-31T23:59:59Z`
-
-      // biome-ignore lint/nursery/noAwaitInLoop: sequential on purpose, avoids GraphQL rate limit
-      const response = await fetch('https://api.github.com/graphql', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          query: `
-            query($login: String!, $from: DateTime!, $to: DateTime!) {
-              user(login: $login) {
-                contributionsCollection(from: $from, to: $to) {
-                  totalCommitContributions
-                }
-              }
-            }
-          `,
-          variables: {
-            login: username,
-            from,
-            to,
-          },
-        }),
-        cache: 'no-store',
-      })
-
-      if (!response.ok) {
-        throw new Error('Erro ao consultar GraphQL')
-      }
-
-      const json = await response.json()
-
-      totalCommits +=
-        json.data?.user?.contributionsCollection?.totalCommitContributions ?? 0
+    if (!response.ok) {
+      throw new Error('Erro ao consultar GraphQL')
     }
 
-    return NextResponse.json({
-      totalCommits,
-    })
+    const totalCommits = sumCommits(await response.json())
+
+    return NextResponse.json(
+      { totalCommits },
+      { headers: { 'Cache-Control': SUCCESS_CACHE_CONTROL } }
+    )
   } catch (error) {
     console.error(error)
 
-    return NextResponse.json({
-      totalCommits: 0,
-    })
+    return NextResponse.json({ totalCommits: 0 })
   }
 }

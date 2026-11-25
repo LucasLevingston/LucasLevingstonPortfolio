@@ -1,27 +1,26 @@
 import Link from 'next/link'
-import { type ComponentProps } from 'react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn'
-
-interface CustomButtonIconProps extends ComponentProps<'p'> {}
+import type {
+  CustomButtonIconProps,
+  CustomButtonProps,
+  CustomButtonTextProps,
+} from './custom-button.types'
 
 export function CustomButtonIcon(props: CustomButtonIconProps) {
   return <p {...props} className={cn('text-mainColor', props.className)} />
 }
 
-interface CustomButtonLabelProps extends ComponentProps<'p'> {}
-
-export function CustomButtonLabel(props: CustomButtonLabelProps) {
+export function CustomButtonText(props: CustomButtonTextProps) {
   return <p {...props} />
 }
 
-interface CustomButtonProps extends ComponentProps<typeof Button> {
-  href?: string
-  target?: string
-}
-
-const defaultClassNameButton =
-  'gap-2 border-mainColor bg-transparent text-sm transition-[opacity,transform] duration-200 ease-out hover:-translate-y-0.5 hover:opacity-70 active:translate-y-0 active:duration-75 dark:border-mainColor dark:hover:shadow-lightMainColorDark cursor-pointer border-2 rounded-xl'
+const defaultClassNameButton = cn(
+  'cursor-pointer gap-2 rounded-xl border-2 border-mainColor bg-transparent text-sm',
+  'transition-[opacity,transform] duration-200 ease-out',
+  'hover:-translate-y-0.5 hover:opacity-70 active:translate-y-0 active:duration-75',
+  'dark:hover:shadow-lightMainColor'
+)
 
 function CustomButton({ href, target, ...props }: CustomButtonProps) {
   if (href) {
@@ -51,6 +50,6 @@ function CustomButton({ href, target, ...props }: CustomButtonProps) {
 }
 
 CustomButton.Icon = CustomButtonIcon
-CustomButton.Label = CustomButtonLabel
+CustomButton.Text = CustomButtonText
 
 export { CustomButton }

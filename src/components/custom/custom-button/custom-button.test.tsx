@@ -57,8 +57,8 @@ describe('CustomButton', () => {
     expect(screen.getByText('icon')).toHaveClass('text-mainColor')
   })
 
-  it('renders CustomButton.Label as plain text', () => {
-    render(<CustomButton.Label>label</CustomButton.Label>)
+  it('renders CustomButton.Text as plain text', () => {
+    render(<CustomButton.Text>label</CustomButton.Text>)
     expect(screen.getByText('label')).toBeInTheDocument()
   })
 })

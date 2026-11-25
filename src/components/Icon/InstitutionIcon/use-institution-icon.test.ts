@@ -23,13 +23,13 @@ describe('useInstitutionIcon', () => {
     const result = useInstitutionIcon('Some College Name')
 
     expect(result.initials).toBe('SC')
-    expect(result.colorClassName).toBe('bg-mainColor')
+    expect(result.colorClassName).toBe('bg-mainColor text-mainColorForeground')
   })
 
   it('derives initials from the first two letters for a single-word institution', () => {
     const result = useInstitutionIcon('Faculeste')
 
     expect(result.initials).toBe('FA')
-    expect(result.colorClassName).toBe('bg-mainColor')
+    expect(result.colorClassName).toBe('bg-mainColor text-mainColorForeground')
   })
 })

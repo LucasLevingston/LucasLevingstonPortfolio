@@ -2,9 +2,9 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 interface UseAboutPersonalInfoProps {
-  location: string
   address: string
   email: string
+  location: string
   phone: string
 }
 

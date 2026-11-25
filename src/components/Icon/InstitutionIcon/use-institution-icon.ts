@@ -1,8 +1,8 @@
 import type { InstitutionKey } from '@/data/institutions-data'
 import { INSTITUTIONS } from '@/data/institutions-data'
 
-const FALLBACK_COLOR_CLASS_NAME = 'bg-mainColor'
-const WHITESPACE_PATTERN = /\s+/
+const FALLBACK_COLOR_CLASS_NAME = 'bg-mainColor text-mainColorForeground'
+const WHITESPACE_PATTERN = /\s+/u
 
 function fallbackInitials(institution: string) {
   const words = institution.trim().split(WHITESPACE_PATTERN).filter(Boolean)

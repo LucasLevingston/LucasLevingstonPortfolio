@@ -31,8 +31,8 @@ afterEach(() => {
 })
 
 interface HarnessProps {
-  items: number[]
   initial: number
+  items: number[]
   step: number
 }
 

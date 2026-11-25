@@ -4,7 +4,7 @@ import '@/i18n'
 import type { ProjectType } from '@/types/ProjectType'
 import ProjectCard from './ProjectCard'
 
-const OVERFLOW_BADGE_PATTERN = /^\+\d+$/
+const OVERFLOW_BADGE_PATTERN = /^\+\d+$/u
 
 function makeProject(overrides: Partial<ProjectType> = {}): ProjectType {
   return {

@@ -14,8 +14,8 @@ vi.mock('react-i18next', () => ({
   }),
 }))
 
-const RESULTS_COUNT_PATTERN = /2/
-const FILTERED_RESULTS_LABEL_PATTERN = /projects.filteredResults/
+const RESULTS_COUNT_PATTERN = /2/u
+const FILTERED_RESULTS_LABEL_PATTERN = /projects.filteredResults/u
 
 const BASE_FILTER: ProjectFilterState = {
   selectedTechnologies: [],

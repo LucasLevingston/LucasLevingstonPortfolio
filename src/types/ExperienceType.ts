@@ -1,9 +1,9 @@
 export interface ExperienceType {
-  enterprise: string
-  location: string
-  startsDate: string
   endsDate: string
-  role: string
+  enterprise: string
   features: string[]
+  location: string
   logo?: string
+  role: string
+  startsDate: string
 }

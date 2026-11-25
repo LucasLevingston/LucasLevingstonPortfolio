@@ -71,7 +71,7 @@ export function AboutEducationSection({
                       </div>
                     </div>
 
-                    {formation.duration && (
+                    {formation.duration ? (
                       <div className="flex items-center gap-3 rounded-lg p-3">
                         <Clock className="h-4 w-4 !text-mainColor" />
                         <div>
@@ -83,7 +83,7 @@ export function AboutEducationSection({
                           </span>
                         </div>
                       </div>
-                    )}
+                    ) : null}
                   </div>
 
                   <div
@@ -94,7 +94,7 @@ export function AboutEducationSection({
                       formation.currentStatus === formationStatus.DEFERRED &&
                         'border-red-500',
                       formation.currentStatus === formationStatus.IN_PROGRESS &&
-                        'border-blue-500'
+                        'border-mainColor'
                     )}
                   >
                     <div className="flex items-center gap-2">
@@ -119,7 +119,7 @@ export function AboutEducationSection({
                       )}
                       {formation.currentStatus ===
                         formationStatus.IN_PROGRESS && (
-                        <span className="flex items-center gap-2 font-medium text-blue-600">
+                        <span className="flex items-center gap-2 font-medium text-mainColor">
                           <PlayCircle className="h-4 w-4" />
                           {t('about.inProgress')}
                         </span>

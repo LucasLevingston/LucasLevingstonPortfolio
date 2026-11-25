@@ -16,6 +16,7 @@ import { cn } from '@/lib/utils/cn'
 import { PROJECT_FILTER_TOGGLES } from '@/lib/utils/constants/project-filter-toggles'
 import { getTechnologyData } from '@/lib/utils/getTechnologyData'
 import type { ProjectTechnologyFilterPopoverProps } from './project-technology-filter-popover.types'
+import { useProjectTechnologyFilterPopover } from './use-project-technology-filter-popover'
 
 const SEARCH_ICON_CLASS_NAME =
   'absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform !text-mainColor'
@@ -35,6 +36,16 @@ export function ProjectTechnologyFilterPopover({
   onSetBooleanFilter,
 }: ProjectTechnologyFilterPopoverProps) {
   const { t } = useTranslation()
+  const {
+    handleSearchChange,
+    handleTechnologyClick,
+    handleBooleanFilterClick,
+  } = useProjectTechnologyFilterPopover({
+    filter,
+    onSetBooleanFilter,
+    onTechnologySearchChange,
+    onToggleTechnology,
+  })
 
   return (
     <Popover>
@@ -60,12 +71,12 @@ export function ProjectTechnologyFilterPopover({
               <Search className={SEARCH_ICON_CLASS_NAME} />
               <Input
                 className="border-mainBorder pr-10 pl-10 text-sm"
-                onChange={e => onTechnologySearchChange(e.target.value)}
+                onChange={handleSearchChange}
                 placeholder={t('projects.search')}
                 type="text"
                 value={filter.technologySearchTerm}
               />
-              {filter.technologySearchTerm && (
+              {filter.technologySearchTerm ? (
                 <CustomButton
                   className={CLEAR_SEARCH_BUTTON_CLASS_NAME}
                   onClick={onClearTechnologySearch}
@@ -74,20 +85,21 @@ export function ProjectTechnologyFilterPopover({
                 >
                   <X className="h-3 w-3 !text-mainColor" />
                 </CustomButton>
-              )}
+              ) : null}
             </div>
             <div className="grid grid-cols-3 gap-2">
               {uniqueTechnologies.length > 0 ? (
                 uniqueTechnologies.map(tech => (
                   <CustomToggle
+                    data-technology={tech}
                     key={tech}
-                    onPressedChange={() => onToggleTechnology(tech)}
+                    onClick={handleTechnologyClick}
                     pressed={filter.selectedTechnologies.includes(tech)}
                   >
                     <TechnologyIcon technology={tech} />
-                    <CustomToggle.Label>
+                    <CustomToggle.Text>
                       {getTechnologyData(tech)?.label}
-                    </CustomToggle.Label>
+                    </CustomToggle.Text>
                   </CustomToggle>
                 ))
               ) : (
@@ -105,20 +117,19 @@ export function ProjectTechnologyFilterPopover({
             <div className="grid grid-cols-3 gap-2">
               {PROJECT_FILTER_TOGGLES.map(toggle => (
                 <CustomToggle
+                  data-filter-key={toggle.filterKey}
                   key={toggle.key}
-                  onPressedChange={value =>
-                    onSetBooleanFilter(toggle.filterKey, value)
-                  }
+                  onClick={handleBooleanFilterClick}
                   pressed={filter[toggle.filterKey]}
                 >
                   <CustomToggle.Icon>
                     <toggle.icon className="h-4 w-4" />
                   </CustomToggle.Icon>
-                  <CustomToggle.Label>
+                  <CustomToggle.Text>
                     {toggle.labelKey.startsWith('projects.')
                       ? t(toggle.labelKey)
                       : toggle.labelKey}
-                  </CustomToggle.Label>
+                  </CustomToggle.Text>
                 </CustomToggle>
               ))}
             </div>

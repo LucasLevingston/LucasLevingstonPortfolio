@@ -10,7 +10,6 @@
 ![TypeScript](https://img.shields.io/badge/-TypeScript-0D1117?style=for-the-badge&logo=typescript&labelColor=0D1117)&nbsp;</br>
 ![Vite](https://img.shields.io/badge/-Vite-0D1117?style=for-the-badge&logo=Vite&labelColor=0D1117)&nbsp;
 
-
 ## Funcionalidades
 
 - **Sobre Mim**: Seção dedicada a informações pessoais e uma visão geral da minha trajetória profissional, incluindo formação acadêmica e experiências anteriores. <br/>

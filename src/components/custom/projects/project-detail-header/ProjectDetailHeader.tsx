@@ -1,10 +1,6 @@
 import { GitBranch, Monitor, Smartphone, Star } from 'lucide-react'
 import { ProjectStatusIcons } from '@/components/custom/projects/project-status-icons'
-import type { ProjectType } from '@/types/ProjectType'
-
-interface ProjectDetailHeaderProps {
-  project: ProjectType
-}
+import type { ProjectDetailHeaderProps } from './project-detail-header.types'
 
 export function ProjectDetailHeader({
   project: {
@@ -35,9 +31,9 @@ export function ProjectDetailHeader({
         <div>
           <div className="flex items-center gap-2">
             <h1 className="font-semibold text-foreground text-xl">{title}</h1>
-            {favorite && (
+            {favorite ? (
               <Star className="h-4 w-4 fill-current text-yellow-400" />
-            )}
+            ) : null}
             {showEvolution && versions && versions.length > 0 && (
               <GitBranch className="h-4 w-4 !text-mainColor" />
             )}

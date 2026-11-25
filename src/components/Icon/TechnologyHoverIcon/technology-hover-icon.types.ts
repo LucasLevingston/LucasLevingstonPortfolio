@@ -1,4 +1,4 @@
 export interface TechnologyHoverIconProps {
-  technology: string
   classname?: string
+  technology: string
 }

@@ -6,15 +6,15 @@ import { getTechnologyData } from '@/lib/utils/getTechnologyData'
 import type { ProjectType } from '@/types/ProjectType'
 
 export interface ProjectFilterState {
-  selectedTechnologies: string[]
-  hasImage: boolean
-  hasGitHub: boolean
   hasDeploy: boolean
-  searchTerm: string
-  technologySearchTerm: string
-  isFrontEnd: boolean
+  hasGitHub: boolean
+  hasImage: boolean
   isBackEnd: boolean
+  isFrontEnd: boolean
   isMobile: boolean
+  searchTerm: string
+  selectedTechnologies: string[]
+  technologySearchTerm: string
 }
 
 export type ProjectActiveFilterBadge =
@@ -51,41 +51,43 @@ function updateUrlSearchParam(searchTerm: string | null) {
 export function useProjectFilters(projects: ProjectType[]) {
   const [filter, setFilter] = useState<ProjectFilterState>(INITIAL_FILTER)
 
-  const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
-      const techMatch = filter.selectedTechnologies.length
-        ? filter.selectedTechnologies.every(tech =>
-            project.technologies.includes(tech)
-          )
-        : true
-      const imageMatch = filter.hasImage
-        ? (project.images?.length ?? 0) > 0
-        : true
-      const githubMatch = filter.hasGitHub ? !!project.repositoryUrl : true
-      const deployMatch = filter.hasDeploy ? !!project.link : true
-      const nameMatch = project.title
-        .toLowerCase()
-        .includes(filter.searchTerm.toLowerCase())
-      const mobileMatch = filter.isMobile ? project.isMobile : true
-      const frontEndMatch = filter.isFrontEnd
-        ? project.frontEndRepositoryUrl
-        : true
-      const backEndMatch = filter.isBackEnd
-        ? project.backEndRepositoryUrl
-        : true
+  const filteredProjects = useMemo(
+    () =>
+      projects.filter(project => {
+        const techMatch = filter.selectedTechnologies.length
+          ? filter.selectedTechnologies.every(tech =>
+              project.technologies.includes(tech)
+            )
+          : true
+        const imageMatch = filter.hasImage
+          ? (project.images?.length ?? 0) > 0
+          : true
+        const githubMatch = filter.hasGitHub ? !!project.repositoryUrl : true
+        const deployMatch = filter.hasDeploy ? !!project.link : true
+        const nameMatch = project.title
+          .toLowerCase()
+          .includes(filter.searchTerm.toLowerCase())
+        const mobileMatch = filter.isMobile ? project.isMobile : true
+        const frontEndMatch = filter.isFrontEnd
+          ? project.frontEndRepositoryUrl
+          : true
+        const backEndMatch = filter.isBackEnd
+          ? project.backEndRepositoryUrl
+          : true
 
-      return (
-        techMatch &&
-        imageMatch &&
-        githubMatch &&
-        deployMatch &&
-        nameMatch &&
-        mobileMatch &&
-        frontEndMatch &&
-        backEndMatch
-      )
-    })
-  }, [projects, filter])
+        return (
+          techMatch &&
+          imageMatch &&
+          githubMatch &&
+          deployMatch &&
+          nameMatch &&
+          mobileMatch &&
+          frontEndMatch &&
+          backEndMatch
+        )
+      }),
+    [projects, filter]
+  )
 
   const uniqueTechnologies = useMemo(() => {
     const allTechnologies = Array.from(

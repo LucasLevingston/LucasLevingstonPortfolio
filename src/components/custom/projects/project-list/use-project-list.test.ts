@@ -6,6 +6,7 @@ import { useProjectList } from './use-project-list'
 class MockIntersectionObserver implements IntersectionObserver {
   readonly root = null
   readonly rootMargin = ''
+  readonly scrollMargin = ''
   readonly thresholds: readonly number[] = []
   observe = vi.fn()
   unobserve = vi.fn()

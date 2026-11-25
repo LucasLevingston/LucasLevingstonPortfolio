@@ -1,7 +1,13 @@
+import type { Engine, ISourceOptions } from '@tsparticles/engine'
+import { loadSlim } from '@tsparticles/slim'
 import { useReducedMotion } from 'framer-motion'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { Engine } from 'tsparticles-engine'
-import { loadSlim } from 'tsparticles-slim'
+import { useEffect, useMemo, useState } from 'react'
+
+// ParticlesProvider requires an init callback that stays stable for the whole
+// app lifecycle, so it lives at module scope instead of inside the hook.
+export async function loadParticlesEngine(engine: Engine) {
+  await loadSlim(engine)
+}
 
 function useIsDark() {
   const [isDark, setIsDark] = useState(() =>
@@ -24,59 +30,58 @@ export function useParticlesBackground() {
   const isDark = useIsDark()
   const reduceMotion = useReducedMotion()
 
-  const init = useCallback(async (engine: Engine) => {
-    await loadSlim(engine)
-  }, [])
-
-  const particleColor = isDark ? '#3b82f6' : '#2563eb'
+  const particleColor = isDark ? '#4db5ff' : '#1e40af'
   const linkOpacity = isDark ? 0.25 : 0.15
   const particleOpacity = isDark ? 0.5 : 0.35
 
   const options = useMemo(
-    () => ({
-      fullScreen: { enable: false },
-      background: { color: { value: 'transparent' } },
-      fpsLimit: 60,
-      particles: {
-        color: { value: particleColor },
-        links: {
-          color: particleColor,
-          distance: 140,
-          enable: true,
-          opacity: linkOpacity,
-          width: 1,
+    () =>
+      ({
+        fullScreen: { enable: false },
+        background: { color: { value: 'transparent' } },
+        fpsLimit: 60,
+        particles: {
+          color: { value: particleColor },
+          links: {
+            color: particleColor,
+            distance: 140,
+            enable: true,
+            opacity: linkOpacity,
+            width: 1,
+          },
+          move: {
+            enable: !reduceMotion,
+            direction: 'none' as const,
+            outModes: { default: 'out' as const },
+            random: false,
+            speed: 0.4,
+            straight: false,
+          },
+          number: {
+            // v4 measures density as a reference canvas (1200x750 = 900k px²),
+            // equivalent to the old v2 `area: 900`.
+            density: { enable: true, width: 1200, height: 750 },
+            value: 55,
+          },
+          opacity: { value: particleOpacity },
+          shape: { type: 'circle' as const },
+          size: { value: { min: 1, max: 2.5 } },
         },
-        move: {
-          enable: !reduceMotion,
-          direction: 'none' as const,
-          outModes: { default: 'out' as const },
-          random: false,
-          speed: 0.4,
-          straight: false,
-        },
-        number: {
-          density: { enable: true, area: 900 },
-          value: 55,
-        },
-        opacity: { value: particleOpacity },
-        shape: { type: 'circle' as const },
-        size: { value: { min: 1, max: 2.5 } },
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: !reduceMotion, mode: 'grab' as const },
-        },
-        modes: {
-          grab: {
-            distance: 160,
-            links: { opacity: isDark ? 0.5 : 0.35 },
+        interactivity: {
+          events: {
+            onHover: { enable: !reduceMotion, mode: 'grab' as const },
+          },
+          modes: {
+            grab: {
+              distance: 160,
+              links: { opacity: isDark ? 0.5 : 0.35 },
+            },
           },
         },
-      },
-      detectRetina: true,
-    }),
+        detectRetina: true,
+      }) satisfies ISourceOptions,
     [particleColor, linkOpacity, particleOpacity, reduceMotion, isDark]
   )
 
-  return { init, options }
+  return { options }
 }

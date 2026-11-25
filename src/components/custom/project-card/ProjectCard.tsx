@@ -69,9 +69,9 @@ function ProjectCardComponent({ project, allProjects }: ProjectCardProps) {
                     <CardTitle className="font-semibold text-foreground text-lg">
                       {title}
                     </CardTitle>
-                    {favorite && (
+                    {favorite ? (
                       <Star className="h-4 w-4 fill-current text-yellow-400" />
-                    )}
+                    ) : null}
                     {showEvolution && versions && versions.length > 0 && (
                       <GitBranch className="h-4 w-4 !text-mainColor" />
                     )}
@@ -95,7 +95,7 @@ function ProjectCardComponent({ project, allProjects }: ProjectCardProps) {
                 </div>
               </div>
 
-              {previewImage && (
+              {previewImage ? (
                 <div className="w-full px-6 pb-4 sm:w-auto sm:px-0 sm:pb-0">
                   <div
                     className={cn(
@@ -126,7 +126,7 @@ function ProjectCardComponent({ project, allProjects }: ProjectCardProps) {
                     )}
                   </div>
                 </div>
-              )}
+              ) : null}
               <ProjectStatusIcons
                 backEndRepositoryUrl={backEndRepositoryUrl}
                 className="sm:ml-auto"

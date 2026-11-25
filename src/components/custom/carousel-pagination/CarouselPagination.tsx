@@ -1,14 +1,13 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import type React from 'react'
-import type { CarouselApi } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils/cn'
+import type { CarouselPaginationProps } from './carousel-pagination.types'
+import { useCarouselPagination } from './use-carousel-pagination'
 
-interface CarouselPaginationProps {
-  currentImage: number
-  setCurrentImage: (index: number) => void
-  api: CarouselApi
-  images: string[]
-}
+const ARROW_CLASS_NAME = cn(
+  'text-mainColor transition-opacity hover:opacity-70',
+  'disabled:pointer-events-none disabled:opacity-30'
+)
 
 const CarouselPagination: React.FC<CarouselPaginationProps> = ({
   currentImage,
@@ -16,18 +15,19 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
   api,
   images,
 }) => {
-  const goTo = (index: number) => {
-    setCurrentImage(index)
-    api?.scrollTo(index)
-  }
+  const { goToPrevious, goToNext, handleDotClick } = useCarouselPagination({
+    api,
+    currentImage,
+    setCurrentImage,
+  })
 
   return (
     <div className="flex items-center justify-center gap-3">
       <button
         aria-label="Previous image"
-        className="text-mainColor transition-opacity hover:opacity-70 disabled:pointer-events-none disabled:opacity-30"
+        className={ARROW_CLASS_NAME}
         disabled={currentImage === 0}
-        onClick={() => goTo(currentImage - 1)}
+        onClick={goToPrevious}
         type="button"
       >
         <ChevronLeft className="h-4 w-4" />
@@ -43,8 +43,9 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
                 ? 'w-4 bg-mainColor'
                 : 'w-1.5 bg-mainColor/30 hover:bg-mainColor/60'
             )}
+            data-index={index}
             key={index}
-            onClick={() => goTo(index)}
+            onClick={handleDotClick}
             type="button"
           />
         ))}
@@ -52,9 +53,9 @@ const CarouselPagination: React.FC<CarouselPaginationProps> = ({
 
       <button
         aria-label="Next image"
-        className="text-mainColor transition-opacity hover:opacity-70 disabled:pointer-events-none disabled:opacity-30"
+        className={ARROW_CLASS_NAME}
         disabled={currentImage === images.length - 1}
-        onClick={() => goTo(currentImage + 1)}
+        onClick={goToNext}
         type="button"
       >
         <ChevronRight className="h-4 w-4" />

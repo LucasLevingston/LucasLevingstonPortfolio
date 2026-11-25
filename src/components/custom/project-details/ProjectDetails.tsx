@@ -7,13 +7,8 @@ import { ProjectImageCarousel } from '@/components/custom/projects/project-image
 import { ProjectLinks } from '@/components/custom/projects/project-links'
 import { ProjectVersionTabs } from '@/components/custom/projects/project-version-tabs'
 import TechnologiesSection from '@/components/custom/technology-section'
-import type { ProjectType } from '@/types/ProjectType'
+import type { ProjectDetailsProps } from './project-details.types'
 import { useProjectDetails } from './use-project-details'
-
-interface ProjectDetailsProps {
-  project: ProjectType
-  allProjects: ProjectType[]
-}
 
 export function ProjectDetails({ project, allProjects }: ProjectDetailsProps) {
   const {
@@ -41,22 +36,22 @@ export function ProjectDetails({ project, allProjects }: ProjectDetailsProps) {
       <div className="space-y-2 rounded-lg">
         <p className="text-foreground text-sm leading-relaxed">{about}</p>
         <div className="space-y-1 text-sm">
-          {startsDate && (
+          {startsDate ? (
             <div>
               <span className="font-semibold text-mainColor">
                 {t('about.start')}:
               </span>{' '}
               {startsDate}
             </div>
-          )}
-          {endsDate && (
+          ) : null}
+          {endsDate ? (
             <div>
               <span className="font-semibold text-mainColor">
                 {t('about.end')}:
               </span>{' '}
               {endsDate}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
 
@@ -82,13 +77,13 @@ export function ProjectDetails({ project, allProjects }: ProjectDetailsProps) {
         </div>
       )}
 
-      {hasVersions && versions && (
+      {hasVersions && versions ? (
         <ProjectVersionTabs
           isMobile={isMobile}
           paginationImages={images}
           versions={versions}
         />
-      )}
+      ) : null}
 
       {!hasVersions && (
         <div>

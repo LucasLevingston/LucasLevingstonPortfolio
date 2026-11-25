@@ -4,7 +4,7 @@ import '@/i18n'
 import { TestQueryClientProvider } from '@/test/test-query-client'
 import { ResumeButton } from './ResumeButton'
 
-const RESUME_LINK_LABEL_PATTERN = /Ver CV/i
+const RESUME_LINK_LABEL_PATTERN = /Ver CV/iu
 
 beforeEach(() => {
   vi.stubGlobal(

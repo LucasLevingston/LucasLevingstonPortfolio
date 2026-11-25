@@ -54,7 +54,7 @@ function Section({
 }: SectionProps): JSX.Element {
   return (
     <SectionRoot id={id} variant={variant}>
-      {title && <SectionTitle>{title}</SectionTitle>}
+      {title ? <SectionTitle>{title}</SectionTitle> : null}
       <SectionContent className={className}>{children}</SectionContent>
     </SectionRoot>
   )

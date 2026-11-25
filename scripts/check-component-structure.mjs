@@ -18,17 +18,19 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import ts from 'typescript'
+// TypeScript 7 (native) has no JS compiler API; the official side-by-side
+// package keeps it available for this parser-only gate.
+import ts from '@typescript/typescript6'
 
 const MAX_LINE_LENGTH = 100
 // import/export lines are governed by biome's own formatter (lineWidth) -
 // a single-specifier import from a long path has nowhere to wrap to and
 // biome's organizeImports collapses manual multi-line wrapping back down,
 // so gating those lines here just fights the formatter with no fix available.
-const IMPORT_LINE_PATTERN = /^\s*(import\s|export\s.*from\s|}\s*from\s)/
+const IMPORT_LINE_PATTERN = /^\s*(?:import\s|export\s.*from\s|\}\s*from\s)/u
 // A line that's just `key: 'https://...',` (an icon/asset URL literal) has
 // the same "nowhere to wrap" problem as a long import specifier.
-const URL_LITERAL_LINE_PATTERN = /^\s*\w+:\s*['"]https?:\/\/[^'"]*['"],?\s*$/
+const URL_LITERAL_LINE_PATTERN = /^\s*\w+:\s*['"]https?:\/\/[^'"]*['"],?\s*$/u
 const HOOK_NAMES = new Set([
   'useState',
   'useEffect',
@@ -39,15 +41,18 @@ const HOOK_NAMES = new Set([
   'useReducer',
 ])
 
-const TS_FILE_PATTERN = /\.(ts|tsx)$/
+const TS_FILE_PATTERN = /\.(?:ts|tsx)$/u
+const BACKSLASH_PATTERN = /\\/gu
+const TEST_FILE_PATTERN = /\.(?:test|spec)\.(?:ts|tsx)$/u
+const TYPES_FILE_PATTERN = /\.types\.ts$/u
+const HOOK_FILE_PATTERN = /^use-.*\.ts$/u
+const INDEX_FILE_PATTERN = /^index\.tsx?$/u
 const files = process.argv.slice(2).filter(f => TS_FILE_PATTERN.test(f))
 const report = []
 
 function toPosix(file) {
-  return file.replace(/\\/g, '/')
+  return file.replace(BACKSLASH_PATTERN, '/')
 }
-
-const TEST_FILE_PATTERN = /\.(test|spec)\.(ts|tsx)$/
 
 function isExempt(file) {
   const normalized = toPosix(file)
@@ -192,7 +197,7 @@ for (const file of files) {
 
   if (
     hasTopLevelTypeOrInterface(sourceFile) &&
-    !hasSibling(dir, /\.types\.ts$/)
+    !hasSibling(dir, TYPES_FILE_PATTERN)
   ) {
     report.push(
       `${file} — defines type/interface inline; move it to a sibling *.types.ts file`
@@ -200,13 +205,13 @@ for (const file of files) {
   }
 
   if (isFolderComponentFile(file)) {
-    if (usesHooksDirectly(sourceFile) && !hasSibling(dir, /^use-.*\.ts$/)) {
+    if (usesHooksDirectly(sourceFile) && !hasSibling(dir, HOOK_FILE_PATTERN)) {
       report.push(
         `${file} — calls React hooks directly; extract the logic into a sibling use-*.ts hook`
       )
     }
 
-    if (!hasSibling(dir, /^index\.tsx?$/)) {
+    if (!hasSibling(dir, INDEX_FILE_PATTERN)) {
       report.push(`${file} — missing a sibling index.ts export file in ${dir}`)
     }
   }

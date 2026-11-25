@@ -18,7 +18,7 @@ export function ProjectActiveFilterBadges({
   }
 
   return (
-    <div className="mt-4 border-mainBorder border-t pt-4 dark:border-main-border-dark">
+    <div className="mt-4 border-mainBorder border-t pt-4">
       <div className="flex flex-wrap gap-2">
         {badges.map(badge => (
           <CustomBadge

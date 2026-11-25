@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils/cn'
 import { isCurrentJob } from './is-current-job'
 
 const CURRENT_JOB_BADGE_CLASS_NAME = cn(
-  'border-blue-300 bg-blue-100 text-base text-blue-800',
-  'hover:bg-blue-100 dark:bg-blue-900 dark:text-blue-300'
+  'border-mainColor/40 bg-mainColor/10 text-base text-mainColor',
+  'hover:bg-mainColor/10'
 )
 
 export function CurrentJobBadge({ endsDate }: { endsDate: string }) {

@@ -12,7 +12,7 @@ export function ResumeButton() {
       <CustomButton.Icon>
         <Eye />
       </CustomButton.Icon>
-      <CustomButton.Label>{t('resume.viewResume')}</CustomButton.Label>
+      <CustomButton.Text>{t('resume.viewResume')}</CustomButton.Text>
     </CustomButton>
   )
 }
